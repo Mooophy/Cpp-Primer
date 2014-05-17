@@ -1,4 +1,4 @@
-This repo stores the code I wrote while reading "C++ Primer 5th".
-Don't forget -std=c++11 flag when compiling.
+The codes I wrote for "C++ Primer 5th" exercises.
+Put -std=c++11 flag when compiling.
 
 
