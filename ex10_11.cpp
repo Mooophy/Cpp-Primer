@@ -48,7 +48,7 @@ void wy_elimdups(std::vector<std::string> &vs)
     std::cout <<"\n";
 
 
-    //! sort alphabetically
+    //! sort alphabetically.
     std::sort(vs.begin(), vs.end());
     for (auto element : vs)
         std::cout << element
