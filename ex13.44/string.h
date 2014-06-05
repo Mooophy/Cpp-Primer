@@ -38,8 +38,6 @@ public:
     ~String();
 
 
-
-
 private:
 
     //! data members
