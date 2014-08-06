@@ -9,3 +9,5 @@
 ###Linux
 
 ![linux](https://db.tt/lhzXhpCt)
+
+**255**? why? please look at [this](http://www.tldp.org/LDP/abs/html/exitcodes.html)
