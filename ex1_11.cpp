@@ -4,7 +4,7 @@
 
 int main()
 {
-	int val_small, val_big;
+	int val_small = 0, val_big = 0;
 	std::cout << "please input two integers:";
 	std::cin >> val_small >> val_big;
 	

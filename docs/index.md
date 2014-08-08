@@ -8,3 +8,4 @@ C++ Primer 5th Answer Note
 - [Exercise 1.9](https://github.com/pezy/Cpp-Primer/blob/master/ex1_9.cpp)
 - [Exercise 1.10](https://github.com/pezy/Cpp-Primer/blob/master/ex1_10.cpp)
 - [Exercise 1.11](https://github.com/pezy/Cpp-Primer/blob/master/ex1_11.cpp)
+- [Exercise 1.12 ~ 1.15](/Cpp-Primer/ex1.12_1.15)
