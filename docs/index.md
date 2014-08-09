@@ -9,3 +9,5 @@ C++ Primer 5th Answer Note
 - [Exercise 1.10](https://github.com/pezy/Cpp-Primer/blob/master/ex1_10.cpp)
 - [Exercise 1.11](https://github.com/pezy/Cpp-Primer/blob/master/ex1_11.cpp)
 - [Exercise 1.12 ~ 1.15](/Cpp-Primer/ex1.12_1.15)
+- [Exercise 1.16](/Cpp-Primer/ex1.16)
+- [Exercise 1.17 ~ 1.19](/Cpp-Primer/ex1.17_1.19)
