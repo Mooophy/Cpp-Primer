@@ -11,3 +11,4 @@ C++ Primer 5th Answer Note
 - [Exercise 1.12 ~ 1.15](/Cpp-Primer/ex1.12_1.15)
 - [Exercise 1.16](/Cpp-Primer/ex1.16)
 - [Exercise 1.17 ~ 1.19](/Cpp-Primer/ex1.17_1.19)
+- [Exercise 1.20](/Cpp-Primer/ex1.20_1.22)
