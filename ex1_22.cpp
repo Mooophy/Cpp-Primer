@@ -3,20 +3,27 @@
 
 int main()
 {
-  Sales_item item, sum;
-  while (std::cin >> item)
+  Sales_item total;
+  if (std::cin >> total)
   {
-    if (item.isbn() != sum.isbn())
+    Sales_item trans;
+    while (std::cin >> trans)
     {
-      if (!sum.isbn().empty())
-        std::cout << sum << std::endl;
-      sum = item;
+      if (total.isbn() == trans.isbn())
+        total += trans;
+      else
+      {
+        std::cout << total << std::endl;
+        total = trans;
+      }
     }
-    else
-      sum += item;
+    std::cout << total << std::endl;
   }
-
- std::cout << sum << std::endl;
+  else
+  {
+    std::cerr << "No data?!" << std::endl;
+    return -1;
+  }
 
   return 0;
 }

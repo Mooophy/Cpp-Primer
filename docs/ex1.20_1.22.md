@@ -4,6 +4,11 @@
 
 [Here](https://github.com/pezy/Cpp-Primer/blob/master/ex1_20.cpp) is the code.
 
+**You need to enable C++11 support in your compiler.
+With GCC and Clang, this can be done with the `-std=c++11` option.**
+
+**(Never say it again.)**
+
 How to test it? use the `book.txt` in `data` folder. And do it like this:
 
 ![run](https://db.tt/fm8iHtkF)
@@ -11,7 +16,7 @@ How to test it? use the `book.txt` in `data` folder. And do it like this:
 ##Exercise 1.21
 > Write a program that reads two Sales_item objects that have the same ISBN and produces their sum.
 
-I think you should confirm the ISBN of two objects. The sum is meaningful when they have the same ISBN.
+The program should check whether the objects have the same ISBN.(Have a look at 1.5.2, surprise!)
 
 [Code](https://github.com/pezy/Cpp-Primer/blob/master/ex1_21.cpp)
 
@@ -19,8 +24,8 @@ I think you should confirm the ISBN of two objects. The sum is meaningful when t
 
 > Write a program that reads several transactions for the same ISBN. Write the sum of all the transactions that were read.
 
-Tips: review the example code in "1.4.4. The if Statement".
+Tips: this program will appear in the section 1.6.
 
-[Here](https://github.com/pezy/Cpp-Primer/blob/master/ex1_22.cpp) is my code.
+[Here](https://github.com/pezy/Cpp-Primer/blob/master/ex1_22.cpp) is the code.
 
 ![run](https://db.tt/UlkuvpAS)
