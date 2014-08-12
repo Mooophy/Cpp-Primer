@@ -17,6 +17,8 @@ C++ Primer 5th Answer Note
 
 - Part I: The Basics
   - Chapter 2. Variables and Basic Types
+    - [Exercise 2.1 ~ 2.2](/Cpp-Primer/ch02/ex2.1_2.2)
+    - [Exercise 2.3 ~ 2.8](/Cpp-Primer/ch02/ex2.3_2.8)
   - Chapter 3. Strings, Vectors, and Arrays
   - Chapter 4. Expressions
   - Chapter 5. Statements
