@@ -21,6 +21,6 @@
 
 Thanks for [viewdocs](https://github.com/progrium/viewdocs).
 
-### Read more?
+### Read more?( If you know chinese. ;) )
 
 [PO在StackOverflow上的习题](http://book.douban.com/review/6500246/)
