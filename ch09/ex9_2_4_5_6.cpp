@@ -53,14 +53,24 @@ bool find(const std::vector<int>::iterator &first, const std::vector<int>::itera
 
     return false;
 }
+
 std::vector<int>::iterator find2(const std::vector<int>::iterator &first, const std::vector<int>::iterator &last, int val)
 {
-    for (std::vector<int>::iterator  it = first; it!= last; ++it )
-    {
-        if (*it == val) return it;
-    }
+    //! @newcode
+    //! suggested by @Queequeg.
+    for(auto it = first; it != last; ++it)
+        if(*it == val)  return it;
+    
+    return last;    //when not found.        
+    
+    
+    
+    //! @oldcode
+    // for (std::vector<int>::iterator  it = first; it!= last; ++it )
+    // {
+    //     if (*it == val) return it;
+    // }
 
-
-    //! when not found.
-    return last + 1;
+    // //! when not found.
+    // return last + 1;
 }
