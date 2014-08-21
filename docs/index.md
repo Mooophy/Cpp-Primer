@@ -24,6 +24,7 @@ C++ Primer 5th Answer Note
     - [Exercise 2.26 ~ 2.32](/Cpp-Primer/ch02/ex2.26_2.32)
     - [Exercise 2.33 ~ 2.35](/Cpp-Primer/ch02/ex2.33_2.35)
     - [Exercise 2.36 ~ 2.38](/Cpp-Primer/ch02/ex2.36_2.38)
+    - [Exercise 2.39 ~ 2.42](/Cpp-Primer/ch02/ex2.39_2.42)
   - Chapter 3. Strings, Vectors, and Arrays
   - Chapter 4. Expressions
   - Chapter 5. Statements
