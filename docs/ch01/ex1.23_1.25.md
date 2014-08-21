@@ -4,7 +4,7 @@ how many transactions occur for each ISBN.
 
 Tip: please review the `1.4.4`.
 
-[Here](https://github.com/pezy/Cpp-Primer/blob/master/ex1_23.cpp) is the code.
+[Here](https://github.com/pezy/Cpp-Primer/blob/master/ch01/ex1_23.cpp) is the code.
 
 ##Exercise 1.24
 > Test the previous program by giving multiple transactions

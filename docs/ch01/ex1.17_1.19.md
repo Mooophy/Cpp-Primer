@@ -18,4 +18,4 @@ If there are no duplicated values, when different values input, a new line will 
 
 Yes, we should use `if` to judge which is bigger.
 
-review this [code](https://github.com/pezy/Cpp-Primer/blob/master/ex1_11.cpp)
+review this [code](https://github.com/pezy/Cpp-Primer/blob/master/ch01/ex1_11.cpp)
