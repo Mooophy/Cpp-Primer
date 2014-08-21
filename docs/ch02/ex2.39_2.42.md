@@ -174,5 +174,5 @@ You can add some function in your header file. Look at [here](https://github.com
 rewrite the exercise:
 
 - 1.5.1. [Code](https://github.com/pezy/Cpp-Primer/blob/master/ch02/ex2.42_1.cpp)
-- 1.5.2. [Code](https://github.com/pezy/Cpp-Primer/blob/master/ch02/ex2.42_1.cpp)
-- 1.6. [Code](https://github.com/pezy/Cpp-Primer/blob/master/ch02/ex2.42_1.cpp)
+- 1.5.2. [Code](https://github.com/pezy/Cpp-Primer/blob/master/ch02/ex2.42_2.cpp)
+- 1.6. [Code](https://github.com/pezy/Cpp-Primer/blob/master/ch02/ex2.42_3.cpp)
