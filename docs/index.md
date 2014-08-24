@@ -26,6 +26,11 @@ C++ Primer 5th Answer Note
     - [Exercise 2.36 ~ 2.38](/Cpp-Primer/ch02/ex2.36_2.38)
     - [Exercise 2.39 ~ 2.42](/Cpp-Primer/ch02/ex2.39_2.42)
   - Chapter 3. Strings, Vectors, and Arrays
+    - Exercise [3.1a](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_1a.cpp)&[3.1b](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_1b.cpp)
+    - Exercise [3.2a](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_2a.cpp)&[3.2b](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_2b.cpp) |
+    [3.3](/Cpp-Primer/ch03/ex3.3) |
+    [3.4a](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_4a.cpp)&[3.4b](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_4b.cpp) |
+    [3.5a](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_5a.cpp)&[3.5b](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_5b.cpp)
   - Chapter 4. Expressions
   - Chapter 5. Statements
   - Chapter 6. Functions
