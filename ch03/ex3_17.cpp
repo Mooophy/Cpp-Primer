@@ -1,50 +1,40 @@
+//!
+//! @alan
+//!
+//! Exercise 3.17:
+//!     Read a sequence of words from cin and store the values a vector.
+//!     After you’ve read all the words, process the vector and change
+//!     each word to uppercase. Print the transformed elements, eight words
+//!     to a line.
+
 #include <iostream>
 #include <string>
 #include <vector>
 
-using namespace std;
-//using std::string;
-
-//using namespace std;
-
-
 int main()
 {
+    //! prompt
+    std::cout << "Pls enter , @q to quit.\n";
 
-    string str;
-
-    vector<string> vec_str;
-    while(cin>>str)
+    //! input
+    std::vector<std::string>  text{};
+    for(std::string str{}; std::cin >> str   &&  str != "@q";/* */)
     {
-        if(str.compare("e")==0)
-        {
-            break;
-        }
+        for(auto& c : str)
+            c = std::toupper(c);
+        text.push_back(str);
+        std::cout << "next entry:\n";
+    }
 
-
-        if(str.compare("q")!=0)
-        {
-            vec_str.push_back(str);
-        }
-        else
-        {
-            for (unsigned int i=0; i<vec_str.size();i++)
-            {
-                cout<<vec_str[i]
-                      <<" ";
-
-
-                if(i%7==0 && i>0)
-                {
-                    cout<<"\n";
-                }
-            }
-            cout<<"\nthe size is "
-                    <<vec_str.size()
-                        <<"\n";
-            vec_str.clear();
-        }
+    //! output
+    unsigned count = 0;
+    for(const auto& word : text)
+    {
+        ++count;
+        count %= 8;
+        std::cout << word  << (count?    " " :   "\n");
     }
 
     return 0;
 }
+
