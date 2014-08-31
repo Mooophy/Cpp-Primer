@@ -30,9 +30,8 @@ int main()
     unsigned count = 0;
     for(const auto& word : text)
     {
-        ++count;
+	std::cout << word  << (count++ == 7?    "\n" :   " ");
         count %= 8;
-        std::cout << word  << (count?    " " :   "\n");
     }
 
     return 0;
