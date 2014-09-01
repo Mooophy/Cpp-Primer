@@ -3,7 +3,7 @@
 ///@Date    Aug. 2014
 ///@Brief
 /// Read a sequence of words from cin and store the values a vector. 
-/// After you’ve read all the words, process the vector and change each word to uppercase. 
+/// After you are read all the words, process the vector and change each word to uppercase. 
 /// Print the transformed elements, eight words to a line.
 ///
 
@@ -28,7 +28,7 @@ int main()
     for (auto &c : str)
       c = toupper(c);    
 
-  for (decltype(vec.size()) i=0; i<vec.size(); ++i)
+  for (decltype(vec.size()) i=0; i != vec.size(); ++i)
   {
     if (i%8 == 0) cout << endl;
     cout << vec[i] << " ";
