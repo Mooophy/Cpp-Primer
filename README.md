@@ -23,6 +23,6 @@ Thanks for [viewdocs](https://github.com/progrium/viewdocs).
 
 ### Read more?( If you know chinese. ;) )
 
-[PO在StackOverflow上的习题](http://book.douban.com/review/6500246/)
-[C++ Primer issues(豆瓣讨论组)](http://www.douban.com/group/532124/)
-[《C++ Primer 英文版（第 5 版）》的笔记 by @pezy](http://book.douban.com/people/pezy/annotation/24089577/)
+1. [PO在StackOverflow上的习题](http://book.douban.com/review/6500246/)
+2. [C++ Primer issues(豆瓣讨论组)](http://www.douban.com/group/532124/)
+3. [《C++ Primer 英文版（第 5 版）》的笔记 by @pezy](http://book.douban.com/people/pezy/annotation/24089577/)
