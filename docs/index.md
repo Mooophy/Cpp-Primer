@@ -49,6 +49,10 @@ C++ Primer 5th Answer Note
     [3.18](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_18.cpp) |
     [3.19](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_19.cpp) |
     [3.20](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_20.cpp)
+    - Exercise [3.21](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_21_pezy.cpp) -
+    [3.21(use template)](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_21.cpp) |
+    [3.22](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_22.cpp) |
+    [3.23](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_23.cpp)
 
   - Chapter 4. Expressions
   - Chapter 5. Statements
