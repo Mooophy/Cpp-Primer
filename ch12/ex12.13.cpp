@@ -1,11 +1,20 @@
-struct destination;  // represents what we are connecting to
-struct connection;   // information needed to use the connection
-connection connect(destination*);  // open the connection
-void disconnect(connection);       // close the given connection
-void f(destination &d /* other parameters */)
+//! @Yue Wang
+//!
+//! ex12.13 What happens if we excute the following code?
+//!
+//  generate a runtime error : double free
+//!
+
+#include <iostream>
+#include <memory>
+
+int main()
 {
-    // get a connection; must remember to close it when done
-    connection c = connect(&d);
-    // use the connection
-    // if we forget to call disconnect before exiting f, there will be no way to close c
+    {
+        auto sp = std::make_shared<int>();
+        auto p = sp.get();
+        delete p;
+    }
+
+    return 0;
 }
