@@ -52,7 +52,10 @@ C++ Primer 5th Answer Note
     - Exercise [3.21](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_21.cpp)(
     [generics_version](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_21_generics_version.cpp)) |
     [3.22](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_22.cpp) |
-    [3.23](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_23.cpp)
+    [3.23](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_23.cpp) |
+    [3.24](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_24.cpp) |
+    [3.25](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_25.cpp) |
+    [3.26](/Cpp-Primer/ch03/ex3.26)
 
   - Chapter 4. Expressions
   - Chapter 5. Statements
