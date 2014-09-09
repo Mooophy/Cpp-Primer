@@ -56,6 +56,7 @@ C++ Primer 5th Answer Note
     [3.24](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_24.cpp) |
     [3.25](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_25.cpp) |
     [3.26](/Cpp-Primer/ch03/ex3.26)
+    - [Exercise 3.27 ~ 3.29](/Cpp-Primer/ch02/ex3.27_3.29)
 
   - Chapter 4. Expressions
   - Chapter 5. Statements
