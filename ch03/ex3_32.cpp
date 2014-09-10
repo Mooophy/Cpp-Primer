@@ -1,36 +1,31 @@
-//!@Alan
-//!
-//!Exercise 3.31:
-//!Write a program to define an array of ten ints. Give each element the
-//!same value as its position in the array.
-//!Exercise 3.32:
-//!Copy the array you defined in the previous exercise into another array.
-//!Rewrite your program to use vectors.
-//!
-
+#include <cstddef>
 #include <iostream>
-#include <string>
 #include <vector>
+#include <iterator>
 
-using namespace std;
+using std::cout; using std::endl; using std::vector; using std::iterator;
 
 int main()
 {
-    int a[10];
-    for(int i=0; i<=9; ++i)
-    {
-        cout<<"Please Enter the number " << i <<" of the array:\n";
-        cin>>a[i];
+    // use array
+    int ia[10];
+    for (size_t i=0; i<10; ++i)
+        ia[i] = i;
 
-    }
+    int ia2[10];
+    for (size_t i=0; i<10; ++i)
+        ia2[i] = ia[i];
 
-    int b[10];
-    vector<int> v;
-    for(int i=0; i<=9; ++i)
-    {
-        b[i]=a[i];
-        v.push_back(b[i]);
-    }
+    // use vector
+    vector<int> iv(10);
+    for (auto iter = iv.begin(); iter != iv.end(); ++iter)    
+        *iter = iter - iv.begin();
+
+    vector<int> iv2(iv);
+
+    for (auto i : iv2)
+        cout << i << " ";
+    cout << endl;
 
     return 0;
 }
