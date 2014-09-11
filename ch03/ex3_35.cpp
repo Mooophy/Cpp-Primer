@@ -1,32 +1,20 @@
-//!@Alan
-//!
-//!Exercise 3.35: Using pointers, write a program to set the elements
-//!in an array to zero.
-//!
-
 #include <iostream>
-#include <string>
-#include <vector>
+#include <iterator>
 
-using namespace std;
+using std::begin; using std::end; using std::cout; using std::endl;
 
 int main()
 {
-    int scores[11];
-    cout<<"the orignal array=\n";
-    for(int* p = scores; p != &scores[11]; ++p)
-    {
-        cout<<*p
-                <<" ";
-    }
-
-    cout<<"\nthe onew array=\n";
-    for(int* p = scores; p != &scores[11]; ++p)
-    {
-        *p=0;
-        cout<<*p
-                <<" ";
-    }
+    int arr[10];
+    int *b = begin(arr);
+    int *e = end(arr);
+    
+    for (int *i = b; i != e; ++i)
+      *i = 0;
+      
+    for (auto i : arr)
+      cout << i << " ";
+    cout << endl;
 
     return 0;
 }

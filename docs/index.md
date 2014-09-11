@@ -60,7 +60,13 @@ C++ Primer 5th Answer Note
     - Exercise [3.30](/Cpp-Primer/ch03/ex3.30) |
     [3.31](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_31.cpp) |
     [3.32](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_32.cpp) |
-    [3.33](/Cpp-Primer/ch03/ex3.33)
+    [3.33](/Cpp-Primer/ch03/ex3.33) |
+    [3.34](/Cpp-Primer/ch03/ex3.34) |
+    [3.35](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_35.cpp) |
+    [3.36](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_36.cpp) |
+    [3.37 ~ 3.38](/Cpp-Primer/ch03/ex3.37_3.38) |
+    [3.39](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_39.cpp) |
+    [3.40](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_40.cpp)
 
   - Chapter 4. Expressions
   - Chapter 5. Statements
