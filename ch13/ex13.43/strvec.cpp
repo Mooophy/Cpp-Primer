@@ -20,6 +20,7 @@
 #include "strvec.h"
 #include <memory>
 #include <algorithm>
+#include <iostream>
 
 
 //! copy constructor
@@ -189,25 +190,20 @@ void StrVec::free()
 {
     if(element)     //  if not nullptr
     {
-        //! destory it  in reverse order.
-
       /**   @oldcode
-       *    using for loop
+       *    using for loop, destory it  in reverse order.
        *    05  JAN 2014
-       *
-        for(auto p = first_free; p != element;    )
-          alloc.destroy(--p);               //^^^^^ empty intentionally
        */
-
+//        for(auto p = first_free; p != element;    )
+//            alloc.destroy(--p);
 
         /** @newcode
          *  using std::for_each and a lambda
          *  06  JAN 2014
          */
-        std::for_each(&element,&first_free,[&](std::string* p){
-            alloc.destroy(p);
+        std::for_each(element,first_free,[this](std::string& p){
+            alloc.destroy(&p);
         });
-
 
         alloc.deallocate(element, capacity());
     }
@@ -242,6 +238,3 @@ void StrVec::wy_alloc_n_move(std::size_t n)
     first_free  =   dest;
     cap         =   element + newCapacity;
 }
-
-
-
