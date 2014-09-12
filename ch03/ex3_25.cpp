@@ -1,34 +1,20 @@
-//!@Alan
-//!
-//!Exercise 3.25:
-//!Rewrite the grade clustering program from § 3.3.3 (p. 104) using
-//!iterators instead of subscripts.
-//!
-
-#include <iostream>
-#include <string>
 #include <vector>
+#include <iterator>
+#include <iostream>
 
-using namespace std;
+using std::vector; using std::cout; using std::cin; using std::endl;
 
 int main()
 {
-    unsigned grade;
-    vector<unsigned> scores(11,0);
+  vector<unsigned> scores(11, 0);
+  unsigned grade;
+  while (cin >> grade)
+    if (grade <= 100)
+      ++(*(scores.begin() + grade/10));
 
-    cout<<"Please Enter:\n";
-    while(cin>>grade)
-    {
-        //! note the () used here.
-        (*(scores.begin() + grade/10)) ++;
+  for (auto score : scores)
+    cout << score << " ";
+  cout << endl;
 
-        cout<<"the vecotr=\n";
-        for(vector<unsigned>::iterator it = scores.begin(); it != scores.end(); it++)
-        {
-            cout<<*it
-                  <<std::endl;
-        }
-    }
-
-    return 0;
+  return 0;
 }

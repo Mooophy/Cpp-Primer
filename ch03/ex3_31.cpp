@@ -1,41 +1,17 @@
-//!@Alan
-//!
-//!Exercise 3.31:
-//!Write a program to define an array of ten ints. Give each element the
-//!same value as its position in the array.
-//!
-
+#include <cstddef>
 #include <iostream>
-#include <string>
-#include <vector>
 
-using namespace std;
+using std::cout; using std::endl;
 
 int main()
 {
-    int a[10];
-    for(int i=0; i<=9; ++i)
-    {
-        cout<<"Please Enter the number " << i <<" of the array:\n";
-        cin>>a[i];
+    int ia[10];
+    for (size_t i=0; i<10; ++i)
+        ia[i] = i;
 
-    }
-
-    cout<<"\narray=\n";
-    for(int i=0; i<=9; ++i)
-    {
-        cout<<a[i]
-             <<" ";
-    }
-
-    cout<<"\nthe new array=\n";
-    for(int i=0; i<=9; ++i)
-    {
-        a[i]=i;
-        cout<<a[i]
-             <<" ";
-    }
-
+    for (auto i : ia)
+        cout << i << " ";
+    cout << endl;
 
     return 0;
 }
