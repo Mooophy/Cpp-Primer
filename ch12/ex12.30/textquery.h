@@ -27,8 +27,7 @@ public:
     TextQuery(std::ifstream&);
 
     //! member function for query operation
-    QueryResult
-    query(const std::string&) const;
+    QueryResult query(const std::string&) const;
 
 private:
     std::shared_ptr<std::vector<std::string>> file;

@@ -24,7 +24,8 @@ public:
     QueryResult(std::string s,
                 std::shared_ptr<std::set<TextQuery::index_Tp>> sp_l,
                 std::shared_ptr<std::vector<std::string>> sp_f) :
-        sought(s), sp_lines(sp_l), sp_file(sp_f) { }
+        sought(s), sp_lines(sp_l), sp_file(sp_f)
+    { }
 
 
 private:
@@ -32,7 +33,6 @@ private:
     std::string sought;
     std::shared_ptr<std::set<TextQuery::index_Tp>> sp_lines;
     std::shared_ptr<std::vector<std::string>> sp_file;
-
 };
 
 /**

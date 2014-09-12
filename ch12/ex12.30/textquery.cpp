@@ -12,7 +12,8 @@
 #include <sstream>
 
 //! Constructor
-TextQuery::TextQuery(std::ifstream & is) : file(new std::vector<std::string>)
+TextQuery::TextQuery(std::ifstream& is) :
+    file(new std::vector<std::string>)
 {
     //! each line
     std::string line;
@@ -63,8 +64,7 @@ TextQuery::TextQuery(std::ifstream & is) : file(new std::vector<std::string>)
 /**
  * @brief do a query opertion and return QueryResult object.
  */
-QueryResult
-TextQuery::query(const std::string &sought) const
+QueryResult TextQuery::query(const std::string &sought) const
 {
     //! dynamicaly allocated set used for the word does not appear.
     static std::shared_ptr<std::set<index_Tp>> noData(new std::set<index_Tp>);

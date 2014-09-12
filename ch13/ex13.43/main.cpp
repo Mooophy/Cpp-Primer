@@ -25,5 +25,6 @@ int main()
     for(const auto &s: v)
         std::cout << s;
 
+    std::cout << "\nexit normally\n";
     return 0;
 }
