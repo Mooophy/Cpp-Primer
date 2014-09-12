@@ -1,13 +1,13 @@
-#C++ Primer (5th Edition) exercise answers.
-
-![book](http://img3.douban.com/lpic/s26020180.jpg)
+#C++ Primer (第5版) 课后习题答案
+##C++ Primer (5th Edition) exercise answers.
 
 ### Something I hope you know before go into the answers.
 
-- Use `-std=c++11` flag when compiling.(or you can use Visual Studio 2012+)
+- Use `-std=c++11`(optional: `-pedantic -Wall`) flag when compiling.(or you can use Visual Studio 2012+)
 - I don't know the standard answer, but I tried my best to keep the correctness, if you found any bug, please [tell me](https://github.com/Mooophy/Cpp-Primer/issues/new), thanks.
 - I have downloaded the headers from this book's [web site](http://www.informit.com/store/c-plus-plus-primer-9780321714114) and put them in the `include` folder.
 - In order to test the program in an efficient way, I also put the test data file in the `data` folder.
+- If you find any mistake of the questions. Please check the [Errata](http://ptgmedia.pearsoncmg.com/images/9780321714114/errata/9780321714114_errata_10-31-12.html) first.
 
 ### If you want to contribute this repository.
 
@@ -21,6 +21,8 @@
 
 Thanks for [viewdocs](https://github.com/progrium/viewdocs).
 
-### Read more?( If you know chinese. ;) )
+### Read more?
 
-[PO在StackOverflow上的习题](http://book.douban.com/review/6500246/)
+1. [PO在StackOverflow上的习题](http://book.douban.com/review/6500246/)
+2. [C++ Primer issues(豆瓣讨论组)](http://www.douban.com/group/532124/)
+3. [《C++ Primer 英文版（第 5 版）》的笔记 by](http://book.douban.com/people/pezy/annotation/24089577/) [@pezy](https://github.com/pezy)

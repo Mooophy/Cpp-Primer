@@ -26,6 +26,52 @@ C++ Primer 5th Answer Note
     - [Exercise 2.36 ~ 2.38](/Cpp-Primer/ch02/ex2.36_2.38)
     - [Exercise 2.39 ~ 2.42](/Cpp-Primer/ch02/ex2.39_2.42)
   - Chapter 3. Strings, Vectors, and Arrays
+    - Exercise [3.1a](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_1a.cpp) ~
+    [3.1b](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_1b.cpp)
+    - Exercise [3.2a](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_2a.cpp) ~
+    [3.2b](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_2b.cpp) |
+    [3.3](/Cpp-Primer/ch03/ex3.3) |
+    [3.4a](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_4a.cpp) ~
+    [3.4b](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_4b.cpp) |
+    [3.5a](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_5a.cpp) ~
+    [3.5b](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_5b.cpp)
+    - Exercise [3.6](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_6.cpp) |
+    [3.7](/Cpp-Primer/ch03/ex3.7) |
+    [3.8](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_8.cpp) |
+    [3.9](/Cpp-Primer/ch03/ex3.9) |
+    [3.10](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_10.cpp) |
+    [3.11](/Cpp-Primer/ch03/ex3.11)
+    - [Exercise 3.12 ~ 3.13](/Cpp-Primer/ch03/ex3.12_3.13)
+    - Exercise [3.14](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_14.cpp) |
+    [3.15](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_15.cpp) |
+    [3.16](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_16.cpp) |
+    [3.17](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_17.cpp) |
+    [3.18](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_18.cpp) |
+    [3.19](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_19.cpp) |
+    [3.20](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_20.cpp)
+    - Exercise [3.21](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_21.cpp)(
+    [generics_version](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_21_generics_version.cpp)) |
+    [3.22](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_22.cpp) |
+    [3.23](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_23.cpp) |
+    [3.24](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_24.cpp) |
+    [3.25](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_25.cpp) |
+    [3.26](/Cpp-Primer/ch03/ex3.26)
+    - [Exercise 3.27 ~ 3.29](/Cpp-Primer/ch03/ex3.27_3.29)
+    - Exercise [3.30](/Cpp-Primer/ch03/ex3.30) |
+    [3.31](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_31.cpp) |
+    [3.32](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_32.cpp) |
+    [3.33](/Cpp-Primer/ch03/ex3.33) |
+    [3.34](/Cpp-Primer/ch03/ex3.34) |
+    [3.35](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_35.cpp) |
+    [3.36](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_36.cpp) |
+    [3.37 ~ 3.38](/Cpp-Primer/ch03/ex3.37_3.38) |
+    [3.39](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_39.cpp) |
+    [3.40](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_40.cpp) |
+    [3.41](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_41.cpp) |
+    [3.42](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_42.cpp) |
+    [3.43](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_43.cpp) |
+    [3.44](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_44.cpp) |
+    [3.45](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_45.cpp)
   - Chapter 4. Expressions
   - Chapter 5. Statements
   - Chapter 6. Functions

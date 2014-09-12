@@ -1,0 +1,1 @@
+##Exercise 3.9>What does the following program do? Is it valid? If not, why not?```cppstring s;cout << s[0] << endl;```invalid in theory, but the compiler passes.`s` is empty, so `s[0]` is undefined. But the compiler always define `s[0]`with `\0`, so you can use `s[0]` in the `cout`.

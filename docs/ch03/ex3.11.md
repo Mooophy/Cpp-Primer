@@ -1,0 +1,1 @@
+##Exercise 3.11>Is the following range for legal? If so, what is the type of c?```cppconst string s = "Keep out!";for (auto &c : s){/*... */}```When you don't change `c`'s value, it's legal, else it's illegal.For example:    cout << c;  // legal.    c = 'X';    // illegal.The type of `c` is `const char&`. read-only variable is not assignable.
