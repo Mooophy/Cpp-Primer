@@ -7,6 +7,7 @@
 - I don't know the standard answer, but I tried my best to keep the correctness, if you found any bug, please [tell me](https://github.com/Mooophy/Cpp-Primer/issues/new), thanks.
 - I have downloaded the headers from this book's [web site](http://www.informit.com/store/c-plus-plus-primer-9780321714114) and put them in the `include` folder.
 - In order to test the program in an efficient way, I also put the test data file in the `data` folder.
+- If you find any mistake of the questions. Please check the [Errata](http://ptgmedia.pearsoncmg.com/images/9780321714114/errata/9780321714114_errata_10-31-12.html) first.
 
 ### If you want to contribute this repository.
 

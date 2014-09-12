@@ -66,8 +66,12 @@ C++ Primer 5th Answer Note
     [3.36](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_36.cpp) |
     [3.37 ~ 3.38](/Cpp-Primer/ch03/ex3.37_3.38) |
     [3.39](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_39.cpp) |
-    [3.40](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_40.cpp)
-
+    [3.40](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_40.cpp) |
+    [3.41](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_41.cpp) |
+    [3.42](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_42.cpp) |
+    [3.43](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_43.cpp) |
+    [3.44](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_44.cpp) |
+    [3.45](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_45.cpp)
   - Chapter 4. Expressions
   - Chapter 5. Statements
   - Chapter 6. Functions
