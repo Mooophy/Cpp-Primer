@@ -22,7 +22,7 @@
 #include <algorithm>
 #include <iostream>
 
-std::allocator<std::string> StrVec::alloc;
+allocator<std::string> StrVec::alloc;
 
 //! copy constructor
 StrVec::StrVec(const StrVec &s)
