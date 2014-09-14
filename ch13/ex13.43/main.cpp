@@ -24,5 +24,6 @@ int main()
         std::cout << s;
 
     std::cout << "\nexit normally\n";
+	system("pause");
     return 0;
 }

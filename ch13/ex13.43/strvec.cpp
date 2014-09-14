@@ -17,12 +17,13 @@
 //  to string pointers.
 //!
 
+#define _SCL_SECURE_NO_WARNINGS
 #include "strvec.h"
 #include <memory>
 #include <algorithm>
 #include <iostream>
 
-allocator<std::string> StrVec::alloc;
+std::allocator<std::string> StrVec::alloc;
 
 //! copy constructor
 StrVec::StrVec(const StrVec &s)
