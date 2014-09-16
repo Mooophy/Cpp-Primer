@@ -8,9 +8,9 @@
 - I have downloaded the headers from this book's [web site](http://www.informit.com/store/c-plus-plus-primer-9780321714114) and put them in the `include` folder.
 - In order to test the program in an efficient way, I also put the test data file in the `data` folder.
 
-### Contributions
+### How to contribute
 
-- Please **fork**([How?](https://help.github.com/articles/fork-a-repo)) this repository.
+- Please **fork**([How?](https://help.github.com/articles/fork-a-repo)) this repository first.
 - **commit**([How?](https://help.github.com/articles/create-a-repo#commit-your-first-change)) in your own repository.
 - Give me a **pull request**([How?](https://help.github.com/articles/using-pull-requests)).
 
