@@ -18,12 +18,11 @@
 
 int main()
 {
-    StrVec v{"a\n","a\n","a\n","a\n"};
-
-    v.push_back("aaa\n");
+    StrVec v{"alan1","alan2","alan3"};
 
     for(const auto &s: v)
         std::cout << s;
 
+    std::cout << "\nexit normally\n";
     return 0;
 }
