@@ -72,7 +72,11 @@ C++ Primer 5th Answer Note
     [3.44](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_44.cpp) |
     [3.45](https://github.com/pezy/Cpp-Primer/blob/master/ch03/ex3_45.cpp)
   - Chapter 4. Expressions
-    - [4.1 ~ 4.2](/Cpp-Primer/ch04/ex4.1_4.2)
+    - [4.1 ~ 4.3](/Cpp-Primer/ch04/ex4.1_4.3)
+    - [4.4 ~ 4.7](/Cpp-Primer/ch04/ex4.4_4.7)
+    - [4.8 ~ 4.12](/Cpp-Primer/ch04/ex4.8_4.12)
+    - [4.13 ~ 4.16](/Cpp-Primer/ch04/ex4.13_4.16)
+    - [4.17 ~ 4.19](/Cpp-Primer/ch04/ex4.17_4.19)
   - Chapter 5. Statements
   - Chapter 6. Functions
   - Chapter 7. Classes
