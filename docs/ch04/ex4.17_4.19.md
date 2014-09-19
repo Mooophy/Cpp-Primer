@@ -23,5 +23,5 @@ ptr != 0 && *ptr++  // check ptr is not a nullptr. and check the pointer value.
 ival++ && ival // check ival and ival+1 whether equal zero.
 vec[ival++] <= vec[ival] // incorrect. It is an **undefined behavior.**
 // correct:
-vec[ival+1] <= vec[ival]
+vec[ival] <= vec[ival+1]
 ```
