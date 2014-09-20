@@ -12,44 +12,39 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
-int main()
+int main(void)
 {
-    string current_str, previous_str, max_str, current_repeating_str;
-    int current_repeating=0, max_repeating=0;
-
-    cout<<"Please Enter:\n";
-    while (cin>>current_str)
+    string curr_str, pre_str, re_str;
+    int cnt = 1, max = 1;
+    cin >> pre_str;
+    while (cin >> curr_str)
     {
-        if(current_str.compare(previous_str) == 0)
+        if (curr_str == pre_str)
         {
-            current_repeating ++ ;
-            current_repeating_str = current_str;
+            ++cnt;
+            if (cnt > max)
+            {
+                max = cnt;
+                re_str = curr_str;
+            }       
         }
         else
         {
-            current_repeating = 0;
-            current_repeating_str.clear();
+            cnt = 1;
         }
-
-        if(current_repeating > max_repeating)
-        {
-            max_repeating = current_repeating;
-            max_str = current_repeating_str;
-        }
-
-        cout<<"The Max repeating string now is "
-              <<max_str
-                <<"\nThe repeating times="
-                  <<max_repeating
-                    <<std::endl;
-
-        previous_str = current_str;
-
+        
+        pre_str = curr_str;
     }
-
+    if (!re_str.empty())
+    {
+        cout << re_str << " occurs " << max << " times" << endl;
+    }
+    else
+    {
+        cout << "no such number" << endl;
+    }
     return 0;
 }
