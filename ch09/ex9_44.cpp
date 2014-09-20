@@ -41,24 +41,27 @@ ex944(std::string &s, const std::string &oldVal, const std::string &newVal)
         {
             //! @note   build sub_str from s to compare the oldVal laterly
             auto tmp = s.substr(i, oldVal.size());
-            if (tmp.compare(oldVal) == 0)
-            {
-                s.replace(i,oldVal.size(),newVal);
+            //! @note to make sure that i will not be out of range 
+            if (s.size() - i > oldVal.size())
+			{
+                if (tmp.compare(oldVal) == 0)
+                {
+                    s.replace(i,oldVal.size(),newVal);
 
-                //! @note   Manually, move the index to denote the last of the added element:
-                //!         Assuming "through" is newly added:
-                //!         ********through******
-                //                        ^
-                //!         above is where the index i denotes now .
-                //!         by the statement ++i , it will denote the next element as shown below:
-                //!         ********through******
-                //                         ^
-                i = i + newVal.size() - 1;
+                    //! @note   Manually, move the index to denote the last of the added element:
+                    //!         Assuming "through" is newly added:
+                    //!         ********through******
+                    //                        ^
+                    //!         above is where the index i denotes now .
+                    //!         by the statement ++i , it will denote the next element as shown below:
+                    //!         ********through******
+                    //                         ^
+                    i = i + newVal.size() - 1;
+                }
             }
+            ++i;
         }
-        ++i;
     }
-
     return s;
 }
 
