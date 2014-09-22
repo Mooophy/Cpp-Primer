@@ -1,6 +1,6 @@
 #ifndef BULK_QUOTE_H
 #define BULK_QUOTE_H
-#include <quote.h>
+#include"quote.h"
 
 class Bulk_quote : public Quote
 {
