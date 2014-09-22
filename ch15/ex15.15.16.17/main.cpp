@@ -39,6 +39,11 @@
 
 int main()
 {
+	/*
+	error C2259 : 'Disc_quote' : cannot instantiate abstract class
+	1>          due to following members :
+	1>          'double Disc_quote::net_price(size_t) const' : is abstract
+	*/
     Disc_quote d;
 
     return 0;
