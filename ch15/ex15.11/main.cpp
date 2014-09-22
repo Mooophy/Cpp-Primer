@@ -63,7 +63,6 @@ int main()
     print_debug(bq);
 	std::cout << "\n";
 
-	system("pause");
     return 0;
 }
 
