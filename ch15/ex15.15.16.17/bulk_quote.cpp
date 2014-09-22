@@ -7,7 +7,8 @@ double Bulk_quote::net_price(std::size_t n) const
 
 void Bulk_quote::debug() const
 {
+	Quote::debug();
     std::cout //<< "data members of this class:\n"
               << "min_qty= " << quantity << " "
-              << "discount= " << this->discount<< " \n";
+              << "discount= " << discount<< " ";
 }
