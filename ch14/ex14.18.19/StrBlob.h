@@ -161,8 +161,10 @@ StrBlob::operator =(const StrBlob &sb)
  */
 class StrBlobPtr
 {
-    friend bool eq          (const StrBlobPtr&, const StrBlobPtr&);
-    friend bool operator == (const StrBlobPtr&, const StrBlobPtr&);
+	friend bool operator==(const StrBlobPtr&, const StrBlobPtr&);
+	friend bool operator!=(const StrBlobPtr&, const StrBlobPtr&);
+	friend bool operator<(const StrBlobPtr&, const StrBlobPtr&);
+	friend bool operator>(const StrBlobPtr&, const StrBlobPtr&);
 public:
     StrBlobPtr(): curr(0) { }
     StrBlobPtr(StrBlob &a, size_t sz = 0) : wptr(a.data), curr(sz) { }
@@ -177,7 +179,8 @@ private:
     //! check returns a shared_ptr to the vector if the check succeeds
     std::shared_ptr<std::vector<std::string>> 
         check(std::size_t, const std::string&) const;
-
+	//! a valid iterator ?
+	bool valid()const;
     //! store a weak_ptr, which means the underlying vector might be destroyed
     std::weak_ptr<std::vector<std::string>> wptr;  
     std::size_t curr;      // current position within the array
@@ -191,20 +194,40 @@ private:
 //!         in eq(), if l and r both are null then it returns true wiout caomparing curr
 //!         in this operator, it returns true only when both pointer and curr are identical.
 //!
-inline bool
-operator==(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
+inline 
+bool operator==(const StrBlobPtr &lhs, const StrBlobPtr &rhs)
 {
-    //! lock () returns shared_ptr when possible ,or nullptr otherwise.
-    auto l = lhs.wptr.lock();
-    auto r = rhs.wptr.lock();
-
-    return (l == r) ? (lhs.curr == lhs.curr) : false;
+	//only valid StrBlobPtrs which point to the same element are compatible
+	if (lhs.valid() && rhs.valid() && lhs.wptr.lock() == rhs.wptr.lock())
+		return lhs.curr == rhs.curr;
+	else
+		throw std::logic_error("StrBlobPtr incompatible");
 }
 
-inline bool
-operator !=(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
+inline 
+bool operator!=(const StrBlobPtr &lhs, const StrBlobPtr &rhs)
 {
-    return !(lhs == rhs);
+	return !(lhs == rhs);
+}
+
+inline 
+bool operator<(const StrBlobPtr &lhs, const StrBlobPtr &rhs)
+{
+	//only valid StrBlobPtrs which point to the same element are compatible
+	if (lhs.valid() && rhs.valid() && lhs.wptr.lock() == rhs.wptr.lock())
+		return lhs.curr < rhs.curr;
+	else
+		throw std::logic_error("StrBlobPtr incompatible");
+}
+
+inline 
+bool operator>(const StrBlobPtr &lhs, const StrBlobPtr &rhs)
+{
+	//only valid StrBlobPtrs which point to the same element are compatible
+	if (lhs.valid() && rhs.valid() && lhs.wptr.lock() == rhs.wptr.lock())
+		return lhs.curr > rhs.curr;
+	else
+		throw std::logic_error("StrBlobPtr incompatible");
 }
 
 
@@ -227,6 +250,15 @@ StrBlobPtr::check(std::size_t i, const std::string &msg) const
     if (i >= ret->size()) 
         throw std::out_of_range(msg);
     return ret; // otherwise, return a shared_ptr to the vector
+}
+
+inline
+bool StrBlobPtr::valid()const
+{
+	auto ret = wptr.lock();
+	if (ret&&curr <= ret->size())
+		return true;
+	return false;
 }
 
 //! prefix: return a reference to the incremented object
@@ -264,23 +296,5 @@ StrBlob::end()
     return ret; 
 }
 
-//! named equality operators for StrBlobPtr
-inline
-bool eq(const StrBlobPtr &lhs, const StrBlobPtr &rhs)
-{
-	auto l = lhs.wptr.lock(), r = rhs.wptr.lock();
-	// if the underlying vector is the same 
-	if (l == r) 
-		// then they're equal if they're both null or 
-		// if they point to the same element
-		return (!r || lhs.curr == rhs.curr);
-	else
-		return false; // if they point to difference vectors, they're not equal
-}
 
-inline
-bool neq(const StrBlobPtr &lhs, const StrBlobPtr &rhs)
-{
-	return !eq(lhs, rhs); 
-}
 #endif

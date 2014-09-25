@@ -53,7 +53,7 @@ private:
     std::string* first_free;    //  pointer to the first free element
     std::string* cap;           //  pointer to one past the end
 
-    std::allocator<std::string> alloc;
+    static std::allocator<std::string> alloc;
 
     //! utilities for Big 3/5
     void reallocate();

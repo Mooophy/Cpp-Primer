@@ -33,10 +33,13 @@ int main()
      */
     Quote& r = q;
     r.debug();
+	std::cout << "\n";
     r = bq;
     r.debug();
+	std::cout << "\n";
     r = lq;
     r.debug();
+	std::cout << "\n";
 
 
     std::cout << "====================\n";
@@ -54,9 +57,11 @@ int main()
      *
      */
     print_debug(q);
+	std::cout << "\n";
     print_debug(lq);
+	std::cout << "\n";
     print_debug(bq);
-
+	std::cout << "\n";
 
     return 0;
 }
