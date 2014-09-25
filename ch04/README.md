@@ -10,6 +10,7 @@ indicate the order in which the operands are grouped:
 * vec.begin() //=> *(vec.begin())
 * vec.begin() + 1 //=> (*(vec.begin())) + 1
 ```
+
 ##Exercise 4.3
 >Order of evaluation for most of the binary operators is left
 undefined to give the compiler opportunities for optimization.

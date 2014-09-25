@@ -337,4 +337,5 @@ You can use data/book.txt as the records.
 compile and execute the bookstore program presented in this section.
 
 It is the same as Exercise 1.22.
+
 ![run](https://db.tt/C6OOPuzA)

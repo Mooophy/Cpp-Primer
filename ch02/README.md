@@ -550,7 +550,7 @@ decltype(r) d = i;
 
 More? Look at [here](http://stackoverflow.com/questions/21369113/what-is-the-difference-between-auto-and-decltypeauto-when-returning-from-a-fun) and [here](http://stackoverflow.com/questions/12084040/decltype-vs-auto)
 
-##Exercise2.39
+##Exercise 2.39
 >Compile the following program to see what happens when
 you forget the semicolon after a class definition. Remember the message for
 future reference.
@@ -564,7 +564,7 @@ return 0;
 
 Error message: [Error] expected ';' after struct definition
 
-##Exercise2.40
+##Exercise 2.40
 >Write your own version of the Sales_data class.
 
 just added some your own define. like this:
@@ -581,7 +581,7 @@ struct Sale_data
 }
 ```
 
-##Exercise2.41
+##Exercise 2.41
 >Use your Sales_data class to rewrite the exercises in §
 1.5.1(p. 22), § 1.5.2(p. 24), and § 1.6(p. 25). For now, you should define
 your Sales_data class in the same file as your main function.
@@ -717,7 +717,7 @@ int main()
 }
 ```
 
-##Exercise2.42
+##Exercise 2.42
 >Write your own version of the Sales_data.h header and
 use it to rewrite the exercise from § 2.6.2(p. 76)
 
