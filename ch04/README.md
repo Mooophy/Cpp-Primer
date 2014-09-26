@@ -221,3 +221,25 @@ finalgrade = ((grade > 90) ? "high pass" : (grade < 60)) ? "fail" : "pass";
 ```
 if `grade > 90`, first conditional operator's result is `high pass`. so the finalgrade is always fail.
 It's contradictory obviously.
+
+##Exercise 4.25
+>What is the value of ~'q' << 6 on a machine with 32-bit ints and 8 bit chars, that uses Latin-1 character set in which 'q' has the bit pattern 01110001?
+
+the value is `-7296.`
+
+~01110001 == 10001110(142), But `char` is -128~127, so it would be overflow. the result is `-114`, then, -114 << 6 == -114 * 2^6 = `-7296`.
+
+##Exercise 4.26
+>In our grading example in this section, what would happen if we used unsigned int as the type for quiz1?
+
+no different in most situation. `unsigned int` have the same size as `unsigned long` on most machine. But the second one could make sure that it have **at least 32 bits** on any machine.
+
+##Exercise 4.27
+>What is the result of each of these expressions? 
+```cpp
+unsigned long ul1 = 3, ul2 = 7; 
+ul1 & ul2 // == 3
+ul1 | ul2 // == 7
+ul1 && ul2 // == true
+ul1 || ul2 // == ture
+```
