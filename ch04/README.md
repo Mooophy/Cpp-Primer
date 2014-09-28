@@ -269,3 +269,62 @@ sizeof f()        // compile error
 
 -----
 reference: [sizeof operator](http://en.cppreference.com/w/cpp/language/sizeof)
+
+##Exercise 4.31
+>The program in this section used the prefix increment and decrement operators. Explain why we used prefix and not postfix. What changes would have to be made to use the postfix versions? Rewrite the program using postfix operators.
+
+postfix will copy itself as return, then increment or decrement. prefix will increment or decrement first, and return itself. so prefix is more effective in this program.(reduce one copy space.)
+
+##Exercise 4.32:
+>Explain the following loop.
+```cpp
+constexpr int size = 5;
+int ia[size] = {1,2,3,4,5}; 
+for (int *ptr = ia, ix = 0;
+    ix != size && ptr != ia+size; 
+    ++ix, ++ptr) { /* ... */ }
+```
+
+`ptr` and `ix` have the same function. The former use a pointer, and the latter use the index of array. we use the loop to through the array.(just choose one from `ptr` and `ix`)
+
+##Exercise 4.33
+>Using Table 4.12 (p. 166) explain what the following expression does:
+```cpp
+someValue ? ++x, ++y : --x, --y
+```
+
+Because of the most lowest precedence of the comma operator, the expression is same as: 
+```cpp
+(someValue ? ++x, ++y : --x), --y
+```
+If someValue is true, the result is `y`, and else if someValue is false, the result is `--y`. so it is also same as:
+```cpp
+someValue ? y : --y;
+```
+Oops... It's not `x`'s business.
+
+##Exercise 4.34: 
+>Given the variable definitions in this section, explain what conversions take place in the following expressions:
+(a) if (fval)
+(b) dval = fval + ival; 
+(c) dval + ival * cval;
+Remember that you may need to consider the associativity of the operators.
+
+```cpp
+if (fval) // fval converted to bool
+dval = fval + ival; // ival converted to fval, then the result of fval add ival converted to double.
+dval + ival * cval; // cval converted to int, then that int and ival converted to double.
+```
+
+##Exercise 4.35:
+>Given the following definitions,
+```cpp
+char cval; int ival; unsigned int ui; float fval; double dval;
+```
+identify the implicit type conversions, if any, taking place:
+```cpp
+cval = 'a' + 3; // 'a' promoted to int, then the result of ('a' + 3)(int) converted to char.
+fval = ui - ival * 1.0; // ival promoted to double, ui also promoted to double. then that double converted to float.
+dval = ui * fval; // ui promoted to float. then that float converted to double.
+cval = ival + fval + dval;  // ival converted to float, then that float and fval converted to double. At last, that double converted to char(by truncation).
+```
