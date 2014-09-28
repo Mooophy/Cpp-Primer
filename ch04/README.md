@@ -275,7 +275,7 @@ reference: [sizeof operator](http://en.cppreference.com/w/cpp/language/sizeof)
 
 postfix will copy itself as return, then increment or decrement. prefix will increment or decrement first, and return itself. so prefix is more effective in this program.(reduce one copy space.)
 
-##Exercise 4.32:
+##Exercise 4.32
 >Explain the following loop.
 ```cpp
 constexpr int size = 5;
@@ -303,7 +303,7 @@ someValue ? y : --y;
 ```
 Oops... It's not `x`'s business.
 
-##Exercise 4.34: 
+##Exercise 4.34
 >Given the variable definitions in this section, explain what conversions take place in the following expressions:
 (a) if (fval)
 (b) dval = fval + ival; 
@@ -316,7 +316,7 @@ dval = fval + ival; // ival converted to fval, then the result of fval add ival 
 dval + ival * cval; // cval converted to int, then that int and ival converted to double.
 ```
 
-##Exercise 4.35:
+##Exercise 4.35
 >Given the following definitions,
 ```cpp
 char cval; int ival; unsigned int ui; float fval; double dval;
@@ -328,3 +328,28 @@ fval = ui - ival * 1.0; // ival promoted to double, ui also promoted to double. 
 dval = ui * fval; // ui promoted to float. then that float converted to double.
 cval = ival + fval + dval;  // ival converted to float, then that float and fval converted to double. At last, that double converted to char(by truncation).
 ```
+
+##Exercise 4.36
+>Assuming i is an int and d is a double write the expression i *= d so that it does integral, rather than floating-point, multiplication.
+
+```cpp
+i *= static_cast<int>(d);
+```
+
+##Exercise 4.37
+>Rewrite each of the following old-style casts to use a named cast:
+```cpp
+int i; double d; const string *ps; char *pc; void *pv;
+pv = (void*)ps; // pv = const_cast<string*>(ps); or pv = static_cast<void*>(const_cast<string*>(ps));
+i = int(*pc);   // i = static_cast<int>(*pc);
+pv = &d;        // pv = static_cast<void*>(&d);
+pc = (char*)pv; // pc = reinterpret_cast<char*>(pv); 
+```
+
+##Exercise 4.38
+>Explain the following expression:
+```cpp
+double slope = static_cast<double>(j/i);
+```
+
+j/i is an int(by truncation), then converted to double and assigned to slope.
