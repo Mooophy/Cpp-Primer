@@ -243,3 +243,29 @@ ul1 | ul2 // == 7
 ul1 && ul2 // == true
 ul1 || ul2 // == ture
 ```
+
+##[Exercise 4.28](ex4_28.cpp)
+##Exercise 4.29
+>Predict the output of the following code and explain your reasoning. Now run the program. Is the output what you expected? If not, figure out why.
+```cpp
+int x[10];   int *p = x; 
+cout << sizeof(x)/sizeof(*x) << endl; 
+cout << sizeof(p)/sizeof(*p) << endl;
+```
+
+The first result is 10. It returns the number of elements in x. But the second result depends on your machine. It would be 2 on the 64-bit machine and 1 on the 32-bit machine. Because of the size of pointer is different on various machines.
+
+-----
+reference: [Why the size of a pointer is 4bytes in C++](http://stackoverflow.com/a/2428809)
+
+##Exercise 4.30
+>Using Table 4.12 (p. 166), parenthesize the following expressions to match the default evaluation: 
+```cpp
+sizeof x + y      // sizeof(x+y)
+sizeof p->mem[i]  // sizeof(p->mem[i])
+sizeof a < b      // sizeof(a) < b
+sizeof f()        // compile error
+```
+
+-----
+reference: [sizeof operator](http://en.cppreference.com/w/cpp/language/sizeof)
