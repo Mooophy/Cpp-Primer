@@ -1,4 +1,5 @@
-#include <iostream>
+//solution to exercise 10.25
+#include<iostream>
 #include <functional>
 #include <algorithm>
 
