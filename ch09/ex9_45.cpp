@@ -1,4 +1,5 @@
-//! @Alan
+//! @author @TungWah @Alan
+//! @date   4 Oct,2014.
 //!
 //! Exercise 9.45:
 //! Write a funtion that takes a string representing a name and two other
@@ -12,21 +13,25 @@
 #include <string>
 
 //! Exercise 9.45
-void 
+std::string
 pre_suffix(const std::string &name, const std::string &pre, const std::string &su);
 
 int main()
 {
-	std::string name("alan");
-	std::cout << pre_suffix(name, "Mr.", "Jr.");
+    std::string name("alan");
+    std::cout << pre_suffix(name, "Mr.", "Jr.");
 
     return 0;
 }
 
 
-void 
-pre_suffix(std::string &name, const std::string &pre, const std::string &su)
+inline std::string
+pre_suffix(const std::string &name, const std::string &pre, const std::string &su)
 {
-	name.insert(name.begin(), pre.begin(), pre.end());
-	name.append(su);
+    auto ret = name;
+    ret.insert(ret.begin(), pre.begin(), pre.end());
+    ret.append(su);
+
+    return ret;
 }
+
