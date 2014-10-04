@@ -1,35 +1,45 @@
-//! @Alan
-//!
-//! Exercise 9.45:
-//! Write a funtion that takes a string representing a name and two other
-//! strings representing a prefix, such as “Mr.” or “Ms.” and a suffix,
-//! such as “Jr.” or “III”. Using iterators and the insert and append functions,
-//! generate and return a new string with the suffix and prefix added to the
-//! given name.
-//!
+#include<iterator>
+using std::back_inserter;
+
+#include<utility>
+using std::move;
+
+#include<algorithm>
+using std::copy;
 
 #include <iostream>
+using std::cout; using std::endl;
+
 #include <string>
+using std::string;
 
 //! Exercise 9.45
-std::string
-pre_suffix(const std::string &name, const std::string &pre, const std::string &su);
+string::iterator
+pre_suffix(string &s,
+string::iterator p_beg, string::iterator p_end,
+string::iterator s_beg, string::iterator s_end)
+{
+	string str(move(s));
+	s.clear();
+	move(p_beg, p_end, back_inserter(s));
+	s += " ";
+	move(str.begin(), str.end(), back_inserter(s));
+	s += " ";
+	move(s_beg, s_end, back_inserter(s));
+	return s.begin();
+}
+
 
 int main()
 {
-    std::cout << pre_suffix("alan", "Mr.", "Jr.");
-
+	string s("alan"),pre("Mr."),su("Jr.");
+	pre_suffix(s, pre.begin(), pre.end(), su.begin(), su.end());
+	cout << s << endl;
+	
     return 0;
 }
 
 
-std::string
-pre_suffix(const std::string &name, const std::string &pre, const std::string &su)
-{
-    std::string result(pre);
-    result += " ";
-    result += name;
-    result += " ";
-    result += su;
-    return result;
-}
+
+
+	
