@@ -48,3 +48,21 @@ int main()
 
 This rewrite diminishes the readability of the code. The comma operator always guarantees the order and discards the front result.
 But there are no meaning in this example, however, also are incomprehensible.
+
+##Exercise 5.4
+>Explain each of the following examples, and correct anyproblems you detect.
+- (a) while (string::iterator iter != s.end()) { /* . . . */ } 
+- (b) while (bool status = find(word)) { /* . . . */ }
+if (!status) { /* . . . */ }
+
+(a) iter point at nothing. invalid.
+```cpp
+std::string::iterator iter = s.begin();
+    while (iter != s.end()) { /* . . . */ }
+```
+
+(b) The if statement is not in the while's block. so the `status` is invalid. And if status is true, go through the `while` block forever, else go through the `if` block.
+```cpp
+if (!find(word)) { /* . . . */ }
+else while (true) { /* . . . */ }
+```
