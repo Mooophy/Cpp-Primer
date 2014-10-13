@@ -16,15 +16,11 @@
 #include <iostream>
 #include <string>
 
-/** @note
- *  1   any array is essentially a pointer, so the &ref here is a reference to pointer.
- *  2   size must be captured here to manage the loop.
- */
-template<typename T, unsigned size>
-void print(const T(&ref)[size])
+template<typename Arr>
+void print(const Arr& a)
 {
-    for (unsigned i = 0; i != size; ++i)
-        std::cout << ref[i] << std::endl;
+    for(const auto& elem : a)
+        std::cout << elem << std::endl;
 }
 
 int main()
