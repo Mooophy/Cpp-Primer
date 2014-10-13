@@ -100,7 +100,7 @@ else while (true) { /* . . . */ }
     ival = get_value();
 ```
 
-Exercise 5.8
+##Exercise 5.8
 >What is a “dangling else”? How are else clauses resolved in C++?
 
 Colloquial term used to refer to the problem of how to process nested if statements in which there are more ifs than elses. In C++, an else is always paired with the closest preceding unmatched if.
