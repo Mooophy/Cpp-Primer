@@ -2,6 +2,7 @@
  *  @file       main.cpp
  *  @author     Alan.W
  *  @date       02  Feb 2014
+ *              13  Oct 2014
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
@@ -13,34 +14,24 @@
 //!
 
 #include <iostream>
-#include <vector>
-#include <list>
 #include <string>
 
-/** @note
- *  1   any array is essentially a pointer, so the &ref here is a reference to pointer.
- *  2   size must be captured here to manage the loop.
- */
-template<typename T, unsigned size>
-void print(const T(&ref)[size])
+template<typename Arr>
+void print(const Arr& a)
 {
-    if (ref)
-    {
-        auto p = ref;
-        for (unsigned i = 0; i != size; ++i)
-            std::cout << *p++ << std::endl;
-    }
+    for(const auto& elem : a)
+        std::cout << elem << std::endl;
 }
 
 int main()
 {
     std::string p[] = {"ssss","aaa","ssssss"};
     char c[] = {'a','b','c','d'};
-    int  i[] = {1,2,3,4,5};
+    int  i[] = {1};
     print(i);
     print(c);
     print(p);
 
+    std::cout << "\nexit normally\n";
     return 0;
 }
-
