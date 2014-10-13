@@ -66,3 +66,41 @@ std::string::iterator iter = s.begin();
 if (!find(word)) { /* . . . */ }
 else while (true) { /* . . . */ }
 ```
+
+##[Exercise 5.5](ex5_5.cpp)
+##[Exercise 5.6](ex5_6.cpp)
+##Exercise 5.7
+>Correct the errors in each of the following code fragments:
+```cpp
+(a) if (ival1 != ival2) ival1 = ival2
+    else ival1 = ival2 = 0;
+(b) if (ival < minval) minval = ival;
+    occurs = 1;
+(c) if (int ival = get_value())
+    cout << "ival = " << ival << endl;
+    if (!ival)
+    cout << "ival = 0\n";
+(d) if (ival = 0)
+    ival = get_value();
+```
+
+```cpp
+(a) if (ival1 != ival2) ival1 = ival2; // lost semicolon.
+    else ival1 = ival2 = 0;
+(b) if (ival < minval)
+    {
+        minval = ival;
+        occurs = 1;
+    }
+(c) if (int ival = get_value())
+        cout << "ival = " << ival << endl;
+    else if (!ival)
+        cout << "ival = 0\n";
+(d) if (ival == 0)
+    ival = get_value();
+```
+
+Exercise 5.8
+>What is a “dangling else”? How are else clauses resolved in C++?
+
+Colloquial term used to refer to the problem of how to process nested if statements in which there are more ifs than elses. In C++, an else is always paired with the closest preceding unmatched if.
