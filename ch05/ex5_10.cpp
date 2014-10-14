@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using std::cin; using std::cout; using std::endl;
 
 int main(void)
 {
@@ -19,10 +19,10 @@ int main(void)
 		else if (c == 'u' || c == 'U')
 			++uCnt;
 	}
-	cout << "Num of vowel a :  " << aCnt << endl;
-	cout << "Num of vowel e :  " << eCnt << endl;
-	cout << "Num of vowel i :  " << iCnt << endl;
-	cout << "Num of vowel o :  " << oCnt << endl;
-	cout << "Num of vowel u :  " << uCnt << endl;
+	cout << "Num of vowel a(A) :  " << aCnt << endl;
+	cout << "Num of vowel e(E) :  " << eCnt << endl;
+	cout << "Num of vowel i(I) :  " << iCnt << endl;
+	cout << "Num of vowel o(O) :  " << oCnt << endl;
+	cout << "Num of vowel u(U) :  " << uCnt << endl;
 	return 0;
 }
