@@ -13,8 +13,9 @@ int main()
         else if (count > max_duplicated.second) max_duplicated = {prestr, count};
         count = 0;
     }
-
-    cout << "the word " << max_duplicated.first << " occurred " << max_duplicated.second+1 << " times. " << endl;
+    
+    if (max_duplicated.first.empty()) cout << "There's no duplicated string." << endl;
+    else cout << "the word " << max_duplicated.first << " occurred " << max_duplicated.second+1 << " times. " << endl;
     
     return 0;
 } 
