@@ -204,3 +204,54 @@ Colloquial term used to refer to the problem of how to process nested if stateme
 ```
 
 ##[Exercise 5.14](ex5_14.cpp)
+
+##Exercise 5.15
+>Explain each of the following loops. Correct any problems you detect.
+```cpp
+(a) for (int ix = 0; ix != sz; ++ix) { /* ... */ } 
+    if (ix != sz)
+    // . . .
+(b) int ix; 
+    for (ix != sz; ++ix) { /* ... */ }
+(c) for (int ix = 0; ix != sz; ++ix, ++sz) { /*...*/ }
+```
+
+```cpp
+(a) int ix;
+    for (ix = 0; ix != sz; ++ix)  { /* ... */ } 
+    if (ix != sz)
+    // . . .
+(b) int ix;
+    for (; ix != sz; ++ix) { /* ... */ }
+(c) for (int ix = 0; ix != sz; ++ix) { /*...*/ }
+```
+
+##Exercise 5.16
+>The while loop is particularly good at executing while some condition holds; for example, when we need to read values until end-of-file. The for loop is generally thought of as a **step loop**: An index steps through a range of values in a collection. Write an idiomatic use of each loop and then rewrite each using the other loop construct. If you could use only one loop, which would you choose? Why?
+
+```cpp
+// while idiomatic
+int i;
+while ( cin >> i )
+    // ...
+    
+// same as for
+for (int i = 0; cin >> i;)
+    // ...
+    
+// for idiomatic
+for (int i = 0; i != size; ++i)
+    // ...
+    
+// same as while
+int i = 0;
+while (i != size)
+{
+    // ...
+    ++i;
+}
+```
+
+I prefer `for` to `while` in such cases, because it's terse. More importantly, object i won't pollute the external scope after it goes out of the loop. It's a little bit easier to add new code into the external scope, since it reduces the possibility of naming conflicts .That is, a higher maintainability. Of course, this way makes the code a bit harder to read. ([@Mooophy](https://github.com/Mooophy))
+
+##[Exercise 5.17](ex5_17.cpp)
