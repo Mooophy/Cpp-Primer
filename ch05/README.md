@@ -255,3 +255,24 @@ while (i != size)
 I prefer `for` to `while` in such cases, because it's terse. More importantly, object i won't pollute the external scope after it goes out of the loop. It's a little bit easier to add new code into the external scope, since it reduces the possibility of naming conflicts .That is, a higher maintainability. Of course, this way makes the code a bit harder to read. ([@Mooophy](https://github.com/Mooophy))
 
 ##[Exercise 5.17](ex5_17.cpp)
+
+##Exercise 5.18
+>Explain each of the following loops. Correct any problems you detect.
+```cpp
+(a) do { // added bracket.
+        int v1, v2;    
+        cout << "Please enter two numbers to sum:" ;    
+        if (cin >> v1 >> v2)        
+            cout << "Sum is: " << v1 + v2 << endl;
+    }while (cin); 
+(b) int ival;
+    do {    
+        // . . . 
+    } while (ival = get_response()); // should not declared in this scope.
+(c) int ival = get_response();
+    do {    
+        ival = get_response();
+    } while (ival); // ival is not declared in this scope.
+```
+
+##[Exercise 5.19](ex5_19.cpp)
