@@ -7,7 +7,8 @@ int main()
 {
     string read, tmp;
     while (cin >> read)
-        if (read == tmp) break;
+        if (!isupper(read[0])) continue;
+        else if (read == tmp) break;
         else tmp = read;
     
     if (cin.eof()) cout << "no word was repeated." << endl;
