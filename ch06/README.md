@@ -105,4 +105,5 @@ size_t generate()
 ```
 
 ## [Exercise 6.8](Chapter6.h)
-## Exercise 6.9 [fact.cc] | [factMain.cc]
+## Exercise 6.9 [fact.cc](fact.cc) | [factMain.cc](factMain.cc)
+## [Exercise 6.10](ex6_10.cpp)
