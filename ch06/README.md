@@ -107,3 +107,39 @@ size_t generate()
 ## [Exercise 6.8](Chapter6.h)
 ## Exercise 6.9 [fact.cc](fact.cc) | [factMain.cc](factMain.cc)
 ## [Exercise 6.10](ex6_10.cpp)
+## [Exercise 6.11](ex6_11.cpp)
+## [Exercise 6.12](ex6_12.cpp)
+## Exercise 6.13
+
+`void f(T)` pass the argument by value. **nothing the function does to the parameter can affect the argument**.
+`void f(T&)` pass a reference, will be **bound to** whatever T object we pass.
+
+## Exercise 6.14
+
+a parameter should be a reference type:
+```cpp
+void reset(int &i)
+{
+        i = 0;
+}
+```
+
+a parameter should not be a reference:
+```cpp
+void print(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+        for (std::vector<int>::iterator iter = begin; iter != end; ++iter)
+                std::cout << *iter << std::endl;
+}
+```
+
+## Exercise 6.15
+
+>why is `s` a reference to const but `occurs` is a plain reference?
+cause the `s` should not be changed by this function. but `occurs`'s result must be calculated by the function.
+
+>Why are these parameters references, but the char parameter `c` is not? 
+casue `c` maybe a temp varable. such as `find_char(s, 'a', occurs)`
+
+>What would happen if we made `s` a plain reference? What if we made `occurs` a reference to const?
+`s` could be changed in the function, and `occurs` whould not be changed. so `occurs = 0;` is an error.
