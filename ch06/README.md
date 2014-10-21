@@ -153,3 +153,30 @@ bool is_empty(const string& s) { return s.empty(); }
 ```
 
 ## [Exercise 6.17](ex6_17.cpp)
+
+not the same. one should be changed, one is not need.
+
+## Exercise 6.18
+(a)
+```cpp
+bool compare(matrix &m1, matrix &m2){ /.../ }
+```
+(b)
+```cpp
+vector<int>::iterator change_val(int, vector<int>::iterator) { /.../ }
+```
+
+## Exercise 6.19
+
+(a) illegal, only one parameter.
+(b) legal.
+(c) legal.
+(d) legal.
+
+## Exercise 6.20
+
+If we can use `const`, just use it. If we make a parameter a plain reference when it could be a reference to `const`,
+the reference value maybe changed.
+
+## [Exercise 6.21](ex6_21.cpp)
+## [Exercise 6.22](ex6_22.cpp)
