@@ -152,9 +152,16 @@ casue `c` maybe a temp varable. such as `find_char(s, 'a', occurs)`
 bool is_empty(const string& s) { return s.empty(); }
 ```
 
+Since this function doesn't change the argument,"const" shoud be added
+before string&s,otherwise this function is misleading and can't be used
+with const string or in a const function.
+
 ## [Exercise 6.17](ex6_17.cpp)
 
-not the same. one should be changed, one is not need.
+Not the same.
+For the first one "const" was used, since no change need to do for the argument.
+For the second function,"const" can't be used,because the content of the agument
+should be changed.
 
 ## Exercise 6.18
 (a)
@@ -180,3 +187,8 @@ the reference value maybe changed.
 
 ## [Exercise 6.21](ex6_21.cpp)
 ## [Exercise 6.22](ex6_22.cpp)
+## [Exercise 6.23](ex6.23.cpp)
+
+## Exercise 6.24
+
+no problem.
