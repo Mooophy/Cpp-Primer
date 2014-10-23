@@ -13,7 +13,9 @@
 //! Exercise 13.48:
 //! Define a vector<String> and call push_back several times on that vector.
 //! Run your program and see how often Strings are copied.
-//  times = 2i;///////error
+//  Since no "move" members implemented, anytime when size() is equal to capacity(),
+//  std::vector<T> performs reallocation by calling String's copy constructor.
+//  In a word, it depends on the state of std::vector<String>.
 //!
 #include "string.h"
 #include <vector>
