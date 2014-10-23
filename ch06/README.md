@@ -191,4 +191,15 @@ the reference value maybe changed.
 
 ## Exercise 6.24
 
-no problem.
+see http://stackoverflow.com/questions/26530659/confused-about-array-parameters
+
+## [Exercise 6.25 && Exercise 6.26](ex6_25_26.cpp)
+## [Exercise 6.27](ex6_27.cpp)
+
+## Exercise 6.28
+
+The type of `elem` in the `for` loop is `std::string`.
+
+## Exercise 6.29
+
+We should use `const reference` as the loop control variable. because the elements in an `initializer_list` are always const values, so we cannot change the value of an element in an `initializer_list`.
