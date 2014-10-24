@@ -656,107 +656,63 @@ int main()
 ####1.6
 
 **so ugly as you see.**
-**Mines are ugly too. However, this is a good start!**
-Item_data.h
 ```cpp
-#ifndef ITEM_DATA_H
-#define ITEM_DATA_H
-#include <string>
 #include <iostream>
+#include <string>
 
-using namespace std;
-
-struct Book_data
+struct Sale_data
 {
-	string book_no;
-	unsigned sale_num;
-	float price;
-	double revenue;
-
-  // Get input data from CLI
-	int GetData()
-	{
-		cout << "Book No.: " << endl;
-		cin >> book_no;
-		cout << "sale num.: " << endl;
-		cin >> sale_num;
-		cout << "Book price.: " << endl;
-		cin >> price;
-		cout << "--------------------------------------------------------------" << endl;
-		revenue = price * sale_num;
-
-		if (book_no != "")
-		{
-			return 1;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-
-  // Show book sale data to CLI.
-	int Show_data()
-	{
-		cout << "Book No.\tSold Number\tTotal\tAve. Price" << endl;
-		cout << book_no << "\t\t" << sale_num << "\t\t" <<
-			revenue << "\t" << revenue / sale_num << endl;
-		cout << "================================================================" << endl;
-
-		return 1;
-	}
-
-  // Set values to members of Book_data object
-	int Set_data(Book_data src)
-	{
-		if (src.book_no != "")
-		{
-			book_no = src.book_no;
-			price = src.price;
-			sale_num = src.sale_num;
-			revenue = src.revenue;
-
-			return 1;
-		}
-		else
-		{
-			return 0;
-		}
-	}
+  std::string bookNo;
+  unsigned units_sold = 0;
+  double revenue = 0.0;
 };
-#endif
-```
-Item_data.cpp
 
-```cpp
-#include "Item_data.h"
-
-Book_data trans, total;
-
-int Main()
+int main()
 {
-  // Get the first data from input
-	total.GetData();
-	
-  // Get the following data from input
-	while (trans.GetData())
-	{
-	  // If the following data is same book with the previous one, then calculate the revenue and aver. price
-		if (trans.book_no == total.book_no)
-		{
-			total.revenue += trans.revenue;
-			total.sale_num += trans.sale_num;
-		}
-		// If not the same book, show the sum and aver. result of last book
-		// and assign the different new book info to total object
-		else
-		{
-			total.Show_data();
-			total.Set_data(trans);
-		}
-	}
-	
-	return 0;
+  Sale_data total;
+  double totalPrice;
+  if (std::cin >> total.bookNo >> total.units_sold >> totalPrice)
+  {
+    total.revenue = total.units_sold * totalPrice;
+
+    Sale_data trans;
+    double transPrice;
+    while (std::cin >> trans.bookNo >> trans.units_sold >> transPrice)
+    {
+      trans.revenue = trans.units_sold * transPrice;
+
+      if (total.bookNo == trans.bookNo)
+      {
+        total.units_sold += trans.units_sold;
+        total.revenue += trans.revenue;
+      }
+      else
+      {
+        std::cout << total.bookNo << " " << total.units_sold << " " << total.revenue << " ";
+        if (total.units_sold != 0)
+          std::cout << total.revenue/total.units_sold << std::endl;
+        else
+          std::cout << "(no sales)" << std::endl;
+
+        total.bookNo = trans.bookNo;
+        total.units_sold = trans.units_sold;
+        total.revenue = trans.revenue;
+      }
+    }
+
+    std::cout << total.bookNo << " " << total.units_sold << " " << total.revenue << " ";
+    if (total.units_sold != 0)
+      std::cout << total.revenue/total.units_sold << std::endl;
+    else
+      std::cout << "(no sales)" << std::endl;
+
+    return 0;
+  }
+  else
+  {
+    std::cerr << "No data?!" << std::endl;
+    return -1;  // indicate failure
+  }
 }
 ```
 
