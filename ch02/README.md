@@ -656,7 +656,6 @@ int main()
 ####1.6
 
 **so ugly as you see.**
-
 ```cpp
 #include <iostream>
 #include <string>
@@ -716,6 +715,7 @@ int main()
   }
 }
 ```
+
 
 ##Exercise 2.42
 >Write your own version of the Sales_data.h header and
