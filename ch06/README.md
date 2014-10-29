@@ -214,3 +214,27 @@ The type of `elem` in the `for` loop is `std::string`.
 ## Exercise 6.29
 
 We should use `const reference` as the loop control variable. because the elements in an `initializer_list` are always const values, so we cannot change the value of an element in an `initializer_list`.
+
+## Exercise 6.30
+
+Error (Clang):
+>Non-void function 'str_subrange' should return a value. // error #1
+
+>Control may reach end of non-void function. // error #2
+
+## Exercise 6.31
+
+when you can find the preexited object that the reference refered.
+
+## Exercise 6.32
+
+legal, it gave the values (0 ~ 9) to array `ia`.
+
+##[Exercise 6.33](ex6_33.cpp)
+## Exercise 6.34
+
+nothing would happen. the function would be stoped when val is `2`.
+
+## Exercise 6.35
+
+the recursive function will always use `val` as the parameter. *a recursion loop* would happen.
