@@ -266,3 +266,28 @@ decltype(arrStr)& arrPtr(int i)
           return (i % 2) ? odd : even;
 }
 ```
+
+## Exercise 6.39
+
+(a) illegal
+
+(b) illegal
+
+(c) legal
+
+## Exercise 6.40
+
+(a) no error
+
+(b) Missing default argument on parameter 'wd', 'bckgrnd'.
+
+## Exercise 6.41
+
+(a) illegal. No matching function for call to 'init'.
+
+(b) legal, and match.
+
+(c) legal, but not match. `wd` whould be setting to '*'.
+
+## [Exercise 6.42](ex6_42.cpp)
+
