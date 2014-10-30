@@ -238,3 +238,29 @@ nothing would happen. the function would be stoped when val is `2`.
 ## Exercise 6.35
 
 the recursive function will always use `val` as the parameter. *a recursion loop* would happen.
+
+## Exercise 6.36
+
+```cpp
+string (&func(string (&arrStr)[10]))[10]
+```
+
+## Exercise 6.37
+
+```cpp
+using ArrT = string[10];
+ArrT& func1(ArrT& arr);
+
+auto func2(ArrT& arr) -> string(&)[10];
+
+string arrS[10];
+decltype(arrS)& func3(ArrT& arr);
+```
+
+I pefer the first one. because it is more simpler to me.
+
+## Exercise 6.38
+decltype(arrStr)& arrPtr(int i)
+{
+          return (i % 2) ? odd : even;
+}
