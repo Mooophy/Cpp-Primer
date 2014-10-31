@@ -12,7 +12,7 @@ int main()
 	if (str == prestr) { ++count;}
 	else count = 1;
 
-	if (count > max_duplicated.second + 1) {
+	if (count > max_duplicated.second && count >= 2) {
 		max_duplicated = { prestr, count };
 	}
     }
