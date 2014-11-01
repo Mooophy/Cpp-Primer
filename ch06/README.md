@@ -290,4 +290,21 @@ decltype(arrStr)& arrPtr(int i)
 (c) legal, but not match. `wd` whould be setting to '*'.
 
 ## [Exercise 6.42](ex6_42.cpp)
+## Exercise 6.43
 
+Both two should put in a header. (a) is an inline function. (b) is the declaration of useful function. we always put them in the header.
+
+## [Exercise 6.44](ex6_44.cpp)
+## Exercise 6.45
+
+For example, the function `arrPtr` in [Exercise 6.38](#exercise-638) and `make_plural` in [Exercise 6.42](#exercise-642) should be defined as `inline`. But the function `func` in [Exercise 6.4](#exercise-64) shouldn't. Cause it just being call once and too many codes in the function.
+
+## Exercise 6.46
+
+Yes.
+```cpp
+constexpr bool isShorter(const string& str1, const string& str2)
+{
+    return str1.size() < str2.size();
+}
+```
