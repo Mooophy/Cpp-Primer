@@ -47,7 +47,7 @@ bool is_equal2(const std::vector<int> &v, const std::list<int> &l)
         std::list<int>::const_iterator lit = l.begin();
         while(vit != v.end())
         {
-            if(*vit != *lit)
+            if(*vit++ != *lit++)
             {
                 result = false;
                 break;
