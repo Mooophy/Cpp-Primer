@@ -330,8 +330,32 @@ and each argument type can be converted to the corresponding parameter type.
 ## Exercise 6.50
 
 (a) illegal. 2.56 match the `double`, but 42 match the `int`.
-(b) match `void f(int)`
-(c) match `void f(int, int)`
-(d) match `void f(double, double = 3.14)`
+
+(b) match `void f(int)`.
+
+(c) match `void f(int, int)`.
+
+(d) match `void f(double, double = 3.14)`.
 
 ## [Exercise 6.51](ex6_51.cpp)
+## Exercise 6.52
+
+(a) >Match through a promotion
+
+(b) >An exact match
+
+## Exercise 6.53
+
+(a)
+```cpp
+int calc(int&, int&); // calls lookup(int&)
+int calc(const int&, const int&); // calls lookup(const int&)
+```
+(b)
+```cpp
+int calc(char*, char*); // calls lookup(char*)
+int calc(const char*, const char*); calls lookup(const char *)
+```
+(c) illegal. both calls lookup(char*)
+
+## [Exercise 6.54 ~ 6.56](ex6_54_55_56_functionPointer.cpp)
