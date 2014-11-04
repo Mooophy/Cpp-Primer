@@ -308,3 +308,30 @@ constexpr bool isShorter(const string& str1, const string& str2)
     return str1.size() < str2.size();
 }
 ```
+
+## [Exercise 6.47](ex6_47.cpp)
+## Exercise 6.48
+
+This loop let user input a word all the way until the word is sought.
+
+It isn't a good use of assert. because if user begin to input a word, the `cin` would be always have content. so the `assert` would be always `true`. It is meaningless. using `assert(s == sought)` is more better.
+
+## Exercise 6.49
+
+candidate function: 
+>Set of functions that are considered when resolving a function call. (all the functions
+with the name used in the call for which a declaration is in scope at the time of the call.)
+
+viable function: 
+>Subset of the candidate functions that could match a given call. 
+>It have the same number of parameters as arguments to the call,
+and each argument type can be converted to the corresponding parameter type.
+
+## Exercise 6.50
+
+(a) illegal. 2.56 match the `double`, but 42 match the `int`.
+(b) match `void f(int)`
+(c) match `void f(int, int)`
+(d) match `void f(double, double = 3.14)`
+
+## [Exercise 6.51](ex6_51.cpp)
