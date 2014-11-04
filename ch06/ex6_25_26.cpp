@@ -11,22 +11,16 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
-
-using namespace std;
-
-
 
 int main(int _argc, char **_argv)
 {
-
-    for(int i=0; i <= _argc; ++i)
+    std::string str;
+    for (int i = 1; i != argc; ++i)
     {
-        cout<<_argv[i]
-              <<" "
-                <<endl;
+        str += argv[i];
+        str += " ";
     }
 
-
+    std::cout << str << std::endl;
     return 0;
 }
