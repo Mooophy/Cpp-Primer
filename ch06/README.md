@@ -340,9 +340,9 @@ and each argument type can be converted to the corresponding parameter type.
 ## [Exercise 6.51](ex6_51.cpp)
 ## Exercise 6.52
 
-(a) >Match through a promotion
+(a) Match through a promotion
 
-(b) >An exact match
+(b) An exact match
 
 ## Exercise 6.53
 
@@ -356,6 +356,8 @@ int calc(const int&, const int&); // calls lookup(const int&)
 int calc(char*, char*); // calls lookup(char*)
 int calc(const char*, const char*); calls lookup(const char *)
 ```
-(c) illegal. both calls lookup(char*)
+(c) 
+
+illegal. both calls lookup(char*)
 
 ## [Exercise 6.54 ~ 6.56](ex6_54_55_56_functionPointer.cpp)
