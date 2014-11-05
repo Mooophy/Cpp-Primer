@@ -22,7 +22,7 @@
   - [Chapter 3. Strings, Vectors, and Arrays](ch03/README.md)
   - [Chapter 4. Expressions](ch04/README.md)
   - [Chapter 5. Statements](ch05/README.md)
-  - [Chapter 6. Functions](ch06)
+  - [Chapter 6. Functions](ch06/README.md)
   - [Chapter 7. Classes](ch07)
   - [Chapter 8. The IO Library](ch08)
 - Part II: The C++ Library
