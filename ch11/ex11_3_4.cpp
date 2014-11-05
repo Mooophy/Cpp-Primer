@@ -67,7 +67,9 @@ w_count_pro(std::map<std::string, int> &m)
         //! delete ',' or '.'
         auto punc_iter = std::find_if(word.begin(), word.end(),[] (const char c)
         {
-            return c == '.' || c == ',';
+            if(c >= 'a' && c <= 'z')
+                return true;
+            return false;
         });
 
         if(punc_iter != word.end())
