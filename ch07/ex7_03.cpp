@@ -21,9 +21,7 @@ int main()
                 total.combine(trans);
             else {
                 cout << total.bookNo << " " << total.units_sold << " " << total.revenue << endl;
-                total.bookNo = trans.bookNo;
-                total.units_sold = trans.units_sold;
-                total.revenue = trans.revenue;
+                total = trans;
             }
         }
         cout << total.bookNo << " " << total.units_sold << " " << total.revenue << endl;
