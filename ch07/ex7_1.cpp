@@ -1,57 +1,45 @@
-//! @Alan
-//!
-//! Exercise 7.1:
-//! Write a version of the transaction-processing program from § 1.6 (p. 24)
-//! using the Sales_data class you defined for the exercises in § 2.6.1 (p. 72).
-//!
+//
+//  ex7_1.cpp
+//  Exercise 7.1
+//
+//  Created by pezy on 14/10/30.
+//  Copyright (c) 2014 pezy. All rights reserved.
+//
 
 #include <iostream>
 #include <string>
+using std::cin; using std::cout; using std::endl; using std::string;
 
-
-using namespace std;
-
-struct wy_Sales_data
-{
-    std::string bookNo;
-    unsigned units_sold = 1;
-    double revenue = 5.7;
+struct Sales_data{
+    string bookNo;
+    unsigned units_sold = 0;
+    double revenue = 0.0;
 };
 
 int main()
 {
-    wy_Sales_data total;
-
-    if(cin>>total.bookNo && total.bookNo.size()>1)
+    Sales_data total;
+    if (cin >> total.bookNo >> total.units_sold >> total.revenue)
     {
-        wy_Sales_data trans;
-
-        while(cin>>trans.bookNo && trans.bookNo.size()>1)
-        {
-            if(total.bookNo == trans.bookNo)
-            {
-                total.units_sold ++;
-                total.revenue +=5.7;
+        Sales_data trans;
+        while (cin >> trans.bookNo >> trans.units_sold >> trans.revenue) {
+            if (total.bookNo == trans.bookNo) {
+                total.units_sold += trans.units_sold;
+                total.revenue += trans.revenue;
             }
-            else
-            {
-                cout<<total.bookNo<<":\ntotal sold="<<total.units_sold
-                      <<"\ntotal revenue="<<total.revenue
-                        <<std::endl;
-
-                total = trans;
+            else {
+                cout << total.bookNo << " " << total.units_sold << " " << total.revenue << endl;
+                total.bookNo = trans.bookNo;
+                total.units_sold = trans.units_sold;
+                total.revenue = trans.revenue;
             }
         }
-
-        cout<<total.bookNo<<":\ntotal sold="<<total.units_sold
-              <<"\ntotal revenue="<<total.revenue
-                <<std::endl;
+        cout << total.bookNo << " " << total.units_sold << " " << total.revenue << endl;
     }
     else
     {
-        cerr << "No data?!" << endl;
+        std::cerr << "No data?!" << std::endl;
+        return -1;
     }
-
     return 0;
 }
-
