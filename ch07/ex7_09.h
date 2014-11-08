@@ -10,16 +10,17 @@
 #define CP5_ex7_09_h
 
 #include <string>
+#include <iostream>
 
-class Person {
-    std::string name;
-    std::string address;
-    
+struct Person {
     std::string getName() const { return name; }
     std::string getAddress() const { return address; }
+    
+    std::string name;
+    std::string address;
 };
 
-std::istream &read(std::istream &is, const Person &person)
+std::istream &read(std::istream &is, Person &person)
 {
     is >> person.name >> person.address;
     return is;
@@ -27,7 +28,7 @@ std::istream &read(std::istream &is, const Person &person)
 
 std::ostream &print(std::ostream &os, const Person &person)
 {
-    os << name << " " << address;
+    os << person.name << " " << person.address;
     return os;
 }
 
