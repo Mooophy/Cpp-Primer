@@ -1,5 +1,5 @@
 //
-//  ex7_1.cpp
+//  ex7_01.cpp
 //  Exercise 7.1
 //
 //  Created by pezy on 14/10/30.
@@ -29,9 +29,7 @@ int main()
             }
             else {
                 cout << total.bookNo << " " << total.units_sold << " " << total.revenue << endl;
-                total.bookNo = trans.bookNo;
-                total.units_sold = trans.units_sold;
-                total.revenue = trans.revenue;
+                total = trans;
             }
         }
         cout << total.bookNo << " " << total.units_sold << " " << total.revenue << endl;
