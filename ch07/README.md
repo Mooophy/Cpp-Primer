@@ -25,3 +25,13 @@ sdt::istream &secondStep = read(firstStep, data2);
 if (secondStep)
 ```
 the condition of the `if` statement would read two Sales_data object at one time.
+
+## Exercise 7.11 [Header](ex7_11.h)|[CPP](ex7_11.cpp)
+## [Exercise 7.12](ex7_12.h)
+## [Exercise 7.13](ex7_13.cpp)
+## Exercise 7.14
+```cpp
+Sales_data() : units_sold(0) , revenue(0){}
+```
+
+## [Exercise 7.15](ex7_15.h)
