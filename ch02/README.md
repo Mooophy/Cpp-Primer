@@ -156,21 +156,25 @@ int input_value = 0;
 std::cin >> input_value;
 ```
 
-(b): warning: implicit conversion from 'double' to 'int' changes value
- from 3.14 to 3.
+(b):---when you compile the code without the argument "-std=c++11", you will get the warning below: 
+    warning: implicit conversion from 'double' to 'int' changes value from 3.14 to 3.
+---when you compile the code using "-std=c+11", you will get a error below:
+    error: type 'double' cannot be narrowed to 'int' in initializer list
+---conclusion: Obviously, list initialization becomes strict in c++11.
 ```cpp
-float i = { 3.14 };
+double i = { 3.14 };
 ```
 
-(c): error: use of undeclared identifier 'wage'
+(c): --if you declared 'wage' before, it's right. Otherwhise, you'll get a error:
+    error: use of undeclared identifier 'wage'
 ```cpp
-double salary = 9999.99;
-double wage = 9999.99;
+double wage;
+double salary = wage = 9999.99;
 ```
 
 (d): ok: but value will be truncated.
 ```cpp
-float i = 3.14;
+double i = 3.14;
 ```
 
 ##Exercise 2.10
@@ -185,8 +189,12 @@ int main()
 }
 ```
 
-`global_str` and `local_str` are the empty string.
-`global_int` and `local_int` are the zero.
+`global_str` is global variable, so the value is empty string.
+`global_int` is global variable, so the value is zero.
+`local_int` is a local variable which is not uninitialized, so it has a undefined value.
+`local_str` is also a local variable which is not uninitialized, but it has a value that is defined by the class. So it is empty string.
+PS: please read P44 in the English version, P40 in Chinese version to get more. 
+The note: Uninitialized objects of built-in type defined inside a function body have a undifined value. Objects of class type that we do not explicitly inititalize have a value that is defined by class.
 
 ##Exercise 2.11
 > Explain whether each of the following is a declaration or a
@@ -259,7 +267,7 @@ Yes.It is legal.Printed:
 
 ```
 (a): valid. let d equal 3.14159.
-(b): invalid. r1 must be a double object.
+(b): valid. automatical convert will happen.
 (c): valid. but value will be truncated.
 (d): valid. but value will be truncated.
 ```
@@ -381,7 +389,7 @@ variables.
 
 ```
 (a): ip is a pointer to int, i is an int, r is a reference to int i.
-(b): ip is a valid, null pointer.
+(b): ip is a valid, null pointer, and i is an int.
 (c): ip is a pointer to int, and ip2 is an int.
 ```
 
@@ -444,6 +452,7 @@ const int *p2 = &v2, *const p3 = &i, &r2 = v2;
 
 v2 is top-level const, p2 is low-level const.
 p3: right-most const is top-level, left-most is low-level.
+r2 is low-level const.
 
 ##Exercise 2.31
 >Given the declarations in the previous exercise determine
@@ -500,9 +509,11 @@ const int i = 42;
 auto j = i; const auto &k = i; auto *p = &i; const auto j2 = i, &k2 = i;
 ```
 
-j and j2 are int.
-k and k2 are &int.
-p is a pointer to const int.
+j is int.
+k is const int&.
+p is const int *.
+j2 is const int.
+k2 is const int&.
 
 [Here](ex2_35.cpp) is the code.
 
@@ -529,6 +540,7 @@ decltype(a = b) d = a;
 ```
 
 `c` is an int, `d` is a reference of int.
+the value: a=3, b=4, c=3, d=3
 
 ##Exercise 2.38
 >Describe the differences in type deduction between decltype and auto. Give an example of an expression where auto and decltype will deduce the same type and an example where they will deduce differing types.
