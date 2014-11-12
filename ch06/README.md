@@ -1,6 +1,6 @@
 ##Exercise 6.1
 
-**Parameters**: Local variable declared inside the function parameter list. 
+**Parameters**: Local variable declared inside the function parameter list.
 they are initialized by the **arguments** provided in the each function call.
 
 **Arguments**: Values supplied in a function call that are used to initialize the function's **parameters**.
@@ -31,8 +31,8 @@ int fact(int val)
 
 int main()
 {
-    int j = fact(5);  // j equals 120, i.e., the result of fact(5)    
-    std::cout << "5! is " << j << std::endl; 
+    int j = fact(5);  // j equals 120, i.e., the result of fact(5)
+    std::cout << "5! is " << j << std::endl;
     return 0;
 }
 ```
@@ -51,15 +51,15 @@ int func()
 
 int main()
 {
-    std::cout << func() << std::endl; 
+    std::cout << func() << std::endl;
     return 0;
-} 
+}
 ```
 
 ##Exercise 6.5
 
 ```cpp
-template <typename T> 
+template <typename T>
 T abs(T i)
 {
     return i >= 0 ? i : -i;
@@ -73,7 +73,7 @@ T abs(T i)
 
 **parameter**: **Local variables** declared inside the **function parameter list**
 
-**local static variable**: **Local variable** whose value persists across calls to the function. 
+**local static variable**: **Local variable** whose value persists across calls to the function.
 The variable that are created and initialized **before** contorl reaches their use and are **destoryed when the program ends**.
 
 ```cpp
@@ -89,7 +89,7 @@ int main()
 {
     for (size_t i = 0; i != 10; ++i)  // i is a local variable.
       cout << count_add(i) << endl;
-    
+
     return 0;
 }
 ```
@@ -139,7 +139,7 @@ void print(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 
 cause the `s` should not be changed by this function. but `occurs`'s result must be calculated by the function.
 
->Why are these parameters references, but the char parameter `c` is not? 
+>Why are these parameters references, but the char parameter `c` is not?
 
 casue `c` maybe a temp varable. such as `find_char(s, 'a', occurs)`
 
@@ -194,7 +194,7 @@ the reference value maybe changed.
 >Arrays have two special properties that affect how we define and use functions that operate on arrays: We cannot copy an array, and when we use an array it is (usually) **converted to a pointer**.
 
 So we cannot pass an array by value, and when we pass an array to a function, we are actually passing a pointer
-to the array's first element. 
+to the array's first element.
 
 In this question, `const int ia[10]` is actually same as `const int*`, and the size of the array is **irrelevant**.
 we can pass `const int ia[3]` or `const int ia[255]`, there are no differences. If we want to pass an array which size is ten, we should use reference like that:
@@ -209,7 +209,7 @@ see more discusses at http://stackoverflow.com/questions/26530659/confused-about
 
 ## Exercise 6.28
 
-The type of `elem` in the `for` loop is `std::string`.
+The type of `elem` in the `for` loop is `const std::string&`.
 
 ## Exercise 6.29
 
@@ -318,12 +318,12 @@ It isn't a good use of assert. because if user begin to input a word, the `cin` 
 
 ## Exercise 6.49
 
-candidate function: 
+candidate function:
 >Set of functions that are considered when resolving a function call. (all the functions
 with the name used in the call for which a declaration is in scope at the time of the call.)
 
-viable function: 
->Subset of the candidate functions that could match a given call. 
+viable function:
+>Subset of the candidate functions that could match a given call.
 >It have the same number of parameters as arguments to the call,
 and each argument type can be converted to the corresponding parameter type.
 
@@ -356,7 +356,7 @@ int calc(const int&, const int&); // calls lookup(const int&)
 int calc(char*, char*); // calls lookup(char*)
 int calc(const char*, const char*); calls lookup(const char *)
 ```
-(c) 
+(c)
 
 illegal. both calls lookup(char*)
 
@@ -376,7 +376,7 @@ std::vector<pFunc2> vec2;
 std::vector<pFunc3> vec3;
 std::vector<pFunc4*> vec4;
 std::vector<pFunc5> vec5;
-std::vector<pFunc6*> vec6; 
+std::vector<pFunc6*> vec6;
 ```
 
 ## Exercise 6.55
