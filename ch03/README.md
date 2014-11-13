@@ -207,7 +207,40 @@ while (*cp) {
 }
 ```
 
-Print all the elements of the array.
+Print all the elements of the array.  
+
+-----
+**WARNING!!!!**  
+When we use a string, the compiler put it in the section `.rodata`, the code uses C-style character string without adding a '\0' in the end of `ca`.  
+So, when we code like this:  
+
+```cpp
+const char ca[] = {'h', 'e', 'l', 'l', 'o'};
+const char s[] = "world";
+const char *cp = ca;
+while (*cp) {
+cout << *cp;
+++cp;
+}
+```
+
+The code will print "helloworld" when you run it.
+because the character list in the `.rodata` like this:  
+
+    h e l l o w o r l d \0  
+`While(*cp)` judge wether *cp is 0 or not. when *cp is not 0, it will print the character until 0.  
+When you change the code like this:  
+
+    const char ca[] = {'h', 'e', 'l', 'l', 'o', '\0'};  
+the character list in the `.rodata`:  
+
+    h e l l o \0 w o r l d \0  
+The program will run correctly. So when using C-style character string, be careful!!  
+
+----
+see `.rodata`, you can use this command:
+
+    hexdump -C a.out
 
 ##Exercise 3.38
 >In this section, we noted that it was not only illegal but meaningless to try to add two pointers.
