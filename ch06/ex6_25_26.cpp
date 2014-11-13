@@ -15,9 +15,9 @@
 int main(int _argc, char **_argv)
 {
     std::string str;
-    for (int i = 1; i != argc; ++i)
+    for (int i = 1; i != _argc; ++i)
     {
-        str += argv[i];
+        str += _argv[i];
         str += " ";
     }
 
