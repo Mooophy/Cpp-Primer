@@ -264,7 +264,7 @@ reference: [Why the size of a pointer is 4bytes in C++](http://stackoverflow.com
 sizeof x + y      // sizeof(x+y)
 sizeof p->mem[i]  // sizeof(p->mem[i])
 sizeof a < b      // sizeof(a) < b
-sizeof f()        // compile error if the return of f() is void. If f() has a return value, compile successfully.
+sizeof f()        // if f() return void, this statement is undefined, otherwise it return the size of return type.
 ```
 
 -----
