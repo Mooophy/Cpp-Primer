@@ -19,7 +19,7 @@ and potential pitfalls in the use of the language by the programmer.
 Do you consider that an acceptable trade-off? Why or why not?
 
 Yes, I think it necessary to hold the trade-off.
-Because the speed always the biggest advantage of C++. Sometimes, we need
+Because the speed is always the biggest advantage of C++. Sometimes, we need
 the compiler's features for efficient work. But if you are not a expert. I
 have to advice you do not touch the undefined behaviors.
 
@@ -130,7 +130,7 @@ dval = ival = pi = 0;
 // can not assign to 'int' from type 'int *'
 // correct it:
 dval = ival = 0;
-pi = &ival;
+pi = 0;
 ```
 
 ##Exercise 4.16
