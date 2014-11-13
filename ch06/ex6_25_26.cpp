@@ -12,12 +12,12 @@
 #include <iostream>
 #include <string>
 
-int main(int _argc, char **_argv)
+int main(int argc, char **argv)
 {
     std::string str;
-    for (int i = 1; i != _argc; ++i)
+    for (int i = 1; i != argc; ++i)
     {
-        str += _argv[i];
+        str += argv[i];
         str += " ";
     }
 
