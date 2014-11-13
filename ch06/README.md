@@ -233,7 +233,7 @@ legal, it gave the values (0 ~ 9) to array `ia`.
 ##[Exercise 6.33](ex6_33.cpp)([Generics Version](ex6_33_generics_version.cpp))
 ## Exercise 6.34
 
-nothing would happen. the function would be stoped when val is `2`.
+nothing would happen. the function would be stoped when val is `0`.
 
 ## Exercise 6.35
 
