@@ -35,3 +35,51 @@ Sales_data() : units_sold(0) , revenue(0){}
 ```
 
 ## [Exercise 7.15](ex7_15.h)
+
+## Exercise 7.16
+
+There are no restrictions on how often an access specifier may appear.The specified
+access level remains in effect until the next access specifier or the end of the class body.
+
+The members which are accessible to all parts of the program should define after a public specifier.
+
+The members which are accessible to the member functions of the class but are not accessible to code that uses the class should define after a private specifier.
+
+## Exercise 7.17
+
+The only difference between using `class` and using `struct` to define a class is the default access level. (`class` : private, `struct` : public)
+
+## Exercise 7.18
+
+encapsulation is the separation of implementation from interface. It hides the implementation details of a type. (In C++, encapsulation is enforced by putting the implementation in the private part of a class)
+
+-----
+
+Important advantages:
+
+- User code cannot inadvertently corrupt the state of an encapsulation object.
+- The implementation of an encapsulated class can change over time without requiring changes in user-level code.
+
+## Exercise 7.19
+
+public include: constructors, `getName()`, `getAddress()`.
+private include: `name`, `address`.
+
+the interface should be defined as public, the data shouldn't expose to outside of the class.
+
+## Exercise 7.20
+
+`friend` is a mechanism by which a class grants access to its nonpublic members. They have the same rights as members.
+
+**Pros**:
+- the useful functions can refer to class members in the class scope without needing to explicitly prefix them with the class name.
+- you can access all the nonpublic members conveniently.
+- sometimes, more readable to the users of class.
+
+**Cons**:
+- lessens encapsulation and therefore maintainability.
+- code verbosity, declarations inside the class, outside the class.
+
+## [Exercise 7.21](ex7_21.h)
+
+## [Exercise 7.22](ex7_22.h)
