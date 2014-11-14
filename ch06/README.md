@@ -344,7 +344,7 @@ and each argument type can be converted to the corresponding parameter type.
 
 (a) Match through a promotion
 
-(b) An exact match
+(b) Arithmetic type conversion
 
 ## Exercise 6.53
 
