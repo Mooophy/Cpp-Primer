@@ -81,5 +81,10 @@ the interface should be defined as public, the data shouldn't expose to outside 
 - code verbosity, declarations inside the class, outside the class.
 
 ## [Exercise 7.21](ex7_21.h)
-
 ## [Exercise 7.22](ex7_22.h)
+## Exercise 7.23 [Header](ex7_23.h)|[CPP](ex7_23.cpp)
+## [Exercise 7.24](ex7_24.h)
+
+## Exercise 7.25
+
+The class below can rely on it. It goes in Section 7.1.5:"..the synthesized versions are unlikely to work correctly for classes that allocate resources that reside outside the class objects themselves. " and "Moreover, the synthesized versions for copy, assignment, and destruction work correctly for classes that have vector or string members. " Hence the class below which used only built-in type and strings can rely on the default version of copy and assignment. (@Mooophy)
