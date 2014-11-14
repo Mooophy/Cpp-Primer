@@ -95,3 +95,38 @@ The class below can rely on it. It goes in *Section 7.1.5*:
 Hence the class below which used only built-in type and strings can rely on the default version of copy and assignment. (by @Mooophy)
 
 ## Exercise 7.26 [Header](ex7_26.h)|[CPP](ex7_26.cpp)
+## Exercise 7.27 [Class](ex7_27.h)|[Test](ex7_27_TEST.cpp)
+
+## Exercise 7.28
+
+The second call to `display` couldn't print `#` among the output, cause the call to `set` would change the **temporary copy**, not myScreen.
+
+## Exercise 7.29
+
+```sh
+#with '&'
+XXXXXXXXXXXXXXXXXXXX#XXXX
+XXXXXXXXXXXXXXXXXXXX#XXXX
+                   ^^^
+# without '&'
+XXXXXXXXXXXXXXXXXXXX#XXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+                   ^^^
+```
+
+## Exercise 7.30
+
+**Pros**
+
+- more explicit
+- less scope for misreading
+- can use the member function parameter which name is same as the member name.
+
+        void setAddr(const std::string &addr) {this->addr = addr;}
+
+**Cons**
+
+- more to read
+- sometimes redundant
+
+        std::string getAddr() const { return this->addr; } // unnecessary
