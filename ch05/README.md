@@ -61,11 +61,14 @@ std::string::iterator iter = s.begin();
     while (iter != s.end()) { /* . . . */ }
 ```
 
-(b) The if statement is not in the while's block. so the `status` is invalid. And if status is true, go through the `while` block forever, else go through the `if` block.
+(b) The if statement is not in the while's block. so the `status` is invalid. And if find(word) return true, it will go through the while block. we should declare the status before while.
 ```cpp
-if (!find(word)) { /* . . . */ }
-else while (true) { /* . . . */ }
-```
+bool status;
+while ((status = find(word))) {/* ... */}
+if (!status) {/* ... */}
+```  
+
+In fact, the judge `!status` is unnecessary. If the `status=false`, we leave the while, and `!status` is always true. 
 
 ##[Exercise 5.5](ex5_5.cpp)
 ##[Exercise 5.6](ex5_6.cpp)
