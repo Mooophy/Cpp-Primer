@@ -36,7 +36,7 @@ public:
     //!  constructs:
     wyScreen() = default;
 	wyScreen(const pos h, const pos w) : height(h), width(w), contents(h * w, ' ') { }
-	wyScreen(const pos h, const pos w, const char &c) : height(h), width(w), contents(h * w, c){ }
+	wyScreen(const pos h, const pos w, const char c) : height(h), width(w), contents(h * w, c){ }
 
 private:
     pos cursor = 0;
