@@ -17,7 +17,7 @@ public:
 
     //!  constructs:
     wyScreen() = default;
-    wyScreen(const pos h, const pos w) : height(h), width(w), contents(" ", h * w) {  }
+    wyScreen(const pos h, const pos w) : height(h), width(w), contents(h * w,' ') {  }
     wyScreen(const pos h, const pos w, char c) : height(h), width(w), contents(h * w, c){  }
 
     wyScreen &move(const pos r, const pos c);
