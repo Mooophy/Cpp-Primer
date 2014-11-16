@@ -35,8 +35,8 @@ public:
 
     //!  constructs:
     wyScreen() = default;
-    wyScreen(const pos h, const pos w) : height(h), width(w)，contents(ht * wd, ' ') { }
-    wyScreen(const pos h, const pos w, const std::string &c) : height(h), width(w) contents(ht * wd, c) { }
+    wyScreen(const pos h, const pos w) : height(h), width(w)，contents(h * w, ' ') { }
+    wyScreen(const pos h, const pos w, const std::string &c) : height(h), width(w) contents(h * w, c) { }
 
 private:
     pos cursor = 0;
