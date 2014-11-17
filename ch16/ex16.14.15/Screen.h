@@ -19,6 +19,9 @@ public:
     char get() const              // get the character at the cursor
         { return contents[cursor]; }       // implicitly inline
     Screen &move(pos r, pos c);      // can be made inline later
+    Screen& operator<< (const char &c);
+    Screen& operator>> (char &c);
+
 private:
     pos cursor = 0;
     pos height = H, width = W;
@@ -32,5 +35,21 @@ inline Screen<H, W>& Screen<H, W>::move(pos r, pos c)
     cursor = row + c;
     return *this;
 }
+
+
+template<unsigned H, unsigned W>
+inline Screen<H, W>& Screen<H, W>::operator<< (const char&c)
+{
+    contents[cursor] = c;
+    return *this;
+}
+
+template<unsigned H, unsigned W>
+inline Screen<H, W>& Screen<H, W>::operator>> (char &c)
+{
+    c = contents[cursor];
+    return *this;
+}
+
 
 #endif // SCREEN_H
