@@ -81,10 +81,7 @@ TextQuery::query(const std::string &sought) const
 /**
  * @brief do a query opertion and return tuple.
  */
-std::tuple<std::string,
-           std::shared_ptr<std::set<TextQuery::index_Tp>>,
-           std::shared_ptr<std::vector<std::string>>>
-                TextQuery::query_return_tuple(const std::string &sought)
+result_tuple TextQuery::query_return_tuple(const std::string &sought)
 {
     //! dynamicaly allocated set used for the word does not appear.
     static std::shared_ptr<std::set<index_Tp>> noData(new std::set<index_Tp>);
@@ -93,15 +90,8 @@ std::tuple<std::string,
     //std::map<std::string, std::shared_ptr<std::set<index_Tp>>>::const_iterator
     auto iter = wm.find(sought);
     if(iter == wm.end())
-        return  std::tuple <std::string,
-                            std::shared_ptr<std::set<index_Tp>>,
-                            std::shared_ptr<std::vector<std::string>>>
-                                                                     (sought, noData, file);
+        return result_tuple(sought, noData, file);
     else
-        return  std::tuple <std::string,
-                            std::shared_ptr<std::set<index_Tp>>,
-                            std::shared_ptr<std::vector<std::string>>>
-                                                                     (sought, iter->second, file);
-
+        return result_tuple(sought, iter->second, file);
 }
 
