@@ -22,13 +22,9 @@
 template<typename iteratorT, typename valueT>
 iteratorT find(const iteratorT& first, const iteratorT& last,const valueT& value )
 {
-    if (first == last)  return last;
-    else
-    {
-        for (auto it = first; it != last; ++it)
-            if(*it == value)    return it;
-        return last;
-    }
+    auto iter = first;
+    while(iter != last && *iter != value) ++iter;
+    return iter;
 }
 
 int main()
