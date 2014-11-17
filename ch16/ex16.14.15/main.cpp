@@ -18,11 +18,20 @@
 //!
 
 #include"Screen.h"
+#include<iostream>
 
 int main()
 {
-    Screen<10,5> scr;
-
+    Screen<5,5> scr('c');
+    char c0 = 'b', c1;
+    //! move the cursor
+    scr.move(2, 2);
+    //! output c0 to the screen
+    scr << c0;
+    //! input a char to c1 from the screen
+    scr >> c1;
+    //! test the result of c1
+    std::cout << c1 << std::endl;
 
     return 0;
 }
