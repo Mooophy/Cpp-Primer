@@ -18,12 +18,12 @@ class Y;
 
 class X
 {
-    Y* p2y;
+    Y* py2;
 };
 
 class Y
 {
-    X* p2x;
+    X x2;
 };
 
 
