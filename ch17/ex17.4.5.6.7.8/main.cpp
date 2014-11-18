@@ -35,6 +35,7 @@
 #include <vector>
 #include <algorithm>
 #include <utility>
+#include <numeric>
 
 #include "Sales_data.h"
 
@@ -53,6 +54,18 @@ typedef std::pair<std::vector<Sales_data>::size_type,
                             std::vector<Sales_data>::const_iterator>>
                                                                       matches_pair;
 
+//! for ex17.6
+//! return a struct that holds an index of a store and iterators into that store's vector
+struct matches_struct
+{
+    std::vector<Sales_data>::size_type st;
+    std::vector<Sales_data>::const_iterator first;
+    std::vector<Sales_data>::const_iterator last;
+    matches_struct(std::vector<Sales_data>::size_type s,
+                   std::vector<Sales_data>::const_iterator f,
+                   std::vector<Sales_data>::const_iterator l) : st(s), first(f), last(l) {}
+} ;
+
 //! for ex17.4
 //! return a vector with an entry for each store that sold the given book.
 std::vector<matches>
@@ -64,15 +77,20 @@ void reportResults(std::istream& in, std::ostream os,
                    const std::vector<std::vector<Sales_data>>& files);
 
 //! for ex17.5
-//! return a vector with an entry for each store that the given book
+//! return a vector with an entry for each store that sold the given book.
 std::vector<matches_pair>
 findBook_pair(const std::vector<std::vector<Sales_data> > &files,
               const std::string &book);
 
+//! for ex17.6
+//! return a vector with an entry for each store that sold the given book.
+std::vector<matches_struct>
+findBook_struct(const std::vector<std::vector<Sales_data> > &files,
+                const std::string &book);
 
 int main()
 {
-
+    return 0;
 }
 
 //! for ex17.4
@@ -118,7 +136,7 @@ void reportResults(std::istream& in, std::ostream os,
 }
 
 //! for ex17.5
-//! return a vector with an entry for each store that the given book
+//! return a vector with an entry for each store that sold the given book
 std::vector<matches_pair>
 findBook_pair(const std::vector<std::vector<Sales_data> > &files,
               const std::string &book)
@@ -130,6 +148,22 @@ findBook_pair(const std::vector<std::vector<Sales_data> > &files,
         if(found.first != found.second)
             ret.push_back(std::make_pair(it - files.cbegin(),
                                          std::make_pair(found.first, found.second)));
+    }
+    return ret;
+}
+
+//! for ex17.6
+//! return a vector with an entry for each store that sold the given book.
+std::vector<matches_struct>
+findBook_struct(const std::vector<std::vector<Sales_data> > &files,
+                const std::string &book)
+{
+    std::vector<matches_struct> ret;
+    for(auto it = files.cbegin(); it != files.cend(); ++it)
+    {
+        auto found = std::equal_range(it->cbegin(), it->cend(), book, compareIsbn);
+        if(found.first != found.second)
+            ret.push_back(matches_struct(it - files.cbegin(), found.first, found.second));
     }
     return ret;
 }
