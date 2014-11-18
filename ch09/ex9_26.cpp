@@ -35,7 +35,7 @@ int main()
     {
         if((*it)%2 == 0)
         {
-            v.erase(it);
+            it = v.erase(it);
         }
     }
     //print content of v
@@ -52,7 +52,7 @@ int main()
     {
         if((*it)%2 == 1)
         {
-            l.erase(it);
+            it = l.erase(it);
 
             //! @note without this statement it does not work
             --it;
