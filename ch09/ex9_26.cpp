@@ -31,11 +31,15 @@ int main()
     }
 
     // ease even value element from v
-    for (auto it = v.begin(); it != v.end(); ++it)
+    for (auto it = v.begin(); it != v.end();)
     {
         if((*it)%2 == 0)
         {
             it = v.erase(it);
+        }
+        else
+        {
+            ++it;
         }
     }
     //print content of v
