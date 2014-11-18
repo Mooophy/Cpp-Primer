@@ -46,3 +46,7 @@
 1. [PO在StackOverflow上的习题](http://book.douban.com/review/6500246/)
 2. [C++ Primer issues(豆瓣讨论组)](http://www.douban.com/group/532124/)
 3. [《C++ Primer 英文版（第 5 版）》的笔记 by](http://book.douban.com/people/pezy/annotation/24089577/) [@pezy](https://github.com/pezy)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pezy/cpp-primer/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
