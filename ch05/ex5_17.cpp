@@ -11,7 +11,7 @@ int main()
     auto size = vec1.size() < vec2.size() ? vec1.size() : vec2.size();
     for (decltype(vec1.size()) i = 0; i != size; ++i) {
         if (vec1[i] != vec2[i]) { cout << "false" << endl; break; }
-        if (i == size - 1) cout << "ture"<<endl;
+        if (i == size - 1) cout << "ture" << endl;
     }
     return 0;
 }
