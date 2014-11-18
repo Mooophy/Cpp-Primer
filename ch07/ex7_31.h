@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
 
-#ifndef Test_ex7_31_h
-#define Test_ex7_31_h
+#ifndef CP5_ex7_31_h
+#define CP5_ex7_31_h
 
 class Y;
 

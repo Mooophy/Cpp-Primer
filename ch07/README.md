@@ -130,3 +130,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXX
 - sometimes redundant
 
         std::string getAddr() const { return this->addr; } // unnecessary
+
+## Exercise [7.31](ex7_31.h)
+## Exercise [7.32](ex7_32.h)
