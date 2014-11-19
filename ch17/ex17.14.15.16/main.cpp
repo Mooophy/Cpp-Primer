@@ -54,5 +54,6 @@ int main()
         if(std::regex_match(s, r))
             cout << "Input word " << s << " is okay!" << endl;
     }
+
     return 0;
 }
