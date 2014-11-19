@@ -14,7 +14,7 @@
 #include <memory>
 int main()
 {
-    allocator<string> salloc;
+	allocator<string> salloc;
 	auto p = salloc.allocate(3);
 	auto q = p;
 	string str;
@@ -31,13 +31,13 @@ int main()
 		++q;
 	}
 	cout << std::endl;
-
+	
 	while (q != p)
 	{
 		salloc.destroy(--q);
 	}
 	salloc.deallocate(p, 3);
-
+        
 
     return 0;
 }
