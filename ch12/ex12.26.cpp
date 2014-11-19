@@ -12,6 +12,9 @@
 
 #include <iostream>
 #include <memory>
+
+using namespace std;
+
 int main()
 {
     allocator<string> salloc;
