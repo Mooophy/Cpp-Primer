@@ -21,6 +21,8 @@
 //! initialized with "[^c]ei"? Test your program using that pattern to see
 //! whether your expectations were correct.
 
+//! Note: The program compiles with gcc version 4.9 or higher.
+
 #include <iostream>
 using std::cout;
 using std::cin;
@@ -46,13 +48,32 @@ int main()
     }
 
     //! for ex17.15
-    regex r("[[:alpha:]]*e[[:alpha:]]*i[[:alpha:]]*c[[:alpha:]]*", regex::icase);
+    regex r("[[:alpha:]]*[^c]ei[[:alpha:]]*", regex::icase);
     string s;
     cout << "Please input a word! Input 'q' to quit!" << endl;
     while(cin >> s && s != "q")
     {
         if(std::regex_match(s, r))
             cout << "Input word " << s << " is okay!" << endl;
+        else
+            cout << "Input word " << s << " is not okay!" <<endl;
+
+        cout << "Please input a word! Input 'q' to quit!" << endl;
+    }
+
+    cout << endl;
+
+    //! for ex17.16
+    r.assign("[^c]ei", regex::icase);
+    cout << "Please input a word! Input 'q' to quit!" << endl;
+    while(cin >> s && s != "q")
+    {
+        if(std::regex_match(s, r))
+            cout << "Input word " << s << " is okay!" << endl;
+        else
+            cout << "Input word " << s << " is not okay!" <<endl;
+
+        cout << "Please input a word! Input 'q' to quit!" << endl;
     }
 
     return 0;
