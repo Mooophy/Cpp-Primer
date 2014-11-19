@@ -14,29 +14,29 @@
 #include <memory>
 int main()
 {
-	allocator<string> salloc;
-	auto p = salloc.allocate(3);
-	auto q = p;
-	string str;
-	while (cin >> str && q != p + 3)
-	{
-		salloc.construct(q, str);
-		++q;
-	}
-	const size_t size = q - p;
-	q = p;
-	while (q != p + 3)
-	{
-		cout << *q << " ";
-		++q;
-	}
-	cout << std::endl;
+    allocator<string> salloc;
+    auto p = salloc.allocate(3);
+    auto q = p;
+    string str;
+    while (cin >> str && q != p + 3)
+    {
+	salloc.construct(q, str);
+	++q;
+    }
+    const size_t size = q - p;
+    q = p;
+    while (q != p + 3)
+    {
+ 	cout << *q << " ";
+	++q;
+    }
+    cout << std::endl;
 	
-	while (q != p)
-	{
-		salloc.destroy(--q);
-	}
-	salloc.deallocate(p, 3);
+    while (q != p)
+    {
+ 	salloc.destroy(--q);
+    }
+    salloc.deallocate(p, 3);
         
 
     return 0;
