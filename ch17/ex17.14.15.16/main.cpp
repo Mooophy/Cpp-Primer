@@ -21,7 +21,9 @@
 //! initialized with "[^c]ei"? Test your program using that pattern to see
 //! whether your expectations were correct.
 
-//! Note: The program compiles with gcc version 4.9 or higher.
+//! Note: There are some bugs in gcc(include the latest version 4.9.2) to handle 
+//!       regular expression.To compile this program, please turn to other 
+//!       compilers such as msvs2013 and clang.
 
 #include <iostream>
 using std::cout;
