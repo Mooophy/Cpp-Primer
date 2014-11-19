@@ -14,30 +14,29 @@
 #include <memory>
 int main()
 {
-    //! create a allocator object and use it to handle string.
-    //! create a movable pointer to the address p points
-    std::allocator<std::string> alloc;
-    std::string* const p = alloc.allocate(5);
-    std::string* p_movable = p;
+    allocator<string> salloc;
+	auto p = salloc.allocate(3);
+	auto q = p;
+	string str;
+	while (cin >> str && q != p + 3)
+	{
+		salloc.construct(q, str);
+		++q;
+	}
+	const size_t size = q - p;
+	q = p;
+	while (q != p + 3)
+	{
+		cout << *q << " ";
+		++q;
+	}
+	cout << std::endl;
 
-    //! constuct each object using copy constructor
-    std::string word;
-    while(std::cin >> word && p_movable != p + 3)
-    {
-        alloc.construct(p_movable,word);
-        ++p_movable;
-    }
-
-    //! move the movable pointer back home
-    p_movable = p;
-
-    //! print the strings constructed.
-    while(p_movable != p + 3)
-        std::cout << *p_movable++ <<"\n";
-
-    //! free the allocated memory.
-    delete[] p;
-
+	while (q != p)
+	{
+		salloc.destroy(--q);
+	}
+	salloc.deallocate(p, 3);
 
 
     return 0;
