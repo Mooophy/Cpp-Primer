@@ -131,5 +131,64 @@ XXXXXXXXXXXXXXXXXXXXXXXXX
 
         std::string getAddr() const { return this->addr; } // unnecessary
 
-## Exercise [7.31](ex7_31.h)
-## Exercise [7.32](ex7_32.h)
+## [Exercise 7.31](ex7_31.h)
+## [Exercise 7.32](ex7_32.h)
+## Exercise 7.33
+
+[clang]error: unknown type name 'pos'
+
+fixed:
+```cpp
+Screen::pos Screen::size() const
+{
+    return height*width;
+}
+```
+
+## Exercise 7.34
+
+There is an error in
+
+    dummy_fcn(pos height)
+               ^
+    Unknown type name 'pos'
+
+## Exercise 7.35
+
+```cpp
+typedef string Type;
+Type initVal(); // use `string`
+class Exercise {
+public:
+    typedef double Type;
+    Type setVal(Type); // use `double`
+    Type initVal(); // use `double`
+private:
+    int val;
+};
+
+Type Exercise::setVal(Type parm) {  // first is `string`, second is `double`
+    val = parm + initVal();     // Exercise::initVal()
+    return val;
+}
+```
+
+**fixed**
+
+changed
+
+```cpp
+Type Exercise::setVal(Type parm) {
+    val = parm + initVal();
+    return val;
+}
+```
+to
+```cpp
+Exercise::Type Exercise::setVal(Type parm) {
+    val = parm + initVal();
+    return val;
+}
+```
+
+and `Exercise::initVal()` should be defined.
