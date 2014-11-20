@@ -12,9 +12,9 @@
 using std::list;using  std::vector;using std::cout;using std::endl;
 
 int main()
-{
-   list<int> ilst(5, 1);
-	vector<int> ivc(5, 2);
+{ 
+	list<int> ilst(5, 4);
+	vector<int> ivc(5, 5);
 	vector<double> dvc (ilst.begin(),ilst.end());//from list<int>  to  vector<double>
 	for (auto i : ilst)
 		cout << i;
@@ -28,5 +28,5 @@ int main()
 	cout << endl;
 	for (auto t : dvc2)
 		cout << t;
-    return 0;
+	return 0;
 }
