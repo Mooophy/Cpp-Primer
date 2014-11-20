@@ -8,15 +8,25 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <deque>
 #include <list>
-
+using std::list;using  std::vector;using std::cout;using std::endl;
 
 int main()
 {
-    std::list<int> ls(10,1);
-    std::vector<int> vi(10,2);
-
-    std::vector<double> v(vi.begin(),   vi.end());
+   list<int> ilst(5, 1);
+	vector<int> ivc(5, 2);
+	vector<double> dvc (ilst.begin(),ilst.end());//from list<int>  to  vector<double>
+	for (auto i : ilst)
+		cout << i;
+	cout << endl;
+	for (auto t : dvc)
+		cout << t;
+	cout << endl;
+	vector<double> dvc2(ivc.begin(), ivc.end());//from vector<int>   to  vector<double>
+	for (auto i : ivc)
+		cout << i;
+	cout << endl;
+	for (auto t : dvc2)
+		cout << t;
     return 0;
 }
