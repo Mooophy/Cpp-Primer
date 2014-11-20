@@ -13,5 +13,6 @@ int main()
         if (vec1[i] != vec2[i]) { cout << "false" << endl; break; }
         if (i == size - 1) cout << "ture" << endl;
     }
+    
     return 0;
 }
