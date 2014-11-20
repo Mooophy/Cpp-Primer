@@ -192,3 +192,54 @@ Exercise::Type Exercise::setVal(Type parm) {
 ```
 
 and `Exercise::initVal()` should be defined.
+
+## Exercise 7.36
+
+>In this case, the constructor initializer makes it appear as if `base` is initialized with `i` and then `base` is used to initialize `rem`. However, `base` is initialized first. The effect of this initializer is to initialize `rem` with the undefined value of `base`!
+
+**fixd**
+```cpp
+struct X {
+  X (int i, int j): base(i), rem(base % j) { }
+  int base, rem;
+};
+```
+
+## Exercise 7.37
+
+```cpp
+Sales_data first_item(cin);   // use Sales_data(std::istream &is)
+
+int main() {
+  Sales_data next;  // use Sales_data(std::string s = "")
+  Sales_data last("9-999-99999-9"); // use Sales_data(std::string s = "")
+}
+```
+
+## Exercise 7.38
+
+```cpp
+Sales_data(std::istream &is = std::cin) { read(is, *this); }
+```
+
+## Exercise 7.39
+
+illegal. cause the call of overloaded 'Sales_data()' is **ambiguous**.
+
+## Exercise 7.40
+
+Such as `Book`
+```cpp
+class Book {
+public:
+  Book() = default;
+  Book(unsigned no, std::string name, std::string author, std::string pubdate):no_(no), name_(name), author_(author), pubdate_(pubdate) { }
+  Book(std::istream &in) { in >> no_ >> name_ >> author_ >> pubdate_; }
+
+private:
+  unsigned no_;
+  std::string name_;
+  std::string author_;
+  std::string pubdate_;
+};
+```
