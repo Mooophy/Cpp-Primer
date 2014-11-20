@@ -23,11 +23,19 @@ bool is_equal(const std::vector<int> &v1, const std::vector<int> &v2);
 bool is_equal2(const std::vector<int> &v, const std::list<int> &l);
 int main()
 {
-    std::list<char*> l(10);
-    std::vector<std::string> v;
-    v.assign(l.cbegin(), l.cend());
+	std::vector<int> iv{ 10, 1 };
+	std::vector<int> iv2{ 10, 1 };
+	std::list<int> il{ 10, 2 };
+	
+	if (is_equal(iv, iv2))//EX9.15
+		std::cout << "iv and iv2 are equal;" << std::endl;
+	else std::cout << "iv and iv2 are different;" << std::endl;
 
-    return 0;
+	if (is_equal2(iv, il))//EX9.16
+		std::cout << "iv and il are equal." << std::endl;
+	else std::cout << "iv and il are different." << std::endl;
+	
+	return 0;
 }
 
 
