@@ -15,19 +15,6 @@
 #include <cctype>
 #include <algorithm>
 
-void remove_punct(std::string &s)
-{
-    auto iter = s.begin();
-    while(iter != s.end())
-    {
-        if(std::ispunct(*iter))
-        {
-            iter =  s.erase(iter);
-        }
-        else
-            ++ iter;
-    }
-}
 
 //! Exercise 11.4
 void word_count_pro(std::map<std::string, int> &m)
@@ -36,7 +23,9 @@ void word_count_pro(std::map<std::string, int> &m)
     while(std::cin >> word)
     {
         for(auto& ch : word)    ch = std::tolower(ch);
-        remove_punct(word);
+        //! Erase-remove idiom
+        //! http://en.wikipedia.org/wiki/Erase-remove_idiom
+        word.erase(std::remove_if(word.begin(), word.end(), ispunct), word.end());
         ++m[word];
 
         for (const auto &e : m)
