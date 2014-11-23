@@ -20,7 +20,7 @@ void word_count_pro(std::map<std::string, int> &m)
     for(std::string word;   std::cin >> word; /* */)
     {
         for(auto& ch : word)    ch = std::tolower(ch);
-        std::remove_if(word.begin(), word.end(), ispunct);
+        std::erase(std::remove_if(word.begin(), word.end(), ispunct), word.end());
         ++m[word];
 
         for (const auto &e : m)
