@@ -12,15 +12,31 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <cctype>
 #include <algorithm>
+
+void remove_punct(std::string &s)
+{
+    auto iter = s.begin();
+    while(iter != s.end())
+    {
+        if(std::ispunct(*iter))
+        {
+            iter =  s.erase(iter);
+        }
+        else
+            ++ iter;
+    }
+}
 
 //! Exercise 11.4
 void word_count_pro(std::map<std::string, int> &m)
 {
-    for(std::string word;   std::cin >> word; /* */)
+    std::string word;
+    while(std::cin >> word)
     {
         for(auto& ch : word)    ch = std::tolower(ch);
-        std::remove_if(word.begin(), word.end(), ispunct);
+        remove_punct(word);
         ++m[word];
 
         for (const auto &e : m)
@@ -32,7 +48,8 @@ void word_count_pro(std::map<std::string, int> &m)
 void ex11_3()
 {
     std::map<std::string, std::size_t> word_count;
-    for(std::string word;   std::cin >> word;   /* */)
+    std::string word;
+    while(std::cin >> word)
     {
         ++word_count[word];
         for (const auto &elem : word_count)
