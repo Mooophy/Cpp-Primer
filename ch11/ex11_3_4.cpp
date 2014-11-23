@@ -17,15 +17,15 @@
 //! Exercise 11.4
 void word_count_pro(std::map<std::string, int> &m)
 {
-    for(std::string word;   std::cin >> word; /* */)
+    for(std::string word; std::cin >> word; /* */)
     {
-        for(auto& ch : word)    ch = std::tolower(ch);
-        std::remove_if(word.begin(), word.end(), ispunct);
+        for(auto& ch : word)    
+            ch = std::tolower(ch);
+        word.erase(std::remove_if(word.begin(), word.end(), ispunct), word.end());
         ++m[word];
-
-        for (const auto &e : m)
-            std::cout << e.first << " : " << e.second <<"\n";
     }
+    for (const auto &e : m)
+        std::cout << e.first << " : " << e.second <<"\n";
 }
 
 //! Exercise 11.3
