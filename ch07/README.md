@@ -277,3 +277,54 @@ No problem. cause `C` have the default constructor.
 - b) A default constructor is a constructor with an empty parameter list. (**unture**,  A default constructor is a constructor that is used if no initializer is supplied)
 - c) If there are no meaningful default values for a class, the class should not provide a default constructor. (**unture**, the class should provide.)
 - d) If a class does not define a default constructor, the compiler generates one that initializes each data member to the default value of its associated type. (**unture**, only if our class does not explicitly define any constructors, the compiler will implicitly define the default constructor for us.)
+
+## Exercise 7.47
+
+Whether the conversion of a `string` to `Sales_data` is desired **depends on how we think our users will use the conversion**. In this case, it might be okay. The `string` in null_book probably represents a nonexistent ISBN.
+
+Benefits:
+
+- prevent the use of a constructor in a context that requires an implicit conversion
+- we can define a constructor which is used only with the direct form of initialization
+
+Drawbacks:
+
+- meaningful only on constructors that can be called with a single argument
+
+## Exercise 7.48
+
+Both are noting happened.
+
+## Exercise 7.49
+
+```cpp
+(a) Sales_data &combine(Sales_data); // ok
+(b) Sales_data &combine(Sales_data&); // [Error] no matching function for call to 'Sales_data::combine(std::string&)' (`std::string&` can not convert to `Sales_data` type.)
+(c) Sales_data &combine(const Sales_data&) const; // [Error] assignment of member 'Sales_data::units_sold' in read-only object. (we cannot combine the other `Sales_data` object.)
+```
+
+## [Exercise 7.50](ex7_50.h)
+## Exercise 7.51
+
+Such as a function like that:
+
+```cpp
+int getSize(const std::vector<int>&);
+```
+
+if vector has not defined its single-argument constructor as explicit. we can use the function like:
+
+```cpp
+getSize(34);
+```
+
+What is this mean? It's very confused.
+
+But the `std::string` is different. In ordinary, we use `std::string` to replace `const char *`(the C language). so when we call a function like that:
+
+```cpp
+void setYourName(std::string); // declaration.
+setYourName("pezy"); // just fine.
+```
+
+it is very natural.
