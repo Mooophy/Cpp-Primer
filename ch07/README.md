@@ -328,3 +328,17 @@ setYourName("pezy"); // just fine.
 ```
 
 it is very natural.
+
+## Exercise 7.52
+
+`Sales_data` should have no in-class initializers.
+
+FIXED:
+
+```cpp
+struct Sales_data {
+    std::string bookNo;
+    unsigned units_sold;
+    double revenue;
+};
+```
