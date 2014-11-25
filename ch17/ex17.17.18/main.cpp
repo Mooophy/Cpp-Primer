@@ -8,12 +8,12 @@
 //!
 //! Exercise 17.17
 //! Update your program so that it finds all the words in an input sequence
-//! that violiate the ¡°ei¡± grammar rule.
+//! that violiate the "ei" grammar rule.
 
 //!
 //! Exercise 17.18
-//! Revise your program to ignore words that contain ¡°ei¡± but are not 
-//! misspellings, such as ¡°albeit¡± and ¡°neighbor.¡±
+//! Revise your program to ignore words that contain "ei" but are not 
+//! misspellings, such as "albeit" and "neighbor".
 
 #include <iostream>
 using std::cout;
