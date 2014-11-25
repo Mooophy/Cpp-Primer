@@ -13,7 +13,7 @@
 //!
 //! Exercise 17.18
 //! Revise your program to ignore words that contain "ei" but are not 
-//! misspellings, such as "albeit" and "neighbor".
+//! misspellings, such as "albeit" and "neighbor."
 
 #include <iostream>
 using std::cout;
@@ -33,7 +33,7 @@ int main()
 	cout << "Please input a sequence of words:" << endl;
 	getline(cin, s);
 	cout << endl;
-	cout << "Word(s) that violiate the ¡°ei¡± grammar rule:" << endl;
+	cout << "Word(s) that violiate the \"ei\" grammar rule:" << endl;
 	string pattern("[^c]ei");
 	pattern = "[[:alpha:]]*" + pattern + "[[:alpha:]]*";
 	regex r(pattern, regex::icase);
