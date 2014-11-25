@@ -342,3 +342,61 @@ struct Sales_data {
     double revenue;
 };
 ```
+
+## [Exercise 7.53](ex7_53.h)
+
+## Exercise 7.54
+
+shouldn't, cause a `constexpr` function must contain exactly one **return** statement.
+
+## Exercise 7.55
+
+yes.
+
+>An aggregate class whose data members are all of literal type is a literal class.
+
+## Exercise 7.56
+
+>What is a static class member?
+
+A class member that is **associated with the class**, rather than with individual objects of the class type.
+
+>What are the advantages of static members?
+
+each object can no need to store a common data. And if the data is changed, each object can use the new value.
+
+>How do they differ from ordinary members?
+
+- a static data member can have **incomplete type**.
+- we can use a static member **as a default argument**.
+
+## [Exercise 7.57](ex7_57.h)
+
+## Exercise 7.58
+
+```cpp
+static double rate = 6.5;
+                ^
+            rate should be a constant expression.
+
+static vector<double> vec(vecSize);
+                            ^
+            we may not specify an in-class initializer inside parentheses.
+```
+
+Fixed:
+
+```cpp
+// example.h
+class Example {
+public:
+    static constexpr double rate = 6.5;
+    static const int vecSize = 20;
+    static vector<double> vec;
+};
+
+// example.C
+#include "example.h"
+constexpr double Example::rate;
+vector<double> Example::vec(Example::vecSize);
+```
