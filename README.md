@@ -1,4 +1,4 @@
-#C++ Primer (第5版) 习题答案
+#C++ Primer (第5版) 习题答案 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pezy/cpp-primer/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 ##C++ Primer (5th Edition) exercise answers.
 
 ### Note
