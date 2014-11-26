@@ -3,7 +3,9 @@
  *  @author     Queequeg
  *  @date       19  Nov 2014
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
- *  @note
+ *  @note       There are some bugs in gcc(include the latest version 4.9.2) 
+ *              to handle regular expression.To compile this program, please
+ *			    turn to other compilers such as msvs2013 and clang.
  ***************************************************************************/
 //!
 //! Exercise 17.14
@@ -21,9 +23,6 @@
 //! initialized with "[^c]ei"? Test your program using that pattern to see
 //! whether your expectations were correct.
 
-//! Note: There are some bugs in gcc(include the latest version 4.9.2) to handle 
-//!       regular expression.To compile this program, please turn to other 
-//!       compilers such as msvs2013 and clang.
 
 #include <iostream>
 using std::cout;
