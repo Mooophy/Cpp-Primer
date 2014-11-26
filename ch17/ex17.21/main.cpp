@@ -7,7 +7,7 @@
 ***************************************************************************/
 //!
 //! Exercise 17.21
-//! Rewrite your phone number program from ¡ì 8.3.2 (p. 323) to use the 
+//! Rewrite your phone number program from 8.3.2 (p. 323) to use the 
 //! valid function defined in this section.
 
 #include<iostream>
@@ -135,10 +135,10 @@ void format_record(ostream& os, const vector<PersonInfo>& people)
 			}
 		}
 
-		if (badNums.str().empty()) //£¡ there were no bad numbers
-			os << entry.name << " " //£¡ print the name
-			   << formatted.str() << endl; //£¡ and reformatted numbers
-		else //£¡ otherwise, print the name and bad numbers
+		if (badNums.str().empty()) //! there were no bad numbers
+			os << entry.name << " " //! print the name
+			   << formatted.str() << endl; //! and reformatted numbers
+		else //! otherwise, print the name and bad numbers
 			cerr << "input error: " << entry.name
 			     << " invalid number(s) " << badNums.str() << endl;
 	}
