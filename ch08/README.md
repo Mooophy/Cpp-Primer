@@ -22,3 +22,7 @@ while (cin >> i) /*  ...    */
 ```
 
 putting `cin` in an error state cause to terminate. such as `eofbit`, `failbit` and `badbit`.
+
+## [Exercise 8.4](ex8_04.cpp)
+## [Exercise 8.5](ex8_05.cpp)
+## [Exercise 8.6](ex8_06.cpp)
