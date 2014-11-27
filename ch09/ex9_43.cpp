@@ -63,7 +63,7 @@ int abbrv_handler(std::string &s, const std::string &oldVal, const std::string &
                 //!         by the statement ++it, it will move to the next element as shown below:
                 //!         ********through******
                 //                         ^
-                it = s.begin() + offSet + oldVal.size() - 1;
+                it = s.begin() + offSet + newVal.size() - 1;
             }
         }
         ++it;
