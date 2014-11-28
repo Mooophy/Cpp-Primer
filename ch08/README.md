@@ -7,7 +7,8 @@
 istream& func(istream &is)
 {
     std::string buf;
-    while (is >> buf);
+    while (is >> buf)
+        std::cout << buf << std::endl;
     is.clear();
     return is;
 }
@@ -28,3 +29,19 @@ putting `cin` in an error state cause to terminate. such as `eofbit`, `failbit` 
 ## [Exercise 8.6](ex8_06.cpp)
 ## [Exercise 8.7](ex8_07.cpp)
 ## [Exercise 8.8](ex8_08.cpp)
+## [Exercise 8.9](ex8_09.cpp)
+## [Exercise 8.10](ex8_10.cpp)
+## [Exercise 8.11](ex8_11.cpp)
+
+## Exercise 8.12:
+>Why didn’t we use in-class initializers in PersonInfo?
+
+Cause we need a aggregate class here. so it should have no in-class initializers.
+
+## [Exercise 8.13](ex8_13.cpp)
+
+## Exercise 8.14:
+>Why did we declare entry and nums as const auto &?
+
+- cause they are all class type, not the built-in type. so **reference** more effective.
+- output shouldn't change their values. so we added the `const`.
