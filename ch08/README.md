@@ -26,3 +26,5 @@ putting `cin` in an error state cause to terminate. such as `eofbit`, `failbit` 
 ## [Exercise 8.4](ex8_04.cpp)
 ## [Exercise 8.5](ex8_05.cpp)
 ## [Exercise 8.6](ex8_06.cpp)
+## [Exercise 8.7](ex8_07.cpp)
+## [Exercise 8.8](ex8_08.cpp)
