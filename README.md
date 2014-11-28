@@ -26,7 +26,7 @@
   - [Chapter 6. Functions](ch06/README.md)
   - [Chapter 7. Classes](ch07/README.md)
 - Part II: The C++ Library
-  - [Chapter 8. The IO Library](ch08)
+  - [Chapter 8. The IO Library](ch08/README.md)
   - [Chapter 9. Sequential Containers](ch09)
   - [Chapter 10. Generic Algorithms](ch10)
   - [Chapter 11. Associative Containers](ch11)
