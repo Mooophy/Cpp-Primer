@@ -22,7 +22,7 @@ int main()
 
     //! constuct each object using copy constructor
     std::cout << "enter 4 times\n";
-    for(std::string word ;std::cin >> word && p_movable != p + 3; ++p_movable)
+    for(std::string word ;std::cin >> word and p_movable != p + 3; ++p_movable)
         alloc.construct(p_movable,word);
 
     //! move the movable pointer back home
