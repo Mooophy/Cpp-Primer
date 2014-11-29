@@ -32,11 +32,14 @@ int main()
     p_movable = p;
 
     //! print the strings constructed.
-    while(p_movable != p + 3)
-        std::cout << *p_movable++ <<"\n";
+    while(p_movable != p + 3){
+        std::cout << *p_movable <<"\n";
+        alloc.destroy(p_movable);
+        ++p_movable；
+    }
 
     //! free the allocated memory.
-    delete[] p;
+    alloc.deallocate(p, 5);
 
 
 
