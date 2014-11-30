@@ -36,7 +36,7 @@ int main()
     std::vector<int> v;
     v.resize(10);
     set0(v);
-    std::vector<int>::iterator iter=v.begin();
+    for(std::vector<int>::iterator iter=v.begin(); iter != v.cend();++iter)
     std::cout<<*iter<<std::endl;
     //! Exercise 10.9
     std::vector<std::string> vs = {"a","v","a","s","a","a","a"};
