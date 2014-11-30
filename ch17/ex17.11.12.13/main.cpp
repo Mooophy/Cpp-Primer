@@ -35,24 +35,25 @@
 
 //! for ex17.12
 //! updates the quiz results
-void update(std::bitset<10>& bset, std::pair<std::size_t, bool> pair);
+template<size_t N>
+void update(std::bitset<N>& bset, std::pair<std::size_t, bool> pair);
 
 //! for ex17.13
 //! mark
-std::size_t mark(const std::bitset<10>& std_ans, const std::bitset<10> ans);
+template<size_t N>
+std::size_t mark(const std::bitset<N>& std_ans, const std::bitset<N> ans);
 
 
 int main()
 {
-    std::bitset<10> bset;
+    std::bitset<10> bset("1010101010");
     //! for ex17.12
-/*
     update(bset,std::make_pair(2,1));
     std::cout << bset << std::endl;
-*/
 
     //! for ex17.13
     std::bitset<10> std_ans ("1100011000");
+    std::cout << std_ans << std::endl;
     std::cout << mark(std_ans, bset) << std::endl;
 
     return 0;
@@ -60,23 +61,18 @@ int main()
 
 //! for ex17.12
 //! updates the quiz results
-void update(std::bitset<10>& bset, std::pair<std::size_t, bool> pair)
+template<size_t N>
+void update(std::bitset<N>& bset, std::pair<std::size_t, bool> pair)
 {
     bset[pair.first] = pair.second;
 }
 
 //! for ex17.13
 //! mark
-std::size_t mark(const std::bitset<10>& std_ans, const std::bitset<10> ans)
+template<size_t N>
+std::size_t mark(const std::bitset<N>& std_ans, const std::bitset<N> ans)
 {
-    std::size_t mark = 0;
-    for (unsigned i = 0; i != 10; ++i)
-        mark += (ans[i] == std_ans[i]) ? 1 : 0;
-
-    return mark;
+    auto result = std_ans ^ ans;
+    result.flip();
+    return result.count();
 }
-
-
-
-
-

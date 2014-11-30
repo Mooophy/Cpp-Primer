@@ -1,14 +1,21 @@
 //
-//  ex7_26.cpp
-//  Exercise 7.26
+//  ex7_41.cpp
+//  Exercise 7.41
 //
-//  Created by pezy on 11/9/14.
+//  Created by pezy on 11/20/14.
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief implementation of class Sales_data
-//  @See ex7_26.h
+//  @See ex7_41.h
 
-#include "ex7_26.h"
+#include "ex7_41.h"
+
+// constructor
+Sales_data::Sales_data(std::istream &is) : Sales_data()
+{
+    std::cout << "Sales_data(istream &is)" << std::endl;
+    read(is, *this);
+}
 
 // member functions.
 Sales_data& Sales_data::combine(const Sales_data& rhs)

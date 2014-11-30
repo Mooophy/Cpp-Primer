@@ -1,4 +1,4 @@
-//! @Alan
+//! @author @shbling @Alan
 //!
 //! Exercise 9.13:
 //! How would you initialize a vector<double> from a list<int>?
@@ -8,15 +8,27 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <deque>
 #include <list>
 
+using std::list;using  std::vector;using std::cout;using std::endl;
 
 int main()
 {
-    std::list<int> ls(10,1);
-    std::vector<int> vi(10,2);
+    list<int> ilst(5, 4);
+    vector<int> ivc(5, 5);
 
-    std::vector<double> v(vi.begin(),   vi.end());
+    //! from list<int>  to  vector<double>
+    vector<double> dvc (ilst.begin(),ilst.end());
+    for (auto i : ilst) cout << i;
+    cout << endl;
+    for (auto t : dvc)  cout << t;
+    cout << endl;
+
+    //! from vector<int>   to  vector<double>
+    vector<double> dvc2(ivc.begin(), ivc.end());
+    for (auto i : ivc)  cout << i;
+    cout << endl;
+    for (auto t : dvc2) cout << t;
+
     return 0;
 }
