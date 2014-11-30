@@ -15,3 +15,10 @@ If there is no reason to prefer one or another container, explain why not.
 - (c) `vector`, no need that insert or delete at the front or back. and
 >If your program has lots of small elements and space overhead matters, don’t
 use list or forward_list.
+
+## Exercise 9.2:
+>Define a list that holds elements that are deques that hold ints.
+
+```cpp
+std::list<std::deques<int>> ldi;
+```
