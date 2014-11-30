@@ -13,6 +13,7 @@
 #include <map>
 #include <string>
 #include <algorithm>
+#include <cctype>
 
 //! Exercise 11.4
 void word_count_pro(std::map<std::string, int> &m)
@@ -21,7 +22,7 @@ void word_count_pro(std::map<std::string, int> &m)
     while(std::cin >> word)
     {
         for(auto& ch : word)
-            ch = std::tolower(ch);
+            ch = tolower(ch);
         //! According to the erase-remove idiom.
         //! For more information about the erase-remove idiom, please refer to
         //! http://en.wikipedia.org/wiki/Erase-remove_idiom
