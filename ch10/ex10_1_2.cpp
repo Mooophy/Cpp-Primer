@@ -15,6 +15,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include<list>
 
 //! Exercise 10.1
 int
@@ -22,7 +23,7 @@ count_of_int(const std::vector<int> &v, const int &i);
 
 //! Exercise 10.2
 int
-count_of_string(std::vector< std::string> &v, const std::string &s);
+count_of_string(std::list< std::string> &l, const std::string &s);
 
 int main()
 {
@@ -31,8 +32,8 @@ int main()
     std::cout << count_of_int(v,2);
 
     //! Exercise 10.2
-    std::vector<std::string> vs = {"aa","aa","aa","cc"};
-    std::cout << count_of_string(vs,"aa");
+    std::list<std::string> ls = {"aa","aa","aa","cc"};
+    std::cout << count_of_string(ls,"aa");
 
     return 0;
 }
@@ -45,7 +46,7 @@ count_of_int(const std::vector<int> &v, const int &i)
 }
 
 
-int count_of_string(std::vector<std::string> &v, const std::string &s)
+int count_of_string(std::list<std::string> &l, const std::string &s)
 {
-    return std::count(v.begin(), v.end(), s);
+    return std::count(l.begin(), l.end(), s);
 }
