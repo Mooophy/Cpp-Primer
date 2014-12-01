@@ -2,7 +2,16 @@
 #include<iostream>
 #include <functional>
 #include <algorithm>
+#include<vector>
+#include<string>
 
+void wy_elimdups(std::vector<std::string> &vs)
+{
+	for (auto element : vs)
+		std::cout << element
+		<< " ";
+	std::cout << "\n";
+}
 
 void wy_biggies_partition(std::vector<std::string> &vs, const std::vector<std::string>::size_type sz)
 {
