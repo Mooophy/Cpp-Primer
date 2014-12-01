@@ -125,9 +125,9 @@ void wy_biggies_partition(std::vector<std::string> &vs, const std::vector<std::s
 
     auto wc = std::partition(vs.begin(), vs.end(),
                              [sz](const std::string &s)
-                                        {return s.size() > sz;});
-    std::for_each(wc, vs.end(), [](const std::string &s)
-                                         {std::cout << s;});
+                                        {return s.size() >= sz;});
+    std::for_each(vs.begin(),wc, [](const std::string &s)
+                                         {std::cout << s<<" ";});
 
 }
 
@@ -142,10 +142,10 @@ void wy_biggies_STpartition(std::vector<std::string> &vs, const std::vector<std:
 
     auto wc = std::stable_partition(vs.begin(), vs.end(),
                              [sz](const std::string &s)
-                                        {return s.size() > sz;});
+                                        {return s.size() > =sz;});
 
-    std::for_each(wc, vs.end(), [](const std::string &s)
-                                         {std::cout << s;});
+    std::for_each(vs.begin(),wc, [](const std::string &s)
+                                         {std::cout << s<<" ";});
 }
 
 
