@@ -43,6 +43,10 @@ void elimdups(std::vector<std::string> &vs)
     //! put all duplicates at the end of the vector
     auto new_end = std::unique(vs.begin(),vs.end());
     println(vs);
+//! ^^^^^^^^^^^^
+//! @attention  Accessing from new_end to end() should be considered as a UB.
+//!             As a result, it would behave differently on different platform.
+//!             For detail, see : https://github.com/Mooophy/Cpp-Primer/pull/85#issuecomment-65016500
 
     //! erase duplicates
     vs.erase(new_end, vs.end());
