@@ -22,3 +22,59 @@ use list or forward_list.
 ```cpp
 std::list<std::deques<int>> ldi;
 ```
+
+## Exercise 9.3:
+>What are the constraints on the iterators that form iterator ranges?
+
+two iterators, `begin` and `end`:
+- they refer to elements of the same container.
+- It is possible to reach `end` by repeatedly incrementing `begin`.
+
+## Exercise 9.4:
+>Write a function that takes a pair of iterators to a vector<int> and an int value. Look for that value in the range and return a bool indicating whether it was found.
+
+```cpp
+bool find(vector<int>::iterator beg, vector<int>::iterator end, int value)
+{
+    for (auto iter = beg; iter != end; ++iter)
+        if (*iter == value) return true;
+    return false;
+}
+```
+
+## Exercise 9.5:
+>Rewrite the previous program to return an iterator to the requested element. Note that the program must handle the case where the element is not found.
+
+```cpp
+vector<int>::iterator find(vector<int>::iterator beg, vector<int>::iterator end, int value)
+{
+    for (auto iter = beg; iter != end; ++iter)
+        if (*iter == value) return iter;
+    return end;
+}
+```
+
+## Exercise 9.6:
+>What is wrong with the following program? How might you correct it?
+
+```cpp
+list<int> lst1;
+list<int>::iterator iter1 = lst1.begin(), iter2 = lst1.end();
+while (iter1 < iter2) /*ERROR: operator< cannot be used in list*/
+```
+
+Fixed:
+```cpp
+while(iter1 != iter2)
+```
+
+## Exercise 9.7:
+>What type should be used as the index into a vector of ints?
+
+    vector<int>::size_type
+
+## Exercise 9.8:
+>What type should be used to read elements in a list of strings? To write them?
+
+    list<string>::iterator || list<string>::const_iterator // read
+    list<string>::iterator // write
