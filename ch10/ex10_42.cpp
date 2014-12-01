@@ -6,9 +6,6 @@
 //!
 
 #include <iostream>
-#include <fstream>
-#include <algorithm>
-#include <iterator>
 #include <string>
 #include <list>
 
@@ -23,3 +20,6 @@ int main()
 
     return 0;
 }
+//! output
+//!
+//aa aasss aa
