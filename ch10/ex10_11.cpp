@@ -12,70 +12,45 @@
 #include <numeric>
 #include <list>
 
-//! Exercise 10.11
-//! @note   Predicate for this exercise.
-inline bool
-isShorter(const std::string &s1, const std::string &s2);
+//! print a container like vector,deque, list,etc.
+template<typename Sequence>
+inline std::ostream& println(Sequence const& seq)
+{
+    for(auto const& elem : seq) std::cout << elem << " ";
+    std::cout << std::endl;
 
-//! Exercise 10.9
-void
-wy_elimdups(std::vector<std::string> &vs);
+    return std::cout;
+}
+
+
+inline bool
+is_shorter(std::string const& lhs, std::string const& rhs)
+{
+    return  lhs.size() < rhs.size();
+}
+
+
+void elimdups(std::vector<std::string> &vs)
+{
+    std::sort(vs.begin(), vs.end());
+    auto new_end = std::unique(vs.begin(),vs.end());
+    vs.erase(new_end, vs.end());
+    std::stable_sort(vs.begin(), vs.end(), is_shorter);
+}
+
 
 int main()
 {
-    //! Exercise 10.9
-    std::vector<std::string> vs = {"asss","v","ass","s","aaaa","aa","aa"};
-    wy_elimdups(vs);
-
-    //! Exercise 10.9
-    std::stable_sort(vs.begin(), vs.end(), isShorter);
-
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
+    std::vector<std::string> v{
+        "1234", "1234", "1234", "Hi", "alan"
+    };
+    elimdups(v);
+    std::cout << "ex10.11 :\n";
+    println(v);
 
     return 0;
 }
+//! output
+//ex10.11 :
+//Hi 1234 alan
 
-
-//! Exercise 10.9
-void wy_elimdups(std::vector<std::string> &vs)
-{
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    //! sort alphabetically.
-    std::sort(vs.begin(), vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    //! put all duplicates at the end of the vector
-    //! and get the iterator pointing to the one past
-    //! the last unique element.
-    auto unique_iterator = std::unique(vs.begin(),vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    vs.erase(unique_iterator, vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-}
-
-//! Exercise 10.9
-inline bool
-isShorter(const std::string &s1, const std::string &s2)
-{
-    return  s1.size() < s2.size();
-}

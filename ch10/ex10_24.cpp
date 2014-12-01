@@ -1,12 +1,13 @@
-//! @Alan
+//!
+//! @author @Yue Wang @shbling
+//!
 //! Exercise 10.24:
 //! Use bind and check_size to find the first element in a vector of ints that has a value greater
 //! than the length of a specified string value.
+//!
 //  Discussion over this exercise on StackOverflow
 //  http://stackoverflow.com/questions/20539406/what-type-does-stdfind-if-not-return
 //!
-
-
 
 #include <iostream>
 #include <string>
@@ -14,20 +15,34 @@
 #include <algorithm>
 #include <functional>
 
-bool
-check_size(const std::string &s, std::string::size_type sz)
+using std::cout;
+using std::endl;
+using std::string;
+using std::vector;
+using std::find_if;
+using std::bind;
+
+inline bool
+check_size(string const& s, string::size_type sz)
 {
-    return s.size() > sz;
+    return s.size() < sz;
 }
 
-std::vector<int>::iterator
-find_first_bigger(std::vector<int> &v, const std::string &s);
-
-int main(){return 0;}
-
-std::vector<int>::iterator
-find_first_bigger(std::vector<int> &v, const std::string &s)
+inline vector<int>::iterator
+find_first_bigger(vector<int> & v, std::string const& s)
 {
-   auto it= std::find_if_not(v.begin(), v.end(), std::bind(check_size, s, std::placeholders::_1));
-   return it;
+   return find_if(v.begin(), v.end(), bind(check_size, s, std::placeholders::_1));
 }
+
+int main()
+{
+    vector<int> v{1,2,3,4,5,6,7};
+    string s("test");
+    cout << *find_first_bigger(v,s) << endl;
+
+    return 0;
+}
+//! output;
+//!
+//5
+

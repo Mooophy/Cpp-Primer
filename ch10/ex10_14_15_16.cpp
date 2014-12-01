@@ -1,4 +1,6 @@
-//! @Alan
+//!
+//! @author @Yue Wang @shbling @pezy @zzzkl
+//! @date   02.12.2014
 //!
 //! Exercise 10.14:
 //! Write a lambda that takes two ints and returns their sum.
@@ -7,6 +9,7 @@
 //! Write a lambda that captures an int from its enclosing function
 //! and takes an int parameter. The lambda should return the sum of
 //! the captured int and the int parameter.
+//!
 //! Exercise 10.16:
 //! Write your own version of the biggies function using lambdas.
 //!
@@ -17,83 +20,62 @@
 #include <algorithm>
 
 
-
-//! Exercise 10.14
-auto sum = [](const int i1, const int i2 )
-{   return i1 + i2;     };
-//!                      ^
-//! @note There is a ";" here, just like that used after a body of a class.
-
-
-//! Exercise 10.15
-void f()
+//! from ex 10.9
+void elimdups(std::vector<std::string> &vs)
 {
-    int i = 0;
-    auto sum = [i](const int j)
-    {
-        return i + j;
-    };
+    std::sort(vs.begin(), vs.end());
+    auto new_end = std::unique(vs.begin(),vs.end());
+    vs.erase(new_end, vs.end());
 }
 
-//! Exercise 10.16
-void
-wy_elimdups(std::vector<std::string> &vs);
-void
-wy_biggies(std::vector<std::string> &vs,const std::vector<std::string>::size_type sz);
+
+void biggies(std::vector<std::string> &vs, std::size_t sz)
+{
+    using std::stable_sort;
+    using std::string;
+    using std::find_if;
+
+    elimdups(vs);
+
+    //! sort by size, but maintain alphabetical order for same size.
+    stable_sort(vs.begin(), vs.end(),[](string const& lhs, string const& rhs){
+        return lhs.size() < rhs.size();
+    });
+
+    //! get an iterator to the first one whose size() is >= sz
+    auto wc = find_if(vs.begin(), vs.end(),[sz](string const& s){
+            return s.size() > sz;
+    });
+
+    for(auto it = wc; it != vs.cend(); ++it)
+        std::cout << *it << " ";
+}
+
 
 int main()
 {
+    //! ex10.14
+    auto add = [](int lhs, int rhs){return lhs+rhs;};
+    std::cout << "ex10.14: " << add(1,2) << std::endl;
+
+    //! ex10.15
+    int i = 42;
+    auto lambda = [&i](int num){return i+num;};
+    std::cout << "ex10.15: " << lambda(99) << std::endl;
+
+    //! ex10.16
+    std::vector<std::string> v
+    {
+        "1234","1234","1234","hi~", "alan", "alan"
+    };
+    std::cout << "ex10.16: ";
+    biggies(v,3);
+    std::cout << std::endl;
 
     return 0;
 }
-void wy_elimdups(std::vector<std::string> &vs)
-{
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    //! sort alphabetically
-    std::sort(vs.begin(), vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    //! put all duplicates at the end of the vector
-    //! and get the iterator pointing to the one past
-    //! the last unique element.
-    auto unique_iterator = std::unique(vs.begin(),vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    vs.erase(unique_iterator, vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-}
-
-//! Exercise 10.16
-void
-wy_biggies(std::vector<std::string> &vs, const std::vector<std::string>::size_type sz)
-{
-    wy_elimdups(vs);
-
-    // sort words by size, but maintain alphabetical order for words of the same size
-    std::stable_sort(vs.begin(), vs.end(),
-                     [](const std::string &s1, const std::string &s2){return s1.size() < s2.size();});
-
-    // get an iterator to the first element whose size() is >= sz
-    auto wc = std::find_if(vs.begin(), vs.end(),
-                           [sz](const std::string &s)
-                                {return s.size() > sz;});
-
-    std::for_each(wc, vs.end(), [](const std::string &s)
-                                         {std::cout << s;});
-}
+//! output :
+//!
+//ex10.14: 3
+//ex10.15: 141
+//ex10.16: 1234 alan
