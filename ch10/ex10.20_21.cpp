@@ -1,4 +1,6 @@
-//! @Alan
+//!
+//! @author @Yue Wang @shbling @pezy @zzzkl
+//! @date   02.12.2014
 //!
 //! Exercise 10.20:
 //! The library defines an algorithm named count_if. Like find_if, this function takes
@@ -18,32 +20,49 @@
 #include <vector>
 #include <algorithm>
 
+
+using std::vector;
+using std::count_if;
+using std::string;
+
+
 //! Exercise 10.20
-unsigned
-bigerThan6(const std::vector<std::string> &vs);
+std::size_t bigerThan6(vector<string> const& v)
+{
+    return count_if(v.cbegin(), v.cend(), [](string const& s){
+        return s.size() > 6;
+    });
+}
+
 
 int main()
 {
+    //! ex10.20
+    vector<string> v{
+        "alan","moophy","1234567","1234567","1234567","1234567"
+    };
+    std::cout << "ex10.20: " << bigerThan6(v) << std::endl;
+
     //! ex10.21
-    std::size_t count = 3;
-
-    for (unsigned i = 0; i != 9; ++i)
-
-        std::cout << ([&](){
-            count? --count : count;
-            return count == 0;
-        }())
-                 << std::endl;
+    int i = 7;
+    auto check_and_decrement = [&i]{
+        if(i){
+            --i;
+            return false;
+        }
+        else
+            return true;
+    };
+    std::cout << "ex10.21: ";
+    while(not check_and_decrement())
+        std::cout << i << " ";
+    std::cout << std::endl;
 
     return 0;
 }
 
-unsigned bigerThan6(const std::vector<std::string> &vs)
-{
-    return std::count_if(vs.begin(), vs.end(), [](const std::string &s)->bool
-                                                 {return s.size() > 6;});
-}
 
-
-
-
+//! output  :
+//!
+//ex10.20: 4
+//ex10.21: 6 5 4 3 2 1 0
