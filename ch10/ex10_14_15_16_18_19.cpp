@@ -127,7 +127,7 @@ void wy_biggies_partition(std::vector<std::string> &vs, const std::vector<std::s
                              [sz](const std::string &s)
                                         {return s.size() > sz;});
     std::for_each(vs.begin(),wc, [](const std::string &s)
-                                         {std::cout << s;});
+                                         {std::cout << s<<" ";});
 
 }
 
