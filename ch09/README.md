@@ -78,3 +78,22 @@ while(iter1 != iter2)
 
     list<string>::iterator || list<string>::const_iterator // read
     list<string>::iterator // write
+
+## Exercise 9.11:
+>Show an example of each of the six ways to create and initialize a vector. Explain what values each vector contains.
+
+```cpp
+vector<int> vec;    // 0
+vector<int> vec(10);    // 0
+vector<int> vec(10,1);  // 1
+vector<int> vec{1,2,3,4,5}; // 1,2,3,4,5
+vector<int> vec(other_vec); // same as other_vec
+vector<int> vec(other_vec.begin(), other_vec.end()); // same as other_vec
+```
+
+## Exercise 9.12:
+>Explain the differences between the constructor that takes a container to copy and the constructor that takes two iterators.
+
+we can use the constructor that takes two iterators to copy a **subsequence** of a container. But the constructor that takes a container to copy should copy whole container.
+
+## [Exercise 9.13](ex9_13.cpp)
