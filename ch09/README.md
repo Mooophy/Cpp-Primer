@@ -117,3 +117,14 @@ vector<int> vec(other_vec.begin(), other_vec.end()); // same as other_vec
 we can use the constructor that takes two iterators to copy a **subsequence** of a container. But the constructor that takes a container to copy should copy whole container.
 
 ## [Exercise 9.13](ex9_13.cpp)
+## [Exercise 9.14](ex9_13.cpp)
+## [Exercise 9.15](ex9_13.cpp)
+## [Exercise 9.16](ex9_13.cpp)
+
+## Exercise 9.17:
+>Assuming c1 and c2 are containers, what (if any) constraints does the following usage place on the types of c1 and c2?
+
+First, ther must be the identical container and same type holded.
+Second,the type holded must support relational operation. (@Mooophy)
+
+Both c1 and c2 are the containers except the unordered associative containers.(@pezy)
