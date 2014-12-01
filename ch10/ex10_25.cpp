@@ -14,7 +14,7 @@ void wy_elimdups(std::vector<std::string> &vs)
 }
 
 //check_size function to check size
-bool check_size( const std::string &vs, const std::vector<std::string>::size_type sz)
+bool check_size( const std::string &vs,  std::string::size_type sz)
 {
 	return vs.size() >= sz;
 }
