@@ -17,7 +17,7 @@
 bool
 check_size(const std::string &s, std::string::size_type sz)
 {
-    return s.size() > sz;
+    return s.size() < sz;
 }
 
 std::vector<int>::iterator
@@ -28,6 +28,6 @@ int main(){return 0;}
 std::vector<int>::iterator
 find_first_bigger(std::vector<int> &v, const std::string &s)
 {
-   auto it= std::find_if_not(v.begin(), v.end(), std::bind(check_size, s, std::placeholders::_1));
+   auto it= std::find_if(v.begin(), v.end(), std::bind(check_size, s, std::placeholders::_1));
    return it;
 }
