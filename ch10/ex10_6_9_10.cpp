@@ -1,4 +1,6 @@
-//! @Alan
+//!
+//! @author @Yue Wang @shbling @pezy @zzzkl
+//! @date   01.12.2014
 //!
 //! Exercise 10.6:
 //! Using fill_n, write a program to set a sequence of int values to 0.
@@ -10,7 +12,7 @@
 //!
 //! Exercise 10.10:
 //! Why do you think the algorithms don’t change the size of containers?
-//  The aim of this desigen is to seperate the algorithms and the operation
+//  The aim of this design is to seperate the algorithms and the operation
 //  provided by memeber function.
 //!
 
@@ -21,65 +23,52 @@
 #include <numeric>
 #include <list>
 
-
-//! Exercise 10.6:
-void
-set0(std::vector<int> &v);
+template<typename Sequence>
+inline std::ostream& println(Sequence const& seq)
+{
+    for(auto const& elem : seq)
+        std::cout << elem << " ";
+    std::cout << std::endl;
+    return std::cout;
+}
 
 //! Exercise 10.9
-void
-wy_elimdups(std::vector<std::string> &vs);
+void elimdups(std::vector<std::string> &vs)
+{
+    println(vs);
+
+    //! sort
+    std::sort(vs.begin(), vs.end());
+    println(vs);
+
+    //! put all duplicates at the end of the vector
+    auto new_end = std::unique(vs.begin(),vs.end());
+    println(vs);
+
+    //! erase duplicates
+    vs.erase(new_end, vs.end());
+    println(vs);
+}
 
 int main()
 {
-    //! Exercise 10.6
-    std::vector<int> v;
-    v.resize(10);
-    set0(v);
-    for(std::vector<int>::iterator iter=v.begin(); iter != v.cend();++iter)
-    std::cout<<*iter<<std::endl;
-    //! Exercise 10.9
-    std::vector<std::string> vs = {"a","v","a","s","a","a","a"};
-    wy_elimdups(vs);
+    //! ex 10.6
+    std::vector<int> v{1,2,3,4,5,6,7,8,9};
+    std::fill_n(v.begin(),v.size(),0);
+    std::cout << "ex10.6:\n";
+    println(v);
+
+    //! ex 10.9
+    std::vector<std::string> vs{"a","v","a","s","a","a","a"};
+    std::cout << "ex 10.9:\n";
+    elimdups(vs);
     return 0;
 }
-
-//! Exercise 10.6
-void set0(std::vector<int> &v)
-{
-    std::fill_n( v.begin(), v.size(), 0 );
-}
-
-//! Exercise 10.9
-void wy_elimdups(std::vector<std::string> &vs)
-{
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    //! sort alphabetically
-    std::sort(vs.begin(), vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    //! put all duplicates at the end of the vector
-    //! and get the iterator pointing to the one past
-    //! the last unique element.
-    auto unique_iterator = std::unique(vs.begin(),vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    vs.erase(unique_iterator, vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-}
+//! output:
+//ex10.6:
+//0 0 0 0 0 0 0 0 0
+//ex 10.9:
+//a v a s a a a
+//a a a a a s v
+//a s v a a a a
+//a s v
