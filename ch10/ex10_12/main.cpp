@@ -11,11 +11,13 @@
 #include <numeric>
 #include <wy_sales_data.h>
 
-//! Exercise 10.12
-//! @note       the predicate here provides a logic to the algorithm to follow.
-//! @attention  a predicate must return a bool.
-bool
-compareIsbn(const wy_Sales_data &sd1, const wy_Sales_data &sd2);
+inline bool 
+compareIsbn(const wy_Sales_data &sd1, const wy_Sales_data &sd2)
+{
+    return sd1.isbn().size() < sd2.isbn().size();
+}
+
+
 int main()
 {
     wy_Sales_data d1("aa"), d2("aaaa"), d3("aaa"), d4("z"), d5("aaaaz");
@@ -30,9 +32,4 @@ int main()
     std::cout <<"\n";
 
     return 0;
-}
-bool
-compareIsbn(const wy_Sales_data &sd1, const wy_Sales_data &sd2)
-{
-    return sd1.isbn().size() < sd2.isbn().size();
 }
