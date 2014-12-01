@@ -1,4 +1,6 @@
-//! @Alan
+//!
+//! @author Yue Wang
+//! @date   01.12.2014
 //!
 //! Exercise 10.1:
 //! The algorithm header defines a function named count that, like find,
@@ -11,42 +13,31 @@
 //! Repeat the previous program, but read values into a list of strings.
 //!
 
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
-#include<list>
+#include <list>
 
-//! Exercise 10.1
-int
-count_of_int(const std::vector<int> &v, const int &i);
-
-//! Exercise 10.2
-int
-count_of_string(std::list< std::string> &l, const std::string &s);
 
 int main()
 {
     //! Exercise 10.1
-    std::vector<int> v={1,2,3,4,5,6,6,6,2};
-    std::cout << count_of_int(v,2);
+    std::vector<int> v{1,2,3,4,5,6,6,6,2};
+    std::cout << "ex 10.01: "
+              << std::count(v.begin(), v.end(), 6)
+              << std::endl;
 
     //! Exercise 10.2
-    std::list<std::string> ls = {"aa","aa","aa","cc"};
-    std::cout << count_of_string(ls,"aa");
+    std::list<std::string> ls = {"aa","aaa","aa","cc"};
+    std::cout << "ex 10.02: "
+              << std::count(ls.cbegin(), ls.cend(), "aa")
+              << std::endl;
 
     return 0;
 }
-
-//! Exercise 10.1
-int
-count_of_int(const std::vector<int> &v, const int &i)
-{
-    return std::count(v.begin(),v.end(), i);
-}
-
-
-int count_of_string(std::list<std::string> &l, const std::string &s)
-{
-    return std::count(l.begin(), l.end(), s);
-}
+//! output:
+//!
+//ex 10.01: 3
+//ex 10.02: 2
