@@ -20,9 +20,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <numeric>
-#include <list>
 
+//! print a container like vector,deque, list,etc.
 template<typename Sequence>
 inline std::ostream& println(Sequence const& seq)
 {
