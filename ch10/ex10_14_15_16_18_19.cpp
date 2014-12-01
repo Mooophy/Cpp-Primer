@@ -1,15 +1,6 @@
-//! @Alan
 //!
-//! Exercise 10.14:
-//! Write a lambda that takes two ints and returns their sum.
-//!
-//! Exercise 10.15:
-//! Write a lambda that captures an int from its enclosing function
-//! and takes an int parameter. The lambda should return the sum of
-//! the captured int and the int parameter.
-//!
-//! Exercise 10.16:
-//! Write your own version of the biggies function using lambdas.
+//! @author @Yue Wang @shbling @pezy @zzzkl
+//! @date   02.12.2014
 //!
 //! Exercise 10.18:
 //! Rewrite biggies to use partition instead of find_if.
@@ -20,135 +11,83 @@
 //! sequence.
 //!
 
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
 
 
-
-//! Exercise 10.14
-auto sum = [](const int i1, const int i2 )
-{   return i1 + i2;     };
-//!                      ^
-//! @note There is a ";" here, just like that used after a body of a class.
+using std::stable_sort;
+using std::string;
+using std::find_if;
+using std::partition;
 
 
-//! Exercise 10.15
-void f()
+//! from ex 10.9
+void elimdups(std::vector<std::string> &vs)
 {
-    int i = 0;
-    auto sum = [i](const int j)
-    {
-        return i + j;
-    };
+    std::sort(vs.begin(), vs.end());
+    auto new_end = std::unique(vs.begin(),vs.end());
+    vs.erase(new_end, vs.end());
 }
 
-//! Exercise 10.16
-void
-wy_elimdups(std::vector<std::string> &vs);
-void
-wy_biggies(std::vector<std::string> &vs,const std::vector<std::string>::size_type sz);
 
-//! Exercise 10.18
-void
-wy_biggies_partition(std::vector<std::string> &vs, const std::vector<std::string>::size_type sz);
+//! ex10.18
+void biggies_partition(std::vector<std::string> &vs, std::size_t sz)
+{
+    elimdups(vs);
+    stable_sort(vs.begin(), vs.end(),[](string const& lhs, string const& rhs){
+        return lhs.size() < rhs.size();
+    });
 
-//! Exercise 10.19
-void
-wy_biggies_STpartition(std::vector<std::string> &vs, const std::vector<std::string>::size_type sz);
+    auto pivot = partition(vs.begin(), vs.end(),[sz](const std::string &s){
+        return s.size() < sz;}
+    );
+
+    for(auto it = pivot; it != vs.cend(); ++it)
+        std::cout << *it << " ";
+}
+
+
+//! ex10.19
+void biggies_stable_partition(std::vector<std::string> &vs, std::size_t sz)
+{
+    elimdups(vs);
+    stable_sort(vs.begin(), vs.end(),[](string const& lhs, string const& rhs){
+        return lhs.size() < rhs.size();
+    });
+
+    auto pivot = stable_partition(vs.begin(), vs.end(),[sz](string const& s){
+        return s.size() < sz;
+    });
+
+    for(auto it = pivot; it != vs.cend(); ++it)
+        std::cout << *it << " ";
+}
+
+
 int main()
 {
+    //! ex10.18
+    std::vector<std::string> v{
+        "1","1234","1234","hi~", "alan", "alan"
+    };
+    std::cout << "ex10.18: ";
+    biggies_partition(v,3);
+    std::cout << std::endl;
+
+    //! ex10.19
+    std::vector<std::string> v2{
+        "1","1234","1234","hi~", "alan", "alan"
+    };
+    std::cout << "ex10.19: ";
+    biggies_stable_partition(v2,3);
+    std::cout << std::endl;
 
     return 0;
 }
-void wy_elimdups(std::vector<std::string> &vs)
-{
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    //! sort alphabetically
-    std::sort(vs.begin(), vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    //! put all duplicates at the end of the vector
-    //! and get the iterator pointing to the one past
-    //! the last unique element.
-    auto unique_iterator = std::unique(vs.begin(),vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-
-
-    vs.erase(unique_iterator, vs.end());
-    for (auto element : vs)
-        std::cout << element
-                  <<" ";
-    std::cout <<"\n";
-}
-
-//! Exercise 10.16
-void
-wy_biggies(std::vector<std::string> &vs, const std::vector<std::string>::size_type sz)
-{
-    wy_elimdups(vs);
-
-    // sort words by size, but maintain alphabetical order for words of the same size
-    std::stable_sort(vs.begin(), vs.end(),
-                     [](const std::string &s1, const std::string &s2){return s1.size() < s2.size();});
-
-    // get an iterator to the first element whose size() is >= sz
-    auto wc = std::find_if(vs.begin(), vs.end(),
-                           [sz](const std::string &s)
-                                {return s.size() > sz;});
-
-    std::for_each(wc, vs.end(), [](const std::string &s)
-                                         {std::cout << s;});
-}
-
-//! Exercise 10.18
-void wy_biggies_partition(std::vector<std::string> &vs, const std::vector<std::string>::size_type sz)
-{
-    wy_elimdups(vs);
-
-    // sort words by size, but maintain alphabetical order for words of the same size
-    std::stable_sort(vs.begin(), vs.end(),
-                     [](const std::string &s1, const std::string &s2){return s1.size() < s2.size();});
-
-    auto wc = std::partition(vs.begin(), vs.end(),
-                             [sz](const std::string &s)
-                                        {return s.size() >= sz;});
-    std::for_each(vs.begin(),wc, [](const std::string &s)
-                                         {std::cout << s<<" ";});
-
-}
-
-//! Exercise 10.19
-void wy_biggies_STpartition(std::vector<std::string> &vs, const std::vector<std::string>::size_type sz)
-{
-    wy_elimdups(vs);
-
-    // sort words by size, but maintain alphabetical order for words of the same size
-    std::stable_sort(vs.begin(), vs.end(),
-                     [](const std::string &s1, const std::string &s2){return s1.size() < s2.size();});
-
-    auto wc = std::stable_partition(vs.begin(), vs.end(),
-                             [sz](const std::string &s)
-                                        {return s.size() > =sz;});
-
-    std::for_each(vs.begin(),wc, [](const std::string &s)
-                                         {std::cout << s<<" ";});
-}
-
-
-
-
-
+//! output :
+//!
+//ex10.18: hi~ 1234 alan
+//ex10.19: hi~ 1234 alan
