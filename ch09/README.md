@@ -174,3 +174,21 @@ if elem2 is the off-the-end iterator, it would delete from elem1 to the end.
 if both elem1 and elem2 are the off-the-end iterator, nothing happened too.
 
 ## [Exercise 9.26](ex9_26.cpp)
+## [Exercise 9.27](ex9_27.cpp)
+
+## Exercise 9.28:
+>Write a function that takes a forward_list<string> and two additional string arguments. The function should find the first string and insert the second immediately following the first. If the first string is not found, then insert the second string at the end of the list.
+
+```cpp
+void insert(forward_list<string> &flst, string find, string insrt)
+{
+    auto prev = flst.before_begin();
+    for (auto curr = flst.begin(); curr != flst.end(); prev = curr++)
+        if (*curr == find)
+        {
+            flst.insert_after(curr, insrt);
+            return;
+        }
+    flst.insert_after(prev, insrt);
+}
+```
