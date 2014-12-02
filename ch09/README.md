@@ -128,3 +128,29 @@ First, ther must be the identical container and same type holded.
 Second,the type holded must support relational operation. (@Mooophy)
 
 Both c1 and c2 are the containers except the unordered associative containers.(@pezy)
+
+## [Exercise 9.18](ex9_18.cpp)
+## [Exercise 9.19](ex9_19.cpp)
+## [Exercise 9.20](ex9_20.cpp)
+
+## Exercise 9.21:
+>Explain how the loop from page 345 that used the return from insert to add elements to a list would work if we inserted into a vector instead.
+
+It's the same.
+>The first call to `insert` takes the `string` we just read and puts it in front of the element denoted by `iter`. The value returned by `insert` is an iterator referring to this new element. We assign that iterator to `iter` and repeat the `while`, reading another word. As long as there are words to insert, each trip through the `while` inserts a new element ahead of `iter` and reassigns to `iter` the location of the newly inserted element. That element is the (new) first element. Thus, each iteration inserts an element ahead of the first element in the `vector`.
+
+## Exercise 9.22:
+>Assuming `iv` is a `vector` of `int`s, what is wrong with the following program? How might you correct the problem(s)?
+```cpp
+vector<int>::iterator iter = iv.begin(), mid = iv.begin() + iv.size()/2;
+while (iter != mid)
+    if (*iter == some_val)
+        iv.insert(iter, 2 * some_val);
+```
+
+It's a endless loop. `iter` never equal `mid`.
+
+FIXED: (changed the `while` loop)
+```
+while (iter++ != mid)
+```
