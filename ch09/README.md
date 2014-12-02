@@ -162,3 +162,15 @@ the values of val, val2, val3, and val4 be if c.size() is 1?
 same value that equal to the first element's.
 
 ## [Exercise 9.24](ex9_24.cpp)
+
+## Exercise 9.25:
+>In the program on page 349 that erased a range of
+elements, what happens if elem1 and elem2 are equal? What if elem2 or both elem1 and elem2 are the off-the-end iterator?
+
+if elem1 and elem2 are equal, nothing happened.
+
+if elem2 is the off-the-end iterator, it would delete from elem1 to the end.
+
+if both elem1 and elem2 are the off-the-end iterator, nothing happened too.
+
+## [Exercise 9.26](ex9_26.cpp)
