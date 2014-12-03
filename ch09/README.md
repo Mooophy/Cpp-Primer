@@ -213,3 +213,43 @@ we **must supply an initializer** or the element type must have a **default cons
 ## [Exercise 9.32](ex9_32.cpp)
 ## [Exercise 9.33](ex9_33.cpp)
 ## [Exercise 9.34](ex9_34.cpp)
+
+## Exercise 9.35:
+>Explain the difference between a vector’s capacity and its size.
+
+The **size** of a container is the number of **elements** it already holds;
+
+The **capacity** is how many elements it can hold before more **space** must be allocated.
+
+## Exercise 9.36:
+>Can a container have a capacity less than its size?
+
+cannot.
+
+## Exercise 9.37:
+>Why don’t list or array have a capacity member?
+
+`list` elements does not store contiguously. `array` has the fixed size, thus cannot added elements to it.
+
+## [Exercise 9.38](ex9_38.cpp)
+
+## Exercise 9.39:
+>Explain what the following program fragment does:
+```cpp
+vector<string> svec;
+svec.reserve(1024);     // sets capacity to at least 1024
+string word;
+while (cin >> word)     // input word continually
+    svec.push_back(word);
+svec.resize(svec.size()+svec.size()/2); // sets capacity to at least 3/2's size. may do nothing.
+```
+
+## Exercise 9.40:
+>If the program in the previous exercise reads 256 words, what is its likely capacity after it is resized? What if it reads 512? 1,000? 1,048?
+
+|reads|capacity|
+|-----|--------|
+|256  |1024    |
+|512  |1024    |
+|1000 |1024    |
+|1048 |1572    |
