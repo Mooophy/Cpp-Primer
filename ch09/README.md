@@ -260,3 +260,8 @@ svec.resize(svec.size()+svec.size()/2); // sets capacity to at least 3/2's size.
 >Given that you want to read a character at a time into a string, and you know that you need to read at least 100 characters, how might you improve the performance of your program?
 
 Use member `reserve(120)` to allocate enough space for this string. (@Mooophy)
+
+## [Exercise 9.43](ex9_43.cpp)
+## [Exercise 9.44](ex9_44.cpp)
+## [Exercise 9.45](ex9_45.cpp)
+## [Exercise 9.46](ex9_46.cpp)

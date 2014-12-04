@@ -15,9 +15,9 @@ using std::cout; using std::endl; using std::string;
 
 void func(string &s, const string &oldVal, const string &newVal)
 {
-    auto found = s.find(oldVal);
-    if (found == string::npos) return;
-    s.replace(found, oldVal.size(), newVal);
+    for (string::size_type i=0; i!=s.size(); ++i)
+        if (s.substr(i, oldVal.size()) == oldVal)
+            s.replace(i, oldVal.size(), newVal);
 }
 
 int main()

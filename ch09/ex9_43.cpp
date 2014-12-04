@@ -18,10 +18,12 @@ using std::cout; using std::endl; using std::string;
 
 void func(string &s, const string &oldVal, const string &newVal)
 {
-    auto found = s.find(oldVal);
-    if (found == string::npos) return;
-    s.erase(found, oldVal.size());
-    s.insert(found, newVal);
+    for (string::size_type i=0; i!=s.size(); ++i)
+        if (s.substr(i, oldVal.size()) == oldVal)
+            {
+                s.erase(i, oldVal.size());
+                s.insert(i, newVal);
+            }
 }
 
 int main()
