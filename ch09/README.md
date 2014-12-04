@@ -265,3 +265,11 @@ Use member `reserve(120)` to allocate enough space for this string. (@Mooophy)
 ## [Exercise 9.44](ex9_44.cpp)
 ## [Exercise 9.45](ex9_45.cpp)
 ## [Exercise 9.46](ex9_46.cpp)
+## Exercise 9.47 [find_first_of](ex9_47_1.cpp) | [find_first_not_of](ex9_47_2.cpp)
+## Exercise 9.48:
+>Given the definitions of name and numbers on page 365,
+what does numbers.find(name) return?
+
+string::npos
+
+## [Exercise 9.49](ex9_49.cpp)
