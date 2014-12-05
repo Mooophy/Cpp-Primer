@@ -7,7 +7,11 @@ int main()
 {
     string read, tmp;
     while (cin >> read)
-        if (!isupper(read[0])) continue;
+        if (!isupper(read[0])) 
+        {
+            tmp = read;
+            continue;
+        }
         else if (read == tmp) break;
         else tmp = read;
     
