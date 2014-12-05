@@ -273,3 +273,6 @@ what does numbers.find(name) return?
 string::npos
 
 ## [Exercise 9.49](ex9_49.cpp)
+## [Exercise 9.50](ex9_50.cpp)
+## [Exercise 9.51](ex9_51.cpp)
+## [Exercise 9.52](ex9_52.cpp)
