@@ -29,12 +29,5 @@ int main()
 
 int LargerOne(const int _i, const int *_ip)
 {
-    if( _i > *_ip )
-    {
-        return _i;
-    }
-    else
-    {
-        return *_ip;
-    }
+    return (_i > *_ip) ? _i : *_ip;
 }
