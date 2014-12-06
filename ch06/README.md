@@ -187,7 +187,7 @@ the reference value maybe changed.
 
 ## [Exercise 6.21](ex6_21.cpp)
 ## [Exercise 6.22](ex6_22.cpp)
-## [Exercise 6.23](ex6.23.cpp)
+## [Exercise 6.23](ex6_23.cpp)
 
 ## Exercise 6.24
 
