@@ -9,16 +9,13 @@ int main()
     int count = 0;
     for (string str, prestr; cin >> str; prestr = str)
     {
-	if (str == prestr) { ++count;}
-	else count = 1;
-
-	if (count > max_duplicated.second && count >= 2) {
-		max_duplicated = { prestr, count };
-	}
+        if (str == prestr) ++count;
+        else count = 0; 
+        if (count > max_duplicated.second) max_duplicated = {prestr, count};
     }
     
     if (max_duplicated.first.empty()) cout << "There's no duplicated string." << endl;
-    else cout << "the word " << max_duplicated.first << " occurred " << max_duplicated.second << " times. " << endl;
+    else cout << "the word " << max_duplicated.first << " occurred " << max_duplicated.second + 1 << " times. " << endl;
     
     return 0;
 } 

@@ -1,0 +1,5 @@
+In typography, an ascender is the portion of a minuscule letter in a Latin-derived alphabet that extends above the mean line of a font. That is, the part of a lower-case letter that is taller than the font's x-height.
+
+Ascenders, together with descenders, increase the recognizability of words. For this reason, British road signs no longer use all capital letters.[1]
+
+Studies made at the start of the construction of the British motorway network concluded that words with mixed-case letters were much easier to read than "all-caps" and a special font was designed for motorway signs. These then became universal across the U.K. See Road signs in the United Kingdom.
