@@ -23,3 +23,7 @@ The aim of this design is to separate the algorithms and the operation provided 
 
 @pezy:
 Cause the library algorithms operate on **iterators**, **not containers**. Thus, an algorithm **cannot (directly)** add or remove elements.
+
+##[Exercise 10.11](ex10_11.cpp)
+##[Exercise 10.12](ex10_12.cpp)
+##[Exercise 10.13](ex10_13.cpp)
