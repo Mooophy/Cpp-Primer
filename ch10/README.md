@@ -52,6 +52,9 @@ auto add = [i](int num){return i + num;};
 
 ## Exercise 10.23:
 >How many arguments does bind take?
- 
+
 Assuming the function to be bound have `n` parameters, bind take `n + 1` parameters.
 The additional one is for the function to be bound itself.
+
+##[Exercise 10.24](ex10_24.cpp)
+##[Exercise 10.25](ex10_25.cpp)
