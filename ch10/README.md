@@ -27,3 +27,23 @@ Cause the library algorithms operate on **iterators**, **not containers**. Thus,
 ##[Exercise 10.11](ex10_11.cpp)
 ##[Exercise 10.12](ex10_12.cpp)
 ##[Exercise 10.13](ex10_13.cpp)
+
+## Exercise 10.14:
+>Write a lambda that takes two ints and returns their sum.
+
+```cpp
+auto add = [](int lhs, int rhs){return lhs + rhs;};
+```
+
+## Exercise 10.15:
+>Write a lambda that captures an int from its enclosing function and takes an int parameter.
+The lambda should return the sum of the captured int and the int parameter.
+
+```cpp
+int i = 42;
+auto add = [i](int num){return i + num;};
+```
+
+##[Exercise 10.16](ex10_16.cpp)
+##[Exercise 10.17](ex10_17.cpp)
+##[Exercise 10.18 and 10.19](ex10_18_19.cpp)
