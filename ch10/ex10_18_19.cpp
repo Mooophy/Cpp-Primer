@@ -1,6 +1,6 @@
 //!
-//! @author @Yue Wang @shbling @pezy @zzzkl
-//! @date   02.12.2014
+//! @author @Yue Wang @pezy
+//! @date   12.10.2014
 //!
 //! Exercise 10.18:
 //! Rewrite biggies to use partition instead of find_if.
@@ -17,13 +17,6 @@
 #include <vector>
 #include <algorithm>
 
-
-using std::stable_sort;
-using std::string;
-using std::find_if;
-using std::partition;
-
-
 //! from ex 10.9
 void elimdups(std::vector<std::string> &vs)
 {
@@ -37,15 +30,12 @@ void elimdups(std::vector<std::string> &vs)
 void biggies_partition(std::vector<std::string> &vs, std::size_t sz)
 {
     elimdups(vs);
-    stable_sort(vs.begin(), vs.end(),[](string const& lhs, string const& rhs){
-        return lhs.size() < rhs.size();
-    });
-
+    
     auto pivot = partition(vs.begin(), vs.end(),[sz](const std::string &s){
-        return s.size() < sz;}
+        return s.size() >= sz;}
     );
 
-    for(auto it = pivot; it != vs.cend(); ++it)
+    for(auto it = vs.cbegin(); it != pivot; ++it)
         std::cout << *it << " ";
 }
 
@@ -54,15 +44,12 @@ void biggies_partition(std::vector<std::string> &vs, std::size_t sz)
 void biggies_stable_partition(std::vector<std::string> &vs, std::size_t sz)
 {
     elimdups(vs);
-    stable_sort(vs.begin(), vs.end(),[](string const& lhs, string const& rhs){
-        return lhs.size() < rhs.size();
+    
+    auto pivot = stable_partition(vs.begin(), vs.end(),[sz](const std::string& s){
+        return s.size() >= sz;
     });
 
-    auto pivot = stable_partition(vs.begin(), vs.end(),[sz](string const& s){
-        return s.size() < sz;
-    });
-
-    for(auto it = pivot; it != vs.cend(); ++it)
+    for(auto it = vs.cbegin(); it != pivot; ++it)
         std::cout << *it << " ";
 }
 
@@ -71,23 +58,23 @@ int main()
 {
     //! ex10.18
     std::vector<std::string> v{
-        "1","1234","1234","hi~", "alan", "alan"
+        "the", "quick", "red", "fox", "jumps", "over", "the", "slow", "red", "turtle"
     };
+    
     std::cout << "ex10.18: ";
-    biggies_partition(v,3);
+    std::vector<std::string> v1(v);
+    biggies_partition(v1,4);
     std::cout << std::endl;
 
     //! ex10.19
-    std::vector<std::string> v2{
-        "1","1234","1234","hi~", "alan", "alan"
-    };
     std::cout << "ex10.19: ";
-    biggies_stable_partition(v2,3);
+    std::vector<std::string> v2(v);
+    biggies_stable_partition(v2,4);
     std::cout << std::endl;
 
     return 0;
 }
 //! output :
 //!
-//ex10.18: hi~ 1234 alan
-//ex10.19: hi~ 1234 alan
+//ex10.18: turtle jumps over quick slow
+//ex10.19: jumps over quick slow turtle
