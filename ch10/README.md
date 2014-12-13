@@ -58,3 +58,14 @@ The additional one is for the function to be bound itself.
 
 ##[Exercise 10.24](ex10_24.cpp)
 ##[Exercise 10.25](ex10_25.cpp)
+
+## Exercise 10.26:
+>Explain the differences among the three kinds of insert iterators.
+
+- `back_inserter` uses `push_back`.
+- `front_inserter` uses `push_front`.
+- `insert` uses `insert`
+>This function takes a second argument, which must be an iterator into the given container. Elements are inserted ahead of the element denoted by the given iterator.
+
+## [Exercise 10.27](ex10_27.cpp)
+## [Exercise 10.28](ex10_28.cpp)
