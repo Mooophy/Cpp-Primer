@@ -69,3 +69,8 @@ The additional one is for the function to be bound itself.
 
 ## [Exercise 10.27](ex10_27.cpp)
 ## [Exercise 10.28](ex10_28.cpp)
+## [Exercise 10.29](ex10_29.cpp)
+## [Exercise 10.30](ex10_30.cpp)
+## [Exercise 10.31](ex10_31.cpp)
+## [Exercise 10.32](ex10_32.cpp)
+## [Exercise 10.33](ex10_33.cpp)
