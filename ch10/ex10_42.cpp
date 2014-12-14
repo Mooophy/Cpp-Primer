@@ -1,4 +1,4 @@
-//! @Alan
+//! @Alan @pezy
 //!
 //! Exercise 10.42:
 //! Reimplement the program that eliminated duplicate words that
@@ -9,14 +9,23 @@
 #include <string>
 #include <list>
 
+using std::string; using std::list;
+
+void elimDups(list<string> &words)
+{
+    words.sort();
+    words.unique();
+}
 
 int main()
 {
-    std::list<std::string> l = {"aa","aa","aa","aa","aasss","aa"};
-    l.unique();
-    for(auto e : l) std::cout << e << " ";
-    return 0;
+    list<string> l = {"aa","aa","aa","aa","aasss","aa"};
+    elimDups(l);
+    for(const auto& e : l)
+        std::cout << e << " ";
+    std::cout << std::endl;
 }
+
 //! output
 //!
-//aa aasss aa
+//aa aasss

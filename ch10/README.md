@@ -75,3 +75,35 @@ The additional one is for the function to be bound itself.
 ## [Exercise 10.32](ex10_32.cpp)
 ## [Exercise 10.33](ex10_33.cpp)
 ## [Exercise 10.34 ~ 10.37](ex10_34_35_36_37.cpp)
+
+## Exercise 10.38:
+>List the five iterator categories and the operations that each supports.
+
+- Input iterators : `==`, `!=`, `++`, `*`, `->`
+- Output iterators : `++`, `*`
+- Forward iterators : `==`, `!=`, `++`, `*`, `->`
+- Bidirectional iterators : `==`, `!=`, `++`, `--`, `*`, `->`
+- Random-access iterators : `==`, `!=`, `<`, `<=`, `>`, `>=`, `++`, `--`, `+`, `+=`, `-`, `-=`, `-`(two iterators), `*`, `->`, `iter[n]` == `* (iter + n)`
+
+## Exercise 10.39:
+>What kind of iterator does a list have? What about a vector?
+
+`list` have the **Bidirectional iterators**.  `vector` have the **Random-access iterators**.
+
+## Exercise 10.40:
+>What kinds of iterators do you think copy requires? What about reverse or unique?
+
+- `copy` : first and second are Input iterators, last is Output iterators.
+- `reverse` : Bidirectional iterators.
+- `unique` : Forward iterators.
+
+## Exercise 10.41:
+>Based only on the algorithm and argument names, describe the operation that the each of the following library algorithms performs:
+```cpp
+replace(beg, end, old_val, new_val); // replace the old_elements in the input range as new_elements.
+replace_if(beg, end, pred, new_val); // replace the elements in the input range which pred is true as new_elements.
+replace_copy(beg, end, dest, old_val, new_val); // copy the new_elements which is old_elements in the input range into dest.
+replace_copy_if(beg, end, dest, pred, new_val); // copy the new_elements which pred is true in the input range into dest.
+```
+
+## [Exercise 10.42](ex10_42.cpp)
