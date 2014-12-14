@@ -31,9 +31,5 @@ int main(int argc, char **argv)
         *(i&0x1 ? out_odd : out_even)++ = i;
     });
 
-    ifs.close();
-    ofs_odd.close();
-    ofs_even.close();
-
     return 0;
 }
