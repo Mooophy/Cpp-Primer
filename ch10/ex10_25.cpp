@@ -1,41 +1,47 @@
-//solution to exercise 10.25
-#include<iostream>
-#include <functional>
+//
+//  ex10_25.cpp
+//  Exercise 10.25
+//
+//  Created by pezy on 12/11/14.
+//  Copyright (c) 2014 pezy. All rights reserved.
+//
+//  @Brief  In the exercises for 10.3.2 (p.392) you wrote a version of biggies that uses partition.
+//          Rewrite that function to use check_size and bind.
+
+#include <iostream>
+#include <vector>
+#include <string>
 #include <algorithm>
-#include<vector>
-#include<string>
+#include <functional>
 
-void wy_elimdups(std::vector<std::string> &vs)
+using std::string; using std::vector;
+using namespace std::placeholders;
+
+void elimdups(vector<string> &vs)
 {
-	for (auto element : vs)
-		std::cout << element
-		<< " ";
-	std::cout << "\n";
+    std::sort(vs.begin(), vs.end());
+    vs.erase(unique(vs.begin(),vs.end()), vs.end());
 }
 
-//check_size function to check size
-bool check_size( const std::string &vs,  std::string::size_type sz)
+bool check_size(const string &s, string::size_type sz)
 {
-	return vs.size() >= sz;
+    return s.size() >= sz;
 }
 
-void wy_biggies_partition(std::vector<std::string> &vs, const std::vector<std::string>::size_type sz)
+void biggies(vector<string> &words, vector<string>::size_type sz)
 {
-	wy_elimdups(vs);
-
-	// sort words by size, but maintain alphabetical order for words of the same size
-	std::stable_sort(vs.begin(), vs.end(),
-		[](const std::string &s1, const std::string &s2){return s1.size() < s2.size(); });
-
-	//using bind and check size
-	auto wc = std::partition(vs.begin(), vs.end(),bind(check_size, std::placeholders::_1,sz));
-
-	std::for_each(vs.begin(),wc , [](const std::string &s)
-	{std::cout << s<<" "; });
-
+    elimdups(words);
+    auto iter = std::stable_partition(words.begin(), words.end(), bind(check_size, _1, sz));
+    for_each(words.begin(), iter, [](const string &s){ std::cout << s << " "; });
 }
 
 int main()
 {
-	return 0;
+    std::vector<std::string> v{
+        "the", "quick", "red", "fox", "jumps", "over", "the", "slow", "red", "turtle"
+    };
+    biggies(v, 4);
 }
+
+//  @Out
+//  jumps over quick slow turtle

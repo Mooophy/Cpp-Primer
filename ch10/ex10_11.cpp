@@ -35,16 +35,16 @@ void elimdups(std::vector<std::string> &vs)
     std::sort(vs.begin(), vs.end());
     auto new_end = std::unique(vs.begin(),vs.end());
     vs.erase(new_end, vs.end());
-    std::stable_sort(vs.begin(), vs.end(), is_shorter);
 }
 
 
 int main()
 {
     std::vector<std::string> v{
-        "1234", "1234", "1234", "Hi", "alan"
+        "1234", "1234", "1234", "Hi", "alan", "wang"
     };
     elimdups(v);
+    std::stable_sort(v.begin(), v.end(), is_shorter);
     std::cout << "ex10.11 :\n";
     println(v);
 

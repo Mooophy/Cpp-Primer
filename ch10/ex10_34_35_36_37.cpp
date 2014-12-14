@@ -27,7 +27,7 @@ r_print(const std::vector<std::string> &v);
 
 //! Exercise 10.35
 void
-r_withOrdinart_print(const std::vector<std::string> &v);
+r_withOrdinary_print(const std::vector<std::string> &v);
 
 //! Exercise 10.36
 std::list<int>::iterator
@@ -47,7 +47,7 @@ int main()
     std::cout << "\n";
 
     //! test for 10.35
-    r_withOrdinart_print(v);
+    r_withOrdinary_print(v);
     std::cout << "\n";
 
     //! test for 10.36
@@ -61,6 +61,7 @@ int main()
     vec2list_3_7_reverse(vi,lst);
     for(auto e : lst)
         std::cout << e <<" ";
+    std::cout << std::endl;
 
     return 0;
 }
@@ -69,7 +70,7 @@ int main()
 inline void
 r_print(const std::vector<std::string> &v)
 {
-    std::for_each(v.rbegin(), v.rend(),[](const std::string &s)
+    std::for_each(v.crbegin(), v.crend(), [](const std::string &s)
     {
         std::cout << s << " ";
     });
@@ -77,9 +78,9 @@ r_print(const std::vector<std::string> &v)
 
 //! Exercise 10.35
 inline void
-r_withOrdinart_print(const std::vector<std::string> &v)
+r_withOrdinary_print(const std::vector<std::string> &v)
 {
-    for (auto it = v.end() - 1; it != v.begin() - 1; --it)
+    for (auto it = std::prev(v.cend()); it != std::prev(v.cbegin()); --it)
         std::cout << *it << " ";
 }
 
@@ -94,18 +95,17 @@ find_last_0(std::list<int> &l)
     //! 1 2 3 4 0 5 6
     //!         ^
     //! to which r_it refer.
-    std::list<int>::reverse_iterator
-            r_it = std::find(l.rbegin(), l.rend(), 0);
+    auto r_it = std::find(l.rbegin(), l.rend(), 0);
 
     //! 1 2 3 4 0 5 6
     //!           ^
     //! to which it refer.
-    std::list<int>::iterator it = r_it.base();
+    auto it = r_it.base();
 
     //! 1 2 3 4 0 5 6
     //!         ^
     //! to which --it refer.
-    return --it;
+    return std::prev(it);
 
 }
 

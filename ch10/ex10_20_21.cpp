@@ -45,18 +45,11 @@ int main()
 
     //! ex10.21
     int i = 7;
-    auto check_and_decrement = [&i]{
-        if(i){
-            --i;
-            return false;
-        }
-        else
-            return true;
-    };
+    auto check_and_decrement = [&i](){ return --i ? false : true; };
     std::cout << "ex10.21: ";
-    while(not check_and_decrement())
+    while(!check_and_decrement())
         std::cout << i << " ";
-    std::cout << std::endl;
+    std::cout << i << std::endl;
 
     return 0;
 }

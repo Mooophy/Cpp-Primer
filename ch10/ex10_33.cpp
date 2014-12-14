@@ -1,47 +1,35 @@
-//! @Alan
-//!
-//! Exercise 10.33:
-//! Write a program that takes the names of an input file and two output files.
-//! The input file should hold integers. Using an istream_iterator read the
-//! input file. Using ostream_iterators, write the odd numbers into the first
-//! output file. Each value should be followed by a space. Write the even numbers
-//! into the second file. Each of these values should be placed on a separate line.
-//  note : many algorithms can be used directly on iostream iterators.
-//         This excerise can be seen as an example.
-//!
-
+//
+//  ex10_33.cpp
+//  Exercise 10.33
+//
+//  Created by pezy on 12/13/14.
+//  Copyright (c) 2014 pezy. All rights reserved.
+//
+//  Write a program that takes the names of an input file and two output files.
+//  The input file should hold integers. Using an istream_iterator read the input file.
+//  Using ostream_iterators, write the odd numbers into the first output file.
+//  Each value should be followed by a space.Write the even numbers into the second file.
+//  Each of these values should be placed on a separate line.
+//
+//  Run: ./a.out "../data/input.txt" "../data/odd.txt" "../data/even.txt"
 
 #include <fstream>
-#include <algorithm>
 #include <iterator>
+#include <algorithm>
 
-
-void
-one2two(const std::string &Ifnm, const std::string &OoddFnm, const std::string &OevenFnm);
-int main()
+int main(int argc, char **argv)
 {
-    one2two("test_int.txt","odd.txt","even.txt");
-    return 0;
-}
+    if (argc != 4) return -1;
 
+    std::ifstream ifs(argv[1]);
+    std::ofstream ofs_odd(argv[2]), ofs_even(argv[3]);
 
-void
-one2two(const std::string &Ifnm, const std::string &OoddFnm, const std::string &OevenFnm)
-{
-    //! build input file stream and its iterators.
-    std::ifstream fin(Ifnm);
-    std::istream_iterator<int> fin_iter(fin), eof;
+    std::istream_iterator<int> in(ifs), in_eof;
+    std::ostream_iterator<int> out_odd(ofs_odd, " "), out_even(ofs_even, "\n");
 
-    //! build output file streams and their iterators.
-    std::ofstream fOddOutput(OoddFnm),   fEvenOutput(OevenFnm);
-    std::ostream_iterator<int> fOddOutput_iter(fOddOutput, " "), fEvenOutput_iter(fEvenOutput, "\n");
-
-
-    //! using for_each algorithm to do operation on every element via a lambda
-    std::for_each(fin_iter, eof,    [&](const int i)
-    {
-        //! if odd  , output into the odd   file and incerment the iterator
-        //! if even , output into the even  file and incerment the iterator
-        i%2 ?   *fOddOutput_iter++ = i  : *fEvenOutput_iter++ = i;
+    std::for_each(in, in_eof, [&out_odd, &out_even](const int i){
+        *(i&0x1 ? out_odd : out_even)++ = i;
     });
+
+    return 0;
 }

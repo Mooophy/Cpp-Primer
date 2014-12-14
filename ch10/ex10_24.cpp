@@ -23,15 +23,15 @@ using std::find_if;
 using std::bind;
 
 inline bool
-check_size(string const& s, string::size_type sz)
+check_size(const string &s, string::size_type sz)
 {
     return s.size() < sz;
 }
 
-inline vector<int>::iterator
-find_first_bigger(vector<int> & v, std::string const& s)
+inline vector<int>::const_iterator
+find_first_bigger(const vector<int> &v, const string &s)
 {
-   return find_if(v.begin(), v.end(), bind(check_size, s, std::placeholders::_1));
+   return find_if(v.cbegin(), v.cend(), bind(check_size, s, std::placeholders::_1));
 }
 
 int main()
@@ -45,4 +45,3 @@ int main()
 //! output;
 //!
 //5
-
