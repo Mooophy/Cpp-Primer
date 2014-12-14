@@ -74,3 +74,4 @@ The additional one is for the function to be bound itself.
 ## [Exercise 10.31](ex10_31.cpp)
 ## [Exercise 10.32](ex10_32.cpp)
 ## [Exercise 10.33](ex10_33.cpp)
+## [Exercise 10.34 ~ 10.37](ex10_34_35_36_37.cpp)
