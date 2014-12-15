@@ -1,37 +1,23 @@
-//! @Alan
-//! Exercise 11.11:
-//! Redefine bookstore without using decltype.
-//  discussion on stack overflow:
-//  http://stackoverflow.com/questions/20608365/is-it-possible-to-code-this-waywhilelambda
-//!
-#include <iostream>
-#include <map>
-#include <string>
-#include <algorithm>
-#include <list>
+//
+//  ex11_11.cpp
+//  Exercise 11.11
+//
+//  Created by pezy on 12/15/14.
+//  Copyright (c) 2014 pezy. All rights reserved.
+//
+//  Redefine bookstore without using decltype.
+
+#include "../ch07/ex7_26.h"
 #include <set>
 
-
-
-class A
+bool compareIsbn(const Sales_data &lhs, const Sales_data &rhs)
 {
-    int lenth;
-public:
-    int getLenth() const {return lenth;}
-};
-
-bool compareA(const A &a1, const A &a2)
-{
-    return a1.getLenth() < a2.getLenth();
+    return lhs.isbn() < rhs.isbn();
 }
+
 int main()
 {
-    //! more approaches can be found on the post of SO.
-    bool (*fp) (const A &a1, const A &a2) = compareA;
-
-    std::multiset<A, bool (*) (const A &, const A &)> m1(fp);
-
-    return 0;
+    using compareType = bool (*)(const Sales_data &lhs, const Sales_data &rhs);
+    //typedef bool(*compareType)(const Sales_data &lhs, const Sales_data &rhs);
+    std::multiset<Sales_data, compareType> bookstore(compareIsbn);
 }
-
-

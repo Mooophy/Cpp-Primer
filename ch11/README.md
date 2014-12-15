@@ -33,3 +33,7 @@ I use `set` when i just need to store the `key`, In other hand, I　would like u
 
 ## [Exercise 11.7](ex11_7.cpp)
 ## [Exercise 11.8](ex11_8.cpp)
+## [Exercise 11.9 and 11.10](ex11_9_10.cpp)
+## [Exercise 11.11](ex11_11.cpp)
+## [Exercise 11.12 and 11.13](ex11_12_13.cpp)
+## [Exercise 11.14](ex11_14.cpp)
