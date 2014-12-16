@@ -7,11 +7,6 @@
 #include <iostream>
 #include <map>
 #include <string>
-#include <algorithm>
-#include <set>
-#include <vector>
-#include <iterator>
-
 
 int main()
 {

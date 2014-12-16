@@ -37,3 +37,41 @@ I use `set` when i just need to store the `key`, In other hand, I　would like u
 ## [Exercise 11.11](ex11_11.cpp)
 ## [Exercise 11.12 and 11.13](ex11_12_13.cpp)
 ## [Exercise 11.14](ex11_14.cpp)
+
+## Exercise 11.15:
+>What are the mapped_type, key_type, and value_type of a map from int to vector<int>?
+
+- mapped_type : vector<int>
+- key_type : int
+- value_type : std::pair<int, vector<int>>
+
+## Exercise 11.16:
+>Using a map iterator write an expression that assigns a value to an element.
+
+```cpp
+std::map<int, std::string> map;
+map[25] = "Alan";
+std::map<int, std::string>::iterator it = map.begin();
+it->second = "Wang";
+```
+
+## Exercise 11.17:
+>Assuming c is a multiset of strings and v is a vector
+of strings, explain the following calls. Indicate whether each call is legal:
+
+```cpp
+copy(v.begin(), v.end(), inserter(c, c.end())); // legal
+copy(v.begin(), v.end(), back_inserter(c)); // illegal, no `push_back` in `set`.
+copy(c.begin(), c.end(), inserter(v, v.end())); // legal.
+copy(c.begin(), c.end(), back_inserter(v)); // legal.
+```
+## [Exercise 11.18](ex11_18.cpp)
+## Exercise 11.19:
+>Define a variable that you initialize by calling begin() on the multiset named bookstore from 11.2.2 (p. 425).
+Write the variable’s type without using auto or decltype.
+
+```cpp
+using compareType = bool (*)(const Sales_data &lhs, const Sales_data &rhs);
+std::multiset<Sales_data, compareType> bookstore(compareIsbn);
+std::multiset<Sales_data, compareType>::iterator c_it = bookstore.begin();
+```
