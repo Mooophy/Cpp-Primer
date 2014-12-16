@@ -75,3 +75,23 @@ using compareType = bool (*)(const Sales_data &lhs, const Sales_data &rhs);
 std::multiset<Sales_data, compareType> bookstore(compareIsbn);
 std::multiset<Sales_data, compareType>::iterator c_it = bookstore.begin();
 ```
+## [Exercise 11.20](ex11_20.cpp)
+## Exercise 11.21:
+>Assuming word_count is a map from string to size_t and word is a string, explain the following loop:
+```cpp
+while (cin >> word)
+    ++word_count.insert({word, 0}).first->second;
+```
+
+```cpp
+++ (word_count.insert({word, 0}).first->second)
+```
+## Exercise 11.22:
+>Given a map<string, vector<int>>, write the types used as an argument and as the return value for the version of insert that inserts one element.
+
+```cpp
+std::pair<std::string, std::vector<int>>    // argument
+std::pair<std::map<std::string, std::vector<int>>::iterator, bool> // return
+```
+
+## [Exercise 11.23](ex11_23.cpp)
