@@ -98,3 +98,4 @@ std::pair<std::map<std::string, std::vector<int>>::iterator, bool> // return
 ## [Exercise 11.24 ~ 11.26](ex11_24_25_26.cpp)
 ## [Exercise 11.27 ~ 11.30](ex11_27_28_29_30.cpp)
 ## [Exercise 11.31](ex11_31.cpp)
+## [Exercise 11.32](ex11_32.cpp)
