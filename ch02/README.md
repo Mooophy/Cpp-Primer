@@ -40,7 +40,8 @@ Reference:
 >To calculate a mortgage payment, what types would you use
 for the rate, principal, and payment? Explain why you selected each type.
 
-use `double`, or also `float`.
+use `double`, or also `float` for rate and payment.
+use `unsigned double` or `unsigned float` for principal, because it can't negative.
 
 The rate most like that: 4.50 % per year.
 The principal most like that: $854.36
