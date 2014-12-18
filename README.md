@@ -27,9 +27,9 @@
   - [Chapter 7. Classes](ch07/README.md)
 - Part II: The C++ Library
   - [Chapter 8. The IO Library](ch08/README.md)
-  - [Chapter 9. Sequential Containers](ch09)
-  - [Chapter 10. Generic Algorithms](ch10)
-  - [Chapter 11. Associative Containers](ch11)
+  - [Chapter 9. Sequential Containers](ch09/README.md)
+  - [Chapter 10. Generic Algorithms](ch10/README.md)
+  - [Chapter 11. Associative Containers](ch11/README.md)
   - [Chapter 12. Dynamic Memory](ch12)
 - Part III: Tools for Class Authors
   - [Chapter 13. Copy Control](ch13)

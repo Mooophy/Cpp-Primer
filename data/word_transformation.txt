@@ -1,0 +1,8 @@
+brb be right back 
+k okay? 
+y why 
+r are 
+u you 
+pic picture 
+thk thanks! 
+l8r later
