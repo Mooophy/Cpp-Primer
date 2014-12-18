@@ -5,7 +5,7 @@ a double?
 
 C++ guarantees `short` and `int` is **at least** 16 bits, `long` **at least** 32 bits, `long long` **at least** 64 bits.
 
-The `unsigned` and `signed` type have the **same size**. for example, sizeof(unsigned short) == sizeof(short).
+The `signed` can represent positive numbers, negative numbers and zero, while `unsigned` can only represent numbers no less than zero.
 
 The C and C++ standards do not specify the representation of float, double and long double.
 It is possible that all three implemented as IEEE double-precision.
