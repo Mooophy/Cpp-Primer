@@ -16,7 +16,7 @@ using std::string;
 
 int main()
 {
-    std::multimap<string, string> map{
+    std::multimap<string, string> authors{
         {"alan", "DMA"},
         {"pezy", "LeetCode"},
         {"alan", "CLRS"},
@@ -24,12 +24,12 @@ int main()
         {"pezy", "CP5"},
         {"wang", "CPP-Concurrency"}
     };
-    std::map<string, std::multiset<string>> ordermap;
-    for (const auto &e : map)
-        ordermap[e.first].insert(e.second);
-    for (const auto &e : ordermap) {
-        std::cout << e.first << ": ";
-        for (const auto &work : e.second)
+    std::map<string, std::multiset<string>> order_authors;
+    for (const auto &author : authors)
+        order_authors[author.first].insert(author.second);
+    for (const auto &author : order_authors) {
+        std::cout << author.first << ": ";
+        for (const auto &work : author.second)
             std::cout << work << " ";
         std::cout << std::endl;
     }

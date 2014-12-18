@@ -17,19 +17,29 @@ using std::string;
 
 int main()
 {
-    std::multimap<string, string> map = {{"Alan","111"},{"Alan","112"},{"Alan","113"},{"Wang","222"}};
+    std::multimap<string, string> authors{
+        {"alan", "DMA"},
+        {"pezy", "LeetCode"},
+        {"alan", "CLRS"},
+        {"wang", "FTP"},
+        {"pezy", "CP5"},
+        {"wang", "CPP-Concurrency"}
+    };
     // want to delete an element that author is [Alan], work is [112].
-    string author = "Alan";
-    string work = "112";
+    string author = "pezy";
+    string work = "CP5";
     
-    auto found = map.find(author);
-    auto count = map.count(author);
+    auto found = authors.find(author);
+    auto count = authors.count(author);
     while (count) {
-        if (found->second == work) map.erase(found);
+        if (found->second == work) {
+            authors.erase(found);
+            break;   
+        }
         ++found;
         --count;
     }
     
-    for (const auto &e : map)
-        std::cout << e.first << " " << e.second << std::endl;
+    for (const auto &author : authors)
+        std::cout << author.first << " " << author.second << std::endl;
 }
