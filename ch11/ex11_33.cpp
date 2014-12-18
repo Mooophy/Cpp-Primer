@@ -42,7 +42,7 @@ void word_transform(ifstream &map, ifstream &input)
 
 int main()
 {
-    ifstream ifs_map("../data/word_transformation.txt"), ifs_content("../data/given_to_transform.txt");
+    ifstream ifs_map("../data/word_transformation_bad.txt"), ifs_content("../data/given_to_transform.txt");
     if (ifs_map && ifs_content) word_transform(ifs_map, ifs_content);
     else std::cerr << "can't find the documents." << std::endl;
 }
