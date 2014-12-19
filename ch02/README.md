@@ -38,7 +38,7 @@ Reference:
 
 ##Exercise 2.2
 >To calculate a mortgage payment, what types would you use
-For the rate, principal, and payment? Explain why you selected each type.
+for the rate, principal, and payment? Explain why you selected each type.
 
 Use `double`, or also `float` for rate and payment.
 Use `unsigned double` or `unsigned float` for principal, because it can't negative.
