@@ -296,7 +296,7 @@ p1 = &b;
 
 ####definition:
 
-the pointer is "points to" anyother type.
+the pointer is "points to" any other type.
 
 the reference is "another name" of an **object**.
 
