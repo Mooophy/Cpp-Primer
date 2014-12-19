@@ -21,7 +21,7 @@
 std::vector<int>*
 dynamic_vector_generator();
 
-std::vector<int>*
+void
 dynamic_vector_processor(std::vector<int>* ptr_v);
 
 void
@@ -56,14 +56,13 @@ dynamic_vector_generator()
  * @brief return a pointer to vector of ints
  * @param ptr_v pointer to vector of ints
  */
-std::vector<int> *dynamic_vector_processor(std::vector<int> *ptr_v)
+void dynamic_vector_processor(std::vector<int> *ptr_v)
 {
     int i;
     std::cout << "plz enter:\n";
     while(std::cin >>i && i != 999)
         ptr_v->push_back(i);
 
-    return ptr_v;
 }
 
 /**
