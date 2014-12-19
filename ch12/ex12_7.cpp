@@ -27,7 +27,7 @@
 std::vector<int>*
 dynamic_vector_generator();
 
-std::vector<int>*
+void
 dynamic_vector_processor(std::vector<int>* ptr_v);
 
 void
@@ -39,7 +39,7 @@ dynamic_vector_printer(std::vector<int>* ptr_v);
 std::shared_ptr<std::vector<int>>
 dynamic_vector_generator_sptr();
 
-std::shared_ptr<std::vector<int>>
+void
 dynamic_vector_processor_sptr(std::shared_ptr<std::vector<int>> sptr_vi);
 
 void
@@ -72,7 +72,7 @@ dynamic_vector_generator()
  *          ex12.6
  * @param   ptr_v pointer to vector of ints
  */
-std::vector<int>*
+void
 dynamic_vector_processor(std::vector<int> *ptr_v)
 {
     int i;
@@ -80,7 +80,6 @@ dynamic_vector_processor(std::vector<int> *ptr_v)
     while(std::cin >>i && i != 999)
         ptr_v->push_back(i);
 
-    return ptr_v;
 }
 
 /**
@@ -109,15 +108,13 @@ dynamic_vector_generator_sptr()
 *           return a shared_ptr pointing to it
 * @param    sptr_vi
 */
-std::shared_ptr<std::vector<int>>
+void
 dynamic_vector_processor_sptr(std::shared_ptr<std::vector<int>> sptr_vi)
 {
     int i;
     std::cout << "plz enter:\n";
     while(std::cin >>i && i != 999)
        sptr_vi->push_back(i);
-
-    return sptr_vi;
 }
 
 void
