@@ -382,11 +382,11 @@ variables.
 - (c) int* ip, ip2;
 
 
-(a): `ip` is a pointer to `int` and its value is undefined, `i` is an `int` and its value is 0, `r` is a reference to `int i` and its value is 0.
+(a): `ip` is a pointer to `int` and its value is undefined, `i` is an `int` and its value is indeterminate, `r` is a reference to `int i` and its value is equal to `i`.
 
-(b): `ip` is a valid, null pointer and it doesn't point to any object, `i` is an `int` and ite value is 0.
+(b): `ip` is a valid, null pointer and it doesn't point to any object, `i` is an `int` and its value is indeterminate.
 
-(c): `ip` is a pointer to `int` and its value is undefined, `ip2` is an int and its value is 0.
+(c): `ip` is a pointer to `int` and its value is undefined, `ip2` is an int and its value is indeterminate.
 
 
 ##Exercise 2.26
