@@ -88,4 +88,11 @@ Memory leakage happens. Because after `r = q` was executed, no pointer points to
 
 - to `q2` and `r2`:
 
-no memory leakages. As `r2 = q2` was executed, the count of the object `r2` had pointer to went to `0`, which freed the corresponding memory.
+## [Exercise 12.10](ex12_10.h)
+## [Exercise 12.11](ex12_11.cpp)
+## [Exercise 12.12](ex12_12.cpp)
+## [Exercise 12.13](ex12_13.cpp)
+## [Exercise 12.14](ex12_14.cpp)
+## [Exercise 12.15](ex12_15.cpp)
+## [Exercise 12.16](ex12_16.cpp)
+## [Exercise 12.17 and 12.18](ex12_17_18.cpp)

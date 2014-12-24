@@ -12,10 +12,10 @@
 //!
 //! Exercise 12.18:
 //! Why doesn’t shared_ptr have a release member?
-//  Because other shared_ptr that points the same object can still delete this 
+//  Because other shared_ptr that points the same object can still delete this
 //  object.Thus, it's meaningless to provide this member
 //  more detail can be found a thread on Stack Overflow:
-//  http://stackoverflow.com/questions/1525764/how-to-release-pointer-from-boostshared-ptr	
+//  http://stackoverflow.com/questions/1525764/how-to-release-pointer-from-boostshared-ptr
 
 
 #include <iostream>
@@ -80,5 +80,3 @@ int main()
 
     return 0;
 }
-
-
