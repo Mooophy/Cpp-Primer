@@ -256,7 +256,7 @@ svec.resize(svec.size()+svec.size()/2); // sets capacity to at least 3/2's size.
 |-----|--------|
 |256  |1024    |
 |512  |1024    |
-|1000 |1024    |
+|1000 |1500    |
 |1048 |1572    |
 
 ## [Exercise 9.41](ex9_41.cpp)
