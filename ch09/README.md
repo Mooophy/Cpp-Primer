@@ -252,10 +252,12 @@ svec.resize(svec.size()+svec.size()/2); // sets capacity to at least 3/2's size.
 ## Exercise 9.40:
 >If the program in the previous exercise reads 256 words, what is its likely capacity after it is resized? What if it reads 512? 1,000? 1,048?
 
-read: 256  size: 384  capacity: 1024
-read: 512  size: 768  capacity: 1024
-read: 1000  size: 1500  capacity: 1500
-read: 1048  size: 1572  capacity: 1572
+|reads|capacity|
+|-----|--------|
+|256  |1024    |
+|512  |1024    |
+|1000 |1024    |
+|1048 |1572    |
 
 ## [Exercise 9.41](ex9_41.cpp)
 
