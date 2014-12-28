@@ -58,8 +58,8 @@ This design choice would easy to use but hard to debug.
 - We always uses the constructor to construct **a temporary StrBlob object**.
 - cannot use the copy form of initialization with an explicit constructor. not easy to use.
 
-## [Exercise 12.6](ex12_06.h)
-## [Exercise 12.7](ex12_07.h)
+## [Exercise 12.6](ex12_06.cpp)
+## [Exercise 12.7](ex12_07.cpp)
 
 ## Exercise 12.8:
 >Explain what if anything is wrong with the following function.
@@ -88,7 +88,7 @@ Memory leakage happens. Because after `r = q` was executed, no pointer points to
 
 - to `q2` and `r2`:
 
-## [Exercise 12.10](ex12_10.h)
+## [Exercise 12.10](ex12_10.cpp)
 ## [Exercise 12.11](ex12_11.cpp)
 ## [Exercise 12.12](ex12_12.cpp)
 ## [Exercise 12.13](ex12_13.cpp)
@@ -96,3 +96,16 @@ Memory leakage happens. Because after `r = q` was executed, no pointer points to
 ## [Exercise 12.15](ex12_15.cpp)
 ## [Exercise 12.16](ex12_16.cpp)
 ## [Exercise 12.17 and 12.18](ex12_17_18.cpp)
+## [Exercise 12.19](ex12_19.h)
+## [Exercise 12.20](ex12_20.cpp)
+## Exercise 12.21:
+>We could have written StrBlobPtr’s deref member as follows:
+```cpp
+std::string& deref() const
+{ return (*check(curr, "dereference past end"))[curr]; }
+```
+Which version do you think is better and why?
+
+the origin version is better. cause it's more **readability** and **easier to debug**.
+
+## [Exercise 12.22](ex12_22.cpp)
