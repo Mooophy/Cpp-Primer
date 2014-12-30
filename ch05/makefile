@@ -1,10 +1,9 @@
 #cutable files for this directory
-OBJECTS = ex1_10 ex1_11 ex1_16 ex1_1 ex1_20 \
-		  ex1_21 ex1_22 ex1_23 ex1_9
+OBJECTS = ex5_10 ex5_11	ex5_12 ex5_14 ex5_17 ex5_19 ex5_20 ex5_21 \
+		  ex5_23 ex5_24 ex5_25 ex5_5 ex5_6 	ex5_9
 
 all:$(OBJECTS)
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and  files
 include ../GNU_makefile_template
-

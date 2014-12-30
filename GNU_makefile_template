@@ -57,4 +57,4 @@ clean:
 
 # target to remove executable files as well as object and core files
 clobber: clean
-	rm -rf $(OBJECTS)
+	rm -rf $(OBJECTS) $(OTHOBJS)
