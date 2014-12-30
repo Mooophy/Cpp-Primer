@@ -109,3 +109,17 @@ Which version do you think is better and why?
 the origin version is better. cause it's more **readability** and **easier to debug**.
 
 ## [Exercise 12.22](ex12_22.cpp)
+## [Exercise 12.23](ex12_23.cpp)
+## [Exercise 12.24](ex12_24.cpp)
+
+## Exercise 12.25:
+>Given the following new expression, how would you delete pa?
+```cpp
+int *pa = new int[10];
+```
+
+```cpp
+delete [] pa;
+```
+
+## [Exercise 12.26](ex12_26.cpp)
