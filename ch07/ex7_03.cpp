@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
 
-#include "ex7_2.h"
+#include "ex7_02.h"
 #include <iostream>
 using std::cin; using std::cout; using std::endl;
 

@@ -1,6 +1,5 @@
 #cutable files for this directory
-OBJECTS = ex1_10 ex1_11 ex1_16 ex1_1 ex1_20 \
-		  ex1_21 ex1_22 ex1_23 ex1_9
+OBJECTS = ex4_21 ex4_22 ex4_28
 
 all:$(OBJECTS)
 
