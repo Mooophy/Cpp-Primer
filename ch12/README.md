@@ -123,3 +123,4 @@ delete [] pa;
 ```
 
 ## [Exercise 12.26](ex12_26.cpp)
+## Exercise 12.27 [Header](ex12_27.h)|[Implementation](ex12_27.cpp)|[Test](ex12_27_TEST.cpp)
