@@ -123,4 +123,27 @@ delete [] pa;
 ```
 
 ## [Exercise 12.26](ex12_26.cpp)
-## Exercise 12.27 [Header](ex12_27.h)|[Implementation](ex12_27.cpp)|[Test](ex12_27_TEST.cpp)
+## Exercise 12.27 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Test](ex12_27_30_TEST.cpp)
+
+## [Exercise 12.28](ex12_28.cpp)
+
+## Exercise 12.29:
+>We could have written the loop to manage the interaction with the user as a do while (5.4.4, p. 189) loop. Rewrite the loop to use a do while. Explain which version you prefer and why.
+
+```cpp
+do {
+    std::cout << "enter word to look for, or q to quit: ";
+    string s;
+    if (!(std::cin >> s) || s == "q") break;
+    print(std::cout, tq.query(s)) << std::endl;
+} while ( true );
+```
+
+I prefer the `do while`, cause the process according with our logic.
+
+## Exercise 12.30 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Test](ex12_27_30_TEST.cpp)
+
+## Exercise 12.31:
+>What difference(s) would it make if we used a vector instead of a set to hold the line numbers? Which approach is better? Why?
+
+The `vector` can not ensure no duplicates. Hence, in terms of this programme `set` is a better option.
