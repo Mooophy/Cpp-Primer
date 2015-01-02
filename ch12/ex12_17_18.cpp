@@ -38,7 +38,7 @@ int main()
 
     /**
      * @brief The code below can compile, but will cause error at run time.
-     *        The reaso is that when the unique_ptr p1 is out of scope, delete will be called
+     *        The reason is that when the unique_ptr p1 is out of scope, delete will be called
      *        to free th object. But the object is not allocate using new.Thus, an error
      *        would be thrown by operating system.
      *  @badcode
