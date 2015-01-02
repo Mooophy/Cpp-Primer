@@ -23,7 +23,7 @@ void f(double, double)
 
 int main()
 {
-    f(2.56, 42); // error: 'f' is ambiguous.
+    //f(2.56, 42); // error: 'f' is ambiguous.
     f(42);
     f(42, 0);
     f(2.56, 3.14);
