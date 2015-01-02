@@ -436,8 +436,8 @@ following assignments are legal? Explain why.
 i = ic;     // legal.
 p1 = p3;    // illegal. p3 is a pointer to const int.
 p1 = &ic;   // illegal. ic is a const int.
-p3 = &ic;   // legal.
-p2 = p1;    // legal.
+p3 = &ic;   // illegal. p3 is a const pointer.
+p2 = p1;    // illegal. p2 is a const pointer.
 ic = *p3;   // illegal. ic is a const int.
 ```
 
