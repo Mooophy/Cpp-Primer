@@ -11,6 +11,9 @@
 //
 //  @See    ex12_19.h
 
+#ifndef CP5_ex12_22_h
+#define CP5_ex12_22_h
+
 #include <vector>
 #include <string>
 #include <initializer_list>
@@ -84,11 +87,4 @@ private:
     size_t curr; 
 };
 
-ConstStrBlobPtr StrBlob::begin() const // should add const
-{
-    return ConstStrBlobPtr(*this);
-}
-ConstStrBlobPtr StrBlob::end() const // should add const
-{
-    return ConstStrBlobPtr(*this, data->size());
-}
+#endif

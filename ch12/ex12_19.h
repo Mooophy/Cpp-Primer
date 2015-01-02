@@ -1,5 +1,5 @@
 //
-//  ex12_19.cpp
+//  ex12_19.h
 //  Exercise 12.19
 //
 //  Created by pezy on 12/26/14.
@@ -9,6 +9,9 @@
 //  update your StrBlob class with the appropriate friend declaration and begin and end members.
 //
 //  @See    ex12_02.h
+
+#ifndef CP5_ex12_19_h
+#define CP5_ex12_19_h
 
 #include <vector>
 #include <string>
@@ -83,11 +86,4 @@ private:
     size_t curr;
 };
 
-StrBlobPtr StrBlob::begin()
-{
-    return StrBlobPtr(*this);
-}
-StrBlobPtr StrBlob::end()
-{
-    return StrBlobPtr(*this, data->size());
-}
+#endif

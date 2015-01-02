@@ -96,7 +96,7 @@ Memory leakage happens. Because after `r = q` was executed, no pointer points to
 ## [Exercise 12.15](ex12_15.cpp)
 ## [Exercise 12.16](ex12_16.cpp)
 ## [Exercise 12.17 and 12.18](ex12_17_18.cpp)
-## [Exercise 12.19](ex12_19.h)
+## Exercise 12.19 [Header](ex12_19.h)|[Implementation](ex12_19.cpp)
 ## [Exercise 12.20](ex12_20.cpp)
 ## Exercise 12.21:
 >We could have written StrBlobPtr’s deref member as follows:
@@ -108,7 +108,7 @@ Which version do you think is better and why?
 
 the origin version is better. cause it's more **readability** and **easier to debug**.
 
-## [Exercise 12.22](ex12_22.cpp)
+## Exercise 12.22 [Header](ex12_22.h)|[Implementation](ex12_22.cpp)
 ## [Exercise 12.23](ex12_23.cpp)
 ## [Exercise 12.24](ex12_24.cpp)
 
@@ -147,3 +147,5 @@ I prefer the `do while`, cause the process according with our logic.
 >What difference(s) would it make if we used a vector instead of a set to hold the line numbers? Which approach is better? Why?
 
 The `vector` can not ensure no duplicates. Hence, in terms of this programme `set` is a better option.
+
+## Exercise 12.32 [Header](ex12_32.h)|[Implementation](ex12_32.cpp)

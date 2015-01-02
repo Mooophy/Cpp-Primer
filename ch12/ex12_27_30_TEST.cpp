@@ -1,14 +1,14 @@
 //
-//  ex12_27_TEST.cpp 
+//  ex12_27_TEST.cpp
 //  Exercise 12.27
 //
 //  Created by pezy on 12/31/14.
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
-//  The TextQuery and QueryResult classes use only capabilities that we have already covered. 
+//  The TextQuery and QueryResult classes use only capabilities that we have already covered.
 //  Without looking ahead, write your own versions of these classes.
 
-#include "ex12_27.h"
+#include "ex12_27_30.h"
 #include <iostream>
 
 void runQueries(std::ifstream &infile)
@@ -24,6 +24,6 @@ void runQueries(std::ifstream &infile)
 
 int main()
 {
-    std::ifstream file("../data/letter.txt");
+    std::ifstream file("../data/storyDataFile.txt");
     runQueries(file);
 }
