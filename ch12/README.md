@@ -149,3 +149,4 @@ I prefer the `do while`, cause the process according with our logic.
 The `vector` can not ensure no duplicates. Hence, in terms of this programme `set` is a better option.
 
 ## Exercise 12.32 [Header](ex12_32.h)|[Implementation](ex12_32.cpp)
+## Exercise 12.33 [Header](ex12_33.h)|[Implementation](ex12_33.cpp)
