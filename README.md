@@ -30,7 +30,7 @@
   - [Chapter 9. Sequential Containers](ch09/README.md)
   - [Chapter 10. Generic Algorithms](ch10/README.md)
   - [Chapter 11. Associative Containers](ch11/README.md)
-  - [Chapter 12. Dynamic Memory](ch12)
+  - [Chapter 12. Dynamic Memory](ch12/README.md)
 - Part III: Tools for Class Authors
   - [Chapter 13. Copy Control](ch13)
   - [Chapter 14. Overloaded Operations and Conversions](ch14)
