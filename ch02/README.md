@@ -362,12 +362,8 @@ if (*p) // whether the value pointed by p is zero?
 ##Exercise 2.23
 >Given a pointer p, can you determine whether p points to a valid object? If so, how? If not, why not?
 
-```cpp
-if (p)
-  // p points to a valid object
-else
-  // p points to a invalid object
-```
+No. Because more information needed to determine whether the pointee is valid or not.
+
 
 ##Exercise 2.24
 >Why is the initialization of p legal but that of lp illegal?
