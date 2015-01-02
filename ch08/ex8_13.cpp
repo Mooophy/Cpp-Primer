@@ -17,6 +17,7 @@
 
 using std::vector; using std::string; using std::cin; using std::istringstream;
 using std::ostringstream; using std::ifstream; using std::cerr; using std::cout; using std::endl;
+using std::isdigit;
 
 struct PersonInfo {
     string name;
@@ -25,7 +26,7 @@ struct PersonInfo {
 
 bool valid(const string& str)
 {
-    return isnumber(str[0]);
+    return isdigit(str[0]);
 }
 
 string format(const string& str)
