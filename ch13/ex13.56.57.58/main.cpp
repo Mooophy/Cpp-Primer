@@ -32,7 +32,7 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
-#include <Alan.h>
+#include "Alan.h"
 #include "StrBlob.h"
 
 class Foo
