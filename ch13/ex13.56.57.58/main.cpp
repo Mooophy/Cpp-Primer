@@ -25,27 +25,20 @@
 //! Exercise 13.58: Write versions of class Foo with print statements in their
 //! sorted functions to test your answers to the previous two exercises.
 //!
-
-
-
-#include <utility>
+#include <iostream>
 #include <vector>
 #include <algorithm>
-#include <iostream>
-#include "Alan.h"
-#include "StrBlob.h"
 
 class Foo
 {
 public:
     Foo sorted() &&;         // may run on modifiable rvalues
     Foo sorted() const &;    // may run on any kind of Foo
-    // other members of Foo
 private:
     std::vector<int> data;
 };
 
-//! cause infinit recursion
+//! infinit recursion
 /*
 Foo Foo::sorted() const &
 {
@@ -57,10 +50,12 @@ Foo Foo::sorted() const &
 Foo Foo::sorted() &&
 {
     std::sort(data.begin(), data.end());
+    std::cout << "Rvalue version\n";
     return *this;
 }
 Foo Foo::sorted() const &
 {
+    std::cout << "Lvalue version\n";
     return Foo(*this).sorted();
 }
 
@@ -68,19 +63,6 @@ int main()
 {
     Foo foo;
     foo.sorted();
-
-    alan("main() is returned\n");
-
+    std::cout << "exit\n";
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
