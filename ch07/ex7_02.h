@@ -1,13 +1,13 @@
 //
-//  ex7_2.h
+//  ex7_02.h
 //  Exercise 7.2
 //
 //  Created by pezy on 14/11/8.
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
 
-#ifndef CP5_ex7_2_h
-#define CP5_ex7_2_h
+#ifndef CP5_ex7_02_h
+#define CP5_ex7_02_h
 
 #include <string>
 
