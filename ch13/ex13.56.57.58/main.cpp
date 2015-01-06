@@ -66,3 +66,7 @@ int main()
     std::cout << "exit\n";
     return 0;
 }
+//! output
+//Lvalue version
+//Rvalue version
+//exit
