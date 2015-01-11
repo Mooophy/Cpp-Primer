@@ -18,7 +18,7 @@ class Sales_data {
     friend Sales_data add(const Sales_data &lhs, const Sales_data &rhs);
 
 public:
-    Sales_data() = default;
+    Sales_data() = default;  //using c++ 11 standard
     Sales_data(const std::string &s):bookNo(s) {}
     Sales_data(const std::string &s, unsigned n, double p):bookNo(s),units_sold(n),revenue(n*p){}
     Sales_data(std::istream &is) { read(is, *this);}
