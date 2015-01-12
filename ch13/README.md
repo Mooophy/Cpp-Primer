@@ -60,3 +60,21 @@ Point foo_bar(Point arg) // 1. Pass an object as an argument to a parameter of n
 ```
 
 ## [Exercise 13.5](ex13_05.h)
+
+## Exercise 13.6:
+>What is a copy-assignment operator? When is this operator used? What does the synthesized copy-assignment operator do? When is it synthesized?
+
+The copy-assignment operator is function named `operator=`.
+
+This operator is used when assignment occurred.
+
+The synthesized copy-assignment operator assigns each nonstatic member of the right-hand object to corresponding member of the left-hand object using the copy-assignment operator for the type of that member.
+
+It is synthesized when the class does not define its own.
+
+## Exercise 13.7:
+>What happens when we assign one StrBlob to another? What about StrBlobPtrs?
+
+In both cases, shallow copy will happen. All pointers point to the same address. The `use_count` changed the same as 13.3.
+
+## [Exercise 13.8](ex13_08.h)
