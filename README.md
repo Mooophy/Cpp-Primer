@@ -1,6 +1,8 @@
 #C++ Primer (第5版) 习题答案 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pezy/cpp-primer/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 ##C++ Primer (5th Edition) exercise answers.
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pezy/Cpp-Primer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ### Note
 
 - Use `-std=c++11`(optional: `-pedantic -Wall`) flag when compiling.(or you can use Visual Studio 2012+)
