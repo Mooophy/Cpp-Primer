@@ -78,3 +78,35 @@ It is synthesized when the class does not define its own.
 In both cases, shallow copy will happen. All pointers point to the same address. The `use_count` changed the same as 13.3.
 
 ## [Exercise 13.8](ex13_08.h)
+
+## Exercise 13.9:
+>What is a destructor? What does the synthesized destructor do? When is a destructor synthesized?
+
+The destructor is a member function with the name of the class prefixed by a tilde(~).
+
+As with the copy constructor and the copy-assignment operator, for some classes, the synthesized destructor is defined to disallow objects of the type from being destoryed. Otherwise, the synthesized destructor has an empty function body.
+
+The compiler defines a synthesized destructor for any class that does not define its own destructor.
+
+## Exercise 13.10:
+>What happens when a StrBlob object is destroyed? What about a StrBlobPtr?
+
+When a `StrBlob` object destroyed, the `use_count` of the dynamic object will decrement. It will be freed if no `shared_ptr` to that dynamic object.
+
+When a `StrBlobPter` object is destroyed the object dynamicaly allocated will not be freed.
+
+## [Exercise 13.11](ex13_11.h)
+
+## Exercise 13.12:
+>How many destructor calls occur in the following code fragment?
+```cpp
+bool fcn(const Sales_data *trans, Sales_data accum)
+{
+    Sales_data item1(*trans), item2(accum);
+    return item1.isbn() != item2.isbn();
+}
+```
+
+3 times. There are `accum`, `item1` and `item2`.
+
+## [Exercise 13.13](ex13_13.cpp)

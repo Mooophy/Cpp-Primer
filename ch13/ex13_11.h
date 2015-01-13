@@ -1,17 +1,16 @@
 //
-//  ex13_08.h
+//  ex13_11.h
 //  CP5
 //
-//  Created by pezy on 1/12/15.
+//  Created by pezy on 1/13/15.
 //  Copyright (c) 2015 pezy. All rights reserved.
 //
-//  Write the assignment operator for the HasPtr class from exercise 13.5 in 13.1.1 (p. 499).
-//  As with the copy constructor, your assignment operator should copy the object to which ps points.
+//  Add a destructor to your HasPtr class from the previous exercises. 
 //
-//  See ex13_05.h 
+//  See ex13_08.h 
 
-#ifndef CP5_ex13_08_h
-#define CP5_ex13_08_h
+#ifndef CP5_ex13_11_h
+#define CP5_ex13_11_h
 
 #include <string>
 
@@ -24,6 +23,9 @@ public:
         i = hp.i;
         return *this;
     }
+    ~HasPtr() {
+        delete ps;
+    } 
 private:
     std::string *ps;
     int i;
