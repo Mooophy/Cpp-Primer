@@ -135,3 +135,28 @@ Yes, the output will change. cause we don't use the synthesized copy-control mem
 Yes, the output will change. cause the function `f` haven't any copy operators. Thus, the output are the same when pass the each object to `f`.
 
 ## [Exercise 13.17](ex13_17.cpp)
+
+## Exercise 13.18 [.h](ex13_18.h) | [.cpp](ex13_18.cpp)
+
+## [Exercise 13.19](ex13_19.h)
+
+## Exercise 13.20:
+>Explain what happens when we copy, assign, or destroy objects of our TextQuery and QueryResult classes from § 12.3 (p. 484).
+
+The member (smart pointer and container) will be copied.
+
+## Exercise 13.21:
+>Do you think the TextQuery and QueryResult classes need to define their own versions of the copy-control members? If so, why? If not, why not? Implement whichever copy-control operations you think these classes require.
+
+(@Mooophy)
+No copy-control members needed.
+
+Because, all these classes are using smart pointers to manage dynamic memory which can be freed automatically by calling synthesized destructors. The objects of these classes should share the same dynamic memory.Hence no user-defined version needed as well.
+
+```cpp
+TextQuery(const TextQuery&) = delete;
+TextQuery& operator=(const TextQuery) = delete;
+
+QueryResult(const QueryResult&) = delete;
+QueryResult& operator=(const QueryResult) = delete;
+```
