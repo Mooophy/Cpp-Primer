@@ -110,3 +110,28 @@ bool fcn(const Sales_data *trans, Sales_data accum)
 3 times. There are `accum`, `item1` and `item2`.
 
 ## [Exercise 13.13](ex13_13.cpp)
+
+## Exercise 13.14:
+>Assume that `numbered` is a class with a default constructor that generates a unique serial number for each object, which is stored in a data member named `mysn`. Assuming numbered uses the synthesized copy- control members and given the following function:
+```cpp
+void f (numbered s) { cout << s.mysn << endl; }
+```
+what output does the following code produce?
+```cpp
+numbered a, b = a, c = b;
+f(a); f(b); f(c);
+```
+
+Three identical numbers.
+
+## Exercise 13.15:
+>Assume `numbered` has a copy constructor that generates a new serial number. Does that change the output of the calls in the previous exercise? If so, why? What output gets generated?
+
+Yes, the output will change. cause we don't use the synthesized copy-control members rather than own defined.The output will be three different numbers.
+
+## Exercise 13.16:
+>What if the parameter in f were const numbered&? Does that change the output? If so, why? What output gets generated?
+
+Yes, the output will change. cause the function `f` haven't any copy operators. Thus, the output are the same when pass the each object to `f`.
+
+## [Exercise 13.17](ex13_17.cpp)
