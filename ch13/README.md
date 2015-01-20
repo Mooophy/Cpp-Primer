@@ -181,3 +181,7 @@ Copy constructor and copy-assignment operator should dynamicly allocate memory f
 `StrBlob` is using smart pointers which can be managed with synthesized destructor, If an object of `StrBlob` is out of scope, the destructor for std::shared_ptr will be called automaticaly to free the memory dynamically allocated when the `use_count` goes to 0.
 
 ## Exercise 13.26 [hpp](ex13_26.h) | [cpp](ex13_26.cpp)
+
+## [Exercise 13.27](ex13_27.h)
+
+## Exercise 13.28 [hpp](ex13_28.h) | [cpp](ex13_28.cpp)
