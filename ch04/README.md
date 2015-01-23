@@ -316,11 +316,11 @@ Because of the most lowest precedence of the comma operator, the expression is s
 ```cpp
 (someValue ? ++x, ++y : --x), --y
 ```
-If someValue is true, the result is `y`, and else if someValue is false, the result is `--y`. so it is also same as:
+If someValue is true, then `++x`, and the result is `y`, if someValue is false, then `--x`, and the result is `--y`. so it is also same as:
 ```cpp
-someValue ? y : --y;
+someValue ? (++x,y) : (--x,--y);
 ```
-Oops... It's not `x`'s business.
+Even though the result has nothing to do with `x`, the evaluation of `someValue` does effect the operation on `x`.
 
 ##Exercise 4.34
 >Given the variable definitions in this section, explain what conversions take place in the following expressions:
