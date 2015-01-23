@@ -185,3 +185,18 @@ Copy constructor and copy-assignment operator should dynamicly allocate memory f
 ## [Exercise 13.27](ex13_27.h)
 
 ## Exercise 13.28 [hpp](ex13_28.h) | [cpp](ex13_28.cpp)
+
+## Exercise 13.29:
+> Explain why the calls to swap inside swap(HasPtr&, HasPtr&) do not cause a recursion loop.
+
+`swap(lhs.ps, rhs.ps);` feed the version : `swap(std::string*, std::string*)` and `swap(lhs.i, rhs.i);` feed the version : `swap(int, int)`. Both them can't call `swap(HasPtr&, HasPtr&)`. Thus, the calls don't cause a recursion loop.
+
+## [Exercise 13.30](ex13_30.h)
+## [Exercise 13.31](ex13_31.h)
+
+## Exercise 13.32:
+>Would the pointerlike version of `HasPtr` benefit from defining a swap function? If so, what is the benefit? If not, why not?
+
+@Mooophy:
+
+Essentially, the specific avoiding memory allocation is the reason why it improve performance. As for the pointerlike version, no dynamic memory allocation anyway. Thus, a specific version for it will not improve the performance.
