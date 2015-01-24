@@ -261,7 +261,7 @@ reference: [Why the size of a pointer is 4bytes in C++](http://stackoverflow.com
 ##Exercise 4.30
 >Using Table 4.12 (p. 166), parenthesize the following expressions to match the default evaluation: 
 ```cpp
-sizeof x + y      // (sizeof x)+y . "sizeof" and "+" have equal precedence, and left associative.
+sizeof x + y      // (sizeof x)+y . "sizeof" has higher precedence than binary `+`.
 sizeof p->mem[i]  // sizeof(p->mem[i])
 sizeof a < b      // sizeof(a) < b
 sizeof f()        //If `f()` returns `void`, this statement is undefined, otherwise it returns the size of return type. 
@@ -362,7 +362,7 @@ int i; double d; const string *ps; char *pc; void *pv;
 pv = (void*)ps; // pv = const_cast<string*>(ps); or pv = static_cast<void*>(const_cast<string*>(ps));
 i = int(*pc);   // i = static_cast<int>(*pc);
 pv = &d;        // pv = static_cast<void*>(&d);
-pc = (char*)pv; // pc = static_cast<char*>(pv);   ref: Page 163.
+pc = (char*)pv; // pc = reinterpret_cast<char*>(pv);
 ```
 
 ##Exercise 4.38
