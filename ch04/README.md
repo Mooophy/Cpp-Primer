@@ -261,7 +261,7 @@ reference: [Why the size of a pointer is 4bytes in C++](http://stackoverflow.com
 ##Exercise 4.30
 >Using Table 4.12 (p. 166), parenthesize the following expressions to match the default evaluation: 
 ```cpp
-sizeof x + y      // sizeof(x+y)
+sizeof x + y      // (sizeof x)+y . "sizeof" has higher precedence than binary `+`.
 sizeof p->mem[i]  // sizeof(p->mem[i])
 sizeof a < b      // sizeof(a) < b
 sizeof f()        //If `f()` returns `void`, this statement is undefined, otherwise it returns the size of return type. 
@@ -316,11 +316,11 @@ Because of the most lowest precedence of the comma operator, the expression is s
 ```cpp
 (someValue ? ++x, ++y : --x), --y
 ```
-If someValue is true, the result is `y`, and else if someValue is false, the result is `--y`. so it is also same as:
+If someValue is true, then `++x`, and the result is `y`, if someValue is false, then `--x`, and the result is `--y`. so it is also same as:
 ```cpp
-someValue ? y : --y;
+someValue ? (++x,y) : (--x,--y);
 ```
-Oops... It's not `x`'s business.
+Even though the result has nothing to do with `x`, the evaluation of `someValue` does effect the operation on `x`.
 
 ##Exercise 4.34
 >Given the variable definitions in this section, explain what conversions take place in the following expressions:
@@ -362,7 +362,7 @@ int i; double d; const string *ps; char *pc; void *pv;
 pv = (void*)ps; // pv = const_cast<string*>(ps); or pv = static_cast<void*>(const_cast<string*>(ps));
 i = int(*pc);   // i = static_cast<int>(*pc);
 pv = &d;        // pv = static_cast<void*>(&d);
-pc = (char*)pv; // pc = reinterpret_cast<char*>(pv); 
+pc = (char*)pv; // pc = reinterpret_cast<char*>(pv);
 ```
 
 ##Exercise 4.38
