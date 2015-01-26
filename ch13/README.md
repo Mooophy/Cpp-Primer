@@ -1,4 +1,4 @@
-# Chapter 13. Copy Control
+﻿# Chapter 13. Copy Control
 
 ## Exercise 13.1:
 >What is a copy constructor? When is it used?
@@ -200,3 +200,24 @@ Copy constructor and copy-assignment operator should dynamicly allocate memory f
 @Mooophy:
 
 Essentially, the specific avoiding memory allocation is the reason why it improve performance. As for the pointerlike version, no dynamic memory allocation anyway. Thus, a specific version for it will not improve the performance.
+
+## Exercise 13.33: 
+>Why is the parameter to the `save` and `remove` members of Message a Folder&? Why didn’t we define that parameter as `Folder`? Or `const Folder&`? 
+
+Because these operations must also update the given `Folder`. Updating a `Folder` is a job that the `Folder` class controls through its `addMsg` and `remMsg` members, which will add or remove a pointer to a given `Message`, respectively.
+
+## Exercise 13.34 [hpp](ex13_34_36_37.h) | [cpp](ex13_34_36_37.cpp)
+
+## Exercise 13.35: 
+>What would happen if `Message` used the synthesized versions of the copy-control members? 
+
+some existing `Folders` will out of sync with the `Message` after assignment.
+
+## Exercise 13.36 [hpp](ex13_34_36_37.h) | [cpp](ex13_34_36_37.cpp)
+## Exercise 13.37 [hpp](ex13_34_36_37.h) | [cpp](ex13_34_36_37.cpp)
+
+## Exercise 13.38: 
+>We did not use copy and swap to define the Message assignment operator. Why do you suppose this is so? 
+
+@Mooophy
+The copy and swap is an elegant way when working with dynamicly allocated memory. In the Message class ,noing is allocated dynamically. Thus using this idiom makes no sense and will make it more complicated to implement due to the pointers that point back.
