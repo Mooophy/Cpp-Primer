@@ -118,10 +118,11 @@ vec2list_3_7_reverse(const std::vector<int> &v, std::list<int> &l)
     //!     1 2 3 4 5 6 7 8 9 10
     //!    ^                  ^^
     //! rend                  rbegin
-    std::copy(v.rbegin() + 3, v.rend() - 2, std::back_inserter(l));
+    std::copy(v.crbegin() + 3, v.crbegin() + 8, std::back_inserter(l));
     //!                                  ^
     //! @note: std::copy copies the range [first,last) into result.
     //!        hence, the arguments here denote:
     //!        [7 6 5 4 3 2)
     //!                   ^ this one is specified but not included.
+    //! @note: also const vecrions if functions can be used.  v.crbegin() and v.crbegin()
 }
