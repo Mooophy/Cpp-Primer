@@ -1,4 +1,5 @@
-#include "ex12_34_36_37.h"
+#include "ex13_34_36_37.h"
+#include <iostream>
 
 void swap(Message &lhs, Message &rhs)
 {
@@ -62,7 +63,30 @@ Message& Message::operator=(const Message &rhs)
     return *this;
 }
 
+void Message::print_debug()
+{
+    std::cout << contents << std::endl;
+}
+
 // Folder Implementation
+
+void swap(Folder &lhs, Folder &rhs)
+{
+	using std::swap;
+	for (auto m : lhs.msgs)
+		m->remFldr(&lhs);
+
+	for (auto m : rhs.msgs)
+		m->remFldr(&rhs);
+
+	swap(lhs.msgs, rhs.msgs);
+
+	for (auto m : lhs.msgs)
+		m->addFldr(&lhs);
+
+	for (auto m : rhs.msgs)
+		m->addFldr(&rhs);
+}
 
 void Folder::add_to_Message(const Folder &f)
 {
@@ -92,4 +116,11 @@ Folder& Folder::operator =(const Folder &rhs)
     msgs = rhs.msgs;
     add_to_Message(rhs);
     return *this;
+}
+
+void Folder::print_debug()
+{
+    for (auto m : msgs)
+        std::cout << m->contents << " ";
+    std::cout << std::endl;
 }
