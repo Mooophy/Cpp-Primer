@@ -224,3 +224,5 @@ The copy and swap is an elegant way when working with dynamicly allocated memory
 
 @pezy
 In this case, `swap` function is special. It will be clear two `Message`'s folders , then swap members, and added themselves to each folders. But, `Message` assignment operator just clear itself, and copy the members, and added itself to each folders. The `rhs` don't need to clear and add to folders. So, if using copy and swap to define, it will be very inefficiency.
+
+## Exercise 13.39 [hpp](ex13_39.h) | [cpp](ex13_39.cpp)
