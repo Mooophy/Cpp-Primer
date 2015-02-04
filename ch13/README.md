@@ -232,17 +232,17 @@ In this case, `swap` function is special. It will be clear two `Message`'s folde
 >Why did we use postfix increment in the call to construct inside push_back? What would happen if it used the prefix increment?
 
 	|a|b|c|d|f|..............|
-	^	      ^             ^
+	^	       ^             ^
 	elements   first_free    cap
 
 	// if use alloc.construct(first_free++, "g");
 	|a|b|c|d|f|g|.............|
-	^	        ^            ^
+	^	         ^            ^
 	elements     first_free   cap
 
 	// if use alloc.construct(++first_free, "g");
 	|a|b|c|d|f|.|g|............|
-	^	      ^ ^             ^
+	^	       ^ ^             ^
 	elements   | first_free    cap
 		       |
 	    "unconstructed"
