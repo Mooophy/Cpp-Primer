@@ -228,33 +228,34 @@ In this case, `swap` function is special. It will be clear two `Message`'s folde
 ## Exercise 13.39 [hpp](ex13_39.h) | [cpp](ex13_39.cpp)
 ## Exercise 13.40 [hpp](ex13_40.h) | [cpp](ex13_40.cpp)
 
-## Exercise 13.41: Why did we use postfix increment in the call to construct inside push_back? What would happen if it used the prefix increment? 
+## Exercise 13.41: 
+>Why did we use postfix increment in the call to construct inside push_back? What would happen if it used the prefix increment? 
 
-```cpp
-|a|b|c|d|f|..............|
-^	   ^		 ^
-elements   first_free	 cap
+	|a|b|c|d|f|..............|
+	^	   ^		 ^
+	elements   first_free	 cap
+	
+	// if use alloc.construct(first_free++, "g");
+	|a|b|c|d|f|g|.............|
+	^	     ^		  ^
+	elements     first_free	  cap
+	
+	// if use alloc.construct(++first_free, "g");
+	|a|b|c|d|f|.|g|............|
+	^	   ^ ^ 		   ^
+	elements   | first_free	   cap
+		   |
+	        "unconstructed"
 
-// if use alloc.construct(first_free++, "g");
-|a|b|c|d|f|g|.............|
-^	     ^		  ^
-elements     first_free	  cap
-
-// if use alloc.construct(++first_free, "g");
-|a|b|c|d|f|.|g|............|
-^	   ^ ^ 		   ^
-elements   | first_free	   cap
-	   |
-        "unconstructed"
-```
-
-## Exercise 13.42: Test your StrVec class by using it in place of the vector<string> in your TextQuery and QueryResult classes (12.3, p. 484). 
+## Exercise 13.42: 
+>Test your StrVec class by using it in place of the vector<string> in your TextQuery and QueryResult classes (12.3, p. 484). 
 
 - StrVec : [hpp](ex13_42_StrVec.h) | [cpp](ex13_42_StrVec.cpp)
 - TextQuery and QueryResult : [hpp](ex13_42_TextQuery.h) | [cpp](ex13_42_TextQuery.cpp)
 - Text : [ex13_42.cpp](ex13_42.cpp)
 
-## Exercise 13.43: Rewrite the free member to use `for_each` and a lambda (10.3.2, p. 388) in place of the for loop to destroy the elements. Which implementation do you prefer, and why? 
+## Exercise 13.43: 
+>Rewrite the free member to use `for_each` and a lambda (10.3.2, p. 388) in place of the for loop to destroy the elements. Which implementation do you prefer, and why? 
 
 **Rewrite**
 ```cpp
