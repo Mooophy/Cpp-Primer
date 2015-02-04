@@ -226,3 +226,42 @@ The copy and swap is an elegant way when working with dynamicly allocated memory
 In this case, `swap` function is special. It will be clear two `Message`'s folders , then swap members, and added themselves to each folders. But, `Message` assignment operator just clear itself, and copy the members, and added itself to each folders. The `rhs` don't need to clear and add to folders. So, if using copy and swap to define, it will be very inefficiency.
 
 ## Exercise 13.39 [hpp](ex13_39.h) | [cpp](ex13_39.cpp)
+## Exercise 13.40 [hpp](ex13_40.h) | [cpp](ex13_40.cpp)
+
+## Exercise 13.41: Why did we use postfix increment in the call to construct inside push_back? What would happen if it used the prefix increment? 
+
+```cpp
+|a|b|c|d|f|..............|
+^	   ^		 ^
+elements   first_free	 cap
+
+// if use alloc.construct(first_free++, "g");
+|a|b|c|d|f|g|.............|
+^	     ^		  ^
+elements     first_free	  cap
+
+// if use alloc.construct(++first_free, "g");
+|a|b|c|d|f|.|g|............|
+^	   ^ ^ 		   ^
+elements   | first_free	   cap
+	   |
+        "unconstructed"
+```
+
+## Exercise 13.42: Test your StrVec class by using it in place of the vector<string> in your TextQuery and QueryResult classes (12.3, p. 484). 
+
+- StrVec : [hpp](ex13_42_StrVec.h) | [cpp](ex13_42_StrVec.cpp)
+- TextQuery and QueryResult : [hpp](ex13_42_TextQuery.h) | [cpp](ex13_42_TextQuery.cpp)
+- Text : [ex13_42.cpp](ex13_42.cpp)
+
+## Exercise 13.43: Rewrite the free member to use `for_each` and a lambda (10.3.2, p. 388) in place of the for loop to destroy the elements. Which implementation do you prefer, and why? 
+
+**Rewrite**
+```cpp
+for_each(elements, first_free, [this](std::string &rhs){ alloc.destroy(&rhs); });
+```
+
+@Mooophy:
+The new version is better. Compared to the old one, it doesn't need to worry about the order and decrement.So more straightforward and handy. The only thing to do for using this approach is to add "&" to build the pointers to string pointers.
+
+## Exercise 13.44 [hpp](ex13_44.h) | [cpp](ex13_44.cpp) | [Test](ex13_44_TEST.cpp)
