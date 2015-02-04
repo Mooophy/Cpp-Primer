@@ -201,23 +201,23 @@ Copy constructor and copy-assignment operator should dynamicly allocate memory f
 
 Essentially, the specific avoiding memory allocation is the reason why it improve performance. As for the pointerlike version, no dynamic memory allocation anyway. Thus, a specific version for it will not improve the performance.
 
-## Exercise 13.33: 
->Why is the parameter to the `save` and `remove` members of Message a Folder&? Why didn’t we define that parameter as `Folder`? Or `const Folder&`? 
+## Exercise 13.33:
+>Why is the parameter to the `save` and `remove` members of Message a Folder&? Why didn’t we define that parameter as `Folder`? Or `const Folder&`?
 
 Because these operations must also update the given `Folder`. Updating a `Folder` is a job that the `Folder` class controls through its `addMsg` and `remMsg` members, which will add or remove a pointer to a given `Message`, respectively.
 
 ## Exercise 13.34 [hpp](ex13_34_36_37.h) | [cpp](ex13_34_36_37.cpp)
 
-## Exercise 13.35: 
->What would happen if `Message` used the synthesized versions of the copy-control members? 
+## Exercise 13.35:
+>What would happen if `Message` used the synthesized versions of the copy-control members?
 
 some existing `Folders` will out of sync with the `Message` after assignment.
 
 ## Exercise 13.36 [hpp](ex13_34_36_37.h) | [cpp](ex13_34_36_37.cpp)
 ## Exercise 13.37 [hpp](ex13_34_36_37.h) | [cpp](ex13_34_36_37.cpp)
 
-## Exercise 13.38: 
->We did not use copy and swap to define the Message assignment operator. Why do you suppose this is so? 
+## Exercise 13.38:
+>We did not use copy and swap to define the Message assignment operator. Why do you suppose this is so?
 
 @Mooophy
 The copy and swap is an elegant way when working with dynamicly allocated memory. In the Message class ,noing is allocated dynamically. Thus using this idiom makes no sense and will make it more complicated to implement due to the pointers that point back.
@@ -228,34 +228,34 @@ In this case, `swap` function is special. It will be clear two `Message`'s folde
 ## Exercise 13.39 [hpp](ex13_39.h) | [cpp](ex13_39.cpp)
 ## Exercise 13.40 [hpp](ex13_40.h) | [cpp](ex13_40.cpp)
 
-## Exercise 13.41: 
->Why did we use postfix increment in the call to construct inside push_back? What would happen if it used the prefix increment? 
+## Exercise 13.41:
+>Why did we use postfix increment in the call to construct inside push_back? What would happen if it used the prefix increment?
 
 	|a|b|c|d|f|..............|
-	^	   ^		 ^
-	elements   first_free	 cap
-	
+	^	      ^             ^
+	elements   first_free    cap
+
 	// if use alloc.construct(first_free++, "g");
 	|a|b|c|d|f|g|.............|
-	^	     ^		  ^
-	elements     first_free	  cap
-	
+	^	        ^            ^
+	elements     first_free   cap
+
 	// if use alloc.construct(++first_free, "g");
 	|a|b|c|d|f|.|g|............|
-	^	   ^ ^ 		   ^
-	elements   | first_free	   cap
-		   |
-	        "unconstructed"
+	^	      ^ ^             ^
+	elements   | first_free    cap
+		       |
+	    "unconstructed"
 
-## Exercise 13.42: 
->Test your StrVec class by using it in place of the vector<string> in your TextQuery and QueryResult classes (12.3, p. 484). 
+## Exercise 13.42:
+>Test your StrVec class by using it in place of the vector<string> in your TextQuery and QueryResult classes (12.3, p. 484).
 
 - StrVec : [hpp](ex13_42_StrVec.h) | [cpp](ex13_42_StrVec.cpp)
 - TextQuery and QueryResult : [hpp](ex13_42_TextQuery.h) | [cpp](ex13_42_TextQuery.cpp)
 - Text : [ex13_42.cpp](ex13_42.cpp)
 
-## Exercise 13.43: 
->Rewrite the free member to use `for_each` and a lambda (10.3.2, p. 388) in place of the for loop to destroy the elements. Which implementation do you prefer, and why? 
+## Exercise 13.43:
+>Rewrite the free member to use `for_each` and a lambda (10.3.2, p. 388) in place of the for loop to destroy the elements. Which implementation do you prefer, and why?
 
 **Rewrite**
 ```cpp
