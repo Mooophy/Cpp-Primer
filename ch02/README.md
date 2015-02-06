@@ -104,7 +104,12 @@ int month = 9, day = 7;
 int month = 09, day = 07;
 ```
 
-The first line's integer is decimal, the second line's integer is octal.
+The first line's integer is decimal.
+
+The second line:
+
+1. `int month = 09` is invalid, cause octal don't have digit `9`.
+2. `day` is octal.
 
 ##Exercise 2.7
 > What values do these literals represent? What type does each
@@ -158,7 +163,7 @@ int input_value = 0;
 std::cin >> input_value;
 ```
 
-(b):---when you compile the code without the argument "-std=c++11", you will get the warning below: 
+(b):---when you compile the code without the argument "-std=c++11", you will get the warning below:
     warning: implicit conversion from 'double' to 'int' changes value from 3.14 to 3.
 ---when you compile the code using "-std=c+11", you will get a error below:
     error: type 'double' cannot be narrowed to 'int' in initializer list
@@ -195,7 +200,7 @@ int main()
 `global_int` is global variable, so the value is zero.
 `local_int` is a local variable which is not uninitialized, so it has a undefined value.
 `local_str` is also a local variable which is not uninitialized, but it has a value that is defined by the class. So it is empty string.
-PS: please read P44 in the English version, P40 in Chinese version to get more. 
+PS: please read P44 in the English version, P40 in Chinese version to get more.
 The note: Uninitialized objects of built-in type defined inside a function body have a undifined value. Objects of class type that we do not explicitly inititalize have a value that is defined by class.
 
 ##Exercise 2.11
