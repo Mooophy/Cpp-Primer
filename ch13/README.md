@@ -266,3 +266,40 @@ for_each(elements, first_free, [this](std::string &rhs){ alloc.destroy(&rhs); })
 The new version is better. Compared to the old one, it doesn't need to worry about the order and decrement.So more straightforward and handy. The only thing to do for using this approach is to add "&" to build the pointers to string pointers.
 
 ## Exercise 13.44 [hpp](ex13_44.h) | [cpp](ex13_44.cpp) | [Test](ex13_44_TEST.cpp)
+
+## Exercise 13.45:
+>Distinguish between an rvalue reference and an lvalue reference.
+
+Definition：
+
+- lvalue reference: reference that can bind to **an lvalue**. (Regular reference)
+- rvalue reference: reference **to an object that is about to be destroyed**.
+
+We can bind an rvalue reference to expression that require conversion, to literals, or to expressions that return an rvalue, but we cannot directly bind an rvalue reference to an lvalue.
+
+```cpp
+int i = 42;
+int &r = i; // lvalue reference
+int &&rr = i; // rvalue reference (Error: i is a lvalue)
+int &r2 = i*42; // lvalue reference (Error: i*42 is a rvalue)
+const int &r3 = i*42; // reference to const (bind to a rvalue)
+int &&rr2 = i*42; // rvalue reference
+```
+
+- lvalue : functions that return lvalue references, assignment, subscript, dereference, and prefix increment/decrement operator.
+- rvalue / const reference : functions that return a nonreferences, arithmetic, relational bitwise, postfix increment/decrement operators.
+
+## Exercise 13.46:
+>Which kind of reference can be bound to the following initializers?
+```cpp
+int f();
+vector<int> vi(100);
+int&& r1 = f();
+int& r2 = vi[0];
+int& r3 = r1;
+int&& r4 = vi[0] * f();
+```
+
+## Exercise 13.47 [hpp](ex13_47.h) | [cpp](ex13_47.cpp)
+
+## [Exercise 13.48](ex13_48.cpp)
