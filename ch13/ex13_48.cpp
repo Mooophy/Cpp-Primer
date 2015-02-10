@@ -1,34 +1,54 @@
-/***************************************************************************
- *  @file       main.cpp
- *  @author     Alan.W
- *  @date       07  JAN 2014
- *  @remark
- ***************************************************************************/
-//!
-//! Exercise 13.47:
-//! Give the copy constructor and copy-assignment operator in your String class
-//! from exercise 13.44 in § 13.5 (p. 531) a statement that prints a message
-//! each time the function is executed.
-//!
-//! Exercise 13.48:
-//! Define a vector<String> and call push_back several times on that vector.
-//! Run your program and see how often Strings are copied.
-//  Since no "move" members implemented, anytime when size() is equal to capacity(),
-//  std::vector<T> performs reallocation by calling String's copy constructor.
-//  In a word, it depends on the state of std::vector<String>.
-//!
-#include "ex13_47.h"
+#include "ex13_44_47.h"
 #include <vector>
+#include <iostream>
+
+// Test reference to http://coolshell.cn/articles/10478.html
+
+void foo(String x)
+{
+    std::cout << x.c_str() << std::endl;
+}
+
+void bar(const String& x)
+{
+    std::cout << x.c_str() << std::endl;
+}
+
+String baz()
+{
+	String ret("world");
+	return ret;
+}
 
 int main()
 {
-    std::vector<String> v;
+	char text[] = "world";
 
-    String s("sssssss");
+	String s0;
+	String s1("hello");
+	String s2(s0);
+	String s3 = s1;
+	String s4(text);
+	s2 = s1;
 
-    for (unsigned i = 0; i != 3; ++i)
-        v.push_back(s);
+	foo(s1);
+	bar(s1);
+	foo("temporary");
+	bar("temporary");
+	String s5 = baz();
 
+	std::vector<String> svec;
+    svec.reserve(8);
+	svec.push_back(s0);
+	svec.push_back(s1);
+	svec.push_back(s2);
+	svec.push_back(s3);
+	svec.push_back(s4);
+    svec.push_back(s5);
+	svec.push_back(baz());
+	svec.push_back("good job");
 
-    return 0;
+	for (const auto &s : svec) {
+		std::cout << s.c_str() << std::endl;
+	}
 }

@@ -265,7 +265,11 @@ for_each(elements, first_free, [this](std::string &rhs){ alloc.destroy(&rhs); })
 @Mooophy:
 The new version is better. Compared to the old one, it doesn't need to worry about the order and decrement.So more straightforward and handy. The only thing to do for using this approach is to add "&" to build the pointers to string pointers.
 
-## Exercise 13.44 [hpp](ex13_44.h) | [cpp](ex13_44.cpp) | [Test](ex13_44_TEST.cpp)
+## Exercise 13.44: Write a class named String that is a simplified version of the library string class. Your class should have at least a default constructor and a constructor that takes a pointer to a C-style string. Use an allocator to allocate memory that your String class uses. 
+
+[hpp](ex13_44_47.h) | [cpp](ex13_44_47.cpp) | [Test](ex13_48.cpp)
+
+more information to see [A trivial String class that designed for write-on-paper in an interview](https://github.com/chenshuo/recipes/blob/fcf9486f5155117fb8c36b6b0944c5486c71c421/string/StringTrivial.h)
 
 ## Exercise 13.45:
 >Distinguish between an rvalue reference and an lvalue reference.
@@ -300,6 +304,6 @@ int& r3 = r1;
 int&& r4 = vi[0] * f();
 ```
 
-## Exercise 13.47 [hpp](ex13_47.h) | [cpp](ex13_47.cpp)
+## Exercise 13.47 [hpp](ex13_44_47.h) | [cpp](ex13_44_47.cpp)
 
 ## [Exercise 13.48](ex13_48.cpp)
