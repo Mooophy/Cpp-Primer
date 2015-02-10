@@ -5,7 +5,7 @@
  *  @remark
  ***************************************************************************/
 
-#include "string.h"
+#include "ex13_47.h"
 #include <algorithm>
 #include <iostream>
 

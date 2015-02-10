@@ -17,7 +17,7 @@
 //  std::vector<T> performs reallocation by calling String's copy constructor.
 //  In a word, it depends on the state of std::vector<String>.
 //!
-#include "string.h"
+#include "ex13_47.h"
 #include <vector>
 
 int main()
