@@ -225,9 +225,11 @@ It's contradictory obviously.
 ##Exercise 4.25
 >What is the value of ~'q' << 6 on a machine with 32-bit ints and 8 bit chars, that uses Latin-1 character set in which 'q' has the bit pattern 01110001?
 
-the value is `-7296.`
+The final value in decimal representation is `-7296`.  
 
-~01110001 == 10001110(142), But `char` is -128~127, so it would be overflow. the result is `-114`, then, -114 << 6 == -114 * 2^6 = `-7296`.
+The bitwise NOT operator (`~`) yields us the Ones' Complement of `0000 0000 0000 0000 0000 0000 0111 0001`, which is `1111 1111 1111 1111 1111 1111 1000 1110`. The value of `1111 1111 1111 1111 1111 1111 1000 1110` in decimal form is `-114`. This may come as a surprise to some as the unsigned value of said binary sequence is `4294967182`. The most significant bit (the left-most bit, commonly referred to as the sign bit) is however "turned on", or `1`, which siginifies a negatation operation on that particular bit. The value of that particular bit is then `-2147483648`.
+
+We then shift the bits `6` digits to the left, which yields us `1111 1111 1111 1111 1110 0011 1000 0000`. Overflowing bits were discarded. The decimal representation of the binary sequence is `-7296`.
 
 ##Exercise 4.26
 >In our grading example in this section, what would happen if we used unsigned int as the type for quiz1?
