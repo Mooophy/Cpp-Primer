@@ -11,7 +11,7 @@ all:
 	cd ch10; make all
 	cd ch11; make all
 	cd ch12; make all
-#	cd ch13; make  all
+	cd ch13; make  all
 #	cd ch14; make  all
 #	cd ch15; make  all
 #	cd ch16; make  all
@@ -31,7 +31,7 @@ clean:
 	cd ch10; make clean
 	cd ch11; make clean
 	cd ch12; make clean
-#	cd ch13; make  clean
+	cd ch13; make  clean
 #	cd ch14; make  clean
 #	cd ch15; make  clean
 #	cd ch16; make  clean
@@ -51,7 +51,7 @@ clobber:
 	cd ch10; make clobber
 	cd ch11; make clobber
 	cd ch12; make clobber
-#	cd ch13; make  clobber
+	cd ch13; make  clobber
 #	cd ch14; make  clobber
 #	cd ch15; make  clobber
 #	cd ch16; make  clobber
