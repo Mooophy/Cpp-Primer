@@ -31,14 +31,15 @@ int main()
 {
 	vector<string> svec;
 	string str;
-	while (cin >> str)
+	while (cin>>str )
 	{
 		svec.push_back(str);
 	}
+
 	vector<string>::iterator it = svec.begin();//auto it = svec.begin();
 	int bigNum = 1, countNum = 1;
 	string bigStr, countStr;
-	while (it != svec.end()-1)
+	while (svec.size()>0&&it != svec.end() - 1  )
 	{
 		if (*it == *(it + 1))
 		{
@@ -47,12 +48,13 @@ int main()
 		}
 		else
 		{
-			if (countNum>bigNum)
-			{
-				bigStr = countStr;
-				bigNum = countNum;
-			}
+			countNum = 0;
 		}
+		if (countNum>bigNum)
+		{
+			bigStr = countStr;
+			bigNum = countNum;
+		}	
 		++it;
 	}
 	if (bigNum==1)
@@ -61,7 +63,7 @@ int main()
 	}
 	else
 	{
-		cout << "the word " << bigStr << " occurred  " << bigNum << "times." << endl;
+		cout << "the word " << bigStr << " occurred  " << bigNum << " times." << endl;
 	}
 	system("pause");
 	return 0;
