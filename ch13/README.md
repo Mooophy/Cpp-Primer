@@ -265,7 +265,8 @@ for_each(elements, first_free, [this](std::string &rhs){ alloc.destroy(&rhs); })
 @Mooophy:
 The new version is better. Compared to the old one, it doesn't need to worry about the order and decrement.So more straightforward and handy. The only thing to do for using this approach is to add "&" to build the pointers to string pointers.
 
-## Exercise 13.44: Write a class named String that is a simplified version of the library string class. Your class should have at least a default constructor and a constructor that takes a pointer to a C-style string. Use an allocator to allocate memory that your String class uses. 
+## Exercise 13.44:
+>Write a class named String that is a simplified version of the library string class. Your class should have at least a default constructor and a constructor that takes a pointer to a C-style string. Use an allocator to allocate memory that your String class uses.
 
 [hpp](ex13_44_47.h) | [cpp](ex13_44_47.cpp) | [Test](ex13_48.cpp)
 
@@ -307,3 +308,95 @@ int&& r4 = vi[0] * f();
 ## Exercise 13.47 [hpp](ex13_44_47.h) | [cpp](ex13_44_47.cpp)
 
 ## [Exercise 13.48](ex13_48.cpp)
+
+## Exercise 13.49:
+>Add a move constructor and move-assignment operator to your StrVec, String, and Message classes.
+
+- StrVec: [hpp](ex13_49_StrVec.h) | [cpp](ex13_49_StrVec.cpp)
+- String: [hpp](ex13_49_String.h) | [cpp](ex13_49_String.cpp)
+- Message:[hpp](ex13_49_Message.h) | [cpp](ex13_49_Message.cpp)
+
+## Exercise 13.50:
+> Put print statements in the move operations in your String class and rerun the program from exercise 13.48 in 13.6.1 (p. 534) that used a vector<String> to see when the copies are avoided.
+
+```cpp
+String baz()
+{
+    String ret("world");
+    return ret; // first avoided
+}
+
+String s5 = baz(); // second avoided
+```
+
+## Exercise 13.51:
+>Although `unique_ptrs` cannot be copied, in 12.1.5 (p. 471) we wrote a clone function that returned a unique_ptr by value. Explain why that function is legal and how it works.
+
+In the second assignment, we assign from the result of a call to getVec. That expression is an rvalue. In this case, both assignment operators are viable—we can bind the result of getVec to either operator’s parameter. Calling the copy-assignment operator requires a conversion to const, whereas StrVec&& is an exact match. Hence, the second assignment uses the move-assignment operator.
+
+```cpp
+unique_ptr<int> clone(int p) {
+    // ok: explicitly create a unique_ptr<int> from int*
+    return unique_ptr<int>(new int(p));
+}
+```
+
+the result of a call to `clone` is an **rvalue**, so it uses the move-assignment operator rather than copy-assignment operator. Thus, it is legal and can pretty work.
+
+## Exercise 13.52:
+>Explain in detail what happens in the assignments of the `HasPtr` objects on page 541. In particular, describe step by step what happens to values of `hp`, `hp2`, and of the `rhs` parameter in the `HasPtr` assignment operator.
+
+`rhs` parameter is nonreference, which means the parameter is **copy initialized**. Depending on the type of the argument, copy initialization uses either the *copy constructor* or the *move constructor*.
+
+**lvalues are copied and rvalues are moved.**
+
+Thus, in `hp = hp2;`, `hp2` is an lvalue, copy constructor used to copy `hp2`. In `hp = std::move(hp2);`, move constructor moves `hp2`.
+
+## Exercise 13.53:
+>As a matter of low-level efficiency, the `HasPtr` assignment operator is not ideal. Explain why. Implement a copy-assignment and move-assignment operator for `HasPtr` and compare the operations executed in your new move-assignment operator versus the copy-and-swap version.
+
+nothing to say, just see the versus codes:
+
+[hpp](ex13_53.h) | [cpp](ex13_53.cpp) | [Test](ex13_53_TEST.cpp)
+
+see more information at [this question && answer](http://stackoverflow.com/questions/21010371/why-is-it-not-efficient-to-use-a-single-assignment-operator-handling-both-copy-a).
+
+## Exercise 13.54:
+>What would happen if we defined a `HasPtr` move-assignment operator but did not change the copy-and-swap operator? Write code to test your answer.
+
+```sh
+error: ambiguous overload for 'operator=' (operand types are 'HasPtr' and 'std::remove_reference<HasPtr&>::type {aka HasPtr}')
+hp1 = std::move(*pH);
+^
+```
+
+## Exercise 13.55:
+>Add an rvalue reference version of `push_back` to your `StrBlob`.
+
+```cpp
+void push_back(string &&s) { data->push_back(std::move(s)); }
+```
+
+## Exercise 13.56:
+>What would happen if we defined sorted as:
+```cpp
+Foo Foo::sorted() const & {
+    Foo ret(*this);
+    return ret.sorted();
+}
+```
+
+recursion and stack overflow.
+
+## Exercise 13.57:
+>What if we defined sorted as:
+```cpp
+Foo Foo::sorted() const & { return Foo(*this).sorted(); }
+```
+
+ok, it will call the move version.
+
+## Exercise 13.58:
+>Write versions of class Foo with print statements in their sorted functions to test your answers to the previous two exercises.
+
+[Exercise 13.58](ex13_58.cpp)
