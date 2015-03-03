@@ -15,7 +15,7 @@
 //  You do, however, have to use class (and not typename) when declaring a
 //  template template parameter.
 //
-//  When we wnat to inform the compiler that a name represents a type,we must use
+//  When we want to inform the compiler that a name represents a type, we must use
 //  the keyword typename, not class
 //!
 //! Exercise 16.18:
