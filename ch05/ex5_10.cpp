@@ -30,7 +30,30 @@ int main()
                 ++uCnt;
                 break;
         }
-    
+//another way to solve it
+/*	while (cin >> ch)
+	{
+		ch = tolower(ch);
+		switch (ch)
+		{
+    		case 'a':
+    			++aCnt;
+    			break;
+    		case 'e':
+    			++eCnt;
+    			break;
+    		case 'i':
+    			++iCnt;
+    			break;
+    		case 'o':
+    			++oCnt;
+    			break;
+    		case 'u':
+    			++uCnt;
+    			break;
+		}
+	}
+*/    
     cout << "Number of vowel a(A): \t" << aCnt << '\n'
         << "Number of vowel e(E): \t" << eCnt << '\n'
         << "Number of vowel i(I): \t" << iCnt << '\n'

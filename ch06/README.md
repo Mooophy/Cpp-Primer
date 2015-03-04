@@ -73,8 +73,7 @@ T abs(T i)
 
 **parameter**: **Local variables** declared inside the **function parameter list**
 
-**local static variable**: **Local variable** whose value persists across calls to the function.
-The variable that are created and initialized **before** contorl reaches their use and are **destoryed when the program ends**.
+**local static variable**: **local static variable（object）** is initialized before the first time execution passes through the object’s definition.**Local statics** are not destroyed when a function ends; they are **destroyed when the program terminates.**
 
 ```cpp
 // example
