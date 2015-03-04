@@ -102,9 +102,23 @@ a>b && b>c && c>d
 ```
 
 ##Exercise 4.12
->Assuming i, j, and k are all ints, explain what i != j < k means.
+>Assuming `i`, `j`, and `k` are all ints, explain what `i != j < k` means.
 
-if `j<k` is true, means `i != 1`, else means `i != 0`.
+According to Operator precedence, `i != j < k` is same as `i != (j < k)`.
+
+The condition group `j` and `k` to the `<` operator. The `bool` result of that expression is the right hand operand of the `!=` operator.
+That is `i`(int) is compared to the `true/false` result of the first comparison! To accomplish the test we intended, we can rewrite the expression as follows:
+
+```cpp
+i != j && j < k
+```
+
+-----
+
+**reference**
+
+> It is usually a bad idea to use the boolean literals `true` and `false` as operands in a comparison.
+These literals should be used only to compare to an object of type `bool`.
 
 ##Exercise 4.13
 >What are the values of i and d after each assignment?
@@ -226,9 +240,15 @@ It's contradictory obviously.
 >What is the value of ~'q' << 6 on a machine with 32-bit ints and 8 bit chars, that uses Latin-1 character set in which 'q' has the bit pattern 01110001?
 
 The final value in decimal representation is `-7296`.  
+<<<<<<< HEAD
 
 The bitwise NOT operator (`~`) yields us the Ones' Complement of `0000 0000 0000 0000 0000 0000 0111 0001`, which is `1111 1111 1111 1111 1111 1111 1000 1110`. The value of `1111 1111 1111 1111 1111 1111 1000 1110` in decimal form is `-114`. This may come as a surprise to some as the unsigned value of said binary sequence is `4294967182`. The most significant bit (the left-most bit, commonly referred to as the sign bit) is however "turned on", or `1`, which siginifies a negatation operation on that particular bit. The value of that particular bit is then `-2147483648`.
 
+=======
+
+The bitwise NOT operator (`~`) yields us the Ones' Complement of `0000 0000 0000 0000 0000 0000 0111 0001`, which is `1111 1111 1111 1111 1111 1111 1000 1110`. The value of `1111 1111 1111 1111 1111 1111 1000 1110` in decimal form is `-114`. This may come as a surprise to some as the unsigned value of said binary sequence is `4294967182`. The most significant bit (the left-most bit, commonly referred to as the sign bit) is however "turned on", or `1`, which signifies a negation operation on that particular bit. The value of that particular bit is then `-2147483648`.
+
+>>>>>>> master
 We then shift the bits `6` digits to the left, which yields us `1111 1111 1111 1111 1110 0011 1000 0000`. Overflowing bits were discarded. The decimal representation of the binary sequence is `-7296`.
 
 ##Exercise 4.26
@@ -237,9 +257,9 @@ We then shift the bits `6` digits to the left, which yields us `1111 1111 1111 1
 no different in most situation. `unsigned int` have the same size as `unsigned long` on most machine. But the second one could make sure that it have **at least 32 bits** on any machine.
 
 ##Exercise 4.27
->What is the result of each of these expressions? 
+>What is the result of each of these expressions?
 ```cpp
-unsigned long ul1 = 3, ul2 = 7; 
+unsigned long ul1 = 3, ul2 = 7;
 ul1 & ul2 // == 3
 ul1 | ul2 // == 7
 ul1 && ul2 // == true
@@ -250,8 +270,8 @@ ul1 || ul2 // == ture
 ##Exercise 4.29
 >Predict the output of the following code and explain your reasoning. Now run the program. Is the output what you expected? If not, figure out why.
 ```cpp
-int x[10];   int *p = x; 
-cout << sizeof(x)/sizeof(*x) << endl; 
+int x[10];   int *p = x;
+cout << sizeof(x)/sizeof(*x) << endl;
 cout << sizeof(p)/sizeof(*p) << endl;
 ```
 
@@ -261,12 +281,12 @@ The first result is 10. It returns the number of elements in x. But the second r
 reference: [Why the size of a pointer is 4bytes in C++](http://stackoverflow.com/a/2428809)
 
 ##Exercise 4.30
->Using Table 4.12 (p. 166), parenthesize the following expressions to match the default evaluation: 
+>Using Table 4.12 (p. 166), parenthesize the following expressions to match the default evaluation:
 ```cpp
 sizeof x + y      // (sizeof x)+y . "sizeof" has higher precedence than binary `+`.
 sizeof p->mem[i]  // sizeof(p->mem[i])
 sizeof a < b      // sizeof(a) < b
-sizeof f()        //If `f()` returns `void`, this statement is undefined, otherwise it returns the size of return type. 
+sizeof f()        //If `f()` returns `void`, this statement is undefined, otherwise it returns the size of return type.
 ```
 
 -----
@@ -288,7 +308,7 @@ We use prefix and not postfix, just because of the `Advice: Use Postfix Operator
 So, it's just a good habits. And there are no changes if we have to be made to use the postfix versions. Rewrite:
 ```cpp
 for(vector<int>::size_type ix = 0; ix != ivec.size(); ix++, cnt--)  
-    ivec[ix] = cnt; 
+    ivec[ix] = cnt;
 ```
 
 This is not an appropriate example to discuss the difference of prefix and postfix. Look at the section `Built-in comma operator` on [this page](http://en.cppreference.com/w/cpp/language/operator_other).
@@ -300,9 +320,9 @@ reference: [Usage of the Built-in Comma Operator](http://stackoverflow.com/quest
 >Explain the following loop.
 ```cpp
 constexpr int size = 5;
-int ia[size] = {1,2,3,4,5}; 
+int ia[size] = {1,2,3,4,5};
 for (int *ptr = ia, ix = 0;
-    ix != size && ptr != ia+size; 
+    ix != size && ptr != ia+size;
     ++ix, ++ptr) { /* ... */ }
 ```
 
@@ -314,7 +334,7 @@ for (int *ptr = ia, ix = 0;
 someValue ? ++x, ++y : --x, --y
 ```
 
-Because of the most lowest precedence of the comma operator, the expression is same as: 
+Because of the most lowest precedence of the comma operator, the expression is same as:
 ```cpp
 (someValue ? ++x, ++y : --x), --y
 ```
@@ -327,7 +347,7 @@ Even though the result has nothing to do with `x`, the evaluation of `someValue`
 ##Exercise 4.34
 >Given the variable definitions in this section, explain what conversions take place in the following expressions:
 (a) if (fval)
-(b) dval = fval + ival; 
+(b) dval = fval + ival;
 (c) dval + ival * cval;
 Remember that you may need to consider the associativity of the operators.
 
@@ -345,7 +365,7 @@ char cval; int ival; unsigned int ui; float fval; double dval;
 identify the implicit type conversions, if any, taking place:
 ```cpp
 cval = 'a' + 3; // 'a' promoted to int, then the result of ('a' + 3)(int) converted to char.
-fval = ui - ival * 1.0; // ival promoted to double, ui also promoted to double. then that double converted to float.
+fval = ui - ival * 1.0; // ival converted to double , ui also converted to double. then that double converted(by truncation) to float.
 dval = ui * fval; // ui promoted to float. then that float converted to double.
 cval = ival + fval + dval;  // ival converted to float, then that float and fval converted to double. At last, that double converted to char(by truncation).
 ```

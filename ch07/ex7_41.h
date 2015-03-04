@@ -32,7 +32,7 @@ public:
     
     Sales_data(std::istream &is);
 
-    std::string isbn() const { return bookNo; };
+    std::string isbn() const { return bookNo; }
     Sales_data& combine(const Sales_data&);
     
 private:

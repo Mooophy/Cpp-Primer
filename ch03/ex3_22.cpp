@@ -14,17 +14,15 @@ using std::vector; using std::string; using std::cout; using std::cin; using std
 
 int main()
 {
-  vector<string> vec;
-  string str;
-  while (getline(cin, str))
-    if (!str.empty()) vec.push_back(str);
-  
-  auto first = vec.begin();
-  for (auto& c : *first)
-    c = toupper(c);
-
-  for (auto it = vec.begin(); it != vec.end(); ++it)
-    cout << *it << endl;      
+  vector<string> text;
+  for (string line; getline(cin, line); )
+    text.push_back(line);
+ 
+  for (auto it = text.begin(); it != text.end() && !it->empty(); ++it) {
+    for (auto &c : *it)
+      c = toupper(c);
+    cout << *it << endl;
+  }
 
   return 0;
 }
