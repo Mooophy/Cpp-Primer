@@ -9,12 +9,10 @@
 
 
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int LargerOne(const int _i,const int* _ip);
-
 
 int main()
 {
@@ -24,7 +22,6 @@ int main()
 
     return 0;
 }
-
 
 int LargerOne(const int _i, const int *_ip)
 {
