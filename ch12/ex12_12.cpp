@@ -45,8 +45,11 @@ int main()
     //process(p);
 
     /** @brief
-     *  Legal. A shared_ptr is construct first using plain pointer p.
-     *  Afterwards,this shared_ptr is copied into the parameter of process().
+     *  Legal. But it's a bad practice to do so. 
+     *  Because using smart pointer together with raw pointer could potentially cause problems. 
+     *  For example double free as shown in #145.
+     * 
+     *  Check issue #145 for detail, thx @endyul for reporting
      */
     //process(std::shared_ptr<int>(p));
 
