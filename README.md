@@ -13,7 +13,7 @@
 ### How to contribute
 
 - Please **fork**([How?](https://help.github.com/articles/fork-a-repo)) this repository first.
-- **commit**([How?](https://help.github.com/articles/create-a-repo#commit-your-first-change)) in your own repository.
+- **Commit**([How?](https://help.github.com/articles/create-a-repo#commit-your-first-change)) in your own repository.
 - Give me a **pull request**([How?](https://help.github.com/articles/using-pull-requests)).
 - Syncing with([How?](https://help.github.com/articles/syncing-a-fork/)) the origin repository. This is very **important** because this repo updates frequently.
 
