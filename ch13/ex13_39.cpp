@@ -1,15 +1,15 @@
 //
 //  ex13_39.cpp
-//  Exercise 13.39 
+//  Exercise 13.39
 //
 //  Created by pezy on 2/3/15.
 //  Copyright (c) 2015 pezy. All rights reserved.
 //
-//  Write your own version of StrVec, including versions of 
-//  reserve, capacity (9.4, p. 356), and resize (9.3.5, p. 352). 
+//  Write your own version of StrVec, including versions of
+//  reserve, capacity (9.4, p. 356), and resize (9.3.5, p. 352).
 //
 
-#include "StrVec.h"
+#include "ex13_39.h"
 
 void StrVec::push_back(const std::string &s)
 {
@@ -17,7 +17,7 @@ void StrVec::push_back(const std::string &s)
 	alloc.construct(first_free++, s);
 }
 
-std::pair<std::string*, std::string*> 
+std::pair<std::string*, std::string*>
 StrVec::alloc_n_copy(const std::string *b, const std::string *e)
 {
 	auto data = alloc.allocate(e-b);

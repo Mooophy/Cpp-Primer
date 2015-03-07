@@ -29,7 +29,7 @@ while (val <= 10)
 
 ##Exercise 5.3
 >Use the comma operator (§ 4.10, p. 157) to rewrite the while loop from § 1.4.1 (p. 11)
-so that it no longer requires a block. 
+so that it no longer requires a block.
 Explain whether this rewrite improves or diminishes the readability of this code.
 
 ```cpp
@@ -39,9 +39,9 @@ int main()
     int sum = 0, val = 1;
     while (val <= 10)
         sum += val, ++val;
-    std::cout << "Sum of 1 to 10 inclusive is " 
+    std::cout << "Sum of 1 to 10 inclusive is "
               << sum << std::endl;
-    
+
     return 0;
 }
 ```
@@ -51,7 +51,7 @@ But there are no meaning in this example, however, also are incomprehensible.
 
 ##Exercise 5.4
 >Explain each of the following examples, and correct anyproblems you detect.
-- (a) while (string::iterator iter != s.end()) { /* . . . */ } 
+- (a) while (string::iterator iter != s.end()) { /* . . . */ }
 - (b) while (bool status = find(word)) { /* . . . */ }
 if (!status) { /* . . . */ }
 
@@ -68,7 +68,7 @@ while ((status = find(word))) {/* ... */}
 if (!status) {/* ... */}
 ```  
 
-In fact, the judge `!status` is unnecessary. If the `status=false`, we leave the while, and `!status` is always true. 
+In fact, the judge `!status` is unnecessary. If the `status=false`, we leave the while, and `!status` is always true.
 
 ##[Exercise 5.5](ex5_5.cpp)
 ##[Exercise 5.6](ex5_6.cpp)
@@ -116,51 +116,51 @@ Colloquial term used to refer to the problem of how to process nested if stateme
 ##Exercise 5.13
 >Each of the programs in the highlighted text on page 184 contains a common programming error. Identify and correct each error.
 ```cpp
-(a) unsigned aCnt = 0, eCnt = 0, iouCnt = 0; 
+(a) unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
     char ch = next_text();
     switch (ch) {
-        case 'a': aCnt++; 
-        case 'e': eCnt++; 
+        case 'a': aCnt++;
+        case 'e': eCnt++;
         default: iouCnt++;
     }
-(b) unsigned index = some_value(); 
+(b) unsigned index = some_value();
     switch (index) {
         case 1:
-            int ix = get_value(); 
-            ivec[ ix ] = index; 
+            int ix = get_value();
+            ivec[ ix ] = index;
             break;
         default:
-            ix = ivec.size()-1; 
+            ix = ivec.size()-1;
             ivec[ ix ] = index;
     }
-(c) unsigned evenCnt = 0, oddCnt = 0; 
+(c) unsigned evenCnt = 0, oddCnt = 0;
     int digit = get_num() % 10;
     switch (digit) {
-        case 1, 3, 5, 7, 9: 
+        case 1, 3, 5, 7, 9:
             oddcnt++;
             break;
         case 2, 4, 6, 8, 10:
             evencnt++;
             break;
     }
-(d) unsigned ival=512, jval=1024, kval=4096; 
+(d) unsigned ival=512, jval=1024, kval=4096;
     unsigned bufsize;
     unsigned swt = get_bufCnt();
     switch(swt) {
         case ival:
-            bufsize = ival * sizeof(int); 
+            bufsize = ival * sizeof(int);
             break;
         case jval:
-            bufsize = jval * sizeof(int); 
+            bufsize = jval * sizeof(int);
             break;
         case kval:
-            bufsize = kval * sizeof(int); 
+            bufsize = kval * sizeof(int);
             break;
     }
 ```
 
 ```cpp
-(a) unsigned aCnt = 0, eCnt = 0, iouCnt = 0; 
+(a) unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
     char ch = next_text();
     switch (ch) {
         case 'a': aCnt++; break;
@@ -169,59 +169,68 @@ Colloquial term used to refer to the problem of how to process nested if stateme
         case 'o':
         case 'u': iouCnt++; break;
     }
-(b) unsigned index = some_value(); 
+(b) unsigned index = some_value();
     int ix;
     switch (index) {
         case 1:
-            ix = get_value(); 
-            ivec[ ix ] = index; 
+            ix = get_value();
+            ivec[ ix ] = index;
             break;
         default:
-            ix = static_cast<int>(ivec.size())-1; 
+            ix = static_cast<int>(ivec.size())-1;
             ivec[ ix ] = index;
     }
-(c) unsigned evenCnt = 0, oddCnt = 0; 
+(c) unsigned evenCnt = 0, oddCnt = 0;
     int digit = get_num() % 10;
     switch (digit) {
-        case 1: case 3: case 5: case 7: case 9: 
+        case 1: case 3: case 5: case 7: case 9:
             oddcnt++;
             break;
         case 2: case 4: case 6: case 8: case 0:
             evencnt++;
             break;
     }
-(d) const unsigned ival=512, jval=1024, kval=4096; 
+(d) const unsigned ival=512, jval=1024, kval=4096;
     unsigned bufsize;
     unsigned swt = get_bufCnt();
     switch(swt) {
         case ival:
-            bufsize = ival * sizeof(int); 
+            bufsize = ival * sizeof(int);
             break;
         case jval:
-            bufsize = jval * sizeof(int); 
+            bufsize = jval * sizeof(int);
             break;
         case kval:
-            bufsize = kval * sizeof(int); 
+            bufsize = kval * sizeof(int);
             break;
     }
 ```
 
-##[Exercise 5.14](ex5_14.cpp)
+## Exercise 5.14
+>Write a program to read strings from standard input looking for duplicated words. The program should find places in the input where one word is followed immediately by itself. Keep track of the largest number of times a single repetition occurs and which word is repeated. Print the maximum number of duplicates, or else print a message saying that no word was repeated. For example, if the input is
+```sh
+how now now now brown cow cow
+```
+the output should indicate that the word now occurred three times.
+
+- [concise solution](ex5_14.cpp)
+- [easy to understand](ex5_14_1.cpp)
+
 
 ##Exercise 5.15
 >Explain each of the following loops. Correct any problems you detect.
 ```cpp
-(a) for (int ix = 0; ix != sz; ++ix) { /* ... */ } 
+(a) for (int ix = 0; ix != sz; ++ix) { /* ... */ }
     if (ix != sz)
     // . . .
-(b) int ix; 
+(b) int ix;
     for (ix != sz; ++ix) { /* ... */ }
 (c) for (int ix = 0; ix != sz; ++ix, ++sz) { /*...*/ }
 ```
 
 ```cpp
 (a) int ix;
-    for (ix = 0; ix != sz; ++ix)  { /* ... */ } 
+    for (ix = 0; ix != sz; ++ix)  { /* ... */ }
     if (ix != sz)
     // . . .
 (b) int ix;
@@ -237,15 +246,15 @@ Colloquial term used to refer to the problem of how to process nested if stateme
 int i;
 while ( cin >> i )
     // ...
-    
+
 // same as for
 for (int i = 0; cin >> i;)
     // ...
-    
+
 // for idiomatic
 for (int i = 0; i != size; ++i)
     // ...
-    
+
 // same as while
 int i = 0;
 while (i != size)
@@ -263,17 +272,17 @@ I prefer `for` to `while` in such cases, because it's terse. More importantly, o
 >Explain each of the following loops. Correct any problems you detect.
 ```cpp
 (a) do { // added bracket.
-        int v1, v2;    
-        cout << "Please enter two numbers to sum:" ;    
-        if (cin >> v1 >> v2)        
+        int v1, v2;
+        cout << "Please enter two numbers to sum:" ;
+        if (cin >> v1 >> v2)
             cout << "Sum is: " << v1 + v2 << endl;
-    }while (cin); 
+    }while (cin);
 (b) int ival;
-    do {    
-        // . . . 
+    do {
+        // . . .
     } while (ival = get_response()); // should not declared in this scope.
 (c) int ival = get_response();
-    do {    
+    do {
         ival = get_response();
     } while (ival); // ival is not declared in this scope.
 ```
@@ -283,14 +292,14 @@ I prefer `for` to `while` in such cases, because it's terse. More importantly, o
 ##[Exercise 5.21](ex5_21.cpp)
 
 ##Exercise 5.22
->The last example in this section that jumped back to begin could be better written using a loop. Rewrite the code to eliminate the goto. 
+>The last example in this section that jumped back to begin could be better written using a loop. Rewrite the code to eliminate the goto.
 ```cpp
 // backward jump over an initialized variable definition is okay  
-begin:    
-    int sz = get_size();    
-    if (sz <= 0) {          
-        goto begin;    
-    } 
+begin:
+    int sz = get_size();
+    if (sz <= 0) {
+        goto begin;
+    }
 ```
 
 use `for` to replace `goto`:

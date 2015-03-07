@@ -47,7 +47,7 @@ int main()
         << "Number of vowel u(U): \t" << uCnt << '\n'
         << "Number of space: \t" << spaceCnt << '\n'
         << "Number of tab char: \t" << tabCnt << '\n'
-        << "Number of new line: \t" << newLineCnt << endl;;
+        << "Number of new line: \t" << newLineCnt << endl;
     
     return 0;
 }
