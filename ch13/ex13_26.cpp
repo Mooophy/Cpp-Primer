@@ -25,3 +25,9 @@ StrBlob& StrBlob::operator=(const StrBlob& sb)
     data = std::make_shared<vector<string>>(*sb.data);
     return *this;
 }
+
+int main()
+{
+	
+	return 0;
+}

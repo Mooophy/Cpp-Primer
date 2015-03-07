@@ -105,3 +105,9 @@ void StrVec::resize(size_t count, const std::string &s)
 			alloc.destroy(--first_free);
 	}
 }
+
+int main()
+{
+	
+	return 0;
+}

@@ -52,3 +52,9 @@ String& String::operator = (const String &rhs)
     std::cout << "copy-assignment" << std::endl;
 	return *this;
 }
+
+int main()
+{
+	
+	return 0;
+}

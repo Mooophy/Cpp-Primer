@@ -39,3 +39,9 @@ BinStrTree& BinStrTree::operator=(const BinStrTree &bst)
     root = new_root;
     return *this;
 }
+
+int main()
+{
+	
+	return 0;
+}

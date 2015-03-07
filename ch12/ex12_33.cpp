@@ -47,3 +47,9 @@ std::ostream& print(std::ostream &out, const QueryResult& qr)
     }
     return out;
 }
+
+int main()
+{
+	
+	return 0;
+}

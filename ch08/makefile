@@ -1,7 +1,8 @@
 #cutable files for this directory
 OBJECTS = ex8_02 ex8_04 ex8_05 ex8_09 ex8_10 ex8_11 \
-	  #ex8_13
+	  ex8_13
 OTHOBJS = ex8_06 ex8_07 ex8_08 	
+
 all:$(OBJECTS) $(OTHOBJS)
 
 ex8_06 : ex8_06.o ../ch07/ex7_26.o

@@ -16,3 +16,9 @@ ConstStrBlobPtr StrBlob::end() const // should add const
 {
     return ConstStrBlobPtr(*this, data->size());
 }
+
+int main()
+{
+	
+	return 0;
+}
