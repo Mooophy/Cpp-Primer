@@ -124,3 +124,9 @@ void Folder::print_debug()
         std::cout << m->contents << " ";
     std::cout << std::endl;
 }
+
+int main()
+{
+	
+	return 0;
+}

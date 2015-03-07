@@ -23,3 +23,9 @@ Employee::Employee(const string &name) {
     id_ = s_increment++;
     name_ = name;
 }
+
+int main()
+{
+	
+	return 0;
+}

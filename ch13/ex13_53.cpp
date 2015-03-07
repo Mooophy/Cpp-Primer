@@ -59,3 +59,9 @@ HasPtr::~HasPtr()
     std::cout << "call destructor" << std::endl;
     delete ps;
 }
+
+int main()
+{
+	
+	return 0;
+}
