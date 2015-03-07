@@ -18,4 +18,4 @@ int main()
     else cout << "the word " << max_duplicated.first << " occurred " << max_duplicated.second + 1 << " times. " << endl;
     
     return 0;
-} 
+}
