@@ -48,6 +48,7 @@ HasPtr& HasPtr::operator=(HasPtr rhs)
 //        delete ps;
 //        ps = rhs.ps;
 //        i = rhs.i;
+//        rhs.ps = nullptr;
 //        std::cout << "call move assignment" << std::endl;
 //    }
 //    return *this;

@@ -1,6 +1,6 @@
 //
 //  ex13_40.cpp
-//  Exercise 13.40 
+//  Exercise 13.40
 //
 //  Created by pezy on 2/3/15.
 //  Copyright (c) 2015 pezy. All rights reserved.
@@ -8,7 +8,7 @@
 //  Add a constructor that takes an initializer_list<string> to your StrVec class.
 //
 
-#include "StrVec.h"
+#include "ex13_40.h"
 
 void StrVec::push_back(const std::string &s)
 {
@@ -16,7 +16,7 @@ void StrVec::push_back(const std::string &s)
 	alloc.construct(first_free++, s);
 }
 
-std::pair<std::string*, std::string*> 
+std::pair<std::string*, std::string*>
 StrVec::alloc_n_copy(const std::string *b, const std::string *e)
 {
 	auto data = alloc.allocate(e-b);
