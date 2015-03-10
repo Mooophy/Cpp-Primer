@@ -262,7 +262,7 @@ Yes.It is legal.Printed:
 (c): valid.
 (d): invalid. a reference must be initialized.
 ```
-
+If you want know more ,you can read [this](http://www.zhihu.com/question/28039779). If you don't understand it , you can read it again when you read fourth chapter.
 ##Exercise 2.16
 >Which, if any, of the following assignments are invalid? If they are valid, explain what they do.
 
@@ -519,6 +519,7 @@ j2 is const int.
 k2 is const int&.
 
 [Here](ex2_35.cpp) is the code.
+[It](http://segmentfault.net/q/1010000002568358) is useful to you if you read it.
 
 ##Exercise 2.36
 >In the following code, determine the type of each variable
@@ -533,6 +534,8 @@ decltype((b)) d = a;
 
 `c` is an int, `d` is a referance of `a`.
 all their value are `4`.
+
+If you want konw more about `decltype` , [this](http://segmentfault.net/q/1010000002559351) maybe help you.
 
 ##Exercise 2.37
 >Assignment is an example of an expression that yields a reference type. The type is a reference to the type of the left-hand operand. That is, if i is an int, then the type of the expression i = x is int&. Using that knowledge, determine the type and value of each variable in this code:
