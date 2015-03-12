@@ -65,3 +65,18 @@
 Such as `Book`
 
 [hpp](ex14_05.h) | [cpp](ex14_05.cpp)
+
+## Exercise 14.6:
+>Define an output operator for your `Sales_data` class.
+
+see [Exercise 14.2](#Exercise 14.2).
+
+## Exercise 14.7:
+>Define an output operator for you String class you wrote for the exercises in 13.5 (p. 531).
+
+[hpp](ex14_07.h) | [cpp](ex14_07.cpp)
+
+## Exercise 14.8:
+>Define an output operator for the class you chose in exercise 7.40 from 7.5.1 (p. 291).
+
+see [Exercise 14.5](#Exercise 14.5)
