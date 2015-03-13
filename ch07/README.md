@@ -331,7 +331,7 @@ it is very natural.
 
 ## Exercise 7.52
 
-`Sales_data` should have no in-class initializers.
+In my opinion ,the aim of the problem is Aggregate Class. Test-makers think that `Sales_data` is Aggregate Class,so `Sales_data` should have no in-class initializers if we want to initialize the data members of an aggregate class by providing a braced list of member initializers:
 
 FIXED:
 
