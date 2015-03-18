@@ -1,5 +1,4 @@
-#C++ Primer (第5版) 习题答案
-##C++ Primer (5th Edition) exercise answers.
+##C++ Primer 5 Answers
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pezy/Cpp-Primer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -34,7 +33,7 @@
   - [Chapter 11. Associative Containers](ch11/README.md)
   - [Chapter 12. Dynamic Memory](ch12/README.md)
 - Part III: Tools for Class Authors
-  - [Chapter 13. Copy Control](ch13)
+  - [Chapter 13. Copy Control](ch13/README.md)
   - [Chapter 14. Overloaded Operations and Conversions](ch14)
   - [Chapter 15. Object-Oriented Programming](ch15)
   - [Chapter 16. Templates and Generic Programming](ch16)
@@ -42,8 +41,3 @@
   - [Chapter 17. Specialized Library Facilities](ch17)
   - [Chapter 18. Tools for Large Programs](ch18)
   - Chapter 19. Specialized Tools and Techniques
-
-### If you speak Chinese
-
-1. [PO在StackOverflow上的习题](http://book.douban.com/review/6500246/)
-2. [C++ Primer issues(豆瓣讨论组)](http://www.douban.com/group/532124/)
