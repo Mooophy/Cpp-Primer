@@ -1,8 +1,8 @@
-#include "ex13_44_47.h"
+#include "ex14_07.h"
 #include <algorithm>
 #include <iostream>
 
-std::pair<char*, char*> 
+std::pair<char*, char*>
 String::alloc_n_copy(const char *b, const char *e)
 {
 	auto str = alloc.allocate(e-b);
@@ -35,7 +35,7 @@ void String::free()
 	if (elements) {
 		std::for_each(elements, end, [this](char &c){ alloc.destroy(&c); });
 		alloc.deallocate(elements, end - elements);
-	}	
+	}
 }
 
 String::~String()

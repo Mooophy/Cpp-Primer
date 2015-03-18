@@ -74,9 +74,44 @@ see [Exercise 14.2](#Exercise 14.2).
 ## Exercise 14.7:
 >Define an output operator for you String class you wrote for the exercises in 13.5 (p. 531).
 
-[hpp](ex14_07.h) | [cpp](ex14_07.cpp)
+[hpp](ex14_07.h) | [cpp](ex14_07.cpp) | [Test](ex14_07_TEST.cpp)
 
 ## Exercise 14.8:
 >Define an output operator for the class you chose in exercise 7.40 from 7.5.1 (p. 291).
+
+see [Exercise 14.5](#Exercise 14.5)
+
+## Exercise 14.9:
+>Define an input operator for your Sales_data class.
+
+see [Exercise 14.2](#Exercise 14.2).
+
+## Exercise 14.10:
+>Describe the behaviour of the Sales_data input operator if given the following input:
+- (a) 0-201-99999-9 10 24.95
+- (b) 10 24.95 0-210-99999-9
+
+- (a) correct format.
+- (b) ilegal input. But `0-210-99999-9` will be converted to a float stored in this object. As a result, the data inside will be a wrong one.
+Output: `10 24 22.8 0.95`
+
+check [Test](ex14_02_TEST.cpp)
+
+## Exercise 14.11:
+>What, if anything, is wrong with the following Sales_data input operator? What would happen if we gave this operator the data in the previous exercise?
+```cpp
+istream& operator>>(istream& in, Sales_data& s)
+{
+    double price;
+    in >> s.bookNo >> s.units_sold >> price;
+    s.revenue = s.units_sold * price;
+    return in;
+}
+```
+
+no input check. nothing happend.
+
+## Exercise 14.12:
+>Define an input operator for the class you used in exercise 7.40 from 7.5.1 (p. 291). Be sure the operator handles input errors.
 
 see [Exercise 14.5](#Exercise 14.5)
