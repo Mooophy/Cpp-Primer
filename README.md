@@ -1,5 +1,5 @@
-#C++ Primer (第5版) 习题答案
-##C++ Primer 5 Answers.
+##C++ Primer 5 答案
+##C++ Primer 5 Answers
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pezy/Cpp-Primer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
