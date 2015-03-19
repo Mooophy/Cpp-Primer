@@ -3,7 +3,6 @@
 std::istream& operator>>(std::istream &in, Book &book)
 {
     in >> book.no_ >> book.name_ >> book.author_ >> book.pubdate_;
-    if (!in) book = Book();
     return in;
 }
 
@@ -20,5 +19,5 @@ bool operator==(const Book &lhs, const Book &rhs)
 
 bool operator!=(const Book &lhs, const Book &rhs)
 {
-    return lhs.no_ != rhs.no_;
+    return !(lhs == rhs);
 }

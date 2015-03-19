@@ -15,11 +15,6 @@ Sales_data::Sales_data(std::istream &is) : Sales_data()
     is >> *this;
 }
 
-double Sales_data::avg_price() const
-{
-    return units_sold ? revenue/units_sold : 0;
-}
-
 Sales_data& Sales_data::operator+=(const Sales_data &rhs)
 {
     units_sold += rhs.units_sold;

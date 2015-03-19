@@ -64,7 +64,7 @@
 
 Such as `Book`
 
-[hpp](ex14_05.h) | [cpp](ex14_05.cpp)
+[hpp](ex14_05.h) | [cpp](ex14_05.cpp) | [test](ex14_05_TEST.cpp)
 
 ## Exercise 14.6:
 >Define an output operator for your `Sales_data` class.
@@ -115,3 +115,18 @@ no input check. nothing happend.
 >Define an input operator for the class you used in exercise 7.40 from 7.5.1 (p. 291). Be sure the operator handles input errors.
 
 see [Exercise 14.5](#Exercise 14.5)
+
+## Exercise 14.13:
+>Which other arithmetic operators (Table 4.1 (p. 139)), if any, do you think Sales_data ought to support? Define any you think the class should include.
+
+no others.
+
+## Exercise 14.14:
+>Why do you think it is more efficient to define `operator+` to call `operator+=` rather than the other way around?
+
+Discussing on [SO](http://stackoverflow.com/questions/21071167/why-is-it-more-efficient-to-define-operator-to-call-operator-rather-than-the).
+
+## Exercise 14.15:
+>Should the class you chose for exercise 7.40 from 7.5.1 (p. 291) define any of the arithmetic operators? If so, implement them. If not, explain why not.
+
+[hpp](ex14_15.h) | [cpp](ex14_15.cpp) | [Test](ex14_15_TEST.cpp)

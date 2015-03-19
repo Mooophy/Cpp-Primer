@@ -17,6 +17,7 @@
 class Sales_data {
     friend std::istream& operator>>(std::istream&, Sales_data&); // input
     friend std::ostream& operator<<(std::ostream&, const Sales_data&); // output
+    friend Sales_data operator+(const Sales_data&, const Sales_data&); // addition
 
 public:
     Sales_data(const std::string &s, unsigned n, double p):bookNo(s),units_sold(n),revenue(n*p){}
@@ -26,9 +27,9 @@ public:
 
     Sales_data& operator+=(const Sales_data&); // compound-assignment
     std::string isbn() const { return bookNo; }
-    
+
 private:
-    double avg_price() const;
+    inline double avg_price() const;
 
     std::string bookNo;
     unsigned units_sold = 0;
@@ -37,6 +38,11 @@ private:
 
 std::istream& operator>>(std::istream&, Sales_data&);
 std::ostream& operator<<(std::ostream&, const Sales_data&);
-Sales_data operator+(const Sales_data&, const Sales_data&); // addition
+Sales_data operator+(const Sales_data&, const Sales_data&);
+
+inline double Sales_data::avg_price() const
+{
+    return units_sold ? revenue/units_sold : 0;
+}
 
 #endif
