@@ -130,3 +130,6 @@ Discussing on [SO](http://stackoverflow.com/questions/21071167/why-is-it-more-ef
 >Should the class you chose for exercise 7.40 from 7.5.1 (p. 291) define any of the arithmetic operators? If so, implement them. If not, explain why not.
 
 [hpp](ex14_15.h) | [cpp](ex14_15.cpp) | [Test](ex14_15_TEST.cpp)
+
+## Exercise 14.16:
+>Define equality and inequality operators for your `StrBlob` (12.1.1, p. 456), `StrBlobPtr` (12.1.6, p. 474), `StrVec` (13.5, p.526), and `String` (13.5, p. 531) classes.
