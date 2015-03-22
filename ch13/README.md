@@ -93,7 +93,7 @@ The compiler defines a synthesized destructor for any class that does not define
 
 When a `StrBlob` object destroyed, the `use_count` of the dynamic object will decrement. It will be freed if no `shared_ptr` to that dynamic object.
 
-When a `StrBlobPter` object is destroyed the object dynamicaly allocated will not be freed.
+When a `StrBlobPter` object is destroyed the object dynamically allocated will not be freed.
 
 ## [Exercise 13.11](ex13_11.h)
 
@@ -169,16 +169,16 @@ QueryResult& operator=(const QueryResult) = delete;
 Check 13.22.
 
 ## Exercise 13.24:
->What would happen if the version of HasPtr in this section didn’t define a destructor? What if HasPtr didn’t define the copy constructor?
+>What would happen if the version of `HasPtr` in this section didn’t define a destructor? What if `HasPtr` didn’t define the copy constructor?
 
 If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when assignment happened, just points copied, the string witch `ps` points haven't been copied.
 
 ## Exercise 13.25:
->Assume we want to define a version of StrBlob that acts like a value. Also assume that we want to continue to use a shared_ptr so that our StrBlobPtr class can still use a weak_ptr to the vector. Your revised class will need a copy constructor and copy-assignment operator but will not need a destructor. Explain what the copy constructor and copyassignment operators must do. Explain why the class does not need a destructor.
+>Assume we want to define a version of `StrBlob` that acts like a value. Also assume that we want to continue to use a shared_ptr so that our `StrBlobPtr` class can still use a weak_ptr to the vector. Your revised class will need a copy constructor and copy-assignment operator but will not need a destructor. Explain what the copy constructor and copy-assignment operators must do. Explain why the class does not need a destructor.
 
-Copy constructor and copy-assignment operator should dynamicly allocate memory for its own , rather than share the object with the right hand operand.
+Copy constructor and copy-assignment operator should dynamically allocate memory for its own , rather than share the object with the right hand operand.
 
-`StrBlob` is using smart pointers which can be managed with synthesized destructor, If an object of `StrBlob` is out of scope, the destructor for std::shared_ptr will be called automaticaly to free the memory dynamically allocated when the `use_count` goes to 0.
+`StrBlob` is using smart pointers which can be managed with synthesized destructor, If an object of `StrBlob` is out of scope, the destructor for std::shared_ptr will be called automatically to free the memory dynamically allocated when the `use_count` goes to 0.
 
 ## Exercise 13.26 [hpp](ex13_26.h) | [cpp](ex13_26.cpp)
 
