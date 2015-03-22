@@ -15,7 +15,10 @@ b2 is destroyed, but the elements in b2 must not be destroyed.
 
 so b1 and b2 both have 4 elements.
 
-## [Exercise 12.2](ex12_02.h)
+## Exercise 12.2
+
+[StrBlob](ex12_02.h) | [TEST](ex12_02_TEST.cpp)
+
 ## Exercise 12.3:
 >Does this class need const versions of push_back and pop_back? If so, add them. If not, why aren’t they needed?
 
