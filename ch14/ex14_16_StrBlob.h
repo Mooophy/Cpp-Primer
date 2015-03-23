@@ -62,32 +62,32 @@ public:
 
 	StrBlobPtr begin();
 	StrBlobPtr end();
-    
+
     ConstStrBlobPtr cbegin() const;
     ConstStrBlobPtr cend() const;
-    
+
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
-    
+
     void push_back(const string &t) { data->push_back(t); }
 	void push_back(string &&s) { data->push_back(std::move(s)); }
 
-	inline void pop_back();
-	inline string& front();
-	inline string& back();
-	inline const string& front() const;
-	inline const string& back() const;
-    
+	void pop_back();
+	string& front();
+	string& back();
+	const string& front() const;
+	const string& back() const;
+
 private:
-	inline void check(size_type, const string&) const;
-    
+	void check(size_type, const string&) const;
+
     shared_ptr<vector<string>> data;
 };
 
 bool operator==(const StrBlob&, const StrBlob&);
 bool operator!=(const StrBlob&, const StrBlob&);
 
-inline void StrBlob::pop_back() 
+inline void StrBlob::pop_back()
 {
 	check(0, "pop_back on empty StrBlob");
 	data->pop_back();
@@ -135,11 +135,11 @@ public:
 	StrBlobPtr() : curr(0) {}
 	StrBlobPtr(StrBlob &s, size_t sz = 0) : wptr(s.data), curr(sz) {}
 
-	inline string& deref() const;
-	inline StrBlobPtr& incr();
+	string& deref() const;
+	StrBlobPtr& incr();
 
 private:
-	inline shared_ptr<vector<string>> check(size_t, const string&) const;
+	shared_ptr<vector<string>> check(size_t, const string&) const;
 
 	std::weak_ptr<vector<string>> wptr;
 	size_t curr;
@@ -183,14 +183,14 @@ public:
 	ConstStrBlobPtr() : curr(0) {}
 	ConstStrBlobPtr(const StrBlob &s, size_t sz = 0) : wptr(s.data), curr(sz) {}
 
-	inline const string& deref() const;
-	inline ConstStrBlobPtr& incr();
-    
+	const string& deref() const;
+	ConstStrBlobPtr& incr();
+
 private:
-	inline std::shared_ptr<vector<string>> check(size_t, const string&) const;
+	std::shared_ptr<vector<string>> check(size_t, const string&) const;
 
     std::weak_ptr<vector<string>> wptr;
-    size_t curr; 
+    size_t curr;
 };
 
 inline const string& ConstStrBlobPtr::deref() const
