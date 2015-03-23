@@ -72,7 +72,7 @@ Such as `Book`
 see [Exercise 14.2](#Exercise 14.2).
 
 ## Exercise 14.7:
->Define an output operator for you String class you wrote for the exercises in 13.5 (p. 531).
+>Define an output operator for you `String` class you wrote for the exercises in 13.5 (p. 531).
 
 [hpp](ex14_07.h) | [cpp](ex14_07.cpp) | [Test](ex14_07_TEST.cpp)
 
@@ -133,3 +133,12 @@ Discussing on [SO](http://stackoverflow.com/questions/21071167/why-is-it-more-ef
 
 ## Exercise 14.16:
 >Define equality and inequality operators for your `StrBlob` (12.1.1, p. 456), `StrBlobPtr` (12.1.6, p. 474), `StrVec` (13.5, p.526), and `String` (13.5, p. 531) classes.
+
+- `StrBlob` & `StrBlobPtr`: [hpp](ex14_16_StrBlob.h) | [cpp](ex14_16_StrBlob.cpp) | [Test](ex14_16_StrBlobTest.cpp)
+- `StrVec`: [hpp](ex14_16_StrVec.h) | [cpp](ex14_16_StrVec.cpp) | [Test](ex14_16_StrVecMain.cpp)
+- `String`: [hpp](ex14_16_String.h) | [cpp](ex14_16_String.cpp) | [Test](ex14_16_StringMain.cpp)
+
+## Exercise 14.17:
+>Should the class you chose for exercise 7.40 from 7.5.1(p. 291) define the equality operators? If so, implement them. If not, explain why not.
+
+yes.see [Exercise 14.15](#Exercise 14.15)
