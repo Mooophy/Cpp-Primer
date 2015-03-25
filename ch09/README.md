@@ -60,14 +60,15 @@ vector<int>::iterator find(vector<int>::iterator beg, vector<int>::iterator end,
 ```cpp
 list<int> lst1;
 list<int>::iterator iter1 = lst1.begin(), iter2 = lst1.end();
-while (iter1 < iter2) /*ERROR: operator< cannot be used in list*/
+while (iter1 < iter2) /*ERROR: operator< can't be applied to iterator for list*/
 ```
 
 Fixed:
 ```cpp
 while(iter1 != iter2)
 ```
-
+#### note:
+operator `<` can be used in `list`,but can't be applied to iterator for `list`.
 ## Exercise 9.7:
 >What type should be used as the index into a vector of ints?
 
