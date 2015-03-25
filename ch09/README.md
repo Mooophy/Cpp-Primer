@@ -20,7 +20,7 @@ use list or forward_list.
 >Define a list that holds elements that are deques that hold ints.
 
 ```cpp
-std::list<std::deques<int>> ldi;
+std::list<std::deque<int>> ldi;
 ```
 
 ## Exercise 9.3:
