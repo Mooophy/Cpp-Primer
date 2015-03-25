@@ -22,6 +22,16 @@ bool operator!=(const Book &lhs, const Book &rhs)
     return !(lhs == rhs);
 }
 
+bool operator<(const Book &lhs, const Book &rhs)
+{
+    return lhs.no_ < rhs.no_;
+}
+
+bool operator>(const Book &lhs, const Book &rhs)
+{
+    return rhs < lhs;
+}
+
 Book& Book::operator+=(const Book &rhs)
 {
     if (rhs == *this)

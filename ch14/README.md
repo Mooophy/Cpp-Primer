@@ -142,3 +142,15 @@ Discussing on [SO](http://stackoverflow.com/questions/21071167/why-is-it-more-ef
 >Should the class you chose for exercise 7.40 from 7.5.1(p. 291) define the equality operators? If so, implement them. If not, explain why not.
 
 yes.see [Exercise 14.15](#Exercise 14.15)
+
+## Exercise 14.18:
+>Define relational operators for your `StrBlob`, `StrBlobPtr`, `StrVec`, and `String` classes.
+
+- `StrBlob` & `StrBlobPtr`: [hpp](ex14_18_StrBlob.h) | [cpp](ex14_18_StrBlob.cpp) | [Test](ex14_18_StrBlobTest.cpp)
+- `StrVec`: [hpp](ex14_18_StrVec.h) | [cpp](ex14_18_StrVec.cpp) | [Test](ex14_18_StrVecMain.cpp)
+- `String`: [hpp](ex14_18_String.h) | [cpp](ex14_18_String.cpp) | [Test](ex14_18_StringMain.cpp)
+
+## Exercise 14.19:
+>Should the class you chose for exercise 7.40 from 7.5.1 (p. 291) define the relational operators? If so, implement them. If not, explain why not.
+
+yes.see [Exercise 14.15](#Exercise 14.15)
