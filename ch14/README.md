@@ -154,3 +154,50 @@ yes.see [Exercise 14.15](#Exercise 14.15)
 >Should the class you chose for exercise 7.40 from 7.5.1 (p. 291) define the relational operators? If so, implement them. If not, explain why not.
 
 yes.see [Exercise 14.15](#Exercise 14.15)
+
+## Exercise 14.20:
+>Define the addition and compound-assignment operators for your `Sales_data` class.
+
+see [Exercise 14.2](#Exercise 14.2).
+
+## Exercise 14.21:
+>Write the `Sales_data` operators so that `+` does the actual addition and `+=` calls `+`. Discuss the disadvantages of this approach compared to the way these operators were defined in 14.3 (p. 560) and 14.4 (p.564).
+
+```cpp
+Sales_data& Sales_data::operator+=(const Sales_data &rhs)
+{
+    Sales_data old_data = *this;
+    *this = old_data + rhs;
+    return *this;
+}
+
+Sales_data operator+(const Sales_data &lhs, const Sales_data &rhs)
+{
+    Sales_data sum;
+    sum.units_sold = lhs.units_sold + rhs.units_sold;
+    sum.revenue = lhs.revenue + rhs.revenue;
+    return sum;
+}
+```
+
+**Disadvantages**: Both `+` and `+=`, uses an temporary object of `Sales_data`. But it is no need for that.
+
+## Exercise 14.22:
+>Define a version of the assignment operator that can assign a `string` representing an ISBN to a `Sales_data`.
+
+[hpp](ex14_22.h) | [cpp](ex14_22.cpp) | [Test](ex14_22_TEST.cpp)
+
+## Exercise 14.23:
+>Define an initializer_list assignment operator for your version of the `StrVec` class.
+
+[hpp](ex14_23.h) | [cpp](ex14_23.cpp) | [Test](ex14_23_TEST.cpp)
+
+## Exercise 14.24:
+>Decide whether the class you used in exercise 7.40 from 7.5.1 (p. 291) needs a copy- and move-assignment operator. If so, define those operators.
+
+[hpp](ex14_24.h) | [cpp](ex14_24.cpp) | [Test](ex14_24_TEST.cpp)
+
+## Exercise 14.25:
+>Implement any other assignment operators your class should define. Explain which types should be used as operands and why.
+
+see [Exercise 14.24](#Exercise 14.24)
