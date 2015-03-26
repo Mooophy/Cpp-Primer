@@ -1,10 +1,10 @@
 ##C++ Primer 5 Answers
 
-[![](https://img.shields.io/github/issues/pezy/Cpp-Primer.svg)](https://github.com/pezy/Cpp-Primer/issues)
+[![](https://img.shields.io/github/issues/pezy/CppPrimer.svg)](https://github.com/pezy/CppPrimer/issues)
 [![](https://img.shields.io/badge/license-CC0-blue.svg)](http://creativecommons.org/about/cc0)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pezy/Cpp-Primer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![](https://img.shields.io/badge/%E4%B8%AD%E6%96%87-%E8%AE%A8%E8%AE%BA%E5%8C%BA-yellowgreen.svg)](https://github.com/Ocxs/Issues)
 [![](https://img.shields.io/badge/douban-%E5%B0%8F%E7%BB%84-green.svg)](http://www.douban.com/group/532124/)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pezy/Cpp-Primer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ### Note
 
@@ -18,7 +18,7 @@
 - Please **fork**([How?](https://help.github.com/articles/fork-a-repo)) this repository first.
 - **Commit**([How?](https://help.github.com/articles/create-a-repo#commit-your-first-change)) in your own repository.
 - Give me a **pull request**([How?](https://help.github.com/articles/using-pull-requests)).
-- Syncing with([How?](https://help.github.com/articles/syncing-a-fork/)) the origin repository. This is very **important** because this repo updates frequently.
+- **Syncing** with([How?](https://help.github.com/articles/syncing-a-fork/)) the origin repository. This is very **important** because this repo updates frequently.
 
 ### Table of Contents
 

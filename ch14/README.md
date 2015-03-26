@@ -201,3 +201,10 @@ Sales_data operator+(const Sales_data &lhs, const Sales_data &rhs)
 >Implement any other assignment operators your class should define. Explain which types should be used as operands and why.
 
 see [Exercise 14.24](#exercise-1424)
+
+## Exercise 14.26:
+>Define subscript operators for your `StrVec`, `String`, `StrBlob`, and `StrBlobPtr` classes.
+
+- `StrBlob` & `StrBlobPtr`: [hpp](ex14_26_StrBlob.h) | [cpp](ex14_26_StrBlob.cpp) | [Test](ex14_26_StrBlobTest.cpp)
+- `StrVec`: [hpp](ex14_26_StrVec.h) | [cpp](ex14_26_StrVec.cpp) | [Test](ex14_26_StrVecMain.cpp)
+- `String`: [hpp](ex14_26_String.h) | [cpp](ex14_26_String.cpp) | [Test](ex14_26_StringMain.cpp)
