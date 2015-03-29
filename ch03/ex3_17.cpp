@@ -30,7 +30,7 @@ int main()
 
   for (decltype(vec.size()) i=0; i != vec.size(); ++i)
   {
-    if (i%8 == 0) cout << endl;
+    if (i!=0&&i%8 == 0) cout << endl;
     cout << vec[i] << " ";
   }
   cout << endl;
