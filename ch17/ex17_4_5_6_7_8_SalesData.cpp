@@ -31,7 +31,8 @@
 #include <iostream>
 using std::istream; using std::ostream;
 
-#include "Sales_data.h"
+#include "ex17_4_5_6_7_8_SalesData.h"
+
 Sales_data::Sales_data(std::istream &is) 
 {
 	// read will read a transaction from is into this object
