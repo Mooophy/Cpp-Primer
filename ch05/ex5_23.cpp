@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include<stdexcept>
 using std::string;
 using std::cin;
 using std::cout;

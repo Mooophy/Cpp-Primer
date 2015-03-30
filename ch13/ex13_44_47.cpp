@@ -53,8 +53,3 @@ String& String::operator = (const String &rhs)
 	return *this;
 }
 
-int main()
-{
-	
-	return 0;
-}

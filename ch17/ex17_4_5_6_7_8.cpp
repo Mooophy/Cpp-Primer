@@ -37,7 +37,7 @@
 #include <utility>
 #include <numeric>
 
-#include "Sales_data.h"
+#include "ex17_4_5_6_7_8_SalesData.h"
 
 //! for ex17.4
 //! maches has 3 members:
