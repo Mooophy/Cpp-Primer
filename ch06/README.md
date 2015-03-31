@@ -40,20 +40,34 @@ int main()
 ##Exercise 6.4
 
 ```cpp
-int func()
-{
-    int n, ret = 1;
-    std::cout << "input a number: ";
-    std::cin >> n;
-    while (n > 1) ret *= n--;
-    return ret;
+#include <iostream>
+#include <string>
+using std::string;
+using std::cin;
+using std::cout;
+using std::endl;
+
+void fact(){
+
+int a=0;
+unsigned int result=1;
+cout<<"Please input a positive number: "<<endl;
+cin>>a;
+cout<<a;
+if (a>=0&&a<=33){
+while (a>=1) {
+result*=a--;
+}
+cout<<"!= "<<result<<endl;}
+else
+cout<<" is out of range."<<endl;
 }
 
-int main()
-{
-    std::cout << func() << std::endl;
-    return 0;
+int main () {
+fact();
+return 0;
 }
+
 ```
 
 ##Exercise 6.5
