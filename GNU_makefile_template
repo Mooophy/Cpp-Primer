@@ -4,7 +4,7 @@
 # -I.. pulls in the Version_test.h file for conditional compilation
 #      of code the uses features that might not yet be implemented
 CC = g++
-CCFLAGS = -Wall -std=c++11 -I .
+CCFLAGS = -pedantic -Wall -std=c++11 -I .
 
 # Some programs include headers defined in earlier chapters
 # LOCFLAGS used to set tell the compiler where to find a
