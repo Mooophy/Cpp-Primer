@@ -19,12 +19,9 @@ class QueryResult;
 
 class TextQuery
 {
-
 public:
     typedef std::vector<std::string>::size_type index_Tp;
-    typedef std::tuple <std::string,
-                        std::shared_ptr<std::set<index_Tp>>,
-                        std::shared_ptr<std::vector<std::string>>>  result_tuple;
+    typedef std::tuple <std::string, std::shared_ptr<std::set<index_Tp>>, std::shared_ptr<std::vector<std::string>>>  result_tuple;
 
     //! constructor
     TextQuery(std::ifstream&);
@@ -37,8 +34,7 @@ public:
     result_tuple query_return_tuple(const std::string& sought);
 private:
     std::shared_ptr<std::vector<std::string>> file;
-    std::map<std::string,
-             std::shared_ptr<std::set<index_Tp>>> wm;
+    std::map<std::string, std::shared_ptr<std::set<index_Tp>>> wm;
 };
 
 #endif // TEXTQUERY_H
