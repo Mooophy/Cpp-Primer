@@ -21,9 +21,13 @@
 //! Suppose we have the following declaration of the operator* that is a
 //! a member of the nested namespace mathLib::MatrixLib.
 //! How would you declare this operator in global scope?
-//! mathLib::MatrixLib::matrix mathLib::MatrixLib::operator*
-//! (const mathLib::MatrixLib::matrix&, const mathLib::MatrixLib::matrix&);
 
+// mathLib::MatrixLib::matrix mathLib::MatrixLib::operator*
+// (const mathLib::MatrixLib::matrix&, const mathLib::MatrixLib::matrix&);
+
+//! or :(provided by @lafener in #173)
+
+//mathLib::MatrixLib::matrix mathLib::MatrixLib::operator* (const matrix&, const matrix&);
 
 int main()
 {
