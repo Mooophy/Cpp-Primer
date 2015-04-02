@@ -37,24 +37,7 @@ int main()
 }
 ```
 
-##Exercise 6.4
-
-```cpp
-int func()
-{
-    int n, ret = 1;
-    std::cout << "input a number: ";
-    std::cin >> n;
-    while (n > 1) ret *= n--;
-    return ret;
-}
-
-int main()
-{
-    std::cout << func() << std::endl;
-    return 0;
-}
-```
+## [Exercise 6.4](ex6_04.cpp)
 
 ##Exercise 6.5
 
