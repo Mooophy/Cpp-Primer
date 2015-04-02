@@ -47,26 +47,27 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-void func(){
+void factorial(){
     
-    int a=0;
-    unsigned int result=1;
+    int num=0;
+    unsigned result=1;
     cout<<"Please input a positive number: "<<endl;
-    cin>>a;
-    cout<<a;
-    if (a>=0&&a<=33){
-        while (a>=1) {
-            result*=a--;
-        }
-        cout<<"!= "<<result<<endl;}
+    cin>>num;
+    cout<<num;
+    if (num>=0&&num<=12){
+        while (num>=1)
+            result*=num--;
+
+        cout<<"! is "<<result<<endl;}
     else
         cout<<" is out of range."<<endl;
 }
 
 int main () {
-    func();
+    factorial();
     return 0;
 }
+
 ```
 
 ##Exercise 6.5
