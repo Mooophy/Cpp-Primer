@@ -43,6 +43,19 @@
   - [Chapter 18. Tools for Large Programs](ch18)
   - Chapter 19. Specialized Tools and Techniques
 
+### How to use makefile in linux
+    
+- make all     : compile all the cpp file to automake object file and executable file ;
+- make clean   : clean all the object file ;
+- make clobber : clean all the object file and executable file !
+
+### Notice for makefile
+ 
+- No matter you are in the root direcotry or in the subdirectory of some chapter , the usage of makefile is the same when you want to compile all the cpp/cc file ;
+- But if you only want to compile some files (especially one), you cam use "make XXX(this is the list of your chosen file)".
+
+If you know much about makefile, you can change [makefile](GNU_makefile_template) all by yourself !
+
 ### If you speak Chinese
 
 1. [PO在StackOverflow上的习题](http://book.douban.com/review/6500246/)
