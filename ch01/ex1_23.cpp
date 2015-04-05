@@ -9,18 +9,18 @@ int main()
     int cnt = 1;
     while (std::cin >> valItem)
     {
-      if (valItem.isbn() == currItem.isbn())
+      if (compareIsbn(valItem, currItem))
         ++cnt;
       else 
       {
-        std::cout << currItem << " occurs "
+        std::cout << currItem.isbn() << " occurs "
                   << cnt << " times " << std::endl;
         currItem = valItem;
         cnt = 1;
       }
     }
     
-    std::cout << currItem << " occurs "
+    std::cout << currItem.isbn() << " occurs "
               << cnt << " times " << std::endl;
   }
   return 0;
