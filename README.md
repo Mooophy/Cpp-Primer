@@ -4,7 +4,6 @@
 [![](https://img.shields.io/badge/license-CC0-blue.svg)](http://creativecommons.org/about/cc0)
 [![](https://img.shields.io/badge/%E4%B8%AD%E6%96%87-%E8%AE%A8%E8%AE%BA%E5%8C%BA-yellowgreen.svg)](https://github.com/Ocxs/Issues)
 [![](https://img.shields.io/badge/douban-%E5%B0%8F%E7%BB%84-green.svg)](http://www.douban.com/group/532124/)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pezy/Cpp-Primer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ### Note
 
