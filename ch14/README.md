@@ -208,3 +208,18 @@ see [Exercise 14.24](#exercise-1424)
 - `StrBlob` & `StrBlobPtr`: [hpp](ex14_26_StrBlob.h) | [cpp](ex14_26_StrBlob.cpp) | [Test](ex14_26_StrBlobTest.cpp)
 - `StrVec`: [hpp](ex14_26_StrVec.h) | [cpp](ex14_26_StrVec.cpp) | [Test](ex14_26_StrVecMain.cpp)
 - `String`: [hpp](ex14_26_String.h) | [cpp](ex14_26_String.cpp) | [Test](ex14_26_StringMain.cpp)
+
+## Exercise 14.27:
+> Add increment and decrement operators to your `StrBlobPtr` class.
+
+[hpp](ex14_27_28_StrBlob.h) | [cpp](ex14_27_28_StrBlob.cpp) | [Test](ex14_27_28_StrBlobTest.cpp)
+
+## Exercise 14.28:
+> Define addition and subtraction for `StrBlobPtr` so that these operators implement pointer arithmetic (3.5.3, p. 119).
+
+see [Exercise 14.27](#exercise-1427)
+
+## Exercise 14.29:
+> We did not define a `const` version of the increment and decrement operators. Why not?
+
+Because `++` and `--` change the state of the object. Hence ,it's meaningless to do so.
