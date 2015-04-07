@@ -60,6 +60,21 @@ Point foo_bar(Point arg) // 1. Pass an object as an argument to a parameter of n
 ```
 
 ## [Exercise 13.5](ex13_05.h)
+```cpp
+class HasPtr	{
+public:
+	HasPtr(const std::string &s = std::string()): ps(new std::string(s)), i(0)	{	}
+	HasPtr(const HasPtr &orig)
+	{
+		ps = new std::string();
+		ps = orig.ps;
+		i = orig.i;
+	}
+private:
+	std::string *ps;
+	int i;
+};
+```
 
 ## Exercise 13.6:
 >What is a copy-assignment operator? When is this operator used? What does the synthesized copy-assignment operator do? When is it synthesized?
