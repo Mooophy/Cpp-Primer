@@ -239,3 +239,35 @@ There is no dynamic allocation to deal with, so the synthesized destructor is en
 > Define a class that holds a pointer to a `StrBlobPtr`. Define the overloaded arrow operator for that class.
 
 [hpp](ex14_32.h) | [cpp](ex14_32.cpp)
+
+## Exercise 14.33:
+> How many operands may an overloaded function-call operator take?
+
+An overloaded operator function has the same number of parameters as the operator has operands. Hence the maximum value should be around 256.
+([question on SO](http://stackoverflow.com/questions/21211889/how-many-operands-may-an-overloaded-function-call-operator-take))
+
+## Exercise 14.34:
+> Define a function-object class to perform an if-then-else operation: The call operator for this class should take three parameters. It should test its first parameter and if that test succeeds, it should return its second parameter; otherwise, it should return its third parameter.
+
+```cpp
+struct Test {
+    int operator()(bool b, int iA, int iB) {
+        return b ? iA : iB;
+    }
+};
+```
+
+## Exercise 14.35:
+> Write a class like `PrintString` that reads a line of input from an `istream` and returns a `string` representing what was read. If the read fails, return the empty `string`.
+
+[Test](ex14_35.cpp)
+
+## Exercise 14.36:
+> Use the class from the previous exercise to read the standard input, storing each line as an element in a vector.
+
+[Test](ex14_36.cpp)
+
+## Exercise 14.37:
+> Write a class that tests whether two values are equal. Use that object and the library algorithms to write a program to replace all instances of a given value in a sequence.
+
+[Test](ex14_37.cpp)
