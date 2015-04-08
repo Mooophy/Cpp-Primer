@@ -50,12 +50,12 @@ when we copy a `StrBlobPrts`, the `weak_ptr` member's use_count isn't changed.(c
 >Assuming Point is a class type with a public copy constructor, identify each use of the copy constructor in this program fragment:
 ```cpp
 Point global;
-Point foo_bar(Point arg) // 1. Pass an object as an argument to a parameter of nonreference type
+Point foo_bar(Point arg) // 1
 {
-    Point local = arg, *heap = new Point(global); // 2.3. copy initialization
-    *heap = local; // 4. Define variables using an `=`
-    Point pa[ 4 ] = { local, *heap }; // 5. Brace initialize the elements in an array
-    return *heap; // 6. Return an object from a function that has a nonreference return type
+    Point local = arg, *heap = new Point(global); // 2, 3
+    *heap = local;
+    Point pa[ 4 ] = { local, *heap }; // 4, 5
+    return *heap; // 6
 }
 ```
 
