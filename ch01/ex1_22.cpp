@@ -9,7 +9,7 @@ int main()
     Sales_item trans;
     while (std::cin >> trans)
     {
-      if (total.isbn() == trans.isbn())
+      if (compareIsbn(total, trans))
         total += trans;
       else
       {

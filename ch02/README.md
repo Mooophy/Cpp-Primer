@@ -431,6 +431,8 @@ const int *const p3;    // illegal, p3 must initialize.
 const int *p;           // legal. a pointer to const int.
 ```
 
+[Here](ex2_28.cpp) is the code. It's good to see the errors reported by compiler!
+
 ##Exercise 2.29
 >Uing the variables in the previous exercise, which of the
 following assignments are legal? Explain why.
