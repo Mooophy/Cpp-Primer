@@ -271,3 +271,47 @@ struct Test {
 > Write a class that tests whether two values are equal. Use that object and the library algorithms to write a program to replace all instances of a given value in a sequence.
 
 [Test](ex14_37.cpp)
+
+## Exercise 14.38:
+> Write a class that tests whether the length of a given `string` matches a given bound. Use that object to write a program to report how many words in an input file are of sizes 1 through 10 inclusive.
+
+[BoundTest](ex14_38_39.cpp)
+
+## Exercise 14.39:
+> Revise the previous program to report the count of words that are sizes 1 through 9 and 10 or more.
+
+see [Exercise 14.38](#exercise-1438)
+
+## Exercise 14.40:
+> Rewrite the `biggies` function from 10.3.2 (p. 391) to use function-object classes in place of lambdas.
+
+[Test](ex14_40.cpp)
+
+## Exercise 14.41:
+> Why do you suppose the new standard added lambdas? Explain when you would use a lambda and when you would write a class instead.
+
+IMO, lambda is quite handy to use. Lambda can be used when the functor is not used frequently nor complicated, whereas functor is supposed to call more times than lambda or quite complicated to implement as a lambda.
+
+## Exercise 14.42:
+> Using library function objects and adaptors, define an expression to
+- (a) Count the number of values that are greater than 1024
+- (b) Find the first string that is not equal to `pooh`
+- (c) Multiply all values by 2
+
+```cpp
+std::count_if(ivec.cbegin(), ivec.cend(), std::bind(std::greater<int>(), _1, 1024));
+std::find_if(svec.cbegin(), svec.cend(), std::bind(std::not_equal_to<std::string>(), _1, "pooh"));
+std::transform(ivec.begin(), ivec.end(), ivec.begin(), std::bind(std::multiplies<int>(), _1, 2));
+```
+
+[Test](ex14_42.cpp)
+
+## Exercise 14.43:
+> Using library function objects, determine whether a given `int` value is divisible by any element in a container of `int`s.
+
+[ex14_43.cpp](ex14_43.cpp)
+
+## Exercise 14.44:
+> Write your own version of a simple desk calculator that can handle binary operations.
+
+[ex14_44.cpp](ex14_44.cpp)
