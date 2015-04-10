@@ -1,3 +1,6 @@
+#ifndef CH02_SALESDATA_H_
+#define CH02_SALESDATA_H_
+
 #include <string>
 #include <iostream>
 
@@ -51,4 +54,4 @@ void Sales_data::Print()
     std::cout << "(no sales)" << std::endl;
 }
 
-
+#endif // CH02_SALESDATA_H_
