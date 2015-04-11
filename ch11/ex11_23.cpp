@@ -9,14 +9,42 @@
 
 #include <map>
 #include <string>
+#include <vector>
 #include <iostream>
-
-using std::string;
 
 int main()
 {
-    std::multimap<string, string> families;
-    for (string lastName, childName; std::cin >> childName >> lastName; families.emplace(lastName, childName));
-    for (const auto &s : families)
-        std::cout << s.second << " " << s.first << std::endl;
+	using namespace::std;
+	multimap<string, vector<string>> families;
+	string name, cname;
+	while ([&]->bool
+	{
+		cout << "enter name:\n";
+		cin >> name;
+		return name != "@quit";
+	}())
+	{
+		int count = 1;
+		while ([&]->bool
+		{
+			cout << "Hi," << name << ", enter your " << count << "th child's name" << endl;
+			cin >> cname;
+			++count;
+			return cname != "@end";
+		}())
+		{
+			families.insert({ name, { cname } });
+		}
+	}
+	for (auto f : families)
+	{
+		cout << f.first << " : ";
+		for (auto s :f.second)
+		{
+			cout << s<< ends;
+		}
+		cout << endl;
+	}
+	return 0;
 }
+
