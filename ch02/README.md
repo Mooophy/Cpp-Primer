@@ -740,6 +740,6 @@ You can add some function in your header file. Look at [here](https://github.com
 
 rewrite the exercise:
 
-- 1.5.1. [Code](ex2.42_1.cpp)
-- 1.5.2. [Code](ex2.42_2.cpp)
-- 1.6. [Code](ex2.42_3.cpp)
+- 1.5.1. [Code](ex2_42_1.cpp)
+- 1.5.2. [Code](ex2_42_2.cpp)
+- 1.6. [Code](ex2_42_3.cpp)
