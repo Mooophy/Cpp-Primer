@@ -47,8 +47,9 @@ int main()
     std::cout << "\n";
 
     //! test for 10.35
-    r_withOrdinary_print(v);
-    std::cout << "\n";
+    r_withOrdinary_print(ivec);
+	cout << *ivec.begin();
+	cout << endl;
 
     //! test for 10.36
     std::list<int>  l = {1,2,3,4,0,5,6};
@@ -80,8 +81,8 @@ r_print(const std::vector<std::string> &v)
 inline void
 r_withOrdinary_print(const std::vector<std::string> &v)
 {
-    for (auto it = std::prev(v.cend()); it != std::prev(v.cbegin()); --it)
-        std::cout << *it << " ";
+    for(auto it =prev(v.end()); it != v.begin(); --it)
+		cout << *it << " ";
 }
 
 //! Exercise 10.36
