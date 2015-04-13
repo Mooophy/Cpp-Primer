@@ -736,7 +736,7 @@ int main()
 >Write your own version of the Sales_data.h header and
 use it to rewrite the exercise from § 2.6.2(p. 76)
 
-You can add some function in your header file. Look at [here](https://github.com/pezy/Cpp-Primer/blob/master/ch02/Sales_data.h).
+You can add some function in your header file. Look at [here](ex2_42.h).
 
 rewrite the exercise:
 

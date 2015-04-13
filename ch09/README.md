@@ -1,20 +1,15 @@
 ﻿# Chapter 9. Sequential Containers
 
 ## Exercise 9.1:
->Which is the most appropriate—a vector, a deque, or a list—for the following program tasks?
-Explain the rationale for your choice.
-If there is no reason to prefer one or another container, explain why not.
+>Which is the most appropriate—a vector, a deque, or a list—for the following program tasks?Explain the rationale for your choice.If there is no reason to prefer one or another container, explain why not.
 
 >- (a) Read a fixed number of words, inserting them in the container alphabetically as they are entered. We’ll see in the next chapter that associative containers are better suited to this problem.
 >- (b) Read an unknown number of words. Always insert new words at the back. Remove the next value from the front.
 >- (c) Read an unknown number of integers from a file. Sort the numbers and then print them to standard output.
 
 - (a) `std::set` is the best. now, we can select `vector` or `deque`, better than `list`, cause we don't need insert or delete elements in the middle.
-- (b) `deque`.
->If the program needs to insert or delete elements at the front and the back, but not in the middle, use a deque
-- (c) `vector`, no need that insert or delete at the front or back. and
->If your program has lots of small elements and space overhead matters, don’t
-use list or forward_list.
+- (b) `deque`. If the program needs to insert or delete elements at the front and the back, but not in the middle, use a deque
+- (c) `vector`, no need that insert or delete at the front or back. and If your program has lots of small elements and space overhead matters, don’t use list or forward_list.
 
 ## Exercise 9.2:
 >Define a list that holds elements that are deques that hold ints.
@@ -60,14 +55,15 @@ vector<int>::iterator find(vector<int>::iterator beg, vector<int>::iterator end,
 ```cpp
 list<int> lst1;
 list<int>::iterator iter1 = lst1.begin(), iter2 = lst1.end();
-while (iter1 < iter2) /*ERROR: operator< cannot be used in list*/
+while (iter1 < iter2) /*ERROR: operator< can't be applied to iterator for list*/
 ```
 
 Fixed:
 ```cpp
 while(iter1 != iter2)
 ```
-
+#### note:
+operator `<` can be used in `list`,but can't be applied to iterator for `list`.
 ## Exercise 9.7:
 >What type should be used as the index into a vector of ints?
 
@@ -129,7 +125,16 @@ vector<int> vec(other_vec.begin(), other_vec.end()); // same as other_vec
 ## Exercise 9.12:
 >Explain the differences between the constructor that takes a container to copy and the constructor that takes two iterators.
 
-we can use the constructor that takes two iterators to copy a **subsequence** of a container. But the constructor that takes a container to copy should copy whole container.
+- Constructor that takes two iterators copies the items between `[first, last)`,e.g.
+```cpp
+auto data = { 1, 2, 3 };
+std::vector<int> vec(data.begin(), data.begin()+1); // vec is {1}
+```
+- Constructor that takes another container copies all items from it. e.g.
+```cpp
+auto data = { 1, 2, 3 };
+std::vector<int> vec(data); //vec is {1,2,3}
+```
 
 ## [Exercise 9.13](ex9_13.cpp)
 ## [Exercise 9.14](ex9_14.cpp)
@@ -140,7 +145,7 @@ we can use the constructor that takes two iterators to copy a **subsequence** of
 >Assuming c1 and c2 are containers, what (if any) constraints does the following usage place on the types of c1 and c2?
 
 First, ther must be the identical container and same type holded.
-Second,the type holded must support relational operation. (@Mooophy)
+Second,the type held must support relational operation. (@Mooophy)
 
 Both c1 and c2 are the containers except the unordered associative containers.(@pezy)
 
