@@ -558,9 +558,9 @@ int i = 0, &r = i;
 // same
 auto a = i;
 decltype(i) b = i;
-// different
+// different "c" will be int "d" will be int&
 auto c = r;
-decltype(r) d = i;
+decltype(r) d = r;
 ```
 
 More? Look at [here](http://stackoverflow.com/questions/21369113/what-is-the-difference-between-auto-and-decltypeauto-when-returning-from-a-fun) and [here](http://stackoverflow.com/questions/12084040/decltype-vs-auto)
