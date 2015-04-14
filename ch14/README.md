@@ -315,3 +315,96 @@ std::transform(ivec.begin(), ivec.end(), ivec.begin(), std::bind(std::multiplies
 > Write your own version of a simple desk calculator that can handle binary operations.
 
 [ex14_44.cpp](ex14_44.cpp)
+
+## Exercise 14.45:
+> Write conversion operators to convert a `Sales_data` to `string` and to `double`. What values do you think these operators should return?
+
+[hpp](ex14_45.h) | [cpp](ex14_45.cpp) | [Test](ex14_45_TEST.cpp)
+
+## Exercise 14.46:
+> Explain whether defining these Sales_data conversion operators is a good idea and whether they should be explicit.
+
+It's a bad idea to do so, because these conversion is misleading.`explicit` should be added to prevent implicit conversion.
+
+## Exercise 14.47:
+> Explain the difference between these two conversion operators:
+```cpp
+struct Integral {
+    operator const int();   // meaningless, it will be ignored by compiler.
+    operator int() const;   // promising that this operator will not change the state of the obj
+};
+```
+
+## Exercise 14.48:
+> Determine whether the class you used in exercise 7.40 from 7.5.1 (p. 291) should have a conversion to `bool`. If so, explain why, and explain whether the operator should be `explicit`. If not, explain why not.
+
+A conversion to bool can be useful for the class Date. But it must be an explicit one to prevent any automatic conversion.
+
+## Exercise 14.49:
+> Regardless of whether it is a good idea to do so, define a conversion to bool for the class from the previous exercise.
+
+[hpp](ex14_49.h) | [cpp](ex14_49.cpp) | [Test](ex14_49_TEST.cpp)
+
+## Exercise 14.50:
+> Show the possible class-type conversion sequences for the initializations of ex1 and ex2. Explain whether the initializations are legal or not.
+```cpp
+struct LongDouble {
+    LongDouble(double = 0.0);
+    operator double();
+    operator float();
+};
+LongDouble ldObj;
+int ex1 = ldObj;    // error ambiguous: double or float?
+float ex2 = ldObj;  // legal
+```
+
+## Exercise 14.51:
+> Show the conversion sequences (if any) needed to call each version of `calc` and explain why the best viable function is selected.
+```cpp
+void calc(int);
+void calc(LongDouble);
+double dval;
+calc(dval); // which calc?
+```
+
+best viable function: `void calc(int)`. cause class-type conversion is the lowest ranked.
+
+review the order:
+
+1. exact match
+2. const conversion
+3. promotion
+4. arithmetic or pointer conversion
+5. class-type conversion
+
+## Exercise 14.52:
+> Which `operator+`, if any, is selected for each of the addition expressions? List the candidate functions, the viable functions, and the type conversions on the arguments for each viable function:
+```cpp
+struct LongDouble {
+    // member operator+ for illustration purposes; + is usually a nonmember LongDouble operator+(const SmallInt&); // 1
+    // other members as in 14.9.2 (p. 587)
+};
+LongDouble operator+(LongDouble&, double); // 2
+SmallInt si;
+LongDouble ld;
+ld = si + ld;
+ld = ld + si;
+```
+
+`ld = si + ld;` is ambiguous. `ld = ld + si` can use both 1 and 2, but 1 is more exactly. (in the 2, SmallInt need to convert to `double`)
+
+
+## Exercise 14.53:
+> Given the definition of SmallInt on page 588, determine whether the following addition expression is legal. If so, what addition operator is used? If not, how might you change the code to make it legal?
+```cpp
+SmallInt s1;
+double d = s1 + 3.14;
+```
+
+ambiguous.
+
+**Fixed**:
+```cpp
+SmallInt s1;
+double d = s1 + SmallInt(3.14);
+```
