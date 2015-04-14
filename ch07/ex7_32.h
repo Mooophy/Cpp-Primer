@@ -25,9 +25,9 @@ private:
 };
 
 class Screen {
+    friend void Window_mgr::clear(ScreenIndex);
 public:
     using pos = std::string::size_type;
-    friend void Window_mgr::clear(ScreenIndex);
 
     Screen() = default; // 1
     Screen(pos ht, pos wd):height(ht),width(wd),contents(ht*wd, ' '){} // 2
