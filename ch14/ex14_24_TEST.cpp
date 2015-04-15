@@ -24,9 +24,10 @@
 #include <iostream>
 #include <vector>
 
-#include "Sales_data.h"
+// the header file should be changed to the newest one
+#include "../ch07/ex7_41.h"
 #include "date.h"
-#include "StrBlob.h"
+#include "ex14_18_StrVec.h"
 #include "strvec.h"
 #include "string.h"
 #include <algorithm>
