@@ -21,16 +21,9 @@
 //! Decide whether the class you used in exercise 7.40 from § 7.5.1 (p. 291) needs a
 //! copy- and move-assignment operator. If so, define those operators.
 //!
-#include <iostream>
-#include <vector>
 
-// the header file should be changed to the newest one
-#include "../ch07/ex7_41.h"
-#include "date.h"
-#include "ex14_18_StrVec.h"
-#include "strvec.h"
-#include "string.h"
-#include <algorithm>
+#include "ex14_24.h"
+#include <iostream>
 
 int main()
 {
