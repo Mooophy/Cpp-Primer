@@ -1,4 +1,4 @@
-#include "date.h"
+#include "ex14_24.h"
 #include <algorithm>
 
 //! constructor taking Size as days
@@ -67,7 +67,7 @@ Date::Date(const Date &d) :
 {}
 
 //! move constructor
-Date::Date(Date&& d) noexcept :
+Date::Date(Date&& d) NOEXCEPT :
     day(d.day), month(d.month), year(d.year)
 { std::cout << "copy moving";}
 
@@ -82,7 +82,7 @@ Date &Date::operator= (const Date &d)
 }
 
 //! move operator=
-Date &Date::operator =(Date&& rhs) noexcept
+Date &Date::operator =(Date&& rhs) NOEXCEPT
 {
     if(this != &rhs)
     {
