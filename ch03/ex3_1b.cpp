@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../ch02/Sales_data.h"
+#include "../ch02/ex2_42.h"
 
 using std::cin;
 using std::cout;
