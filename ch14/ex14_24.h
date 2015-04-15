@@ -49,6 +49,12 @@
 #ifndef DATE_H
 #define DATE_H
 
+#ifndef _MSC_VER
+#define NOEXCEPT noexcept
+#else
+#define NOEXCEPT
+#endif
+
 #include <iostream>
 #include <vector>
 
@@ -73,12 +79,12 @@ public:
     //! copy constructor
     Date(const Date& d);
     //! move constructor
-    Date(Date&& d) noexcept;
+    Date(Date&& d) NOEXCEPT;
 
     //! copy operator=
     Date& operator= (const Date& d);
     //! move operator=
-    Date& operator= (Date&& rhs) noexcept;
+    Date& operator= (Date&& rhs) NOEXCEPT;
 
     //! destructor  --  in this case, user-defined destructor is not nessary.
     ~Date(){ std::cout << "destroying\n"; }
