@@ -2,36 +2,52 @@
 //  ex9_43.cpp
 //  Exercise 9.43
 //
-//  Created by pezy on 12/4/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
+//  Created by XDXX on 4/16/2015.
+//  Copyright (c) 2015 XDXX. All rights reserved.
 //
 //  @Brief  Write a function that takes three strings, s, oldVal, and newVal.
 //          Using iterators, and the insert and erase functions replace
 //          all instances of oldVal that appear in s by newVal.
-//          Test your function by using it to replace common abbreviations,
+//	    Test your function by using it to replace common abbreviations,
 //          such as “tho” by “though” and “thru” by “through”.
 
+
+
+#include <iterator>
 #include <iostream>
 #include <string>
 
 using std::cout; using std::endl; using std::string;
 
-void func(string &s, const string &oldVal, const string &newVal)
+void func(string &s, const string oldVal, const string newVal)
 {
-    for (string::size_type i=0; i!=s.size(); ++i)
-        if (s.substr(i, oldVal.size()) == oldVal)
-            {
-                s.erase(i, oldVal.size());
-                s.insert(i, newVal);
-            }
+	for (auto iter = s.begin(); iter != s.end();)
+	{
+		if (s.end() - iter < oldVal.size())
+			break;
+		if (*iter == oldVal[0])
+		{
+			string substring{ iter, iter + oldVal.size() };
+			if (oldVal == substring)
+			{
+				iter = s.erase(iter, iter + oldVal.size());
+				iter = s.insert(iter, newVal.begin(), newVal.end());
+				iter += newVal.size();
+			}
+			else
+				++iter;
+		}
+		else
+			++iter;
+	}
 }
 
-int main()
+int main() 
 {
-    string str{"To drive straight thru is a foolish, tho courageous act."};
-    func(str, "tho", "though");
-    func(str, "thru", "through");
-    cout << str << endl;
+	string s{ "To drive straight thru is a foolish, tho courageous act." };
+	func(s, "tho", "though");
+	func(s, "thru", "through");
+	cout << s << endl;
 
-    return 0;
+	return 0;
 }
