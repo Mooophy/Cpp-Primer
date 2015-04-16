@@ -3,8 +3,7 @@ OBJECTS = ex14_35 ex14_36 ex14_37 ex14_38_39 ex14_40 ex14_42 ex14_43 ex14_44
 OTHOBJS = ex14_02_TEST ex14_05_TEST ex14_07_TEST ex14_15_TEST ex14_22_TEST ex14_23_TEST ex14_45_TEST ex14_49_TEST ex14_27_28_StrBlobTest ex14_30_StrBlobTest \
 		ex14_32 ex14_16_StrBlobTest ex14_16_StringMain ex14_16_StrVecMain \
 		ex14_18_StrBlobTest ex14_18_StringMain ex14_18_StrVecMain \
-		ex14_26_StrBlobTest ex14_26_StringMain ex14_26_StrVecMain 
-# ex14_24_TEST : I can not find the dependency by myself. The header file is lost.
+		ex14_26_StrBlobTest ex14_26_StringMain ex14_26_StrVecMain ex14_24_TEST
 # 
 all:$(OBJECTS) $(OTHOBJS)
 

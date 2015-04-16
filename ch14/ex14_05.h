@@ -1,5 +1,5 @@
-#ifndef BOOK_H
-#define BOOK_H
+#ifndef CP5_CH14_EX14_05_H
+#define CP5_CH14_EX14_05_H
 
 #include <iostream>
 #include <string>
@@ -28,4 +28,4 @@ bool operator==(const Book&, const Book&);
 bool operator!=(const Book&, const Book&);
 
 
-#endif // BOOK_H
+#endif // CP5_CH14_EX14_05_H
