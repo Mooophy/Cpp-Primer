@@ -144,7 +144,7 @@ std::vector<int> vec(data); //vec is {1,2,3}
 ## Exercise 9.17:
 >Assuming c1 and c2 are containers, what (if any) constraints does the following usage place on the types of c1 and c2?
 
-First, ther must be the identical container and same type holded.
+First, there must be the identical container and same type holded.
 Second,the type held must support relational operation. (@Mooophy)
 
 Both c1 and c2 are the containers except the unordered associative containers.(@pezy)
