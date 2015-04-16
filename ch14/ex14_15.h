@@ -1,5 +1,5 @@
-#ifndef BOOK_H
-#define BOOK_H
+#ifndef CP5_CH14_EX14_15_H_
+#define CP5_CH14_EX14_15_H_
 
 #include <iostream>
 #include <string>
@@ -36,4 +36,4 @@ bool operator<(const Book&, const Book&);
 bool operator>(const Book&, const Book&);
 Book operator+(const Book&, const Book&);
 
-#endif // BOOK_H
+#endif // CP5_CH14_EX14_15_H_

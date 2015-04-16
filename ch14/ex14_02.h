@@ -8,8 +8,8 @@
 //  @See ex7_41.h
 //  @Add overloaded input, output, addition, and compound-assignment operators
 
-#ifndef CP5_ex14_02_h
-#define CP5_ex14_02_h
+#ifndef CP5_CH14_EX14_02_H
+#define CP5_CH14_EX14_02_H
 
 #include <string>
 #include <iostream>
@@ -45,4 +45,4 @@ inline double Sales_data::avg_price() const
     return units_sold ? revenue/units_sold : 0;
 }
 
-#endif
+#endif // CP5_CH14_EX14_02_H
