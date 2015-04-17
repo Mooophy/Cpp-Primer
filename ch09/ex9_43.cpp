@@ -10,8 +10,10 @@
 //          all instances of oldVal that appear in s by newVal.
 //	    Test your function by using it to replace common abbreviations,
 //          such as “tho” by “though” and “thru” by “through”.
-
-
+//  @notice This program doesn't compile on GCC because GCC(4.9.2) doesn't 
+	    support the feature of c++11 which the
+            insert(iterator p, InputIterator first, InputIterator last) function
+	    could return an iterator.So please use VS(2012+) or clang instead.
 
 #include <iterator>
 #include <iostream>
@@ -19,7 +21,7 @@
 
 using std::cout; using std::endl; using std::string;
 
-void func(string &s, const string oldVal, const string newVal)
+void func(string &s, const string &oldVal, const string &newVal)
 {
 	for (auto iter = s.begin(); iter != s.end();)
 	{
