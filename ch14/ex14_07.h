@@ -1,5 +1,5 @@
-#ifndef CP5_STRING_H__
-#define CP5_STRING_H__
+#ifndef CP5_CH14_EX07_H_
+#define CP5_CH14_EX07_H_
 
 #include <memory>
 #include <iostream>
@@ -31,5 +31,5 @@ private:
 
 std::ostream& operator<<(std::ostream&, const String&);
 
-#endif
+#endif //CP5_CH14_EX07_H_
 
