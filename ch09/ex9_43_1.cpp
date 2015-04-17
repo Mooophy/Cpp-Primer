@@ -8,13 +8,13 @@
 //  @Brief  Write a function that takes three strings, s, oldVal, and newVal.
 //          Using iterators, and the insert and erase functions replace
 //          all instances of oldVal that appear in s by newVal.
-//	    	Test your function by using it to replace common abbreviations,
+//	    Test your function by using it to replace common abbreviations,
 //          such as “tho” by “though” and “thru” by “through”.
 //  @notice This program doesn't compile on GCC because GCC(4.9.2) doesn't 
-//	   		support the feature of c++11 which the
+//	    support the feature of c++11 which the
 //          insert(iterator p, InputIterator first, InputIterator last) function
-//	    	could return an iterator.So please use VS(2012+) or clang instead.
-//			Or you can see the cross-platform version(ex9_43_2.cpp) of this exercise.
+//	    could return an iterator.So please use VS(2012+) or clang instead.
+//	    Or you can see the cross-platform version(ex9_43_2.cpp) of this exercise.
 
 #include <iterator>
 #include <iostream>
