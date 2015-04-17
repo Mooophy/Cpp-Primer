@@ -8,7 +8,7 @@
 //  @Brief  Write a function that takes three strings, s, oldVal, and newVal.
 //          Using iterators, and the insert and erase functions replace
 //          all instances of oldVal that appear in s by newVal.
-//	    	Test your function by using it to replace common abbreviations,
+//	    Test your function by using it to replace common abbreviations,
 //          such as “tho” by “though” and “thru” by “through”.
 //  @notice This program could compiled with GCC well.But it doesn't use some c++11
 //          features.There is another version(ex9_43_1.cpp) of this exercise which
