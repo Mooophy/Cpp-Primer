@@ -8,13 +8,12 @@
 //  Write versions of numbered and f corresponding to the previous three exercises
 //  and check whether you correctly predicted the output.
 //
-//  See 13.14, 13.15, 13.16
+//  For 13.14
 
 #include <iostream>
 
 class numbered {
 public:
-    // 13.14
     numbered() {
         static int unique = 10;
         mysn = unique++;
