@@ -29,12 +29,7 @@ int main()
       c = toupper(c);
 
   for (decltype(vec.size()) i=0; i != vec.size(); ++i)
-  {
-    if (i != 0 && i%8 == 0) cout << endl;
-    cout << vec[i] << " ";
-  }
-  cout << endl;
-
+    cout << vec[i] << endl;
   return 0;
 }
 
