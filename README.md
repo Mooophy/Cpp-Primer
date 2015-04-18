@@ -1,8 +1,8 @@
 ##C++ Primer 5 Answers
 
-[![](https://img.shields.io/github/issues/pezy/CppPrimer.svg)](https://github.com/pezy/CppPrimer/issues)
-[![](https://img.shields.io/badge/license-CC0-blue.svg)](http://creativecommons.org/about/cc0)
-[![](https://img.shields.io/badge/%E4%B8%AD%E6%96%87-%E8%AE%A8%E8%AE%BA%E5%8C%BA-yellowgreen.svg)](https://github.com/Ocxs/Issues)
+[![GitHub issues](https://img.shields.io/github/issues/Mooophy/Cpp-Primer.svg)](https://github.com/Mooophy/Cpp-Primer/issues)
+[![GitHub license](https://img.shields.io/badge/license-CC0-blue.svg)](https://raw.githubusercontent.com/Mooophy/Cpp-Primer/master/LICENSE)
+[![](https://img.shields.io/badge/%E4%B8%AD%E6%96%87-%E8%AE%A8%E8%AE%BA%E5%8C%BA-yellowgreen.svg)](https://github.com/ReadingLab/Discussion-for-Cpp)
 [![](https://img.shields.io/badge/douban-%E5%B0%8F%E7%BB%84-green.svg)](http://www.douban.com/group/532124/)
 
 ### Note
