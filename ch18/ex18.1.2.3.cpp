@@ -70,7 +70,8 @@ void exercise(int *b, int *e)
     intArray p(v.size());
 
     //! approach 2:
-    //std::shared_ptr<int> p(new int[v.size()]);
+    //std::shared_ptr<int> p(new int[v.size()], [](int *p) { delete[] p; });
+                                                // delete array using lambda
 
     std::ifstream in("ints");            // the object in will be destroyed.
     // exception occurs here
