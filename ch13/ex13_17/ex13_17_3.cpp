@@ -19,16 +19,17 @@ public:
         static int unique = 10;
         mysn = unique++;
     }
+
     // 13.15
     numbered(const numbered& n) {
-        mysn = n.mysn+1;
+        mysn = n.mysn + 1;
     }
 
     int mysn;
 };
 
 // 13.16
-void f(const numbered &s) {
+void f(const numbered& s) {
     std::cout << s.mysn << std::endl;
 }
 
@@ -41,8 +42,6 @@ int main()
 }
 
 // output
-// 10    11    10
-// 10 -> 12 -> 11
-// 10    13    12
-// ^     ^     ^
-// 14    15    16
+// 10
+// 11
+// 12
