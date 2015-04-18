@@ -1,4 +1,4 @@
-﻿# Chapter 13. Copy Control
+# Chapter 13. Copy Control
 
 ## Exercise 13.1:
 >What is a copy constructor? When is it used?
@@ -134,7 +134,7 @@ Yes, the output will change. cause we don't use the synthesized copy-control mem
 
 Yes, the output will change. cause the function `f` haven't any copy operators. Thus, the output are the same when pass the each object to `f`.
 
-## [Exercise 13.17](ex13_17.cpp)
+## [Exercise 13.17-14](ex13_17_1.cpp)[Exercise 13.17-15](ex13_17_2.cpp)[Exercise 13.17-16](ex13_17_3.cpp)
 
 ## Exercise 13.18 [.h](ex13_18.h) | [.cpp](ex13_18.cpp)
 

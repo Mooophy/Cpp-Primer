@@ -8,7 +8,7 @@
 //  Write versions of numbered and f corresponding to the previous three exercises
 //  and check whether you correctly predicted the output.
 //
-//  See 13.14, 13.15, 13.16
+//  See 13.14, 13.15
 
 #include <iostream>
 
