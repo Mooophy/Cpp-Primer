@@ -45,10 +45,7 @@ string s;
 cout << s[0] << endl;
 ```
 
-invalid in theory, but the compiler passes.
-
-`s` is empty, so `s[0]` is undefined. But the compiler always define `s[0]`
-with `\0`, so you can use `s[0]` in the `cout`.
+Try to get the first element of the `string`. It is invalid, cause this is **undefined behavior**.
 
 ##[Exercise 3.10](ex3_10.cpp)
 ##Exercise 3.11
