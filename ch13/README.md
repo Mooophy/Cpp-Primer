@@ -50,12 +50,12 @@ when we copy a `StrBlobPrts`, the `weak_ptr` member's use_count isn't changed.(c
 >Assuming Point is a class type with a public copy constructor, identify each use of the copy constructor in this program fragment:
 ```cpp
 Point global;
-Point foo_bar(Point arg) // 1. Pass an object as an argument to a parameter of nonreference type
+Point foo_bar(Point arg) // 1
 {
-    Point local = arg, *heap = new Point(global); // 2.3. copy initialization
-    *heap = local; // 4. Define variables using an `=`
-    Point pa[ 4 ] = { local, *heap }; // 5. Brace initialize the elements in an array
-    return *heap; // 6. Return an object from a function that has a nonreference return type
+    Point local = arg, *heap = new Point(global); // 2, 3
+    *heap = local;
+    Point pa[ 4 ] = { local, *heap }; // 4, 5
+    return *heap; // 6
 }
 ```
 
@@ -134,7 +134,10 @@ Yes, the output will change. cause we don't use the synthesized copy-control mem
 
 Yes, the output will change. cause the function `f` haven't any copy operators. Thus, the output are the same when pass the each object to `f`.
 
-## [Exercise 13.17](ex13_17.cpp)
+## Exercise 13.17
+> Write versions of numbered and f corresponding to the previous three exercises and check whether you correctly predicted the output.
+
+[For 13.14](ex13_17_1.cpp) | [For 13.15](ex13_17_2.cpp) | [For 13.16](ex13_17_3.cpp)
 
 ## Exercise 13.18 [.h](ex13_18.h) | [.cpp](ex13_18.cpp)
 

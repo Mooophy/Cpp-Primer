@@ -2,13 +2,13 @@
 ##Exercise 3.2 : [part1](ex3_2a.cpp) | [part2](ex3_2b.cpp)
 ##Exercise 3.3
 >Explain how whitespace characters are handled in the string
-input operator and in the getline function.
+input operator and in the `getline` function.
 
 The `getline` function takes an input stream and a string.
 This function reads the given stream up to and including
 the first newline and stores what it read—not including
 the newline—in its string argument.
-After getline sees a newline, even if it is the first character in the input,
+After `getline` sees a newline, even if it is the first character in the input,
 it stops reading and returns.
 If the first character in the input is a newline,
 then the resulting string is the empty string.
@@ -45,10 +45,7 @@ string s;
 cout << s[0] << endl;
 ```
 
-invalid in theory, but the compiler passes.
-
-`s` is empty, so `s[0]` is undefined. But the compiler always define `s[0]`
-with `\0`, so you can use `s[0]` in the `cout`.
+Try to get the first element of the `string`. It is invalid, cause this is **undefined behavior**.
 
 ##[Exercise 3.10](ex3_10.cpp)
 ##Exercise 3.11
@@ -142,7 +139,7 @@ please see 2.2.1. Variable Definitions -> Default Initialization.
 
 `std::string` isn't a build-in type. The initializer will set it empty.
 `ia` and `ia2` are build-type. But `ia` isn't in the function body, so it
-will be initalized to **zero**. `ia2` is in the function body. so it's
+will be initialized to **zero**. `ia2` is in the function body. so it's
 value is **undefined**.
 
 You can also use gdb to debug the value when the code is running.
@@ -151,7 +148,7 @@ You can also use gdb to debug the value when the code is running.
 >List some of the drawbacks of using an array instead of a vector.
 
 1. can't add elements to an array.
-2. can't use auto to deduce the type from a list of initalizers.
+2. can't use auto to deduce the type from a list of initializers.
 3. no arrays of references.
 4. can't use template and iterator.
 5. vector have lots of useful methods and algorithms.
@@ -228,7 +225,7 @@ The code will print "helloworld" when you run it.
 because the character list in the `.rodata` like this:  
 
     h e l l o w o r l d \0  
-`While(*cp)` judge wether *cp is 0 or not. when *cp is not 0, it will print the character until 0.  
+`While(*cp)` judge weather *cp is 0 or not. when *cp is not 0, it will print the character until 0.  
 When you change the code like this:  
 
     const char ca[] = {'h', 'e', 'l', 'l', 'o', '\0'};  
