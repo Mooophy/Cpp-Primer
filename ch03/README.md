@@ -94,7 +94,7 @@ vector<string> v7{10, "hi"};  // size:10, value:"hi"
 ##[Exercise 3.17](ex3_17.cpp)
 ##[Exercise 3.18](ex3_18.cpp)
 ##[Exercise 3.19](ex3_19.cpp)
-##Exercise 3.20 : [part1](ex3_20a.cpp) | [part2](ex3_20a.cpp)
+##Exercise 3.20 : [part1](ex3_20a.cpp) | [part2](ex3_20b.cpp)
 ##[Exercise 3.21](ex3_21.cpp)
 ##[Exercise 3.22](ex3_22.cpp)
 ##[Exercise 3.23](ex3_23.cpp)
