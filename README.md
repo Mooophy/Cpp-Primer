@@ -45,8 +45,3 @@
   - [Chapter 17. Specialized Library Facilities](ch17)
   - [Chapter 18. Tools for Large Programs](ch18)
   - Chapter 19. Specialized Tools and Techniques
-
-### If you speak Chinese
-
-1. [PO在StackOverflow上的习题](http://book.douban.com/review/6500246/)
-2. [C++ Primer issues(豆瓣讨论组)](http://www.douban.com/group/532124/)
