@@ -24,6 +24,7 @@ read to termination and discard newline
 
 ##Exercise 3.4 : [part1](ex3_4a.cpp) | [part2](ex3_4b.cpp)
 ##Exercise 3.5 : [part1](ex3_5a.cpp) | [part2](ex3_5b.cpp)
+
 ##[Exercise 3.6](ex3_6.cpp)
 ##Exercise 3.7
 >What would happen if you define the loop control variable in the previous
@@ -93,7 +94,7 @@ vector<string> v7{10, "hi"};  // size:10, value:"hi"
 ##[Exercise 3.17](ex3_17.cpp)
 ##[Exercise 3.18](ex3_18.cpp)
 ##[Exercise 3.19](ex3_19.cpp)
-##[Exercise 3.20](ex3_20.cpp)
+##Exercise 3.20 : [part1](ex3_20a.cpp) | [part2](ex3_20a.cpp)
 ##[Exercise 3.21](ex3_21.cpp)
 ##[Exercise 3.22](ex3_22.cpp)
 ##[Exercise 3.23](ex3_23.cpp)
