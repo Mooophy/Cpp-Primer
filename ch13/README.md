@@ -134,7 +134,10 @@ Yes, the output will change. cause we don't use the synthesized copy-control mem
 
 Yes, the output will change. cause the function `f` haven't any copy operators. Thus, the output are the same when pass the each object to `f`.
 
-## [Exercise 13.17](ex13_17.cpp)
+## Exercise 13.17
+> Write versions of numbered and f corresponding to the previous three exercises and check whether you correctly predicted the output.
+
+[For 13.14](ex13_17_1.cpp) | [For 13.15](ex13_17_2.cpp) | [For 13.16](ex13_17_3.cpp)
 
 ## Exercise 13.18 [.h](ex13_18.h) | [.cpp](ex13_18.cpp)
 
