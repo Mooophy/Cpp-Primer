@@ -36,6 +36,9 @@ int main()
     // the destination is large enough to hold the number of elements being written.
     copy(lst.cbegin(), lst.cend(), vec.begin());
     
+    //another way to fix bug
+    //copy(lst.cbegin(), lst.cend(), back_inserter(vec));
+    
     // (b)
     vector<int> v;
     v.reserve(10);
