@@ -235,7 +235,7 @@ void insert(forward_list<string> &flst, string find, string insrt)
 vec.resize(100) do? What if we next wrote vec.resize(10)?
 
 ```cpp
-vec.resize(100);    // adds 75 elements of value 0 to the back of vec
+vec.resize(100);    // adds 75 items to the back of vec. These added items are value initialized.
 vec.resize(10);     // erases 90 elements from the back of vec
 ```
 
