@@ -149,7 +149,7 @@ You can also use gdb to debug the value when the code is running.
 >List some of the drawbacks of using an array instead of a vector.
 
 1. can't add elements to an array.
-2. vector is better supported bt std.
+2. vector is better supported by std.
 
 ##Exercise 3.30
 >Identify the indexing errors in the following code:
