@@ -149,10 +149,7 @@ You can also use gdb to debug the value when the code is running.
 >List some of the drawbacks of using an array instead of a vector.
 
 1. can't add elements to an array.
-2. can't use auto to deduce the type from a list of initializers.
-3. no arrays of references.
-4. can't use template and iterator.
-5. vector have lots of useful methods and algorithms.
+2. vector is better supported bt std.
 
 ##Exercise 3.30
 >Identify the indexing errors in the following code:
