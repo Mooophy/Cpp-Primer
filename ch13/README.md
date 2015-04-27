@@ -158,10 +158,10 @@ Because, all these classes are using smart pointers to manage dynamic memory whi
 
 ```cpp
 TextQuery(const TextQuery&) = delete;
-TextQuery& operator=(const TextQuery) = delete;
+TextQuery& operator=(const TextQuery&) = delete;
 
 QueryResult(const QueryResult&) = delete;
-QueryResult& operator=(const QueryResult) = delete;
+QueryResult& operator=(const QueryResult&) = delete;
 ```
 
 ## [Exercise 13.22](ex13_22.h)
@@ -174,7 +174,7 @@ Check 13.22.
 ## Exercise 13.24:
 >What would happen if the version of `HasPtr` in this section didn’t define a destructor? What if `HasPtr` didn’t define the copy constructor?
 
-If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when assignment happened, just points copied, the string witch `ps` points haven't been copied.
+If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when assignment happened, just points copied, the string which `ps` points haven't been copied.
 
 ## Exercise 13.25:
 >Assume we want to define a version of `StrBlob` that acts like a value. Also assume that we want to continue to use a shared_ptr so that our `StrBlobPtr` class can still use a weak_ptr to the vector. Your revised class will need a copy constructor and copy-assignment operator but will not need a destructor. Explain what the copy constructor and copy-assignment operators must do. Explain why the class does not need a destructor.
