@@ -154,13 +154,14 @@ There is an error in
     Unknown type name 'pos'
 
 ## Exercise 7.35
+> Explain the following code, indicating which definition of `Type` or `initVal` is used for each use of those names. Say how you would fix any errors.
 
 ```cpp
 typedef string Type;
 Type initVal(); // use `string`
 class Exercise {
 public:
-    typedef double Type;
+    typedef double Type; // error: cannot redefine Type
     Type setVal(Type); // use `double`
     Type initVal(); // use `double`
 private:
@@ -172,10 +173,17 @@ Type Exercise::setVal(Type parm) {  // first is `string`, second is `double`
     return val;
 }
 ```
+-----
+
+> However, in a class, if a member uses a name from an outer scope and that name is a type, then **the class may not subsequently redefine that name**.
+
+> Although it is an error to redefine a type name, **compilers are not required to diagnose this error. Some compilers will quietly accept such code**, even though the program is in error.
 
 **fixed**
 
-changed
+1. remove `typedef string Type;` and `Type initVal();`
+
+2. changed
 
 ```cpp
 Type Exercise::setVal(Type parm) {
