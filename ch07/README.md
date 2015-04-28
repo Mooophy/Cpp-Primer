@@ -183,7 +183,7 @@ Type Exercise::setVal(Type parm) {  // first is `string`, second is `double`
 
 1. remove `typedef string Type;` and `Type initVal();`
 
-2. changed
+2. change
 
 ```cpp
 Type Exercise::setVal(Type parm) {
