@@ -6,10 +6,10 @@ OTHOBJS = ex13_42 ex13_48
 #	ex13_49_Message ex13_49_String ex13_49_StrVec 
 all:$(OBJECTS) $(OTHOBJS)
 
-ex13_42 : ex13_42.o ex13_42_TextQuery.o ex13_42_StrVec.o ex13_42_TextQuery.h ex13_42_StrVec.h
+ex13_42 : ex13_42.o ex13_42_TextQuery.o ex13_42_StrVec.o
 	$(CC) $(CCFLAGS) $(LOCFLAGS) -o $@ $^
 
-ex13_48 : ex13_48.o ex13_44_47.o ex13_44_47.h
+ex13_48 : ex13_48.o ex13_44_47.o 
 	$(CC) $(CCFLAGS) $(LOCFLAGS) -o $@ $^
 
 # tells make to use the file "../GNU_makefile_template", which
