@@ -4,7 +4,7 @@ OBJECTS = ex17_10 ex17_11_12_13 ex17_1_2 ex17_14_15_16 ex17_17_18 \
 OTHOBJS = ex17_4_5_6_7_8 
 #ex17_3 ex17_3_TextQuery.cpp 
 
-ex17_4_5_6_7_8 : ex17_4_5_6_7_8.o ex17_4_5_6_7_8_SalesData.o ex17_4_5_6_7_8_SalesData.h
+ex17_4_5_6_7_8 : ex17_4_5_6_7_8.o ex17_4_5_6_7_8_SalesData.o 
 	$(CC) $(CCFLAGS) $(LOCFLAGS) -o $@ $^
 
 #ex17_3 :  ex17_3.o ex17_3_TextQuery.o ex17_3_TextQuery.h
