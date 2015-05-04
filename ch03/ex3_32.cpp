@@ -17,9 +17,13 @@ int main()
         ia2[i] = ia[i];
 
     // use vector
+    /*
     vector<int> iv(10);
     for (auto iter = iv.begin(); iter != iv.end(); ++iter)    
         *iter = iter - iv.begin();
+    */
+    //use vector initialize 
+    vector<int> v(ia,ia+sizeof(ia) / sizeof(ia[0]));
 
     vector<int> iv2(iv);
 
