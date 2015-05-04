@@ -19,6 +19,7 @@
 //  number of items. If the number of items is large, that's a huge
 //  difference. Log(100,000) is 17; that's a major speed improvement.
 //  The same goes for removal.
+//
 //  http://stackoverflow.com/questions/8686725/what-is-the-difference-between-stdset-and-stdvector
 //!
 #include <iostream>
