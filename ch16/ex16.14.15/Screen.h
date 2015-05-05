@@ -31,13 +31,13 @@ public:
         return os;
     }
 
-    friend std::istream & operator>> ( std::istream &os , Screen &  c )
+    friend std::istream & operator>> ( std::istream &is , Screen &  c )
     {
             char a;
-            os>>a;
+            is>>a;
             std::string temp(H*W,a);
             c.contents = temp;
-            return os;
+            return is;
     }
 private:
     pos cursor = 0;
