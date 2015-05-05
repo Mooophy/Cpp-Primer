@@ -17,33 +17,24 @@
 //  to the number of items already in the vector. The time it takes
 //  to insert an item into a set is proportional to the log of the
 //  number of items. If the number of items is large, that's a huge
-//  difference. Log(100,000) is 5; that's a major speed improvement.
+//  difference. Log(100,000) is 17; that's a major speed improvement.
 //  The same goes for removal.
+
 //  http://stackoverflow.com/questions/8686725/what-is-the-difference-between-stdset-and-stdvector
 //!
 #include <iostream>
-#include <map>
 #include <string>
+#include <vector>
 #include <algorithm>
-
-
 
 int main()
 {
     std::vector<std::string> exclude = {"aa","bb","cc"};
-    std::string word;
-    while([&]()
-    {
-          std::cout << "enter:\n";
-          std::cin >> word;
-          return word != "@q";
-    }())
-    {
-        for(const auto &e : exclude)
-            if (e == word)  std::cout << "excluded!";
+    for (std::string word; std::cin >> word; ) {
+        if (std::find(exclude.begin(), exclude.end(), word) != exclude.end()) std::cout << "excluded!" << std::endl;
+        else exclude.push_back(word);
     }
-
-    return 0;
+    for (auto const& s : exclude)
+        std::cout << s << " ";
+    std::cout << std::endl;
 }
-
-
