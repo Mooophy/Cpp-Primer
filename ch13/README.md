@@ -392,7 +392,7 @@ Foo Foo::sorted() const & {
 recursion and stack overflow.
 
 @miaojiuchen:
-Because the local variable "ret" here is a lvalue, so that when we call "ret.sorted()", we actually not call the member function "Foo Foo::sorted() &&" as our exceptation but "Foo Foo::sorted() const &;", then the code will be trapped into a recursion and cause deadly stack overflow.
+Because the local variable `ret` here is an Lvalue, so when we call `ret.sorted()`, we are actually not calling the member function `Foo Foo::sorted() &&` as expected, but `Foo Foo::sorted() const &` instead. As a result, the code will be trapped into a recursion and causes a deadly stack overflow.
 
 ## Exercise 13.57:
 >What if we defined sorted as:
