@@ -104,21 +104,8 @@ a>b && b>c && c>d
 ##Exercise 4.12
 >Assuming `i`, `j`, and `k` are all ints, explain what `i != j < k` means.
 
-According to Operator precedence, `i != j < k` is same as `i != (j < k)`.
+`i != j < k` is equivalent to `i != (j < k)`.
 
-The condition group `j` and `k` to the `<` operator. The `bool` result of that expression is the right hand operand of the `!=` operator.
-That is `i`(int) is compared to the `true/false` result of the first comparison! To accomplish the test we intended, we can rewrite the expression as follows:
-
-```cpp
-i != j && j < k
-```
-
------
-
-**reference**
-
-> It is usually a bad idea to use the boolean literals `true` and `false` as operands in a comparison.
-These literals should be used only to compare to an object of type `bool`.
 
 ##Exercise 4.13
 >What are the values of i and d after each assignment?

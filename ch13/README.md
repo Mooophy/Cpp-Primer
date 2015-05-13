@@ -134,7 +134,10 @@ Yes, the output will change. cause we don't use the synthesized copy-control mem
 
 Yes, the output will change. cause the function `f` haven't any copy operators. Thus, the output are the same when pass the each object to `f`.
 
-## [Exercise 13.17](ex13_17.cpp)
+## Exercise 13.17
+> Write versions of numbered and f corresponding to the previous three exercises and check whether you correctly predicted the output.
+
+[For 13.14](ex13_17_1.cpp) | [For 13.15](ex13_17_2.cpp) | [For 13.16](ex13_17_3.cpp)
 
 ## Exercise 13.18 [.h](ex13_18.h) | [.cpp](ex13_18.cpp)
 
@@ -155,10 +158,10 @@ Because, all these classes are using smart pointers to manage dynamic memory whi
 
 ```cpp
 TextQuery(const TextQuery&) = delete;
-TextQuery& operator=(const TextQuery) = delete;
+TextQuery& operator=(const TextQuery&) = delete;
 
 QueryResult(const QueryResult&) = delete;
-QueryResult& operator=(const QueryResult) = delete;
+QueryResult& operator=(const QueryResult&) = delete;
 ```
 
 ## [Exercise 13.22](ex13_22.h)
@@ -171,7 +174,7 @@ Check 13.22.
 ## Exercise 13.24:
 >What would happen if the version of `HasPtr` in this section didn’t define a destructor? What if `HasPtr` didn’t define the copy constructor?
 
-If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when assignment happened, just points copied, the string witch `ps` points haven't been copied.
+If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when assignment happened, just points copied, the string which `ps` points haven't been copied.
 
 ## Exercise 13.25:
 >Assume we want to define a version of `StrBlob` that acts like a value. Also assume that we want to continue to use a shared_ptr so that our `StrBlobPtr` class can still use a weak_ptr to the vector. Your revised class will need a copy constructor and copy-assignment operator but will not need a destructor. Explain what the copy constructor and copy-assignment operators must do. Explain why the class does not need a destructor.
@@ -387,6 +390,9 @@ Foo Foo::sorted() const & {
 ```
 
 recursion and stack overflow.
+
+@miaojiuchen:
+Because the local variable `ret` here is an Lvalue, so when we call `ret.sorted()`, we are actually not calling the member function `Foo Foo::sorted() &&` as expected, but `Foo Foo::sorted() const &` instead. As a result, the code will be trapped into a recursion and causes a deadly stack overflow.
 
 ## Exercise 13.57:
 >What if we defined sorted as:

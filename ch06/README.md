@@ -48,7 +48,7 @@ using std::cout;
 using std::endl;
 
 void factorial(){
-    
+
     int num=0;
     unsigned result=1;
     cout<<"Please input a positive number: "<<endl;
@@ -323,7 +323,7 @@ constexpr bool isShorter(const string& str1, const string& str2)
     return str1.size() < str2.size();
 }
 ```
-
+If you want know more about `constexpr function `, maybe [it](http://stackoverflow.com/questions/28880538/i-am-confused-about-a-constexpr-function) is useful to you.
 ## [Exercise 6.47](ex6_47.cpp)
 ## Exercise 6.48
 

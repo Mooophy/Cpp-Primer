@@ -1,3 +1,6 @@
+.PHONY : all clean clobber
+
+# automake compile all the files in all subdirectories
 all:  
 	cd ch01; make  all
 	cd ch02; make  all
@@ -18,6 +21,7 @@ all:
 	cd ch17; make  all
 	cd ch18; make  all
 
+# automake remvoe the object file in all subdirectories
 clean: 
 	cd ch01; make  clean
 	cd ch02; make  clean
@@ -38,6 +42,7 @@ clean:
 	cd ch17; make  clean
 	cd ch18; make  clean
 
+# automake remove the object and executable files in all subdirectories
 clobber: 
 	cd ch01; make  clobber
 	cd ch02; make  clobber
