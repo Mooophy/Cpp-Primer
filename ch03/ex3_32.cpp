@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <iterator>
 
 using std::cout; using std::endl; using std::vector;
 
@@ -16,7 +15,11 @@ int main()
         ia2[i] = ia[i];
 
     // use vector
-    vector<int> iv(std::begin(ia2), std::end(ia2));
+    size_t index=0;
+    vector<int> iv(10);
+    for(auto &i : iv)
+            i=index++;      // use post-increment operator to assign the value before it is incremented
+
     vector<int> iv2(iv);
 
     for (auto i : iv2)
