@@ -3,21 +3,22 @@
 
 using std::cout; using std::endl;
 
+const char cstr1[]="Hello";
+const char cstr2[]="world!";
+
+constexpr size_t calclen()
+{
+	return strlen(cstr1) + strlen(" ") + strlen(cstr2) +1; // lenght of the strings and the null terminator
+}
+
 int main()
 {
-    const char* cs1 = "Wangyue";
-    const char* cs2 = "Pezy";
-    
-    size_t size = strlen(cs1) + strlen(cs2) + 1;
-    char* cs3 = new char(size);
-    
-    strcpy(cs3, cs1);
-    strcat(cs3, " ");
-    strcat(cs3, cs2);
-    
-    cout << cs3 << endl;
-    
-    delete cs3;
+	char hello[calclen()];
+	// adding two C-style strings
+	strcpy(hello, cstr1);
+	strcat(hello, " ");
+	strcat(hello, cstr2);
 
-    return 0;
+	cout << hello << endl;
+	return 0;
 }
