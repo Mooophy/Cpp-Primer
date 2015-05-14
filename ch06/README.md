@@ -315,15 +315,16 @@ Both two should put in a header. (a) is an inline function. (b) is the declarati
 For example, the function `arrPtr` in [Exercise 6.38](#exercise-638) and `make_plural` in [Exercise 6.42](#exercise-642) should be defined as `inline`. But the function `func` in [Exercise 6.4](#exercise-64) shouldn't. Cause it just being call once and too many codes in the function.
 
 ## Exercise 6.46
+> Would it be possible to define `isShorter` as a `constexpr`? If so, do so. If not, explain why not.
 
-Yes.
-```cpp
-constexpr bool isShorter(const string& str1, const string& str2)
-{
-    return str1.size() < str2.size();
-}
-```
-If you want know more about `constexpr function `, maybe [it](http://stackoverflow.com/questions/28880538/i-am-confused-about-a-constexpr-function) is useful to you.
+No.
+
+> A constexpr function is defined like any other function but must meet certain restrictions: The **return type** and **the type of each parameter** in a must be a literal type
+
+But `std::string`(parameter of `isShorter`) is not a literal type.
+
+more discusses: [#22](https://github.com/ReadingLab/Discussion-for-Cpp/issues/22)
+
 ## [Exercise 6.47](ex6_47.cpp)
 ## Exercise 6.48
 
