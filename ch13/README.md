@@ -223,7 +223,7 @@ some existing `Folders` will out of sync with the `Message` after assignment.
 >We did not use copy and swap to define the Message assignment operator. Why do you suppose this is so?
 
 @Mooophy
-The copy and swap is an elegant way when working with dynamicly allocated memory. In the Message class ,noing is allocated dynamically. Thus using this idiom makes no sense and will make it more complicated to implement due to the pointers that point back.
+The copy and swap is an elegant way when working with dynamicly allocated memory. In the Message class ,nothing is allocated dynamically. Thus using this idiom makes no sense and will make it more complicated to implement due to the pointers that point back.
 
 @pezy
 In this case, `swap` function is special. It will be clear two `Message`'s folders , then swap members, and added themselves to each folders. But, `Message` assignment operator just clear itself, and copy the members, and added itself to each folders. The `rhs` don't need to clear and add to folders. So, if using copy and swap to define, it will be very inefficiency.
