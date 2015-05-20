@@ -1,21 +1,20 @@
-// Warning: Visual Studio 2013 cannot support C99 VLA(http://en.wikipedia.org/wiki/Variable-length_array)
-// please change compiler(such as gcc or clang) to run following codes.
 // more discuss: https://github.com/Mooophy/Cpp-Primer/pull/241
-// @pezy
+// @frank67
 
 #include <iostream>
 #include <cstring>
 
+const char cstr1[]="Hello";
+const char cstr2[]="world!";
+
 int main()
 {
-    char cs1[] = "Hi";
-    char cs2[] = "frank67";
+    constexpr size_t new_size = strlen(cstr1) + strlen(" ") + strlen(cstr2) +1;
+	char cstr3[new_size];
 
-    char cs3[strlen(cs1) + strlen(" ") + strlen(cs2) + 1];
+	strcpy(cstr3, cstr1);
+	strcat(cstr3, " ");
+	strcat(cstr3, cstr2);
 
-    strcpy(cs3, cs1);
-    strcat(cs3, " ");
-    strcat(cs3, cs2);
-
-    std::cout << cs3 << std::endl;
+	std::cout << cstr3 << std::endl;
 }
