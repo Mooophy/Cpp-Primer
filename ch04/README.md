@@ -63,12 +63,14 @@ unsigned short usvalue = 65535; ++usvalue;  // 0
 ```
 
 ##Exercise 4.8
->Explain when operands are evaluated in the logical AND,
-logical OR, and equality operators.
+>Explain when operands are evaluated in the logical `AND`, logical `OR`, and equality operators.
 
-logical `AND` : `true` only if both its operands evaluated to `true`;
-logical `OR`  : `true` if either of its operands evaluated to `true`;
-equality operators : `true` only if its operands are equal.
+from the book:
+> The logical `AND` and `OR` operators always evaluate their left operand before the right. Moreover, the right operand is evaluated if and only if the left operand does not determine the result. This strategy is known as **short-circuit evaluation**.
+
+- logical `AND` : the second operand is evaluated if and only if the left side is `true`.
+- logical `OR`  : the second operand is evaluated if and only if the left side is `false`
+- equality operators : `true` only if both operands have the same value, otherwise, it returns `false`.
 
 ##Exercise 4.9
 >Explain the behavior of the condition in the following if:
@@ -174,7 +176,7 @@ vec[ival++] <= vec[ival] // incorrect. It is an **undefined behavior.**
 // correct:
 vec[ival] <= vec[ival+1]
 ```
->Every value computation and side effect of the first (left) argument of the built-in logical AND operator && and the built-in logical OR operator || is sequenced before every value computation and side effect of the second (right) argument. 
+>Every value computation and side effect of the first (left) argument of the built-in logical AND operator && and the built-in logical OR operator || is sequenced before every value computation and side effect of the second (right) argument.
 see [order of evaluation](http://en.cppreference.com/w/cpp/language/eval_order).
 
 ##Exercise 4.20

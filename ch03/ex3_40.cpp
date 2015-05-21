@@ -1,23 +1,20 @@
+// more discuss: https://github.com/Mooophy/Cpp-Primer/pull/241
+// @frank67
+
 #include <iostream>
 #include <cstring>
 
-using std::cout; using std::endl;
+const char cstr1[]="Hello";
+const char cstr2[]="world!";
 
 int main()
 {
-    const char* cs1 = "Wangyue";
-    const char* cs2 = "Pezy";
+    constexpr size_t new_size = strlen(cstr1) + strlen(" ") + strlen(cstr2) +1;
+    char cstr3[new_size];
     
-    size_t size = strlen(cs1) + strlen(cs2) + 1;
-    char* cs3 = new char(size);
+    strcpy(cstr3, cstr1);
+    strcat(cstr3, " ");
+    strcat(cstr3, cstr2);
     
-    strcpy(cs3, cs1);
-    strcat(cs3, " ");
-    strcat(cs3, cs2);
-    
-    cout << cs3 << endl;
-    
-    delete cs3;
-
-    return 0;
+    std::cout << cstr3 << std::endl;
 }
