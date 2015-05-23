@@ -69,7 +69,7 @@ Such as `Book`
 ## Exercise 14.6:
 >Define an output operator for your `Sales_data` class.
 
-see [Exercise 14.2](#Exercise 14.2).
+see [Exercise 14.2](#exercise-142).
 
 ## Exercise 14.7:
 >Define an output operator for you `String` class you wrote for the exercises in 13.5 (p. 531).
@@ -141,7 +141,7 @@ Discussing on [SO](http://stackoverflow.com/questions/21071167/why-is-it-more-ef
 ## Exercise 14.17:
 >Should the class you chose for exercise 7.40 from 7.5.1(p. 291) define the equality operators? If so, implement them. If not, explain why not.
 
-yes.see [Exercise 14.15](#Exercise 14.15)
+yes.see [Exercise 14.15](#exercise-1415)
 
 ## Exercise 14.18:
 >Define relational operators for your `StrBlob`, `StrBlobPtr`, `StrVec`, and `String` classes.
