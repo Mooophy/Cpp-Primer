@@ -49,7 +49,7 @@
 
 (c) changing state of objects. Hence, member
 
-(d) = [] () -> must be member
+(d) = () [] -> must be member
 
 (e) non-member
 
@@ -57,7 +57,7 @@
 
 (g) symetric , non-member
 
-(h) = [] () -> must be member
+(h) = () [] -> must be member
 
 ## Exercise 14.5:
 >In exercise 7.40 from 7.5.1 (p. 291) you wrote a sketch of one of the following classes. Decide what, if any, overloaded operators your class should provide.
