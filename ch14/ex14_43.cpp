@@ -1,7 +1,7 @@
 /***************************************************************************
  *  @file       main.cpp
- *  @author     Alan.W
- *  @date       20  Jan 2014
+ *  @author     XDXX， Yue Wang
+ *  @date       5/24/2015
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
@@ -12,39 +12,19 @@
 //!
 
 #include <iostream>
-#include <vector>
-#include <algorithm>
 #include <string>
-#include <fstream>
-#include <stack>
-
+#include <functional>
+#include <algorithm>
 
 int main()
 {
-    std::vector<int> v = {5,7,8,9};
+    auto data = { 2, 3, 4, 5 };
+    int input;
+    std::cin >> input;
     std::modulus<int> mod;
-
-    int num;
-    while(std::cin >> num)
-    {
-        std::string ret = "no\n";
-        for (auto i : v)
-        {
-            if (! mod(num,i))
-            {
-                ret = "yes!\n";
-                break;
-            }
-        }
-        std::cout << ret;
-    }
+    auto predicator = [&](int i){ return 0 == mod(input, i); };
+    auto is_divisible = std::any_of(data.begin(), data.end(), predicator);
+    std::cout << (is_divisible ? "Yes!" : "No!") << std::endl;
 
     return 0;
 }
-
-
-
-
-
-
-
