@@ -1,6 +1,6 @@
 /***************************************************************************
  *  @file       main.cpp
- *  @author     XDXX
+ *  @author     XDXX， Yue Wang
  *  @date       5/24/2015
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
@@ -12,24 +12,19 @@
 //!
 
 #include <iostream>
-#include <vector>
 #include <string>
 #include <functional>
+#include <algorithm>
 
 int main()
 {
-    std::vector<int> vec = {1, 2, 3, 4};
+    auto data = { 2, 3, 4, 5 };
+    int input;
+    std::cin >> input;
     std::modulus<int> mod;
-    int num;
-    std::cin >> num;
-    std::string result = "yes";
-    for (const auto i : vec) {
-        if (mod(num, i)) {
-            result = "no";
-            break;
-        }
-    }
+    auto predicator = [&](int i){ return 0 == mod(input, i); };
+    auto is_divisible = std::any_of(data.begin(), data.end(), predicator);
+    std::cout << (is_divisible ? "Yes!" : "No!") << std::endl;
 
-    std::cout << result << std::endl;
     return 0;
 }
