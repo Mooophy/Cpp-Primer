@@ -1,7 +1,7 @@
 /***************************************************************************
  *  @file       main.cpp
- *  @author     Alan.W
- *  @date       20  Jan 2014
+ *  @author     XDXX
+ *  @date       5/24/2015
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
@@ -13,38 +13,23 @@
 
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include <string>
-#include <fstream>
-#include <stack>
-
+#include <functional>
 
 int main()
 {
-    std::vector<int> v = {5,7,8,9};
+    std::vector<int> vec = {1, 2, 3, 4};
     std::modulus<int> mod;
-
     int num;
-    while(std::cin >> num)
-    {
-        std::string ret = "no\n";
-        for (auto i : v)
-        {
-            if (! mod(num,i))
-            {
-                ret = "yes!\n";
-                break;
-            }
+    std::cin >> num;
+    std::string result = "yes";
+    for (const auto i : vec) {
+        if (mod(num, i)) {
+            result = "no";
+            break;
         }
-        std::cout << ret;
     }
 
+    std::cout << result << std::endl;
     return 0;
 }
-
-
-
-
-
-
-
