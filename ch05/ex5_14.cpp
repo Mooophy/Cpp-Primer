@@ -1,21 +1,33 @@
 #include <iostream>
 #include <string>
 
-using std::cout; using std::cin; using std::endl; using std::string; using std::pair;
+using std::cout; 
+using std::cin; 
+using std::endl; 
+using std::string; 
 
 int main()
 { 
-    pair<string, int> max_duplicated;
-    int count = 0;
-    for (string str, prestr; cin >> str; prestr = str)
-    {
-        if (str == prestr) ++count;
-        else count = 0; 
-        if (count > max_duplicated.second) max_duplicated = {prestr, count};
+    int count = 0,tmpcount = 0;
+    string currentstr,str;
+    for (string prestr; cin >> currentstr;) {
+        if (currentstr == prestr) 
+            ++tmpcount;
+        else {
+            if (count < tmpcount){
+                count = tmpcount;
+                str = prestr;
+            }
+            prestr = currentstr; //only currentstr != prestr , the assign is needed
+            tmpcount = 0;
+        }
     }
-    
-    if (max_duplicated.first.empty()) cout << "There's no duplicated string." << endl;
-    else cout << "the word " << max_duplicated.first << " occurred " << max_duplicated.second + 1 << " times. " << endl;
+    if (count < tmpcount){ // in case the last time that occurs tmpcount > count
+        count = tmpcount; 
+        str = currentstr;
+    }
+    if (count == 0) cout << "There's no duplicated string." << endl;
+    else cout << "the word " << str << " occurred " << count + 1 << " times. " << endl;
     
     return 0;
 }
