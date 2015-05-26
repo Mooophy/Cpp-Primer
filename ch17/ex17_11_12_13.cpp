@@ -1,7 +1,7 @@
 /***************************************************************************
  *  @file       main.cpp
- *  @author     Alan.W
- *  @date       6  Mar 2014
+ *  @author     gau fung
+ *  @date       25  May 2015
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
@@ -25,54 +25,61 @@
 //! structure from the previous two exercises.
 //!
 
-
-
-
+#ifndef QUIZ
+#define QUIZ
 #include <iostream>
 #include <bitset>
-#include <vector>
+#include <utility>
+#include <string>
+#include <iostream>
+//class type: quiz (for Data Stuture)
+template<std::size_t N>
+class Quiz{
+public:
+    //constructor
+	Quiz()=default;
+	Quiz(std::string& s):bitquiz(s){}
+	//generate the grade for this quiz
+	template<std::size_t M>
+	friend std::size_t grade(Quiz<M>&,Quiz<M>&);	
+	//output the bitset
+	template<std::size_t M>
+	friend std::ostream& operator<<(std::ostream&,Quiz<M>&);
 
-
-//! for ex17.12
-//! updates the quiz results
-template<size_t N>
-void update(std::bitset<N>& bset, std::pair<std::size_t, bool> pair);
-
-//! for ex17.13
-//! mark
-template<size_t N>
-std::size_t mark(const std::bitset<N>& std_ans, const std::bitset<N> ans);
-
-
-int main()
-{
-    std::bitset<10> bset("1010101010");
-    //! for ex17.12
-    update(bset,std::make_pair(2,1));
-    std::cout << bset << std::endl;
-
-    //! for ex17.13
-    std::bitset<10> std_ans ("1100011000");
-    std::cout << std_ans << std::endl;
-    std::cout << mark(std_ans, bset) << std::endl;
-
-    return 0;
+	//update bitset
+	void update(std::pair<std::size_t,bool>);
+private:
+    //the bitset
+	std::bitset<N> bitquiz;	
+};
+#endif
+template<std::size_t N>
+void Quiz<N>::update(std::pair<std::size_t,bool> pair){
+	 bitquiz.set(pair.first,pair.second);//update the value
 }
-
-//! for ex17.12
-//! updates the quiz results
-template<size_t N>
-void update(std::bitset<N>& bset, std::pair<std::size_t, bool> pair)
-{
-    bset[pair.first] = pair.second;
+template<std::size_t M>
+std::ostream& operator<<(std::ostream& os,Quiz<M>& quiz){
+	os<<quiz.bitquiz;
+	return os;
 }
-
-//! for ex17.13
-//! mark
-template<size_t N>
-std::size_t mark(const std::bitset<N>& std_ans, const std::bitset<N> ans)
-{
-    auto result = std_ans ^ ans;
+template<std::size_t M>
+std::size_t grade(Quiz<M>& corAns,Quiz<M>& stuAns){
+	auto result = stuAns.bitquiz ^ corAns.bitquiz;
     result.flip();
     return result.count();
+}
+int main(){
+	//Ex17_11
+	std::string s="1010101";
+	Quiz<10> quiz(s);
+	std::cout<<quiz<<std::endl;
+	//EX17_12
+	quiz.update(std::make_pair(1,true));
+	std::cout<<quiz<<std::endl;
+	//Ex17_13
+	std::string answer="10011";
+	std::string stu_answer="11001";
+	Quiz<5> ans(answer),stu_ans(stu_answer);
+	std::cout<<grade(ans,stu_ans);
+	return 0;
 }
