@@ -6,7 +6,7 @@ null statement is the empty statement. like this:
 ; // null statement
 ```
 
-I might use a null statement when the **language requires a statement but the program's logic does not. For example:
+I might use a null statement when the language requires a statement but the program's logic does not. For example:
 ```cpp
 // read until we hit end-of-file or find an input equal to sought
 while (cin >> s && s != sought)
