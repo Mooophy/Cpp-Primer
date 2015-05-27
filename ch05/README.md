@@ -161,16 +161,16 @@ Colloquial term used to refer to the problem of how to process nested if stateme
 ```
 
 ```cpp
-(a) unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
+(a) Error: break lost
+    unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
     char ch = next_text();
     switch (ch) {
         case 'a': aCnt++; break;
         case 'e': eCnt++; break;
-        case 'i':
-        case 'o':
-        case 'u': iouCnt++; break;
+        default : iouCnt++; break;
     }
-(b) unsigned index = some_value();
+(b) Error: variable ix defines inside the body of switch
+    unsigned index = some_value();
     int ix;
     switch (index) {
         case 1:
@@ -181,7 +181,8 @@ Colloquial term used to refer to the problem of how to process nested if stateme
             ix = static_cast<int>(ivec.size())-1;
             ivec[ ix ] = index;
     }
-(c) unsigned evenCnt = 0, oddCnt = 0;
+(c) Error: case label syntax is wrong
+    unsigned evenCnt = 0, oddCnt = 0;
     int digit = get_num() % 10;
     switch (digit) {
         case 1: case 3: case 5: case 7: case 9:
@@ -191,7 +192,8 @@ Colloquial term used to refer to the problem of how to process nested if stateme
             evencnt++;
             break;
     }
-(d) const unsigned ival=512, jval=1024, kval=4096;
+(d) Error: case label must be constant value
+    const unsigned ival=512, jval=1024, kval=4096;
     unsigned bufsize;
     unsigned swt = get_bufCnt();
     switch(swt) {
