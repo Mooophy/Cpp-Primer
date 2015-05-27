@@ -161,7 +161,7 @@ Colloquial term used to refer to the problem of how to process nested if stateme
 ```
 
 ```cpp
-(a) Error: break lost
+(a) // Error: should have a break statement
     unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
     char ch = next_text();
     switch (ch) {
@@ -169,7 +169,7 @@ Colloquial term used to refer to the problem of how to process nested if stateme
         case 'e': eCnt++; break;
         default : iouCnt++; break;
     }
-(b) Error: variable ix defines inside the body of switch
+(b) // Error: ix is not in scope.
     unsigned index = some_value();
     int ix;
     switch (index) {
@@ -181,7 +181,7 @@ Colloquial term used to refer to the problem of how to process nested if stateme
             ix = static_cast<int>(ivec.size())-1;
             ivec[ ix ] = index;
     }
-(c) Error: case label syntax is wrong
+(c) // Error: case label syntax error
     unsigned evenCnt = 0, oddCnt = 0;
     int digit = get_num() % 10;
     switch (digit) {
@@ -192,7 +192,7 @@ Colloquial term used to refer to the problem of how to process nested if stateme
             evencnt++;
             break;
     }
-(d) Error: case label must be constant value
+(d) // Error: case label must be a constant expression
     const unsigned ival=512, jval=1024, kval=4096;
     unsigned bufsize;
     unsigned swt = get_bufCnt();
