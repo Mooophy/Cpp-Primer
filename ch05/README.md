@@ -50,7 +50,7 @@ This rewrite diminishes the readability of the code. The comma operator always g
 But there are no meaning in this example, however, also are incomprehensible.
 
 ##Exercise 5.4
->Explain each of the following examples, and correct anyproblems you detect.
+>Explain each of the following examples, and correct any problems you detect.
 - (a) while (string::iterator iter != s.end()) { /* . . . */ }
 - (b) while (bool status = find(word)) { /* . . . */ }
 if (!status) { /* . . . */ }
@@ -95,9 +95,10 @@ In fact, the judge `!status` is unnecessary. If the `status=false`, we leave the
         minval = ival;
         occurs = 1;
     }
-(c) if (int ival = get_value())
+(c) int val;
+    if (ival = get_value())
         cout << "ival = " << ival << endl;
-    else if (!ival)
+    if (!ival)
         cout << "ival = 0\n";
 (d) if (ival == 0)
     ival = get_value();
