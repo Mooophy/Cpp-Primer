@@ -10,7 +10,6 @@
 - g++ and clang++ are recommended. VS may be used as well, but up to May 2015, Visual Studio has not implemented all c++ 11 features yet.
 - Use `-std=c++11`flag for compiling.
 - If any bug caught, please [let me know](https://github.com/Mooophy/Cpp-Primer/issues/new), thanks.
-- I have downloaded the headers from this book's [web site](http://www.informit.com/store/c-plus-plus-primer-9780321714114) and put them in the `include` folder.
 
 ### How to contribute
 
