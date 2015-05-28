@@ -294,7 +294,6 @@ I prefer `for` to `while` in such cases, because it's terse. More importantly, o
 (c) do {
         int ival = get_response();
     } while (ival);
-
 (a) // Error: forget the curly braces when multiple statements must be
 	//        executed as a block
 	do {
