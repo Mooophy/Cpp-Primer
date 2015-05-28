@@ -88,19 +88,24 @@ In fact, the judge `!status` is unnecessary. If the `status=false`, we leave the
 ```
 
 ```cpp
-(a) if (ival1 != ival2) ival1 = ival2; // lost semicolon.
+(a) // Error: should have a semicolon in the end
+    if (ival1 != ival2) ival1 = ival2;
     else ival1 = ival2 = 0;
-(b) if (ival < minval)
+(b) // Error: forget the curly braces when multiple statements must be
+	//        executed as a block
+    if (ival < minval)
     {
         minval = ival;
         occurs = 1;
     }
-(c) int val;
+(c) // Error: variable val is not in scope
+	int val;
     if (ival = get_value())
         cout << "ival = " << ival << endl;
     if (!ival)
         cout << "ival = 0\n";
-(d) if (ival == 0)
+(d) // Error: confuse the equality operator and assignment operator
+	if (ival == 0)
     ival = get_value();
 ```
 
@@ -232,13 +237,16 @@ the output should indicate that the word now occurred three times.
 ```
 
 ```cpp
-(a) int ix;
+(a) //Error: ix is not in scope
+	int ix;
     for (ix = 0; ix != sz; ++ix)  { /* ... */ }
     if (ix != sz)
     // . . .
-(b) int ix;
+(b) //Error: for loop should have three semicolon
+	int ix;
     for (; ix != sz; ++ix) { /* ... */ }
-(c) for (int ix = 0; ix != sz; ++ix) { /*...*/ }
+(c) //Error: dead loop
+	for (int ix = 0; ix != sz; ++ix) { /*...*/ }
 ```
 
 ##Exercise 5.16
@@ -274,20 +282,36 @@ I prefer `for` to `while` in such cases, because it's terse. More importantly, o
 ##Exercise 5.18
 >Explain each of the following loops. Correct any problems you detect.
 ```cpp
-(a) do { // added bracket.
+(a) do 
+        int v1, v2;
+        cout << "Please enter two numbers to sum:" ;
+        if (cin >> v1 >> v2)
+            cout << "Sum is: " << v1 + v2 << endl;
+    while (cin);
+(b) do {
+        // . . .
+    } while (int ival = get_response());
+(c) do {
+        int ival = get_response();
+    } while (ival);
+(a) // Error: forget the curly braces when multiple statements must be
+	//        executed as a block
+	do {
         int v1, v2;
         cout << "Please enter two numbers to sum:" ;
         if (cin >> v1 >> v2)
             cout << "Sum is: " << v1 + v2 << endl;
     }while (cin);
-(b) int ival;
+(b) //Error: variable is declared in the condition of do while statement
+	int ival;
     do {
         // . . .
-    } while (ival = get_response()); // should not declared in this scope.
-(c) int ival = get_response();
+    } while (ival = get_response());
+(c) //Error: ival is not declared in scope
+	int ival = get_response();
     do {
         ival = get_response();
-    } while (ival); // ival is not declared in this scope.
+    } while (ival);
 ```
 
 ##[Exercise 5.19](ex5_19.cpp)

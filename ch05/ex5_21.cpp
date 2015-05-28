@@ -17,21 +17,21 @@ using std::string;
 
 int main()
 {
-	string str_read, str_prev;
+    string str_read, str_prev;
 
-	while ( cin >> str_read ) {
-		if ( !isupper(str_read[0]) )
-			continue;
-		else if ( str_prev == str_read ) {
-			cout << str_read << " occurs twice in succession." << endl;
-			str_read="";
-			break;
-			}
-			else str_prev = str_read;
-	}
+    while ( cin >> str_read ) {
+        if ( !isupper(str_read[0]) )
+            continue;
+        else if ( str_prev == str_read ) {
+            cout << str_read << " occurs twice in succession." << endl;
+            str_read="";
+            break;
+        }
+            else str_prev = str_read;
+    }
 
-	if( !str_read.empty() )
-		cout << "no word was repeated." << endl;
+    if( !str_read.empty() )
+        cout << "no word was repeated." << endl;
 
-	return 0;
+    return 0;
 }
