@@ -7,11 +7,10 @@
 [![](https://img.shields.io/badge/douban-%E5%B0%8F%E7%BB%84-green.svg)](http://www.douban.com/group/532124/)
 
 ### Note
-
-- Use `-std=c++11`(optional: `-pedantic -Wall`) flag when compiling.(or you can use Visual Studio 2012+)
-- If you found any bug, please [let me know](https://github.com/Mooophy/Cpp-Primer/issues/new), thanks.
+- g++ and clang++ are recommended. VS may be used as well, but up to May 2015, Visual Studio has not implemented all c++ 11 features yet.
+- Use `-std=c++11`flag for compiling.
+- If any bug caught, please [let me know](https://github.com/Mooophy/Cpp-Primer/issues/new), thanks.
 - I have downloaded the headers from this book's [web site](http://www.informit.com/store/c-plus-plus-primer-9780321714114) and put them in the `include` folder.
-- In order to test the program in an efficient way, I also put the test data file in the `data` folder.
 
 ### How to contribute
 
