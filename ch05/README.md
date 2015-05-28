@@ -88,19 +88,24 @@ In fact, the judge `!status` is unnecessary. If the `status=false`, we leave the
 ```
 
 ```cpp
-(a) if (ival1 != ival2) ival1 = ival2; // lost semicolon.
+(a) // Error: should have a semicolon in the end
+    if (ival1 != ival2) ival1 = ival2;
     else ival1 = ival2 = 0;
-(b) if (ival < minval)
+(b) // Error: forget the curly braces when multiple statements must be
+	//        executed as a block
+    if (ival < minval)
     {
         minval = ival;
         occurs = 1;
     }
-(c) int val;
+(c) // Error: variable val is not in scope
+	int val;
     if (ival = get_value())
         cout << "ival = " << ival << endl;
     if (!ival)
         cout << "ival = 0\n";
-(d) if (ival == 0)
+(d) // Error: confuse the equality operator and assignment operator
+	if (ival == 0)
     ival = get_value();
 ```
 
