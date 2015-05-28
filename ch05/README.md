@@ -282,20 +282,37 @@ I prefer `for` to `while` in such cases, because it's terse. More importantly, o
 ##Exercise 5.18
 >Explain each of the following loops. Correct any problems you detect.
 ```cpp
-(a) do { // added bracket.
+(a) do 
+        int v1, v2;
+        cout << "Please enter two numbers to sum:" ;
+        if (cin >> v1 >> v2)
+            cout << "Sum is: " << v1 + v2 << endl;
+    while (cin);
+(b) do {
+        // . . .
+    } while (int ival = get_response());
+(c) do {
+        int ival = get_response();
+    } while (ival);
+
+(a) // Error: forget the curly braces when multiple statements must be
+	//        executed as a block
+	do {
         int v1, v2;
         cout << "Please enter two numbers to sum:" ;
         if (cin >> v1 >> v2)
             cout << "Sum is: " << v1 + v2 << endl;
     }while (cin);
-(b) int ival;
+(b) //Error: variable is declared in the condition of do while statement
+	int ival;
     do {
         // . . .
-    } while (ival = get_response()); // should not declared in this scope.
-(c) int ival = get_response();
+    } while (ival = get_response());
+(c) //Error: ival is not declared in scope
+	int ival = get_response();
     do {
         ival = get_response();
-    } while (ival); // ival is not declared in this scope.
+    } while (ival);
 ```
 
 ##[Exercise 5.19](ex5_19.cpp)
