@@ -237,13 +237,16 @@ the output should indicate that the word now occurred three times.
 ```
 
 ```cpp
-(a) int ix;
+(a) //Error: ix is not in scope
+	int ix;
     for (ix = 0; ix != sz; ++ix)  { /* ... */ }
     if (ix != sz)
     // . . .
-(b) int ix;
+(b) //Error: for loop should have three semicolon
+	int ix;
     for (; ix != sz; ++ix) { /* ... */ }
-(c) for (int ix = 0; ix != sz; ++ix) { /*...*/ }
+(c) //Error: dead loop
+	for (int ix = 0; ix != sz; ++ix) { /*...*/ }
 ```
 
 ##Exercise 5.16
