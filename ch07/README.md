@@ -208,11 +208,11 @@ struct X {
 ## Exercise 7.37
 
 ```cpp
-Sales_data first_item(cin);   // use Sales_data(std::istream &is)
+Sales_data first_item(cin);   // use Sales_data(std::istream &is) ; its value are up to your input.
 
 int main() {
-  Sales_data next;  // use Sales_data(std::string s = "")
-  Sales_data last("9-999-99999-9"); // use Sales_data(std::string s = "")
+  Sales_data next;  // use Sales_data(std::string s = ""); bookNo = "", cnt = 0, revenue = 0.0
+  Sales_data last("9-999-99999-9"); // use Sales_data(std::string s = ""); bookNo = "9-999-99999-9", cnt = 0, revenue = 0.0
 }
 ```
 
@@ -273,10 +273,10 @@ No problem. cause `C` have the default constructor.
 
 ## Exercise 7.46
 
-- a) A class must provide at least one constructor. (**unture**, "The compiler-generated constructor is known as the synthesized default constructor.")
-- b) A default constructor is a constructor with an empty parameter list. (**unture**,  A default constructor is a constructor that is used if no initializer is supplied)
-- c) If there are no meaningful default values for a class, the class should not provide a default constructor. (**unture**, the class should provide.)
-- d) If a class does not define a default constructor, the compiler generates one that initializes each data member to the default value of its associated type. (**unture**, only if our class does not explicitly define any constructors, the compiler will implicitly define the default constructor for us.)
+- a) A class must provide at least one constructor. (**untrue**, "The compiler-generated constructor is known as the synthesized default constructor.")
+- b) A default constructor is a constructor with an empty parameter list. (**untrue**,  A default constructor is a constructor that is used if no initializer is supplied.What's more, A constructor that supplies default arguments for all its parameters also defines the default constructor)
+- c) If there are no meaningful default values for a class, the class should not provide a default constructor. (**untrue**, the class should provide.)
+- d) If a class does not define a default constructor, the compiler generates one that initializes each data member to the default value of its associated type. (**untrue**, only if our class does not explicitly define **any constructors**, the compiler will implicitly define the default constructor for us.)
 
 ## Exercise 7.47
 
@@ -299,9 +299,10 @@ Both are noting happened.
 
 ```cpp
 (a) Sales_data &combine(Sales_data); // ok
-(b) Sales_data &combine(Sales_data&); // [Error] no matching function for call to 'Sales_data::combine(std::string&)' (`std::string&` can not convert to `Sales_data` type.)
-(c) Sales_data &combine(const Sales_data&) const; // [Error] assignment of member 'Sales_data::units_sold' in read-only object. (we cannot combine the other `Sales_data` object.)
+(b) Sales_data &combine(Sales_data&); // [Error] no matching function for call to 'Sales_data::combine(std::string&)' (`std::string&` can not convert to `Sales_data` type.)  
+(c) Sales_data &combine(const Sales_data&) const; // The trailing const mark can't be put here, as it forbids any mutation on data members. This comflicts with combine's semantics.
 ```
+Some detailed explanation about problem (b) :It's wrong. Because `combine`’s parameter is  a non-const reference , we can't  pass a temporary to that parameter. If `combine`’s parameter is  a  reference to const , we can  pass a temporary to that parameter. Like this :`Sales_data &combine(const Sales_data&); `  Here we call the `Sales_data` `combine` member function with a string argument. This call is perfectly legal; the compiler automatically creates a `Sales_data` object from the given string. That newly generated (temporary) `Sales_data` is passed to `combine`.(Also you can read C++ Primer Page 295(English Edition))
 
 ## [Exercise 7.50](ex7_50.h)
 ## Exercise 7.51
@@ -331,7 +332,7 @@ it is very natural.
 
 ## Exercise 7.52
 
-`Sales_data` should have no in-class initializers.
+In my opinion ,the aim of the problem is Aggregate Class. Test-makers think that `Sales_data` is Aggregate Class,so `Sales_data` should have no in-class initializers if we want to initialize the data members of an aggregate class by providing a braced list of member initializers:
 
 FIXED:
 

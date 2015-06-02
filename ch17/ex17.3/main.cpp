@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
  *  @file       main.cpp
  *  @author     Alan.W
  *  @date       3  Mar 2014
@@ -15,13 +15,9 @@
 //!
 
 #include <iostream>
-#include <tuple>
-#include <string>
-#include <vector>
-
+#include "textquery.h"
 
 int main()
 {
-
-
+	return 0;
 }

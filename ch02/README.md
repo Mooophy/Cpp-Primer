@@ -172,7 +172,7 @@ std::cin >> input_value;
 double i = { 3.14 };
 ```
 
-(c): --if you declared 'wage' before, it's right. Otherwhise, you'll get a error:
+(c): --if you declared 'wage' before, it's right. Otherwise, you'll get a error:
     error: use of undeclared identifier 'wage'
 ```cpp
 double wage;
@@ -201,7 +201,7 @@ int main()
 `local_int` is a local variable which is not uninitialized, so it has a undefined value.
 `local_str` is also a local variable which is not uninitialized, but it has a value that is defined by the class. So it is empty string.
 PS: please read P44 in the English version, P40 in Chinese version to get more.
-The note: Uninitialized objects of built-in type defined inside a function body have a undifined value. Objects of class type that we do not explicitly inititalize have a value that is defined by class.
+The note: Uninitialized objects of built-in type defined inside a function body have a undefined value. Objects of class type that we do not explicitly inititalize have a value that is defined by class.
 
 ##Exercise 2.11
 > Explain whether each of the following is a declaration or a
@@ -274,7 +274,7 @@ Yes.It is legal.Printed:
 
 ```
 (a): valid. let d equal 3.14159.
-(b): valid. automatical convert will happen.
+(b): valid. automatic convert will happen.
 (c): valid. but value will be truncated.
 (d): valid. but value will be truncated.
 ```
@@ -309,7 +309,7 @@ p1 = &b;
 
 ####definition:
 
-the pointer is "points to" anyother type.
+the pointer is "points to" any other type.
 
 the reference is "another name" of an **object**.
 
@@ -320,7 +320,7 @@ a pointer is an object in its **own right**.
 2. Once initialized, a reference remains **bound to** its initial object.
 There is **no way** to rebind a reference to refer to a different object.
 a pointer can be **assigned** and **copied**.
-3. a reference always get the object to which the reference was intially bound.
+3. a reference always get the object to which the reference was initially bound.
 a single pointer can point to **several different objects** over its lifetime.
 4. a reference must be initialized.
 a pointer need **not be** initialized at the time it is defined.
@@ -369,7 +369,7 @@ if (*p) // whether the value pointed by p is zero?
 ##Exercise 2.23
 >Given a pointer p, can you determine whether p points to a valid object? If so, how? If not, why not?
 
-No. Because more information needed to determine whether the pointee is valid or not.
+No. Because more information needed to determine whether the pointer is valid or not.
 
 
 ##Exercise 2.24
@@ -416,7 +416,7 @@ int *const p2 = &i2;        // legal.
 const int i = -1, &r = 0;   // legal.
 const int *const p3 = &i2;  // legal.
 const int *p1 = &i2;        // legal
-const int &const r2;        // illegal, r2 must initialize.
+const int &const r2;        // illegal, r2 is a reference that cannot be const.
 const int i2 = i, &r = i;   // legal.
 ```
 
@@ -454,7 +454,7 @@ const int *p2 = &v2, *const p3 = &i, &r2 = v2;
 ```
 
 v2 is top-level const, p2 is low-level const.
-p3: right-most const is top-level, left-most is low-level.
+p3 is both top-level const and low-level const.
 r2 is low-level const.
 
 ##Exercise 2.31
@@ -531,7 +531,7 @@ decltype((b)) d = a;
 ++d;
 ```
 
-`c` is an int, `d` is a referance of `a`.
+`c` is an int, `d` is a reference of `a`.
 all their value are `4`.
 
 ##Exercise 2.37
@@ -558,9 +558,9 @@ int i = 0, &r = i;
 // same
 auto a = i;
 decltype(i) b = i;
-// different
+// different "c" will be int "d" will be int&
 auto c = r;
-decltype(r) d = i;
+decltype(r) d = r;
 ```
 
 More? Look at [here](http://stackoverflow.com/questions/21369113/what-is-the-difference-between-auto-and-decltypeauto-when-returning-from-a-fun) and [here](http://stackoverflow.com/questions/12084040/decltype-vs-auto)
@@ -736,10 +736,10 @@ int main()
 >Write your own version of the Sales_data.h header and
 use it to rewrite the exercise from § 2.6.2(p. 76)
 
-You can add some function in your header file. Look at [here](https://github.com/pezy/Cpp-Primer/blob/master/ch02/Sales_data.h).
+You can add some function in your header file. Look at [here](ex2_42.h).
 
 rewrite the exercise:
 
-- 1.5.1. [Code](ex2.42_1.cpp)
-- 1.5.2. [Code](ex2.42_2.cpp)
-- 1.6. [Code](ex2.42_3.cpp)
+- 1.5.1. [Code](ex2_42_1.cpp)
+- 1.5.2. [Code](ex2_42_2.cpp)
+- 1.6. [Code](ex2_42_3.cpp)

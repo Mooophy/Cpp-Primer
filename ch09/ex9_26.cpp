@@ -28,7 +28,7 @@ int main()
 
     //! remove even value
     for(auto it = vec.begin();  it != vec.end(); )
-        if(! *it & 0x1) it = vec.erase(it);
+        if(! (*it & 0x1)) it = vec.erase(it);
         else ++it;
 
     //! print
