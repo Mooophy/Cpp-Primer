@@ -7,7 +7,7 @@ int main()
     using std::endl;
     
     // void type
-    cout << "void: nullptr_t\t" << sizeof(nullptr_t) << " bytes" << endl << endl;
+    cout << "void: nullptr_t\t" << sizeof(std::nullptr_t) << " bytes" << endl << endl;
     
     // boolean type
     cout << "bool:\t\t" << sizeof(bool) << " bytes" << endl << endl;

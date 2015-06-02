@@ -15,7 +15,8 @@
 //! Which, if any, friends are necessary in class Screen to make the input and
 //! output operators work? Explain why each friend declaration, if any, was
 //! needed.
-//!
+//    According to  the chapter of 14.2.1,the class of << and <<  should be a friend of this class.
+//
 
 #include"Screen.h"
 #include<iostream>
@@ -23,15 +24,14 @@
 int main()
 {
     Screen<5,5> scr('c');
-    char c0 = 'b', c1;
-    //! move the cursor
-    scr.move(2, 2);
-    //! output c0 to the screen
-    scr << c0;
-    //! input a char to c1 from the screen
-    scr >> c1;
-    //! test the result of c1
-    std::cout << c1 << std::endl;
+    Screen<5,5> scr2;
+
+    // output src to the screen
+    std::cout<<scr;
+    // input connet  to the  src 
+    std::cin>>scr2;
+    // test input
+    std::cout<<scr2;
 
     return 0;
 }

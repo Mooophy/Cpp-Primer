@@ -39,25 +39,6 @@ TextQuery::TextQuery(std::ifstream & is) : file(new std::vector<std::string>)
             sp_lineIndex->insert(index);
         }
     }
-
-    //!     =debugging=
-    std::cout << "@alan : the size of wm is " << wm.size() <<"\n";
-
-    for(const auto &line : *file)
-        std::cout<<"@alan : \t" << line << "\n";
-
-    /*
-    for(const auto &e : wm)
-    {
-        std::cout << e.first << " :\n";
-        for (const auto &index : *(e.second))
-        {
-            std::cout << index << " ";
-        }
-        std::cout << "\n";
-    }
-    */
-    //!      =end=
 }
 
 /**
@@ -87,7 +68,6 @@ result_tuple TextQuery::query_return_tuple(const std::string &sought)
     static std::shared_ptr<std::set<index_Tp>> noData(new std::set<index_Tp>);
 
     //! fetch the iterator to the matching element in the map<word, lines>.
-    //std::map<std::string, std::shared_ptr<std::set<index_Tp>>>::const_iterator
     auto iter = wm.find(sought);
     if(iter == wm.end())
         return result_tuple(sought, noData, file);

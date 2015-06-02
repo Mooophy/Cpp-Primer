@@ -15,7 +15,10 @@ b2 is destroyed, but the elements in b2 must not be destroyed.
 
 so b1 and b2 both have 4 elements.
 
-## [Exercise 12.2](ex12_02.h)
+## Exercise 12.2
+
+[StrBlob](ex12_02.h) | [TEST](ex12_02_TEST.cpp)
+
 ## Exercise 12.3:
 >Does this class need const versions of push_back and pop_back? If so, add them. If not, why aren’t they needed?
 
@@ -87,6 +90,8 @@ r2 = q2;
 Memory leakage happens. Because after `r = q` was executed, no pointer points to the int `r` had pointed to. It implies that no chance to free the memory for it.
 
 - to `q2` and `r2`:
+
+It's safe. Because after 'r2 = q2', the reference count belongs to r2 reduce to 0 and the reference count belongs to q2 increase to 2,then the memory allocated by r2 will be released automatically.
 
 ## [Exercise 12.10](ex12_10.cpp)
 ## [Exercise 12.11](ex12_11.cpp)

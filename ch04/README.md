@@ -63,12 +63,14 @@ unsigned short usvalue = 65535; ++usvalue;  // 0
 ```
 
 ##Exercise 4.8
->Explain when operands are evaluated in the logical AND,
-logical OR, and equality operators.
+>Explain when operands are evaluated in the logical `AND`, logical `OR`, and equality operators.
 
-logical `AND` : `true` only if both its operands evaluated to `true`;
-logical `OR`  : `true` if either of its operands evaluated to `true`;
-equality operators : `true` only if its operands are equal.
+from the book:
+> The logical `AND` and `OR` operators always evaluate their left operand before the right. Moreover, the right operand is evaluated if and only if the left operand does not determine the result. This strategy is known as **short-circuit evaluation**.
+
+- logical `AND` : the second operand is evaluated if and only if the left side is `true`.
+- logical `OR`  : the second operand is evaluated if and only if the left side is `false`
+- equality operators : `true` only if both operands have the same value, otherwise, it returns `false`.
 
 ##Exercise 4.9
 >Explain the behavior of the condition in the following if:
@@ -104,21 +106,8 @@ a>b && b>c && c>d
 ##Exercise 4.12
 >Assuming `i`, `j`, and `k` are all ints, explain what `i != j < k` means.
 
-According to Operator precedence, `i != j < k` is same as `i != (j < k)`.
+`i != j < k` is equivalent to `i != (j < k)`.
 
-The condition group `j` and `k` to the `<` operator. The `bool` result of that expression is the right hand operand of the `!=` operator.
-That is `i`(int) is compared to the `true/false` result of the first comparison! To accomplish the test we intended, we can rewrite the expression as follows:
-
-```cpp
-i != j && j < k
-```
-
------
-
-**reference**
-
-> It is usually a bad idea to use the boolean literals `true` and `false` as operands in a comparison.
-These literals should be used only to compare to an object of type `bool`.
 
 ##Exercise 4.13
 >What are the values of i and d after each assignment?
@@ -181,12 +170,14 @@ It will print from the second element and will dereference the v.end() at last.(
 and that ival is an int, explain the behavior of each of these expressions.
 Which, if any, are likely to be incorrect? Why? How might each be corrected?
 ```cpp
-ptr != 0 && *ptr++  // check ptr is not a nullptr. and check the pointer value.
-ival++ && ival // check ival and ival+1 whether equal zero.
+ptr != 0 && *ptr++  // check ptr is not a nullptr, and then check the pointer value.
+ival++ && ival // check ival, and then check ival+1 whether equal zero.
 vec[ival++] <= vec[ival] // incorrect. It is an **undefined behavior.**
 // correct:
 vec[ival] <= vec[ival+1]
 ```
+>Every value computation and side effect of the first (left) argument of the built-in logical AND operator && and the built-in logical OR operator || is sequenced before every value computation and side effect of the second (right) argument.
+see [order of evaluation](http://en.cppreference.com/w/cpp/language/eval_order).
 
 ##Exercise 4.20
 >Assuming that iter is a vector<string>::iterator,

@@ -50,12 +50,12 @@ when we copy a `StrBlobPrts`, the `weak_ptr` member's use_count isn't changed.(c
 >Assuming Point is a class type with a public copy constructor, identify each use of the copy constructor in this program fragment:
 ```cpp
 Point global;
-Point foo_bar(Point arg) // 1. Pass an object as an argument to a parameter of nonreference type
+Point foo_bar(Point arg) // 1
 {
-    Point local = arg, *heap = new Point(global); // 2.3. copy initialization
-    *heap = local; // 4. Define variables using an `=`
-    Point pa[ 4 ] = { local, *heap }; // 5. Brace initialize the elements in an array
-    return *heap; // 6. Return an object from a function that has a nonreference return type
+    Point local = arg, *heap = new Point(global); // 2, 3
+    *heap = local;
+    Point pa[ 4 ] = { local, *heap }; // 4, 5
+    return *heap; // 6
 }
 ```
 
@@ -93,7 +93,7 @@ The compiler defines a synthesized destructor for any class that does not define
 
 When a `StrBlob` object destroyed, the `use_count` of the dynamic object will decrement. It will be freed if no `shared_ptr` to that dynamic object.
 
-When a `StrBlobPter` object is destroyed the object dynamicaly allocated will not be freed.
+When a `StrBlobPter` object is destroyed the object dynamically allocated will not be freed.
 
 ## [Exercise 13.11](ex13_11.h)
 
@@ -134,7 +134,10 @@ Yes, the output will change. cause we don't use the synthesized copy-control mem
 
 Yes, the output will change. cause the function `f` haven't any copy operators. Thus, the output are the same when pass the each object to `f`.
 
-## [Exercise 13.17](ex13_17.cpp)
+## Exercise 13.17
+> Write versions of numbered and f corresponding to the previous three exercises and check whether you correctly predicted the output.
+
+[For 13.14](ex13_17_1.cpp) | [For 13.15](ex13_17_2.cpp) | [For 13.16](ex13_17_3.cpp)
 
 ## Exercise 13.18 [.h](ex13_18.h) | [.cpp](ex13_18.cpp)
 
@@ -155,10 +158,10 @@ Because, all these classes are using smart pointers to manage dynamic memory whi
 
 ```cpp
 TextQuery(const TextQuery&) = delete;
-TextQuery& operator=(const TextQuery) = delete;
+TextQuery& operator=(const TextQuery&) = delete;
 
 QueryResult(const QueryResult&) = delete;
-QueryResult& operator=(const QueryResult) = delete;
+QueryResult& operator=(const QueryResult&) = delete;
 ```
 
 ## [Exercise 13.22](ex13_22.h)
@@ -169,16 +172,16 @@ QueryResult& operator=(const QueryResult) = delete;
 Check 13.22.
 
 ## Exercise 13.24:
->What would happen if the version of HasPtr in this section didn’t define a destructor? What if HasPtr didn’t define the copy constructor?
+>What would happen if the version of `HasPtr` in this section didn’t define a destructor? What if `HasPtr` didn’t define the copy constructor?
 
-If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when assignment happened, just points copied, the string witch `ps` points haven't been copied.
+If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when assignment happened, just points copied, the string which `ps` points haven't been copied.
 
 ## Exercise 13.25:
->Assume we want to define a version of StrBlob that acts like a value. Also assume that we want to continue to use a shared_ptr so that our StrBlobPtr class can still use a weak_ptr to the vector. Your revised class will need a copy constructor and copy-assignment operator but will not need a destructor. Explain what the copy constructor and copyassignment operators must do. Explain why the class does not need a destructor.
+>Assume we want to define a version of `StrBlob` that acts like a value. Also assume that we want to continue to use a shared_ptr so that our `StrBlobPtr` class can still use a weak_ptr to the vector. Your revised class will need a copy constructor and copy-assignment operator but will not need a destructor. Explain what the copy constructor and copy-assignment operators must do. Explain why the class does not need a destructor.
 
-Copy constructor and copy-assignment operator should dynamicly allocate memory for its own , rather than share the object with the right hand operand.
+Copy constructor and copy-assignment operator should dynamically allocate memory for its own , rather than share the object with the right hand operand.
 
-`StrBlob` is using smart pointers which can be managed with synthesized destructor, If an object of `StrBlob` is out of scope, the destructor for std::shared_ptr will be called automaticaly to free the memory dynamically allocated when the `use_count` goes to 0.
+`StrBlob` is using smart pointers which can be managed with synthesized destructor, If an object of `StrBlob` is out of scope, the destructor for std::shared_ptr will be called automatically to free the memory dynamically allocated when the `use_count` goes to 0.
 
 ## Exercise 13.26 [hpp](ex13_26.h) | [cpp](ex13_26.cpp)
 
@@ -220,7 +223,7 @@ some existing `Folders` will out of sync with the `Message` after assignment.
 >We did not use copy and swap to define the Message assignment operator. Why do you suppose this is so?
 
 @Mooophy
-The copy and swap is an elegant way when working with dynamicly allocated memory. In the Message class ,noing is allocated dynamically. Thus using this idiom makes no sense and will make it more complicated to implement due to the pointers that point back.
+The copy and swap is an elegant way when working with dynamicly allocated memory. In the Message class ,nothing is allocated dynamically. Thus using this idiom makes no sense and will make it more complicated to implement due to the pointers that point back.
 
 @pezy
 In this case, `swap` function is special. It will be clear two `Message`'s folders , then swap members, and added themselves to each folders. But, `Message` assignment operator just clear itself, and copy the members, and added itself to each folders. The `rhs` don't need to clear and add to folders. So, if using copy and swap to define, it will be very inefficiency.
@@ -387,6 +390,9 @@ Foo Foo::sorted() const & {
 ```
 
 recursion and stack overflow.
+
+@miaojiuchen:
+Because the local variable `ret` here is an Lvalue, so when we call `ret.sorted()`, we are actually not calling the member function `Foo Foo::sorted() &&` as expected, but `Foo Foo::sorted() const &` instead. As a result, the code will be trapped into a recursion and causes a deadly stack overflow.
 
 ## Exercise 13.57:
 >What if we defined sorted as:

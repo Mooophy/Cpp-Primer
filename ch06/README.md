@@ -40,20 +40,34 @@ int main()
 ##Exercise 6.4
 
 ```cpp
-int func()
-{
-    int n, ret = 1;
-    std::cout << "input a number: ";
-    std::cin >> n;
-    while (n > 1) ret *= n--;
-    return ret;
+#include <iostream>
+#include <string>
+using std::string;
+using std::cin;
+using std::cout;
+using std::endl;
+
+void factorial(){
+
+    int num=0;
+    unsigned result=1;
+    cout<<"Please input a positive number: "<<endl;
+    cin>>num;
+    cout<<num;
+    if (num>=0&&num<=12){
+        while (num>=1)
+            result*=num--;
+
+        cout<<"! is "<<result<<endl;}
+    else
+        cout<<" is out of range."<<endl;
 }
 
-int main()
-{
-    std::cout << func() << std::endl;
+int main () {
+    factorial();
     return 0;
 }
+
 ```
 
 ##Exercise 6.5
@@ -301,14 +315,15 @@ Both two should put in a header. (a) is an inline function. (b) is the declarati
 For example, the function `arrPtr` in [Exercise 6.38](#exercise-638) and `make_plural` in [Exercise 6.42](#exercise-642) should be defined as `inline`. But the function `func` in [Exercise 6.4](#exercise-64) shouldn't. Cause it just being call once and too many codes in the function.
 
 ## Exercise 6.46
+> Would it be possible to define `isShorter` as a `constexpr`? If so, do so. If not, explain why not.
 
-Yes.
-```cpp
-constexpr bool isShorter(const string& str1, const string& str2)
-{
-    return str1.size() < str2.size();
-}
-```
+No.
+
+> A constexpr function is defined like any other function but must meet certain restrictions: The **return type** and **the type of each parameter** in a must be a literal type
+
+But `std::string`(parameter of `isShorter`) is not a literal type.
+
+more discusses: [#22](https://github.com/ReadingLab/Discussion-for-Cpp/issues/22)
 
 ## [Exercise 6.47](ex6_47.cpp)
 ## Exercise 6.48

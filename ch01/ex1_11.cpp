@@ -8,17 +8,13 @@ int main()
 	std::cout << "please input two integers:";
 	std::cin >> val_small >> val_big;
 	
-	if (val_small > val_big)
-	{
-		int tmp = val_small;
-		val_small = val_big;
-		val_big = tmp;
+	if (val_small > val_big) {
+		std::swap(val_small,val_big);
 	}
 	
-	while (val_small <= val_big)
-	{
-		std::cout << val_small << std::endl;
-		++val_small;
+	int temp = val_small;	// preserve the value of val_small!
+	while (temp <= val_big) {
+		std::cout << temp++ << std::endl;
 	}
 	
 	return 0;
