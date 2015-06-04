@@ -69,18 +69,18 @@ int main()
     base *bp2 = &dobj;
     base &br2 = dobj;
 
-    //! a.  this is an object, so compile tiem.
+    //! a.  this is an object, so compile time.
     //bobj.print(std::cout);
 
-    //! b.  this is an object, so compile tiem.
+    //! b.  this is an object, so compile time.
     //dobj.print(std::cout);
 
     //! c.  function name is not virtual , so no dynamic
-    //!     binding happens.so conpile time
+    //!     binding happens.so compile time
     //std::cout << bp1->name();
 
     //! d.  function name is not virtual , so no dynamic
-    //!     binding happens.so conpile time
+    //!     binding happens.so compile time
     //std::cout << bp2->name();
 
     //! e.  run time
