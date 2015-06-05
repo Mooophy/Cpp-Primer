@@ -292,7 +292,7 @@ Even if we initialy reserved 1024 elements, if there are more words read from ci
 
 And now comes the catch. resize() is different from reserve().
 In this case resize() will add another svec.size()/2 value initialized elements to svec.
-If this exceeds svec.capacity() it will also automatically increase it with exactly the difference needed.
+If this exceeds svec.capacity() it will also automatically increase it to accomodate the new elements.
 ```
 
 ## Exercise 9.40:
