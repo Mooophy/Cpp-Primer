@@ -281,19 +281,16 @@ cannot.
 >Explain what the following program fragment does:
 ```cpp
 vector<string> svec;
-svec.reserve(1024);     // sets capacity to at least 1024
+svec.reserve(1024);
 string word;
-while (cin >> word)     // input word continually
+while (cin >> word)
     svec.push_back(word);
-svec.resize(svec.size()+svec.size()/2); 
-
-The while loop will read words from cin and store them in out vector.
-Even if we initialy reserved 1024 elements, if there are more words read from cin, our vector's capacity will be automatically increased (most implementations will double the previous capacity) to accomodate them.
-
-And now comes the catch. resize() is different from reserve().
-In this case resize() will add another svec.size()/2 value initialized elements to svec.
-If this exceeds svec.capacity() it will also automatically increase it to accomodate the new elements.
+svec.resize(svec.size()+svec.size()/2);
 ```
+
+The `while` loop will read words from `cin` and store them in out vector. Even if we initially reserved 1024 elements, if there are more words read from `cin`, our vector's capacity will be automatically increased (most implementations will double the previous capacity) to accommodate them.
+
+And now comes the catch. `resize()` is different from `reserve()`. In this case `resize()` will add another `svec.size()/2` value initialized elements to `svec`. If this exceeds `svec.capacity()` it will also automatically increase it to accommodate the new elements.
 
 ## Exercise 9.40:
 >If the program in the previous exercise reads 256 words, what is its likely capacity after it is resized? What if it reads 512? 1,000? 1,048?
