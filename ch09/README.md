@@ -285,7 +285,14 @@ svec.reserve(1024);     // sets capacity to at least 1024
 string word;
 while (cin >> word)     // input word continually
     svec.push_back(word);
-svec.resize(svec.size()+svec.size()/2); // sets capacity to at least 3/2's size. may do nothing.
+svec.resize(svec.size()+svec.size()/2); 
+
+The while loop will read words from cin and store them in out vector.
+Even if we initialy reserved 1024 elements, if there are more words read from cin, our vector's capacity will be automatically increased (most implementations will double the previous capacity) to accomodate them.
+
+And now comes the catch. resize() is different from reserve().
+In this case resize() will add another svec.size()/2 value initialized elements to svec.
+If this exceeds svec.capacity() it will also automatically increase it with exactly the difference needed.
 ```
 
 ## Exercise 9.40:
