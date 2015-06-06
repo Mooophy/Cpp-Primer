@@ -42,7 +42,7 @@
 
 int main()
 {
-    //Bulk_quote b;
+    Bulk_quote b;
 
     return 0;
 }
