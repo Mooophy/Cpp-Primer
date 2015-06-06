@@ -18,7 +18,7 @@
 - Give me a **pull request**([How?](https://help.github.com/articles/using-pull-requests)).
 - **Syncing** with([How?](https://help.github.com/articles/syncing-a-fork/)) the origin repository. This is very **important** because this repo updates frequently.
 
-### Table of Contents
+### Contents
 
 - [Chapter 1. Getting Started](ch01/README.md)
 - Part I: The Basics
