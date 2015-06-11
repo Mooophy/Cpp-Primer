@@ -20,6 +20,7 @@ using namespace std;
 /*
 * Ex 9.45
 * Date:2015.6.11
+*use iterator
 */
 string func(string &name, string const &prev, string const &su)
 {
