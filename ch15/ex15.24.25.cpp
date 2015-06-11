@@ -30,19 +30,4 @@
 //  the derived classes can call it when executing its default constructor.
 //!
 
-
-#include <iostream>
-#include <string>
-
-#include "quote.h"
-#include "bulk_quote.h"
-#include "limit_quote.h"
-#include "disc_quote.h"
-
-
-int main()
-{
-    //Bulk_quote b;
-
-    return 0;
-}
+int main(){ return 0; }

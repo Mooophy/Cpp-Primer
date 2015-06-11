@@ -125,16 +125,23 @@ vector<int> vec(other_vec.begin(), other_vec.end()); // same as other_vec
 ## Exercise 9.12:
 >Explain the differences between the constructor that takes a container to copy and the constructor that takes two iterators.
 
-- Constructor that takes two iterators copies the items between `[first, last)`,e.g.
+- The constructor that takes another container as an argument (excepting array) assumes the container type and element type of both containers are identical. It will also copy all the elements of the received container into the new one:
 ```cpp
-auto data = { 1, 2, 3 };
-std::vector<int> vec(data.begin(), data.begin()+1); // vec is {1}
+list<int> numbers = {1, 2, 3, 4, 5};
+list<int> numbers2(numbers);        // ok, numbers2 has the same elements as numbers
+vector<int> numbers3(numbers);      // error: no matching function for call...
+list<double> numbers4(numbers);     // error: no matching function for call...
 ```
-- Constructor that takes another container copies all items from it. e.g.
+- The constructor that takes two iterators as arguments does not require the container types to be identical. Moreover, the element types in the new and original containers can differ as long as it is possible to convert the elements we’re copying to the element type of the container we are initializing.
+It will also copy only the object delimited by the received iterators.
 ```cpp
-auto data = { 1, 2, 3 };
-std::vector<int> vec(data); //vec is {1,2,3}
+list<int> numbers = {1, 2, 3, 4, 5};
+list<int> numbers2(numbers.begin(), numbers.end);        // ok, numbers2 has the same elements as numbers
+vector<int> numbers3(numbers.begin(), --numbers.end());  // ok, numbers3 is {1, 2, 3, 4}
+list<double> numbers4(++numbers.beg(), --numbers.end());        // ok, numbers4 is {2, 3, 4}
+forward_list<float> numbers5(numbers.begin(), numbers.end());   // ok, number5 is {1, 2, 3, 4, 5}
 ```
+
 
 ## [Exercise 9.13](ex9_13.cpp)
 ## [Exercise 9.14](ex9_14.cpp)
@@ -217,6 +224,7 @@ if both elem1 and elem2 are the off-the-end iterator, nothing happened too.
 >Write a function that takes a forward_list<string> and two additional string arguments. The function should find the first string and insert the second immediately following the first. If the first string is not found, then insert the second string at the end of the list.
 
 ```cpp
+<<<<<<< HEAD
 void InsertStr(forward_list<string> flst, const string str1, const string str2)
 {
     auto prev = flst.before_begin();
@@ -239,6 +247,20 @@ void InsertStr(forward_list<string> flst, const string str1, const string str2)
     for(auto c : flst)
         cout << c << ' ';
 
+=======
+void find_and_insert(forward_list<string> &list, string const& to_find, string const& to_add)
+{
+    auto prev = list.before_begin();
+    for (auto curr = list.begin(); curr != list.end(); prev = curr++)
+    {
+        if (*curr == to_find)
+        {
+            list.insert_after(curr, to_add);
+            return;
+        }
+    }
+    list.insert_after(prev, to_add);
+>>>>>>> moon/master
 }
 ```
 
@@ -286,12 +308,16 @@ cannot.
 >Explain what the following program fragment does:
 ```cpp
 vector<string> svec;
-svec.reserve(1024);     // sets capacity to at least 1024
+svec.reserve(1024);
 string word;
-while (cin >> word)     // input word continually
+while (cin >> word)
     svec.push_back(word);
-svec.resize(svec.size()+svec.size()/2); // sets capacity to at least 3/2's size. may do nothing.
+svec.resize(svec.size()+svec.size()/2);
 ```
+
+The `while` loop will read words from `cin` and store them in out vector. Even if we initially reserved 1024 elements, if there are more words read from `cin`, our vector's capacity will be automatically increased (most implementations will double the previous capacity) to accommodate them.
+
+And now comes the catch. `resize()` is different from `reserve()`. In this case `resize()` will add another `svec.size()/2` value initialized elements to `svec`. If this exceeds `svec.capacity()` it will also automatically increase it to accommodate the new elements.
 
 ## Exercise 9.40:
 >If the program in the previous exercise reads 256 words, what is its likely capacity after it is resized? What if it reads 512? 1,000? 1,048?
