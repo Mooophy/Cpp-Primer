@@ -13,24 +13,26 @@
 #include <string>
 
 //! Exercise 9.45
-std::string
-pre_suffix(const std::string &name, const std::string &pre, const std::string &su);
-
-int main()
+#include <iostream>
+#include <string>
+#include <iterator>
+using namespace std;
+/*
+* Ex 9.45
+* Date:2015.6.11
+*/
+string func(string &name, string const &prev, string const &su)
 {
-    std::string name("alan");
-    std::cout << pre_suffix(name, "Mr.", ",Jr.");
 
-    return 0;
-}
-
-
-inline std::string
-pre_suffix(const std::string &name, const std::string &pre, const std::string &su)
-{
-    std::string ret(name);
-    ret.insert(0, pre);
+    string ret(name);
+    ret.insert(ret.begin(), prev.begin(), prev.end());
     ret.append(su);
 
     return ret;
+}
+int main()
+{
+    string s= {"Jack"};
+    cout << func(s, "Mr.", " III") << endl;
+    return 0;
 }
