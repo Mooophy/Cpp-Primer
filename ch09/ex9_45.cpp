@@ -19,7 +19,7 @@ pre_suffix(const std::string &name, const std::string &pre, const std::string &s
 int main()
 {
     std::string name("alan");
-    std::cout << pre_suffix(name, "Mr.", ",Jr.");
+    std::cout << pre_suffix(name, "Mr.", ",Jr.") << std::endl;
 
     return 0;
 }
@@ -28,8 +28,8 @@ int main()
 inline std::string
 pre_suffix(const std::string &name, const std::string &pre, const std::string &su)
 {
-    std::string ret(name);
-    ret.insert(0, pre);
+    auto ret = name;
+    ret.insert(ret.begin(), pre.begin(), pre.end());
     ret.append(su);
 
     return ret;
