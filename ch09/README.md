@@ -224,6 +224,30 @@ if both elem1 and elem2 are the off-the-end iterator, nothing happened too.
 >Write a function that takes a forward_list<string> and two additional string arguments. The function should find the first string and insert the second immediately following the first. If the first string is not found, then insert the second string at the end of the list.
 
 ```cpp
+<<<<<<< HEAD
+void InsertStr(forward_list<string> flst, const string str1, const string str2)
+{
+    auto prev = flst.before_begin();
+    auto curr = flst.begin();
+    int flag = 0;
+
+    while(curr != flst.end()){
+        if(*curr == str1){
+            flag = 1;
+            curr = flst.insert_after(curr, str2);
+        }
+        else{
+            prev = curr;
+            ++curr;
+            }
+        }
+    if(flag == 0)
+        flst.insert_after(prev, str2);
+
+    for(auto c : flst)
+        cout << c << ' ';
+
+=======
 void find_and_insert(forward_list<string> &list, string const& to_find, string const& to_add)
 {
     auto prev = list.before_begin();
@@ -236,6 +260,7 @@ void find_and_insert(forward_list<string> &list, string const& to_find, string c
         }
     }
     list.insert_after(prev, to_add);
+>>>>>>> moon/master
 }
 ```
 
