@@ -69,7 +69,6 @@ public:
             char chr = ',';
             if(tag == 1){
                 chr = ' ';
-                cout << "shit";
             }
             day = stoi(s.substr(s.find_first_of("123456789"), s.find_first_of(chr) - s.find_first_of("123456789")));
 
@@ -79,7 +78,7 @@ public:
     }
 
     void print(){
-        cout << "day£º" << day << " " << "month: " << month << " " << "year: " << year;
+        cout << "dayÂ£Âº" << day << " " << "month: " << month << " " << "year: " << year;
     }
 };
 int main()
