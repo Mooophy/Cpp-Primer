@@ -28,8 +28,7 @@ TextQuery::TextQuery(std::ifstream & is) : file(new std::vector<std::string>)
         while(lineSteam >> word)
         {
             //! fetch the smart pointer which is null when the word first time seen
-            std::shared_ptr<
-                    std::set<index_Tp>>& sp_lineIndex = wm[word];
+            std::shared_ptr<std::set<index_Tp>>& sp_lineIndex = wm[word];
 
             //! if null, allcate a new set to contain line indices
             if(!sp_lineIndex)
@@ -74,4 +73,3 @@ result_tuple TextQuery::query_return_tuple(const std::string &sought)
     else
         return result_tuple(sought, iter->second, file);
 }
-
