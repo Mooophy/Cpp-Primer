@@ -1,21 +1,18 @@
 // Print each number in the range specified by two integers.
-
 #include <iostream>
-
 int main()
 {
-	int val_small = 0, val_big = 0;
-	std::cout << "please input two integers:";
-	std::cin >> val_small >> val_big;
-	
-	if (val_small > val_big) {
-		std::swap(val_small,val_big);
-	}
-	
-	int temp = val_small;	// preserve the value of val_small!
-	while (temp <= val_big) {
-		std::cout << temp++ << std::endl;
-	}
-	
-	return 0;
+        int n1 = 0, n2 = 0;
+        std::cout << "enter two numbers " << std::endl;
+        std::cin >> n1 >> n2;
+        while ( ++n1 < n2 )
+        {
+                std::cout << n1 << std::endl;
+        }
+        --n1; // remove the effect of ++n1
+        while ( n1 > ++n2 )
+        {
+                std::cout << n2 << std::endl;
+        }
+        return 0;
 }
