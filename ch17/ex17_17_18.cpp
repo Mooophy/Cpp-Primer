@@ -39,8 +39,7 @@ int main()
 	string pattern("[^c]ei");
 	pattern = "[[:alpha:]]*" + pattern + "[[:alpha:]]*";
 	regex r(pattern, regex::icase);
-	for (sregex_iterator it(s.begin(), s.end(), r), end_it;
-		it != end_it; ++it)
+	for (sregex_iterator it(s.begin(), s.end(), r), end_it; it != end_it; ++it)
 		cout << it->str() << endl;
 
 	return 0;
