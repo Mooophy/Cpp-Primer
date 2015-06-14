@@ -78,13 +78,11 @@ bool valid(const smatch& m)
 	if (m[1].matched)
 		//! the area code must be followed by a close parenthesis
 		//! and followed immediately by the rest of the number or a space
-		return m[3].matched
-		&& (m[4].matched == 0 || m[4].str() == " ");
+		return m[3].matched && (m[4].matched == 0 || m[4].str() == " ");
 	else
 		//! then there can't be a close after the area code
 		//! the delimiters between the other two components must match
-		return !m[3].matched
-		&& m[4].str() == m[6].str();
+		return !m[3].matched && m[4].str() == m[6].str();
 }
 
 bool read_record(istream& is, vector<PersonInfo>& people)
@@ -110,8 +108,7 @@ bool read_record(istream& is, vector<PersonInfo>& people)
 
 void format_record(ostream& os, const vector<PersonInfo>& people)
 {
-	string phone =
-		"(\\()?(\\d{3})(\\))?([-. ])?(\\d{3})([-. ]?)(\\d{4})";
+	string phone = "(\\()?(\\d{3})(\\))?([-. ])?(\\d{3})([-. ]?)(\\d{4})";
 	regex r(phone);
 	smatch m;
 
@@ -121,8 +118,7 @@ void format_record(ostream& os, const vector<PersonInfo>& people)
 		ostringstream formatted, badNums; //! objects created on each loop
 		for (const auto &nums : entry.phones)
 		{
-			for (sregex_iterator it(nums.begin(), nums.end(), r), end_it;
-				it != end_it; ++it)
+			for (sregex_iterator it(nums.begin(), nums.end(), r), end_it; it != end_it; ++it)
 			{
 				//! for each number
 				//! check whether the number's formatting is valid
