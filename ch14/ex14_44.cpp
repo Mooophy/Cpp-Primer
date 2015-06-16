@@ -18,7 +18,7 @@
 
 int add(int i, int j){ return i + j; }
 auto mod = [](int i, int j){return i % j; };
-struct Div{ int operator ()(int denominator, int divisor) const { return denominator / divisor; } };
+struct Div{ int operator ()(int i, int j) const { return i / j; } };
 
 auto binops = std::map<std::string, std::function<int(int, int)>>
 {
