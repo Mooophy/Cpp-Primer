@@ -4,16 +4,10 @@
 
 int main()
 {
-	int sum = 0, val = 50;
-	while (val <= 100)
-	{
-		sum += val;
-		++val;
-	}
-	
-	std::cout << "the sum is: " << sum << std::endl;
-	
-	return 0;
-}
+    int sum = 0, curr = 50;
+    while (curr != 101) sum += curr++;
+    std::cout << "sum is: " << sum << std::endl;
 
-// output: the sum is: 3825
+    return 0;
+}
+// output: sum is: 3825
