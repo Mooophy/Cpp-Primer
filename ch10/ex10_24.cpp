@@ -1,5 +1,5 @@
 //!
-//! @author @Yue Wang @shbling
+//! @author @Yue Wang @shbling @Soyn
 //!
 //! Exercise 10.24:
 //! Use bind and check_size to find the first element in a vector of ints that has a value greater
@@ -10,36 +10,28 @@
 //!
 
 #include <iostream>
-#include <string>
-#include <vector>
 #include <algorithm>
 #include <functional>
+#include <string>
+#include <vector>
+using namespace std;
+using namespace std :: placeholders;
 
-using std::cout;
-using std::endl;
-using std::string;
-using std::vector;
-using std::find_if;
-using std::bind;
-
-inline bool
-check_size(const string &s, string::size_type sz)
+bool check_size(const string &s, int sz)
 {
-    return s.size() < sz;
+    return int(s.size()) < sz;
 }
 
-inline vector<int>::const_iterator
-find_first_bigger(const vector<int> &v, const string &s)
+inline vector<int> :: const_iterator
+find_first_bigger(const vector<int> &v, const string&s)
 {
-   return find_if(v.cbegin(), v.cend(), bind(check_size, s, std::placeholders::_1));
+    return find_if(v.cbegin(), v.cend(), bind(check_size, s, _1));
 }
-
 int main()
 {
-    vector<int> v{1,2,3,4,5,6,7};
+    vector<int> ivec = {1,2,3,4,5,6,7};
     string s("test");
-    cout << *find_first_bigger(v,s) << endl;
-
+    cout << *find_first_bigger(ivec,s) << endl;
     return 0;
 }
 //! output;
