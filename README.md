@@ -1,4 +1,3 @@
-##C++ Primer 5 答案
 ##C++ Primer 5 Answers
 
 [![GitHub issues](https://img.shields.io/github/issues/Mooophy/Cpp-Primer.svg)](https://github.com/Mooophy/Cpp-Primer/issues)
