@@ -10,7 +10,6 @@
 
 #include <iostream>
 #include <string>
-#include <stdexcept>
 
 
 void swap(int& lhs, int& rhs)
