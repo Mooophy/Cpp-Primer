@@ -13,7 +13,6 @@ int main()
         while (std::cin >> trans.bookNo >> trans.units_sold >> transPrice)
         {
             trans.CalcRevenue(transPrice);
-
             if (total.bookNo == trans.bookNo)
             {
                 total.AddData(trans);
