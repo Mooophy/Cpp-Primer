@@ -10,14 +10,10 @@ using std::endl;
 
 int main()
 {
-  string s;
-  cout << "Enter a string of characters including punctuation." << endl;
-  while (getline(cin, s))
-  {
-    for (auto i : s)
-      if (!ispunct(i)) cout << i;
-    cout << endl;
-  }
+    cout << "Enter a string of characters including punctuation." << endl;
+    for (string s; getline(cin, s); cout << endl)
+        for (auto i : s) 
+            if (!ispunct(i)) cout << i;
 
-  return 0;
+    return 0;
 }

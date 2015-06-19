@@ -1,4 +1,3 @@
-##C++ Primer 5 答案
 ##C++ Primer 5 Answers
 
 [![GitHub issues](https://img.shields.io/github/issues/Mooophy/Cpp-Primer.svg)](https://github.com/Mooophy/Cpp-Primer/issues)
@@ -10,13 +9,6 @@
 - g++ and clang++ are recommended. VS may be used as well, but up to May 2015, Visual Studio has not implemented all c++ 11 features yet.
 - Use `-std=c++11`flag for compiling.
 - If any bug caught, please [let me know](https://github.com/Mooophy/Cpp-Primer/issues/new), thanks.
-
-### How to contribute
-
-- Please **fork**([How?](https://help.github.com/articles/fork-a-repo)) this repository first.
-- **Commit**([How?](https://help.github.com/articles/create-a-repo#commit-your-first-change)) in your own repository.
-- Give me a **pull request**([How?](https://help.github.com/articles/using-pull-requests)).
-- **Syncing** with([How?](https://help.github.com/articles/syncing-a-fork/)) the origin repository. This is very **important** because this repo updates frequently.
 
 ### Contents
 

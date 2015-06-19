@@ -1,5 +1,5 @@
 //!
-//! @author @Yue Wang @shbling
+//! @author @Yue Wang @shbling @Soyn @Yue Wang
 //!
 //! Exercise 10.24:
 //! Use bind and check_size to find the first element in a vector of ints that has a value greater
@@ -22,26 +22,25 @@ using std::vector;
 using std::find_if;
 using std::bind;
 
-inline bool
-check_size(const string &s, string::size_type sz)
+inline auto check_size(string const& s, string::size_type sz) -> bool
 {
     return s.size() < sz;
 }
 
-inline vector<int>::const_iterator
-find_first_bigger(const vector<int> &v, const string &s)
+inline auto find_first_greater(vector<int> const& v, string const& s) -> vector<int>::const_iterator
 {
-   return find_if(v.cbegin(), v.cend(), bind(check_size, s, std::placeholders::_1));
+    auto lambda = [&](int i){ return i >= 0 && bind(check_size, s, i)(); };
+    return find_if(v.cbegin(), v.cend(), lambda);
 }
 
 int main()
 {
-    vector<int> v{1,2,3,4,5,6,7};
+    vector<int> v{ -1, -2, 3, 4, 5, 6, 7 };
     string s("test");
-    cout << *find_first_bigger(v,s) << endl;
+    cout << *find_first_greater(v, s) << endl;
 
     return 0;
 }
-//! output;
+//! output:
 //!
 //5
