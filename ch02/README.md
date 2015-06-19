@@ -571,7 +571,7 @@ future reference.
 struct Foo { /* empty  */ } // Note: no semicolon
 int main()
 {
-return 0;
+    return 0;
 }
 ```
 
@@ -585,12 +585,12 @@ just added some your own define. like this:
 ```cpp
 struct Sale_data
 {
-  std::string bookNo;
-  std::string bookName;
-  unsigned units_sold = 0;
-  double revenue = 0.0;
-  double price = 0.0;
-  //...
+    std::string bookNo;
+    std::string bookName;
+    unsigned units_sold = 0;
+    double revenue = 0.0;
+    double price = 0.0;
+    //...
 }
 ```
 
@@ -655,7 +655,6 @@ int main()
             std::cout << totalRevenue / totalCnt << std::endl;
         else
             std::cout << "(no sales)" << std::endl;
-
         return 0;
     }
     else
