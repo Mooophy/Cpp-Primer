@@ -12,31 +12,21 @@ using std::string;
 using std::cout;
 using std::endl;
 
-void check(const vector<int>& vec)
+void check_and_print(const vector<int>& vec)
 {
-    if (vec.empty())
-        cout << "size: 0; no values." << endl;
-    else
-    {
-        cout << "size: " << vec.size() << "; values:";
-        for (auto it = vec.begin(); it != vec.end(); ++it)
-            cout << *it << ",";
-        cout << "\b." << endl;
-    }
+    cout << "size: " << vec.size() << "  content: [";
+    for (auto it = vec.begin(); it != vec.end(); ++it)
+        cout << *it << (it != vec.end() - 1 ? "," : "");
+    cout << "]\n" << endl;
 }
 
-void check(const vector<string>& vec)
+void check_and_print(const vector<string>& vec)
 {
-    if (vec.empty())
-        cout << "size: 0; no values." << endl;
-    else
-    {
-        cout << "size: " << vec.size() << "; values:";
-        for (auto it = vec.begin(); it != vec.end(); ++it)
-            if (it->empty()) cout << "(null)" << ",";
-            else cout << *it << ",";
-            cout << "\b." << endl;
-    }
+
+    cout << "size: " << vec.size() << "  content: [";
+    for (auto it = vec.begin(); it != vec.end(); ++it)
+        cout << *it << (it != vec.end() - 1 ? "," : "");
+    cout << "]\n" << endl;
 }
 
 int main()
@@ -49,13 +39,13 @@ int main()
     vector<string> v6{ 10 };
     vector<string> v7{ 10, "hi" };
 
-    check(v1);
-    check(v2);
-    check(v3);
-    check(v4);
-    check(v5);
-    check(v6);
-    check(v7);
+    check_and_print(v1);
+    check_and_print(v2);
+    check_and_print(v3);
+    check_and_print(v4);
+    check_and_print(v5);
+    check_and_print(v6);
+    check_and_print(v7);
 
     return 0;
 }
