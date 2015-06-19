@@ -32,8 +32,8 @@
 
 int main()
 {
-  std::cout << "Hello, World" << std::endl;
-  return 0;
+    std::cout << "Hello, World" << std::endl;
+    return 0;
 }
 ```
 
@@ -45,12 +45,12 @@ int main()
 
 int main()
 {
-  std::cout << "Enter two numbers:" << std::endl;
-  int v1 = 0, v2 = 0;
-  std::cin >> v1 >> v2;
-  std::cout << "The product of " << v1 << " and " << v2
-  << " is " << v1 * v2 << std::endl;
-  return 0;
+    std::cout << "Enter two numbers:" << std::endl;
+    int v1 = 0, v2 = 0;
+    std::cin >> v1 >> v2;
+    std::cout << "The product is " << v1 * v2 << std::endl;
+
+    return 0;
 }
 ```
 
@@ -63,17 +63,17 @@ int main()
 
 int main()
 {
-  std::cout << "Enter two numbers:" << std::endl;
-  int v1 = 0, v2 = 0;
-  std::cin >> v1 >> v2;
-  std::cout << "The product of ";
-  std::cout << v1;
-  std::cout << " and ";
-  std::cout << v2;
-  std::cout << " is ";
-  std::cout << v1 * v2;
-  std::cout << std::endl;
-  return 0;
+    std::cout << "Enter two numbers:" << std::endl;
+    int v1 = 0, v2 = 0;
+    std::cin >> v1 >> v2;
+    std::cout << "The product of ";
+    std::cout << v1;
+    std::cout << " and ";
+    std::cout << v2;
+    std::cout << " is ";
+    std::cout << v1 * v2;
+    std::cout << std::endl;
+    return 0;
 }
 ```
 
@@ -87,9 +87,7 @@ It's illegal.
 Fixed it: remove the spare semicolons.
 
 ```cpp
-std::cout << "The sum of " << v1
-          << " and " << v2
-          << " is " << v1 + v2 << std::endl;
+std::cout << "The sum of " << v1 << " and " << v2 << " is " << v1 + v2 << std::endl;
 ```
 
 ##Exercise 1.7
@@ -105,7 +103,7 @@ Example:
 */
 int main()
 {
-  return 0;
+    return 0;
 }
 ```
 
@@ -165,13 +163,11 @@ Ex1.9:
 
 int main()
 {
-  int sum = 0;
-  for (int i=50; i<=100; ++i)
-      sum += i;
+    int sum = 0;
+    for (int i = 50; i <= 100; ++i) sum += i;
+    std::cout << "the sum is: " << sum << std::endl;
 
-  std::cout << "the sum is: " << sum << std::endl;
-
-  return 0;
+    return 0;
 }
 ```
 
@@ -181,10 +177,10 @@ Ex1.10:
 
 int main()
 {
-  for (int i=10; i>=0; --i)
-    std::cout << i << std::endl;
+    for (int i = 10; i >= 0; --i)
+        std::cout << i << std::endl;
 
-  return 0;
+    return 0;
 }
 ```
 
@@ -194,21 +190,21 @@ Ex1.11:
 
 int main()
 {
-  int val_small = 0, val_big = 0;
-  std::cout << "please input two integers:";
-  std::cin >> val_small >> val_big;
+    int val_small = 0, val_big = 0;
+    std::cout << "please input two integers:";
+    std::cin >> val_small >> val_big;
 
-  if (val_small > val_big)
-  {
-    int tmp = val_small;
-    val_small = val_big;
-    val_big = tmp;
-  }
+    if (val_small > val_big)
+    {
+        int tmp = val_small;
+        val_small = val_big;
+        val_big = tmp;
+    }
 
-  for (int i=val_small; i<=val_big; ++i)
-    std::cout << i << std::endl;
+    for (int i = val_small; i <= val_big; ++i)
+        std::cout << i << std::endl;
 
-  return 0;
+    return 0;
 }
 ```
 
@@ -245,17 +241,17 @@ The following are my own version:
 
 int main()
 {
-  int limit = 0, sum = 0, value = 0;
-  std::cout << "How many integers would you like to enter?";
-  std::cin >> limit;
+    int limit = 0, sum = 0, value = 0;
+    std::cout << "How many integers would you like to enter?";
+    std::cin >> limit;
 
-  // assume we don't know what is EOF(End-Of-File).
-  while (std::cin >> value && (--limit != 0))
-    sum += value;
+    // assume we don't know what is EOF(End-Of-File).
+    while (std::cin >> value && (--limit != 0))
+        sum += value;
 
-  std::cout << sum + value << std::endl;
+    std::cout << sum + value << std::endl;
 
-  return 0;
+    return 0;
 }
 ```
 
