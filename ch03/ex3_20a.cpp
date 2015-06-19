@@ -23,5 +23,6 @@ int main()
     for (int i = 0; i != ivec.size() - 1; ++i)
         cout << ivec[i] + ivec[i + 1] << " ";
     cout << endl;
+    
     return 0;
 }
