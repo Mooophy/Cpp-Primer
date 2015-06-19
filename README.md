@@ -10,13 +10,6 @@
 - Use `-std=c++11`flag for compiling.
 - If any bug caught, please [let me know](https://github.com/Mooophy/Cpp-Primer/issues/new), thanks.
 
-### How to contribute
-
-- Please **fork**([How?](https://help.github.com/articles/fork-a-repo)) this repository first.
-- **Commit**([How?](https://help.github.com/articles/create-a-repo#commit-your-first-change)) in your own repository.
-- Give me a **pull request**([How?](https://help.github.com/articles/using-pull-requests)).
-- **Syncing** with([How?](https://help.github.com/articles/syncing-a-fork/)) the origin repository. This is very **important** because this repo updates frequently.
-
 ### Contents
 
 - [Chapter 1. Getting Started](ch01/README.md)
