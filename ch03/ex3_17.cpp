@@ -1,6 +1,6 @@
 ///
-///@Author  PEZY
-///@Date    Aug. 2014
+///@Author  @PEZY @Yue Wang 
+///@Date    Aug. 2014 Jun.2015
 ///@Brief
 /// Read a sequence of words from cin and store the values a vector.
 /// After you've read all the words, process the vector and change each word to uppercase.
@@ -19,23 +19,18 @@ using std::string;
 
 int main()
 {
-  vector<string> vec;
-  string word;
-  while (cin >> word)
-    vec.push_back(word);
+    vector<string> vec;
+    for (string word; cin >> word; vec.push_back(word));
+    for (auto &str : vec) for (auto &c : str) c = toupper(c);
 
-  for (auto &str : vec)
-    for (auto &c : str)
-      c = toupper(c);
+    for (int i = 0; i != vec.size(); ++i)
+    {
+        if (i != 0 && i % 8 == 0) cout << endl;
+        cout << vec[i] << " ";
+    }
+    cout << endl;
 
-  for (decltype(vec.size()) i=0; i != vec.size(); ++i)
-  {
-    if (i != 0 && i%8 == 0) cout << endl;
-    cout << vec[i] << " ";
-  }
-  cout << endl;
-
-  return 0;
+    return 0;
 }
 
 ///
