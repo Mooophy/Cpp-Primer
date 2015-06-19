@@ -8,7 +8,6 @@ int main()
     if (std::cin >> total.bookNo >> total.units_sold >> totalPrice)
     {
         total.CalcRevenue(totalPrice);
-
         Sales_data trans;
         double transPrice;
         while (std::cin >> trans.bookNo >> trans.units_sold >> transPrice)
@@ -25,9 +24,7 @@ int main()
                 total.SetData(trans);
             }
         }
-
         total.Print();
-
         return 0;
     }
     else
