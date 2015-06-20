@@ -17,7 +17,7 @@ bool compare(const int lhs[], const int rhs[])
     return true;
 }
 
-bool compare(vector<int> const& lhs, vector<int>& rhs)
+bool compare(vector<int> const& lhs, vector<int> const& rhs)
 {
     return lhs == rhs;
 }
