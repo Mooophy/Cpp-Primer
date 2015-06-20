@@ -24,8 +24,8 @@ bool compare(vector<int> const& lhs, vector<int>& rhs)
 
 int main()
 {
-    int arr1[3] = { 0, 1, 2 };
-    int arr2[3] = { 0, 1, 2 };
+    int arr1[] = { 0, 1, 2 };
+    int arr2[] = { 0, 1, 2 };
     cout << "The two arrays are " << (compare(arr1, arr2) ? "equal\n" : "unequal\n");
 
     vector<int> vec1 = { 0, 1, 2 };
