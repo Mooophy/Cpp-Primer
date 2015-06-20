@@ -19,7 +19,7 @@ int main()
 {
     int arr1[3] = { 0, 1, 2 };
     int arr2[3] = { 0, 2, 4 };
-    auto result = compare(arr1, sizeof(arr1) / sizeof(arr2[1]), arr2, sizeof(arr2[0]));
+    auto result = compare(arr1, sizeof(arr1) / sizeof(arr2[0]), arr2, sizeof(arr2[0]));
     cout << "The two arrays are " << (result ? "equal\n" : "unequal\n");
 
     vector<int> vec1 = { 0, 1, 2 };
