@@ -2,8 +2,15 @@
 #include <vector>
 using std::begin; using std::end; using std::cout; using std::endl; using std::vector; using std::size_t;
 
-bool compare(const int lhs[], size_t lsize, const int rhs[], size_t rsize)
+size_t array_size(const int arr[])
 {
+    return sizeof(arr) / sizeof(arr[0]);
+}
+
+bool compare(const int lhs[], const int rhs[])
+{
+    auto lsize = array_size(lhs);
+    auto rsize = array_size(rhs);
     if (lsize != rsize) return false;
     for (int i = 0; i != lsize; ++i)
         if (lhs[i] != rhs[i]) return false;
@@ -18,14 +25,12 @@ bool compare(vector<int> const& lhs, vector<int>& rhs)
 int main()
 {
     int arr1[3] = { 0, 1, 2 };
-    int arr2[3] = { 0, 2, 4 };
-    auto result = compare(arr1, sizeof(arr1) / sizeof(arr2[0]), arr2, sizeof(arr2[0]));
-    cout << "The two arrays are " << (result ? "equal\n" : "unequal\n");
+    int arr2[3] = { 0, 1, 2 };
+    cout << "The two arrays are " << (compare(arr1, arr2) ? "equal\n" : "unequal\n");
 
     vector<int> vec1 = { 0, 1, 2 };
-    vector<int> vec2 = { 0, 1, 2 };
-    result = compare(vec1, vec2);
-    cout << "The two vectors are " << (result ? "equal\n" : "unequal\n");
+    vector<int> vec2 = { 0, 1, 3 };
+    cout << "The two vectors are " << (compare(vec1, vec2) ? "equal\n" : "unequal\n");
 
     return 0;
 }
