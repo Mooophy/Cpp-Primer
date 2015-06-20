@@ -3,8 +3,9 @@ using std::cout; using std::endl;
 
 int main()
 {
-    int arr[10];
-    for (auto ptr = arr; ptr != arr + 10; ++ptr) *ptr = 0;
+    const int size = 10;
+    int arr[size];
+    for (auto ptr = arr; ptr != arr + size; ++ptr) *ptr = 0;
 
     for (auto i : arr) cout << i << " ";
     cout << endl;
