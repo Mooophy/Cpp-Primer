@@ -8,16 +8,13 @@
 #include <iostream>
 #include <iterator>
 
-using std::vector; using std::iterator; using std::cout; using std::endl;
+using std::vector; using std::iterator; using std::cout;
 
 int main()
 {
-  vector<int> ivec(10, 1);
-  for (auto it = ivec.begin(); it != ivec.end(); ++it)
-    *it *= 2;
-  for (auto value : ivec)
-    cout << value << " ";
-  cout << endl;
+    vector<int> v{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    for (auto it = v.begin(); it != v.end(); ++it) *it *= 2;
+    for (auto i : v) cout << i << " ";
 
-  return 0;
+    return 0;
 }
