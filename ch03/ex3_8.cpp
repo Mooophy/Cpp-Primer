@@ -7,6 +7,7 @@ using std::endl;
 int main()
 {
     string str("a simple string");
+    
     // while
     int i = 0;
     while (i < str.size()) str[i++] = 'X';
