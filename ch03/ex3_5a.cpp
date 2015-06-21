@@ -10,14 +10,9 @@ using std::endl;
 
 int main()
 {
-  string largeStr;
-  string str;
-  while (cin >> str)
-  {
-    largeStr += str;
-  }
+    string concatenated;
+    for (string buffer; cin >> buffer; concatenated += buffer);
+    cout << "The concatenated string is " << concatenated << endl;
 
-  cout << "The concatenated string is " << largeStr << endl;
-
-  return 0;
+    return 0;
 }
