@@ -4,8 +4,6 @@
 //! Write a function to swap two int pointers.
 //!
 #include <iostream>
-#include <string>
-#include <vector>
 
 void swap(int*& lft, int*& rht)
 {
