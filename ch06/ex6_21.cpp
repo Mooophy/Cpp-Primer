@@ -1,4 +1,4 @@
-//! @Alan
+//! @Yue Wang
 //!
 //! Exercise 6.21:
 //! Write a function that takes an int and a pointer to an int and
