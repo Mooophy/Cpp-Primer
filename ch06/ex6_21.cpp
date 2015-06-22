@@ -9,9 +9,9 @@
 #include <iostream>
 using std::cout;
 
-int larger_one(const int i, const int *ip)
+int larger_one(const int i, const int *p)
 {
-    return (i > *ip) ? i : *ip;
+    return (i > *p) ? i : *p;
 }
 
 int main()
