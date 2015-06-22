@@ -1,47 +1,26 @@
-//! @Alan
+//! @Yue Wang
 //!
 //! Exercise 6.22:
 //! Write a function to swap two int pointers.
 //!
-
-
-
 #include <iostream>
 #include <string>
 #include <vector>
 
-using namespace std;
-
-//!
-//! @brief swap_ptr
-//! @note  a pointer is an object, so it can be referenced to using &.
-//!        int* &_p1 means _p1 is a reference to an int pointer.
-//!
-void swap_ptr(int* &_p1, int* &_p2);
-int main()
+void swap(int*& lft, int*& rht)
 {
-    int a, b;
-    int *p1=&a, *p2=&b;
-
-    cout<<"Plz enter:\n";
-    while(cin>>a>>b)
-    {
-        p1=&a, p2=&b;   //make sure p1-->a and p2-->b, otherwise funny things will happen
-                        //and look like the swap_ptr doesn't work.
-
-        swap_ptr(p1, p2);
-        cout<<*p1
-                <<" "
-                    <<*p2
-                        <<"\n";
-    }
-
-    return 0;
+    auto tmp = lft;
+    lft = rht;
+    rht = tmp;
 }
 
-void swap_ptr(int* &_p1, int* &_p2)
+int main()
 {
-    int *temp = _p1;
-    _p1 = _p2;
-    _p2 = temp;
+    int i = 42, j = 99;
+    auto lft = &i;
+    auto rht = &j;
+    swap(lft, rht);
+    std::cout << *lft << " " << *rht << std::endl;
+
+    return 0;
 }
