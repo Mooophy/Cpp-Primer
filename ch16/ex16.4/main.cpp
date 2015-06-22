@@ -25,7 +25,7 @@ namespace ch16
     inline Iterator find(Iterator first, Iterator last, Value const& value)
     {
         auto curr = first;
-        for (; curr != last && *curr != value; ++curr);
+        while(curr != last && *curr != value) ++curr;
         return curr;
     }
 }
