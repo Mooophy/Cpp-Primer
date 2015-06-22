@@ -7,19 +7,17 @@
 //!
 
 #include <iostream>
-using std::cout; 
+using std::cout;
 
-int LargerOne(const int i, const int *ip)
+int larger_one(const int i, const int *ip)
 {
     return (i > *ip) ? i : *ip;
 }
 
 int main()
 {
-    int c = 6;
-    cout << LargerOne(7, &c);
+    int i = 6;
+    cout << larger_one(7, &i);
 
     return 0;
 }
-
-
