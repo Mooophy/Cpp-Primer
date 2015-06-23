@@ -6,8 +6,6 @@
 //! version do you think would be easier to use and why?
 //  The version using reference is easier.
 //!
-
-
 #include <iostream>
 #include <string>
 
@@ -21,9 +19,7 @@ void swap(int& lhs, int& rhs)
 
 int main()
 {
-    int left, right;
-    std::cout << "Please Enter:\n";
-    while (std::cin >> left >> right)
+    for (int left, right; std::cout << "Please Enter:\n", std::cin >> left >> right; )
     {
         swap(left, right);
         std::cout << left << " " << right << std::endl;
@@ -31,4 +27,3 @@ int main()
 
     return 0;
 }
-
