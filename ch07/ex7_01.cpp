@@ -5,12 +5,12 @@
 //  Created by pezy on 14/10/30.
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
-
 #include <iostream>
 #include <string>
 using std::cin; using std::cout; using std::endl; using std::string;
 
-struct Sales_data{
+struct Sales_data
+{
     string bookNo;
     unsigned units_sold = 0;
     double revenue = 0.0;
@@ -22,12 +22,15 @@ int main()
     if (cin >> total.bookNo >> total.units_sold >> total.revenue)
     {
         Sales_data trans;
-        while (cin >> trans.bookNo >> trans.units_sold >> trans.revenue) {
-            if (total.bookNo == trans.bookNo) {
+        while (cin >> trans.bookNo >> trans.units_sold >> trans.revenue) 
+        {
+            if (total.bookNo == trans.bookNo) 
+            {
                 total.units_sold += trans.units_sold;
                 total.revenue += trans.revenue;
             }
-            else {
+            else
+            {
                 cout << total.bookNo << " " << total.units_sold << " " << total.revenue << endl;
                 total = trans;
             }
