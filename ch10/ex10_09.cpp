@@ -40,6 +40,5 @@ int main()
     println(vs);
     println(eliminate_duplicates(vs));
 
-    system("pause");
     return 0;
 }
