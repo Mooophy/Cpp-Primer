@@ -1,5 +1,5 @@
 //!
-//! @author @huangjuncmj @Alan
+//! @author @huangjuncmj @Yue Wang
 //! @date   19.11.2014
 //!
 //! Exercise 9.26:
