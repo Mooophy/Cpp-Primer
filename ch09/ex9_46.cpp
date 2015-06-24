@@ -12,8 +12,7 @@
 #include <iostream>
 #include <string>
 
-std::string
-pre_suffix(const std::string &name, const std::string &pre, const std::string &su)
+std::string pre_suffix(const std::string &name, const std::string &pre, const std::string &su)
 {
     std::string ret(name);
     ret.insert(0, pre);

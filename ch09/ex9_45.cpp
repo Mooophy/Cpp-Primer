@@ -1,4 +1,4 @@
-//! @author @TungWah @Alan
+//! @author @TungWah @Yue Wang
 //! @date   4 Oct,2014.
 //!
 //! Exercise 9.45:
