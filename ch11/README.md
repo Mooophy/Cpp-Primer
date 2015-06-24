@@ -43,7 +43,7 @@ I use `set` when i just need to store the `key`, In other hand, I　would like u
 
 - mapped_type : vector< int >
 - key_type : int
-- value_type : std::pair< int, vector<int> >
+- value_type : std::pair< const int, vector<int> >
 
 ## Exercise 11.16:
 >Using a map iterator write an expression that assigns a value to an element.
