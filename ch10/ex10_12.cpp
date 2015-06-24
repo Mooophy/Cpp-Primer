@@ -1,4 +1,4 @@
-//! @Alan
+//! @Yue Wang
 //! Exercise 10.12:
 //! Write a function named compareIsbn that compares the isbn() members of two Sales_data objects.
 //! Use that function to sort a vector that holds Sales_data objects.
@@ -11,8 +11,7 @@
 #include <numeric>
 #include "../ch07/ex7_26.h"     // Sales_data class.
 
-inline bool 
-compareIsbn(const Sales_data &sd1, const Sales_data &sd2)
+inline bool compareIsbn(const Sales_data &sd1, const Sales_data &sd2)
 {
     return sd1.isbn().size() < sd2.isbn().size();
 }
