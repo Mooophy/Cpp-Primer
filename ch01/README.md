@@ -181,7 +181,6 @@ int main()
 {
     for (int i = 10; i >= 0; --i)
         std::cout << i << std::endl;
-
     return 0;
 }
 ```
@@ -192,18 +191,18 @@ Ex1.11:
 
 int main()
 {
-    int val_small = 0, val_big = 0;
-    std::cout << "please input two integers:";
-    std::cin >> val_small >> val_big;
+    std::cout << "please input two integers:\n";
+    int small = 0, big = 0;
+    std::cin >> small >> big;
 
-    if (val_small > val_big)
+    if (small > big)
     {
-        int tmp = val_small;
-        val_small = val_big;
-        val_big = tmp;
+        int tmp = small;
+        small = big;
+        big = tmp;
     }
 
-    for (int i = val_small; i <= val_big; ++i)
+    for (int i = small; i != big; ++i)
         std::cout << i << std::endl;
 
     return 0;
@@ -214,50 +213,28 @@ int main()
 > Compare and contrast the loops that used a for with those
 using a while. Are there advantages or disadvantages to using either form?
 
-If you need a pattern which is using a variable in a condition and incrementing that variable in the
-body. You should use `for` loop. Else the `while` loop is more simple.
-
-Want to know more? look at [this](http://stackoverflow.com/questions/1600282/guideline-while-vs-for)
+[A similar question on Stack Overflow](http://stackoverflow.com/questions/2950931/for-vs-while-in-c-programming)
 
 ##Exercise 1.15
 > Write programs that contain the common errors discussed in
 the box on page 16. Familiarize yourself with the messages the compiler
 generates.
 
-**JUST READ IT!**
+Nothing to present here.
 
 ##Exercise 1.16
 
-> Write your own version of a program that prints the sum of a set of integers read from cin.
-
-Many people confused about this exercise, such as [this](http://www.cplusplus.com/forum/beginner/104169/) and [this](http://stackoverflow.com/questions/17841424/how-to-write-this-while-loop-as-a-for-loop).
-
-In my opinion, the exercise aim to write the program without "**END-OF-FILE**".
-
-**BUT**, the [code](http://www.cplusplus.com/forum/beginner/104169/#msg561450) in first link is not correct.
-
-The following are my own version:
-
 ```cpp
 #include <iostream>
-
 int main()
 {
-    int limit = 0, sum = 0, value = 0;
-    std::cout << "How many integers would you like to enter?";
-    std::cin >> limit;
-
-    // assume we don't know what is EOF(End-Of-File).
-    while (std::cin >> value && (--limit != 0))
-        sum += value;
-
-    std::cout << sum + value << std::endl;
+    int sum = 0;
+    for (int val; std::cin >> val; sum += val);
+    std::cout << sum << std::endl;
 
     return 0;
 }
 ```
-
-Watch out for "sum + value" in the `cout` line.
 
 ##Exercise 1.17
 
