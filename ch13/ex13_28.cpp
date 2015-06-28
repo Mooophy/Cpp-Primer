@@ -42,6 +42,5 @@ BinStrTree& BinStrTree::operator=(const BinStrTree &bst)
 
 int main()
 {
-	
-	return 0;
+    return 0;
 }
