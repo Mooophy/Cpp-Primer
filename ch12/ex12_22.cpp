@@ -19,6 +19,5 @@ ConstStrBlobPtr StrBlob::end() const // should add const
 
 int main()
 {
-	
-	return 0;
+    return 0;
 }

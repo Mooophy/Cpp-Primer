@@ -24,7 +24,7 @@ TextQuery::TextQuery(std::ifstream &ifs) : input(new StrVec)
 QueryResult TextQuery::query(const string& str) const
 {
     // use static just allocate once.
-	static std::shared_ptr<std::set<size_t>> nodate(new std::set<size_t>);
+    static std::shared_ptr<std::set<size_t>> nodate(new std::set<size_t>);
     auto found = result.find(str);
     if (found == result.end()) return QueryResult(str, nodate, input);
     else return QueryResult(str, found->second, input);

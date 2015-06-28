@@ -31,29 +31,6 @@ HasPtr& HasPtr::operator=(HasPtr rhs)
     return *this;
 }
 
-//HasPtr& HasPtr::operator=(const HasPtr &rhs)
-//{
-//    auto newp = new std::string(*rhs.ps);
-//    delete ps;
-//    ps = newp;
-//    i = rhs.i;
-//    std::cout << "call copy assignment" << std::endl;
-//    return *this;
-//}
-
-//HasPtr& HasPtr::operator=(HasPtr &&rhs) noexcept
-//{
-//    if (this != &rhs)
-//    {
-//        delete ps;
-//        ps = rhs.ps;
-//        i = rhs.i;
-//        rhs.ps = nullptr;
-//        std::cout << "call move assignment" << std::endl;
-//    }
-//    return *this;
-//}
-
 HasPtr::~HasPtr()
 {
     std::cout << "call destructor" << std::endl;
@@ -62,6 +39,5 @@ HasPtr::~HasPtr()
 
 int main()
 {
-	
-	return 0;
+    return 0;
 }

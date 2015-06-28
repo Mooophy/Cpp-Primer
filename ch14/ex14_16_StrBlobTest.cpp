@@ -3,10 +3,10 @@
 
 int main()
 {
-	StrBlob sb{ "Hello", "World", "Pezy" };
+    StrBlob sb{ "Hello", "World", "Pezy" };
 
-	for (ConstStrBlobPtr iter = sb.cbegin(); iter != sb.cend(); iter.incr()) {
-		std::cout << iter.deref() << " ";
-	}
-	std::cout << std::endl;
+    for (ConstStrBlobPtr iter = sb.cbegin(); iter != sb.cend(); iter.incr()) {
+        std::cout << iter.deref() << " ";
+    }
+    std::cout << std::endl;
 }
