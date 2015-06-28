@@ -50,6 +50,5 @@ std::ostream& print(std::ostream &out, const QueryResult& qr)
 
 int main()
 {
-	
-	return 0;
+    return 0;
 }
