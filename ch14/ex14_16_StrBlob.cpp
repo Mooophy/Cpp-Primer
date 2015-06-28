@@ -8,32 +8,32 @@
 
 bool operator==(const StrBlob &lhs, const StrBlob &rhs)
 {
-	return *lhs.data == *rhs.data;
+    return *lhs.data == *rhs.data;
 }
 
 bool operator!=(const StrBlob &lhs, const StrBlob &rhs)
 {
-	return !(lhs == rhs);
+    return !(lhs == rhs);
 }
 
 bool operator==(const StrBlobPtr &lhs, const StrBlobPtr &rhs)
 {
-	return lhs.curr == rhs.curr;
+    return lhs.curr == rhs.curr;
 }
 
 bool operator!=(const StrBlobPtr &lhs, const StrBlobPtr &rhs)
 {
-	return !(lhs == rhs);
+    return !(lhs == rhs);
 }
 
 bool operator==(const ConstStrBlobPtr &lhs, const ConstStrBlobPtr &rhs)
 {
-	return lhs.curr == rhs.curr;
+    return lhs.curr == rhs.curr;
 }
 
 bool operator!=(const ConstStrBlobPtr &lhs, const ConstStrBlobPtr &rhs)
 {
-	return !(lhs == rhs);
+    return !(lhs == rhs);
 }
 
 //==================================================================
@@ -44,18 +44,18 @@ bool operator!=(const ConstStrBlobPtr &lhs, const ConstStrBlobPtr &rhs)
 
 StrBlob& StrBlob::operator=(const StrBlob &lhs)
 {
-	data = make_shared<vector<string>>(*lhs.data);
-	return *this;
+    data = make_shared<vector<string>>(*lhs.data);
+    return *this;
 }
 
 StrBlob& StrBlob::operator=(StrBlob &&rhs) NOEXCEPT
 {
-	if (this != &rhs) {
-		data = std::move(rhs.data);
-		rhs.data = nullptr;
-	}
+    if (this != &rhs) {
+        data = std::move(rhs.data);
+        rhs.data = nullptr;
+    }
 
-	return *this;
+    return *this;
 }
 
 //==================================================================
@@ -66,12 +66,12 @@ StrBlob& StrBlob::operator=(StrBlob &&rhs) NOEXCEPT
 
 StrBlobPtr StrBlob::begin()
 {
-	return StrBlobPtr(*this);
+    return StrBlobPtr(*this);
 }
 
 StrBlobPtr StrBlob::end()
 {
-	return StrBlobPtr(*this, data->size());
+    return StrBlobPtr(*this, data->size());
 }
 
 ConstStrBlobPtr StrBlob::cbegin() const
