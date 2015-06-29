@@ -233,7 +233,7 @@ int main()
 }
 ```
 
-`100`. local object named reused hides global reused.
+`100`, since the global `i` was hidden by the local `i`.
 
 ##Exercise 2.14
 >Is the following program legal? If so, what values are printed?
