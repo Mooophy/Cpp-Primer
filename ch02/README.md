@@ -375,14 +375,15 @@ No. Because more information needed to determine whether the pointer is valid or
 
 ##Exercise 2.24
 >Why is the initialization of p legal but that of lp illegal?
+
 ```cpp
-int i =42;
-void *p=&i;
-long *lp=&i;
+int i = 42;
+void *p = &i;
+long *lp = &i;
 ```
 
-Because the type `void*` is a special pointer type that can hold the address of any object.
-But we cannot initialize a variable of type `long *` with an rvalue of type `int *`
+Inherited from C, `void*` is a special pointer that may point to any type, hence the second line is legal.
+For type safty, C++ forbids implicit conversions like `long *lp = &i;`, thus such code is illegal.
 
 ##Exercise 2.25
 >Determine the types and values of each of the following
