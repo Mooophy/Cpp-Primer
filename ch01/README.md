@@ -254,9 +254,7 @@ If there are no duplicated values, when different values input, a new line will 
 
 > Revise the program you wrote for the exercises in § 1.4.1 (p. 13) that printed a range of numbers so that it handles input in which the first number is smaller than the second.
 
-Yes, we should use `if` to judge which is bigger.
-
-review this [code](https://github.com/pezy/Cpp-Primer/blob/master/ch01/ex1_11.cpp)
+[code](https://github.com/pezy/Cpp-Primer/blob/master/ch01/ex1_11.cpp)
 
 ##Exercise 1.20
 
@@ -264,19 +262,13 @@ review this [code](https://github.com/pezy/Cpp-Primer/blob/master/ch01/ex1_11.cp
 
 [Here](ex1_20.cpp) is the code.
 
-**You need to enable C++11 support in your compiler.
-With GCC and Clang, this can be done with the `-std=c++11` option.**
-
-**(Never say it again.)**
-
-How to test it? use the `book.txt` in `data` folder. And do it like this:
-
-![run](https://db.tt/fm8iHtkF)
+Note : C++11 flag need to enable.
+For GCC and Clang, this can be done with the `-std=c++11`
 
 ##Exercise 1.21
 > Write a program that reads two Sales_item objects that have the same ISBN and produces their sum.
 
-The program should check whether the objects have the same ISBN.(Have a look at 1.5.2, surprise!)
+The program should check whether the objects have the same ISBN.
 
 [Code](ex1_21.cpp)
 

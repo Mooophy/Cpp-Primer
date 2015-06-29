@@ -4,43 +4,43 @@
 
 int main()
 {
-	StrVec vec;
-	vec.reserve(6);
-	std::cout << "capacity(reserve to 6): " << vec.capacity() << std::endl;
+    StrVec vec;
+    vec.reserve(6);
+    std::cout << "capacity(reserve to 6): " << vec.capacity() << std::endl;
 
-	vec.reserve(4);
-	std::cout << "capacity(reserve to 4): " << vec.capacity() << std::endl;
+    vec.reserve(4);
+    std::cout << "capacity(reserve to 4): " << vec.capacity() << std::endl;
 
-	vec.push_back("hello");
-	vec.push_back("world");
+    vec.push_back("hello");
+    vec.push_back("world");
 
-	vec.resize(4);
+    vec.resize(4);
 
-	for (auto i = vec.begin(); i != vec.end(); ++i)
-		std::cout << *i << std::endl;
-	std::cout << "-EOF-" << std::endl;
+    for (auto i = vec.begin(); i != vec.end(); ++i)
+        std::cout << *i << std::endl;
+    std::cout << "-EOF-" << std::endl;
 
-	vec.resize(1);
+    vec.resize(1);
 
-	for (auto i = vec.begin(); i != vec.end(); ++i)
-		std::cout << *i << std::endl;
-	std::cout << "-EOF-" << std::endl;
+    for (auto i = vec.begin(); i != vec.end(); ++i)
+        std::cout << *i << std::endl;
+    std::cout << "-EOF-" << std::endl;
 
-	StrVec vec_list{"hello", "world", "pezy"};
+    StrVec vec_list{ "hello", "world", "pezy" };
 
-	for (auto i = vec_list.begin(); i != vec_list.end(); ++i)
-		std::cout << *i << " ";
-	std::cout << std::endl;
+    for (auto i = vec_list.begin(); i != vec_list.end(); ++i)
+        std::cout << *i << " ";
+    std::cout << std::endl;
 
-	// Test operator==
+    // Test operator==
 
-	const StrVec const_vec_list = { "hello", "world", "pezy" };
-	if (vec_list == const_vec_list)
-		for (const auto &str : const_vec_list)
-			std::cout << str << " ";
-	std::cout << std::endl;
+    const StrVec const_vec_list = { "hello", "world", "pezy" };
+    if (vec_list == const_vec_list)
+        for (const auto &str : const_vec_list)
+            std::cout << str << " ";
+    std::cout << std::endl;
 
-	// Test operator<
-	const StrVec const_vec_list_small = {"hello", "pezy", "ok"};
-	std::cout << (const_vec_list_small < const_vec_list) << std::endl;
+    // Test operator<
+    const StrVec const_vec_list_small = { "hello", "pezy", "ok" };
+    std::cout << (const_vec_list_small < const_vec_list) << std::endl;
 }
