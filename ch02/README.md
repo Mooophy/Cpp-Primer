@@ -584,8 +584,6 @@ Error message: [Error] expected ';' after struct definition
 ##Exercise 2.40
 >Write your own version of the Sales_data class.
 
-just added some your own define. like this:
-
 ```cpp
 struct Sale_data
 {
@@ -671,8 +669,6 @@ int main()
 
 ####1.6
 
-**so ugly as you see.**
-
 ```cpp
 #include <iostream>
 #include <string>
@@ -734,12 +730,8 @@ int main()
 ```
 
 ##Exercise 2.42
->Write your own version of the Sales_data.h header and
-use it to rewrite the exercise from § 2.6.2(p. 76)
+>Write your own version of the Sales_data.h header and use it to rewrite the exercise from § 2.6.2(p. 76)
 
-You can add some function in your header file. Look at [here](ex2_42.h).
-
-rewrite the exercise:
 
 - 1.5.1. [Code](ex2_42_1.cpp)
 - 1.5.2. [Code](ex2_42_2.cpp)
