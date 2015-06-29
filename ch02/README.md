@@ -244,8 +244,11 @@ int main()
     std::cout << i << " " << sum << std::endl;
 ```
 
-Yes.It is legal.Printed:
-`100, 45.`
+Legal. Output:
+
+```100 45```
+
+Note: Such naming is considered as bad practise. 
 
 ##Exercise 2.15
 >Which of the following definitions, if any, are invalid? Why?
