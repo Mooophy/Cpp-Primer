@@ -295,7 +295,7 @@ Tip: please review the `1.4.4`.
 representing multiple ISBNs. The records for each ISBN should be grouped
 together.
 
-You can use data/book.txt as the records.
+`data/book.txt` may be used as the records.
 
 ![run](https://db.tt/EeDI7lvN)
 
