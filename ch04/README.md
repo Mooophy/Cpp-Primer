@@ -226,7 +226,8 @@ The final value in decimal is `-7296`.
 ##Exercise 4.26
 >In our grading example in this section, what would happen if we used unsigned int as the type for quiz1?
 
-no different in most situation. `unsigned int` have the same size as `unsigned long` on most machine. But the second one could make sure that it have **at least 32 bits** on any machine.
+The C++ standard does not specify the size of integral types in bytes, but it specifies minimum ranges they must be able to hold. Minimum mange of `unsigned int` is 0 to 65535. Thus if `unsigned int` adopted, the result is undefined.
+
 
 ##Exercise 4.27
 >What is the result of each of these expressions?
