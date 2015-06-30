@@ -45,7 +45,7 @@ and printing its result.
 >Write an expression to determine whether an int value is even or odd.
 
 ```cpp
-i%2 == 0 ? "even" : "odd"
+ i & 0x1 
 ```
 
 ##Exercise 4.7
@@ -65,7 +65,7 @@ from the book:
 
 - logical `AND` : the second operand is evaluated if and only if the left side is `true`.
 - logical `OR`  : the second operand is evaluated if and only if the left side is `false`
-- equality operators : `true` only if both operands have the same value, otherwise, it returns `false`.
+- equality operators `==` : undefined.
 
 ##Exercise 4.9
 >Explain the behavior of the condition in the following if:
@@ -78,7 +78,7 @@ cp is a pointer to `const char *`, and it's not a nullptr. true.
 
 `*cp` is a const char: 'H', and it is explicit a nonzero value. true.
 
-true && true = true.
+true && true -> true.
 
 ##Exercise 4.10
 >Write the condition for a while loop that would read ints from
@@ -147,12 +147,7 @@ if (i == 1024)
 ##Exercise 4.17
 >Explain the difference between prefix and postfix increment.
 
-The postfix operators increment(or decrement) the operand but yield a copy
-of the original, unchanged value as its result.
-
-The prefix operators return the object itself as an **lvalue**.
-
-The postfix operators return a copy of the object's original value as an **rvalue**.
+See: [What is the difference between ++i and i++](http://stackoverflow.com/questions/24853/what-is-the-difference-between-i-and-i)
 
 ##Exercise 4.18
 >What would happen if the while loop on page 148 that prints
