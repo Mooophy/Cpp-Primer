@@ -121,8 +121,9 @@ int main()
 ##Exercise 3.29:
 >List some of the drawbacks of using an array instead of a vector.
 
-1. can't add elements to an array.
-2. vector is better supported by std.
+1. Size is fixed at compiling time.
+2. No API as that of vector.
+3. Bug prone.
 
 ##Exercise 3.30
 >Identify the indexing errors in the following code:
@@ -133,8 +134,7 @@ for (size_t ix = 1; ix <= array_size; ++ix)
       ia[ix] = ix;
 ```
 
-The size of ia is 10, so the index of value should less than 10.
-ix **cannot** equal the array_size.
+When `ix` equal to 10, the expression `ia[ix]` becomes a **UB**, as it is trying to dereference an element out of range.
 
 ##[Exercise 3.31](ex3_31.cpp)
 ##[Exercise 3.32](ex3_32.cpp)
@@ -142,25 +142,19 @@ ix **cannot** equal the array_size.
 >What would happen if we did not initialize the scores array in the program
 on page 116?
 
-If we did not initialize the scores array. the array is undefined. the value
-will be Unknown.
-
-Look like this:
+If so, values of array are undefined. Like this:
 
 ![result](https://db.tt/3T4TQoo8)
 
 ##Exercise 3.34
 >Given that p1 and p2 point to elements in the same array, what does the following code do?
 Are there values of p1 or p2 that make this code illegal?
+
 ```cpp
 p1 += p2 - p1;
 ```
-
-we assume p1 and p2 point to an array arr. so `p1 = &arr[0]`; and `p2 = &arr[0]`.
-p2 - p1 is the distance of arr[0] to arr[0], and must be zero.
-so `p1 += 0;` can not change the p1's point.
-
-`p1 += p2 - p1;` same as `p1 = p2;`. If p2 and p1 are legal, this code always legal.
+ * It moves `p1` with the offest `p2 - p1`. After this statement, `p1` and `p2` points to the same address. 
+ * Any legal value.
 
 ##[Exercise 3.35](ex3_35.cpp)
 ##[Exercise 3.36](ex3_36.cpp)
@@ -175,40 +169,8 @@ while (*cp) {
 }
 ```
 
-Print all the elements of the array.  
+This code will print all characters in `ca`, afterwards as no `\0` appended, **UB** would happen. For most cases, the while loop here won't be terminated as expected and many rubbish would be printed out. 
 
------
-**WARNING!!!!**  
-When we use a string, the compiler put it in the section `.rodata`, the code uses C-style character string without adding a '\0' in the end of `ca`.  
-So, when we code like this:  
-
-```cpp
-const char ca[] = {'h', 'e', 'l', 'l', 'o'};
-const char s[] = "world";
-const char *cp = ca;
-while (*cp) {
-cout << *cp;
-++cp;
-}
-```
-
-The code will print "helloworld" when you run it.
-because the character list in the `.rodata` like this:  
-
-    h e l l o w o r l d \0  
-`While(*cp)` judge weather *cp is 0 or not. when *cp is not 0, it will print the character until 0.  
-When you change the code like this:  
-
-    const char ca[] = {'h', 'e', 'l', 'l', 'o', '\0'};  
-the character list in the `.rodata`:  
-
-    h e l l o \0 w o r l d \0  
-The program will run correctly. So when using C-style character string, be careful!!  
-
-----
-see `.rodata`, you can use this command:
-
-    hexdump -C a.out
 
 ##Exercise 3.38
 >In this section, we noted that it was not only illegal but meaningless to try to add two pointers.
