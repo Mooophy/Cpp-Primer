@@ -153,7 +153,7 @@ See: [What is the difference between ++i and i++](http://stackoverflow.com/quest
 >What would happen if the while loop on page 148 that prints
 the elements from a vector used the prefix increment operator?
 
-It will print from the second element and will dereference the v.end() at last.(It's undefined and very dangerous)
+It will print from the second element and dereference `v.end()` at last, which is a **UB**.
 
 ##Exercise 4.19
 >Given that ptr points to an int, that vec is a vector<int>,
