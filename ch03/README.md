@@ -4,23 +4,9 @@
 >Explain how whitespace characters are handled in the string
 input operator and in the `getline` function.
 
-The `getline` function takes an input stream and a string.
-This function reads the given stream up to and including
-the first newline and stores what it read—not including
-the newline—in its string argument.
-After `getline` sees a newline, even if it is the first character in the input,
-it stops reading and returns.
-If the first character in the input is a newline,
-then the resulting string is the empty string.
-
-`getline` function whitespace handling,
-do not ignore the beginning of the line blank characters read characters
-until it encounters a line break,
-read to termination and discard newline
-(line breaks removed from the input stream
-  but is not stored in the string object).
-
-[Read more](http://www.cplusplus.com/reference/string/string/getline/)
+ * For code like `is >> s`, input is separated by whitespaces while reading into string `s`.
+ * For code like `getline(is, s)` input is separated by newline `\n` while reading into string `s`. Other whitespaces are ignored.
+ * For code like `getline(is, s, delim)`input is separated by `delim` while reading into string `s`. All whitespaces are ignored.
 
 ##Exercise 3.4 : [part1](ex3_4a.cpp) | [part2](ex3_4b.cpp)
 ##Exercise 3.5 : [part1](ex3_5a.cpp) | [part2](ex3_5b.cpp)
@@ -31,12 +17,11 @@ read to termination and discard newline
 exercise as type char? Predict the results and then change your program
 to use a char to see if you were right.
 
-No different.
-
-    auto& c : str
-
-We use `auto` to let the compiler determine the type of `c`.
-which in this case will be `char&`.
+The point here is using reference to mutate a string. If changed to something like below, `c` would become a `char` rather than `char&`. In such case, `c` is a copy of each character of string `str`, thus the assignment `c = 'X'` won't mutate `str`. As a result, after this for range statement, nothing changes. 
+```cpp
+string str("a simple string");
+for (char c : str) c = 'X';
+```
 
 ##[Exercise 3.8](ex3_8.cpp)
 ##Exercise 3.9
@@ -46,7 +31,8 @@ string s;
 cout << s[0] << endl;
 ```
 
-Try to get the first element of the `string`. It is invalid, cause this is **undefined behavior**.
+This code was dereferencing and printing the first item stored in `s`. Since `s` is empty, such operation is invalid, a.k.a. **undefined behavior**. 
+
 
 ##[Exercise 3.10](ex3_10.cpp)
 ##Exercise 3.11
@@ -56,14 +42,12 @@ const string s = "Keep out!";
 for (auto &c : s){/*... */}
 ```
 
-When you don't change `c`'s value, it's legal, else it's illegal.
-
-For example:
+Depending on the code within for loop body. For example:
 
     cout << c;  // legal.
     c = 'X';    // illegal.
 
-The type of `c` is `const char&`. read-only variable is not assignable.
+The type of `c` is `const char&`. 
 
 ##Exercise 3.12
 >Which, if any, of the following vector definitions are in error?
@@ -104,10 +88,7 @@ vector<string> v7{10, "hi"};  // size:10, value:"hi"
 >In the binary search program on page 112,
 why did we write `mid=beg+(end-beg)/2;` instead of `mid=(beg+end) /2;`?
 
-Because the iterator of vector don't define the `+` operator **between the two iterators**.
-`beg + end` is illegal.
-
-We can only use the subtraction between the two iterators.
+`(beg + end)` is meaningless. 
 
 ##Exercise 3.27
 >Assuming txt_size is a function that takes no arguments
@@ -127,23 +108,15 @@ char st[11] = "fundamental";  // illegal, the string's size is 12.
 >What are the values in the following arrays?
 
 ```cpp
-string sa[10];
-int ia[10];
+string sa[10];      //all elements are empty strings
+int ia[10];         //all elements are 0
 
-int main() {
-  string sa2[10];
-  int ia2[10];
+int main() 
+{
+    string sa2[10]; //all elements are empty strings
+    int ia2[10];    //all elements are undefined
 }
 ```
-
-please see 2.2.1. Variable Definitions -> Default Initialization.
-
-`std::string` isn't a build-in type. The initializer will set it empty.
-`ia` and `ia2` are build-type. But `ia` isn't in the function body, so it
-will be initialized to **zero**. `ia2` is in the function body. so it's
-value is **undefined**.
-
-You can also use gdb to debug the value when the code is running.
 
 ##Exercise 3.29:
 >List some of the drawbacks of using an array instead of a vector.
