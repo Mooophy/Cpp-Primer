@@ -18,12 +18,7 @@ This strategy presents a trade-off between efficient code generation
 and potential pitfalls in the use of the language by the programmer.
 Do you consider that an acceptable trade-off? Why or why not?
 
-Yes, I think it necessary to hold the trade-off.
-Because the speed is always the biggest advantage of C++. Sometimes, we need
-the compiler's features for efficient work. But if you are not a expert. I
-have to advice you do not touch the undefined behaviors.
-
-For an instance, `cout << i << ++i <<endl` should never appear in your code.
+No. IMHO, such desgin cann't improve performance siginificantly, but make bugs every tricky to handle.
 
 ##Exercise 4.4
 >Parenthesize the following expression to show how it is evaluated.
