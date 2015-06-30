@@ -18,12 +18,7 @@ This strategy presents a trade-off between efficient code generation
 and potential pitfalls in the use of the language by the programmer.
 Do you consider that an acceptable trade-off? Why or why not?
 
-Yes, I think it necessary to hold the trade-off.
-Because the speed is always the biggest advantage of C++. Sometimes, we need
-the compiler's features for efficient work. But if you are not a expert. I
-have to advice you do not touch the undefined behaviors.
-
-For an instance, `cout << i << ++i <<endl` should never appear in your code.
+No. IMHO, such desgin cann't improve performance siginificantly, but make bugs every tricky to handle.
 
 ##Exercise 4.4
 >Parenthesize the following expression to show how it is evaluated.
@@ -50,7 +45,7 @@ and printing its result.
 >Write an expression to determine whether an int value is even or odd.
 
 ```cpp
-i%2 == 0 ? "even" : "odd"
+ i & 0x1 
 ```
 
 ##Exercise 4.7
@@ -70,7 +65,7 @@ from the book:
 
 - logical `AND` : the second operand is evaluated if and only if the left side is `true`.
 - logical `OR`  : the second operand is evaluated if and only if the left side is `false`
-- equality operators : `true` only if both operands have the same value, otherwise, it returns `false`.
+- equality operators `==` : undefined.
 
 ##Exercise 4.9
 >Explain the behavior of the condition in the following if:
@@ -83,7 +78,7 @@ cp is a pointer to `const char *`, and it's not a nullptr. true.
 
 `*cp` is a const char: 'H', and it is explicit a nonzero value. true.
 
-true && true = true.
+true && true -> true.
 
 ##Exercise 4.10
 >Write the condition for a while loop that would read ints from
@@ -152,23 +147,19 @@ if (i == 1024)
 ##Exercise 4.17
 >Explain the difference between prefix and postfix increment.
 
-The postfix operators increment(or decrement) the operand but yield a copy
-of the original, unchanged value as its result.
-
-The prefix operators return the object itself as an **lvalue**.
-
-The postfix operators return a copy of the object's original value as an **rvalue**.
+See: [What is the difference between ++i and i++](http://stackoverflow.com/questions/24853/what-is-the-difference-between-i-and-i)
 
 ##Exercise 4.18
 >What would happen if the while loop on page 148 that prints
 the elements from a vector used the prefix increment operator?
 
-It will print from the second element and will dereference the v.end() at last.(It's undefined and very dangerous)
+It will print from the second element and dereference `v.end()` at last, which is a **UB**.
 
 ##Exercise 4.19
 >Given that ptr points to an int, that vec is a vector<int>,
 and that ival is an int, explain the behavior of each of these expressions.
 Which, if any, are likely to be incorrect? Why? How might each be corrected?
+
 ```cpp
 ptr != 0 && *ptr++  // check ptr is not a nullptr, and then check the pointer value.
 ival++ && ival // check ival, and then check ival+1 whether equal zero.
@@ -176,8 +167,8 @@ vec[ival++] <= vec[ival] // incorrect. It is an **undefined behavior.**
 // correct:
 vec[ival] <= vec[ival+1]
 ```
->Every value computation and side effect of the first (left) argument of the built-in logical AND operator && and the built-in logical OR operator || is sequenced before every value computation and side effect of the second (right) argument.
-see [order of evaluation](http://en.cppreference.com/w/cpp/language/eval_order).
+
+See [order of evaluation](http://en.cppreference.com/w/cpp/language/eval_order).
 
 ##Exercise 4.20
 >Assuming that iter is a vector<string>::iterator,
