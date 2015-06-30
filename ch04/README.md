@@ -248,7 +248,8 @@ cout << sizeof(x)/sizeof(*x) << endl;
 cout << sizeof(p)/sizeof(*p) << endl;
 ```
 
-The first result is 10. It returns the number of elements in x. But the second result depends on your machine. It would be 2 on the 64-bit machine and 1 on the 32-bit machine. Because of the size of pointer is different on various machines.
+ * The first is 10. It returns the number of elements in x. 
+ * The second result is undefined.
 
 -----
 reference: [Why the size of a pointer is 4bytes in C++](http://stackoverflow.com/a/2428809)
