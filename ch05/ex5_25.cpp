@@ -1,22 +1,41 @@
 #include <iostream>
 #include <stdexcept>
-using std::cin; using std::cout; using std::endl; using std::runtime_error;
 
-int main(void)
-{
-    for (int i, j; cout << "Input two integers:\n", cin >> i >> j; )
-    {
-        try 
-        {
-            if (j == 0) 
-                throw runtime_error("divisor is 0");
-            cout << i / j << endl;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::runtime_error;
+
+int main()
+{   
+
+    int n1, n2;
+    double re;
+
+    while (true) {
+
+        try {
+
+            cout << "Input two numbers: " << endl;
+            cin >> n1 >> n2;
+
+            if (n2 == 0)
+                throw runtime_error("Zero denominator!!!!");
+
+            re = static_cast<double>(n1) / n2;
+
+        } catch (runtime_error err) {
+
+            cout << err.what() << endl;
+            continue;
+
         }
-        catch (runtime_error err) 
-        {
-            cout << err.what() << "\n";
-        }
+
+        break;
+
     }
+
+    cout << re << endl;
 
     return 0;
 }
