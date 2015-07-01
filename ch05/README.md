@@ -1,12 +1,12 @@
 ##Exercise 5.1
 >What is a null statement? When might you use a null statement?
 
-null statement is the empty statement. like this:
+A null statement is the empty statement. like this:
 ```cpp
 ; // null statement
 ```
 
-I might use a null statement when the language requires a statement but the program's logic does not. For example:
+The null statement may be used as a placeholder when a statement is expected. For example:
 ```cpp
 // read until we hit end-of-file or find an input equal to sought
 while (cin >> s && s != sought)
@@ -16,9 +16,7 @@ while (cin >> s && s != sought)
 ##Exercise 5.2
 >What is a block? When might you might use a block?
 
-block is a (possiby empty) sequence of statements and declarations surrounded by a pair of curly braces.
-
-I might use a block when the language requires a single statement but the logic of our program needs more than one. For example:
+A block is a (possiby empty) sequence of statements and declarations surrounded by a pair of curly braces.It's used when multiple statements are needed.For example:
 ```cpp
 while (val <= 10)
 {
@@ -46,8 +44,7 @@ int main()
 }
 ```
 
-This rewrite diminishes the readability of the code. The comma operator always guarantees the order and discards the front result.
-But there are no meaning in this example, however, also are incomprehensible.
+This rewritten version diminishes the readability. 
 
 ##Exercise 5.4
 >Explain each of the following examples, and correct any problems you detect.
