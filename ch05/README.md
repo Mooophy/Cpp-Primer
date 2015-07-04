@@ -37,8 +37,7 @@ int main()
     int sum = 0, val = 1;
     while (val <= 10)
         sum += val, ++val;
-    std::cout << "Sum of 1 to 10 inclusive is "
-              << sum << std::endl;
+    std::cout << "Sum of 1 to 10 inclusive is " << sum << std::endl;
 
     return 0;
 }
@@ -49,23 +48,22 @@ This rewritten version diminishes the readability.
 ##Exercise 5.4
 >Explain each of the following examples, and correct any problems you detect.
 - (a) while (string::iterator iter != s.end()) { /* . . . */ }
-- (b) while (bool status = find(word)) { /* . . . */ }
-if (!status) { /* . . . */ }
+- (b) while (bool status = find(word)) { /* . . . */ } if (!status) { /* . . . */ }
 
-(a) iter point at nothing. invalid.
+(a) Illegal declaration : `string::iterator iter != s.end()`
 ```cpp
+//corrrected as:
 std::string::iterator iter = s.begin();
-    while (iter != s.end()) { /* . . . */ }
+while (iter != s.end()) { /* . . . */ }
 ```
 
-(b) The if statement is not in the while's block. so the `status` is invalid. And if find(word) return true, it will go through the while block. we should declare the status before while.
+(b) Variable `status` is undeclared.
 ```cpp
+//corrrected as:
 bool status;
 while ((status = find(word))) {/* ... */}
 if (!status) {/* ... */}
 ```  
-
-In fact, the judge `!status` is unnecessary. If the `status=false`, we leave the while, and `!status` is always true.
 
 ##[Exercise 5.5](ex5_5.cpp)
 ##[Exercise 5.6](ex5_6.cpp)
