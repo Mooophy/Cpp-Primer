@@ -352,9 +352,27 @@ shouldn't, cause a `constexpr` function must contain exactly one **return** stat
 
 ## Exercise 7.55
 
-yes.
+no.
 
->An aggregate class whose data members are all of literal type is a literal class.
+`std::string` is not a literal type, and it can be verified by following codes:
+
+```cpp
+#include <string>
+#include <iostream>
+#include <type_traits>
+
+struct Data {
+    int ival;
+    std::string s;
+};
+
+int main()
+{
+    std::cout << std::boolalpha;
+    std::cout << std::is_literal_type<Data>::value << std::endl;
+    // output: false
+}
+```
 
 ## Exercise 7.56
 

@@ -233,7 +233,7 @@ int main()
 }
 ```
 
-`100`. local object named reused hides global reused.
+`100`, since the global `i` was hidden by the local `i`.
 
 ##Exercise 2.14
 >Is the following program legal? If so, what values are printed?
@@ -244,8 +244,11 @@ int main()
     std::cout << i << " " << sum << std::endl;
 ```
 
-Yes.It is legal.Printed:
-`100, 45.`
+Legal. Output:
+
+```100 45```
+
+Note: Such naming is considered as bad practise. 
 
 ##Exercise 2.15
 >Which of the following definitions, if any, are invalid? Why?
@@ -372,14 +375,15 @@ No. Because more information needed to determine whether the pointer is valid or
 
 ##Exercise 2.24
 >Why is the initialization of p legal but that of lp illegal?
+
 ```cpp
-int i =42;
-void *p=&i;
-long *lp=&i;
+int i = 42;
+void *p = &i;
+long *lp = &i;
 ```
 
-Because the type `void*` is a special pointer type that can hold the address of any object.
-But we cannot initialize a variable of type `long *` with an rvalue of type `int *`
+Inherited from C, `void*` is a special pointer that may point to any type, hence the second line is legal.
+For type safty, C++ forbids implicit conversions like `long *lp = &i;`, thus such code is illegal.
 
 ##Exercise 2.25
 >Determine the types and values of each of the following
@@ -580,8 +584,6 @@ Error message: [Error] expected ';' after struct definition
 ##Exercise 2.40
 >Write your own version of the Sales_data class.
 
-just added some your own define. like this:
-
 ```cpp
 struct Sale_data
 {
@@ -667,8 +669,6 @@ int main()
 
 ####1.6
 
-**so ugly as you see.**
-
 ```cpp
 #include <iostream>
 #include <string>
@@ -730,12 +730,8 @@ int main()
 ```
 
 ##Exercise 2.42
->Write your own version of the Sales_data.h header and
-use it to rewrite the exercise from § 2.6.2(p. 76)
+>Write your own version of the Sales_data.h header and use it to rewrite the exercise from § 2.6.2(p. 76)
 
-You can add some function in your header file. Look at [here](ex2_42.h).
-
-rewrite the exercise:
 
 - 1.5.1. [Code](ex2_42_1.cpp)
 - 1.5.2. [Code](ex2_42_2.cpp)
