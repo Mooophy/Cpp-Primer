@@ -1,10 +1,10 @@
 /***************************************************************************
- *  @file       main.cpp
- *  @author     Alan.W
- *  @date       16  Feb 2014
- *  @remark     This code is for the exercises from C++ Primer 5th Edition
- *  @note
- ***************************************************************************/
+*  @file       main.cpp
+*  @author     Yue Wang
+*  @date       16  Feb 2014
+*  @remark     This code is for the exercises from C++ Primer 5th Edition
+*  @note
+***************************************************************************/
 //!
 //! Exercise 16.56:
 //! Write and test a variadic version of errorMsg.
@@ -18,23 +18,23 @@
 //  version provides better flexibility.
 //!
 
-
 #include <iostream>
 #include <memory>
 #include <sstream>
 
-
 //! always declare first:
-
-template <typename T> std::string debug_rep(const T& t);
-template <typename T> std::string debug_rep(T* p);
+template <typename T> 
+std::string debug_rep(const T& t);
+template <typename T> 
+std::string debug_rep(T* p);
 
 std::string debug_rep(const std::string &s);
 std::string debug_rep(char* p);
 std::string debug_rep(const char *p);
 
 //! print any type we don't otherwise.
-template<typename T> std::string debug_rep(const T& t)
+template<typename T> 
+std::string debug_rep(const T& t)
 {
     std::ostringstream ret;
     ret << t;
@@ -42,12 +42,13 @@ template<typename T> std::string debug_rep(const T& t)
 }
 
 //! print pointers as their pointer value, followed by the object to which the pointer points
-template<typename T> std::string debug_rep(T* p)
+template<typename T> 
+std::string debug_rep(T* p)
 {
     std::ostringstream ret;
     ret << "pointer: " << p;
 
-    if(p)
+    if (p)
         ret << " " << debug_rep(*p);
     else
         ret << " null pointer";
@@ -83,17 +84,15 @@ std::ostream& print(std::ostream& os, const T& t)
     //! note: no seperator after the last element in the pack
 }
 
-
 //! this version of print will be called for all but the last element in the pack
 template<typename T, typename... Args>
-std::ostream&
-print(std::ostream &os, const T &t, const Args&... rest)
+std::ostream& print(std::ostream &os, const T &t, const Args&... rest)
 {
     //! print the first argument
     os << t << ",";
 
     //! recursive call; print the other arguments
-    return print(os,rest...);
+    return print(os, rest...);
 }
 
 //! call debug_rep on each argument in the call to print
@@ -101,12 +100,11 @@ template<typename... Args>
 std::ostream& errorMsg(std::ostream& os, const Args... rest)
 {
     //! print(os,debug_rep(rest)...);
-    return print(os,debug_rep(rest)...);
+    return print(os, debug_rep(rest)...);
 }
 
 int main()
 {
-    errorMsg(std::cout, 1,2,3,4,9.0f,"sss","alan");
-
-
+    errorMsg(std::cout, 1, 2, 3, 4, 9.0f, "sss", "alan");
+    return 0;
 }
