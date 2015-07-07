@@ -96,4 +96,14 @@ private:
     size_t curr;
 };
 
+//define begin() and end()
+StrBlobPtr StrBlob::begin()
+{
+    return StrBlobPtr(*this);
+}
+StrBlobPtr StrBlob::end()
+{
+    return StrBlobPtr(*this, data->size());
+}
+
 #endif

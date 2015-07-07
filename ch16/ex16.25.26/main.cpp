@@ -1,6 +1,6 @@
 /***************************************************************************
  *  @file       main.cpp
- *  @author     Yue Wang
+ *  @author     Alan.W
  *  @date       03  Feb 2014
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
@@ -8,7 +8,6 @@
 //!
 //! Exercise 16.25:
 //! Explain the meaning of these declarations:
-//!
 
 /**
  *  @brief  instantiation declaration. The definition of it is somewhere else
@@ -26,7 +25,20 @@
 //  http://stackoverflow.com/questions/21525169/while-explicitly-instantiating-vectorsometype-what-is-the-sometype-default-co
 //!
 
+
+
+
+#include <iostream>
+#include <vector>
+#include <list>
+
+#include <memory>
+#include <Blob.h>
+
+
 int main()
 {
+
     return 0;
 }
+
