@@ -1,6 +1,6 @@
 /***************************************************************************
  *  @file       main.cpp
- *  @author     Alan.W
+ *  @author     Yue Wang
  *  @date       07  Feb 2014
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
@@ -36,13 +36,9 @@ auto fcn3(It beg, It end) -> decltype(*beg + 0)
 
 int main()
 {
-
     std::vector<Bar> v;
     v.push_back(Bar());
-
     Bar b = fcn3(v.begin(), v.end());
     ;
     ;
-
-
 }
