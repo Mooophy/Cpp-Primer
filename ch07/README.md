@@ -238,7 +238,7 @@ public:
         :isbn_(isbn), name_(name), author_(author), pubdate_(pubdate)
     { }
 
-    Book(std::istream &in) 
+    explicit Book(std::istream &in) 
     { 
         in >> isbn_ >> name_ >> author_ >> pubdate_;
     }
