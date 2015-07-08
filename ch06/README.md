@@ -23,16 +23,14 @@ they are initialized by the **arguments** provided in the each function call.
 ```cpp
 #include <iostream>
 
-int fact(int val)
+int fact(int i)
 {
-    if (val == 0 || val == 1) return 1;
-    else return val * fact(val-1);
+    return i > 1 ? i * fact( i - 1 ) : 1;
 }
 
 int main()
 {
-    int j = fact(5);  // j equals 120, i.e., the result of fact(5)
-    std::cout << "5! is " << j << std::endl;
+    std::cout << std::boolalpha << (120 == fact(5)) << std::endl;
     return 0;
 }
 ```
