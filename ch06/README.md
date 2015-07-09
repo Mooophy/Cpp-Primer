@@ -40,41 +40,48 @@ int main()
 ```cpp
 #include <iostream>
 #include <string>
-using std::string;
-using std::cin;
-using std::cout;
-using std::endl;
 
-void factorial(){
-
-    int num=0;
-    unsigned result=1;
-    cout<<"Please input a positive number: "<<endl;
-    cin>>num;
-    cout<<num;
-    if (num>=0&&num<=12){
-        while (num>=1)
-            result*=num--;
-
-        cout<<"! is "<<result<<endl;}
-    else
-        cout<<" is out of range."<<endl;
+int fact(int i)
+{
+    return i > 1 ? i * fact(i - 1) : 1;
 }
 
-int main () {
-    factorial();
+void interactive_fact()
+{
+    std::string const prompt = "Enter a number within [1, 13) :\n";
+    std::string const out_of_range = "Out of range, please try again.\n";
+    for (int i; std::cout << prompt, std::cin >> i; )
+    {
+        if (i < 1 || i > 12)
+        {
+            std::cout << out_of_range; 
+            continue;
+        }
+        std::cout << fact(i) << std::endl;
+    }
+}
+
+int main()
+{
+    interactive_fact();
     return 0;
 }
-
 ```
 
 ##Exercise 6.5
 
 ```cpp
-template <typename T>
-T abs(T i)
+#include <iostream>
+
+int abs(int i)
 {
-    return i >= 0 ? i : -i;
+    return i > 0 ? i : -i;
+}
+
+int main()
+{
+    std::cout << abs(-5) << std::endl;
+    return 0;
 }
 ```
 
