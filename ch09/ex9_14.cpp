@@ -1,4 +1,4 @@
-//! @Alan @pezy
+//! @Yue Wang @pezy
 //!
 //! Exercise 9.14:
 //! Write a program to assign the elements from a list of char* pointers
@@ -14,7 +14,7 @@
 
 int main()
 {
-    std::list<const char*> l{"Mooophy", "pezy", "Queeuqueg"};
+    std::list<const char*> l{ "Mooophy", "pezy", "Queeuqueg" };
     std::vector<std::string> v;
     v.assign(l.cbegin(), l.cend());
 

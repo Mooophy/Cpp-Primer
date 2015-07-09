@@ -127,6 +127,5 @@ void Folder::print_debug()
 
 int main()
 {
-	
-	return 0;
+   return 0;
 }

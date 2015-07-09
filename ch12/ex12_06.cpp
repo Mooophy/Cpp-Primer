@@ -1,9 +1,10 @@
 /***************************************************************************
- *  @file       The code is for the exercises in C++ Primmer 5th Edition
- *  @author     Alan.W
- *  @date       22  DEC 2013
- *  @remark
- ***************************************************************************/
+*  @file       The code is for the exercises in C++ Primmer 5th Edition
+*  @author     Yue Wang
+*  @date       22  DEC 2013
+*              Jun 2015             
+*  @remark
+***************************************************************************/
 //!
 //! Exercise 12.6:
 //! Write a function that returns a dynamically allocated vector of ints.
@@ -15,63 +16,31 @@
 
 #include <iostream>
 #include <vector>
-#include <string>
-#include <memory>
 
-std::vector<int>*
-dynamic_vector_generator();
+using Ptr = std::vector<int>*;
 
-void
-dynamic_vector_processor(std::vector<int>* ptr_v);
+auto make_dynamically() -> Ptr
+{
+    return new std::vector < int > {};
+}
 
-void
-dynamic_vector_printer(std::vector<int>* ptr_v);
+auto populate(Ptr vec) -> Ptr
+{
+    for (int i; std::cout << "Pls Enter:\n", std::cin >> i; vec->push_back(i));
+    return vec;
+}
+
+auto print(Ptr vec) -> std::ostream&
+{
+    for (auto i : *vec) std::cout << i << " ";
+    return std::cout;
+}
 
 int main()
 {
-    /**
-      * testing the 3 functions
-      */
-    std::vector<int>* ptr_vi = dynamic_vector_generator();
-    dynamic_vector_processor(ptr_vi);
-    dynamic_vector_printer(ptr_vi);
-
-    delete ptr_vi;
-
+    auto vec = populate(make_dynamically());
+    print(vec) << std::endl;
+    delete vec;
 
     return 0;
-}
-
-/**
- *  @brief  return a pointer to dynamicly allocated vector of ints
- */
-std::vector<int> *
-dynamic_vector_generator()
-{
-    std::vector<int>* ptr_v = new std::vector<int>();
-    return ptr_v;
-}
-
-/**
- * @brief return a pointer to vector of ints
- * @param ptr_v pointer to vector of ints
- */
-void dynamic_vector_processor(std::vector<int> *ptr_v)
-{
-    int i;
-    std::cout << "plz enter:\n";
-    while(std::cin >>i && i != 999)
-        ptr_v->push_back(i);
-
-}
-
-/**
- * @brief print the content of the vector that ptr_v points to
- * @param ptr_v
- */
-void dynamic_vector_printer(std::vector<int> *ptr_v)
-{
-    for(const auto &e : *ptr_v)
-        std::cout << e << " ";
-    std::cout << "\n";
 }

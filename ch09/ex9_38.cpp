@@ -1,4 +1,4 @@
-//! @Alan
+//! @Yue Wang
 //!
 //! Exercise 9.38:
 //! Write a program to explore how vectors grow in the library you use.
@@ -11,14 +11,8 @@
 int main()
 {
     std::vector<std::string> v;
-    std::string word;
-
-    while (std::cin >> word)
-    {
-        v.push_back(word);
-        std::cout << v.capacity() << "\n";
-    }
+    for (std::string buffer; std::cin >> buffer; v.push_back(buffer))
+        std::cout << v.capacity() << std::endl;
 
     return 0;
 }
-

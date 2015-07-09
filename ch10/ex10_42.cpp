@@ -19,9 +19,9 @@ void elimDups(list<string> &words)
 
 int main()
 {
-    list<string> l = {"aa","aa","aa","aa","aasss","aa"};
+    list<string> l = { "aa", "aa", "aa", "aa", "aasss", "aa" };
     elimDups(l);
-    for(const auto& e : l)
+    for (const auto& e : l)
         std::cout << e << " ";
     std::cout << std::endl;
 }

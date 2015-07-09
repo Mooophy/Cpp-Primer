@@ -1,10 +1,8 @@
-//! @Alan
+//! @Yue Wang
 //! Exercise 11.14:
 //! Extend the map of children to their family name that you wrote for the
 //! exercises in § 11.2.1 (p. 424) by having the vector store a pair that
 //! holds a child’s name and birthday.
-//!
-//! @Alan
 //!
 //! Exercise 11.7:
 //! Define a map for which the key is the family’s last name and
@@ -15,52 +13,48 @@
 #include <iostream>
 #include <map>
 #include <string>
-#include <algorithm>
 #include <vector>
 
+using std::ostream; using std::cout; using std::cin; using std::endl; using std::string;
+using std::make_pair; using std::pair; using std::vector; using std::map; 
+
+class Families
+{
+public:
+    using Child     = pair<string, string>;
+    using Children  = vector<Child>;
+    using Data      = map<string, Children>;
+
+    auto add(string const& last_name, string const& first_name, string birthday) -> void
+    {
+        _data[last_name].push_back(make_pair(first_name, birthday));
+    }
+
+    auto print(std::ostream& os) const -> ostream&
+    {
+        if (_data.empty())
+            return os << "No data right now." << endl;
+
+        for (auto const& pair : _data)
+        {
+            os << pair.first << ":\n" ;
+            for (auto const& child : pair.second)
+                os << child.first << " " << child.second << endl;
+            os << endl;
+        }
+        return os;
+    }
+
+private:
+    Data _data;
+};
 
 int main()
 {
-    //! define a map as required.
-    std::map<std::string, std::vector<std::pair<std::string,std::string>>>
-            famlies_map;
-    //! declare three strings to store the input
-    std::string lastName, childName, birthday;
-
-    while([&](){//!   a lambda to read lastName and check if should quit
-
-          std::cout << "last name:\n";
-          std::cin >> lastName;
-
-          return lastName != "@q";
-}())
-    {
-        while([&](){//!   a lambda to read child name and birthday and check if should quit
-              std::cout << "child's name:\n";
-              std::cin  >> childName;
-              std::cout << "his birthday:\n";
-              std::cin  >> birthday;
-
-              return childName != "@q" && birthday != "@q";
-    }())
-        {
-            famlies_map[lastName].push_back({childName, birthday});
-            //!        ^^^^^^^^^^           ^^^^^^^^^^^^^^^^^^^^^
-            //!  use lastName as the key    create a pair using {}.
-        }
-    }
-
-    //! print the content.
-    for(const auto &e : famlies_map)
-    {
-        std::cout << e.first <<":\n";
-
-        for (const auto &l : e.second)
-        {
-            std::cout << l.first << " "
-                      << l.second << " ";
-        }
-    }
+    Families families; 
+    string message = "Please enter last name, first name and birthday";
+    for (string l, f, b; cout << message << endl, cin >> l >> f >> b; families.add(l, f, b));
+    families.print(cout << "Current data:" << endl);
 
     return 0;
 }

@@ -1,4 +1,4 @@
-//! @Alan @pezy
+//! @Yue Wang @pezy
 //!
 //! Exercise 9.24:
 //! Write a program that fetches the first element in a vector using at,

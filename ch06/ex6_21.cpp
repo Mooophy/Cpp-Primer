@@ -1,4 +1,4 @@
-//! @Alan
+//! @Yue Wang
 //!
 //! Exercise 6.21:
 //! Write a function that takes an int and a pointer to an int and
@@ -7,19 +7,17 @@
 //!
 
 #include <iostream>
-using std::cout; 
+using std::cout;
 
-int LargerOne(const int i, const int *ip)
+int larger_one(const int i, const int *p)
 {
-    return (i > *ip) ? i : *ip;
+    return (i > *p) ? i : *p;
 }
 
 int main()
 {
-    int c = 6;
-    cout << LargerOne(7, &c);
+    int i = 6;
+    cout << larger_one(7, &i);
 
     return 0;
 }
-
-

@@ -23,16 +23,14 @@ they are initialized by the **arguments** provided in the each function call.
 ```cpp
 #include <iostream>
 
-int fact(int val)
+int fact(int i)
 {
-    if (val == 0 || val == 1) return 1;
-    else return val * fact(val-1);
+    return i > 1 ? i * fact( i - 1 ) : 1;
 }
 
 int main()
 {
-    int j = fact(5);  // j equals 120, i.e., the result of fact(5)
-    std::cout << "5! is " << j << std::endl;
+    std::cout << std::boolalpha << (120 == fact(5)) << std::endl;
     return 0;
 }
 ```
@@ -42,41 +40,48 @@ int main()
 ```cpp
 #include <iostream>
 #include <string>
-using std::string;
-using std::cin;
-using std::cout;
-using std::endl;
 
-void factorial(){
-
-    int num=0;
-    unsigned result=1;
-    cout<<"Please input a positive number: "<<endl;
-    cin>>num;
-    cout<<num;
-    if (num>=0&&num<=12){
-        while (num>=1)
-            result*=num--;
-
-        cout<<"! is "<<result<<endl;}
-    else
-        cout<<" is out of range."<<endl;
+int fact(int i)
+{
+    return i > 1 ? i * fact(i - 1) : 1;
 }
 
-int main () {
-    factorial();
+void interactive_fact()
+{
+    std::string const prompt = "Enter a number within [1, 13) :\n";
+    std::string const out_of_range = "Out of range, please try again.\n";
+    for (int i; std::cout << prompt, std::cin >> i; )
+    {
+        if (i < 1 || i > 12)
+        {
+            std::cout << out_of_range; 
+            continue;
+        }
+        std::cout << fact(i) << std::endl;
+    }
+}
+
+int main()
+{
+    interactive_fact();
     return 0;
 }
-
 ```
 
 ##Exercise 6.5
 
 ```cpp
-template <typename T>
-T abs(T i)
+#include <iostream>
+
+int abs(int i)
 {
-    return i >= 0 ? i : -i;
+    return i > 0 ? i : -i;
+}
+
+int main()
+{
+    std::cout << abs(-5) << std::endl;
+    return 0;
 }
 ```
 
@@ -247,8 +252,8 @@ legal, it gave the values (0 ~ 9) to array `ia`.
 ## Exercise 6.34
 
 When the recursion termination condition becomes `var != 0`, two situations can happen :
-case 1 : If the argument is positive, recursion stops at 0. This is exactly what @shbling pointed out.
-case 2 : if the argument is negative, recursion would never stop. As a result,a stack overflow would occur.
+* case 1 : If the argument is positive, recursion stops at 0.(Note : There is one extra multiplication step though as the combined expression for factorial(5) reads 5 * 4 * 3 * 2 * 1 * 1. In terms of programming languages learning, such subtle difference probably looks quite trivial. In algorithms analysis and proof, however, this extra step may be super important.)
+* case 2 : if the argument is negative, recursion would never stop. As a result,a stack overflow would occur.
 
 ## Exercise 6.35
 

@@ -227,20 +227,27 @@ Sales_data(std::istream &is = std::cin) { read(is, *this); }
 illegal. cause the call of overloaded 'Sales_data()' is **ambiguous**.
 
 ## Exercise 7.40
-
-Such as `Book`
 ```cpp
-class Book {
+#include <iostream>
+#include <string>
+
+class Book 
+{
 public:
-  Book() = default;
-  Book(unsigned no, std::string name, std::string author, std::string pubdate):no_(no), name_(name), author_(author), pubdate_(pubdate) { }
-  Book(std::istream &in) { in >> no_ >> name_ >> author_ >> pubdate_; }
+    Book(unsigned isbn, std::string const& name, std::string const& author, std::string const& pubdate)
+        :isbn_(isbn), name_(name), author_(author), pubdate_(pubdate)
+    { }
+
+    explicit Book(std::istream &in) 
+    { 
+        in >> isbn_ >> name_ >> author_ >> pubdate_;
+    }
 
 private:
-  unsigned no_;
-  std::string name_;
-  std::string author_;
-  std::string pubdate_;
+    unsigned isbn_;
+    std::string name_;
+    std::string author_;
+    std::string pubdate_;
 };
 ```
 
@@ -248,17 +255,26 @@ private:
 ## Exercise 7.42
 
 ```cpp
-class Book {
+#include <iostream>
+#include <string>
+
+class Book 
+{
 public:
-  Book(unsigned no, std::string name, std::string author, std::string pubdate):no_(no), name_(name), author_(author), pubdate_(pubdate) { }
-  Book() : Book(0, "", "", "") { }
-  Book(std::istream &in) : Book() { in >> no_ >> name_ >> author_ >> pubdate_; }
+    Book(unsigned isbn, std::string const& name, std::string const& author, std::string const& pubdate)
+        :isbn_(isbn), name_(name), author_(author), pubdate_(pubdate)
+    { }
+
+    explicit Book(std::istream &in) 
+    { 
+        in >> isbn_ >> name_ >> author_ >> pubdate_;
+    }
 
 private:
-  unsigned no_;
-  std::string name_;
-  std::string author_;
-  std::string pubdate_;
+    unsigned isbn_;
+    std::string name_;
+    std::string author_;
+    std::string pubdate_;
 };
 ```
 
@@ -352,9 +368,27 @@ shouldn't, cause a `constexpr` function must contain exactly one **return** stat
 
 ## Exercise 7.55
 
-yes.
+no.
 
->An aggregate class whose data members are all of literal type is a literal class.
+`std::string` is not a literal type, and it can be verified by following codes:
+
+```cpp
+#include <string>
+#include <iostream>
+#include <type_traits>
+
+struct Data {
+    int ival;
+    std::string s;
+};
+
+int main()
+{
+    std::cout << std::boolalpha;
+    std::cout << std::is_literal_type<Data>::value << std::endl;
+    // output: false
+}
+```
 
 ## Exercise 7.56
 

@@ -10,6 +10,8 @@
 
 ![Linux](https://db.tt/2xKWuztU)
 
+You can check the section "Options Controlling the Kind of Output" by ` man gcc` in Linux further.
+
 ##Exercise 1.2
 
 > Exercise 1.2: Change the program to return -1. A return value of -1 is often treated as an indicator that the program failed. Recompile and rerun your program to see how your system treats a failure indicator from main.
@@ -179,7 +181,6 @@ int main()
 {
     for (int i = 10; i >= 0; --i)
         std::cout << i << std::endl;
-
     return 0;
 }
 ```
@@ -190,18 +191,18 @@ Ex1.11:
 
 int main()
 {
-    int val_small = 0, val_big = 0;
-    std::cout << "please input two integers:";
-    std::cin >> val_small >> val_big;
+    std::cout << "please input two integers:\n";
+    int small = 0, big = 0;
+    std::cin >> small >> big;
 
-    if (val_small > val_big)
+    if (small > big)
     {
-        int tmp = val_small;
-        val_small = val_big;
-        val_big = tmp;
+        int tmp = small;
+        small = big;
+        big = tmp;
     }
 
-    for (int i = val_small; i <= val_big; ++i)
+    for (int i = small; i != big; ++i)
         std::cout << i << std::endl;
 
     return 0;
@@ -212,50 +213,28 @@ int main()
 > Compare and contrast the loops that used a for with those
 using a while. Are there advantages or disadvantages to using either form?
 
-If you need a pattern which is using a variable in a condition and incrementing that variable in the
-body. You should use `for` loop. Else the `while` loop is more simple.
-
-Want to know more? look at [this](http://stackoverflow.com/questions/1600282/guideline-while-vs-for)
+[A similar question on Stack Overflow](http://stackoverflow.com/questions/2950931/for-vs-while-in-c-programming)
 
 ##Exercise 1.15
 > Write programs that contain the common errors discussed in
 the box on page 16. Familiarize yourself with the messages the compiler
 generates.
 
-**JUST READ IT!**
+Nothing to present here.
 
 ##Exercise 1.16
 
-> Write your own version of a program that prints the sum of a set of integers read from cin.
-
-Many people confused about this exercise, such as [this](http://www.cplusplus.com/forum/beginner/104169/) and [this](http://stackoverflow.com/questions/17841424/how-to-write-this-while-loop-as-a-for-loop).
-
-In my opinion, the exercise aim to write the program without "**END-OF-FILE**".
-
-**BUT**, the [code](http://www.cplusplus.com/forum/beginner/104169/#msg561450) in first link is not correct.
-
-The following are my own version:
-
 ```cpp
 #include <iostream>
-
 int main()
 {
-    int limit = 0, sum = 0, value = 0;
-    std::cout << "How many integers would you like to enter?";
-    std::cin >> limit;
-
-    // assume we don't know what is EOF(End-Of-File).
-    while (std::cin >> value && (--limit != 0))
-        sum += value;
-
-    std::cout << sum + value << std::endl;
+    int sum = 0;
+    for (int val; std::cin >> val; sum += val);
+    std::cout << sum << std::endl;
 
     return 0;
 }
 ```
-
-Watch out for "sum + value" in the `cout` line.
 
 ##Exercise 1.17
 
@@ -275,9 +254,7 @@ If there are no duplicated values, when different values input, a new line will 
 
 > Revise the program you wrote for the exercises in § 1.4.1 (p. 13) that printed a range of numbers so that it handles input in which the first number is smaller than the second.
 
-Yes, we should use `if` to judge which is bigger.
-
-review this [code](https://github.com/pezy/Cpp-Primer/blob/master/ch01/ex1_11.cpp)
+[code](https://github.com/pezy/Cpp-Primer/blob/master/ch01/ex1_11.cpp)
 
 ##Exercise 1.20
 
@@ -285,19 +262,13 @@ review this [code](https://github.com/pezy/Cpp-Primer/blob/master/ch01/ex1_11.cp
 
 [Here](ex1_20.cpp) is the code.
 
-**You need to enable C++11 support in your compiler.
-With GCC and Clang, this can be done with the `-std=c++11` option.**
-
-**(Never say it again.)**
-
-How to test it? use the `book.txt` in `data` folder. And do it like this:
-
-![run](https://db.tt/fm8iHtkF)
+Note : C++11 flag need to enable.
+For GCC and Clang, this can be done with the `-std=c++11`
 
 ##Exercise 1.21
 > Write a program that reads two Sales_item objects that have the same ISBN and produces their sum.
 
-The program should check whether the objects have the same ISBN.(Have a look at 1.5.2, surprise!)
+The program should check whether the objects have the same ISBN.
 
 [Code](ex1_21.cpp)
 
@@ -324,7 +295,7 @@ Tip: please review the `1.4.4`.
 representing multiple ISBNs. The records for each ISBN should be grouped
 together.
 
-You can use data/book.txt as the records.
+`data/book.txt` may be used as the records.
 
 ![run](https://db.tt/EeDI7lvN)
 

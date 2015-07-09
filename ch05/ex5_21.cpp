@@ -1,10 +1,3 @@
-//
-//  ex5_21.cpp
-//  Exercise 5.21
-//
-//  Created by pezy on 11/9/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
-//
 //  @Brief   Revise the program from the exercise in 5.5.1(p. 191)
 //           so that it looks only for duplicated words that start with an uppercase letter. 
 //  @See     Exercise 5.20
@@ -17,21 +10,21 @@ using std::string;
 
 int main()
 {
-	string str_read, str_prev;
+    string curr, prev;
+    bool no_twice = true;
+    while (cin >> curr) 
+    {
+        if (isupper(curr[0]) && prev == curr)
+        {
+            cout << curr << ": occurs twice in succession." << endl;
+            no_twice = false;
+            break;
+        }
+        prev = curr;
+    }
 
-	while ( cin >> str_read ) {
-		if ( !isupper(str_read[0]) )
-			continue;
-		else if ( str_prev == str_read ) {
-			cout << str_read << " occurs twice in succession." << endl;
-			str_read="";
-			break;
-			}
-			else str_prev = str_read;
-	}
+    if (no_twice)
+        cout << "no word was repeated." << endl;
 
-	if( !str_read.empty() )
-		cout << "no word was repeated." << endl;
-
-	return 0;
+    return 0;
 }

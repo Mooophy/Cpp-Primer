@@ -1,17 +1,20 @@
 #include <iostream>
 #include <stdexcept>
 
-using namespace std;
+//
+//  When a zero entered, the code below would crash with feedback as :
+//  "Unhandled exception at 0x75834598 in just_for_cpp.exe: Microsoft C++ exception: std::runtime_error at memory location 0x0054F9F4."
+//  
+//  Tested on Windows 8.1 + Vs 2013
+//
 
 int main(void)
 {
-	int a, b;
-	cin >> a >> b;
+    int i, j;
+    std::cin >> i >> j;
+    if (j == 0)
+        throw std::runtime_error("divisor is 0");
+    std::cout << i / j << std::endl;
 
-	if (b == 0)
-		throw runtime_error("divisor is 0");
-	
-	cout << static_cast<double>(a) / b << endl;
-	
-	return 0;
+    return 0;
 }
