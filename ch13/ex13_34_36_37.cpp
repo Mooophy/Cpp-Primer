@@ -47,6 +47,7 @@ void Message::remove_from_Folders()
 {
     for (auto f : folders)
         f->remMsg(this);
+    folders.clear();
 }
 
 Message::~Message()
