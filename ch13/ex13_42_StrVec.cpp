@@ -1,5 +1,8 @@
 #include "ex13_42_StrVec.h"
 
+
+std::allocator<std::string> StrVec::alloc;
+
 void StrVec::push_back(const std::string &s)
 {
     chk_n_alloc();
