@@ -47,7 +47,7 @@ private:
     std::string *elements;
     std::string *first_free;
     std::string *cap;
-    std::allocator<std::string> alloc;
+    static std::allocator<std::string> alloc;
 };
 
 #endif
