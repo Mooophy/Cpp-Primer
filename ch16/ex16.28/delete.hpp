@@ -11,9 +11,8 @@
 
 namespace cp5
 {
-    class Delete
+    struct Delete
     {
-    public:
         template<typename T>
         void operator() (T* p) const
         {
