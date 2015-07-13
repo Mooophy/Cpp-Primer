@@ -1,219 +1,184 @@
 /***************************************************************************
- *  @file       shared_pointer.h
- *  @author     Alan.W
- *  @date       04  Feb 2014
- *  @remark     This code is for the exercises from C++ Primer 5th Edition
- *  @note
- ***************************************************************************/
-#ifndef SHARED_POINTER_H
-#define SHARED_POINTER_H
+*  @file       main.cpp
+*  @author     Yue Wang
+*  @date       04  Feb 2014
+*                  Jul 2015
+*  @remark     This code is for the exercises from C++ Primer 5th Edition
+*  @note
+***************************************************************************/
 
-#include "DebugDelete.h"
+#pragma once
 #include <functional>
+#include "Delete.hpp"
 
-//! forward declarations needed for friendship
-
-template<typename> class shared_pointer;
-
-template<typename T> void swap(shared_pointer<T>& lhs, shared_pointer<T>& rhs);
-
-
-/**
- *  @brief shared_ptr like template class
- *  @note   don't mix this one with std::shared_ptr.
- *          DebugDelete is the default deleter which can be replaced at run time
- */
-template <typename T>
-class shared_pointer
+namespace cp5
 {
-    friend void swap<T>(shared_pointer<T>& lhs, shared_pointer<T>& rhs);
-    //!             ^^^ -- don't forget this.
+    template<typename T>
+    class SharedPointer;
 
-public:
-
-    //! default constructor
-    shared_pointer() = default;
-
-    //! constructor taking raw pointer.
-    //! set the refCount as 1
-    explicit shared_pointer(T* up, std::function<void(T*)> d = DebugDelete()) :
-        ptr(up), refCount(new std::size_t(1)), deleter(d) { }
-
-    //! copy constructor.
-    //! increment useCount for each Copy
-    shared_pointer(const shared_pointer& sp):
-        ptr(sp.ptr), refCount(sp.refCount), deleter(sp.deleter)
-    { ++*refCount; }
-
-    //! move constructor
-    shared_pointer(shared_pointer&& sp) noexcept;
-
-    //! copy assignment
-    shared_pointer& operator =(const shared_pointer& rhs);
-
-    //! move assignment
-    shared_pointer& operator =(shared_pointer&& rhs) noexcept;
-
-
-
-
-    //! conversion operator
-    operator bool() const { return ptr ? true : false;}
-
-    //! dereference
-    T& operator* () const { return *ptr; }
-
-    //! arrow
-    T* operator->() const { return & this->operator *(); }
-
-    //! return useCount
-    std::size_t use_count() const { return *refCount; }
-
-    //! get the underlying pointer
-    T* get() const noexcept { return ptr; }
-
-    //! check if the unique user
-    bool unique() const noexcept { return *refCount == 1;}
-
-    //! swap
-    void swap( shared_pointer& rhs) { ::swap(*this, rhs); }
-
-    //! if unique user, free the object pointed to
-    void reset() noexcept { decrement_n_destroy(); }
-
-    //! make prt point where p pointing and create a new coount for it
-    void reset(T* p)
+    template<typename T> 
+    void swap(SharedPointer<T>& lhs, SharedPointer<T>& rhs)
     {
-        if(ptr != p)
+        using std::swap;
+        swap(lhs.ptr, rhs.ptr);
+        swap(lhs.ref_count, rhs.ref_count);
+        swap(lhs.deleter, rhs.deleter);
+    }
+
+    template<typename T>
+    class SharedPointer
+    {
+    public:
+        //
+        //  Default Ctor
+        //
+        SharedPointer()
+            : ptr{ nullptr }, ref_count{ new std::size_t(1) }, deleter{ cp5::Delete{} }
+        {}
+        //
+        //  Ctor that takes raw pointer
+        //
+        explicit SharedPointer(T* raw_ptr)
+            : ptr{ raw_ptr }, ref_count{ new std::size_t(1) }, deleter{ cp5::Delete{} }
+        {}
+        //
+        //  Copy Ctor
+        //
+        SharedPointer(SharedPointer const& other)
+            : ptr{ other.ptr }, ref_count{ other.ref_count }, deleter{ other.deleter }
         {
-            decrement_n_destroy();
-            ptr = p;
-            refCount = new std::size_t(1);
+            ++*ref_count;
         }
-    }
-
-    //! reset to point where p is pointing and change deleter to d.
-    void reset(T *p, const std::function<void(T*)>& d)
-    {
-        reset(p);
-        deleter = d;
-    }
-
-
-
-
-    //! destructor
-    ~shared_pointer()
-    {
-        decrement_n_destroy();
-    }
-private:
-
-    //! data structure
-    T* ptr = nullptr;
-    std::size_t* refCount = new std::size_t(0);
-
-    //! any functor lambda or function pointer that matched this
-    //! signature can replace the default one at run time.
-    std::function<void(T*)> deleter{DebugDelete()};
-    //! signature ^^^^^^^^         ^~~~~~~~~~~~~~^
-    //!                         here: = doesn't work, another way is initializing it in constructor.
-
-    //! utilities
-    void decrement_n_destroy();
-
-};
-
-
-
-/**
- *  @brief swap and big 5
- */
-template <typename T>
-inline void
-swap(shared_pointer<T>& lhs, shared_pointer<T>& rhs)
-{
-    using std::swap;
-    swap(lhs.ptr, rhs.ptr);
-    swap(lhs.refCount, rhs.refCount);
-    swap(lhs.deleter, rhs.deleter);
-}
-
-
-//! move constructor
-template<typename T>
-inline
-shared_pointer<T>::shared_pointer(shared_pointer&& sp) noexcept:
-    ptr(sp.ptr), refCount(sp.refCount), deleter(std::move(sp.deleter))
-{
-    sp.ptr = nullptr;
-    sp.refCount = nullptr;
-}
-
-//! copy assignment
-template<typename T>
-inline shared_pointer<T>&
-shared_pointer<T>::operator =(const shared_pointer& rhs)
-{
-    //! increment rhs.refCount first to ensure safty when self-assignment
-    ++*rhs.refCount;
-
-    //! for lhs:
-    decrement_n_destroy();
-
-    //! copy datastructure from rhs to this.
-    ptr = rhs.ptr;
-    refCount = rhs.refCount;
-    deleter  = rhs.deleter;
-
-    return *this;
-}
-
-
-//! move assignment
-template<typename T>
-inline shared_pointer<T>&
-shared_pointer<T>::operator =(shared_pointer&& rhs) noexcept
-{
-    //! for lhs
-    decrement_n_destroy();
-
-    //! swap two sides
-    ::swap(*this, rhs);
-
-    std::cout << "shared_pointer::move=\n";
-
-    return *this;
-}
-
-/**
- *@brief operators:
- **/
-
-template <typename T>
-inline std::ostream&
-operator <<(std::ostream& os, shared_pointer<T> p)
-{
-    os << p.get();
-    return os;
-}
-
-
-//! utilities for decrement and delete using deleter.
-template <typename T>
-inline void
-shared_pointer<T>::decrement_n_destroy()
-{
-    if(ptr)
-    {
-        if (--*refCount == 0)
+        //
+        //  Move Ctor
+        //
+        SharedPointer(SharedPointer && other) noexcept
+            : ptr{ other.ptr }, ref_count{ other.ref_count }, deleter{ std::move (other.deleter) }
         {
-            delete refCount;
-            deleter(ptr);
+            other.ptr = nullptr;
+            other.ref_count = nullptr;
         }
-        refCount = nullptr;
-        ptr = nullptr;
-    }
-}
+        //
+        //  Copy assignment
+        //
+        SharedPointer& operator=(SharedPointer const& rhs)
+        {
+            //increment first to ensure safty when self-assignment
+            ++*rhs.ref_count;   
+            decrement_and_destroy();
+            ptr = rhs.ptr, ref_count = rhs.ref_count, deleter = rhs.deleter;
+            return *this;
+        }
+        //
+        //  Move assignment
+        //
+        SharedPointer& operator=(SharedPointer && rhs) noexcept
+        {
+            cp5::swap(*this, rhs);
+            rhs.decrement_and_destroy();
+            return *this;
+        }
+        //
+        //  Conversion operator
+        //
+        operator bool() const 
+        { 
+            return ptr ? true : false; 
+        }
+        //
+        //  Dereference
+        //
+        T& operator* () const 
+        { 
+            return *ptr; 
+        }
+        //
+        //  Arrow
+        //
+        T* operator->() const 
+        { 
+            return &this->operator *(); 
+        }
+        //
+        //  Use count
+        //
+        std::size_t use_count() const 
+        { 
+            return *ref_count; 
+        }
+        //
+        //  Get underlying pointer
+        //
+        T* get() const noexcept
+        { 
+            return ptr; 
+        }
+        //
+        //  Check if the unique user
+        //
+        bool unique() const noexcept 
+        { 
+            return 1 == *refCount; 
+        }
+        //
+        //  Swap
+        //
+        void swap(SharedPointer& rhs) 
+        { 
+            ::swap(*this, rhs); 
+        }
+        //
+        // Free the object pointed to, if unique
+        //
+        void reset() noexcept 
+        { 
+            decrement_and_destroy(); 
+        }
+        //
+        // Reset with the new raw pointer
+        //
+        void reset(T* pointer)
+        {
+            if (ptr != pointer)
+            {
+                decrement_n_destroy();
+                ptr = pointer;
+                ref_count = new std::size_t(1);
+            }
+        }
+        //
+        //  Reset with raw pointer and deleter
+        //
+        void reset(T *pointer, const std::function<void(T*)>& d)
+        {
+            reset(pointer);
+            deleter = d;
+        }
+        //
+        //  Dtor
+        //
+        ~SharedPointer()
+        {
+            decrement_and_destroy();
+        }
+    private:
+        T* ptr;
+        std::size_t* ref_count;
+        std::function<void(T*)> deleter;
 
-#endif // SHARED_POINTER_H
+        void decrement_and_destroy()
+        {
+            if (ptr)
+            {
+                if (0 == --*ref_count)
+                {
+                    delete ref_count;
+                    deleter(ptr);
+                }
+            }
+            ref_count = nullptr;
+            ptr = nullptr;
+        }
+    };
+
+}//namespace
