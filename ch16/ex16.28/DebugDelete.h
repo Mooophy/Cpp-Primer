@@ -1,31 +1,24 @@
 /***************************************************************************
- *  @file       DebugDelete.h
- *  @author     Alan.W
- *  @date       04  Feb 2014
- *  @remark     This code is for the exercises from C++ Primer 5th Edition
- *  @note
- ***************************************************************************/
+*  @file       main.cpp
+*  @author     Yue Wang
+*  @date       04  Feb 2014
+*                  Jul 2015
+*  @remark     This code is for the exercises from C++ Primer 5th Edition
+*  @note
+***************************************************************************/
 
-#ifndef DEBUGDELETE_H
-#define DEBUGDELETE_H
-
+#pragma once
 #include <iostream>
 
-/**
- * @brief The DebugDelete class is a deleter functor using delete
- */
-class DebugDelete
+namespace cp5
 {
-public:
-    DebugDelete(std::ostream& s = std::cerr) : os(s) { }
-    template<typename T>
-    void operator() (T* p) const
+    class Delete
     {
-        os << "deleting ptr" << std::endl;
-        delete p;
-    }
-
-private:
-    std::ostream& os;
-};
-#endif // DEBUGDELETE_H
+    public:
+        template<typename T>
+        void operator() (T* p) const
+        {
+            delete p;
+        }
+    };
+}
