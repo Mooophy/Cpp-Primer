@@ -9,7 +9,7 @@
 
 #pragma once
 #include <functional>
-#include "Delete.hpp"
+#include "delete.hpp"
 
 namespace cp5
 {
