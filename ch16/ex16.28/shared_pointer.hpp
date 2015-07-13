@@ -1,5 +1,5 @@
 /***************************************************************************
-*  @file       main.cpp
+*  @file       shared_pointer.hpp
 *  @author     Yue Wang
 *  @date       04  Feb 2014
 *                  Jul 2015
