@@ -180,5 +180,4 @@ namespace cp5
             ptr = nullptr;
         }
     };
-
 }//namespace
