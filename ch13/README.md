@@ -356,10 +356,10 @@ As you can see, in each function we create a new unique_pointer, which will have
 Why is that lvalue treated like a rvalue? <br>
 As it is reads in the book, there is one exception to the rule that we cannot copy a unique_ptr: We can copy
 or assign a unique_ptr that is about to be destroyed. <br>
-And, according to the new standard says that when returning any class that is movable, the compiler will try to avoid copies of it and so it will first try to invoke the move constructor of the returned object. 
+And, according to the new standard, when returning any class that is movable, the compiler will try to avoid copies of it and so it will first try to invoke the move constructor of the returned object. 
 Only if it can't do that first, it will call the copy constructor, and if not even that can be invoked, the program will fail to compile.<br>
 
-See [StackOverflow - returning unique pointers from functions] (http://stackoverflow.com/questions/4316727)
+See [StackOverflow - returning unique pointers from functions] (http://stackoverflow.com/questions/4316727) <br>
 
 
 
