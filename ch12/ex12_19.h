@@ -96,4 +96,7 @@ private:
     size_t curr;
 };
 
+StrBlobPtr StrBlob::begin() { return StrBlobPtr(*this); }
+StrBlobPtr StrBlob::end() { return StrBlobPtr(*this, this->size());}
+
 #endif
