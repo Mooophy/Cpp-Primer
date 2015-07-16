@@ -335,16 +335,33 @@ String s5 = baz(); // second avoided
 ## Exercise 13.51:
 >Although `unique_ptrs` cannot be copied, in 12.1.5 (p. 471) we wrote a clone function that returned a unique_ptr by value. Explain why that function is legal and how it works.
 
-In the second assignment, we assign from the result of a call to getVec. That expression is an rvalue. In this case, both assignment operators are viable—we can bind the result of getVec to either operator’s parameter. Calling the copy-assignment operator requires a conversion to const, whereas StrVec&& is an exact match. Hence, the second assignment uses the move-assignment operator.
+The functions referred to are:
 
+```cpp
+unique_ptr<int> clone(int p) {
+unique_ptr<int> ret(new int (p));
+// . . .
+return ret;
+}
+```
+And 
 ```cpp
 unique_ptr<int> clone(int p) {
     // ok: explicitly create a unique_ptr<int> from int*
     return unique_ptr<int>(new int(p));
 }
 ```
+As you can see, in each function we create a new unique_pointer, which will have it's own memory on stack, and is a lvalue object.<br>
 
-the result of a call to `clone` is an **rvalue**, so it uses the move-assignment operator rather than copy-assignment operator. Thus, it is legal and can pretty work.
+Why is that lvalue treated like a rvalue? <br>
+As it is reads in the book, there is one exception to the rule that we cannot copy a unique_ptr: We can copy
+or assign a unique_ptr that is about to be destroyed. <br>
+And, according to the new standard, when returning any class that is movable, the compiler will try to avoid copies of it and so it will first try to invoke the move constructor of the returned object. 
+Only if it can't do that first, it will call the copy constructor, and if not even that can be invoked, the program will fail to compile.<br>
+
+See [StackOverflow - returning unique pointers from functions] (http://stackoverflow.com/questions/4316727) <br>
+
+
 
 ## Exercise 13.52:
 >Explain in detail what happens in the assignments of the `HasPtr` objects on page 541. In particular, describe step by step what happens to values of `hp`, `hp2`, and of the `rhs` parameter in the `HasPtr` assignment operator.
