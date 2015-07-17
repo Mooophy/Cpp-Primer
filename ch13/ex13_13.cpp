@@ -45,3 +45,12 @@ int main()
     return 0;
 }
 
+//out put:
+//X()
+//X(const X&)
+//X(const X&)
+//X(const X&)       ps:this is called when we return *this.
+//~X()
+//~X()
+//~X()
+//~X()
