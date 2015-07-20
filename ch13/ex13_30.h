@@ -18,7 +18,7 @@
 
 class HasPtr {
 public:
-    friend inline void swap(HasPtr&, HasPtr&)
+    friend inline void swap(HasPtr& lhs, HasPtr& rhs)
     {
     using std::swap;
     swap(lhs.ps, rhs.ps);
