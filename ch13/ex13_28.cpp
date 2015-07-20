@@ -15,15 +15,12 @@ TreeNode& TreeNode::operator=(const TreeNode &rhs)
     if (--*count == 0) {
         if (left) {
             delete left;
-            left = nullptr;
         }
         if (right) {
             delete right;
-            right = nullptr;
         }
 
         delete count;
-        count = nullptr;
     }
     value = rhs.value;
     left = rhs.left;
