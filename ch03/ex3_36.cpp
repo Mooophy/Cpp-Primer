@@ -1,36 +1,42 @@
 #include <iostream>
 #include <vector>
-using std::begin; using std::end; using std::cout; using std::endl; using std::vector; using std::size_t;
+#include <iterator>
 
-size_t array_size(const int arr[])
-{
-    return sizeof(arr) / sizeof(arr[0]);
-}
+using std::begin; using std::end; using std::cout; using std::endl; using std::vector;
 
-bool compare(const int lhs[], const int rhs[])
+// pb point to begin of the array, pe point to end of the array.
+bool compare(int* const pb1, int* const pe1, int* const pb2, int* const pe2)
 {
-    auto lsize = array_size(lhs);
-    auto rsize = array_size(rhs);
-    if (lsize != rsize) return false;
-    for (int i = 0; i != lsize; ++i)
-        if (lhs[i] != rhs[i]) return false;
+    if ((pe1 - pb1) != (pe2 - pb2)) // have different size.
+        return false;
+    else
+    {
+        for (int* i = pb1, *j = pb2; (i != pe1) && (j != pe2); ++i, ++j)
+            if (*i != *j) return false;
+    }
+
     return true;
-}
-
-bool compare(vector<int> const& lhs, vector<int> const& rhs)
-{
-    return lhs == rhs;
 }
 
 int main()
 {
-    int arr1[] = { 0, 1, 2 };
-    int arr2[] = { 0, 1, 2 };
-    cout << "The two arrays are " << (compare(arr1, arr2) ? "equal\n" : "unequal\n");
+    int arr1[3] = { 0, 1, 2 };
+    int arr2[3] = { 0, 2, 4 };
+
+    if (compare(begin(arr1), end(arr1), begin(arr2), end(arr2)))
+        cout << "The two arrays are equal." << endl;
+    else
+        cout << "The two arrays are not equal." << endl;
+
+    cout << "==========" << endl;
 
     vector<int> vec1 = { 0, 1, 2 };
-    vector<int> vec2 = { 0, 1, 3 };
-    cout << "The two vectors are " << (compare(vec1, vec2) ? "equal\n" : "unequal\n");
+    vector<int> vec2 = { 0, 1, 2 };
+
+    if (vec1 == vec2)
+        cout << "The two vectors are equal." << endl;
+    else
+        cout << "The two vectors are not equal." << endl;
 
     return 0;
 }
