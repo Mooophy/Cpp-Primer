@@ -38,6 +38,7 @@ private:
     int i;
 };
 
+inline
 void swap(HasPtr& lhs, HasPtr& rhs)
 {
     using std::swap;
