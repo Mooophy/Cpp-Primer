@@ -2,7 +2,6 @@
 //	ex13_31
 //	Exercise 13.31
 // 	Created by Soyn on 21/7/15.
-//	Copyright (c) 2015 Soyn. All rights reserved.
 //	Add the vector<HasPtr>, and sort it.
 //
 #include<vector>
