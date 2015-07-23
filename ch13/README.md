@@ -151,18 +151,7 @@ The member (smart pointer and container) will be copied.
 ## Exercise 13.21:
 >Do you think the TextQuery and QueryResult classes need to define their own versions of the copy-control members? If so, why? If not, why not? Implement whichever copy-control operations you think these classes require.
 
-(@Mooophy)
-No copy-control members needed.
-
-Because, all these classes are using smart pointers to manage dynamic memory which can be freed automatically by calling synthesized destructors. The objects of these classes should share the same dynamic memory.Hence no user-defined version needed as well.
-
-```cpp
-TextQuery(const TextQuery&) = delete;
-TextQuery& operator=(const TextQuery&) = delete;
-
-QueryResult(const QueryResult&) = delete;
-QueryResult& operator=(const QueryResult&) = delete;
-```
+As synthesized version meet all requirements for this case, no custom version control memebers need to define.
 
 ## [Exercise 13.22](ex13_22.h)
 
