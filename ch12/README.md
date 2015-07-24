@@ -11,9 +11,9 @@ StrBlob b1;
 }
 ```
 
-b2 is destroyed, but the elements in b2 must not be destroyed.
-
-so b1 and b2 both have 4 elements.
+At the end of this code,
+ * `b1` has 4 elements stored on heap;
+ * `b2`, as stored on stack, has been destroyed automatically. So it's meaningless to say how many elements in `b2`.
 
 ## Exercise 12.2
 
