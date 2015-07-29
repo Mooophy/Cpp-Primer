@@ -39,7 +39,7 @@ int main()
 
     std::size_t quantity9 = 0, quantity10 = 0;
     BoundTest test9(1, 9);
-    BoundTest test10(1, 10);
+    BoundTest test10(10, 20);
 
     for (std::string word; fin >> word; ) {
         if (test9(word)) ++quantity9;
