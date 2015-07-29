@@ -1,10 +1,3 @@
-/***************************************************************************
- *  @file       main.cpp
- *  @author     Alan.W
- *  @date       20  Jan 2014
- *  @remark     This code is for the exercises from C++ Primer 5th Edition
- *  @note
- ***************************************************************************/
 //!
 //! Exercise 14.38:
 //! Write a class that tests whether the length of a given string matches a
@@ -17,34 +10,60 @@
 //!
 
 #include <iostream>
-#include <vector>
-#include <algorithm>
 #include <string>
 #include <fstream>
+#include <vector>
+#include <map>
 
-class BoundTest
+struct IsInRange
 {
-public:
-    BoundTest(std::size_t l = 0, std::size_t u = 0) : lower(l), upper(u){}
-    bool operator() (const std::string& s) { return lower <= s.length() && s.length() <= upper; }
+    IsInRange(std::size_t lower, std::size_t upper)
+        :_lower(lower), _upper(upper)
+    {}
 
+    bool operator()(std::string const& str) const
+    {
+        return str.size() >= _lower && str.size() <= _upper;
+    }
+
+    std::size_t lower_limit() const
+    {
+        return _lower;
+    }
+
+    std::size_t upper_limit() const
+    {
+        return _upper;
+    }
 private:
-    std::size_t lower;
-    std::size_t upper;
+    std::size_t _lower;
+    std::size_t _upper;
 };
 
 int main()
 {
-    std::ifstream fin ("../data/storyDataFile.txt");
+    //create predicates with various upper limits.
+    std::size_t lower = 1;
+    auto uppers = { 3u, 4u, 5u, 6u, 7u, 8u, 9u, 10u, 11u, 12u, 13u, 14u };
+    std::vector<IsInRange> predicates;
+    for (auto upper : uppers)
+        predicates.push_back(IsInRange{ lower, upper });
 
-    std::size_t quantity9 = 0, quantity10 = 0;
-    BoundTest test9(1, 9);
-    BoundTest test10(10, 20);
+    //create count_table to store counts 
+    std::map<std::size_t, std::size_t> count_table;
+    for (auto upper : uppers)
+        count_table[upper] = 0;
 
-    for (std::string word; fin >> word; ) {
-        if (test9(word)) ++quantity9;
-        if (test10(word)) ++quantity10;
-    }
+    //read file and count
+    std::ifstream fin("../data/storyDataFile.txt");
+    for (std::string word; fin >> word; /* */)
+        for (auto is_size_in_range : predicates)
+            if (is_size_in_range(word))
+                ++count_table[is_size_in_range.upper_limit()];
 
-    std::cout << quantity9 << ", " << quantity10 << std::endl;
+    //print
+    for (auto pair : count_table)
+        std::cout << "count in range [1, " << pair.first << "] : " << pair.second << std::endl;
+
+    return 0;
 }
