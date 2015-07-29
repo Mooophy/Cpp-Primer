@@ -23,8 +23,10 @@ int main()
     std::cin >> input;
     std::modulus<int> mod;
     auto predicator = [&](int i){ return 0 == mod(input, i); };
-    auto is_divisible = std::any_of(data.begin(), data.end(), predicator);
-    std::cout << (is_divisible ? "Yes!" : "No!") << std::endl;
+    auto iter = data.begin();
+    for(; iter != data.end() && !(predicator(*iter)); ++iter)
+            ;
+    std :: cout << (iter == data.end()? "Yes!" : "No!") << std :: endl;
 
     return 0;
 }
