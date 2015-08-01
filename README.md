@@ -5,10 +5,10 @@
 [![](https://img.shields.io/badge/%E4%B8%AD%E6%96%87-%E8%AE%A8%E8%AE%BA%E5%8C%BA-yellowgreen.svg)](https://github.com/ReadingLab/Discussion-for-Cpp)
 [![](https://img.shields.io/badge/douban-%E5%B0%8F%E7%BB%84-green.svg)](http://www.douban.com/group/532124/)
 
-### Note
-- g++ and clang++ are recommended. VS may be used as well, but up to May 2015, Visual Studio has not implemented all c++ 11 features yet.
-- Use `-std=c++11`flag for compiling.
-- If any bug caught, please [let me know](https://github.com/Mooophy/Cpp-Primer/issues/new), thanks.
+### Compilers recommended
+ * Windows: Visual Studio 2015+ 
+ * Linux: g++ 5.0+
+ * Mac: clang++ 3.6+
 
 ### Contents
 
