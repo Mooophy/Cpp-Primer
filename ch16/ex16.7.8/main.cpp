@@ -15,7 +15,7 @@
 //! this habit.
 //!
 //  The reason is that more class defines "!=" rather than "<". Doing so can
-//  reduce the number of reqirement of the class used with a template class.
+//  reduce the number of requirement of the class used with a template class.
 //!
 
 #include <iostream>
