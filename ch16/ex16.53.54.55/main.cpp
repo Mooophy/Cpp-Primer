@@ -25,14 +25,14 @@
 #include <iostream>
 
 // trivial case 
-template<typename T>
-std::ostream& print(std::ostream& os, T const& t)
+template<typename Printable>
+std::ostream& print(std::ostream& os, Printable const& t)
 {
     return os << t;
 }
 // recursion
-template<typename T, typename... Args>
-std::ostream& print(std::ostream& os, T const& t, Args const&... rest)
+template<typename Printable, typename... Args>
+std::ostream& print(std::ostream& os, Printable const& t, Args const&... rest)
 {
     return print(os << t << ", ", rest...);
 }
