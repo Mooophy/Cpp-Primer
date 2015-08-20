@@ -3,7 +3,7 @@
 //  Exercise 13.17
 //
 //  Created by pezy on 1/15/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
+//  Refactoed by acgtyrant Aug 2015
 //
 //  Write versions of numbered and f corresponding to the previous three exercises
 //  and check whether you correctly predicted the output.
