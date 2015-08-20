@@ -29,3 +29,6 @@
 *.exe
 *.out
 *.app
+
+# ctags
+*tags*
