@@ -127,12 +127,12 @@ Three identical numbers.
 ## Exercise 13.15:
 >Assume `numbered` has a copy constructor that generates a new serial number. Does that change the output of the calls in the previous exercise? If so, why? What output gets generated?
 
-Yes, the output will change. cause we don't use the synthesized copy-control members rather than own defined.The output will be three different numbers.
+Yes, it does. Because, as described, the newly defined copy constructor can handle such situations as expected.Thus, the output will be three different numbers.
 
 ## Exercise 13.16:
 >What if the parameter in f were const numbered&? Does that change the output? If so, why? What output gets generated?
 
-Yes, the output will change. cause the function `f` haven't any copy operators. Thus, the output are the same when pass the each object to `f`.
+Yes, the output will change. Because no copy operation happens within function `f`. Thus, the three Output are the same.
 
 ## Exercise 13.17
 > Write versions of numbered and f corresponding to the previous three exercises and check whether you correctly predicted the output.
