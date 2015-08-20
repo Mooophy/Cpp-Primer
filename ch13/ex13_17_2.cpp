@@ -15,16 +15,18 @@
 class numbered {
 public:
     numbered() {
-        static int unique = 10;
         mysn = unique++;
     }
 
     numbered(const numbered& n) {
-        mysn = n.mysn + 1;
+        mysn = unique++;
     }
 
     int mysn;
+    static int unique;
 };
+
+static int unique = 10;
 
 void f(numbered s) {
     std::cout << s.mysn << std::endl;
@@ -39,6 +41,6 @@ int main()
 }
 
 // output
-// 11
-// 12
 // 13
+// 14
+// 15
