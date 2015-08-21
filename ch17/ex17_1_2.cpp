@@ -20,10 +20,10 @@
 
 int main()
 {
-    //ex17.1
-    auto three_ints = std::make_tuple(10, 10, 10);
-
-    //ex17.2
+    auto three_ints = std::make_tuple(10, 20, 30);
+    
     using SomeTuple = std::tuple < std::string, std::vector<std::string>, std::pair<std::string, int> > ;
-    SomeTuple t;
+    SomeTuple some_tuple;
+
+    return 0;
 }
