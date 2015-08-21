@@ -1,7 +1,8 @@
 /***************************************************************************
  *  @file       main.cpp
- *  @author     Alan.W
+ *  @author     Yue Wang
  *  @date       03  Feb 2014
+ *              Aug 2015       
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
@@ -22,41 +23,29 @@
 
 //! ex16.19
 template<typename Container>
-std::ostream& print(Container& c, std::ostream &os);
+std::ostream& print(Container const& container, std::ostream& os)
+{
+    for(typename Container::size_type i = 0; i != container.size(); ++ i)
+        os << container[i] << " ";
+    return os;
+}
 
 //! ex16.20
 template<typename Container>
-std::ostream& print2(Container& c, std::ostream &os);
+std::ostream& print2(Container const& container, std::ostream &os)
+{
+    for(auto curr = container.cbegin(); curr != container.cend(); ++curr)
+        os << *curr << " ";
+    return os;
+}
+
 
 int main()
 {
-    std::vector<int> v = {1,23,6,4,5,7,4};
-    std::list<std::string> l = {"ss","sszz","saaas","s333s","ss2","sss"};
-    print2(v, std::cout);
-    print2(l, std::cout);
+    std::vector<int> v = { 1, 23, 6, 4, 5, 7, 4 };
+    std::list<std::string> l = { "ss", "sszz", "saaas", "s333s", "ss2"," sss" };
+    print2(v, std::cout) << std::endl;
+    print2(l, std::cout) << std::endl;
 
     return 0;
-}
-
-//! ex16.19 using size() to control the loop
-template<typename Container>
-std::ostream & print(Container &c, std::ostream &os)
-{
-    typedef typename Container::size_type size_type;
-
-    auto it = c.begin();
-    for(size_type i = 0; i!= c.size(); ++i)
-        os << *it++ << "\n";
-
-    return os;
-}
-
-//! ex16.20 using iterator to control the loop
-template<typename Container>
-std::ostream& print2(Container& c, std::ostream &os)
-{
-    for (auto it = c.begin(); it != c.end(); ++it)
-        os << *it << "\n";
-
-    return os;
 }
