@@ -1,6 +1,6 @@
 /***************************************************************************
  *  @file       main.cpp
- *  @author     Alan.W
+ *  @author     Yue Wang
  *  @date       02  Feb 2014
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
@@ -23,9 +23,6 @@
 //! whether any are illegal. Correct each error that you find.
 //!
 
-#include <vector>
-#include <iostream>
-
 template <typename T, typename U, typename V> void f1(T, U, V);
 //!                   ^^^^^^^^ added to fix the error
 
@@ -36,16 +33,14 @@ template <typename T> inline T foo(T, unsigned int*);
 //!                   ^^^^^^ inline must be after template
 
 template <typename T> T f4(T, T);
-//!                   ^ -- return type should be provided
+//!                   ^ -- return type must be provided
 
-typedef char C;
-//!          ^
+typedef char Ctype;
+//!          ^^^^^
 //!the template declatation below hides this typedef
-    template <typename Ctype> Ctype f5(Ctype a);
+template <typename Ctype> Ctype f5(Ctype a);
 
 int main()
 {
-
-
     return 0;
 }
