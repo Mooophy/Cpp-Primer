@@ -1,10 +1,11 @@
 /***************************************************************************
- *  @file       main.cpp
- *  @author     Alan.W
- *  @date       26  Feb 2014
- *  @remark     This code is for the exercises from C++ Primer 5th Edition
- *  @note
- ***************************************************************************/
+*  @file       main.cpp
+*  @author     Yue Wang
+*  @date       26  Feb 2014
+*              Aug 2015
+*  @remark     This code is for the exercises from C++ Primer 5th Edition
+*  @note
+***************************************************************************/
 //!
 //!
 //! Exercise 16.60:
@@ -18,28 +19,35 @@
 //! Define your own version of make_shared.
 //!
 
-
 #include <iostream>
 #include <memory>
+#include <string>
 
-//! ex 16.61 my version makeshared
-template <typename T, typename ... Args>
-std::shared_ptr<T> wy_make_shared(Args&&...);
+namespace ch16 
+{
+    template <typename T, typename ... Args>
+    auto make_shared(Args&&... args) -> std::shared_ptr<T>
+    {
+        return std::shared_ptr<T>(new T(std::forward<Args>(args)...));
+    }
+}
+
+struct Foo
+{
+    explicit Foo(int b) : bar(b){}
+    int bar;
+};
 
 int main()
 {
-    auto p = wy_make_shared<int>(42);
-    std::cout << *p  << std::endl;
+    auto num = ch16::make_shared<int>(42);
+    std::cout << *num << std::endl;
 
-    auto p2= wy_make_shared<std::string>(10,'c');
-    std::cout << *p2  << std::endl;
+    auto str = ch16::make_shared<std::string>(10, 'c');
+    std::cout << *str << std::endl;
 
-}
-
-template <typename T, typename ... Args>
-inline std::shared_ptr<T>
-wy_make_shared(Args&&... args)
-{
-    std::shared_ptr<T> ret( new T(std::forward<Args>(args)...));
-    return ret;
+    auto foo = ch16::make_shared<Foo>(99);
+    std::cout << foo->bar << std::endl;
+    
+    return 0;
 }
