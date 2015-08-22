@@ -11,9 +11,9 @@
 //! Exercise 16.60:
 //! Explain how make_shared (§ 12.1.1, p. 451) works.
 //!
-//  make_shared shoudl be a variadic template member which forward all of fun's arguments to
-//  the underlying functions that allocate and initializes an object in dynamic memory and
-//  return a shared_ptr.
+//  make_shared shoudl be a variadic template function that forwards all arguments to
+//  underlying constructors that allocate and initializes an object in dynamic memory and
+//  , at last, build a shared_ptr by wrapping the raw pointer.
 //!
 //! Exercise 16.61:
 //! Define your own version of make_shared.
@@ -23,7 +23,7 @@
 #include <memory>
 #include <string>
 
-namespace ch16 
+namespace ch16 //to differ from std::make_shared
 {
     template <typename T, typename ... Args>
     auto make_shared(Args&&... args) -> std::shared_ptr<T>
