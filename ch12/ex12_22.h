@@ -3,7 +3,6 @@
 //  Exercise 12.22
 //
 //  Created by pezy on 12/28/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  What changes would need to be made to StrBlobPtr to create a class
 //  that can be used with a const StrBlob?

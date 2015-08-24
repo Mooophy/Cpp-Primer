@@ -3,7 +3,6 @@
 //  Exercise 9.44
 //
 //  Created by XDXX on 4/17/15.
-//  Copyright (c) 2015 XDXX. All rights reserved.
 //
 //  @Brief  Rewrite the previous function using an index and replace.
 //  @See    9.43

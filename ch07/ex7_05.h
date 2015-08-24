@@ -3,7 +3,6 @@
 //  Exercise 7.5
 //
 //  Created by pezy on 14/11/8.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Revised by @Yue Wang Jun 2015:
 //

@@ -3,7 +3,6 @@
 //  CP5
 //
 //  Created by pezy on 1/13/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  A good way to understand copy-control members and constructors is to define a simple class with these members in which each member prints its name:
 //  struct X {

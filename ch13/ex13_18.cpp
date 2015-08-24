@@ -3,7 +3,6 @@
 //  Exercise 13.18
 //
 //  Created by pezy on 1/15/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Define an Employee class that contains an employee name and a unique employee identifier.
 //  Give the class a default constructor and a constructor that

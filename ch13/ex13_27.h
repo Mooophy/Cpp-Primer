@@ -3,7 +3,6 @@
 //  Exercise 13.27
 //
 //  Created by pezy on 1/20/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Define your own reference-counted version of HasPtr. 
 

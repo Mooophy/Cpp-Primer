@@ -3,7 +3,6 @@
 //  Exercise 14.2
 //
 //  Created by pezy on 3/9/15.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @See ex7_41.h
 //  @Add overloaded input, output, addition, and compound-assignment operators

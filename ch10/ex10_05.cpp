@@ -3,7 +3,6 @@
 //  Exercise 10.5
 //
 //  Created by pezy on 11/9/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  In the call to equal on rosters, what would happen if both rosters held C-style strings, rather than library strings? 
 //  @Answer For such case, std::equal is going to compare the address value rather than the string value. 

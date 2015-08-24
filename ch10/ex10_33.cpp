@@ -3,7 +3,6 @@
 //  Exercise 10.33
 //
 //  Created by pezy on 12/13/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Write a program that takes the names of an input file and two output files.
 //  The input file should hold integers. Using an istream_iterator read the input file.

@@ -3,7 +3,6 @@
 //  Exercise 7.11
 //
 //  Created by pezy on 11/9/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 
 #include "ex7_11.h"

@@ -3,7 +3,6 @@
 //  Exercise 8.5
 //
 //  Created by pezy on 11/9/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Rewrite the previous program to store each word in a separate element.
 //  @See    ex8_04.cpp 

@@ -3,7 +3,6 @@
 //  Exercise 12.15
 //
 //  Created by pezy on 12/22/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Compilers don’t always give easy-to-understand error messages if we attempt to
 //  copy or assign a unique_ptr. Write a program that contains these errors to see

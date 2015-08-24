@@ -3,7 +3,6 @@
 //  Exercise 7.50
 //
 //  Created by pezy on 11/24/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @See ex7_22.h
 //  @Add constructors should be explicit

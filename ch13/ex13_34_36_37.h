@@ -3,7 +3,6 @@
 //  Exercise 13.34 13.36 13.37
 //
 //  Created by pezy on 1/26/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //   34: Write the Message class as described in this section.
 //

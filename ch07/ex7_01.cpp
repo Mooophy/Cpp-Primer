@@ -3,7 +3,6 @@
 //  Exercise 7.1
 //
 //  Created by pezy on 14/10/30.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 #include <iostream>
 #include <string>

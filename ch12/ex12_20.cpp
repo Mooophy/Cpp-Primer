@@ -3,7 +3,6 @@
 //  Exercise 12.20
 //
 //  Created by pezy on 12/26/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Write a program that reads an input file a line at a time into
 //  a StrBlob and uses a StrBlobPtr to print each element in that StrBlob.

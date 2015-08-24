@@ -3,7 +3,6 @@
 //  Exercise 9.18
 //
 //  Created by pezy on 12/3/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Write a program to read a sequence of strings from the standard input into
 //          a deque. Use iterators to write a loop to print the elements in the deque.

@@ -3,7 +3,6 @@
 //  CP5
 //
 //  Created by pezy on 1/13/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Add a destructor to your HasPtr class from the previous exercises. 
 //

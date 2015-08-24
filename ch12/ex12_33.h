@@ -3,7 +3,6 @@
 //  Exercise 12.33
 //
 //  Created by pezy on 1/1/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  In Chapter 15 we’ll extend our query system and will need some additional members
 //  in the QueryResult class.

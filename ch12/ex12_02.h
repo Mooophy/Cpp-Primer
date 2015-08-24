@@ -3,7 +3,6 @@
 //  Exercise 12.2
 //
 //  Created by pezy on 12/22/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Write your own version of the StrBlob class including the const versions of front and back.
 

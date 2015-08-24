@@ -3,7 +3,6 @@
 //  Exercise 10.28
 //
 //  Created by pezy on 12/13/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Copy a vector that holds the values from 1 to 9 inclusive, into three other containers.
 //  Use an inserter, a back_inserter, and a front_inserter, respectivly to add elements to these containers.

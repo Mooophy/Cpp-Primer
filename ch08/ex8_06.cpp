@@ -3,7 +3,6 @@
 //  Exercise 8.6
 //
 //  Created by pezy on 11/27/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Rewrite the bookstore program from ¡ì7.1.1 (p.256) to read its transactions from a file. 
 //          Pass the name of the file as an argument to main (¡ì6.2.5, p.218). 

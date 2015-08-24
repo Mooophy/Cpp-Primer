@@ -3,7 +3,6 @@
 //  CP5
 //
 //  Created by pezy on 1/5/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Given the following sketch of a class, write a copy constructor that copies all the members.
 //  Your constructor should dynamically allocate a new string and copy the object to which ps points,

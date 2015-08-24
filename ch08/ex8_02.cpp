@@ -3,7 +3,6 @@
 //  Exercise 8.2
 //
 //  Created by pezy on 11/27/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Test your function by calling it, passing cin as an argument
 

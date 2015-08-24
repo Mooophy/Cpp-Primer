@@ -3,7 +3,6 @@
 //  Exercise 13.39
 //
 //  Created by pezy on 2/3/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Write your own version of StrVec, including versions of
 //  reserve, capacity (9.4, p. 356), and resize (9.3.5, p. 352).

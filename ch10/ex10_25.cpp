@@ -3,7 +3,6 @@
 //  Exercise 10.25
 //
 //  Created by pezy on 12/11/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  In the exercises for 10.3.2 (p.392) you wrote a version of biggies that uses partition.
 //          Rewrite that function to use check_size and bind.

@@ -3,7 +3,6 @@
 //  Exercise 12.14
 //
 //  Created by pezy on 12/22/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Write your own version of a function that uses a shared_ptr to manage a connection.
 

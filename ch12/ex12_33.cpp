@@ -3,7 +3,6 @@
 //  Exercise 12.33
 //
 //  Created by pezy on 1/1/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Rewrite the TextQuery and QueryResult classes to use a StrBlob
 //  instead of a vector<string> to hold the input file.

@@ -3,7 +3,6 @@
 //  Exercise 12.19
 //
 //  Created by pezy on 12/26/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Define your own version of StrBlobPtr and
 //  update your StrBlob class with the appropriate friend declaration and begin and end members.

@@ -3,7 +3,6 @@
 //  Exercise 7.9
 //
 //  Created by pezy on 11/8/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //
 //  Revied by @Yue Wang Jun 2015

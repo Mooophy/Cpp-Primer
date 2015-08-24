@@ -3,7 +3,6 @@
 //  Exercise 8.11
 //
 //  Created by pezy on 11/29/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  The program in this section defined its istringstream object inside the outer while loop.
 //          What changes would you need to make if record were defined outside that loop?

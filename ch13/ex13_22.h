@@ -3,7 +3,6 @@
 //  Exercise 13.22
 //
 //  Created by pezy on 1/13/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Assume that we want HasPtr to behave like a value. 
 //  That is, each object should have its own copy of the string to which the objects point. 

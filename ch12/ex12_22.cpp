@@ -3,7 +3,6 @@
 //  CP5
 //
 //  Created by pezy on 1/2/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 
 #include "ex12_22.h"

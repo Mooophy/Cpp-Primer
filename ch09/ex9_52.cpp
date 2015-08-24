@@ -3,7 +3,6 @@
 //  Exercise 9.52 
 //
 //  Created by pezy on 12/5/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Use a stack to process parenthesized expressions. 
 //          When you see an open parenthesis, note that it was seen. 

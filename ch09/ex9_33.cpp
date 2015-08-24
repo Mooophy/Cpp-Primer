@@ -3,7 +3,6 @@
 //  Exercise 9.33 
 //
 //  Created by pezy on 12/3/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  In the final example in this section what would happen 
 //          if we did not assign the result of insert to begin? 

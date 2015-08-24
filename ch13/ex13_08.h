@@ -3,7 +3,6 @@
 //  CP5
 //
 //  Created by pezy on 1/12/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Write the assignment operator for the HasPtr class from exercise 13.5 in 13.1.1 (p. 499).
 //  As with the copy constructor, your assignment operator should copy the object to which ps points.

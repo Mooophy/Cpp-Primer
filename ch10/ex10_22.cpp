@@ -3,7 +3,6 @@
 //  Exercise 10.22
 //
 //  Created by pezy on 12/11/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Rewrite the program to count words of size 6 or less using
 //          functions in place of the lambdas.

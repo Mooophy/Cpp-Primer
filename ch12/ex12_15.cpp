@@ -3,7 +3,6 @@
 //  Exercise 12.15
 //
 //  Created by pezy on 12/22/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Rewrite the first exercise to use a lambda (10.3.2, p.388) in place of the end_connection function.
 

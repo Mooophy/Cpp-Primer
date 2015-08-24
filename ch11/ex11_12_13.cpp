@@ -3,7 +3,6 @@
 //  Exercise 11.12 11.13
 //
 //  Created by pezy on 12/15/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Write a program to read a sequence of strings and ints,
 //  storing each into a pair. Store the pairs in a vector.

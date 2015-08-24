@@ -3,7 +3,6 @@
 //  Exercise 12.26 
 //
 //  Created by pezy on 12/30/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Rewrite the program on page 481 using an allocator. 
 

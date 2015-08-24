@@ -3,7 +3,6 @@
 //  Exercise 9.19
 //
 //  Created by pezy on 12/3/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Rewrite the program from the previous exercise to use a list.
 //          List the changes you needed to make.
