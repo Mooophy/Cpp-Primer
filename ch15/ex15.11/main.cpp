@@ -81,8 +81,3 @@ void print_debug(const Quote &q)
 {
     q.debug();
 }
-
-
-
-
-

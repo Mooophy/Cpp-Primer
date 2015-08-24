@@ -41,7 +41,3 @@ int main()
 
     return 0;
 }
-//! output
-//!
-//ex 10.03: 10
-//ex 10.04: 4

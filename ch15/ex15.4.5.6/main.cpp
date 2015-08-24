@@ -51,9 +51,3 @@ double print_total(std::ostream &os, const Quote &item, size_t n)
 
     return ret;
 }
-
-
-
-
-
-

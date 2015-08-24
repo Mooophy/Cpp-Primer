@@ -71,16 +71,3 @@ int main()
 
             return 0;
 }
-
-///
-///@Output(JSON-like format)
-///{
-/// "v1":{"size":"0","value":[]}
-/// "v2":{"size":"10","value":[0,0,0,0,0,0,0,0,0,0]}
-/// "v3":{"size":"10","value":[42,42,42,42,42,42,42,42,42,42]}
-/// "v4":{"size":"1","value":[10]}
-/// "v5":{"size":"2","value":[10,42]}
-/// "v6":{"size":"10","value":[(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)]}
-/// "v7":{"size":"10","value":[hi,hi,hi,hi,hi,hi,hi,hi,hi,hi]}
-///}
-///

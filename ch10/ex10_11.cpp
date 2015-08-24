@@ -50,7 +50,3 @@ int main()
 
     return 0;
 }
-//! output
-//ex10.11 :
-//Hi 1234 alan wang
-

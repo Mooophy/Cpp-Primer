@@ -25,4 +25,3 @@ int main()
     Blob<int> b(v.begin(), v.end());
     return 0;
 }
-

@@ -43,4 +43,3 @@ int main()
     basket.total_receipt(log);
     return 0;
 }
-

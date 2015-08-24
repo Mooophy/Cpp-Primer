@@ -39,4 +39,3 @@ int main()
     //! the output is 2, as '\0' is added at the end of the array
     return 0;
 }
-

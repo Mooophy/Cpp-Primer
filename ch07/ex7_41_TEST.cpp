@@ -28,27 +28,3 @@ int main()
     
     return 0;
 }
-
-// print 
-/*
- *  1. default way:
- *  ----------------
- *  Sales_data(const std::string&, unsigned, double)
- *  Sales_data()
- *  
- *  2. use std::string as parameter:
- *  ----------------
- *  Sales_data(const std::string&, unsigned, double)
- *  Sales_data(const std::string&)
- *  
- *  3. complete parameters:
- *  ----------------
- *  Sales_data(const std::string&, unsigned, double)
- *  
- *  4. use istream as parameter:
- *  ----------------
- *  Sales_data(const std::string&, unsigned, double)
- *  Sales_data()
- *  Sales_data(istream &is)
- *
- */ 

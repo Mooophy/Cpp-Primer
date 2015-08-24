@@ -214,7 +214,3 @@ void StrVec::wy_alloc_n_move(std::size_t n)
     first_free  =   dest;
     cap         =   element + newCapacity;
 }
-
-
-
-

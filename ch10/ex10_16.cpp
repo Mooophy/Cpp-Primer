@@ -54,6 +54,3 @@ int main()
 
     return 0;
 }
-//! output :
-//!
-//ex10.16: 1234 alan

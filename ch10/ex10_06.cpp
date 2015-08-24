@@ -21,6 +21,3 @@ int main()
         cout << i << " ";
     cout << endl;
 }
-
-//  @Output
-//  0 0 0 0 0 0 0 0 0 0

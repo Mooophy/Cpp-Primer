@@ -74,7 +74,3 @@ int main()
 
     return 0;
 }
-//! output :
-//!
-//ex10.18: turtle jumps over quick slow
-//ex10.19: jumps over quick slow turtle

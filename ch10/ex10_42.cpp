@@ -25,7 +25,3 @@ int main()
         std::cout << e << " ";
     std::cout << std::endl;
 }
-
-//! output
-//!
-//aa aasss

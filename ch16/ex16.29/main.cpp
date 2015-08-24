@@ -30,4 +30,3 @@ int main()
     b[0] = "zzzz";
     std::cout << b[0] << "\n";
 }
-

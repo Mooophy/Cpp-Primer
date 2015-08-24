@@ -41,6 +41,3 @@ int main()
     };
     biggies(v, 4);
 }
-
-//  @Out
-//  jumps over quick slow turtle

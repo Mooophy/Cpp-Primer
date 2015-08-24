@@ -132,23 +132,3 @@ operator >>(std::istream &is, Sales_data &s)
 
     return is;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

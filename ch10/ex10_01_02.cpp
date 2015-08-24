@@ -33,7 +33,3 @@ int main()
 
     return 0;
 }
-//! output:
-//!
-//ex 10.01: 3
-//ex 10.02: 2

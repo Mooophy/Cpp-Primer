@@ -49,4 +49,3 @@ int main()
     std::cout << *(end_def(s) - 1) << std::endl;
     return 0;
 }
-

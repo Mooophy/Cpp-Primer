@@ -32,12 +32,3 @@ int main()
 
     return 0;
 }
-
-///
-///@Output
-///pezy is a good programmer you can ask any question to him all the time he is playing the codes
-///^D(EOF)
-///PEZY IS A GOOD PROGRAMMER YOU CAN ASK
-///ANY QUESTION TO HIM ALL THE TIME HE
-///IS PLAYING THE CODES
-///
