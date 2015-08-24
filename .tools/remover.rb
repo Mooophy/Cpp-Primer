@@ -1,9 +1,9 @@
 # @Yue Wang  Aug 2015
 #
-# Remove lines that cantain some word from all files with in the given directory recursively.
+# Recursively remove lines that contain some word from files within the given directory.
 # To use:
 #   $ ruby remover.rb dirname file_extension key_word
-# insensitive casing by default.
+# Insensitive casing by default.
 #
 
 class Remover
@@ -40,15 +40,15 @@ extension = ARGV[1]
 expr = ARGV[2]
  
 allFilePaths = Dir.glob "#{ dir }/**/*.#{ extension }"
+pattern = Regexp.new(Regexp.escape(expr), Regexp::IGNORECASE)
 
 allFilePaths.each do |path|
  
-  pattern = Regexp.new(Regexp.escape(expr), Regexp::IGNORECASE)
   rm = Remover.new
   rm.perform_on( path ) do |line, i| 
     begin
       line.match(pattern)
-    rescue
+    rescue #to handl exception caused by say encoding
       puts "\n---------------exception happens when reading the line:"
       puts line
       puts "file: [#{ path }] line:[#{ i }]"
