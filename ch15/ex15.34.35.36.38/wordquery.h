@@ -11,7 +11,7 @@
  */
 class WordQuery : public Query_base
 {
-    //! class Query uses the WordQuery constructor
+    // class Query uses the WordQuery constructor
     friend class Query;
     WordQuery(const std::string& s):
         query_word(s)
@@ -20,7 +20,7 @@ class WordQuery : public Query_base
     }
 
 
-    //! virtuals:
+    // virtuals:
     QueryResult eval(const TextQuery& t) const override
     {   return t.query(query_word); }
     std::string rep() const override

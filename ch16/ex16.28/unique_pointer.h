@@ -18,42 +18,42 @@ class unique_pointer
     friend void swap<T,D>(unique_pointer<T,D>& lhs, unique_pointer<T,D>& rhs);
 
 public:
-    //! preventing copy and assignment
+    // preventing copy and assignment
     unique_pointer(const unique_pointer&) = delete;
     unique_pointer& operator = (const unique_pointer&) = delete;
 
-    //! default constructor and one taking T*
+    // default constructor and one taking T*
     unique_pointer() = default;
     explicit unique_pointer(T* up): ptr(up) { }
 
-    //! move constructor
+    // move constructor
     unique_pointer(unique_pointer&& up) noexcept
         : ptr(up.ptr)   { up.ptr = nullptr; }
 
-    //! move assignment
+    // move assignment
     unique_pointer& operator =(unique_pointer&& rhs) noexcept;
 
-    //! std::nullptr_t assignment
+    // std::nullptr_t assignment
     unique_pointer& operator =(std::nullptr_t n) noexcept;
 
 
 
-    //! operator overloaded :  *  ->  bool
+    // operator overloaded :  *  ->  bool
     T& operator  *() const   { return *ptr; }
     T* operator ->() const   { return & this->operator *(); }
      operator bool() const   { return ptr ? true : false;   }
 
-    //! return the underlying pointer
+    // return the underlying pointer
     T* get() const noexcept { return ptr;}
 
-    //! swap member using swap friend
+    // swap member using swap friend
     void swap(unique_pointer<T, D> &rhs)  {::swap(*this, rhs);}
 
-    //! free and make it point to nullptr or to p's pointee.
+    // free and make it point to nullptr or to p's pointee.
     void reset()     noexcept { deleter(ptr); ptr = nullptr; }
     void reset(T* p) noexcept { deleter(ptr); ptr = p;       }
 
-    //! return ptr and make ptr point to nullptr.
+    // return ptr and make ptr point to nullptr.
     T* release();
 
 
@@ -82,7 +82,7 @@ template<typename T, typename D>
 inline unique_pointer<T,D>&
 unique_pointer<T,D>::operator =(unique_pointer&& rhs) noexcept
 {
-    //! prevent self-assignment
+    // prevent self-assignment
     if(this->ptr != rhs.ptr)
     {
         deleter(ptr);
@@ -105,7 +105,7 @@ unique_pointer<T,D>::operator =(std::nullptr_t n) noexcept
     return *this;
 }
 
- //! relinquish contrul by returnning ptr and making ptr point to nullptr.
+ // relinquish contrul by returnning ptr and making ptr point to nullptr.
 template<typename T, typename D>
 inline T*
 unique_pointer<T,D>::release()

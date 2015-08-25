@@ -34,14 +34,14 @@ class QueryResult
     friend std::ostream& operator<<(std::ostream&, const QueryResult&);
 
 public:
-    //! constructor
+    // constructor
     QueryResult(std::string s,
                 std::shared_ptr<std::set<TextQuery::line_no>> sp_l,
                 StrBlob f) :
         sought(s), sp_lines(sp_l), file(f) { }
 
-    //! added for ex12.33
-    //! ? Think about wether the "const"s here are expected.
+    // added for ex12.33
+    // ? Think about wether the "const"s here are expected.
     const StrBlob& get_file() const{ return file; }
 
     std::set<TextQuery::line_no>::iterator
@@ -53,7 +53,7 @@ public:
 
 
 private:
-    //! three data members
+    // three data members
     std::string sought;
     std::shared_ptr<std::set<TextQuery::line_no>> sp_lines;
     StrBlob file;

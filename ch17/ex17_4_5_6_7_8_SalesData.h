@@ -39,7 +39,7 @@
 
 class Sales_data
 {
-    //! friends
+    // friends
     friend Sales_data operator+(const Sales_data& lhs, const Sales_data& rhs);
 
     friend std::ostream&
@@ -72,12 +72,12 @@ public:
 	std::string isbn() const { return bookNo; }
 	Sales_data& combine(const Sales_data&);
 
-    //! assignments
+    // assignments
     Sales_data& operator  =(const Sales_data& rhs);
     Sales_data& operator  =(const std::string&  rhs);
     Sales_data& operator +=(const Sales_data& rhs);
 
-    //! conversion
+    // conversion
     explicit operator std::string () const { return bookNo; }
     explicit operator double      () const { return revenue;}
 

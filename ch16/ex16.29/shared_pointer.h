@@ -27,64 +27,64 @@ template <typename T>
 class shared_pointer
 {
     friend void ::swap<T>(shared_pointer<T>& lhs, shared_pointer<T>& rhs);
-    //!               ^^^ -- don't forget this.
+    //               ^^^ -- don't forget this.
 
 public:
 
-    //! default constructor
+    // default constructor
     shared_pointer() = default;
 
-    //! constructor taking raw pointer.
-    //! set the refCount as 1
+    // constructor taking raw pointer.
+    // set the refCount as 1
     explicit shared_pointer(T* up, std::function<void(T*)> d = DebugDelete()) :
         ptr(up), refCount(new std::size_t(1)), deleter(d) { }
 
-    //! ctor taking std::shared_ptr&& i.e. rvalue reference
+    // ctor taking std::shared_ptr&& i.e. rvalue reference
     explicit shared_pointer(std::shared_ptr<T>&& sp,
                             std::function<void(T*)> d = DebugDelete());
 
-    //! copy constructor.
-    //! increment useCount for each Copy
+    // copy constructor.
+    // increment useCount for each Copy
     shared_pointer(const shared_pointer& sp):
         ptr(sp.ptr), refCount(sp.refCount), deleter(sp.deleter)
     { ++*refCount; }
 
-    //! move constructor
+    // move constructor
     shared_pointer(shared_pointer&& sp) noexcept;
 
-    //! copy assignment
+    // copy assignment
     shared_pointer& operator =(const shared_pointer& rhs);
 
-    //! move assignment
+    // move assignment
     shared_pointer& operator =(shared_pointer&& rhs) noexcept;
 
 
-    //! conversion operator
+    // conversion operator
     operator bool() const { return ptr ? true : false;}
 
-    //! dereference *     arrow ->
+    // dereference *     arrow ->
     T& operator* () const { return *ptr; }
     T* operator->() const { return & this->operator *(); }
 
-    //! return useCount
+    // return useCount
     std::size_t use_count() const { return *refCount; }
 
-    //! get the underlying pointer
+    // get the underlying pointer
     T* get() const noexcept { return ptr; }
 
-    //! check if the unique user
+    // check if the unique user
     bool unique() const noexcept { return *refCount == 1;}
 
-    //! swap member
+    // swap member
     void swap( shared_pointer& rhs) { ::swap(*this, rhs); }
 
-    //! if unique user, free the object pointed to
+    // if unique user, free the object pointed to
     void reset() noexcept { decrement_n_destroy(); }
 
-    //! make prt point where p pointing and create a new coount for it
+    // make prt point where p pointing and create a new coount for it
     void reset(T* p);
 
-    //! reset to point where p is pointing and change deleter to d.
+    // reset to point where p is pointing and change deleter to d.
     void reset(T *p, const std::function<void(T*)>& d)
     {   reset(p);   deleter = d;   }
 
@@ -98,13 +98,13 @@ private:
     T* ptr = nullptr;
     std::size_t* refCount = new std::size_t(0);
 
-    //! any functor lambda or function pointer that matched this
-    //! signature can replace the default one at run time.
+    // any functor lambda or function pointer that matched this
+    // signature can replace the default one at run time.
     std::function<void(T*)> deleter{DebugDelete()};
-    //!                            ^~~~~~~~~~~~~~^
-    //!                         here: = doesn't work, another way is initializing it in constructor.
+    //                            ^~~~~~~~~~~~~~^
+    //                         here: = doesn't work, another way is initializing it in constructor.
 
-    //! utilities
+    // utilities
     void decrement_n_destroy();
 };
 
@@ -158,13 +158,13 @@ template<typename T>
 inline shared_pointer<T>&
 shared_pointer<T>::operator =(const shared_pointer& rhs)
 {
-    //! increment rhs.refCount first to ensure safty when self-assignment
+    // increment rhs.refCount first to ensure safty when self-assignment
     ++*rhs.refCount;
 
-    //! for lhs:
+    // for lhs:
     decrement_n_destroy();
 
-    //! copy datastructure from rhs to this.
+    // copy datastructure from rhs to this.
     ptr = rhs.ptr;
     refCount = rhs.refCount;
     deleter  = rhs.deleter;
@@ -178,10 +178,10 @@ template<typename T>
 inline shared_pointer<T>&
 shared_pointer<T>::operator =(shared_pointer&& rhs) noexcept
 {
-    //! for lhs
+    // for lhs
     decrement_n_destroy();
 
-    //! swap two sides
+    // swap two sides
     ::swap(*this, rhs);
 
     std::cout << "shared_pointer::move=\n";

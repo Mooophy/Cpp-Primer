@@ -81,7 +81,7 @@ public:
     StrBlobPtr(): curr(0) { }
     StrBlobPtr(StrBlob &a, size_t sz = 0) : wptr(a.data), curr(sz) { }
 
-    //! newly overloaded why?
+    // newly overloaded why?
     StrBlobPtr(const StrBlob &a, const size_t sz = 0) : wptr(a.data), curr(sz) { }
 
     std::string& deref() const;

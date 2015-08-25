@@ -34,14 +34,14 @@ class TextQuery
 public:
     typedef StrBlob::size_type line_no;
 
-    //! constructor
+    // constructor
     TextQuery(std::ifstream& fin);
 
-    //! query operation
+    // query operation
     QueryResult query(const std::string&) const;
 
 private:
-    //! data members
+    // data members
     StrBlob file;
 
     std::map<std::string,

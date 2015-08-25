@@ -10,17 +10,17 @@ public:
     Bulk_quote(const std::string& b, double p, std::size_t q, double disc) :
         Disc_quote(b,p,q,disc) { std::cout << "Bulk_quote : constructor taking 4 parameters\n"; }
 
-    //! copy constructor
+    // copy constructor
     Bulk_quote(const Bulk_quote& bq) : Disc_quote(bq)
     { std::cout << "Bulk_quote : copy constructor\n"; }
 
-    //! move constructor
+    // move constructor
     Bulk_quote(Bulk_quote&& bq) : Disc_quote(std::move(bq)) noexcept
     {
         std::cout << "Bulk_quote : move constructor\n";
     }
 
-    //! copy =()
+    // copy =()
     Bulk_quote& operator =(const Bulk_quote& rhs)
     {
         Disc_quote::operator =(rhs);
@@ -30,7 +30,7 @@ public:
     }
 
 
-    //! move =()
+    // move =()
     Bulk_quote& operator =(Bulk_quote&& rhs) noexcept
     {
         Disc_quote::operator =(std::move(rhs));

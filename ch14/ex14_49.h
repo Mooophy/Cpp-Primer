@@ -65,29 +65,29 @@ class Date
 public:
     typedef std::size_t Size;
 
-    //! default constructor
+    // default constructor
     Date() = default;
-    //! constructor taking Size as days
+    // constructor taking Size as days
     explicit Date(Size days);
-    //! constructor taking three Size
+    // constructor taking three Size
     Date(Size d, Size m, Size y) : day(d), month(m), year(y) { }
-    //! constructor taking iostream
+    // constructor taking iostream
     Date(std::istream &is, std::ostream &os);
 
-    //! copy constructor
+    // copy constructor
     Date(const Date& d);
-    //! move constructor
+    // move constructor
     Date(Date&& d) noexcept;
 
-    //! copy operator=
+    // copy operator=
     Date& operator= (const Date& d);
-    //! move operator=
+    // move operator=
     Date& operator= (Date&& rhs) noexcept;
 
-    //! destructor  --  in this case, user-defined destructor is not nessary.
+    // destructor  --  in this case, user-defined destructor is not nessary.
     ~Date(){ std::cout << "destroying\n"; }
 
-    //! members
+    // members
     Size toDays() const;  //not implemented yet.
     Date& operator +=(Size offset);
     Date& operator -=(Size offset);
@@ -155,7 +155,7 @@ isLeapYear(Date::Size y);
          return false;
      else
      {
-         //!    month == 1 3 5 7 8 10 12
+         //    month == 1 3 5 7 8 10 12
          if(d.month==1 || d.month==3 || d.month==5 || d.month==7 ||
             d.month==8 || d.month==10|| d.month==12)
          {
@@ -165,7 +165,7 @@ isLeapYear(Date::Size y);
          }
          else
          {
-             //!    month == 4 6 9 11
+             //    month == 4 6 9 11
              if(d.month==4 || d.month==6 || d.month==9 || d.month==11)
              {
                  if(d.day==0 || d.day > 30) return false;
@@ -174,7 +174,7 @@ isLeapYear(Date::Size y);
              }
              else
              {
-                 //!    month == 2
+                 //    month == 2
                  if(isLeapYear(d.year))
                  {
                      if(d.day==0 || d.day >29)  return false;

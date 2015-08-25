@@ -20,10 +20,10 @@
 class wy_queryResult
 {
 public:
-    //! default constructor
+    // default constructor
     wy_queryResult() = default;
 
-    //! copy constructor
+    // copy constructor
     wy_queryResult(const wy_queryResult &qr);
 
     wy_queryResult(std::size_t c, const std::string &str,
@@ -44,16 +44,16 @@ public:
 
 private:
 
-    //! number of occurrence
+    // number of occurrence
     std::size_t counter = 0;
 
-    //! the word being searched
+    // the word being searched
     std::string queryWord = "";
 
-    //! smart pointer to a vector to be storing a file.
+    // smart pointer to a vector to be storing a file.
     wy_textQuery::sp_file_Tp sp_file = nullptr;
 
-    //! smart pointer to a map to be storing results of querries.
+    // smart pointer to a map to be storing results of querries.
     wy_textQuery::sp_Qmap_Tp sp_Qmap = nullptr;
 };
 

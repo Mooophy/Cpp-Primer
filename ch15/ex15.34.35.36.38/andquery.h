@@ -13,7 +13,7 @@ class AndQuery : public BinaryQuery
         std::cout << "AndQuery::AndQuery()\n";
     }
 
-    //! @note: inherits rep and define eval
+    // @note: inherits rep and define eval
 
     QueryResult eval(const TextQuery &) const override
     {

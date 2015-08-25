@@ -12,15 +12,15 @@ public:
     Quote(const std::string &b, double p) :
         bookNo(b), price(p) { std::cout << "Quote : constructor taking 2 parameters\n"; }
 
-    //! copy constructor
+    // copy constructor
     Quote(const Quote& q) : bookNo(q.bookNo), price(q.price)
     { std::cout << "Quote: copy constructing\n"; }
 
-    //! move constructor
+    // move constructor
     Quote(Quote&& q) noexcept : bookNo(std::move(q.bookNo)), price(std::move(q.price))
     { std::cout << "Quote: move constructing\n"; }
 
-    //! copy =
+    // copy =
     Quote& operator =(const Quote& rhs)
     {
         if(*this != rhs)
@@ -33,7 +33,7 @@ public:
         return *this;
     }
 
-    //! move =
+    // move =
     Quote& operator =(Quote&& rhs)  noexcept
     {
         if(*this != rhs)
@@ -46,7 +46,7 @@ public:
         return *this;
     }
 
-    //! clone self
+    // clone self
     virtual Quote* clone() const & {return new Quote(*this);}
     virtual Quote* clone() &&      {return new Quote(std::move(*this));}
 
