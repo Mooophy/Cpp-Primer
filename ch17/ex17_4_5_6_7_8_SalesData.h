@@ -25,11 +25,11 @@
  * 	Fax: (201) 236-3290
 */ 
 
-//!
-//! Exercise 14.45:
-//! Write conversion operators to convert a Sales_data to string and to double.
-//! What values do you think these operators should return?
-//!
+//
+// Exercise 14.45:
+// Write conversion operators to convert a Sales_data to string and to double.
+// What values do you think these operators should return?
+//
 #ifndef SALES_DATA_H
 #define SALES_DATA_H
 
@@ -89,7 +89,7 @@ private:
 };
 
 
-//! overloaded operators added 10.Jan.2014 for ex14.2
+// overloaded operators added 10.Jan.2014 for ex14.2
 inline Sales_data
 operator+(const Sales_data& lhs, const Sales_data& rhs)
 {

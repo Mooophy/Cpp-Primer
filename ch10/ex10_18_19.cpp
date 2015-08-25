@@ -1,15 +1,15 @@
-//!
-//! @author @Yue Wang @pezy
-//! @date   12.10.2014
-//!
-//! Exercise 10.18:
-//! Rewrite biggies to use partition instead of find_if.
-//!
-//! Exercise 10.19:
-//! Rewrite the previous exercise to use stable_partition, which like
-//! stable_sort maintains the original element order in the paritioned
-//! sequence.
-//!
+//
+// @author @Yue Wang @pezy
+// @date   12.10.2014
+//
+// Exercise 10.18:
+// Rewrite biggies to use partition instead of find_if.
+//
+// Exercise 10.19:
+// Rewrite the previous exercise to use stable_partition, which like
+// stable_sort maintains the original element order in the paritioned
+// sequence.
+//
 
 
 #include <iostream>
@@ -17,7 +17,7 @@
 #include <vector>
 #include <algorithm>
 
-//! from ex 10.9
+// from ex 10.9
 void elimdups(std::vector<std::string> &vs)
 {
     std::sort(vs.begin(), vs.end());
@@ -26,7 +26,7 @@ void elimdups(std::vector<std::string> &vs)
 }
 
 
-//! ex10.18
+// ex10.18
 void biggies_partition(std::vector<std::string> &vs, std::size_t sz)
 {
     elimdups(vs);
@@ -40,7 +40,7 @@ void biggies_partition(std::vector<std::string> &vs, std::size_t sz)
 }
 
 
-//! ex10.19
+// ex10.19
 void biggies_stable_partition(std::vector<std::string> &vs, std::size_t sz)
 {
     elimdups(vs);

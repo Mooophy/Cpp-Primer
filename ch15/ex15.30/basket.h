@@ -6,7 +6,7 @@
 #include <memory>
 
 
-//! a basket of objects from Quote hierachy, using smart pointers.
+// a basket of objects from Quote hierachy, using smart pointers.
 class Basket
 {
 public:

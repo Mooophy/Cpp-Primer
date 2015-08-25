@@ -5,10 +5,10 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 16.25:
-//! Explain the meaning of these declarations:
-//!
+//
+// Exercise 16.25:
+// Explain the meaning of these declarations:
+//
 
 /**
  *  @brief  instantiation declaration. The definition of it is somewhere else
@@ -20,11 +20,11 @@
  */
 //template class vector<Sales_data>;
 
-//! Exercise 16.26:
-//! Assuming NoDefault is a class that does not have a default constructor,
-//! can we explicitly instantiate vector<NoDefault>? If not, why not?
+// Exercise 16.26:
+// Assuming NoDefault is a class that does not have a default constructor,
+// can we explicitly instantiate vector<NoDefault>? If not, why not?
 //  http://stackoverflow.com/questions/21525169/while-explicitly-instantiating-vectorsometype-what-is-the-sometype-default-co
-//!
+//
 
 int main()
 {

@@ -4,10 +4,10 @@
 *  @date       23  DEC 2013
 *  @remark
 ***************************************************************************/
-//!
-//! Exercise 12.10:
-//! Explain whether the following call to the process function defined on page
-//! 464 is correct. If not, how would you correct the call?
+//
+// Exercise 12.10:
+// Explain whether the following call to the process function defined on page
+// 464 is correct. If not, how would you correct the call?
 //  correct.
 
 #include <iostream>

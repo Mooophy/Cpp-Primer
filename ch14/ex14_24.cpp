@@ -1,8 +1,8 @@
 #include "ex14_24.h"
 #include <algorithm>
 
-//! constructor taking Size as days
-//! the argument must be within (0, 2^32)
+// constructor taking Size as days
+// the argument must be within (0, 2^32)
 Date::Date(Size days)
 {
     //! calculate the year
@@ -39,7 +39,7 @@ Date::Date(Size days)
     });
 }
 
-//! construcotr taking iostream
+// construcotr taking iostream
 Date::Date(std::istream &is, std::ostream &os)
 {
     is >> day >> month >> year;
@@ -61,17 +61,17 @@ Date::Date(std::istream &is, std::ostream &os)
 
 }
 
-//! copy constructor
+// copy constructor
 Date::Date(const Date &d) :
     day(d.day), month(d.month), year(d.year)
 {}
 
-//! move constructor
+// move constructor
 Date::Date(Date&& d) NOEXCEPT :
     day(d.day), month(d.month), year(d.year)
 { std::cout << "copy moving";}
 
-//! copy operator=
+// copy operator=
 Date &Date::operator= (const Date &d)
 {
     this->day   = d.day;
@@ -81,7 +81,7 @@ Date &Date::operator= (const Date &d)
     return *this;
 }
 
-//! move operator=
+// move operator=
 Date &Date::operator =(Date&& rhs) NOEXCEPT
 {
     if(this != &rhs)
@@ -95,7 +95,7 @@ Date &Date::operator =(Date&& rhs) NOEXCEPT
     return *this;
 }
 
-//! conver to days
+// conver to days
 Date::Size Date::toDays() const
 {
     Size result = this->day;
@@ -117,7 +117,7 @@ Date::Size Date::toDays() const
     return result;
 }
 
-//! member operators:   +=  -=
+// member operators:   +=  -=
 
 Date &Date::operator +=(Date::Size offset)
 {
@@ -135,7 +135,7 @@ Date &Date::operator -=(Date::Size offset)
     return *this;
 }
 
-//! non-member operators:  <<  >>  -   ==  !=  <   <=  >   >=
+// non-member operators:  <<  >>  -   ==  !=  <   <=  >   >=
 
 std::ostream&
 operator <<(std::ostream& os, const Date& d)

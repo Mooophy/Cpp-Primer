@@ -5,22 +5,22 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 15.12:
-//! Is it ever useful to declare a member function as both override and final?
-//! Why or why not?
+//
+// Exercise 15.12:
+// Is it ever useful to declare a member function as both override and final?
+// Why or why not?
 //  Sure. override means overriding the same name virtual function in base class.
 //  final means preventing any overriding this virtual function by any derived classes
 //  that are more lower at the hierachy .
-//!
-//! Exercise 15.13:
-//! Given the following classes, explain each print function:
-//! If there is a problem in this code, how would you fix it?
-//!
-//! Exercise 15.14:
-//! Given the classes from the previous exercise and the following objects,
-//! determine which function is called at run time:
-//!
+//
+// Exercise 15.13:
+// Given the following classes, explain each print function:
+// If there is a problem in this code, how would you fix it?
+//
+// Exercise 15.14:
+// Given the classes from the previous exercise and the following objects,
+// determine which function is called at run time:
+//
 
 
 #include <iostream>

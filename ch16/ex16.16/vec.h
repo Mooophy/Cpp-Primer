@@ -58,7 +58,7 @@ private:
 };
 
 
-//! copy constructor
+// copy constructor
 template<typename T>
 Vec<T>::Vec(const Vec &v)
 {
@@ -73,7 +73,7 @@ Vec<T>::Vec(const Vec &v)
 }
 
 
-//! constructor that takes initializer_list<T>
+// constructor that takes initializer_list<T>
 template<typename T>
 Vec<T>::Vec(std::initializer_list<T> l)
 {
@@ -91,7 +91,7 @@ Vec<T>::Vec(std::initializer_list<T> l)
 }
 
 
-//! operator =
+// operator =
 template<typename T>
 Vec<T>& Vec<T>::operator =(const Vec& rhs)
 {
@@ -109,7 +109,7 @@ Vec<T>& Vec<T>::operator =(const Vec& rhs)
 }
 
 
-//! destructor
+// destructor
 template<typename T>
 Vec<T>::~Vec()
 {

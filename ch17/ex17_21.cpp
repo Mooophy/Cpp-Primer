@@ -5,10 +5,10 @@
 *  @remark     This code is for the exercises from C++ Primer 5th Edition
 *  @note
 ***************************************************************************/
-//!
-//! Exercise 17.21
-//! Rewrite your phone number program from 8.3.2 (p. 323) to use the 
-//! valid function defined in this section.
+//
+// Exercise 17.21
+// Rewrite your phone number program from 8.3.2 (p. 323) to use the 
+// valid function defined in this section.
 
 #include<iostream>
 using std::cerr;
@@ -47,7 +47,7 @@ bool valid(const smatch& m);
 bool read_record(istream& is, vector<PersonInfo>& people);
 void format_record(ostream& os, const vector<PersonInfo>& people);
 
-//! fake function that makes the program compile
+// fake function that makes the program compile
 string format(const string &num) { return num; }
 
 int main()

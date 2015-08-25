@@ -53,7 +53,7 @@ Sales_data::combine(const Sales_data &rhs)
 	revenue += rhs.revenue;       // the members of ``this'' object
     return *this; // return the object on which the function was called
 }
-//! = Sales_data
+// = Sales_data
 Sales_data &Sales_data::operator =(const Sales_data &rhs)
 {
     this->bookNo        = rhs.bookNo;
@@ -63,14 +63,14 @@ Sales_data &Sales_data::operator =(const Sales_data &rhs)
     return *this;
 }
 
-//! =string
+// =string
 Sales_data &Sales_data::operator =(const std::string &rhs)
 {
     *this= Sales_data(rhs);
     return *this;
 }
 
-//! +=
+// +=
 Sales_data &Sales_data::operator +=(const Sales_data &rhs)
 {
     this->revenue += rhs.revenue;
@@ -105,7 +105,7 @@ print(ostream &os, const Sales_data &item)
 	return os;
 }
 
-//! added 10.Jan 2014
+// added 10.Jan 2014
 std::ostream &
 operator <<(std::ostream &os, const Sales_data &item)
 {
@@ -115,7 +115,7 @@ operator <<(std::ostream &os, const Sales_data &item)
     return os;
 }
 
-//! added 12.Jan 2014
+// added 12.Jan 2014
 std::istream&
 operator >>(std::istream &is, Sales_data &s)
 {

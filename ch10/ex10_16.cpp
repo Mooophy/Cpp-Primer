@@ -1,17 +1,17 @@
-//!
-//! @author @Yue Wang @pezy
-//! @date   02.12.2014
-//!
-//! Exercise 10.16:
-//! Write your own version of the biggies function using lambdas.
-//!
+//
+// @author @Yue Wang @pezy
+// @date   02.12.2014
+//
+// Exercise 10.16:
+// Write your own version of the biggies function using lambdas.
+//
 
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
 
-//! from ex 10.9
+// from ex 10.9
 void elimdups(std::vector<std::string> &vs)
 {
     std::sort(vs.begin(), vs.end());

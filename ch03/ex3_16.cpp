@@ -1,11 +1,11 @@
-///
-///@Author  PEZY
-///@Date    Aug. 2014
-///@Brief 
-/// print the size and contents of the vectors from exercise 3.13.
-/// Check whether your answers to that exercise were correct. 
-/// If not, restudy § 3.3.1 (p. 97) until you understand why you were wrong.
-///
+//
+//@Author  PEZY
+//@Date    Aug. 2014
+//@Brief 
+// print the size and contents of the vectors from exercise 3.13.
+// Check whether your answers to that exercise were correct. 
+// If not, restudy § 3.3.1 (p. 97) until you understand why you were wrong.
+//
 
 #include <iostream>
 #include <vector>

@@ -3,7 +3,7 @@
 
 #include <DebugDelete.h>
 
-//! forward declarations for friendship
+// forward declarations for friendship
 
 template<typename, typename> class unique_pointer;
 template<typename T,typename D> void
@@ -67,7 +67,7 @@ private:
 };
 
 
-//! swap
+// swap
 template<typename T, typename D>
 inline void
 swap(unique_pointer<T,D>& lhs, unique_pointer<T,D>& rhs)
@@ -77,7 +77,7 @@ swap(unique_pointer<T,D>& lhs, unique_pointer<T,D>& rhs)
     swap(lhs.deleter, rhs.deleter);
 }
 
-//! move assignment
+// move assignment
 template<typename T, typename D>
 inline unique_pointer<T,D>&
 unique_pointer<T,D>::operator =(unique_pointer&& rhs) noexcept
@@ -93,7 +93,7 @@ unique_pointer<T,D>::operator =(unique_pointer&& rhs) noexcept
 }
 
 
-//! std::nullptr_t assignment
+// std::nullptr_t assignment
 template<typename T, typename D>
 inline unique_pointer<T,D>&
 unique_pointer<T,D>::operator =(std::nullptr_t n) noexcept

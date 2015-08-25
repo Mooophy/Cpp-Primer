@@ -1,12 +1,12 @@
-//!
-//! @author @huangjuncmj @Yue Wang
-//! @date   19.11.2014
-//!
-//! Exercise 9.26:
-//! Using the following definition of ia, copy ia into a vector and into a list.
-//! Use the single-iterator form of erase to remove the elements with odd values from your
-//! list and the even values from your vector.
-//!
+//
+// @author @huangjuncmj @Yue Wang
+// @date   19.11.2014
+//
+// Exercise 9.26:
+// Using the following definition of ia, copy ia into a vector and into a list.
+// Use the single-iterator form of erase to remove the elements with odd values from your
+// list and the even values from your vector.
+//
 #include <iostream>
 #include <vector>
 #include <list>

@@ -5,10 +5,10 @@
 *  @remark     This code is for the exercises from C++ Primer 5th Edition
 *  @note
 ***************************************************************************/
-//!
-//! Exercise 17.21
-//! Rewrite your phone number program from 8.3.2 (p. 323) to use the 
-//! valid function defined in this section.
+//
+// Exercise 17.21
+// Rewrite your phone number program from 8.3.2 (p. 323) to use the 
+// valid function defined in this section.
 
 #include<iostream>
 using std::cerr;

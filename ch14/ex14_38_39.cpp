@@ -1,13 +1,13 @@
-//!
-//! Exercise 14.38:
-//! Write a class that tests whether the length of a given string matches a
-//! given bound. Use that object to write a program to report how many words
-//! in an input file are of sizes 1 through 10 inclusive.
-//!
-//! Exercise 14.39:
-//! Revise the previous program to report the count of words that are sizes
-//! 1 through 9 and 10 or more.
-//!
+//
+// Exercise 14.38:
+// Write a class that tests whether the length of a given string matches a
+// given bound. Use that object to write a program to report how many words
+// in an input file are of sizes 1 through 10 inclusive.
+//
+// Exercise 14.39:
+// Revise the previous program to report the count of words that are sizes
+// 1 through 9 and 10 or more.
+//
 
 #include <iostream>
 #include <string>

@@ -5,12 +5,12 @@
  *  @remark     03  FEB 2014    deleter added
  ***************************************************************************/
 
-//!
-//! Exercise 12.27:
-//! The TextQuery and QueryResult classes use only capabilities that we have
-//! already covered. Without looking ahead, write your own versions of these
-//! classes.
-//!
+//
+// Exercise 12.27:
+// The TextQuery and QueryResult classes use only capabilities that we have
+// already covered. Without looking ahead, write your own versions of these
+// classes.
+//
 
 #include "wy_textquery.h"
 #include "wy_queryresult.h"

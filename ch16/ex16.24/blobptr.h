@@ -51,7 +51,7 @@ private:
 
 };
 
-//! prefix ++
+// prefix ++
 template<typename T>
 BlobPtr<T>& BlobPtr<T>::operator ++()
 {
@@ -61,7 +61,7 @@ BlobPtr<T>& BlobPtr<T>::operator ++()
     return *this;
 }
 
-//! prefix --
+// prefix --
 template<typename T>
 BlobPtr<T>& BlobPtr<T>::operator --()
 {
@@ -72,7 +72,7 @@ BlobPtr<T>& BlobPtr<T>::operator --()
 }
 
 
-//! postfix ++
+// postfix ++
 template<typename T>
 BlobPtr<T> BlobPtr<T>::operator ++(int)
 {
@@ -82,7 +82,7 @@ BlobPtr<T> BlobPtr<T>::operator ++(int)
     return ret;
 }
 
-//! postfix --
+// postfix --
 template<typename T>
 BlobPtr<T> BlobPtr<T>::operator --(int)
 {

@@ -5,11 +5,11 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 14.43:
-//! Using library function objects, determine whether a given int value is
-//! divisible by any element in a container of ints.
-//!
+//
+// Exercise 14.43:
+// Using library function objects, determine whether a given int value is
+// divisible by any element in a container of ints.
+//
 
 #include <iostream>
 #include <string>

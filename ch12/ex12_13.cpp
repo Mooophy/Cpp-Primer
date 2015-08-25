@@ -1,9 +1,9 @@
-//! @Yue Wang
-//!
-//! ex12.13 What happens if we excute the following code?
-//!
+// @Yue Wang
+//
+// ex12.13 What happens if we excute the following code?
+//
 //  generate a runtime error : double free
-//!
+//
 
 #include <iostream>
 #include <memory>

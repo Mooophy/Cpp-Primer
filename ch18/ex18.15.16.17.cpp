@@ -5,34 +5,34 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 18.15
-//! Explain the differences between using declarations and directives.
-//! This difference in scope between a using declaration and a using directive
-//! stems directly from how these two facilities work. In the case of a using
-//! declaration, we are simply making name directly accessible in the local
-//! scope. In contrast, a using directive makes the entire contents of a
-//! namespace available In general, a namespace might include definitions that
-//! cannot appear in a local scope. As a consequence, a using directive is
-//! treated as if it appeared in the nearest enclosing namespace scope.
+//
+// Exercise 18.15
+// Explain the differences between using declarations and directives.
+// This difference in scope between a using declaration and a using directive
+// stems directly from how these two facilities work. In the case of a using
+// declaration, we are simply making name directly accessible in the local
+// scope. In contrast, a using directive makes the entire contents of a
+// namespace available In general, a namespace might include definitions that
+// cannot appear in a local scope. As a consequence, a using directive is
+// treated as if it appeared in the nearest enclosing namespace scope.
 
-//! Exercise 18.16
-//! Explain the following code assuming using declarations for all the
-//! members of namespace Exercise are located at the location labeled
-//! position 1. What if they appear at position 2 instead? Now answer the
-//! same question but replace the using declarations with a using directive
-//! for namespace Exercise.
+// Exercise 18.16
+// Explain the following code assuming using declarations for all the
+// members of namespace Exercise are located at the location labeled
+// position 1. What if they appear at position 2 instead? Now answer the
+// same question but replace the using declarations with a using directive
+// for namespace Exercise.
 
-//! Exercise 18.17
-//! Write code to test your answers to the previous question.
+// Exercise 18.17
+// Write code to test your answers to the previous question.
 
 
 #include<iostream>
 using std::cout;
 using std::endl;
 
-//! using declarations for all the members of namespace Exercise
-//! are located at the location labeled position 1.
+// using declarations for all the members of namespace Exercise
+// are located at the location labeled position 1.
 namespace Test0
 {
 	namespace Exercise
@@ -76,8 +76,8 @@ namespace Test0
 }
 
 
-//! using declarations for all the members of namespace Exercise
-//! are located at the location labeled position 2.
+// using declarations for all the members of namespace Exercise
+// are located at the location labeled position 2.
 namespace Test1
 {
 	namespace Exercise
@@ -120,8 +120,8 @@ namespace Test1
 	}
 }
 
-//! using directive for namespace Exercise is located at the
-//! location labeled position 1.
+// using directive for namespace Exercise is located at the
+// location labeled position 1.
 namespace Test2
 {
 	namespace Exercise
@@ -162,8 +162,8 @@ namespace Test2
 	}
 }
 
-//! using directive for namespace Exercise is located at the
-//! location labeled position 2.
+// using directive for namespace Exercise is located at the
+// location labeled position 2.
 namespace Test3
 {
 	namespace Exercise

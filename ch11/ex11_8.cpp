@@ -1,8 +1,8 @@
-//! @Alan
-//!
-//! Exercise 11.8:
-//! Write a program that stores the excluded words in a vector
-//! instead of in a set. What are the advantages to using a set?
+// @Alan
+//
+// Exercise 11.8:
+// Write a program that stores the excluded words in a vector
+// instead of in a set. What are the advantages to using a set?
 //  copied from the post on stack overflow:
 //  1.No matter what elements you add or remove (unless you add
 //  a duplicate, which is not allowed in a set), it will always
@@ -21,7 +21,7 @@
 //  The same goes for removal.
 //
 //  http://stackoverflow.com/questions/8686725/what-is-the-difference-between-stdset-and-stdvector
-//!
+//
 #include <iostream>
 #include <map>
 #include <string>

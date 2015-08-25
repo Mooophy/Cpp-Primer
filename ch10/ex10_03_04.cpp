@@ -1,15 +1,15 @@
-//!
-//! @author Yue Wang
-//! @date   01.12.2014
-//!
-//! Exercise 10.3:
-//! Use accumulate to sum the elements in a vector<int>.
-//!
-//! Exercise 10.4:
-//! Assuming v is a vector<double>, what, if anything,
-//! is wrong with calling accumulate(v.cbegin(), v.cend(), 0)?
+//
+// @author Yue Wang
+// @date   01.12.2014
+//
+// Exercise 10.3:
+// Use accumulate to sum the elements in a vector<int>.
+//
+// Exercise 10.4:
+// Assuming v is a vector<double>, what, if anything,
+// is wrong with calling accumulate(v.cbegin(), v.cend(), 0)?
 //  Check below.
-//!
+//
 
 #include <iostream>
 #include <string>

@@ -6,23 +6,23 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 16.63:
-//! Define a function template to count the number of occurrences of a given
-//! value in a vector.
-//! Test your program by passing it a vector of doubles, a vector of ints,
-//! and a vector of strings.
-//!
-//! Exercise 16.64:
-//! Write a specialized version of the template from the previous exercise to
-//! handle vector<const char*> and a program that uses this specialization.
-//!
+//
+// Exercise 16.63:
+// Define a function template to count the number of occurrences of a given
+// value in a vector.
+// Test your program by passing it a vector of doubles, a vector of ints,
+// and a vector of strings.
+//
+// Exercise 16.64:
+// Write a specialized version of the template from the previous exercise to
+// handle vector<const char*> and a program that uses this specialization.
+//
 
 #include <iostream>
 #include <vector>
 #include <cstring>
 
-//! template
+// template
 template<typename T>
 std::size_t  count(std::vector<T> const& vec, T value) 
 {
@@ -32,7 +32,7 @@ std::size_t  count(std::vector<T> const& vec, T value)
     return count;
 }
 
-//! template specialization
+// template specialization
 template<>
 std::size_t count (std::vector<const char*> const& vec, const char* value)
 {

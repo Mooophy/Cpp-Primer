@@ -12,7 +12,7 @@
 #include <functional>
 #include <memory>
 
-//! forward declarations needed for friendship
+// forward declarations needed for friendship
 
 template<typename> class shared_pointer;
 template<typename T> void swap(shared_pointer<T>& lhs, shared_pointer<T>& rhs);
@@ -142,7 +142,7 @@ shared_pointer<T>::shared_pointer(std::shared_ptr<T>&& sp,
 }
 
 
-//! move constructor
+// move constructor
 template<typename T>
 inline
 shared_pointer<T>::shared_pointer(shared_pointer&& sp) noexcept:
@@ -153,7 +153,7 @@ shared_pointer<T>::shared_pointer(shared_pointer&& sp) noexcept:
 }
 
 
-//! copy assignment
+// copy assignment
 template<typename T>
 inline shared_pointer<T>&
 shared_pointer<T>::operator =(const shared_pointer& rhs)
@@ -173,7 +173,7 @@ shared_pointer<T>::operator =(const shared_pointer& rhs)
 }
 
 
-//! move assignment
+// move assignment
 template<typename T>
 inline shared_pointer<T>&
 shared_pointer<T>::operator =(shared_pointer&& rhs) noexcept
@@ -190,7 +190,7 @@ shared_pointer<T>::operator =(shared_pointer&& rhs) noexcept
 }
 
 
-//! make prt point where p pointing and create a new coount for it
+// make prt point where p pointing and create a new coount for it
 template<typename T>
 inline void
 shared_pointer<T>::reset(T* p)
@@ -217,7 +217,7 @@ operator <<(std::ostream& os, shared_pointer<T> p)
 }
 
 
-//! utilities for decrement and delete using deleter.
+// utilities for decrement and delete using deleter.
 template <typename T>
 inline void
 shared_pointer<T>::decrement_n_destroy()

@@ -5,20 +5,20 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 18.1:
-//! What is the type of the exception object in the following throws?
-//!     (a) range_error r("error");
-//!         throw r;
-//!     (b) exception *p = &r;
-//!         throw *p;
+//
+// Exercise 18.1:
+// What is the type of the exception object in the following throws?
+//     (a) range_error r("error");
+//         throw r;
+//     (b) exception *p = &r;
+//         throw *p;
 //  the static, compile-time type of that expression determines the type of
 //  the exception object.
 //  so the object thrown the second time is std::exception type not std::range_error.
-//! What would happen if the throw in (b) were written as throw p?
+// What would happen if the throw in (b) were written as throw p?
 //  terminate called after throwing an instance of 'std::exception*'
-//!
-//! Exercise 18.2: Explain what happens if an exception occurs at the indicated point:
+//
+// Exercise 18.2: Explain what happens if an exception occurs at the indicated point:
 /*
 void exercise(int *b, int *e)
 {
@@ -28,11 +28,11 @@ void exercise(int *b, int *e)
     // exception occurs here
 }
 */
-//! Exercise 18.3:
-//! There are two ways to make the previous code work correctly
-//! if an exception is thrown. Describe them and implement them.
+// Exercise 18.3:
+// There are two ways to make the previous code work correctly
+// if an exception is thrown. Describe them and implement them.
 //  The first approach is to mange it using a class. The second one is using smart pointer.
-//!
+//
 
 #include <iostream>
 #include <stdexcept>

@@ -1,12 +1,12 @@
-//!
-//! @author @Yue Wang @shbling @pezy @zzzkl @Yue Wang
-//! @date   01.12.2014  Jun 2015
-//!
-//! Exercise 10.9:
-//! Implement your own version of elimDups. Test your program by printing
-//! the vector after you read the input, after the call to unique, and after
-//! the call to erase.
-//!
+//
+// @author @Yue Wang @shbling @pezy @zzzkl @Yue Wang
+// @date   01.12.2014  Jun 2015
+//
+// Exercise 10.9:
+// Implement your own version of elimDups. Test your program by printing
+// the vector after you read the input, after the call to unique, and after
+// the call to erase.
+//
 
 #include <iostream>
 #include <string>

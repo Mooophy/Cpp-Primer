@@ -6,22 +6,22 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 16.19:
-//! Write a function that takes a reference to a container and prints the
-//! elements in that container. Use the container’s size_type and size members
-//! to control the loop that prints the elements.
-//!
-//! Exercise 16.20:
-//! Rewrite the function from the previous exercise to use iterators returned
-//! from begin and end to control the loop.
-//!
+//
+// Exercise 16.19:
+// Write a function that takes a reference to a container and prints the
+// elements in that container. Use the container’s size_type and size members
+// to control the loop that prints the elements.
+//
+// Exercise 16.20:
+// Rewrite the function from the previous exercise to use iterators returned
+// from begin and end to control the loop.
+//
 
 #include <iostream>
 #include <vector>
 #include <list>
 
-//! ex16.19
+// ex16.19
 template<typename Container>
 std::ostream& print(Container const& container, std::ostream& os)
 {
@@ -30,7 +30,7 @@ std::ostream& print(Container const& container, std::ostream& os)
     return os;
 }
 
-//! ex16.20
+// ex16.20
 template<typename Container>
 std::ostream& print2(Container const& container, std::ostream &os)
 {

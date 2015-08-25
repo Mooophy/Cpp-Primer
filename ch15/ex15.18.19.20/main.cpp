@@ -5,32 +5,32 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 15.18:
-//! Given the classes from page 612 and page 613, and assuming each object
-//! has the type specified in the comments, determine which of these assignments
-//! are legal. Explain why those that are illegal aren’t allowed:
-//!
-//!     Base *p = &d1;  //  d1 has type Pub_Derv    --  legal   --right
-//!     p = &d2;        //  d2 has type Priv_Derv   --  illegal --right
-//!     p = &d3;        //  d3 has type Prot_Derv   --  illegal --right
-//!
-//!     p = &dd1;       //  dd1 has type Derived_from_Public    --  legal   --right
-//!     p = &dd2;       //  dd2 has type Derived_from_Private   --  illegal --right
-//!     p = &dd3;       //  dd3 has type Derived_from_Protected --  illegal --right
-//!
+//
+// Exercise 15.18:
+// Given the classes from page 612 and page 613, and assuming each object
+// has the type specified in the comments, determine which of these assignments
+// are legal. Explain why those that are illegal aren’t allowed:
+//
+//     Base *p = &d1;  //  d1 has type Pub_Derv    --  legal   --right
+//     p = &d2;        //  d2 has type Priv_Derv   --  illegal --right
+//     p = &d3;        //  d3 has type Prot_Derv   --  illegal --right
+//
+//     p = &dd1;       //  dd1 has type Derived_from_Public    --  legal   --right
+//     p = &dd2;       //  dd2 has type Derived_from_Private   --  illegal --right
+//     p = &dd3;       //  dd3 has type Derived_from_Protected --  illegal --right
+//
 //      User code may use the derived-to-base conversion only if D inherits
 //      publicly from B. User code may not use the conversion if D inherits
 //      from B using either protected or private.
-//!
-//! Exercise 15.19:
-//! Assume that each of the classes from page 612 and page 613 has a member
-//! function of the form:
-//!
+//
+// Exercise 15.19:
+// Assume that each of the classes from page 612 and page 613 has a member
+// function of the form:
+//
 //          void memfcn(Base &b) { b = *this; }
-//!
-//! For each class, determine whether this function would be legal.
-//!
+//
+// For each class, determine whether this function would be legal.
+//
 //  Member functions and friends of D can use the conversion to B regardless
 //  of how D inherits from B. The derived-to-base conversion to a direct base
 //  class is always accessible to members and friends of a derived class.
@@ -47,10 +47,10 @@
 //          Derived_from_Public    --  legal    --right
 //          Derived_from_Private   --  illegal  --right
 //          Derived_from_Protected --  legal    --right
-//!
-//! Exercise 15.20:
-//! Write code to test your answers to the previous two exercises.
-//!
+//
+// Exercise 15.20:
+// Write code to test your answers to the previous two exercises.
+//
 
 #include <iostream>
 #include <string>

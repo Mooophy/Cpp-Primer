@@ -6,13 +6,13 @@
 *  @remark     This code is for the exercises from C++ Primer 5th Edition
 *  @note
 ***************************************************************************/
-//!
-//! Exercise 17.1:
-//! Define a tuple that holds three int values and initialize the members to 10, 20, and 30.
-//!
-//! Exercise 17.2:
-//! Define a tuple that holds a string, a vector<string>, and a pair<string, int>.
-//!
+//
+// Exercise 17.1:
+// Define a tuple that holds three int values and initialize the members to 10, 20, and 30.
+//
+// Exercise 17.2:
+// Define a tuple that holds a string, a vector<string>, and a pair<string, int>.
+//
 
 #include <tuple>
 #include <string>

@@ -11,7 +11,7 @@
 #include <algorithm>
 #include <sstream>
 
-//! Constructor
+// Constructor
 TextQuery::TextQuery(std::ifstream & is) : file(new std::vector<std::string>)
 {
     //! each line

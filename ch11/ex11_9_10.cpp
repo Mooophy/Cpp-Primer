@@ -1,13 +1,13 @@
-//! @Alan
-//!
-//! Exercise 11.9:
-//! Define a map that associates words with a list of
-//! line numbers on which the word might occur.
-//!
-//! Exercise 11.10:
-//! Could we define a map from vector<int>::iterator
-//! to int? What about from list<int>::iterator to int?
-//! In each case, if not, why not?
+// @Alan
+//
+// Exercise 11.9:
+// Define a map that associates words with a list of
+// line numbers on which the word might occur.
+//
+// Exercise 11.10:
+// Could we define a map from vector<int>::iterator
+// to int? What about from list<int>::iterator to int?
+// In each case, if not, why not?
 //  vector<int>::iterator to int is ok ,because < is defined
 //  list<int>::iterator to int is not ok,as no < is defined.
 #include <iostream>

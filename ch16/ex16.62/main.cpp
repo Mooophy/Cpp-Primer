@@ -5,13 +5,13 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 16.62:
-//! Define your own version of hash<Sales_data> and define an unordered_multiset of Sales_data
-//! objects. Put several transactions into the container and print its contents.
-//!
+//
+// Exercise 16.62:
+// Define your own version of hash<Sales_data> and define an unordered_multiset of Sales_data
+// objects. Put several transactions into the container and print its contents.
+//
 //  keep all template codes in the header.
-//!
+//
 
 #include <iostream>
 #include <memory>

@@ -6,21 +6,21 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 16.53:
-//! Write your own version of the print functions and test them by printing
-//! one, two, and five arguments, each of which should have different types.
-//!
-//! Exercise 16.54:
-//! What happens if we call print on a type that doesn’t have an << operator?
+//
+// Exercise 16.53:
+// Write your own version of the print functions and test them by printing
+// one, two, and five arguments, each of which should have different types.
+//
+// Exercise 16.54:
+// What happens if we call print on a type that doesn’t have an << operator?
 //  It didn't  compile.
-//!
-//! Exercise 16.55:
-//! Explain how the variadic version of print would execute if we declared
-//! the nonvariadic version of print after the definition of the variadic
-//! version.
+//
+// Exercise 16.55:
+// Explain how the variadic version of print would execute if we declared
+// the nonvariadic version of print after the definition of the variadic
+// version.
 //  error: no matching function for call to 'print(std::ostream&)'
-//!
+//
 
 #include <iostream>
 

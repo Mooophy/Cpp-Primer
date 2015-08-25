@@ -5,12 +5,12 @@
  *  @remark
  ***************************************************************************/
 
-//!
-//! Exercise 12.27:
-//! The TextQuery and QueryResult classes use only capabilities that we have
-//! already covered. Without looking ahead, write your own versions of these
-//! classes.
-//!
+//
+// Exercise 12.27:
+// The TextQuery and QueryResult classes use only capabilities that we have
+// already covered. Without looking ahead, write your own versions of these
+// classes.
+//
 
 #ifndef WY_TEXTQUERY_H
 #define WY_TEXTQUERY_H

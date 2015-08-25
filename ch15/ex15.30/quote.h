@@ -74,7 +74,7 @@ operator !=(const Quote& lhs, const Quote& rhs)
            lhs.price  != rhs.price;
 }
 
-//! non-member
+// non-member
 double print_total(std::ostream &os,const Quote &item, size_t n);
 
 #endif // QUOTE_H

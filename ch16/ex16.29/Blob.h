@@ -58,17 +58,17 @@ private:
     void check(size_type i, const std::string &msg) const;
 };
 
-//!  default constructor
+//  default constructor
 template<typename T>
 Blob<T>::Blob() : data(std::make_shared<std::vector<T>>())
 {}
 
-//! constructor taking initializer_list
+// constructor taking initializer_list
 template<typename T>
 Blob<T>::Blob(std::initializer_list<T> il):
     data(std::make_shared<std::vector<T>>(il)){ }
 
-//! constructor taking two iterators
+// constructor taking two iterators
 template<typename T>    //for class
 template<typename It>   //for this member
 Blob<T>::Blob(It b, It e) :

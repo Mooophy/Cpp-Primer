@@ -5,12 +5,12 @@
  *  @remark
  ***************************************************************************/
 
-//!
-//! Exercise 12.27:
-//! The TextQuery and QueryResult classes use only capabilities that we have
-//! already covered. Without looking ahead, write your own versions of these
-//! classes.
-//!
+//
+// Exercise 12.27:
+// The TextQuery and QueryResult classes use only capabilities that we have
+// already covered. Without looking ahead, write your own versions of these
+// classes.
+//
 
 
 #ifndef WY_QUERYRESULT_H
@@ -57,7 +57,7 @@ private:
     wy_textQuery::sp_Qmap_Tp sp_Qmap = nullptr;
 };
 
-//! print the result of searching
+// print the result of searching
 void print(std::ostream &os, const wy_queryResult &qr);
 
 #endif // WY_QUERYRESULT_H

@@ -1,8 +1,8 @@
-//! @Alan
-//!
-//! Exercise 11.18:
-//! Write the type of map_it from the loop on page 430 without using auto or decltype.
-//!
+// @Alan
+//
+// Exercise 11.18:
+// Write the type of map_it from the loop on page 430 without using auto or decltype.
+//
 
 #include <iostream>
 #include <map>
@@ -17,8 +17,8 @@ int main()
 
 
     std::map<std::string, size_t>::const_iterator map_it = word_count.cbegin();
-//! ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//! the type ex11.18 required.
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// the type ex11.18 required.
 
     // compare the current iterator to the off-the-end iterator
     while (map_it != word_count.cend())

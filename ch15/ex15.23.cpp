@@ -5,12 +5,12 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 15.23:
-//! Assuming class D1 on page 620 had intended to override its inherited fcn
-//! function, how would you fix that class? Assuming you fixed the class so
-//! that fcn matched the definition in Base, how would the calls in that section
-//! be resolved?
+//
+// Exercise 15.23:
+// Assuming class D1 on page 620 had intended to override its inherited fcn
+// function, how would you fix that class? Assuming you fixed the class so
+// that fcn matched the definition in Base, how would the calls in that section
+// be resolved?
 //  remove the parameter int.
 //  Disscussion on SO :
 //  http://stackoverflow.com/questions/21320779/trying-to-understand-dynamic-binding-and-virtual-functions

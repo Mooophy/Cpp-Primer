@@ -34,7 +34,7 @@ private:
     void check(size_type i, const std::string &msg) const;
 };
 
-//! constructors
+// constructors
 template<typename T>
 Blob<T>::Blob() : data(std::make_shared<std::vector<T>>())
 {}

@@ -1,18 +1,18 @@
-//! @Alan @pezy
-//!
-//! Exercise 10.34:
-//! Use reverse_iterators to print a vector in reverse order.
-//!
-//! Exercise 10.35:
-//! Now print the elements in reverse order using ordinary iterators.
-//!
-//! Exercise 10.36:
-//! Use find to find the last element in a list of ints with value 0.
-//!
-//! Exercise 10.37:
-//! Given a vector that has ten elements, copy the elements from positions
-//! 3 through 7 in reverse order to a list.
-//!
+// @Alan @pezy
+//
+// Exercise 10.34:
+// Use reverse_iterators to print a vector in reverse order.
+//
+// Exercise 10.35:
+// Now print the elements in reverse order using ordinary iterators.
+//
+// Exercise 10.36:
+// Use find to find the last element in a list of ints with value 0.
+//
+// Exercise 10.37:
+// Given a vector that has ten elements, copy the elements from positions
+// 3 through 7 in reverse order to a list.
+//
 
 #include <iostream>
 #include <algorithm>

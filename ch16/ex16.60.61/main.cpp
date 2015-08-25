@@ -6,17 +6,17 @@
 *  @remark     This code is for the exercises from C++ Primer 5th Edition
 *  @note
 ***************************************************************************/
-//!
-//! Exercise 16.60:
-//! Explain how make_shared (§ 12.1.1, p. 451) works.
-//!
+//
+// Exercise 16.60:
+// Explain how make_shared (§ 12.1.1, p. 451) works.
+//
 //  make_shared shoudl be a variadic template function that forwards all arguments to
 //  underlying constructors that allocate and initializes an object in dynamic memory and
 //  , at last, build a shared_ptr by wrapping the raw pointer.
-//!
-//! Exercise 16.61:
-//! Define your own version of make_shared.
-//!
+//
+// Exercise 16.61:
+// Define your own version of make_shared.
+//
 
 #include <iostream>
 #include <memory>

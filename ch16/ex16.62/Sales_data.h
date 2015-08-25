@@ -33,7 +33,7 @@
 
 
 
-//! unchanged from ch14 except for added friend declaration for hash.
+// unchanged from ch14 except for added friend declaration for hash.
 class Sales_data {
 friend std::hash<Sales_data>;
 friend std::ostream &operator<<
@@ -90,8 +90,8 @@ std::ostream &operator<<(std::ostream&, const Sales_data&);
 std::istream &operator>>(std::istream&, Sales_data&);
 
 
-//! specialize std::hash
-//! note : template specialization should be put in the header!
+// specialize std::hash
+// note : template specialization should be put in the header!
 namespace std {
 template<>
 struct hash<Sales_data>

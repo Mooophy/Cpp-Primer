@@ -78,8 +78,8 @@ private:
 
 
 
-//! call the constructors of the type to construct this element
-//! and push it back.
+// call the constructors of the type to construct this element
+// and push it back.
 template<typename... Args>
 inline void
 StrVec::emplace_back(Args&&... args)

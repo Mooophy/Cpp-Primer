@@ -7,21 +7,21 @@
  *              to handle regular expression.To compile this program, please
  *			    turn to other compilers such as msvs2013 and clang.
  ***************************************************************************/
-//!
-//! Exercise 17.14
-//! Write several regular expressions designed to trigger various errors.
-//! Run your program to see what output your compiler generates for each error.
+//
+// Exercise 17.14
+// Write several regular expressions designed to trigger various errors.
+// Run your program to see what output your compiler generates for each error.
 
-//! Exercise 17.15
-//! Write  a program using the pattern that finds word that violate the
-//! "i before e except after c" rule. Have your program prompt the user to
-//! supply a word and indicate whether the word is okay or not. Test your
-//! program with words that do and do not violate the rule.
+// Exercise 17.15
+// Write  a program using the pattern that finds word that violate the
+// "i before e except after c" rule. Have your program prompt the user to
+// supply a word and indicate whether the word is okay or not. Test your
+// program with words that do and do not violate the rule.
 
-//! Exercise 17.16
-//! What would happen if your regex object in the previous program were
-//! initialized with "[^c]ei"? Test your program using that pattern to see
-//! whether your expectations were correct.
+// Exercise 17.16
+// What would happen if your regex object in the previous program were
+// initialized with "[^c]ei"? Test your program using that pattern to see
+// whether your expectations were correct.
 
 
 #include <iostream>

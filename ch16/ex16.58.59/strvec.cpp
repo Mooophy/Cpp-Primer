@@ -9,7 +9,7 @@
 #include <memory>
 
 
-//! copy constructor
+// copy constructor
 StrVec::StrVec(const StrVec &s)
 {
     /**
@@ -45,7 +45,7 @@ StrVec::StrVec(std::initializer_list<std::string> l)
 }
 
 
-//! operator =
+// operator =
 StrVec&
 StrVec::operator =(const StrVec& rhs)
 {
@@ -62,7 +62,7 @@ StrVec::operator =(const StrVec& rhs)
     return *this;
 }
 
-//! destructor
+// destructor
 StrVec::~StrVec()
 {
     free();

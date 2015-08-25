@@ -5,28 +5,28 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 17.28:
-//! Write a function that generates and returns a uniformly distributed random
-//! unsigned int each time it is called.
-//!
-//! Exercise 17.29:
-//! Allow the user to supply a seed as an optional argument to the function you
-//! wrote in the previous exercise.
-//!
-//! Exercise 17.30:
-//! Revise your function again this time to take a minimum and maximum value for
-//! the numbers that the function should return.
-//!
+//
+// Exercise 17.28:
+// Write a function that generates and returns a uniformly distributed random
+// unsigned int each time it is called.
+//
+// Exercise 17.29:
+// Allow the user to supply a seed as an optional argument to the function you
+// wrote in the previous exercise.
+//
+// Exercise 17.30:
+// Revise your function again this time to take a minimum and maximum value for
+// the numbers that the function should return.
+//
 
 #include <iostream>
 #include <random>
 
-//! default version
+// default version
 unsigned random_gen();
-//! with seed spicified
+// with seed spicified
 unsigned random_gen(unsigned seed);
-//! with seed and range spicified
+// with seed and range spicified
 unsigned random_gen(unsigned seed, unsigned min, unsigned max);
 int main()
 {

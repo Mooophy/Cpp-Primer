@@ -1,12 +1,12 @@
-//! @Alan
-//!
-//! Exercise 11.7:
-//! Define a map for which the key is the family’s last name and
-//! the value is a vector of the children’s names. Write code to
-//! add new families and to add new children to an existing family.
+// @Alan
+//
+// Exercise 11.7:
+// Define a map for which the key is the family’s last name and
+// the value is a vector of the children’s names. Write code to
+// add new families and to add new children to an existing family.
 //  Discussion on Stack Overflow:
 //  http://stackoverflow.com/questions/20608365/is-it-possible-to-code-this-waywhilelambda
-//!
+//
 
 #include <iostream>
 #include <map>
@@ -30,9 +30,9 @@ int main()
 
           return std::cin>>lastName && lastName != "@q";
     }())
-//!  ^^
-//! the () used here is to call the lambda ,otherwise it does not work
-//! go to the post on stack overflow for more detail.
+//  ^^
+// the () used here is to call the lambda ,otherwise it does not work
+// go to the post on stack overflow for more detail.
 
     {
         std::cout << "PLZ Enter children's name:\n";
