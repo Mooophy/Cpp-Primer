@@ -45,8 +45,8 @@ int compare(const T &v1, const T &v2)
 int main()
 {
     std::cout << compare<std::string>("sss","aaa") << "\n";
-                //!     ^^^^^^^^^^^^^
-                //! There is a normal conversion here, since it's an explicit argument.
+                //     ^^^^^^^^^^^^^
+                // There is a normal conversion here, since it's an explicit argument.
 
 
 

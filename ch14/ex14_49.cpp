@@ -5,7 +5,7 @@
 // the argument must be within (0, 2^32)
 Date::Date(Size days)
 {
-    //! calculate the year
+    // calculate the year
     Size y400 =  days/YtoD_400;
     Size y100 = (days - y400*YtoD_400)/YtoD_100;
     Size y4   = (days - y400*YtoD_400 - y100*YtoD_100)/YtoD_4;
@@ -13,14 +13,14 @@ Date::Date(Size days)
     Size d    =  days - y400*YtoD_400 - y100*YtoD_100 - y4*YtoD_4 - y*365;
     this->year = y400*400 + y100*100 + y4*4 + y;
 
-    //! check if leap and choose the months vector accordingly
+    // check if leap and choose the months vector accordingly
     std::vector<Size>currYear
             = isLeapYear(this->year) ? monthsVec_l : monthsVec_n;
 
-    //! calculate day and month using find_if + lambda
+    // calculate day and month using find_if + lambda
     Size D_accumu = 0, M_accumu = 0;
-    //! @bug    fixed:  the variabbles above hade been declared inside the find_if as static
-    //!                 which caused the bug. It works fine now after being move outside.
+    // @bug    fixed:  the variabbles above hade been declared inside the find_if as static
+    //                 which caused the bug. It works fine now after being move outside.
 
     std::find_if(currYear.cbegin(), currYear.cend(), [&](Size m){
 
@@ -100,15 +100,15 @@ Date::Size Date::toDays() const
 {
     Size result = this->day;
 
-    //! check if leap and choose the months vector accordingly
+    // check if leap and choose the months vector accordingly
     std::vector<Size>currYear
             = isLeapYear(this->year) ? monthsVec_l : monthsVec_n;
 
-    //! calculate result + days by months
+    // calculate result + days by months
     for(auto it = currYear.cbegin(); it != currYear.cbegin() + this->month -1; ++it)
         result += *it;
 
-    //! calculate result + days by years
+    // calculate result + days by years
     result += (this->year/400)      * YtoD_400;
     result += (this->year%400/100)  * YtoD_100;
     result += (this->year%100/4)    * YtoD_4;
@@ -201,8 +201,8 @@ bool operator >=(const Date &lhs, const Date &rhs)
 
 
 Date operator - (const Date &lhs, Date::Size rhs)
-{                                       //!  ^^^ rhs must not be larger than 2^32-1
-    //! copy lhs
+{                                       //  ^^^ rhs must not be larger than 2^32-1
+    // copy lhs
     Date result(lhs);
     result -= rhs;
 
@@ -211,8 +211,8 @@ Date operator - (const Date &lhs, Date::Size rhs)
 
 
 Date operator + (const Date &lhs, Date::Size rhs)
-{                                       //!  ^^^ rhs must not be larger than 2^32-1
-    //! copy lhs
+{                                       //  ^^^ rhs must not be larger than 2^32-1
+    // copy lhs
     Date result(lhs);
     result += rhs;
 

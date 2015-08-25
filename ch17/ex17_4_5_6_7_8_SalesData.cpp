@@ -121,10 +121,10 @@ operator >>(std::istream &is, Sales_data &s)
 {
     double price;
 
-    //! read input
+    // read input
     is >> s.bookNo >> s.units_sold >> price;
 
-    //! if successful, write into the object, give the object default state otherwise.
+    // if successful, write into the object, give the object default state otherwise.
     if(is)
         s.revenue = s.units_sold * price;
     else

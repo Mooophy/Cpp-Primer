@@ -37,13 +37,13 @@ std::size_t bigerThan6(vector<string> const& v)
 
 int main()
 {
-    //! ex10.20
+    // ex10.20
     vector<string> v{
         "alan","moophy","1234567","1234567","1234567","1234567"
     };
     std::cout << "ex10.20: " << bigerThan6(v) << std::endl;
 
-    //! ex10.21
+    // ex10.21
     int i = 7;
     auto check_and_decrement = [&i](){ return --i ? false : true; };
     std::cout << "ex10.21: ";

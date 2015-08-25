@@ -101,10 +101,10 @@ findBook(const std::vector<std::vector<Sales_data>>& files,
 {
     std::vector<matches> ret;
 
-    //! for each strore find the range of matching books, if any
+    // for each strore find the range of matching books, if any
     for (auto it = files.cbegin(); it != files.cend(); ++it)
     {
-        //! find the range of Sales_data tat have the same ISBN
+        // find the range of Sales_data tat have the same ISBN
         auto found = std::equal_range(it->cbegin(), it->cend(), book, compareIsbn);
         if(found.first != found.second)
             ret.push_back(std::make_tuple(it - files.cbegin(),

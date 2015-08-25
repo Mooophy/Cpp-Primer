@@ -32,21 +32,21 @@ wy_queryResult::wy_queryResult(std::size_t c, const std::string &str,
 // a non-member function printing the result of a query.
 void print(std::ostream &os, const wy_queryResult &qr)
 {
-    //! fetch the word being queried.
+    // fetch the word being queried.
     const std::string queryWord = qr.getQueryWord();
 
-    //! print the word and occurrence times
+    // print the word and occurrence times
     os << "The word ["
          <<queryWord
            <<"] occurs "
              <<qr.getCounter()
                <<" times :\n";
 
-    //! fetch smart pointers to the map and the file
+    // fetch smart pointers to the map and the file
     auto sp_m = qr.getSp_Qmap();
     auto sp_f = qr.getSp_file();
 
-    //! print each line in which it appears and the corresponding index.
+    // print each line in which it appears and the corresponding index.
     for(const auto &index : (*sp_m)[queryWord])
         std::cout << "\n(Line "
                     <<index

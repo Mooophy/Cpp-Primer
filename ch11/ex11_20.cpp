@@ -22,7 +22,7 @@ int main()
         if(!ret.second) ++ret.first->second;
     }
 
-    //! print the content of the map.
+    // print the content of the map.
     for(const auto &w : word_count)
         std::cout << w.first << " " << w.second
                 << ((w.second > 1) ? " times" : " time") << std::endl;

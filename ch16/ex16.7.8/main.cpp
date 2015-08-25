@@ -36,6 +36,6 @@ int main()
 
     char c[] = "s";
     std::cout << getSize(c) << std::endl;
-    //! the output is 2, as '\0' is added at the end of the array
+    // the output is 2, as '\0' is added at the end of the array
     return 0;
 }

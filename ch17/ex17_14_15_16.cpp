@@ -38,8 +38,8 @@ using std::regex_error;
 
 int main()
 {
-    //! for ex17.14
-    //! error_brack
+    // for ex17.14
+    // error_brack
     try{
         regex r("[[:alnum:]+\\.(cpp|cxx|cc)$", regex::icase);
     }
@@ -48,7 +48,7 @@ int main()
         cout << e.what() << " code: " << e.code() << endl;
     }
 
-    //! for ex17.15
+    // for ex17.15
     regex r("[[:alpha:]]*[^c]ei[[:alpha:]]*", regex::icase);
     string s;
     cout << "Please input a word! Input 'q' to quit!" << endl;
@@ -64,7 +64,7 @@ int main()
 
     cout << endl;
 
-    //! for ex17.16
+    // for ex17.16
     r.assign("[^c]ei", regex::icase);
     cout << "Please input a word! Input 'q' to quit!" << endl;
     while(cin >> s && s != "q")

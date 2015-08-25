@@ -22,8 +22,8 @@ int main()
 
     std::string lastName, chldName;
 
-    //! while(lambda)
-    //! go to the discussions on stack overfow for more.
+    // while(lambda)
+    // go to the discussions on stack overfow for more.
     while([&]() -> bool
     {
           std::cout << "Please enter last name:\n";
@@ -38,17 +38,17 @@ int main()
         std::cout << "PLZ Enter children's name:\n";
         while(std::cin >> chldName && chldName != "@q")
         {
-            //! add new items into the vector
+            // add new items into the vector
             famls[lastName].push_back(chldName);
         }
     }
 
-    //! iterate through the map.
+    // iterate through the map.
     for(auto e : famls)
     {
         std::cout << e.first << ":\n";
 
-        //! iterate through the vector.
+        // iterate through the vector.
         for(auto c : e.second)
             std::cout << c << " ";
         std::cout << "\n";

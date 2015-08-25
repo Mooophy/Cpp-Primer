@@ -55,7 +55,7 @@ struct intArray
         delete[] p;
     }
 
-    //! data meber
+    // data meber
     int *p;
 };
 
@@ -63,13 +63,13 @@ void exercise(int *b, int *e)
 {
     std::vector<int> v(b, e);            // the object v will be destroyed by its destructor.
 
-    //! @oldcode:
+    // @oldcode:
     //int *p = new int[v.size()];     // the dynamically allocated int array will be no way deallocated.
 
-    //! approach 1:
+    // approach 1:
     intArray p(v.size());
 
-    //! approach 2:
+    // approach 2:
     //std::shared_ptr<int> p(new int[v.size()], [](int *p) { delete[] p; });
                                                 // delete array using lambda
 
@@ -79,7 +79,7 @@ void exercise(int *b, int *e)
 
 int main()
 {
-    //! for ex18.1
+    // for ex18.1
     /*
     std::range_error r("error");
     //throw r;

@@ -15,10 +15,8 @@ paths = Dir.glob "#{ dir }/**/*.#{ extension }"
 paths.each do |path|
   content = File.readlines path
   content.each do |line|
-    if line[0..1] == "//" # to ignore lines with comments at end.
-      line.sub! "///", "//"
-      line.sub! "//!", "//"
-    end
+    line.sub! "///", "//"
+    line.sub! "//!", "//"
   end
   File.open(path, 'w+'){ |file| file.puts content }
 end

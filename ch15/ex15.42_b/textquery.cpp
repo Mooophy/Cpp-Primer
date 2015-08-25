@@ -53,7 +53,7 @@ QueryResult TextQuery::query(const string &sought) const
 {
     static shared_ptr<set<line_no>> nodata(new set<line_no>);
 
-    //! fetch the iterator to the matching element in the map<word, lines>.
+    // fetch the iterator to the matching element in the map<word, lines>.
     //std::map<std::string, std::shared_ptr<std::set<line_no>>>::const_iterator
     auto loc = wm.find(sought);
     if(loc == wm.end())

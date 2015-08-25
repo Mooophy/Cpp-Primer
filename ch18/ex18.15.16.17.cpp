@@ -44,9 +44,9 @@ namespace Test0
 
 	int ivar = 0;
 
-	//! using Exercise::ivar;
-	//! error C2874: using-declaration causes a multiple declaration of 'Test0::Exercise::ivar'
-	//! So we delete it to make the program compile.
+	// using Exercise::ivar;
+	// error C2874: using-declaration causes a multiple declaration of 'Test0::Exercise::ivar'
+	// So we delete it to make the program compile.
 	using Exercise::dvar;
 	using Exercise::limit;
 
@@ -61,9 +61,9 @@ namespace Test0
 		     << "Test0::ivar " << Test0::ivar << endl
 		     << "dvar in function manip" << dvar << endl;
 
-		int iobj = limit + 1;  //! Exercise::limit + 1
-		++ivar;                //! ++ Test0::ivar
-		++Test0::ivar;         //! ++ Test0::ivar
+		int iobj = limit + 1;  // Exercise::limit + 1
+		++ivar;                // ++ Test0::ivar
+		++Test0::ivar;         // ++ Test0::ivar
 
 		cout << "********** After call Test0::manip  **********" << endl;
 		cout << "Exercise::ivar " << Exercise::ivar << endl
@@ -92,9 +92,9 @@ namespace Test1
 	void manip()
 	{
 		using Exercise::ivar;
-	    //! using Exercise::dvar;
-		//! This using declaration causes a redefinition of Test1::Exercise::dvar.
-	    //! So we delete it to make the program compile.
+	    // using Exercise::dvar;
+		// This using declaration causes a redefinition of Test1::Exercise::dvar.
+	    // So we delete it to make the program compile.
 	    using Exercise::limit;
 
 		double dvar = 3.1416;
@@ -106,9 +106,9 @@ namespace Test1
 		     << "Test1::ivar " << Test1::ivar << endl
 		     << "dvar in function manip" << dvar << endl;
 
-		int iobj = limit + 1; //! Exercise::limit + 1
-		++ivar;               //! ++ Exercise::ivar
-		++Test1::ivar;        //! ++ Test1::ivar
+		int iobj = limit + 1; // Exercise::limit + 1
+		++ivar;               // ++ Exercise::ivar
+		++Test1::ivar;        // ++ Test1::ivar
 
 		cout << "********** After call Test1::manip  **********" << endl;
 		cout << "Exercise::ivar " << Exercise::ivar << endl
@@ -146,11 +146,11 @@ namespace Test2
 		     << "Test2::ivar " << Test2::ivar << endl
 		     << "dvar in function manip" << dvar << endl;
 
-		int iobj = limit + 1; //! Exercise::limit + 1
-		//! ++ivar;
-		//! error C2872: 'ivar' : ambiguous symbol
-		//! could be int Test2::ivar or int Test2::Exercise::ivar
-		++Test2::ivar;        //! ++ Test2::ivar
+		int iobj = limit + 1; // Exercise::limit + 1
+		// ++ivar;
+		// error C2872: 'ivar' : ambiguous symbol
+		// could be int Test2::ivar or int Test2::Exercise::ivar
+		++Test2::ivar;        // ++ Test2::ivar
 
 		cout << "********** After call Test2::manip  **********" << endl;
 		cout << "Exercise::ivar " << Exercise::ivar << endl
@@ -188,11 +188,11 @@ namespace Test3
 		     << "Test3::ivar " << Test3::ivar << endl
 		     << "dvar in function manip" << dvar << endl;
 
-		int iobj = limit + 1; //! Exercise::limit + 1
-		//! ++ivar;
-		//! error C2872: 'ivar' : ambiguous symbol
-		//! could be int Test3::ivar or int Test3::Exercise::ivar
-		++Test3::ivar;        //! ++ Test3::ivar
+		int iobj = limit + 1; // Exercise::limit + 1
+		// ++ivar;
+		// error C2872: 'ivar' : ambiguous symbol
+		// could be int Test3::ivar or int Test3::Exercise::ivar
+		++Test3::ivar;        // ++ Test3::ivar
 
 		cout << "********** After call Test3::manip  **********" << endl;
 		cout << "Exercise::ivar " << Exercise::ivar << endl

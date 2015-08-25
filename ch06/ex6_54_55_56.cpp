@@ -39,10 +39,10 @@ vector<fp*> v{ NumAdd, NumSub, NumMul, NumDiv };
 
 int main()
 {
-    //!
-    //! @brief Exercise 6.56
-    //! @note  Call each element in the vector and print their result.
-    //!
+    //
+    // @brief Exercise 6.56
+    // @note  Call each element in the vector and print their result.
+    //
     for (auto it = v.cbegin(); it != v.cend(); ++it)
         cout << (*it)(2, 2) << std::endl;
 

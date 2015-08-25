@@ -23,9 +23,9 @@ void word_count_pro(std::map<std::string, int> &m)
     {
         for(auto& ch : word)
             ch = tolower(ch);
-        //! According to the erase-remove idiom.
-        //! For more information about the erase-remove idiom, please refer to
-        //! http://en.wikipedia.org/wiki/Erase-remove_idiom
+        // According to the erase-remove idiom.
+        // For more information about the erase-remove idiom, please refer to
+        // http://en.wikipedia.org/wiki/Erase-remove_idiom
         word.erase(std::remove_if(word.begin(), word.end(), ispunct), word.end());
         ++m[word];
     }

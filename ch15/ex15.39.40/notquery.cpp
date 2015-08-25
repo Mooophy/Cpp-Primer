@@ -6,10 +6,10 @@
  */
 QueryResult NotQuery::eval(const TextQuery &text) const
 {
-    //! virtual call to eval through the Query operand
+    // virtual call to eval through the Query operand
     QueryResult result = query.eval(text);
 
-    //! start out with an empty result set
+    // start out with an empty result set
     std::shared_ptr<std::set<line_no>>
             ret_lines = std::make_shared<std::set<line_no>>();
 

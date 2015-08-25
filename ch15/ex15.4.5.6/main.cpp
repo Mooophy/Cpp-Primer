@@ -32,7 +32,7 @@ double print_total (std::ostream& os, const Quote& item, size_t n);
 
 int main()
 {
-    //! ex15.6
+    // ex15.6
     Quote q("textbook", 10.60);
     Bulk_quote bq("textbook", 10.60, 10, 0.3);
 

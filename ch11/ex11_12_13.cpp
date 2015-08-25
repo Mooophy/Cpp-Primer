@@ -25,7 +25,7 @@ int main()
         vec.push_back(std::pair<std::string, int>(str, i));
         //vec.push_back(std::make_pair(str, i));
         //vec.push_back({str, i});
-        //vec.emplace_back(str, i); //!!! easiest way.
+        //vec.emplace_back(str, i); //!! easiest way.
     
     for (const auto &p : vec)
         std::cout << p.first << ":" << p.second << std::endl;

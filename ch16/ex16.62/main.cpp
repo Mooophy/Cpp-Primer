@@ -20,7 +20,7 @@
 
 int main()
 {
-    //! test for ex16.62
+    // test for ex16.62
     std::unordered_multiset<Sales_data> mset;
     Sales_data sd("Bible",10,0.98);
 

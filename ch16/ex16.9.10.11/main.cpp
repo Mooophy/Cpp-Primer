@@ -36,11 +36,11 @@ public:
     List<elemType>& operator=(const List<elemType> &);
     ~List();
     void insert(ListItem<elemType> *ptr, elemType value);
-    //!                 ^^^^^^^^^^  -- template is not a type, the type must be provided
+    //                 ^^^^^^^^^^  -- template is not a type, the type must be provided
 
 private:
     ListItem<elemType> *front, *end;
-    //!      ^^^^^^^^ -- template is not a type, the type must be provided
+    //      ^^^^^^^^ -- template is not a type, the type must be provided
 };
 
 int main()

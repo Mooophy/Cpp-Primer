@@ -56,7 +56,7 @@ void biggies_stable_partition(std::vector<std::string> &vs, std::size_t sz)
 
 int main()
 {
-    //! ex10.18
+    // ex10.18
     std::vector<std::string> v{
         "the", "quick", "red", "fox", "jumps", "over", "the", "slow", "red", "turtle"
     };
@@ -66,7 +66,7 @@ int main()
     biggies_partition(v1,4);
     std::cout << std::endl;
 
-    //! ex10.19
+    // ex10.19
     std::cout << "ex10.19: ";
     std::vector<std::string> v2(v);
     biggies_stable_partition(v2,4);

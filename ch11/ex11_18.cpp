@@ -12,7 +12,7 @@ int main()
 {
     std::map<std::string, size_t> word_count;
 
-    //! the orignal codes:
+    // the orignal codes:
     //auto map_it = word_count.cbegin();
 
 
