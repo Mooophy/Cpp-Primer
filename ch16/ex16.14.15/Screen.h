@@ -8,7 +8,7 @@
 #define SCREEN_H
 
 #include <string>
-#include<iostream>
+#include <iostream>
 
 template<unsigned H, unsigned W>
 class Screen {

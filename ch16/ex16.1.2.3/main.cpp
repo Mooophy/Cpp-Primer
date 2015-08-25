@@ -28,7 +28,7 @@
 using std::cout;
 using std::endl;
 
-#include<vector>
+#include <vector>
 using std::vector;
 
 class Sales_data{};

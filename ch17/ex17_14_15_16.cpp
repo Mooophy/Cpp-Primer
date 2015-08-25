@@ -29,7 +29,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-#include<string>
+#include <string>
 using std::string;
 
 #include <regex>

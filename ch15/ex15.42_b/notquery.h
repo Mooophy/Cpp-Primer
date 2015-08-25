@@ -1,14 +1,14 @@
 #ifndef _NOTQUERY_H
 #define _NOTQUERY_H
 
-#include<memory>
+#include <memory>
 using std::shared_ptr;
 
-#include<string>
+#include <string>
 using std::string;
 
-#include"query.h"
-#include"query_base.h"
+#include "query.h"
+#include "query_base.h"
 
 class QueryResult;
 class TextQuery;

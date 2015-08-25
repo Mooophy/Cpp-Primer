@@ -1,1 +1,1 @@
-#include"binaryquery.h"
+#include "binaryquery.h"

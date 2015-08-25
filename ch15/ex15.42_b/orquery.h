@@ -1,11 +1,11 @@
 #ifndef _ORQUERY_H
 #define _ORQUERY_H
 
-#include<memory>
+#include <memory>
 using std::shared_ptr;
 
-#include"query.h"
-#include"binaryquery.h"
+#include "query.h"
+#include "binaryquery.h"
 
 class QueryResult;
 class TextQuery;

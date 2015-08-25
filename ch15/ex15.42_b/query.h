@@ -1,18 +1,18 @@
 #ifndef _QUERY_H
 #define _QUERY_H
 
-#include<ostream>
+#include <ostream>
 using std::ostream;
 
-#include<memory>
+#include <memory>
 using std::shared_ptr;
 
-#include<string>
+#include <string>
 using std::string;
 
-#include"query_base.h"
-#include"queryresult.h"
-#include"wordquery.h"
+#include "query_base.h"
+#include "queryresult.h"
+#include "wordquery.h"
 
 
 class TextQuery;

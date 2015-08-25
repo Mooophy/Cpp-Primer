@@ -38,7 +38,7 @@ void exercise(int *b, int *e)
 #include <stdexcept>
 #include <memory>
 #include <vector>
-#include<fstream>
+#include <fstream>
 /**
  * @brief The intArray class manage a dynamicly allocated int array.
  * @note  for ex18.3 approach 1.

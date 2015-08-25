@@ -1,13 +1,13 @@
 #ifndef _QUERYHISTORY_H
 #define _QUERYHISTORY_H
 
-#include<memory>
+#include <memory>
 using std::shared_ptr;
 
-#include<vector>
+#include <vector>
 using std::vector;
 
-#include"query.h"
+#include "query.h"
 
 class QueryHistory
 {

@@ -10,7 +10,7 @@
 // Rewrite your phone number program from 8.3.2 (p. 323) to use the 
 // valid function defined in this section.
 
-#include<iostream>
+#include <iostream>
 using std::cerr;
 using std::cout;
 using std::cin;
@@ -18,18 +18,18 @@ using std::endl;
 using std::istream;
 using std::ostream;
 
-#include<fstream>
+#include <fstream>
 using std::ifstream;
 using std::ofstream;
 
-#include<sstream>
+#include <sstream>
 using std::istringstream;
 using std::ostringstream;
 
-#include<string>
+#include <string>
 using std::string;
 
-#include<vector>
+#include <vector>
 using std::vector;
 
 #include <regex>

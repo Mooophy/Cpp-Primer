@@ -1,24 +1,24 @@
 #include "textquery.h"
 
-#include<fstream>
+#include <fstream>
 using std::ifstream;
 
 #include <sstream>
 using std::istringstream;
 
-#include<memory>
+#include <memory>
 using std::shared_ptr; using std::make_shared;
 
-#include<vector>
+#include <vector>
 using std::vector;
 
-#include<string>
+#include <string>
 using std::string;
 
-#include<map>
+#include <map>
 using std::map;
 
-#include<set>
+#include <set>
 using std::set;
 
 #include "queryresult.h"
