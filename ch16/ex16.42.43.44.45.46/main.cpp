@@ -53,7 +53,7 @@
 // T as int&, not int.
 //         --  P.688
 //
-// In this case, when calling on a literal value,say 42. int&& && will collapse to int&&. At last
+// In this case, when calling on a literal value, say 42. int&& && will collapse to int&&. At last
 // T is deduced as int. Hence std::vector<T> is instantiated as std::vector<int> which is legal.
 //
 // When calling on a variable int. T will be deduced as int&. int & && will collapse to int&.
@@ -67,7 +67,7 @@
 //             alloc.construct(dest++, std::move(*elem++));
 //
 // In each iteration, the dereference operator * returns a lvalue which is changed to rvalue by
-// std::move ,becasue the member function construct takes rvalue reference rather than lvalue
+// std::move , becasue the member function construct takes rvalue reference rather than lvalue
 // reference.
 //
 

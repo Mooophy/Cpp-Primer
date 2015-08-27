@@ -30,7 +30,7 @@ int main()
 
     print_total(std::cout, q, 5);
     print_total(std::cout, bq, 5);
-    print_total(std::cout ,lq, 5);
+    print_total(std::cout , lq, 5);
 
     return 0;
 }

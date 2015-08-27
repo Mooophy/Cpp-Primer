@@ -1,5 +1,5 @@
 // @author @TungWah @Yue Wang
-// @date   4 Oct,2014.
+// @date   4 Oct, 2014.
 //
 // Exercise 9.45:
 // Write a funtion that takes a string representing a name and two other

@@ -6,8 +6,8 @@
 // forward declarations for friendship
 
 template<typename, typename> class unique_pointer;
-template<typename T,typename D> void
-                swap(unique_pointer<T,D>& lhs, unique_pointer<T,D>& rhs);
+template<typename T, typename D> void
+                swap(unique_pointer<T, D>& lhs, unique_pointer<T, D>& rhs);
 
 /**
  *  @brief  std::unique_ptr like class template.
@@ -15,7 +15,7 @@ template<typename T,typename D> void
 template <typename T, typename D = DebugDelete>
 class unique_pointer
 {
-    friend void swap<T,D>(unique_pointer<T,D>& lhs, unique_pointer<T,D>& rhs);
+    friend void swap<T, D>(unique_pointer<T, D>& lhs, unique_pointer<T, D>& rhs);
 
 public:
     // preventing copy and assignment
@@ -70,7 +70,7 @@ private:
 // swap
 template<typename T, typename D>
 inline void
-swap(unique_pointer<T,D>& lhs, unique_pointer<T,D>& rhs)
+swap(unique_pointer<T, D>& lhs, unique_pointer<T, D>& rhs)
 {
     using std::swap;
     swap(lhs.ptr, rhs.ptr);
@@ -79,8 +79,8 @@ swap(unique_pointer<T,D>& lhs, unique_pointer<T,D>& rhs)
 
 // move assignment
 template<typename T, typename D>
-inline unique_pointer<T,D>&
-unique_pointer<T,D>::operator =(unique_pointer&& rhs) noexcept
+inline unique_pointer<T, D>&
+unique_pointer<T, D>::operator =(unique_pointer&& rhs) noexcept
 {
     // prevent self-assignment
     if(this->ptr != rhs.ptr)
@@ -95,8 +95,8 @@ unique_pointer<T,D>::operator =(unique_pointer&& rhs) noexcept
 
 // std::nullptr_t assignment
 template<typename T, typename D>
-inline unique_pointer<T,D>&
-unique_pointer<T,D>::operator =(std::nullptr_t n) noexcept
+inline unique_pointer<T, D>&
+unique_pointer<T, D>::operator =(std::nullptr_t n) noexcept
 {
     if(n == nullptr)
     {
@@ -108,7 +108,7 @@ unique_pointer<T,D>::operator =(std::nullptr_t n) noexcept
  // relinquish contrul by returnning ptr and making ptr point to nullptr.
 template<typename T, typename D>
 inline T*
-unique_pointer<T,D>::release()
+unique_pointer<T, D>::release()
 {
     T* ret = ptr;
     ptr = nullptr;

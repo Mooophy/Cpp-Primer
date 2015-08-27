@@ -21,7 +21,7 @@
 
 int main()
 {
-    std::vector<int> v = {1,2,3,5,8,13,21};
+    std::vector<int> v = {1, 2, 3, 5, 8, 13, 21};
     std::bitset<32> bset;
 
     for (auto i : v)    bset.set(i);

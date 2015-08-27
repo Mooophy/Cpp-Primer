@@ -43,7 +43,7 @@
 //      template <typename T> T fcn(T, T);
 //         double d;    float f;    char c;
 //         (a) calc(c, 'c');   -- legal,T is a char
-//         (b) calc(d, f);     -- legal,T is a double
+//         (b) calc(d, f);     -- legal, T is a double
 //         (c) fcn(c, 'c');    -- legal,T is a char
 //         (d) fcn(d, f);      -- illegal, arguments d and f are double and float repectively
 //
@@ -56,7 +56,7 @@
 //             (a) f1(p1, p2);     T is *int
 //             (b) f2(p1, p2);     T1 and T2 are also *int
 //             (c) f1(cp1, cp2);   const is ignored
-//             (d) f2(cp1, cp2);   T1 and T2 are also *int,const is ignored
+//             (d) f2(cp1, cp2);   T1 and T2 are also *int, const is ignored
 //             (e) f1(p1, cp1);    didn't compile since two types are different int* and const int* respectively
 //             (f) f2(p1, cp1);    Cp1's const is ignored.
 //

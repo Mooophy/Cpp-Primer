@@ -38,7 +38,7 @@ void func_rvalue(int&& lhs, int&& rhs)
     // destroy and deallocation
     for (auto p = data +3; p != data;    )
         alloc.destroy(--p);
-    alloc.deallocate(data,3);
+    alloc.deallocate(data, 3);
 }
 
 template<typename F, typename T1, typename T2>
@@ -57,7 +57,7 @@ int main()
     */
 
     // test for rvalue reference
-    flip(func_rvalue, 99,88);
+    flip(func_rvalue, 99, 88);
 
 
 }

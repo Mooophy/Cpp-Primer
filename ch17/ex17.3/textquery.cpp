@@ -16,7 +16,7 @@ TextQuery::TextQuery(std::ifstream & is) : file(new std::vector<std::string>)
 {
     // each line
     std::string line;
-    while(std::getline(is,line))
+    while(std::getline(is, line))
     {
         file->push_back(line);
         // current line index

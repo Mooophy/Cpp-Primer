@@ -75,6 +75,6 @@ operator !=(const Quote& lhs, const Quote& rhs)
 }
 
 // non-member
-double print_total(std::ostream &os,const Quote &item, size_t n);
+double print_total(std::ostream &os, const Quote &item, size_t n);
 
 #endif // QUOTE_H

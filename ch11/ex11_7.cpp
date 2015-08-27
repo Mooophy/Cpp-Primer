@@ -31,7 +31,7 @@ int main()
           return std::cin>>lastName && lastName != "@q";
     }())
 //  ^^
-// the () used here is to call the lambda ,otherwise it does not work
+// the () used here is to call the lambda , otherwise it does not work
 // go to the post on stack overflow for more detail.
 
     {

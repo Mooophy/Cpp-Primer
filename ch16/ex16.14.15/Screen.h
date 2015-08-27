@@ -21,12 +21,12 @@ public:
         { return contents[cursor]; }       // implicitly inline
     Screen &move(pos r, pos c);      // can be made inline later
 
-    friend std::ostream & operator<< ( std::ostream &os , const Screen<H,W> & c ) 
+    friend std::ostream & operator<< ( std::ostream &os , const Screen<H, W> & c ) 
     {
-        unsigned int i,j;
+        unsigned int i, j;
         for( i=0 ;i<c.height; i++ )
         {
-                os<<c.contents.substr(0,W)<<std::endl;
+                os<<c.contents.substr(0, W)<<std::endl;
         }
         return os;
     }
@@ -35,7 +35,7 @@ public:
     {
             char a;
             is>>a;
-            std::string temp(H*W,a);
+            std::string temp(H*W, a);
             c.contents = temp;
             return is;
     }

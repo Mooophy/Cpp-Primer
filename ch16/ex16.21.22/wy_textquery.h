@@ -29,7 +29,7 @@ class wy_textQuery
 {
 public:
     typedef std::shared_ptr<std::vector<std::string>> sp_file_Tp;
-    typedef std::shared_ptr<std::map<std::string,std::set<int>>> sp_Qmap_Tp;
+    typedef std::shared_ptr<std::map<std::string, std::set<int>>> sp_Qmap_Tp;
 
     // constructors
     wy_textQuery() = default;

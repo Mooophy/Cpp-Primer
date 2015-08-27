@@ -48,7 +48,7 @@ public:
    void print(std::ostream &os) { base::print(os); os << " derived\n " << i; }
    //  ^^^^^                     ^^^^^^    --  added to fix this problem
    //  this print wanted to call the print from the base class.
-   //  however,the class scope base:: was omitted.As a result
+   //  however, the class scope base:: was omitted.As a result
    //  it will cause an infinit recursion.
 
 

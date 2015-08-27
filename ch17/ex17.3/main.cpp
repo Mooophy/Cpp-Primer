@@ -10,7 +10,7 @@
 // Rewrite the TextQuery programs from § 12.3 (p. 484) to use a tuple instead
 // of the QueryResult class. Explain which design you think is better and why.
 //
-//  The orignal way is more formal.The second way is quick to implement ,but hard to
+//  The orignal way is more formal.The second way is quick to implement , but hard to
 //  refactor.So the second way is better for testing.
 //
 

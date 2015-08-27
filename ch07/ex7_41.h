@@ -20,7 +20,7 @@ class Sales_data {
     friend Sales_data add(const Sales_data &lhs, const Sales_data &rhs);
 
 public:
-    Sales_data(const std::string &s, unsigned n, double p):bookNo(s),units_sold(n),revenue(n*p)
+    Sales_data(const std::string &s, unsigned n, double p):bookNo(s), units_sold(n), revenue(n*p)
     { std::cout << "Sales_data(const std::string&, unsigned, double)" << std::endl; }
     
     Sales_data() : Sales_data("", 0, 0.0f)

@@ -33,7 +33,7 @@ int main()
     // The ouput is 4 rather than 4.9 as expected.
     // The reason is std::accumulate is a template function. The third parameter is _Tp __init
     // When "0" , an integer, had been specified here, the compiler deduced _Tp as
-    // interger.As a result ,when the following statments were being excuted :
+    // interger.As a result , when the following statments were being excuted :
     //  for (; __first != __last; ++__first)
     //	__init = __init + *__first;
     //  return __init;

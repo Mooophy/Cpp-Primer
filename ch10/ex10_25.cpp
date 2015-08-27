@@ -19,7 +19,7 @@ using namespace std::placeholders;
 void elimdups(vector<string> &vs)
 {
     std::sort(vs.begin(), vs.end());
-    vs.erase(unique(vs.begin(),vs.end()), vs.end());
+    vs.erase(unique(vs.begin(), vs.end()), vs.end());
 }
 
 bool check_size(const string &s, string::size_type sz)

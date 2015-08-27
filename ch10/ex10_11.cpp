@@ -12,7 +12,7 @@
 #include <numeric>
 #include <list>
 
-// print a container like vector,deque, list,etc.
+// print a container like vector, deque, list, etc.
 template<typename Sequence>
 inline std::ostream& println(Sequence const& seq)
 {
@@ -33,7 +33,7 @@ is_shorter(std::string const& lhs, std::string const& rhs)
 void elimdups(std::vector<std::string> &vs)
 {
     std::sort(vs.begin(), vs.end());
-    auto new_end = std::unique(vs.begin(),vs.end());
+    auto new_end = std::unique(vs.begin(), vs.end());
     vs.erase(new_end, vs.end());
 }
 

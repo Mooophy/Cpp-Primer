@@ -18,7 +18,7 @@ Head is the first line of the range.
 Trail is the last line of the range.
 */
 ostream&
-print(ostream& os, const QueryResult &qr,size_t head, size_t trail)
+print(ostream& os, const QueryResult &qr, size_t head, size_t trail)
 {
 	if (head > trail)
 	{

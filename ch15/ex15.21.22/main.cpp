@@ -74,7 +74,7 @@ public:
            const Coordinate& b,
            const Coordinate& c,
            const Coordinate& d) :
-        Rectangle(n,a,b,c,d) { }
+        Rectangle(n, a, b, c, d) { }
 
     ~Square() = default;
 };

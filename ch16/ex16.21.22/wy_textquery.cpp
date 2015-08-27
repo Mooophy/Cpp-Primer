@@ -29,7 +29,7 @@ wy_textQuery::wy_textQuery(std::ifstream &fin) :
     // option to use with DebugDelete.
     /*
     sp_fileData(std::make_shared<std::vector<std::string>>() ),
-    sp_queryMap(std::make_shared<std::map<std::string,std::set<int>>>() )
+    sp_queryMap(std::make_shared<std::map<std::string, std::set<int>>>() )
     */
     sp_fileData(new std::vector<std::string>(), DebugDelete() ),
     sp_queryMap(new std::map<std::string, std::set<int>>(), DebugDelete())

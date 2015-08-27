@@ -48,7 +48,7 @@ public:
 
 private:
     /**
-     * @oldcode updated Feb 06,2014 @Alan
+     * @oldcode updated Feb 06, 2014 @Alan
      */
     //std::shared_ptr<std::vector<T>> data;
 
@@ -72,7 +72,7 @@ Blob<T>::Blob(std::initializer_list<T> il):
 template<typename T>    //for class
 template<typename It>   //for this member
 Blob<T>::Blob(It b, It e) :
-    data(std::make_shared<std::vector<T>>(b,e))
+    data(std::make_shared<std::vector<T>>(b, e))
 {}
 
 template<typename T>
@@ -100,7 +100,7 @@ const T& Blob<T>::back() const
 template<typename T>
 T& Blob<T>::operator [](size_type i)
 {
-    // if i is too big, check function will throw,preventing access to a nonexistent element
+    // if i is too big, check function will throw, preventing access to a nonexistent element
     check(i,"subscript out of range");
     return (*data)[i];
 }
@@ -109,7 +109,7 @@ T& Blob<T>::operator [](size_type i)
 template<typename T>
 const T& Blob<T>::operator [](size_type i) const
 {
-    // if i is too big, check function will throw,preventing access to a nonexistent element
+    // if i is too big, check function will throw, preventing access to a nonexistent element
     check(i,"subscript out of range");
     return (*data)[i];
 }

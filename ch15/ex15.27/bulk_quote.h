@@ -10,7 +10,7 @@ public:
 
     // changed the below to the inherited constructor for ex15.27.
     // rules:  1. only inherit from the direct base class.
-    //         2. default,copy and move constructors can not inherit.
+    //         2. default, copy and move constructors can not inherit.
     //         3. any data members of its own are default initialized.
     //         4. the rest details are in the section section 15.7.4.
     /*

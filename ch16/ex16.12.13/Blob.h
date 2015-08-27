@@ -68,7 +68,7 @@ const T& Blob<T>::back() const
 template<typename T>
 T& Blob<T>::operator [](size_type i)
 {
-    // if i is too big, check function will throw,preventing access to a nonexistent element
+    // if i is too big, check function will throw, preventing access to a nonexistent element
     check(i,"subscript out of range");
     return (*data)[i];
 }
@@ -77,7 +77,7 @@ T& Blob<T>::operator [](size_type i)
 template<typename T>
 const T& Blob<T>::operator [](size_type i) const
 {
-    // if i is too big, check function will throw,preventing access to a nonexistent element
+    // if i is too big, check function will throw, preventing access to a nonexistent element
     check(i,"subscript out of range");
     return (*data)[i];
 }

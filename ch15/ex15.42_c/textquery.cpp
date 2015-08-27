@@ -29,7 +29,7 @@ TextQuery::TextQuery(ifstream& is) :file(new vector<string>)
 	using std::getline;
 
 	string text;
-    while(getline(is,text))
+    while(getline(is, text))
     {
         file->push_back(text);
 		int n = file->size() - 1;

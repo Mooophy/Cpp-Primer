@@ -8,8 +8,8 @@
 // Could we define a map from vector<int>::iterator
 // to int? What about from list<int>::iterator to int?
 // In each case, if not, why not?
-//  vector<int>::iterator to int is ok ,because < is defined
-//  list<int>::iterator to int is not ok,as no < is defined.
+//  vector<int>::iterator to int is ok , because < is defined
+//  list<int>::iterator to int is not ok, as no < is defined.
 #include <iostream>
 #include <map>
 #include <string>
@@ -28,12 +28,12 @@ int main()
 
 
     std::vector<int> vi;
-    mv.insert(std::pair<std::vector<int>::iterator, int>(vi.begin(),0));
+    mv.insert(std::pair<std::vector<int>::iterator, int>(vi.begin(), 0));
 
     // but when using this one the compiler complained that
     // error: no match for 'operator<' in '__x < __y'
     std::list<int> li;
-    ml.insert(std::pair<std::list<int>::iterator,int>(li.begin(),0));
+    ml.insert(std::pair<std::list<int>::iterator, int>(li.begin(), 0));
 
     return 0;
 }

@@ -31,7 +31,7 @@ public:
             format = 0x01;
         }
 
-        // January 1,1900 or Jan 1, 1900
+        // January 1, 1900 or Jan 1, 1900
         if((s.find_first_of(',') >= 4) && s.find_first_of(',')!= string :: npos){
             format = 0x10;
         }

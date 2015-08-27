@@ -9,7 +9,7 @@
 // Exercise 15.27:
 // Redefine your Bulk_quote class to inherit its constructors.
 //  rules:  1. only inherit from the direct base class.
-//          2. default,copy and move constructors can not inherit.
+//          2. default, copy and move constructors can not inherit.
 //          3. any data members of its own are default initialized.
 //          4. the rest details are in the section section 15.7.4.
 //

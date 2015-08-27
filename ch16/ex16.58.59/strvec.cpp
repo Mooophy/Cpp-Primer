@@ -105,7 +105,7 @@ void StrVec::reserve(std::size_t n)
 
 void StrVec::resize(std::size_t n)
 {
-    resize(n,std::string());
+    resize(n, std::string());
 }
 
 /**
@@ -164,7 +164,7 @@ StrVec::alloc_n_copy(std::string *b, std::string *e)
 
     return { data, std::uninitialized_copy(b, e, data) };
     //            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    // which copies the range [first,last) into the space of which
+    // which copies the range [first, last) into the space of which
     // the starting address p_data is pointing to.
     // This function returns a pointer pointing to one past the last element.
 }

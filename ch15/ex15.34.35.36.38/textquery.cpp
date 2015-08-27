@@ -24,7 +24,7 @@
  */
 TextQuery::TextQuery(std::ifstream &fin) :
     file(StrBlob()),
-    wordMap(std::map<std::string,std::shared_ptr<std::set<line_no>>>())
+    wordMap(std::map<std::string, std::shared_ptr<std::set<line_no>>>())
 {
     std::string line;
 

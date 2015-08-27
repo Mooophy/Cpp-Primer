@@ -13,7 +13,7 @@
 #include <vector>
 #include <algorithm>
 
-// print containers like vector,deque, list, etc.
+// print containers like vector, deque, list, etc.
 template<typename Sequence>
 auto println(Sequence const& seq) -> std::ostream&
 {

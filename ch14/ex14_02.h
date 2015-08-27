@@ -19,7 +19,7 @@ class Sales_data {
     friend Sales_data operator+(const Sales_data&, const Sales_data&); // addition
 
 public:
-    Sales_data(const std::string &s, unsigned n, double p):bookNo(s),units_sold(n),revenue(n*p){}
+    Sales_data(const std::string &s, unsigned n, double p):bookNo(s), units_sold(n), revenue(n*p){}
     Sales_data() : Sales_data("", 0, 0.0f){}
     Sales_data(const std::string &s) : Sales_data(s, 0, 0.0f){}
     Sales_data(std::istream &is);

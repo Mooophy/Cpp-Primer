@@ -13,5 +13,5 @@ QueryResult OrQuery::eval(const TextQuery &text) const
     // inert lines from the right-hand operand
     ret_lines->insert(right.begin(), right.end());
 
-    return QueryResult(rep(),ret_lines,left.get_file());
+    return QueryResult(rep(), ret_lines, left.get_file());
 }

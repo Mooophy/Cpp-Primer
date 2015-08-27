@@ -66,7 +66,7 @@ Vec<T>::Vec(const Vec &v)
      * @brief newData is a pair of pointers pointing to newly allocated and copied
      *        from range : [b, e)
      */
-    std::pair<T*,T*> newData = alloc_n_copy(v.begin(), v.end());
+    std::pair<T*, T*> newData = alloc_n_copy(v.begin(), v.end());
 
     element = newData.first;
     first_free = cap = newData.second;
@@ -96,7 +96,7 @@ template<typename T>
 Vec<T>& Vec<T>::operator =(const Vec& rhs)
 {
     // allocate and copy first to protect against self_assignment
-    std::pair<T*,T*> newData = alloc_n_copy(rhs.begin(), rhs.end());
+    std::pair<T*, T*> newData = alloc_n_copy(rhs.begin(), rhs.end());
 
     // destroy and deallocate
     free();
@@ -200,14 +200,14 @@ void Vec<T>::resize(std::size_t n, const T &t)
  * @return  a pair of pointers pointing to [first element , one past the last) in the new space
  */
 template<typename T>
-std::pair<T*,T*>
+std::pair<T*, T*>
 Vec<T>::alloc_n_copy(T *b, T *e)
 {
     // calculate the size needed and allocate space accordingly
     T* data = alloc.allocate(e-b);
     return { data, std::uninitialized_copy(b, e, data)};
     //            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    // which copies the range[first,last) to the space to which
+    // which copies the range[first, last) to the space to which
     // the starting address data is pointing.
     // This function returns a pointer to one past the last element
 }
@@ -226,7 +226,7 @@ void Vec<T>::free()
         for(auto p = first_free; p != element;    )
             alloc.destroy(--p);
 
-        alloc.deallocate(element,capacity());
+        alloc.deallocate(element, capacity());
     }
 }
 
