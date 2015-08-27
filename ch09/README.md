@@ -108,7 +108,7 @@ auto it2 = v2.begin(), it3 = v1.cbegin(), it4 = v2.cbegin();
 
 `it1` is `vector<int>::iterator`
 
-`it2`,`it3` and `it4` are `vector<int>::const_iterator`
+`it2`, `it3` and `it4` are `vector<int>::const_iterator`
 
 ## Exercise 9.11:
 >Show an example of each of the six ways to create and initialize a vector. Explain what values each vector contains.
@@ -116,8 +116,8 @@ auto it2 = v2.begin(), it3 = v1.cbegin(), it4 = v2.cbegin();
 ```cpp
 vector<int> vec;    // 0
 vector<int> vec(10);    // 0
-vector<int> vec(10,1);  // 1
-vector<int> vec{1,2,3,4,5}; // 1,2,3,4,5
+vector<int> vec(10, 1);  // 1
+vector<int> vec{1, 2, 3, 4, 5}; // 1, 2, 3, 4, 5
 vector<int> vec(other_vec); // same as other_vec
 vector<int> vec(other_vec.begin(), other_vec.end()); // same as other_vec
 ```
@@ -152,7 +152,7 @@ forward_list<float> numbers5(numbers.begin(), numbers.end());   // ok, number5 i
 >Assuming c1 and c2 are containers, what (if any) constraints does the following usage place on the types of c1 and c2?
 
 First, there must be the identical container and same type holded.
-Second,the type held must support relational operation. (@Mooophy)
+Second, the type held must support relational operation. (@Mooophy)
 
 Both c1 and c2 are the containers except the unordered associative containers.(@pezy)
 
@@ -305,7 +305,7 @@ The `while` loop will read words from `cin` and store them in out vector. Even i
 And now comes the catch. `resize()` is different from `reserve()`. In this case `resize()` will add another `svec.size()/2` value initialized elements to `svec`. If this exceeds `svec.capacity()` it will also automatically increase it to accommodate the new elements.
 
 ## Exercise 9.40:
->If the program in the previous exercise reads 256 words, what is its likely capacity after it is resized? What if it reads 512? 1,000? 1,048?
+>If the program in the previous exercise reads 256 words, what is its likely capacity after it is resized? What if it reads 512? 1, 000? 1, 048?
 
 read | size | capacity
 ------ | ------ | ------

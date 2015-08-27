@@ -294,7 +294,7 @@ reference: [Usage of the Built-in Comma Operator](http://stackoverflow.com/quest
 >Explain the following loop.
 ```cpp
 constexpr int size = 5;
-int ia[size] = {1,2,3,4,5};
+int ia[size] = {1, 2, 3, 4, 5};
 for (int *ptr = ia, ix = 0;
     ix != size && ptr != ia+size;
     ++ix, ++ptr) { /* ... */ }
@@ -314,7 +314,7 @@ Because of the most lowest precedence of the comma operator, the expression is s
 ```
 If someValue is true, then `++x`, and the result is `y`, if someValue is false, then `--x`, and the result is `--y`. so it is also same as:
 ```cpp
-someValue ? (++x,y) : (--x,--y);
+someValue ? (++x, y) : (--x, --y);
 ```
 Even though the result has nothing to do with `x`, the evaluation of `someValue` does effect the operation on `x`.
 

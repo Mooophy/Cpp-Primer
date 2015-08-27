@@ -74,7 +74,7 @@ bool b() {
 }
 ```
 
-The p will convert to a bool ,which means that the dynamic memory allocated has no chance to be freed. As a result, memory leakage will occur.
+The p will convert to a bool , which means that the dynamic memory allocated has no chance to be freed. As a result, memory leakage will occur.
 
 ## Exercise 12.9:
 >Explain what happens in the following code:
