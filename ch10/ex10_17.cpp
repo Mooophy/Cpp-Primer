@@ -1,10 +1,10 @@
-//! @pezy
-//!
-//! Exercise 10.17
-//! Rewrite exercise 10.12 from ¡ì 10.3.1 (p. 387) 
-//! to use a lambda in the call to sort instead of the compareIsbn function. 
-//!
-//! @See 7.26, 10.12
+// @pezy
+//
+// Exercise 10.17
+// Rewrite exercise 10.12 from ¡ì 10.3.1 (p. 387) 
+// to use a lambda in the call to sort instead of the compareIsbn function. 
+//
+// @See 7.26, 10.12
 
 #include <iostream>
 #include <string>

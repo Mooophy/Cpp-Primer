@@ -3,7 +3,6 @@
 //  Exercise 12.32
 //
 //  Created by pezy on 1/1/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Rewrite the TextQuery and QueryResult classes to use a StrBlob
 //  instead of a vector<string> to hold the input file.
@@ -25,7 +24,7 @@ public:
     TextQuery(std::ifstream &);
     QueryResult query(const string&) const;
 private:
-    shared_ptr<StrBlob> input;
+    StrBlob file;
     std::map<string, shared_ptr<std::set<StrBlob::size_type>>> result;
 };
 
@@ -33,11 +32,11 @@ class QueryResult {
 public:
     friend std::ostream& print(std::ostream &, const QueryResult&);
 public:
-    QueryResult(const string &s, shared_ptr<std::set<StrBlob::size_type>> set, shared_ptr<StrBlob> v) : word(s), nos(set), input(v) {}
+    QueryResult(const string &s, shared_ptr<std::set<StrBlob::size_type>> set, const StrBlob& f) : word(s), nos(set), file(f) {}
 private:
     string word;
     shared_ptr<std::set<StrBlob::size_type>> nos;
-    shared_ptr<StrBlob> input;
+    StrBlob file;
 };
 
 std::ostream& print(std::ostream &, const QueryResult&);

@@ -3,7 +3,6 @@
 //  Exercise 7.26
 //
 //  Created by pezy on 11/14/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @See ex7_21.h
 //  @Add inline member function "Sales_data::avg_pric" 
@@ -22,7 +21,7 @@ class Sales_data {
 public:
     Sales_data() = default;
     Sales_data(const std::string &s):bookNo(s) {}
-    Sales_data(const std::string &s, unsigned n, double p):bookNo(s),units_sold(n),revenue(n*p){}
+    Sales_data(const std::string &s, unsigned n, double p):bookNo(s), units_sold(n), revenue(n*p){}
     Sales_data(std::istream &is) { read(is, *this); }
 
     std::string isbn() const { return bookNo; };

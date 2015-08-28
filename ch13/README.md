@@ -127,12 +127,12 @@ Three identical numbers.
 ## Exercise 13.15:
 >Assume `numbered` has a copy constructor that generates a new serial number. Does that change the output of the calls in the previous exercise? If so, why? What output gets generated?
 
-Yes, the output will change. cause we don't use the synthesized copy-control members rather than own defined.The output will be three different numbers.
+Yes, it does. Because, as described, the newly defined copy constructor can handle such situations as expected.Thus, the output will be three different numbers.
 
 ## Exercise 13.16:
 >What if the parameter in f were const numbered&? Does that change the output? If so, why? What output gets generated?
 
-Yes, the output will change. cause the function `f` haven't any copy operators. Thus, the output are the same when pass the each object to `f`.
+Yes, the output will change. Because no copy operation happens within function `f`. Thus, the three Output are the same.
 
 ## Exercise 13.17
 > Write versions of numbered and f corresponding to the previous three exercises and check whether you correctly predicted the output.
@@ -212,7 +212,7 @@ some existing `Folders` will out of sync with the `Message` after assignment.
 >We did not use copy and swap to define the Message assignment operator. Why do you suppose this is so?
 
 @Mooophy
-The copy and swap is an elegant way when working with dynamicly allocated memory. In the Message class ,nothing is allocated dynamically. Thus using this idiom makes no sense and will make it more complicated to implement due to the pointers that point back.
+The copy and swap is an elegant way when working with dynamicly allocated memory. In the Message class , nothing is allocated dynamically. Thus using this idiom makes no sense and will make it more complicated to implement due to the pointers that point back.
 
 @pezy
 In this case, `swap` function is special. It will be clear two `Message`'s folders , then swap members, and added themselves to each folders. But, `Message` assignment operator just clear itself, and copy the members, and added itself to each folders. The `rhs` don't need to clear and add to folders. So, if using copy and swap to define, it will be very inefficiency.

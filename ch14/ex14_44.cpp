@@ -6,10 +6,10 @@
 *  @remark     This code is for the exercises from C++ Primer 5th Edition
 *  @note
 ***************************************************************************/
-//!
-//! Exercise 14.44:
-//! Write your own version of a simple desk calculator that can handle binary operations.
-//!
+//
+// Exercise 14.44:
+// Write your own version of a simple desk calculator that can handle binary operations.
+//
 
 #include <iostream>
 #include <string>

@@ -3,7 +3,6 @@
 //  Exercise 8.13
 //
 //  Created by pezy on 11/29/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Rewrite the phone number program from this section to read from
 //          a named file rather than from cin.

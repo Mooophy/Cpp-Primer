@@ -3,7 +3,6 @@
 //  Exercise 11.32
 //
 //  Created by pezy on 12/17/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Using the multimap from the previous exercise, write a program to print the list of **authors and their works** alphabetically.
 

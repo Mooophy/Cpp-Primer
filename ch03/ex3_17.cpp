@@ -1,11 +1,11 @@
-///
-///@Author  @PEZY @Yue Wang 
-///@Date    Aug. 2014 Jun.2015
-///@Brief
-/// Read a sequence of words from cin and store the values a vector.
-/// After you've read all the words, process the vector and change each word to uppercase.
-/// Print the transformed elements, eight words to a line.
-///
+//
+//@Author  @PEZY @Yue Wang 
+//@Date    Aug. 2014 Jun.2015
+//@Brief
+// Read a sequence of words from cin and store the values a vector.
+// After you've read all the words, process the vector and change each word to uppercase.
+// Print the transformed elements, eight words to a line.
+//
 
 #include <iostream>
 #include <vector>
@@ -32,12 +32,3 @@ int main()
 
     return 0;
 }
-
-///
-///@Output
-///pezy is a good programmer you can ask any question to him all the time he is playing the codes
-///^D(EOF)
-///PEZY IS A GOOD PROGRAMMER YOU CAN ASK
-///ANY QUESTION TO HIM ALL THE TIME HE
-///IS PLAYING THE CODES
-///

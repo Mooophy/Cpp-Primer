@@ -5,10 +5,10 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 16.24:
-//! Add a constructor that takes two iterators to your Blob template.
-//!
+//
+// Exercise 16.24:
+// Add a constructor that takes two iterators to your Blob template.
+//
 
 #include <iostream>
 #include <vector>
@@ -21,8 +21,7 @@
 
 int main()
 {
-    std::vector<int> v = {1,2,3,4,5};
+    std::vector<int> v = {1, 2, 3, 4, 5};
     Blob<int> b(v.begin(), v.end());
     return 0;
 }
-

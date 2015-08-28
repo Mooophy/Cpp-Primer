@@ -1,6 +1,6 @@
-#include"query.h"
+#include "query.h"
 
-#include<ostream>
+#include <ostream>
 using std::ostream;
 
 ostream&

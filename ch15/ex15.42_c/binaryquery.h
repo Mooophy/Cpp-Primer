@@ -1,11 +1,11 @@
 #ifndef _BINARYQUERY_H
 #define _BINARYQUERY_H
 
-#include<string>
+#include <string>
 using std::string;
 
-#include"query.h"
-#include"query_base.h"
+#include "query.h"
+#include "query_base.h"
 
 
 class BinaryQuery :public Query_base

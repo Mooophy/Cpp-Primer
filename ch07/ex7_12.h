@@ -3,7 +3,6 @@
 //  Exercise 7.12
 //
 //  Created by pezy on 11/9/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 
 #ifndef CP5_ex7_12_h
@@ -18,7 +17,7 @@ std::istream &read(std::istream&, Sales_data&);
 struct Sales_data {
     Sales_data() = default;
     Sales_data(const std::string &s):bookNo(s) {}
-    Sales_data(const std::string &s, unsigned n, double p):bookNo(s),units_sold(n),revenue(n*p){}
+    Sales_data(const std::string &s, unsigned n, double p):bookNo(s), units_sold(n), revenue(n*p){}
     Sales_data(std::istream &is) { read(is, *this);}
     
     std::string isbn() const { return bookNo; };

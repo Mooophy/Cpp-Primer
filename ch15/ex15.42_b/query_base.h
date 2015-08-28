@@ -1,10 +1,10 @@
 #ifndef _QUERY_BASE_H
 #define _QUERY_BASE_H
 
-#include<string>
+#include <string>
 using std::string;
 
-#include"textquery.h"
+#include "textquery.h"
 
 class Query_base
 {

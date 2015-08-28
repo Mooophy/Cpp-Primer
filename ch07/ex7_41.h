@@ -3,7 +3,6 @@
 //  Exercise 7.41 
 //
 //  Created by pezy on 11/20/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @See ex7_26.h
 //  @Add 1. use delegating constructors
@@ -21,7 +20,7 @@ class Sales_data {
     friend Sales_data add(const Sales_data &lhs, const Sales_data &rhs);
 
 public:
-    Sales_data(const std::string &s, unsigned n, double p):bookNo(s),units_sold(n),revenue(n*p)
+    Sales_data(const std::string &s, unsigned n, double p):bookNo(s), units_sold(n), revenue(n*p)
     { std::cout << "Sales_data(const std::string&, unsigned, double)" << std::endl; }
     
     Sales_data() : Sales_data("", 0, 0.0f)

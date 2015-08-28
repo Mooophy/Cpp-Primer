@@ -33,16 +33,16 @@ public:
         return (*p)[curr];
     }
 
-    //! prefix
+    // prefix
     BlobPtr& operator++();
     BlobPtr& operator--();
 
-    //! postfix
+    // postfix
     BlobPtr operator ++(int);
     BlobPtr operator --(int);
 
 private:
-    //! returns  a shared_ptr to the vector if the check succeeds
+    // returns  a shared_ptr to the vector if the check succeeds
     std::shared_ptr<std::vector<T>>
          check(std::size_t, const std::string&) const;
 
@@ -51,28 +51,28 @@ private:
 
 };
 
-//! prefix ++
+// prefix ++
 template<typename T>
 BlobPtr<T>& BlobPtr<T>::operator ++()
 {
-    //! if curr already points past the end of the container, can't increment it
-    check(curr,"increment past end of StrBlob");
+    // if curr already points past the end of the container, can't increment it
+    check(curr, "increment past end of StrBlob");
     ++curr;
     return *this;
 }
 
-//! prefix --
+// prefix --
 template<typename T>
 BlobPtr<T>& BlobPtr<T>::operator --()
 {
     -- curr;
-    check(curr,"decrement past begin of BlobPtr");
+    check(curr, "decrement past begin of BlobPtr");
 
     return *this;
 }
 
 
-//! postfix ++
+// postfix ++
 template<typename T>
 BlobPtr<T> BlobPtr<T>::operator ++(int)
 {
@@ -82,7 +82,7 @@ BlobPtr<T> BlobPtr<T>::operator ++(int)
     return ret;
 }
 
-//! postfix --
+// postfix --
 template<typename T>
 BlobPtr<T> BlobPtr<T>::operator --(int)
 {

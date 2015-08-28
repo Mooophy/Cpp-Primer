@@ -19,7 +19,7 @@ protected:
         std::cout << "BinaryQuery::BinaryQuery()  where s=" + s + "\n";
     }
 
-    //! @note:  abstract class: BinaryQuery doesn't define eval
+    // @note:  abstract class: BinaryQuery doesn't define eval
 
     std::string rep() const override
     {

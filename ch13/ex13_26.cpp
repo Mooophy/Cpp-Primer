@@ -3,7 +3,6 @@
 //  Exercise 13.26
 //
 //  Created by pezy on 1/19/15.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Write your own version of the StrBlob class described in the previous exercise.
 //

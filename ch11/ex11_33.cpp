@@ -3,7 +3,6 @@
 //  Exercise 11.33
 //
 //  Created by pezy on 12/18/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Implement your own version of the word-transformation program.
 

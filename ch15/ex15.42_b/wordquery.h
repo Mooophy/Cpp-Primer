@@ -1,12 +1,12 @@
 #ifndef _WORDQUERY_H
 #define _WORDQUERY_H
 
-#include<string>
+#include <string>
 using std::string;
 
-#include"query_base.h"
-#include"queryresult.h"
-#include"textquery.h"
+#include "query_base.h"
+#include "queryresult.h"
+#include "textquery.h"
 
 class WordQuery:public Query_base
 {

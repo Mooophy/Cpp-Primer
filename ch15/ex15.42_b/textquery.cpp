@@ -1,24 +1,24 @@
 #include "textquery.h"
 
-#include<fstream>
+#include <fstream>
 using std::ifstream;
 
 #include <sstream>
 using std::istringstream;
 
-#include<memory>
+#include <memory>
 using std::shared_ptr; using std::make_shared;
 
-#include<vector>
+#include <vector>
 using std::vector;
 
-#include<string>
+#include <string>
 using std::string;
 
-#include<map>
+#include <map>
 using std::map;
 
-#include<set>
+#include <set>
 using std::set;
 
 #include "queryresult.h"
@@ -29,7 +29,7 @@ TextQuery::TextQuery(ifstream& is) :file(new vector<string>)
 	using std::getline;
 
 	string text;
-    while(getline(is,text))
+    while(getline(is, text))
     {
         file->push_back(text);
 		int n = file->size() - 1;
@@ -53,7 +53,7 @@ QueryResult TextQuery::query(const string &sought) const
 {
     static shared_ptr<set<line_no>> nodata(new set<line_no>);
 
-    //! fetch the iterator to the matching element in the map<word, lines>.
+    // fetch the iterator to the matching element in the map<word, lines>.
     //std::map<std::string, std::shared_ptr<std::set<line_no>>>::const_iterator
     auto loc = wm.find(sought);
     if(loc == wm.end())

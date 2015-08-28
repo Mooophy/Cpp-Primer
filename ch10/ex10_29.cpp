@@ -3,7 +3,6 @@
 //  Exercise 10.29
 //
 //  Created by pezy on 12/13/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Write a program using stream iterators to read a text file into a vector of strings.
 

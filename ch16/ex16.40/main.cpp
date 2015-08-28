@@ -5,16 +5,16 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 16.40:
-//! Is the following function legal? If not, why not? If it is legal, what,
-//! if any, are the restrictions on the argument type(s) that can be passed,
-//! and what is the return type?
-//! legal.
-//! As shown below, only type that support this + 0 operation can be passed.
-//! the return type depends on the what type the operator + returns. In the case
-//! below, the return type is Bar.
-//!
+//
+// Exercise 16.40:
+// Is the following function legal? If not, why not? If it is legal, what,
+// if any, are the restrictions on the argument type(s) that can be passed,
+// and what is the return type?
+// legal.
+// As shown below, only type that support this + 0 operation can be passed.
+// the return type depends on the what type the operator + returns. In the case
+// below, the return type is Bar.
+//
 
 
 #include <iostream>

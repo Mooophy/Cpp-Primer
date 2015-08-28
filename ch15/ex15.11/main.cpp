@@ -5,11 +5,11 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 15.11:
-//! Add a virtual debug function to your Quote class hierarchy that displays
-//! the data members of the respective classes.
-//!
+//
+// Exercise 15.11:
+// Add a virtual debug function to your Quote class hierarchy that displays
+// the data members of the respective classes.
+//
 
 #include <iostream>
 #include <string>
@@ -22,9 +22,9 @@ void print_debug(const Quote& q);
 double print_total (std::ostream& os, const Quote& item, size_t n);
 int main()
 {
-    Quote q("aaa",10.60);
-    Bulk_quote bq("bbb",111,10,0.3);
-    Limit_quote lq("ccc",222,10,0.3);
+    Quote q("aaa", 10.60);
+    Bulk_quote bq("bbb", 111, 10, 0.3);
+    Limit_quote lq("ccc", 222, 10, 0.3);
 
     /** @note   Not dynamic binding!
      *  The codes below are not dynamic binding. The compiler has known what the
@@ -81,8 +81,3 @@ void print_debug(const Quote &q)
 {
     q.debug();
 }
-
-
-
-
-

@@ -3,7 +3,6 @@
 //  Exercise 10.6
 //
 //  Created by pezy on 12/9/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Using fill_n, write a program to set a sequence of int values to 0.
 
@@ -22,6 +21,3 @@ int main()
         cout << i << " ";
     cout << endl;
 }
-
-//  @Output
-//  0 0 0 0 0 0 0 0 0 0

@@ -3,7 +3,6 @@
 //  Exercise 9.49
 //
 //  Created by pezy on 12/5/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  A letter has an ascender if, as with d or f, part of the letter extends
 //          above the middle of the line.

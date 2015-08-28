@@ -5,17 +5,17 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 16.48:
-//! Write your own versions of the debug_rep functions.
-//!
+//
+// Exercise 16.48:
+// Write your own versions of the debug_rep functions.
+//
 
 #include <iostream>
 #include <memory>
 #include <sstream>
 
 
-//! always declare first:
+// always declare first:
 
 template <typename T> std::string debug_rep(const T& t);
 template <typename T> std::string debug_rep(T* p);
@@ -27,7 +27,7 @@ std::string debug_rep(const char *p);
 
 
 
-//! print any type we don't otherwise.
+// print any type we don't otherwise.
 template<typename T> std::string debug_rep(const T& t)
 {
     std::ostringstream ret;
@@ -35,7 +35,7 @@ template<typename T> std::string debug_rep(const T& t)
     return ret.str();
 }
 
-//! print pointers as their pointer value, followed by the object to which the pointer points
+// print pointers as their pointer value, followed by the object to which the pointer points
 template<typename T> std::string debug_rep(T* p)
 {
     std::ostringstream ret;
@@ -49,13 +49,13 @@ template<typename T> std::string debug_rep(T* p)
     return ret.str();
 }
 
-//! non-template version
+// non-template version
 std::string debug_rep(const std::string &s)
 {
     return '"' + s + '"';
 }
 
-//! convert the character pointers to string and call the string version of debug_rep
+// convert the character pointers to string and call the string version of debug_rep
 std::string debug_rep(char *p)
 {
     return debug_rep(std::string(p));

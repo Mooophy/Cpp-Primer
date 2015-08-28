@@ -3,7 +3,6 @@
 //  Exercise 9.20
 //
 //  Created by pezy on 12/3/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Write a program to copy elements from a list<int> into two deques.
 //          The even-valued elements should go into one deque and the odd ones into the other.

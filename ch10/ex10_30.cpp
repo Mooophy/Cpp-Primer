@@ -3,7 +3,6 @@
 //  Exercise 10.30
 //
 //  Created by pezy on 12/13/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Use stream iterators, sort, and copy to read a sequence of integers from the standard input,
 //  sort them, and then write them back to the standard output.

@@ -5,30 +5,30 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 16.1:
-//! Define instantiation.
+//
+// Exercise 16.1:
+// Define instantiation.
 //  When the compiler instantiates a template, it creates a new “instance” of
 //  the template using the actual template argument(s) in place of the
 //  corresponding template parameter(s).
-//!
-//! Exercise 16.2:
-//! Write and test your own versions of the compare functions.
-//!
-//! Exercise 16.3:
-//! Call your compare function on two Sales_data objects to see how your compiler
-//! handles errors during instantiation.
+//
+// Exercise 16.2:
+// Write and test your own versions of the compare functions.
+//
+// Exercise 16.3:
+// Call your compare function on two Sales_data objects to see how your compiler
+// handles errors during instantiation.
 //  error: no match for 'operator<' (operand types are 'const Sales_data' and
 //  'const Sales_data')
-//!
-//!
-//!
+//
+//
+//
 
 #include <iostream>
 using std::cout;
 using std::endl;
 
-#include<vector>
+#include <vector>
 using std::vector;
 
 class Sales_data{};
@@ -43,7 +43,7 @@ int compare(const T& lhs, const T& rhs)
 
 int main()
 {
-    //! Test compare function
+    // Test compare function
     cout << compare(1, 0) << endl;
     vector<int> vec1{1, 2, 3}, vec2{4, 5, 6};
     cout << compare(vec1, vec2) << endl;

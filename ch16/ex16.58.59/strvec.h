@@ -15,7 +15,7 @@
 class StrVec
 {
 public:
-    //! Big 3/5.
+    // Big 3/5.
     StrVec():
         element(nullptr), first_free(nullptr), cap(nullptr)
     {}
@@ -31,11 +31,11 @@ public:
     ~StrVec();
 
 
-    //! public members
+    // public members
     void push_back(const std::string &s);
 
-    //! a variadic member template using its argumenst to construct
-    //! an element directly in space managed by the constainer
+    // a variadic member template using its argumenst to construct
+    // an element directly in space managed by the constainer
     template<typename... Args>
     void emplace_back(Args&&...);
 
@@ -45,30 +45,30 @@ public:
     std::string* begin() const      { return element; }
     std::string* end() const        { return first_free; }
 
-    //! preallocate enough memory for specified number of elements
+    // preallocate enough memory for specified number of elements
     void reserve(std::size_t n);
 
-    //! resize as required.
+    // resize as required.
     void resize(std::size_t n);
     void resize(std::size_t n, const std::string& s);
 
 
 private:
 
-    //! data members
+    // data members
     std::string* element;       //  pointer to the first element
     std::string* first_free;    //  pointer to the first free element
     std::string* cap;           //  pointer to one past the end
 
     std::allocator<std::string> alloc;
 
-    //! utilities for Big 3/5
+    // utilities for Big 3/5
     void reallocate();
     void chk_n_alloc()      { if (size() == capacity()) reallocate(); }
     void free();
 
-    //! utilities added
-    //! used in reallocate() reserve() and resize().
+    // utilities added
+    // used in reallocate() reserve() and resize().
     void wy_alloc_n_move(std::size_t n);
 
     std::pair<std::string*, std::string*>
@@ -78,13 +78,13 @@ private:
 
 
 
-//! call the constructors of the type to construct this element
-//! and push it back.
+// call the constructors of the type to construct this element
+// and push it back.
 template<typename... Args>
 inline void
 StrVec::emplace_back(Args&&... args)
 {
-    //! reallocate if necessary
+    // reallocate if necessary
     chk_n_alloc();
     alloc.construct(first_free++, std::forward<Args>(args)...);
 }

@@ -3,7 +3,6 @@
 //  Exercise 9.47
 //
 //  Created by pezy on 12/5/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Write a program that finds each numeric character
 //          and then each alphabetic character in the string "ab2c3d7R4E6".

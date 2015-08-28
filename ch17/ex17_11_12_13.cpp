@@ -5,22 +5,22 @@
 *  @remark     This code is for the exercises from C++ Primer 5th Edition
 *  @note
 ***************************************************************************/
-//!
-//! Exercise 17.11:
-//! Define a data structure that contains an integral object to track responses
-//! to a true/false quiz containing 10 questions. What changes, if any, would
-//! you need to make in your data structure if the quiz had 100 questions?
-//!
-//! Exercise 17.12:
-//! Using the data structure from the previous question, write a function that
-//! takes a question number and a value to indicate a true/false answer and
-//! updates the quiz results accordingly.
-//!
-//! Exercise 17.13:
-//! Write an integral object that contains the correct answers for the
-//! true/false quiz. Use it to generate grades on the quiz for the data
-//! structure from the previous two exercises.
-//!
+//
+// Exercise 17.11:
+// Define a data structure that contains an integral object to track responses
+// to a true/false quiz containing 10 questions. What changes, if any, would
+// you need to make in your data structure if the quiz had 100 questions?
+//
+// Exercise 17.12:
+// Using the data structure from the previous question, write a function that
+// takes a question number and a value to indicate a true/false answer and
+// updates the quiz results accordingly.
+//
+// Exercise 17.13:
+// Write an integral object that contains the correct answers for the
+// true/false quiz. Use it to generate grades on the quiz for the data
+// structure from the previous two exercises.
+//
 
 #ifndef QUIZ
 #define QUIZ

@@ -3,7 +3,6 @@
 //  Exercise 12.28
 //
 //  Created by pezy on 1/1/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Write a program to implement text queries without defining classes to manage the data.
 //  Your program should take a file and interact with a user to query for words in that file.

@@ -7,25 +7,25 @@
 *              to handle regular expression.To compile this program, please
 *			   turn to other compilers such as msvs2013 and clang.
 ***************************************************************************/
-//!
-//! Exercise 17.19
-//! Why is it okay to call m[4].str() without first checking whether m[4] 
-//! was matched?
-//! We expect that the two delimiters in m[4] and m[6] are the same. 
-//! If m[4](or m[6]) is mismatched, m[4].str()(or m[6].str() respectively) 
-//! returns an empty string which can also be compared with the other
-//! delimiter. 
+//
+// Exercise 17.19
+// Why is it okay to call m[4].str() without first checking whether m[4] 
+// was matched?
+// We expect that the two delimiters in m[4] and m[6] are the same. 
+// If m[4](or m[6]) is mismatched, m[4].str()(or m[6].str() respectively) 
+// returns an empty string which can also be compared with the other
+// delimiter. 
 
-//!
-//! Exercise 17.20
-//! Write your own version of the program to validate phone numbers.
+//
+// Exercise 17.20
+// Write your own version of the program to validate phone numbers.
 
 #include <iostream>
 using std::cout;
 using std::cin;
 using std::endl;
 
-#include<string>
+#include <string>
 using std::string;
 
 #include <regex>
@@ -42,15 +42,15 @@ int main()
 	smatch m;
 	string s;
 	bool valid_record;
-	//! read each record from the input file
+	// read each record from the input file
 	while (getline(cin, s))
 	{
 		valid_record = false;
-		//! for each matching phone number
+		// for each matching phone number
 		for (sregex_iterator it(s.begin(), s.end(), r), end_it; it != end_it; ++it)
 		{
 			valid_record = true;
-			//! check whether the number's formatting is valid
+			// check whether the number's formatting is valid
 			if (valid(*it))
 				cout << "valid phone number: " << it->str() << endl;
 			else
@@ -65,13 +65,13 @@ int main()
 
 bool valid(const smatch& m)
 {
-	//! if there is an open parenthesis before the area code
+	// if there is an open parenthesis before the area code
 	if (m[1].matched)
-		//! the area code must be followed by a close parenthesis
-		//! and followed immediately by the rest of the number or a space
+		// the area code must be followed by a close parenthesis
+		// and followed immediately by the rest of the number or a space
 		return m[3].matched && (m[4].matched == 0 || m[4].str() == " ");
 	else
-		//! then there can't be a close after the area code
-		//! the delimiters between the other two components must match
+		// then there can't be a close after the area code
+		// the delimiters between the other two components must match
 		return !m[3].matched && m[4].str() == m[6].str();
 }

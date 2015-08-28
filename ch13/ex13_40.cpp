@@ -3,7 +3,6 @@
 //  Exercise 13.40
 //
 //  Created by pezy on 2/3/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Add a constructor that takes an initializer_list<string> to your StrVec class.
 //

@@ -3,7 +3,6 @@
 //  Exercise 14.2
 //
 //  Created by pezy on 3/9/15.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief implementation of class Sales_data
 //  @See ex14_02.h

@@ -3,7 +3,6 @@
 //  Exercise 11.31
 //
 //  Created by pezy on 12/17/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Write a program that defines a multimap of authors and their works.
 //  Use **find** to find **an element** in the multimap and erase that element.

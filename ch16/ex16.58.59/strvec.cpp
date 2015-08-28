@@ -9,7 +9,7 @@
 #include <memory>
 
 
-//! copy constructor
+// copy constructor
 StrVec::StrVec(const StrVec &s)
 {
     /**
@@ -30,30 +30,30 @@ StrVec::StrVec(const StrVec &s)
  */
 StrVec::StrVec(std::initializer_list<std::string> l)
 {
-    //! allocate memory as large as l.size()
+    // allocate memory as large as l.size()
     std::string * const
             newData = alloc.allocate(l.size());
 
-    //! copy elements from l to the address allocated
+    // copy elements from l to the address allocated
     auto p = newData;
     for(const auto &s : l)
         alloc.construct(p++, s);
 
-    //! build the data structure
+    // build the data structure
     element = newData;
     first_free = cap = element + l.size();
 }
 
 
-//! operator =
+// operator =
 StrVec&
 StrVec::operator =(const StrVec& rhs)
 {
-    //! allocate and copy first to protect against self-assignment
+    // allocate and copy first to protect against self-assignment
     std::pair<std::string*, std::string*>
             newData = alloc_n_copy(rhs.begin(), rhs.end());
 
-    //! destroy and deallocate
+    // destroy and deallocate
     free();
 
     element = newData.first;
@@ -62,7 +62,7 @@ StrVec::operator =(const StrVec& rhs)
     return *this;
 }
 
-//! destructor
+// destructor
 StrVec::~StrVec()
 {
     free();
@@ -85,10 +85,10 @@ void StrVec::push_back(const std::string& s)
  */
 void StrVec::reserve(std::size_t n)
 {
-    //! if the n is too small, just ignore it.
+    // if the n is too small, just ignore it.
     if(n <= capacity())  return;
 
-    //! allocate and move old ones into the new address.
+    // allocate and move old ones into the new address.
     wy_alloc_n_move(n);
 }
 
@@ -105,7 +105,7 @@ void StrVec::reserve(std::size_t n)
 
 void StrVec::resize(std::size_t n)
 {
-    resize(n,std::string());
+    resize(n, std::string());
 }
 
 /**
@@ -123,11 +123,11 @@ void StrVec::resize(std::size_t n, const std::string &s)
 {
     if(n < size())
     {
-        //! destroy the range : [element+n, first_free) using destructor
+        // destroy the range : [element+n, first_free) using destructor
         for(auto p = element + n; p != first_free; /* empty */)
             alloc.destroy(p++);
 
-        //! move frist_free point to the new address element + n
+        // move frist_free point to the new address element + n
         first_free = element + n;
     }
     else if( n > size() )
@@ -143,10 +143,10 @@ void StrVec::resize(std::size_t n, const std::string &s)
  */
 void StrVec::reallocate()
 {
-    //! calculate the new capacity required.
+    // calculate the new capacity required.
     std::size_t newCapacity = size() ? 2 * size() : 1;
 
-    //! allocate and move old ones into the new address.
+    // allocate and move old ones into the new address.
     wy_alloc_n_move(newCapacity);
 }
 
@@ -159,14 +159,14 @@ void StrVec::reallocate()
 std::pair<std::string *, std::string *>
 StrVec::alloc_n_copy(std::string *b, std::string *e)
 {
-    //! calculate the size needed and allocate space accordingly
+    // calculate the size needed and allocate space accordingly
     std::string* data = alloc.allocate(e - b);
 
     return { data, std::uninitialized_copy(b, e, data) };
-    //!            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    //! which copies the range [first,last) into the space of which
-    //! the starting address p_data is pointing to.
-    //! This function returns a pointer pointing to one past the last element.
+    //            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    // which copies the range [first, last) into the space of which
+    // the starting address p_data is pointing to.
+    // This function returns a pointer pointing to one past the last element.
 }
 
 /**
@@ -177,7 +177,7 @@ void StrVec::free()
 
     if(element)     //  if not nullptr
     {
-        //! destory it  in reverse order.
+        // destory it  in reverse order.
         for(auto p = first_free; p != element; /* empty */)
             alloc.destroy(--p);
 
@@ -203,18 +203,14 @@ void StrVec::wy_alloc_n_move(std::size_t n)
     std::string*
             elem    = element;
 
-    //! move the old to newly allocated space.
+    // move the old to newly allocated space.
     for(std::size_t i = 0; i != size(); ++i)
         alloc.construct(dest++, std::move(*elem++));
 
     free();
 
-    //! update data structure
+    // update data structure
     element     =   newData;
     first_free  =   dest;
     cap         =   element + newCapacity;
 }
-
-
-
-

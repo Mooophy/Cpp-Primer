@@ -1,9 +1,7 @@
 /*
  * This file contains code from "C++ Primer, Fifth Edition", by Stanley B.
  * Lippman, Josee Lajoie, and Barbara E. Moo, and is covered under the
- * copyright and warranty notices given in that book:
  * 
- * "Copyright (c) 2013 by Objectwrite, Inc., Josee Lajoie, and Barbara E. Moo."
  * 
  * 
  * "The authors and publisher have taken care in the preparation of this book,
@@ -35,7 +33,7 @@
 
 
 
-//! unchanged from ch14 except for added friend declaration for hash.
+// unchanged from ch14 except for added friend declaration for hash.
 class Sales_data {
 friend std::hash<Sales_data>;
 friend std::ostream &operator<<
@@ -92,8 +90,8 @@ std::ostream &operator<<(std::ostream&, const Sales_data&);
 std::istream &operator>>(std::istream&, Sales_data&);
 
 
-//! specialize std::hash
-//! note : template specialization should be put in the header!
+// specialize std::hash
+// note : template specialization should be put in the header!
 namespace std {
 template<>
 struct hash<Sales_data>

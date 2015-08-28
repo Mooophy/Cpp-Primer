@@ -2,7 +2,6 @@
 =================================================================================
 
 C++ Primer 5th Exercise Answer Source Code
-Copyright (C) 2014-2015 github.com/pezy/Cpp-Primer
 
 StrBlob, StrBlobPtr, ConstStrBlobPtr
 

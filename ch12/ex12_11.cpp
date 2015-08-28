@@ -4,9 +4,9 @@
  *  @date       23  DEC 2013
  *  @remark
  ***************************************************************************/
-//!
-//! Exercise 12.11:
-//! What would happen if we called process as follows?
+//
+// Exercise 12.11:
+// What would happen if we called process as follows?
 //  An error was generated at run time : double free or corruption.
 //  See the comments below.
 

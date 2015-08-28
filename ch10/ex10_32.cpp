@@ -3,7 +3,6 @@
 //  Exercise 10.32
 //
 //  Created by pezy on 12/13/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Rewrite the bookstore problem from 1.6 (p. 24) using a vector to hold the transactions
 //  and various algorithms to do the processing.

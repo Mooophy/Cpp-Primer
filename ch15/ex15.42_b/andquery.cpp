@@ -1,20 +1,20 @@
-#include"andquery.h"
+#include "andquery.h"
 
-#include<algorithm>
+#include <algorithm>
 using std::set_intersection;
 
-#include<iterator>
+#include <iterator>
 using std::inserter;
 
-#include<memory>
+#include <memory>
 using std::make_shared;
 
-#include<set>
+#include <set>
 using std::set;
 
-#include"queryresult.h"
-#include"textquery.h"
-#include"query.h"
+#include "queryresult.h"
+#include "textquery.h"
+#include "query.h"
 
 QueryResult
 AndQuery::eval(const TextQuery& text) const

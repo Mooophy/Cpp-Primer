@@ -74,7 +74,7 @@ bool b() {
 }
 ```
 
-The p will convert to a bool ,which means that the dynamic memory allocated has no chance to be freed. As a result, memory leakage will occur.
+The p will convert to a bool , which means that the dynamic memory allocated has no chance to be freed. As a result, memory leakage will occur.
 
 ## Exercise 12.9:
 >Explain what happens in the following code:
@@ -91,7 +91,7 @@ Memory leakage happens. Because after `r = q` was executed, no pointer points to
 
 - to `q2` and `r2`:
 
-It's safe. Because after 'r2 = q2', the reference count belongs to r2 reduce to 0 and the reference count belongs to q2 increase to 2,then the memory allocated by r2 will be released automatically.
+It's safe. Because after 'r2 = q2', the reference count belongs to r2 reduce to 0 and the reference count belongs to q2 increase to 2, then the memory allocated by r2 will be released automatically.
 
 ## [Exercise 12.10](ex12_10.cpp)
 ## [Exercise 12.11](ex12_11.cpp)
@@ -151,7 +151,7 @@ I prefer the `do while`, cause the process according with our logic.
 ## Exercise 12.31:
 >What difference(s) would it make if we used a vector instead of a set to hold the line numbers? Which approach is better? Why?
 
-The `vector` can not ensure no duplicates. Hence, in terms of this programme `set` is a better option.
+The `vector` can not ensure no duplicates. Hence, in terms of this program,  `set` is a better option.
 
-## Exercise 12.32 [Header](ex12_32.h)|[Implementation](ex12_32.cpp)
-## Exercise 12.33 [Header](ex12_33.h)|[Implementation](ex12_33.cpp)
+## Exercise 12.32 [Header](ex12_32.h)|[Implementation](ex12_32.cpp)|[Test](ex12_32_TEST.cpp)
+## Exercise 12.33 [Header](ex12_33.h)|[Implementation](ex12_33.cpp)|[Test](ex12_33_TEST.cpp)

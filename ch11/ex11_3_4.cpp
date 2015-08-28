@@ -1,13 +1,13 @@
-//! @Alan
-//!
-//! Exercise 11.3:
-//! Write your own version of the word-counting program.
-//!
-//! Exercise 11.4:
-//! Extend your program to ignore case and punctuation.
-//! For example, “example.” “example,” and “Example” should
-//! all increment the same counter.
-//!
+// @Alan
+//
+// Exercise 11.3:
+// Write your own version of the word-counting program.
+//
+// Exercise 11.4:
+// Extend your program to ignore case and punctuation.
+// For example, “example.” “example, ” and “Example” should
+// all increment the same counter.
+//
 
 #include <iostream>
 #include <map>
@@ -15,7 +15,7 @@
 #include <algorithm>
 #include <cctype>
 
-//! Exercise 11.4
+// Exercise 11.4
 void word_count_pro(std::map<std::string, int> &m)
 {
     std::string word;
@@ -23,9 +23,9 @@ void word_count_pro(std::map<std::string, int> &m)
     {
         for(auto& ch : word)
             ch = tolower(ch);
-        //! According to the erase-remove idiom.
-        //! For more information about the erase-remove idiom, please refer to
-        //! http://en.wikipedia.org/wiki/Erase-remove_idiom
+        // According to the erase-remove idiom.
+        // For more information about the erase-remove idiom, please refer to
+        // http://en.wikipedia.org/wiki/Erase-remove_idiom
         word.erase(std::remove_if(word.begin(), word.end(), ispunct), word.end());
         ++m[word];
     }
@@ -33,7 +33,7 @@ void word_count_pro(std::map<std::string, int> &m)
         std::cout << e.first << " : " << e.second <<"\n";
 }
 
-//! Exercise 11.3
+// Exercise 11.3
 void ex11_3()
 {
     std::map<std::string, std::size_t> word_count;

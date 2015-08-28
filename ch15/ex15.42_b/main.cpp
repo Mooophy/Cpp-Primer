@@ -1,7 +1,7 @@
 #include <iostream>
 using std::cout; using std::cin; using std::endl;
 
-#include<fstream>
+#include <fstream>
 using std::ifstream;
 
 #include <string>
@@ -10,13 +10,13 @@ using std::string;
 #include <vector>
 using std::vector;
 
-#include"queryhistory.h"
-#include"queryresult.h"
-#include"textquery.h"
-#include"query.h"
-#include"andquery.h"
-#include"orquery.h"
-#include"notquery.h"
+#include "queryhistory.h"
+#include "queryresult.h"
+#include "textquery.h"
+#include "query.h"
+#include "andquery.h"
+#include "orquery.h"
+#include "notquery.h"
 
 int main()
 {
@@ -36,4 +36,3 @@ int main()
 	
     return 0;
 }
-

@@ -3,7 +3,6 @@
 //  Exercise 13.28
 //
 //  Created by pezy on 1/20/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Given the following classes, implement a default constructor and the necessary copy-control members.
 

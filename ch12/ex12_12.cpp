@@ -4,13 +4,13 @@
  *  @date       23  DEC 2013
  *  @remark
  ***************************************************************************/
-//!
-//! Exercise 12.12:
-//! Using the declarations of p and sp explain each of the following calls to
-//! process. If the call is legal, explain what it does. If the call is illegal,
-//! explain why:
+//
+// Exercise 12.12:
+// Using the declarations of p and sp explain each of the following calls to
+// process. If the call is legal, explain what it does. If the call is illegal,
+// explain why:
 //  See comments below.
-//!
+//
 
 
 #include <iostream>

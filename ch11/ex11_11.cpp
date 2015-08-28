@@ -3,7 +3,6 @@
 //  Exercise 11.11
 //
 //  Created by pezy on 12/15/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Redefine bookstore without using decltype.
 

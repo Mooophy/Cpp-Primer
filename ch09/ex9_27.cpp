@@ -3,7 +3,6 @@
 //  Exercise 9.27
 //
 //  Created by pezy on 12/3/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Write a program to find and remove the odd-valued
 //          elements in a forward_list<int>.

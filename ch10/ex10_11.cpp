@@ -1,9 +1,9 @@
-//! @Alan
-//! Exercise 10.11:
-//! Write a program that uses stable_sort and isShorter to sort a vector passed
-//! to your version of elimDups.
-//! Print the vector to verify that your program is correct.
-//!
+// @Alan
+// Exercise 10.11:
+// Write a program that uses stable_sort and isShorter to sort a vector passed
+// to your version of elimDups.
+// Print the vector to verify that your program is correct.
+//
 
 #include <iostream>
 #include <string>
@@ -12,7 +12,7 @@
 #include <numeric>
 #include <list>
 
-//! print a container like vector,deque, list,etc.
+// print a container like vector, deque, list, etc.
 template<typename Sequence>
 inline std::ostream& println(Sequence const& seq)
 {
@@ -33,7 +33,7 @@ is_shorter(std::string const& lhs, std::string const& rhs)
 void elimdups(std::vector<std::string> &vs)
 {
     std::sort(vs.begin(), vs.end());
-    auto new_end = std::unique(vs.begin(),vs.end());
+    auto new_end = std::unique(vs.begin(), vs.end());
     vs.erase(new_end, vs.end());
 }
 
@@ -50,7 +50,3 @@ int main()
 
     return 0;
 }
-//! output
-//ex10.11 :
-//Hi 1234 alan wang
-

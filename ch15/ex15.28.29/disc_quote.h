@@ -14,21 +14,21 @@ public:
         std::cout << "Disc_quote : constructor taking 4 parameters.\n";
     }
 
-    //! copy constructor
+    // copy constructor
     Disc_quote(const Disc_quote& dq) :
         Quote(dq), quantity(dq.quantity), discount(dq.discount)
     {
         std::cout << "Disc_quote : copy constructor.\n";
     }
 
-    //! move constructor
+    // move constructor
     Disc_quote(Disc_quote&& dq) noexcept :
         Quote(std::move(dq)), quantity(std::move(dq.quantity)), discount(std::move(dq.discount))
     {
         std::cout << "Disc_quote : move constructor.\n";
     }
 
-    //! copy =()
+    // copy =()
     Disc_quote& operator =(const Disc_quote& rhs)
     {
         Quote::operator =(rhs);
@@ -40,7 +40,7 @@ public:
         return *this;
     }
 
-    //! move =()
+    // move =()
     Disc_quote& operator =(Disc_quote&& rhs) noexcept
     {
         if (*this != rhs)

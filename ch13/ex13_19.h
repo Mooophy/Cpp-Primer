@@ -3,7 +3,6 @@
 //  Exercise 13.19
 //
 //  Created by pezy on 1/15/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Does your Employee class need to define its own versions of the copy-control members?
 //  If so, why? If not, why not?

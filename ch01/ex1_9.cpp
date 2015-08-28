@@ -10,4 +10,3 @@ int main()
 
     return 0;
 }
-// output: sum is: 3825

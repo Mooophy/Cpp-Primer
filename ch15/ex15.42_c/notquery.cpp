@@ -1,14 +1,14 @@
-#include"notquery.h"
+#include "notquery.h"
 
-#include<memory>
+#include <memory>
 using std::make_shared;
 
-#include<set>
+#include <set>
 using std::set;
 
-#include"queryresult.h"
-#include"textquery.h"
-#include"query.h"
+#include "queryresult.h"
+#include "textquery.h"
+#include "query.h"
 
 
 QueryResult

@@ -3,7 +3,6 @@
 //  Exercise 9.32 
 //
 //  Created by pezy on 12/3/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Assuming vi is a container of ints that includes even and odd values, 
 //          predict the behavior of the following loop. 
@@ -41,4 +40,3 @@ int main()
 
 	return 0;
 }
-

@@ -1,6 +1,6 @@
-#include"queryhistory.h"
+#include "queryhistory.h"
 
-#include<memory>
+#include <memory>
 using std::shared_ptr; using std::make_shared;
 
 size_t QueryHistory::add_query(const Query &query)

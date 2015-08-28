@@ -3,7 +3,7 @@
 //  Exercise 13.17
 //
 //  Created by pezy on 1/15/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
+//  Refactoed by acgtyrant Aug 2015
 //
 //  Write versions of numbered and f corresponding to the previous three exercises
 //  and check whether you correctly predicted the output.
@@ -15,16 +15,18 @@
 class numbered {
 public:
     numbered() {
-        static int unique = 10;
         mysn = unique++;
     }
 
     numbered(const numbered& n) {
-        mysn = n.mysn + 1;
+        mysn = unique++;
     }
 
     int mysn;
+    static int unique;
 };
+
+int numbered::unique = 10;
 
 void f(const numbered& s) {
     std::cout << s.mysn << std::endl;
@@ -37,8 +39,3 @@ int main()
     f(b);
     f(c);
 }
-
-// output
-// 10
-// 11
-// 12

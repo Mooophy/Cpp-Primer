@@ -5,16 +5,16 @@
  *  @remark     using class StrBlob
  ***************************************************************************/
 
-//!
-//! Exercise 12.33:
-//! In Chapter 15 we’ll extend our query system and will need some additional
-//! members in the QueryResult class.
-//!
-//! Add members named begin and end that
-//! return iterators into the set of line numbers returned by a given query,
-//! and a member named get_file that returns a shared_ptr to the file in the
-//! QueryResult object.
-//!
+//
+// Exercise 12.33:
+// In Chapter 15 we’ll extend our query system and will need some additional
+// members in the QueryResult class.
+//
+// Add members named begin and end that
+// return iterators into the set of line numbers returned by a given query,
+// and a member named get_file that returns a shared_ptr to the file in the
+// QueryResult object.
+//
 
 #ifndef QUERYRESULT_H
 #define QUERYRESULT_H
@@ -34,14 +34,14 @@ class QueryResult
     friend std::ostream& print(std::ostream&, const QueryResult&);
 
 public:
-    //! constructor
+    // constructor
     QueryResult(std::string s,
                 std::shared_ptr<std::set<TextQuery::line_no>> sp_l,
                 StrBlob f) :
         sought(s), sp_lines(sp_l), file(f) { }
 
-    //! added for ex12.33
-    //! ? Think about wether the "const"s here are expected.
+    // added for ex12.33
+    // ? Think about wether the "const"s here are expected.
     const StrBlob& get_file() const{ return file; }
 
     std::set<TextQuery::line_no>::iterator
@@ -53,7 +53,7 @@ public:
 
 
 private:
-    //! three data members
+    // three data members
     std::string sought;
     std::shared_ptr<std::set<TextQuery::line_no>> sp_lines;
     StrBlob file;

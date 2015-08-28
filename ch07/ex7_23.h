@@ -3,7 +3,6 @@
 //  Exercise 7.23
 //
 //  Created by pezy on 11/14/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 
 #ifndef CP5_ex7_23_h
@@ -16,7 +15,7 @@ class Screen {
         using pos = std::string::size_type;
 
         Screen() = default;
-        Screen(pos ht, pos wd, char c):height(ht),width(wd),contents(ht*wd, c){}
+        Screen(pos ht, pos wd, char c):height(ht), width(wd), contents(ht*wd, c){}
 
         char get() const { return contents[cursor]; }
         char get(pos r, pos c) const { return contents[r*width+c]; }

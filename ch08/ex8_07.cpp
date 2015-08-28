@@ -3,7 +3,6 @@
 //  Exercise 8.7
 //
 //  Created by pezy on 11/28/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Revise the bookstore program from the previous section to write its output to a file.
 //          Pass the name of that file as a second argument to main.

@@ -3,7 +3,6 @@
 //  Exercise 8.4
 //
 //  Created by pezy on 11/9/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Write a function to open a file for input and read its contents into a vector of strings, 
 //          storing each line as a separate element in the vector. 
@@ -34,4 +33,3 @@ int main()
         cout << str << endl;
     return 0;
 }
-

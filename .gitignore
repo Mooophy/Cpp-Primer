@@ -29,3 +29,9 @@
 *.exe
 *.out
 *.app
+
+# ctags
+*tags*
+
+# vim
+*.swp

@@ -3,7 +3,6 @@
 //  Exercise 9.31 
 //
 //  Created by pezy on 12/3/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  The program on page 354 to remove even-valued elements and 
 //          duplicate odd ones will not work on a list or forward_list. Why? 

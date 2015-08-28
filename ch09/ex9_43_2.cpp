@@ -3,7 +3,6 @@
 //  Exercise 9.43
 //
 //  Created by pezy on 4/17/2015.
-//  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  @Brief  Write a function that takes three strings, s, oldVal, and newVal.
 //          Using iterators, and the insert and erase functions replace

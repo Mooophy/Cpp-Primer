@@ -5,12 +5,12 @@
  *  @remark
  ***************************************************************************/
 
-//!
-//! Exercise 12.27:
-//! The TextQuery and QueryResult classes use only capabilities that we have
-//! already covered. Without looking ahead, write your own versions of these
-//! classes.
-//!
+//
+// Exercise 12.27:
+// The TextQuery and QueryResult classes use only capabilities that we have
+// already covered. Without looking ahead, write your own versions of these
+// classes.
+//
 
 
 #ifndef WY_QUERYRESULT_H
@@ -20,10 +20,10 @@
 class wy_queryResult
 {
 public:
-    //! default constructor
+    // default constructor
     wy_queryResult() = default;
 
-    //! copy constructor
+    // copy constructor
     wy_queryResult(const wy_queryResult &qr);
 
     wy_queryResult(std::size_t c, const std::string &str,
@@ -44,20 +44,20 @@ public:
 
 private:
 
-    //! number of occurrence
+    // number of occurrence
     std::size_t counter = 0;
 
-    //! the word being searched
+    // the word being searched
     std::string queryWord = "";
 
-    //! smart pointer to a vector to be storing a file.
+    // smart pointer to a vector to be storing a file.
     wy_textQuery::sp_file_Tp sp_file = nullptr;
 
-    //! smart pointer to a map to be storing results of querries.
+    // smart pointer to a map to be storing results of querries.
     wy_textQuery::sp_Qmap_Tp sp_Qmap = nullptr;
 };
 
-//! print the result of searching
+// print the result of searching
 void print(std::ostream &os, const wy_queryResult &qr);
 
 #endif // WY_QUERYRESULT_H

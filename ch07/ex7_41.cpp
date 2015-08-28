@@ -3,7 +3,6 @@
 //  Exercise 7.41
 //
 //  Created by pezy on 11/20/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief implementation of class Sales_data
 //  @See ex7_41.h

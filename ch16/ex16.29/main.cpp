@@ -5,11 +5,11 @@
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
-//!
-//! Exercise 16.29:
-//! Revise your Blob class to use your version of shared_ptr rather than the
-//! library version.
-//!
+//
+// Exercise 16.29:
+// Revise your Blob class to use your version of shared_ptr rather than the
+// library version.
+//
 
 
 #include <iostream>
@@ -30,4 +30,3 @@ int main()
     b[0] = "zzzz";
     std::cout << b[0] << "\n";
 }
-

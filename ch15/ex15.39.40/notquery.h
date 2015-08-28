@@ -18,7 +18,7 @@ class NotQuery : public Query_base
         std::cout << "NotQuery::NotQuery()\n";
     }
 
-    //! virtuals:
+    // virtuals:
     std::string rep() const override
     {
         std::cout << "NotQuery::rep()\n";
@@ -33,10 +33,10 @@ class NotQuery : public Query_base
 inline Query operator~(const Query& operand)
 {
     return std::shared_ptr<Query_base>(new NotQuery(operand));
-    //!    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    //! note : There is an imlplicit conversion here.
-    //!        The Query constructor that takes shared_ptr is not
-    //!        "explicit", thus the compiler allows this conversion.
+    //    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    // note : There is an imlplicit conversion here.
+    //        The Query constructor that takes shared_ptr is not
+    //        "explicit", thus the compiler allows this conversion.
 }
 
 #endif // NOTQUERY_H

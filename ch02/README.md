@@ -43,7 +43,7 @@ use `double`, or also `float`.
 
 The rate most like that: 4.50 % per year.
 The principal most like that: $854.36
-The payment most like that: $1,142.36
+The payment most like that: $1, 142.36
 
 Reference:
 

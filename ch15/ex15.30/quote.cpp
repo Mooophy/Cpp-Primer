@@ -7,8 +7,8 @@ void Quote::debug() const
               << "price= " <<this->price<< " \n";
 }
 
-//! non-member
-double print_total(std::ostream &os,const Quote &item, size_t n)
+// non-member
+double print_total(std::ostream &os, const Quote &item, size_t n)
 {
     // depending on the type of the object bound to the item parameter
     // calls either Quote::net_price or Bulk_quote::net_price

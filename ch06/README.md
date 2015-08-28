@@ -170,15 +170,15 @@ casue `c` maybe a temp varable. such as `find_char(s, 'a', occurs)`
 bool is_empty(const string& s) { return s.empty(); }
 ```
 
-Since this function doesn't change the argument,"const" shoud be added
-before string&s,otherwise this function is misleading and can't be used
+Since this function doesn't change the argument, "const" shoud be added
+before string&s, otherwise this function is misleading and can't be used
 with const string or in a const function.
 
 ## [Exercise 6.17](ex6_17.cpp)
 
 Not the same.
 For the first one "const" was used, since no change need to do for the argument.
-For the second function,"const" can't be used,because the content of the agument
+For the second function, "const" can't be used, because the content of the agument
 should be changed.
 
 ## Exercise 6.18
@@ -253,7 +253,7 @@ legal, it gave the values (0 ~ 9) to array `ia`.
 
 When the recursion termination condition becomes `var != 0`, two situations can happen :
 * case 1 : If the argument is positive, recursion stops at 0.(Note : There is one extra multiplication step though as the combined expression for factorial(5) reads 5 * 4 * 3 * 2 * 1 * 1. In terms of programming languages learning, such subtle difference probably looks quite trivial. In algorithms analysis and proof, however, this extra step may be super important.)
-* case 2 : if the argument is negative, recursion would never stop. As a result,a stack overflow would occur.
+* case 2 : if the argument is negative, recursion would never stop. As a result, a stack overflow would occur.
 
 ## Exercise 6.35
 

@@ -3,7 +3,6 @@
 //  Exercise 10.28
 //
 //  Created by pezy on 12/13/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Copy a vector that holds the values from 1 to 9 inclusive, into three other containers.
 //  Use an inserter, a back_inserter, and a front_inserter, respectivly to add elements to these containers.
@@ -28,7 +27,7 @@ void print(Sequence const& seq)
 
 int main()
 {
-    std::vector<int> vec{1,2,3,4,5,6,7,8,9};
+    std::vector<int> vec{1, 2, 3, 4, 5, 6, 7, 8, 9};
     
     // uses inserter
     list<int> lst1;

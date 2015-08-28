@@ -1,11 +1,11 @@
-//! @Yue Wang @pezy
-//!
-//! Exercise 9.14:
-//! Write a program to assign the elements from a list of char* pointers
-//! to C-style character strings
-//!
-//! @Notice C-style character strings should use const char*, otherwise warning.
-//!
+// @Yue Wang @pezy
+//
+// Exercise 9.14:
+// Write a program to assign the elements from a list of char* pointers
+// to C-style character strings
+//
+// @Notice C-style character strings should use const char*, otherwise warning.
+//
 
 #include <iostream>
 #include <string>

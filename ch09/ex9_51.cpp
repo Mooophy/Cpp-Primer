@@ -1,11 +1,11 @@
-//! @Soyn
-//!
-//! Exercise 9.51:
-//! Write a class that has three unsigned members representing year,
-//! month, and day. Write a constructor that takes a string representing
-//! a date. Your constructor should handle a variety of date formats,
-//! such as January 1, 1900, 1/1/1900, Jan 1, 1900, and so on.
-//!
+// @Soyn
+//
+// Exercise 9.51:
+// Write a class that has three unsigned members representing year,
+// month, and day. Write a constructor that takes a string representing
+// a date. Your constructor should handle a variety of date formats,
+// such as January 1, 1900, 1/1/1900, Jan 1, 1900, and so on.
+//
 
 #include <iostream>
 #include <string>
@@ -25,17 +25,17 @@ public:
         unsigned format;
         format = tag = 0;
 
-        //! 1/1/1900
+        // 1/1/1900
         if(s.find_first_of("/")!= string :: npos)
         {
             format = 0x01;
         }
 
-        //! January 1,1900 or Jan 1, 1900
+        // January 1, 1900 or Jan 1, 1900
         if((s.find_first_of(',') >= 4) && s.find_first_of(',')!= string :: npos){
             format = 0x10;
         }
-        else{ //! Jan 1 1900
+        else{ // Jan 1 1900
             if(s.find_first_of(' ') >= 3
                 && s.find_first_of(' ')!= string :: npos){
                 format = 0x10;
@@ -46,7 +46,7 @@ public:
         switch(format){
 
         case 0x01:
-            day = stoi(s.substr(0,s.find_first_of("/")));
+            day = stoi(s.substr(0, s.find_first_of("/")));
             month = stoi(s.substr(s.find_first_of("/") + 1, s.find_last_of("/")- s.find_first_of("/")));
             year = stoi(s.substr(s.find_last_of("/") + 1, 4));
 
@@ -87,4 +87,3 @@ int main()
     d.print();
     return 0;
 }
-

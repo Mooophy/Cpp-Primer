@@ -3,7 +3,6 @@
 //  Exercise 7.2
 //
 //  Created by pezy on 14/11/8.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 
 #ifndef CP5_ex7_02_h

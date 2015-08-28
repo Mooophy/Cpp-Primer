@@ -8,7 +8,7 @@ class Limit_quote : public Quote
 public:
     Limit_quote();
     Limit_quote(const std::string& b, double p, std::size_t max, double disc):
-        Quote(b,p), max_qty(max), discount(disc)    {   }
+        Quote(b, p), max_qty(max), discount(disc)    {   }
 
     double net_price(std::size_t n) const override
     { return n * price * (n < max_qty ? 1 - discount : 1 ); }

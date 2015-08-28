@@ -3,7 +3,6 @@
 //  Exercise 9.16
 //
 //  Created by pezy on 12/2/14.
-//  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Repeat the previous program, but compare elements in a
 //          list<int> to a vector<int>.

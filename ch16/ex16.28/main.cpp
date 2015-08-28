@@ -6,9 +6,9 @@
 *  @remark     This code is for the exercises from C++ Primer 5th Edition
 *  @note
 ***************************************************************************/
-//!
-//! Exercise 16.28 Write your own versions of shared_ptr and unique_ptr
-//!
+//
+// Exercise 16.28 Write your own versions of shared_ptr and unique_ptr
+//
 
 #include <iostream>
 #include <string>

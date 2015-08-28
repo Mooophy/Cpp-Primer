@@ -15,10 +15,10 @@ protected:
     virtual ~Query_base() = default;
 
 private:
-    //! returns QueryResult that matches this query
+    // returns QueryResult that matches this query
     virtual QueryResult eval(const TextQuery&) const = 0;
 
-    //! a string representation of this query
+    // a string representation of this query
     virtual std::string rep() const = 0;
 };
 

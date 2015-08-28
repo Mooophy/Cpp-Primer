@@ -1,1 +1,1 @@
-#include"wordquery.h"
+#include "wordquery.h"

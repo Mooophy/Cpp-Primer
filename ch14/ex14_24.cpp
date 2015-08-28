@@ -1,11 +1,11 @@
 #include "ex14_24.h"
 #include <algorithm>
 
-//! constructor taking Size as days
-//! the argument must be within (0, 2^32)
+// constructor taking Size as days
+// the argument must be within (0, 2^32)
 Date::Date(Size days)
 {
-    //! calculate the year
+    // calculate the year
     Size y400 =  days/YtoD_400;
     Size y100 = (days - y400*YtoD_400)/YtoD_100;
     Size y4   = (days - y400*YtoD_400 - y100*YtoD_100)/YtoD_4;
@@ -13,14 +13,14 @@ Date::Date(Size days)
     Size d    =  days - y400*YtoD_400 - y100*YtoD_100 - y4*YtoD_4 - y*365;
     this->year = y400*400 + y100*100 + y4*4 + y;
 
-    //! check if leap and choose the months vector accordingly
+    // check if leap and choose the months vector accordingly
     std::vector<Size>currYear
             = isLeapYear(this->year) ? monthsVec_l : monthsVec_n;
 
-    //! calculate day and month using find_if + lambda
+    // calculate day and month using find_if + lambda
     Size D_accumu = 0, M_accumu = 0;
-    //! @bug    fixed:  the variabbles above hade been declared inside the find_if as static
-    //!                 which caused the bug. It works fine now after being move outside.
+    // @bug    fixed:  the variabbles above hade been declared inside the find_if as static
+    //                 which caused the bug. It works fine now after being move outside.
 
     std::find_if(currYear.cbegin(), currYear.cend(), [&](Size m){
 
@@ -39,7 +39,7 @@ Date::Date(Size days)
     });
 }
 
-//! construcotr taking iostream
+// construcotr taking iostream
 Date::Date(std::istream &is, std::ostream &os)
 {
     is >> day >> month >> year;
@@ -61,17 +61,17 @@ Date::Date(std::istream &is, std::ostream &os)
 
 }
 
-//! copy constructor
+// copy constructor
 Date::Date(const Date &d) :
     day(d.day), month(d.month), year(d.year)
 {}
 
-//! move constructor
+// move constructor
 Date::Date(Date&& d) NOEXCEPT :
     day(d.day), month(d.month), year(d.year)
 { std::cout << "copy moving";}
 
-//! copy operator=
+// copy operator=
 Date &Date::operator= (const Date &d)
 {
     this->day   = d.day;
@@ -81,7 +81,7 @@ Date &Date::operator= (const Date &d)
     return *this;
 }
 
-//! move operator=
+// move operator=
 Date &Date::operator =(Date&& rhs) NOEXCEPT
 {
     if(this != &rhs)
@@ -95,20 +95,20 @@ Date &Date::operator =(Date&& rhs) NOEXCEPT
     return *this;
 }
 
-//! conver to days
+// conver to days
 Date::Size Date::toDays() const
 {
     Size result = this->day;
 
-    //! check if leap and choose the months vector accordingly
+    // check if leap and choose the months vector accordingly
     std::vector<Size>currYear
             = isLeapYear(this->year) ? monthsVec_l : monthsVec_n;
 
-    //! calculate result + days by months
+    // calculate result + days by months
     for(auto it = currYear.cbegin(); it != currYear.cbegin() + this->month -1; ++it)
         result += *it;
 
-    //! calculate result + days by years
+    // calculate result + days by years
     result += (this->year/400)      * YtoD_400;
     result += (this->year%400/100)  * YtoD_100;
     result += (this->year%100/4)    * YtoD_4;
@@ -117,7 +117,7 @@ Date::Size Date::toDays() const
     return result;
 }
 
-//! member operators:   +=  -=
+// member operators:   +=  -=
 
 Date &Date::operator +=(Date::Size offset)
 {
@@ -135,7 +135,7 @@ Date &Date::operator -=(Date::Size offset)
     return *this;
 }
 
-//! non-member operators:  <<  >>  -   ==  !=  <   <=  >   >=
+// non-member operators:  <<  >>  -   ==  !=  <   <=  >   >=
 
 std::ostream&
 operator <<(std::ostream& os, const Date& d)
@@ -201,8 +201,8 @@ bool operator >=(const Date &lhs, const Date &rhs)
 
 
 Date operator - (const Date &lhs, Date::Size rhs)
-{                                       //!  ^^^ rhs must not be larger than 2^32-1
-    //! copy lhs
+{                                       //  ^^^ rhs must not be larger than 2^32-1
+    // copy lhs
     Date result(lhs);
     result -= rhs;
 
@@ -211,8 +211,8 @@ Date operator - (const Date &lhs, Date::Size rhs)
 
 
 Date operator + (const Date &lhs, Date::Size rhs)
-{                                       //!  ^^^ rhs must not be larger than 2^32-1
-    //! copy lhs
+{                                       //  ^^^ rhs must not be larger than 2^32-1
+    // copy lhs
     Date result(lhs);
     result += rhs;
 
