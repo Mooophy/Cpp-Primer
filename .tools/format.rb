@@ -13,7 +13,6 @@ handlers = extensions.collect{ |e| DirHandler.new dir, e }
 handlers.each do |h|
   h.on_each_line do |line| 
     begin
-#      line.gsub! /,(\S)/, ', \1' if !line.include? '"' and !line.include? '\''
       line.gsub! /,(\S)/, ', \1' unless line.match /.*\".*,.*\".*/ or line.match /','/
    rescue Exception => e
       puts e.message + ", ignored."
