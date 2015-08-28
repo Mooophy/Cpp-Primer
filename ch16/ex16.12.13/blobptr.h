@@ -56,7 +56,7 @@ template<typename T>
 BlobPtr<T>& BlobPtr<T>::operator ++()
 {
     // if curr already points past the end of the container, can't increment it
-    check(curr,"increment past end of StrBlob");
+    check(curr, "increment past end of StrBlob");
     ++curr;
     return *this;
 }
@@ -66,7 +66,7 @@ template<typename T>
 BlobPtr<T>& BlobPtr<T>::operator --()
 {
     -- curr;
-    check(curr,"decrement past begin of BlobPtr");
+    check(curr, "decrement past begin of BlobPtr");
 
     return *this;
 }

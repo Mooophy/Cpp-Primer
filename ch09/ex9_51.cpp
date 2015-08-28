@@ -46,7 +46,7 @@ public:
         switch(format){
 
         case 0x01:
-            day = stoi(s.substr(0,s.find_first_of("/")));
+            day = stoi(s.substr(0, s.find_first_of("/")));
             month = stoi(s.substr(s.find_first_of("/") + 1, s.find_last_of("/")- s.find_first_of("/")));
             year = stoi(s.substr(s.find_last_of("/") + 1, 4));
 

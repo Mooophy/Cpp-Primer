@@ -22,7 +22,7 @@
 // Recalling the discussion from §8.1 (p. 311), explain how the program on
 // page 317 that passed an ifstream to the Sales_data read function works.
 //  the function takes a std::istream from which std::ifstream is derived.
-//  Hence the ifstream object "is a" istream ,which is why it works.
+//  Hence the ifstream object "is a" istream , which is why it works.
 //
 
 #include <iostream>

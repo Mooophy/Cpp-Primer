@@ -63,7 +63,7 @@ Fixed:
 while(iter1 != iter2)
 ```
 #### note:
-operator `<` can be used in `list`,but can't be applied to iterator for `list`.
+operator `<` can be used in `list`, but can't be applied to iterator for `list`.
 ## Exercise 9.7:
 >What type should be used as the index into a vector of ints?
 

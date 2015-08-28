@@ -17,7 +17,7 @@
 //  to the number of items already in the vector. The time it takes
 //  to insert an item into a set is proportional to the log of the
 //  number of items. If the number of items is large, that's a huge
-//  difference. Log(100,000) is 17; that's a major speed improvement.
+//  difference. Log(100, 000) is 17; that's a major speed improvement.
 //  The same goes for removal.
 //
 //  http://stackoverflow.com/questions/8686725/what-is-the-difference-between-stdset-and-stdvector

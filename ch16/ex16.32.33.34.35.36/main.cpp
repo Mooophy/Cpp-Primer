@@ -32,7 +32,7 @@
 // If so, what is the type of T? If not, why not?
 //     template <class T> int compare(const T&, const T&);
 //          compare("hi", "world");
-//  It didn't complie, as two types are different, the first type being char[3] ,second char[6]
+//  It didn't complie, as two types are different, the first type being char[3] , second char[6]
 //          compare("bye", "dad");
 //   the type should be pointer to char i.e. char*
 //
@@ -42,9 +42,9 @@
 //      template <typename T> T calc(T, int);
 //      template <typename T> T fcn(T, T);
 //         double d;    float f;    char c;
-//         (a) calc(c, 'c');   -- legal,T is a char
+//         (a) calc(c, 'c');   -- legal, T is a char
 //         (b) calc(d, f);     -- legal, T is a double
-//         (c) fcn(c, 'c');    -- legal,T is a char
+//         (c) fcn(c, 'c');    -- legal, T is a char
 //         (d) fcn(d, f);      -- illegal, arguments d and f are double and float repectively
 //
 // Exercise 16.36:

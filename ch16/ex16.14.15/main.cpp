@@ -23,7 +23,7 @@
 
 int main()
 {
-    Screen<5,5> scr('c');
+    Screen<5, 5> scr('c');
     Screen<5, 5> scr2;
 
     // output src to the screen

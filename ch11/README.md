@@ -110,7 +110,7 @@ error: passing ‘const std::map<std::basic_string<char>, std::basic_string<char
      auto key = m[s];
                    ^
 ```
-Because std::map's operator is not declared as **const**,but m is declared as a  reference to  std::map with **const**.If insert new pair,it will cause error.
+Because std::map's operator is not declared as **const**, but m is declared as a  reference to  std::map with **const**.If insert new pair, it will cause error.
 ## Exercise 11.35:
 >In buildMap, what effect, if any, would there be from rewriting `trans_map[key] = value.substr(1);` as `trans_map.insert({key, value.substr(1)})`?
 

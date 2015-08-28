@@ -8,7 +8,7 @@ class AndQuery : public BinaryQuery
 {
     friend Query operator&(const Query&, const Query&);
     AndQuery(const Query& left, const Query& right):
-        BinaryQuery(left,right, "&")
+        BinaryQuery(left, right, "&")
     {
         std::cout << "AndQuery::AndQuery()\n";
     }

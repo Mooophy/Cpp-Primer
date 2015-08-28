@@ -85,14 +85,14 @@ void Blob<T>::check(size_type i, const std::string &msg) const
 template<typename T>
 T& Blob<T>::back()
 {
-    check(0,"back on empty Blob");
+    check(0, "back on empty Blob");
     return data->back();
 }
 
 template<typename T>
 const T& Blob<T>::back() const
 {
-    check(0,"back on empty Blob");
+    check(0, "back on empty Blob");
     return data->back();
 }
 
@@ -101,7 +101,7 @@ template<typename T>
 T& Blob<T>::operator [](size_type i)
 {
     // if i is too big, check function will throw, preventing access to a nonexistent element
-    check(i,"subscript out of range");
+    check(i, "subscript out of range");
     return (*data)[i];
 }
 
@@ -110,14 +110,14 @@ template<typename T>
 const T& Blob<T>::operator [](size_type i) const
 {
     // if i is too big, check function will throw, preventing access to a nonexistent element
-    check(i,"subscript out of range");
+    check(i, "subscript out of range");
     return (*data)[i];
 }
 
 template<typename T>
 void Blob<T>::pop_back()
 {
-    check(0,"pop_back on empty Blob");
+    check(0, "pop_back on empty Blob");
     data->pop_back();
 }
 

@@ -26,6 +26,6 @@
 
 int main()
 {
-    Bulk_quote bq("sss",20.0,2,0.3);
+    Bulk_quote bq("sss", 20.0, 2, 0.3);
     return 0;
 }

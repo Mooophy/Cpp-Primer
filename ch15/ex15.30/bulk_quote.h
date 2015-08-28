@@ -15,7 +15,7 @@ public:
     //         4. the rest details are in the section section 15.7.4.
     /*
     Bulk_quote(const std::string& b, double p, std::size_t q, double disc) :
-        Disc_quote(b,p,q,disc) { std::cout << "Bulk_quote : constructor taking 4 parameters\n"; }
+        Disc_quote(b, p, q, disc) { std::cout << "Bulk_quote : constructor taking 4 parameters\n"; }
     */
     using Disc_quote::Disc_quote;
 

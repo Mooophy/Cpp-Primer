@@ -16,7 +16,7 @@ public:
     using pos = std::string::size_type;
 
     Screen() = default; // 1
-    Screen(pos ht, pos wd):height(ht),width(wd),contents(ht*wd, ' '){} // 2
+    Screen(pos ht, pos wd):height(ht), width(wd), contents(ht*wd, ' '){} // 2
     Screen(pos ht, pos wd, char c):height(ht), width(wd), contents(ht*wd, c){} // 3
 
     char get() const { return contents[cursor]; }
