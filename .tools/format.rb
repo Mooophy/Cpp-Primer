@@ -25,16 +25,6 @@ class Format
   #{foo} => { foo }
   def for_curly_brackets
     for_pairs '{', '}'
-#    each_line! do |line|
-#      begin 
-#        if line.match /{.*}/ 
-#          line.gsub! /{(\S)/, '{ \1'
-#          line.gsub! /(\S)}/, '\1 }'
-#        end
-#      rescue Exception => e
-#        puts e.message + ", ignored."
-#      end
-#    end
   end
  
   private
