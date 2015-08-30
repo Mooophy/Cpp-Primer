@@ -13,7 +13,7 @@ class Format
 
   # 1,2,3,4  => 1, 2, 3, 4
   def for_commas
-    each_line do |line|   
+    each_line! do |line|   
       begin
         line.gsub! /,(\S)/, ', \1' unless line.match /.*\".*,.*\".*/ or line.match /','/
       rescue Exception => e
@@ -24,22 +24,36 @@ class Format
  
   #{foo} => { foo }
   def for_curly_brackets
-    each_line do |line|
+    for_pairs '{', '}'
+#    each_line! do |line|
+#      begin 
+#        if line.match /{.*}/ 
+#          line.gsub! /{(\S)/, '{ \1'
+#          line.gsub! /(\S)}/, '\1 }'
+#        end
+#      rescue Exception => e
+#        puts e.message + ", ignored."
+#      end
+#    end
+  end
+ 
+  private
+  def each_line!
+    @handlers.each do |h|
+      h.on_each_line! { |line| yield line }
+    end
+  end
+
+  def for_pairs open, close
+    each_line! do |line|
       begin 
-        if line.match /{.*}/ 
-          line.gsub! /{(\S)/, '{ \1'
-          line.gsub! /(\S)}/, '\1 }'
+        if line.match /#{ open + ".*" + close }/ 
+          line.gsub! /#{ open   + "(\S)"}/,   open + ' \1'
+          line.gsub! /#{ "(\S)" + close }/,   '\1 '+ close
         end
       rescue Exception => e
         puts e.message + ", ignored."
       end
-    end
-  end
- 
-  private
-  def each_line
-    @handlers.each do |h|
-      h.on_each_line { |line| yield line }
     end
   end
 end    

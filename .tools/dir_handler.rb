@@ -5,7 +5,7 @@ class DirHandler
     @paths = list_paths_recursively dir, extension
   end
 
-  def on_each_line 
+  def on_each_line!
     @paths.each do |path|
       content = File.readlines path
       content.each { |line| yield line }
