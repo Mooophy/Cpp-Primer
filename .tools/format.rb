@@ -29,7 +29,7 @@ class Format
 
   def for_if_blocks
     each_file! do |file|
-      file.gsub! /\n(\s*)if(.*)(?!\n){(.*)(?=\n)(.*)}/,  "\n" + '\1if\2' + "\n" +'\1{\3' + "\n" + '\4}' 
+      file.gsub! /\n(\s*)if(.*)(?!\n){(\s*)}(\s*)/, "\n" + '\1if\2' + "\n" + '\1{\3}\4' 
     end
   end
  
