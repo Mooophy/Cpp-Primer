@@ -22,15 +22,27 @@ class Format
     end
   end 
  
-  #{foo} => { foo }
+  # {foo} => { foo }
   def for_curly_brackets
     for_pairs '{', '}'
+  end
+
+  def for_if_blocks
+    each_file! do |file|
+      file.gsub /\n(.*)if(.*)(?!\n){(.*)/, "\n" + '\1if\2' + "\n" +'\1{\3' 
+    end
   end
  
   private
   def each_line!
     @handlers.each do |h|
       h.on_each_line! { |line| yield line }
+    end
+  end
+
+  def each_file!
+    @handlers.each do |h|
+      h.on_each_file! { |file| yield file }
     end
   end
 
@@ -51,3 +63,4 @@ end
 format = Format.new ARGV[0], [ "cpp", "h", "hpp", "md" ]
 format.for_commas
 format.for_curly_brackets
+format.for_if_blocks
