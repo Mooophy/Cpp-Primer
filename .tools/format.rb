@@ -11,6 +11,7 @@ class Format
     @handlers = extensions.collect{ |e| DirHandler.new dir, e }
   end
 
+  # 1,2,3,4  => 1, 2, 3, 4
   def for_commas
     each_line do |line|   
       begin
@@ -21,12 +22,11 @@ class Format
     end
   end 
  
+  #{foo} => { foo }
   def for_curly_brackets
-    count = 0
     each_line do |line|
       begin 
         if line.match /{.*}/ 
-          puts (count += 1).to_s; puts line
           line.gsub! /{(\S)/, '{ \1'
           line.gsub! /(\S)}/, '\1 }'
         end
