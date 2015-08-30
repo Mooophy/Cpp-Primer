@@ -15,7 +15,7 @@ class DirHandler
 
   def on_each_file!
     @paths.each do |path|
-      content = File.readlines path
+      content = File.open(path, 'rb').read
       yield content
       write_back path, content 
     end
