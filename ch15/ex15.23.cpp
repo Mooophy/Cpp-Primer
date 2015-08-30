@@ -26,23 +26,23 @@
 class Base
 {
 public:
-    virtual int fcn(){std::cout << "Base::fcn()\n"; return 0;}
+    virtual int fcn(){ std::cout << "Base::fcn()\n"; return 0; }
 };
 
 class D1 : public Base
 {
 public:
-    int fcn() override  {std::cout << "D1::fcn()\n";return 0;}
+    int fcn() override  { std::cout << "D1::fcn()\n";return 0; }
     // ^^^--fixed to override the inherited version
-    virtual void f2() {std::cout << "D1::f2()\n";}
+    virtual void f2() { std::cout << "D1::f2()\n"; }
 };
 
 class D2 : public D1
 {
 public:
     int fcn(int);
-    int fcn() override {std::cout << "D2::fcn()\n";return 0;}
-    void f2() override {std::cout << "D2::f2()\n";}
+    int fcn() override { std::cout << "D2::fcn()\n";return 0; }
+    void f2() override { std::cout << "D2::f2()\n"; }
 };
 
 int main()

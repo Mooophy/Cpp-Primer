@@ -109,7 +109,7 @@ bool read_record(istream& is, vector<PersonInfo>& people)
 
 void format_record(ostream& os, const vector<PersonInfo>& people)
 {
-    string phone = "(\\()?(\\d{3})(\\))?([-. ])?(\\d{3})([-. ]?)(\\d{4})";
+    string phone = "(\\()?(\\d{ 3 })(\\))?([-. ])?(\\d{ 3 })([-. ]?)(\\d{ 4 })";
     regex r(phone);
     smatch m;
 

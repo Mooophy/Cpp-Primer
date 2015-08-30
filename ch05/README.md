@@ -61,8 +61,8 @@ while (iter != s.end()) { /* . . . */ }
 ```cpp
 //corrrected as:
 bool status;
-while ((status = find(word))) {/* ... */}
-if (!status) {/* ... */}
+while ((status = find(word))) { /* ... */ }
+if (!status) { /* ... */ }
 ```  
 
 ##[Exercise 5.5](ex5_5.cpp)

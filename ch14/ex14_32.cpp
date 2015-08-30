@@ -16,7 +16,7 @@ StrBlobPtr_pointer::operator ->()
 
 int main()
 {
-    StrBlob sb{"hello", "world"};
+    StrBlob sb{ "hello", "world" };
     StrBlobPtr iter = sb.begin();
     StrBlobPtr_pointer p(&iter);
     std::cout << p->deref() << std::endl;

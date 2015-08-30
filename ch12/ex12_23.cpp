@@ -21,6 +21,6 @@ int main()
     delete [] concatenate_string;
     
     // std::string
-    std::string str1{"hello "}, str2{"world"};
+    std::string str1{ "hello " }, str2{ "world" };
     std::cout << str1 + str2 << std::endl;
 }

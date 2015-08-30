@@ -6,7 +6,7 @@ class Bulk_quote : public Disc_quote
 {
 
 public:
-    Bulk_quote() {std::cout << "default constructing Bulk_quote\n"; }
+    Bulk_quote() { std::cout << "default constructing Bulk_quote\n"; }
 
     // changed the below to the inherited constructor for ex15.27.
     // rules:  1. only inherit from the direct base class.
@@ -49,8 +49,8 @@ public:
     }
 
     // clone self
-    virtual Bulk_quote* clone() const & {return new Bulk_quote(*this);}
-    virtual Bulk_quote* clone() &&      {return new Bulk_quote(std::move(*this));}
+    virtual Bulk_quote* clone() const & { return new Bulk_quote(*this); }
+    virtual Bulk_quote* clone() &&      { return new Bulk_quote(std::move(*this)); }
 
     double net_price(std::size_t n) const override;
     void  debug() const override;

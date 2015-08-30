@@ -32,7 +32,7 @@
 
 int main()
 {
-    std::vector<std::string> exclude = {"aa","bb","cc"};
+    std::vector<std::string> exclude = { "aa","bb","cc" };
     std::string word;
     while([&]()
     {

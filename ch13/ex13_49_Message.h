@@ -18,10 +18,10 @@ class Message
     friend void swap(Folder &, Folder &);
     friend class Folder;
 public:
-    explicit Message(const std::string &str = "") : contents(str) {}
+    explicit Message(const std::string &str = "") : contents(str) { }
     Message(const Message&);
     Message& operator=(const Message&);
-    Message(Message &&m) NOEXCEPT : contents(std::move(m.contents)), folders(std::move(m.folders)) {}
+    Message(Message &&m) NOEXCEPT : contents(std::move(m.contents)), folders(std::move(m.folders)) { }
     Message& operator=(Message&&)NOEXCEPT;
     ~Message();
 
@@ -50,10 +50,10 @@ class Folder {
     friend void swap(Folder &, Folder &);
     friend class Message;
 public:
-    explicit Folder(const std::string &str = "") :name(str) {}
+    explicit Folder(const std::string &str = "") :name(str) { }
     Folder(const Folder &);
     Folder& operator=(const Folder &);
-    Folder(Folder &&f) NOEXCEPT : name(std::move(f.name)), msgs(std::move(f.msgs)) {}
+    Folder(Folder &&f) NOEXCEPT : name(std::move(f.name)), msgs(std::move(f.msgs)) { }
     Folder& operator=(Folder &&)NOEXCEPT;
     ~Folder();
 

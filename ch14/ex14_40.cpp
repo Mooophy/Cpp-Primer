@@ -30,7 +30,7 @@ public:
 class BiggerEqual {
     size_t sz_;
 public:
-    BiggerEqual(size_t sz) : sz_(sz) {}
+    BiggerEqual(size_t sz) : sz_(sz) { }
     bool operator()(string const& s) { return s.size() >= sz_; }
 };
 
@@ -62,6 +62,6 @@ void biggies( vector<string> &words, vector<string>::size_type sz ) {
 
 int main()
 {
-    vector<string> vec{ "fox", "jumps", "over", "quick", "red", "red", "slow", "the", "turtle"};
+    vector<string> vec{ "fox", "jumps", "over", "quick", "red", "red", "slow", "the", "turtle" };
     biggies(vec, 4);
 }

@@ -33,14 +33,14 @@ namespace cp5
         //  Default Ctor
         //
         SharedPointer()
-            : ptr{ nullptr }, ref_count{ new std::size_t(1) }, deleter{ cp5::Delete{} }
-        {}
+            : ptr{ nullptr }, ref_count{ new std::size_t(1) }, deleter{ cp5::Delete{ } }
+        { }
         //
         //  Ctor that takes raw pointer
         //
         explicit SharedPointer(T* raw_ptr)
-            : ptr{ raw_ptr }, ref_count{ new std::size_t(1) }, deleter{ cp5::Delete{} }
-        {}
+            : ptr{ raw_ptr }, ref_count{ new std::size_t(1) }, deleter{ cp5::Delete{ } }
+        { }
         //
         //  Copy Ctor
         //

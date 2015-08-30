@@ -33,7 +33,7 @@ public:
     StrBlob(std::initializer_list<string> il):data(std::make_shared<vector<string>>(il)) { }
 
     // copy constructor
-    StrBlob(const StrBlob& sb) : data(std::make_shared<vector<string>>(*sb.data)) {}
+    StrBlob(const StrBlob& sb) : data(std::make_shared<vector<string>>(*sb.data)) { }
     // copyassignment operators
     StrBlob& operator=(const StrBlob& sb);
 
@@ -78,7 +78,7 @@ class ConstStrBlobPtr {
 public:
     ConstStrBlobPtr():curr(0) { }
     ConstStrBlobPtr(const StrBlob &a, size_t sz = 0):wptr(a.data), curr(sz) { } // should add const
-    bool operator!=(ConstStrBlobPtr& p) {return p.curr != curr; }
+    bool operator!=(ConstStrBlobPtr& p) { return p.curr != curr; }
     const string& deref() const { // return value should add const
         auto p = check(curr, "dereference past end");
         return (*p)[curr];

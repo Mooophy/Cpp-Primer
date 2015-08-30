@@ -73,7 +73,7 @@ class StrBlobPtr {
 public:
     StrBlobPtr():curr(0) { }
     StrBlobPtr(StrBlob &a, size_t sz = 0):wptr(a.data), curr(sz) { }
-    bool operator!=(const StrBlobPtr& p) {return p.curr != curr; }
+    bool operator!=(const StrBlobPtr& p) { return p.curr != curr; }
     string& deref() const {
         auto p = check(curr, "dereference past end");
         return (*p)[curr];

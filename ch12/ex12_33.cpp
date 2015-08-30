@@ -13,7 +13,7 @@
 
 TextQuery::TextQuery(std::ifstream &ifs)
 {
-    StrBlob::size_type lineNo{0};
+    StrBlob::size_type lineNo{ 0 };
     for (string line; std::getline(ifs, line); ++lineNo) {
         file.push_back(line);
         std::istringstream line_stream(line);

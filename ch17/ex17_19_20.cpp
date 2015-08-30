@@ -37,7 +37,7 @@ bool valid(const smatch& m);
 
 int main()
 {
-	string phone = "(\\()?(\\d{3})(\\))?([-. ])?(\\d{3})([-. ]?)(\\d{4})";
+	string phone = "(\\()?(\\d{ 3 })(\\))?([-. ])?(\\d{ 3 })([-. ]?)(\\d{ 4 })";
 	regex r(phone);
 	smatch m;
 	string s;

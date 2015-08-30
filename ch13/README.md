@@ -31,7 +31,7 @@ long count() {
 }
 
 // test codes in main()
-StrBlob str({"hello", "world"});
+StrBlob str({ "hello", "world" });
 std::cout << "before: " << str.count() << std::endl; // 1
 StrBlob str_cp(str);
 std::cout << "after: " << str.count() << std::endl;  // 2
@@ -349,7 +349,7 @@ see more information at [this question && answer](http://stackoverflow.com/quest
 >What would happen if we defined a `HasPtr` move-assignment operator but did not change the copy-and-swap operator? Write code to test your answer.
 
 ```sh
-error: ambiguous overload for 'operator=' (operand types are 'HasPtr' and 'std::remove_reference<HasPtr&>::type {aka HasPtr}')
+error: ambiguous overload for 'operator=' (operand types are 'HasPtr' and 'std::remove_reference<HasPtr&>::type { aka HasPtr }')
 hp1 = std::move(*pH);
 ^
 ```

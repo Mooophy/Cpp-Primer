@@ -37,7 +37,7 @@ class Quiz
 public:
     //constructors
     Quiz() = default;
-    Quiz(std::string& s) :bitquiz(s){}
+    Quiz(std::string& s) :bitquiz(s){ }
 
     //generate grade
     template<std::size_t M>

@@ -64,12 +64,12 @@ Date::Date(std::istream &is, std::ostream &os)
 // copy constructor
 Date::Date(const Date &d) :
     day(d.day), month(d.month), year(d.year)
-{}
+{ }
 
 // move constructor
 Date::Date(Date&& d) NOEXCEPT :
     day(d.day), month(d.month), year(d.year)
-{ std::cout << "copy moving";}
+{ std::cout << "copy moving"; }
 
 // copy operator=
 Date &Date::operator= (const Date &d)

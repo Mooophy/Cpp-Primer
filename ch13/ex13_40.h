@@ -17,7 +17,7 @@
 class StrVec
 {
 public:
-    StrVec() : elements(nullptr), first_free(nullptr), cap(nullptr) {}
+    StrVec() : elements(nullptr), first_free(nullptr), cap(nullptr) { }
     StrVec(const StrVec&);
     StrVec(std::initializer_list<std::string>);
     StrVec& operator=(const StrVec&);

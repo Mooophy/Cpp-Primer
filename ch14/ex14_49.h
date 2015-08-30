@@ -106,11 +106,11 @@ static const Date::Size YtoD_1   =    365;    //365
 
 // normal year
 static const std::vector<Date::Size> monthsVec_n =
-{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 // leap year
 static const std::vector<Date::Size> monthsVec_l =
-{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+{ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 // non-member operators:  <<  >>  -   ==  !=  <   <=  >   >=
 //

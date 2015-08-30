@@ -74,7 +74,7 @@ private:
 };
 int main()
 {
-    std::vector<std::string> v = {"alan","alan","alan","alan","alan"};
+    std::vector<std::string> v = { "alan","alan","alan","alan","alan" };
 
     Foo foo(v);
 

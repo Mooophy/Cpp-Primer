@@ -6,7 +6,7 @@ class Bulk_quote : public Disc_quote
 {
 
 public:
-    Bulk_quote() {std::cout << "default constructing Bulk_quote\n"; }
+    Bulk_quote() { std::cout << "default constructing Bulk_quote\n"; }
 
     // changed the below to the inherited constructor for ex15.27.
     // rules:  1. only inherit from the direct base class.

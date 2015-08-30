@@ -45,9 +45,9 @@ void exercise(int *b, int *e)
  */
 struct intArray
 {
-    intArray() : p(nullptr) {}
+    intArray() : p(nullptr) { }
     explicit    intArray(std::size_t s):
-        p(new int[s])       {}
+        p(new int[s])       { }
 
 
     ~intArray()

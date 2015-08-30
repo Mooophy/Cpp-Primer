@@ -19,7 +19,7 @@ struct IsInRange
 {
     IsInRange(std::size_t lower, std::size_t upper)
         :_lower(lower), _upper(upper)
-    {}
+    { }
 
     bool operator()(std::string const& str) const
     {

@@ -16,8 +16,8 @@ std::istream &read(std::istream&, Person&);
 
 struct Person {
     Person() = default;
-    Person(const std::string sname, const std::string saddr):name(sname), address(saddr){}
-    Person(std::istream &is){read(is, *this);}
+    Person(const std::string sname, const std::string saddr):name(sname), address(saddr){ }
+    Person(std::istream &is){ read(is, *this); }
     
     std::string getName() const { return name; }
     std::string getAddress() const { return address; }

@@ -15,7 +15,7 @@ int main()
 {
     // need to tell the size.
     std::cout << "How long do you want the string? ";
-    int size{0};
+    int size{ 0 };
     std::cin >> size;
     char *input = new char[size+1]();
     std::cin.ignore();

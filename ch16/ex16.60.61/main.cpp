@@ -33,7 +33,7 @@ namespace ch16 //to differ from std::make_shared
 
 struct Foo
 {
-    explicit Foo(int b) : bar(b){}
+    explicit Foo(int b) : bar(b){ }
     int bar;
 };
 

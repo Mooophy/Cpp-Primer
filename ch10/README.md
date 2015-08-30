@@ -32,7 +32,7 @@ Cause the library algorithms operate on **iterators**, **not containers**. Thus,
 >Write a lambda that takes two ints and returns their sum.
 
 ```cpp
-auto add = [](int lhs, int rhs){return lhs + rhs;};
+auto add = [](int lhs, int rhs){ return lhs + rhs; };
 ```
 
 ## Exercise 10.15:
@@ -41,7 +41,7 @@ The lambda should return the sum of the captured int and the int parameter.
 
 ```cpp
 int i = 42;
-auto add = [i](int num){return i + num;};
+auto add = [i](int num){ return i + num; };
 ```
 
 ##[Exercise 10.16](ex10_16.cpp)
