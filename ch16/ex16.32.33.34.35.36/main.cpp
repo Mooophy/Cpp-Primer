@@ -1,7 +1,8 @@
 /***************************************************************************
  *  @file       main.cpp
- *  @author     Alan.W
+ *  @author     Yue Wang, Mugurell
  *  @date       04  Feb 2014
+ *              Aug, 2015
  *  @remark     This code is for the exercises from C++ Primer 5th Edition
  *  @note
  ***************************************************************************/
@@ -53,33 +54,15 @@
 //         template <typename T1, typename T2) f2(T1, T2);
 //         int i = 0, j = 42, *p1 = &i, *p2 = &j;
 //         const int *cp1 = &i, *cp2 = &j;
-//             (a) f1(p1, p2);     T is *int
-//             (b) f2(p1, p2);     T1 and T2 are also *int
-//             (c) f1(cp1, cp2);   const is ignored
-//             (d) f2(cp1, cp2);   T1 and T2 are also *int, const is ignored
-//             (e) f1(p1, cp1);    didn't compile since two types are different int* and const int* respectively
-//             (f) f2(p1, cp1);    Cp1's const is ignored.
+//             (a) f1(p1, p2);     // f1<int*>(int*, int*)
+//             (b) f2(p1, p2);     // f2<int*, int*>(int*, int*)
+//             (c) f1(cp1, cp2);   // f1<int const*>(int const*, int const*)
+//             (d) f2(cp1, cp2);   // f2<int const*, int const*>(int const*, int const*)
+//             (e) f1(p1, cp1);    // deduced conflicting types for parameter 'T'
+//             (f) f2(p1, cp1);    // f2<int*, int const*>(int*, int const*)
 //
-
-#include <iostream>
-template <typename T>
-void f1(T lhs, T rhs)  {   }
-
-template <typename T1, typename T2>
-void f2(T1 t1, T2 t2)
-{
-    ;
-}
-
-
-
 
 int main()
 {
-    int i = 0, j = 42, *p1 = &i, *p2 = &j;
-    const int *cp1 = &i, *cp2 = &j;
-
-    f2(p1, cp1);
-
-
+    return 0;
 }
