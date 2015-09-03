@@ -17,7 +17,7 @@
 
 using Map = std::map<std::string, std::size_t>;
 
-// for ex11.3
+//for ex11.3
 auto count() -> Map
 {
     Map counts;
