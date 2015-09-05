@@ -49,7 +49,7 @@ private:
 
     // utillities
     void reallocate();
-    void chk_n_alloc()  { if(size()==capacity()) reallocate();}
+    void chk_n_alloc()  { if(size()==capacity()) reallocate(); }
     void free();
 
     void wy_alloc_n_move(std::size_t n);
@@ -205,7 +205,7 @@ Vec<T>::alloc_n_copy(T *b, T *e)
 {
     // calculate the size needed and allocate space accordingly
     T* data = alloc.allocate(e-b);
-    return { data, std::uninitialized_copy(b, e, data)};
+    return { data, std::uninitialized_copy(b, e, data) };
     //            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     // which copies the range[first, last) to the space to which
     // the starting address data is pointing.

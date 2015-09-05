@@ -35,7 +35,7 @@ void print(int (&arr)[2])
 
 int main()
 {
-    int i = 0, j[2] = {0, 1};
+    int i = 0, j[2] = { 0, 1 };
     char ch[5] = "pezy";
     
     print(ch);

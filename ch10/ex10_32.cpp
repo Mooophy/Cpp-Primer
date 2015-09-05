@@ -25,7 +25,7 @@ int main()
         vec.push_back(*in_iter++);
     sort(vec.begin(), vec.end(), compareIsbn);
     for (auto beg = vec.cbegin(), end = beg; beg != vec.cend(); beg = end) {
-        end = find_if(beg, vec.cend(), [beg](const Sales_item &item){return item.isbn() != beg->isbn();});
+        end = find_if(beg, vec.cend(), [beg](const Sales_item &item){ return item.isbn() != beg->isbn(); });
         std::cout << std::accumulate(beg, end, Sales_item(beg->isbn())) << std::endl;
     }
 }

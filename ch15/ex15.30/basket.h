@@ -28,7 +28,7 @@ private:
 
     // hold multiple quotes, ordered by the compare member
     std::multiset<std::shared_ptr<Quote>, decltype(compare)*>
-                items{compare};
+                items{ compare };
 };
 
 #endif // BASKET_H

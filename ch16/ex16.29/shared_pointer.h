@@ -60,7 +60,7 @@ public:
 
 
     // conversion operator
-    operator bool() const { return ptr ? true : false;}
+    operator bool() const { return ptr ? true : false; }
 
     // dereference *     arrow ->
     T& operator* () const { return *ptr; }
@@ -73,7 +73,7 @@ public:
     T* get() const noexcept { return ptr; }
 
     // check if the unique user
-    bool unique() const noexcept { return *refCount == 1;}
+    bool unique() const noexcept { return *refCount == 1; }
 
     // swap member
     void swap( shared_pointer& rhs) { ::swap(*this, rhs); }
@@ -100,7 +100,7 @@ private:
 
     // any functor lambda or function pointer that matched this
     // signature can replace the default one at run time.
-    std::function<void(T*)> deleter{DebugDelete()};
+    std::function<void(T*)> deleter{ DebugDelete() };
     //                            ^~~~~~~~~~~~~~^
     //                         here: = doesn't work, another way is initializing it in constructor.
 

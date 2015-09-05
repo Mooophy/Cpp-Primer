@@ -24,7 +24,7 @@ class QueryResult {
 public:
     friend std::ostream& print(std::ostream &, const QueryResult&);
 public:
-    QueryResult(const std::string &s, std::shared_ptr<std::set<size_t>> set, std::shared_ptr<StrVec> v) : word(s), nos(set), input(v) {}
+    QueryResult(const std::string &s, std::shared_ptr<std::set<size_t>> set, std::shared_ptr<StrVec> v) : word(s), nos(set), input(v) { }
 private:
     std::string word;
     std::shared_ptr<std::set<size_t>> nos;

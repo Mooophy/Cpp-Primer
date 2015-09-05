@@ -11,7 +11,7 @@ int main()
     {
         if (str == prestr) ++count;
         else count = 0; 
-        if (count > max_duplicated.second) max_duplicated = {prestr, count};
+        if (count > max_duplicated.second) max_duplicated = { prestr, count };
     }
     
     if (max_duplicated.first.empty()) cout << "There's no duplicated string." << endl;

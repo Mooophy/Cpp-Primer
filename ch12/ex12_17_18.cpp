@@ -31,7 +31,7 @@ int main()
 
 
     /**
-     * @brief  error: invalid conversion from 'int' to 'std::unique_ptr<int>::pointer {aka int*}' [-fpermissive]
+     * @brief  error: invalid conversion from 'int' to 'std::unique_ptr<int>::pointer { aka int* }' [-fpermissive]
      */
     //IntP p0(ix);
 
@@ -52,7 +52,7 @@ int main()
      *        is pointing to.
      * @badcode
      */
-    //{IntP p2(pi2);}
+    //{ IntP p2(pi2); }
 
 
     /**

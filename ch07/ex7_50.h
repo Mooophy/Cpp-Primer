@@ -19,8 +19,8 @@ struct Person {
 
 public:
     Person() = default;
-    Person(const std::string sname, const std::string saddr):name(sname), address(saddr){}
-    explicit Person(std::istream &is){read(is, *this);}
+    Person(const std::string sname, const std::string saddr):name(sname), address(saddr){ }
+    explicit Person(std::istream &is){ read(is, *this); }
 
     std::string getName() const { return name; }
     std::string getAddress() const { return address; }

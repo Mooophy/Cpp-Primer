@@ -17,7 +17,7 @@ class NotQuery :public Query_base
 {
 	friend Query operator~(const Query&);
 	//call Query's default copy constructor.
-	NotQuery(const Query &q) :query(q){}
+	NotQuery(const Query &q) :query(q){ }
 	string rep() const{ return "~(" + query.rep() + ")"; }
 	QueryResult eval(const TextQuery&) const;
 

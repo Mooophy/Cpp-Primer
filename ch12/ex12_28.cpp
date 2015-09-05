@@ -30,7 +30,7 @@ int main()
     std::ifstream file("../data/letter.txt");
     vector<string> input;
     std::map<string, std::set<decltype(input.size())>> dictionary;
-    decltype(input.size()) lineNo{0};
+    decltype(input.size()) lineNo{ 0 };
     
     for (string line; std::getline(file, line); ++lineNo) {
         input.push_back(line);

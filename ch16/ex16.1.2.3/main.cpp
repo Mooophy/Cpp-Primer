@@ -31,7 +31,7 @@ using std::endl;
 #include <vector>
 using std::vector;
 
-class Sales_data{};
+class Sales_data{ };
 
 template<typename T>
 int compare(const T& lhs, const T& rhs)
@@ -45,7 +45,7 @@ int main()
 {
     // Test compare function
     cout << compare(1, 0) << endl;
-    vector<int> vec1{1, 2, 3}, vec2{4, 5, 6};
+    vector<int> vec1{ 1, 2, 3 }, vec2{ 4, 5, 6 };
     cout << compare(vec1, vec2) << endl;
 
     return 0;

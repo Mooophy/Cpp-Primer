@@ -6,7 +6,7 @@ class Bulk_quote : public Disc_quote
 {
 
 public:
-    Bulk_quote() {std::cout << "default constructing Bulk_quote\n"; }
+    Bulk_quote() { std::cout << "default constructing Bulk_quote\n"; }
     Bulk_quote(const std::string& b, double p, std::size_t q, double disc) :
         Disc_quote(b, p, q, disc) { std::cout << "Bulk_quote : constructor taking 4 parameters\n"; }
 

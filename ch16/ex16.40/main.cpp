@@ -21,7 +21,7 @@
 #include <vector>
 #include <string>
 
-class Bar{};
+class Bar{ };
 
 Bar operator +(Bar lhs, int)
 {

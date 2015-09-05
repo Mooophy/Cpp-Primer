@@ -18,7 +18,7 @@ public:
     // Big 3/5.
     StrVec():
         element(nullptr), first_free(nullptr), cap(nullptr)
-    {}
+    { }
 
     StrVec(std::initializer_list<std::string> l);
 

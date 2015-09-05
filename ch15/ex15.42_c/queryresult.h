@@ -28,7 +28,7 @@ public:
 	QueryResult(string s,
 		shared_ptr<set<TextQuery::line_no>> l,
 		shared_ptr<vector<string>> f) :
-		sought(s), lines(l), file(f){}
+		sought(s), lines(l), file(f){ }
 
 	set<TextQuery::line_no>::iterator begin(){ return lines->begin(); }
 	set<TextQuery::line_no>::iterator end(){ return lines->end(); }

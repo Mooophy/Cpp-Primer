@@ -63,7 +63,7 @@ struct matches_struct
     std::vector<Sales_data>::const_iterator last;
     matches_struct(std::vector<Sales_data>::size_type s,
                    std::vector<Sales_data>::const_iterator f,
-                   std::vector<Sales_data>::const_iterator l) : st(s), first(f), last(l) {}
+                   std::vector<Sales_data>::const_iterator l) : st(s), first(f), last(l) { }
 } ;
 
 // for ex17.4

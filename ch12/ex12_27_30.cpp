@@ -13,7 +13,7 @@
 
 TextQuery::TextQuery(std::ifstream &ifs) : input(new vector<string>)
 {
-    LineNo lineNo{0};
+    LineNo lineNo{ 0 };
     for (string line; std::getline(ifs, line); ++lineNo) {
         input->push_back(line);
         std::istringstream line_stream(line);

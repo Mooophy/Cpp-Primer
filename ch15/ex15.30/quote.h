@@ -47,8 +47,8 @@ public:
     }
 
     // clone self
-    virtual Quote* clone() const & {return new Quote(*this);}
-    virtual Quote* clone() &&      {return new Quote(std::move(*this));}
+    virtual Quote* clone() const & { return new Quote(*this); }
+    virtual Quote* clone() &&      { return new Quote(std::move(*this)); }
 
     std::string     isbn() const { return bookNo; }
     virtual double  net_price(std::size_t n) const { return n * price; }

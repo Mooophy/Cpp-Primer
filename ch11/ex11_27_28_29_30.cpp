@@ -40,7 +40,7 @@
 int main()
 {
     std::map<std::string, std::vector<int>> m;
-    m = {{"Alan",{1,2,3,4,5,}},{"John",{1,5,6,7,8}}};
+    m = { { "Alan",{ 1,2,3,4,5, } },{ "John",{ 1,5,6,7,8 } } };
 
     // ex11.28
     std::map<std::string, std::vector<int>>::iterator it;

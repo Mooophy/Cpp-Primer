@@ -44,7 +44,7 @@ T* end_def(T (&arr)[size])
 
 int main()
 {
-    std::string s[] = {"sssss","ss","ss","ssssszzzz"};
+    std::string s[] = { "sssss","ss","ss","ssssszzzz" };
     std::cout << *(begin_def(s)+1) << std::endl;
     std::cout << *(end_def(s) - 1) << std::endl;
     return 0;

@@ -16,7 +16,7 @@
 
 int main()
 {
-    Vec<int> v = {1, 2, 3, 4, 5};
+    Vec<int> v = { 1, 2, 3, 4, 5 };
 
     Vec<int> v2;
 

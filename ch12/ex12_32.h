@@ -32,7 +32,7 @@ class QueryResult {
 public:
     friend std::ostream& print(std::ostream &, const QueryResult&);
 public:
-    QueryResult(const string &s, shared_ptr<std::set<StrBlob::size_type>> set, const StrBlob& f) : word(s), nos(set), file(f) {}
+    QueryResult(const string &s, shared_ptr<std::set<StrBlob::size_type>> set, const StrBlob& f) : word(s), nos(set), file(f) { }
 private:
     string word;
     shared_ptr<std::set<StrBlob::size_type>> nos;

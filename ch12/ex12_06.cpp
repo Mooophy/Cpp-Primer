@@ -21,7 +21,7 @@ using Ptr = std::vector<int>*;
 
 auto make_dynamically() -> Ptr
 {
-    return new std::vector < int > {};
+    return new std::vector < int > { };
 }
 
 auto populate(Ptr vec) -> Ptr

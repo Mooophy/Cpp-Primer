@@ -39,7 +39,7 @@ using std::regex_error;
 
 int main() {
 	try {
-		regex reg("(\\d{4})?([-])?(\\d{5})");
+		regex reg("(\\d{ 4 })?([-])?(\\d{ 5 })");
 		string str;
 		while (getline(cin, str)) {
 			for (sregex_iterator b(str.cbegin(), str.cend(), reg), e; b != e; ++b) {

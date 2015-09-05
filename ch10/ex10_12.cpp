@@ -19,7 +19,7 @@ inline bool compareIsbn(const Sales_data &sd1, const Sales_data &sd2)
 int main()
 {
     Sales_data d1("aa"), d2("aaaa"), d3("aaa"), d4("z"), d5("aaaaz");
-    std::vector<Sales_data> v{d1, d2, d3, d4, d5};
+    std::vector<Sales_data> v{ d1, d2, d3, d4, d5 };
 
     // @note   the elements the iterators pointing to
     //         must match the parameters of the predicate.

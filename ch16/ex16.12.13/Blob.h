@@ -15,10 +15,10 @@ public:
 
     // number of elements in the Blob
     size_type size() const { return data->size(); }
-    bool      empty() const{ return data->empty();}
+    bool      empty() const{ return data->empty(); }
 
     void push_back(const T& t) { data->push_back(t); }
-    void push_back(T&& t)      { data->push_back(std::move(t));}
+    void push_back(T&& t)      { data->push_back(std::move(t)); }
     void pop_back();
 
     // element access
@@ -37,7 +37,7 @@ private:
 // constructors
 template<typename T>
 Blob<T>::Blob() : data(std::make_shared<std::vector<T>>())
-{}
+{ }
 
 template<typename T>
 Blob<T>::Blob(std::initializer_list<T> il):

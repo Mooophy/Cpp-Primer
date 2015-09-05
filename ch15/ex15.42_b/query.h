@@ -28,12 +28,12 @@ public:
 	QueryResult eval(const TextQuery &t) const { return q->eval(t); }
 	string rep() const { return q->rep(); }
 private:
-	Query(shared_ptr<Query_base> query) :q(query){}
+	Query(shared_ptr<Query_base> query) :q(query){ }
 	shared_ptr<Query_base> q;
 };
 
 ostream & operator<<(ostream &os, const Query &query);
 
-inline Query::Query(const string &s) :q(new WordQuery(s)){}
+inline Query::Query(const string &s) :q(new WordQuery(s)){ }
 
 #endif

@@ -18,7 +18,7 @@ using std::string; using std::cout; using std::endl; using std::stack;
 
 int main()
 {
-    string expression{"This is (pezy)."};
+    string expression{ "This is (pezy)." };
     bool bSeen = false;
     stack<char> stk;
     for (const auto &s : expression)

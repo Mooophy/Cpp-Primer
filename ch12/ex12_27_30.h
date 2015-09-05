@@ -39,7 +39,7 @@ class QueryResult {
 public:
     friend std::ostream& print(std::ostream &, const QueryResult&);
 public:
-    QueryResult(const string &s, shared_ptr<std::set<TextQuery::LineNo>> set, shared_ptr<vector<string>> v) : word(s), nos(set), input(v) {}
+    QueryResult(const string &s, shared_ptr<std::set<TextQuery::LineNo>> set, shared_ptr<vector<string>> v) : word(s), nos(set), input(v) { }
 private:
     string word;
     shared_ptr<std::set<TextQuery::LineNo>> nos;

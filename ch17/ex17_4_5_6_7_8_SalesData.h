@@ -60,13 +60,13 @@ public:
 	           bookNo(s), units_sold(n), revenue(p*n) { }
     Sales_data(const Sales_data &s ):
         bookNo(s.bookNo), units_sold(s.units_sold), revenue(s.revenue)
-    {}
+    { }
 
     Sales_data(Sales_data&& s):
         bookNo(s.bookNo), units_sold(s.units_sold), revenue(s.revenue)
-    {}
+    { }
 
-    ~Sales_data(){}
+    ~Sales_data(){ }
 	Sales_data(std::istream &);
 
 	std::string isbn() const { return bookNo; }
@@ -79,7 +79,7 @@ public:
 
     // conversion
     explicit operator std::string () const { return bookNo; }
-    explicit operator double      () const { return revenue;}
+    explicit operator double      () const { return revenue; }
 
 	double avg_price() const;
 private:

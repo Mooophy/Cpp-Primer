@@ -16,12 +16,12 @@ using std::string;
 int main()
 {
     std::multimap<string, string> authors{
-        {"alan", "DMA"},
-        {"pezy", "LeetCode"},
-        {"alan", "CLRS"},
-        {"wang", "FTP"},
-        {"pezy", "CP5"},
-        {"wang", "CPP-Concurrency"}
+        { "alan", "DMA" },
+        { "pezy", "LeetCode" },
+        { "alan", "CLRS" },
+        { "wang", "FTP" },
+        { "pezy", "CP5" },
+        { "wang", "CPP-Concurrency" }
     };
     std::map<string, std::multiset<string>> order_authors;
     for (const auto &author : authors)

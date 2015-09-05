@@ -31,7 +31,7 @@ the condition of the `if` statement would read two Sales_data object at one time
 ## [Exercise 7.13](ex7_13.cpp)
 ## Exercise 7.14
 ```cpp
-Sales_data() : units_sold(0) , revenue(0){}
+Sales_data() : units_sold(0) , revenue(0){ }
 ```
 
 ## [Exercise 7.15](ex7_15.h)
@@ -122,7 +122,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXX
 - less scope for misreading
 - can use the member function parameter which name is same as the member name.
 
-        void setAddr(const std::string &addr) {this->addr = addr;}
+        void setAddr(const std::string &addr) { this->addr = addr; }
 
 **Cons**
 

@@ -31,7 +31,7 @@ constexpr unsigned getSize(const T(&)[size])
 
 int main()
 {
-    std::string s[] = {"sss"};
+    std::string s[] = { "sss" };
     std::cout << getSize(s) << std::endl;
 
     char c[] = "s";

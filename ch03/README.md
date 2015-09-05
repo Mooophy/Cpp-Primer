@@ -39,7 +39,7 @@ This code was dereferencing and printing the first item stored in `s`. Since `s`
 >Is the following range for legal? If so, what is the type of c?
 ```cpp
 const string s = "Keep out!";
-for (auto &c : s){/*... */}
+for (auto &c : s){ /*... */ }
 ```
 
 Depending on the code within for loop body. For example:
@@ -66,10 +66,10 @@ vectors? What are the values of the elements?
 vector<int> v1;         // size:0,  no values.
 vector<int> v2(10);     // size:10, value:0
 vector<int> v3(10, 42); // size:10, value:42
-vector<int> v4{10};     // size:1,  value:10
-vector<int> v5{10, 42}; // size:2,  value:10, 42
-vector<string> v6{10};  // size:10, value:""
-vector<string> v7{10, "hi"};  // size:10, value:"hi"
+vector<int> v4{ 10 };     // size:1,  value:10
+vector<int> v5{ 10, 42 }; // size:2,  value:10, 42
+vector<string> v6{ 10 };  // size:10, value:""
+vector<string> v7{ 10, "hi" };  // size:10, value:"hi"
 ```
 
 ##[Exercise 3.14](ex3_14.cpp)
@@ -161,7 +161,7 @@ p1 += p2 - p1;
 ##Exercise 3.37
 >What does the following program do?
 ```cpp
-const char ca[] = {'h', 'e', 'l', 'l', 'o'};
+const char ca[] = { 'h', 'e', 'l', 'l', 'o' };
 const char *cp = ca;
 while (*cp) {
     cout << *cp << endl;

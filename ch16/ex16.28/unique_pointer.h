@@ -44,10 +44,10 @@ public:
      operator bool() const   { return ptr ? true : false;   }
 
     // return the underlying pointer
-    T* get() const noexcept { return ptr;}
+    T* get() const noexcept { return ptr; }
 
     // swap member using swap friend
-    void swap(unique_pointer<T, D> &rhs)  {::swap(*this, rhs);}
+    void swap(unique_pointer<T, D> &rhs)  { ::swap(*this, rhs); }
 
     // free and make it point to nullptr or to p's pointee.
     void reset()     noexcept { deleter(ptr); ptr = nullptr; }

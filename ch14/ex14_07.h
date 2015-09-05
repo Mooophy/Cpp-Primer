@@ -8,7 +8,7 @@ class String
 {
     friend std::ostream& operator<<(std::ostream&, const String&);
 public:
-    String() : String("") {}
+    String() : String("") { }
     String(const char *);
     String(const String&);
     String& operator=(const String&);

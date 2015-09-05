@@ -17,12 +17,12 @@ using std::string;
 int main()
 {
     std::multimap<string, string> authors{
-        {"alan", "DMA"},
-        {"pezy", "LeetCode"},
-        {"alan", "CLRS"},
-        {"wang", "FTP"},
-        {"pezy", "CP5"},
-        {"wang", "CPP-Concurrency"}
+        { "alan", "DMA" },
+        { "pezy", "LeetCode" },
+        { "alan", "CLRS" },
+        { "wang", "FTP" },
+        { "pezy", "CP5" },
+        { "wang", "CPP-Concurrency" }
     };
     // want to delete an element that author is [Alan], work is [112].
     string author = "pezy";

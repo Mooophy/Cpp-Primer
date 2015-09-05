@@ -50,13 +50,13 @@ class StrBlob {
     friend bool operator!=(const StrBlob&, const StrBlob&);
 
 public:
-    StrBlob() : data(make_shared<vector<string>>()) {}
-    StrBlob(initializer_list<string> il) : data(make_shared<vector<string>>(il)) {}
+    StrBlob() : data(make_shared<vector<string>>()) { }
+    StrBlob(initializer_list<string> il) : data(make_shared<vector<string>>(il)) { }
 
-    StrBlob(const StrBlob &sb) : data(make_shared<vector<string>>(*sb.data)) {}
+    StrBlob(const StrBlob &sb) : data(make_shared<vector<string>>(*sb.data)) { }
     StrBlob& operator=(const StrBlob&);
 
-    StrBlob(StrBlob &&rhs) NOEXCEPT : data(std::move(rhs.data)) {}
+    StrBlob(StrBlob &&rhs) NOEXCEPT : data(std::move(rhs.data)) { }
     StrBlob& operator=(StrBlob &&)NOEXCEPT;
 
     StrBlobPtr begin();
@@ -131,8 +131,8 @@ class StrBlobPtr {
     friend bool operator==(const StrBlobPtr&, const StrBlobPtr&);
     friend bool operator!=(const StrBlobPtr&, const StrBlobPtr&);
 public:
-    StrBlobPtr() : curr(0) {}
-    StrBlobPtr(StrBlob &s, size_t sz = 0) : wptr(s.data), curr(sz) {}
+    StrBlobPtr() : curr(0) { }
+    StrBlobPtr(StrBlob &s, size_t sz = 0) : wptr(s.data), curr(sz) { }
 
     string& deref() const;
     StrBlobPtr& incr();
@@ -179,8 +179,8 @@ class ConstStrBlobPtr {
     friend bool operator!=(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
 
 public:
-    ConstStrBlobPtr() : curr(0) {}
-    ConstStrBlobPtr(const StrBlob &s, size_t sz = 0) : wptr(s.data), curr(sz) {}
+    ConstStrBlobPtr() : curr(0) { }
+    ConstStrBlobPtr(const StrBlob &s, size_t sz = 0) : wptr(s.data), curr(sz) { }
 
     const string& deref() const;
     ConstStrBlobPtr& incr();

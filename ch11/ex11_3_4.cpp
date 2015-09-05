@@ -1,4 +1,4 @@
-// @Alan
+// @Yue Wang Aug, 2015
 //
 // Exercise 11.3:
 // Write your own version of the word-counting program.
@@ -15,40 +15,46 @@
 #include <algorithm>
 #include <cctype>
 
-// Exercise 11.4
-void word_count_pro(std::map<std::string, int> &m)
+using Map = std::map<std::string, std::size_t>;
+
+//for ex11.3
+auto count() -> Map
 {
-    std::string word;
-    while(std::cin >> word)
-    {
-        for(auto& ch : word)
-            ch = tolower(ch);
-        // According to the erase-remove idiom.
-        // For more information about the erase-remove idiom, please refer to
-        // http://en.wikipedia.org/wiki/Erase-remove_idiom
-        word.erase(std::remove_if(word.begin(), word.end(), ispunct), word.end());
-        ++m[word];
-    }
-    for (const auto &e : m)
-        std::cout << e.first << " : " << e.second <<"\n";
+    Map counts;
+    for (std::string w; std::cin >> w; ++counts[w]);
+    return counts;
 }
 
-// Exercise 11.3
-void ex11_3()
+//for ex11.4
+auto strip(std::string& str) -> std::string const&
 {
-    std::map<std::string, std::size_t> word_count;
-    std::string word;
-    while(std::cin >> word)
-        ++word_count[word];
+    for (auto& ch : str) ch = tolower(ch);
+    str.erase(std::remove_if(str.begin(), str.end(), ispunct), str.end());
+    return str;
+}
 
-    for (const auto &elem : word_count)
-        std::cout << elem.first << " : " << elem.second <<"\n";
+//for ex11.4
+auto strip_and_count() -> Map
+{
+    Map counts;
+    for (std::string w; std::cin >> w; ++counts[strip(w)]);
+    return counts;
+}
+
+auto print(Map const& m) -> std::ostream&
+{
+    for (auto const& kv : m)
+        std::cout << kv.first << " : " << kv.second << "\n";
+    return std::cout;
 }
 
 int main()
 {
-    std::map<std::string, int> m;
-    word_count_pro(m);
+    std::cout << "[ex11.3] Enter a few words please:\n";
+    print( count() );
+    std::cin.clear();
+    std::cout << "[ex11.4] Enter a few words please:\n";
+    print( strip_and_count() );
 
     return 0;
 }
