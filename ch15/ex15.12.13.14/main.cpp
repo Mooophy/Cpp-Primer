@@ -45,11 +45,14 @@ private:
 class derived : public base
 {
 public:
-   void print(std::ostream &os) { base::print(os); os << " derived\n " << i; }
-   //  ^^^^^                     ^^^^^^    --  added to fix this problem
+   void print(std::ostream &os) override { base::print(os); os << " derived\n " << i; }
+   //   ^^^^^                   ^^^^^^^^   ^^^^^^    --  added to fix this problem
    //  this print wanted to call the print from the base class.
    //  however, the class scope base:: was omitted.As a result
    //  it will cause an infinit recursion.
+   //  btw, we can add a keyword `override` to show this function
+   //  overrides a virtual function from the base class, although
+   //  it is not neccessary, but for security, the more, the better.
 
 
 private:
