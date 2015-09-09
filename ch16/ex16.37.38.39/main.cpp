@@ -11,8 +11,10 @@
 // larger of its arguments. This function has one template type parameter.
 // Could you call max passing it an int and a double? If so, how? If not,
 // why not?
-//  If so, it doesn't compile, because the two argument must be the same type or
-//  convertible.
+//  Yes, just offer an explicit template argument, like:
+//  int a = 1;
+//  double b = 2;
+//  std::max<double>(a, b);
 //
 // Exercise 16.38:
 // When we call make_shared (§ 12.1.1, p. 451), we have to provide an
