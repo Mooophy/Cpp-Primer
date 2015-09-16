@@ -15,7 +15,7 @@
 // the previous program.
 //
 //  Since the vector from the previous exercise holds objects, there's no polymorphism
-//  happened while calling the virtual function net_price. Essentially, the obejcts
+//  happened while calling the virtual function net_price. Essentially, the objects
 //  held in it are the Quote subjects of the Bulk_quote objects being pushed back,
 //  Thus, the virtual net_price functions called are Quote::net_price. As a result,
 //  no discount was applied. The outcome was 9090
