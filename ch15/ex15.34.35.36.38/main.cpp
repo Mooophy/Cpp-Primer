@@ -24,12 +24,12 @@
 //      OrQuery::rep() which is inherited from BinaryQuery
 //      BinaryQuery::rep()
 //      Query::rep() for lhs and rhs
-//          for rhs which is a WordQuery : WordQuery::rep() where query_word("wind") is retuerned
+//          for rhs which is a WordQuery : WordQuery::rep() where query_word("wind") is returned.
 //          for lhs which is an AndQuery:
 //              AndQuery::rep()     --which is inherited from BinaryQuery
 //              BinaryQuer::rep()
-//                  for rhs: WordQuery::rep()   where query_word("fiery") is retuerned
-//                  for lhs: WordQuery::rep()   where query_word("bird" ) is retuerned
+//                  for rhs: WordQuery::rep()   where query_word("fiery") is returned
+//                  for lhs: WordQuery::rep()   where query_word("bird" ) is returned
 //
 //     (c) List the calls to eval made from q.eval().
 //      q.eval()
