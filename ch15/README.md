@@ -196,6 +196,7 @@ As a result, the default constructor of any class derived from it has been defin
 > Redefine your `Bulk_quote` class to inherit its constructors.
 
 **rules:**
+
 1. only inherit from the direct base class.
 2. default, copy and move constructors can not inherit.
 3. any data members of its own are default initialized.
@@ -221,7 +222,9 @@ The objects held for this exercise are smart pointers to the Quote objects.In th
 > Given that s1, s2, s3, and s4 are all strings, determine what objects are created in the following expressions:
 
 > (a) `Query(s1) | Query(s2) & ~ Query(s3);`
+
 > (b) `Query(s1) | (Query(s2) & ~ Query(s3));`
+
 > (c) `(Query(s1) & (Query(s2)) | (Query(s3) & Query(s4)));`
 
 * (a) `OrQuery, AndQuery, NotQuery, WordQuery`
@@ -236,7 +239,6 @@ While being copied, the synthesized copy constructor is called. It copies the da
 
 * **move:**
 while being moved, the synthesized move constructor is called. It moves the data member into the new object. In this case, the shared pointer from the newly created object will point to the address to which the original shared pointer pointed.
-
 After the move operation, the use count of the shared pointer in the new object is 1, whereas the pointer from the original object becomes `nullptr`.
 
 * **copy assignment:**
@@ -382,4 +384,4 @@ Since `std::make_shared` will allocate dynamically a new `std::set`, nothing wil
 
 > **(c)** Allow the user to limit the results so that only matches in a given range of lines are displayed.
 
-Here are solutions for [(b)](ex15.42_b/main.cpp) and [(c)](ex15.42_c/main.cpp)
+Here are solutions for [(b)](ex15.42_b/main.cpp) and [(c)](ex15.42_c/main.cpp).
