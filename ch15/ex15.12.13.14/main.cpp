@@ -11,7 +11,7 @@
 // Why or why not?
 //  Sure. override means overriding the same name virtual function in base class.
 //  final means preventing any overriding this virtual function by any derived classes
-//  that are more lower at the hierachy .
+//  that are more lower at the hierarchy .
 //
 // Exercise 15.13:
 // Given the following classes, explain each print function:
