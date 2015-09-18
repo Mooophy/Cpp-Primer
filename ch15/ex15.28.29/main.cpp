@@ -15,15 +15,15 @@
 // the previous program.
 //
 //  Since the vector from the previous exercise holds objects, there's no polymorphism
-//  happened while calling the virtual function net_price. Essentially, the obejcts
+//  happened while calling the virtual function net_price. Essentially, the objects
 //  held in it are the Quote subjects of the Bulk_quote objects being pushed back,
 //  Thus, the virtual net_price functions called are Quote::net_price. As a result,
 //  no discount was applied. The outcome was 9090
 //
-//  The obejcts held for this exercise are smart pointers to the Quote objects.In this
-//  case, ppolymorphism happened as expected.The actual virtual functions being called
+//  The objects held for this exercise are smart pointers to the Quote objects.In this
+//  case, polymorphism happened as expected.The actual virtual functions being called
 //  are Bulk_quote::net_price that ensure discount is applied.Thus, the outcome is 6363.
-//  It can be found that 30% dicount has been applied to the price calculation.
+//  It can be found that 30% discount has been applied to the price calculation.
 //
 //
 // If there is no discrepancy, explain why there isn’t one.

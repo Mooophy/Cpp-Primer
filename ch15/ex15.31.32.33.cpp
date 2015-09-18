@@ -26,7 +26,7 @@
 //  while being moved, the synthesized move constructor is called. It moves the data member
 //  into the new object. In this case, the shared pointer from the newly created
 //  object will point to the address to which the original shared pointer pointed .
-//  Afer the move operation, the use count of the shared pointer in the new object is 1,
+//  After the move operation, the use count of the shared pointer in the new object is 1,
 //  whereas the pointer from the original object becomes nullptr.
 //
 //  copy assignment:
@@ -38,7 +38,7 @@
 //  the move operation.
 //
 //  destroy:
-//  The synthesized destructor will be called. It will call the desstructor of
+//  The synthesized destructor will be called. It will call the destructor of
 //  shared_ptr which decrements the use count. If the count becomes zero, the destructor
 //  from shared_ptr will delete the resources it point to.
 //

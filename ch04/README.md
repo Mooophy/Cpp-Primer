@@ -1,4 +1,4 @@
-##Exercise 4.1
+﻿##Exercise 4.1
 >What is the value returned by 5 + 10 * 20/2?
 
 105
@@ -50,6 +50,9 @@ and printing its result.
 
 ##Exercise 4.7
 >What does overflow mean? Show three expressions that will overflow.
+
+from the book:
+>Some arithmetic expressions yield undefined results. Some of these undefined espressions are due to the nature of mathematics-for example, division by zero. Others are undefined due to the nature of computers-for example, due to overflow. Overflow happens when a value is computed that is outside the range of values that the type can represent.
 
 ```cpp
 short svalue = 32767; ++svalue; // -32768

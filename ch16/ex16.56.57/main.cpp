@@ -99,7 +99,6 @@ std::ostream& print(std::ostream &os, const T &t, const Args&... rest)
 template<typename... Args>
 std::ostream& errorMsg(std::ostream& os, const Args... rest)
 {
-    // print(os, debug_rep(rest)...);
     return print(os, debug_rep(rest)...);
 }
 
