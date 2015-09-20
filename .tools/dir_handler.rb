@@ -13,6 +13,14 @@ class DirHandler
     end
   end  
 
+  def on_each_file!
+    @paths.each do |path|
+      content = File.open(path, 'rb').read
+      yield content
+      write_back path, content 
+    end
+  end   
+
 private
   def list_paths_recursively dir, extension
     Dir.glob "#{ dir }/**/*.#{ extension }"
