@@ -8,7 +8,7 @@ int main()
     int arr[10];
     for (int i = 0; i < 10; ++i) arr[i] = i;
     int arr2[10];
-    for (int i = 0; i < 10; ++i) arr2[i] = arr2[i];
+    for (int i = 0; i < 10; ++i) arr2[i] = arr[i];
 
     // vector
     vector<int> v(10);

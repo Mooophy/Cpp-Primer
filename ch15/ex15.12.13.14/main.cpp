@@ -11,7 +11,7 @@
 // Why or why not?
 //  Sure. override means overriding the same name virtual function in base class.
 //  final means preventing any overriding this virtual function by any derived classes
-//  that are more lower at the hierachy .
+//  that are more lower at the hierarchy .
 //
 // Exercise 15.13:
 // Given the following classes, explain each print function:
@@ -45,11 +45,14 @@ private:
 class derived : public base
 {
 public:
-   void print(std::ostream &os) { base::print(os); os << " derived\n " << i; }
-   //  ^^^^^                     ^^^^^^    --  added to fix this problem
+   void print(std::ostream &os) override { base::print(os); os << " derived\n " << i; }
+   //   ^^^^^                   ^^^^^^^^   ^^^^^^    --  added to fix this problem
    //  this print wanted to call the print from the base class.
    //  however, the class scope base:: was omitted.As a result
    //  it will cause an infinit recursion.
+   //  btw, we can add a keyword `override` to show this function
+   //  overrides a virtual function from the base class, although
+   //  it is not neccessary, but for security, the more, the better.
 
 
 private:
