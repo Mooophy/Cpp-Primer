@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <vector>
 #include <list>
-
+#include <iterator>
 using std::list; using std::copy; using std::cout; using std::endl;
 
 template<typename Sequence>
