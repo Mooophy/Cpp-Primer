@@ -57,12 +57,13 @@ std::string::iterator iter = s.begin();
 while (iter != s.end()) { /* . . . */ }
 ```
 
-(b) Variable `status` is undeclared.
+(b) Variable `status` is only declared inside scope of while condition.
 ```cpp
 //corrrected as:
-bool status;
-while ((status = find(word))) { /* ... */ }
-if (!status) { /* ... */ }
+while (bool status = find(word)) { 
+    /* ... */ 
+    if (!status) { /* ... */ }
+}
 ```  
 
 ##[Exercise 5.5](ex5_5.cpp)
