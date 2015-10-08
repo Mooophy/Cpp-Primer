@@ -85,16 +85,16 @@ if (!status) { /* ... */ }
 ```cpp
 (a) if (ival1 != ival2) ival1 = ival2; // lost semicolon.
     else ival1 = ival2 = 0;
-(b) if (ival < minval)
+(b) if (ival < minval)  // Braces need to include both satetments in scope.
     {
         minval = ival;
         occurs = 1;
     }
-(c) if (int ival = get_value())
+(c) if (int ival = get_value()) //Second if is else if.
         cout << "ival = " << ival << endl;
     else if (!ival)
         cout << "ival = 0\n";
-(d) if (ival == 0)
+(d) if (ival == 0) //Expression changed to relational equal to operator;
     ival = get_value();
 ```
 
