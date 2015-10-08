@@ -84,7 +84,7 @@ while (bool status = find(word)) {
 ```
 
 ```cpp
-(a) if (ival1 != ival2) ival1 = ival2;  // Nee to add semicolon.
+(a) if (ival1 != ival2) ival1 = ival2;  // Need to add semicolon.
     else ival1 = ival2 = 0;
 (b) if (ival < minval)                  // Braces needed to include both satetments in scope.
     {
