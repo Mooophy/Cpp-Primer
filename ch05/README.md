@@ -90,10 +90,9 @@ if (!status) { /* ... */ }
         minval = ival;
         occurs = 1;
     }
-(c) int val;
-    if (ival = get_value())
+(c) if (int ival = get_value())
         cout << "ival = " << ival << endl;
-    if (!ival)
+    else if (!ival)
         cout << "ival = 0\n";
 (d) if (ival == 0)
     ival = get_value();
