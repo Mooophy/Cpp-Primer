@@ -522,19 +522,22 @@ k2 is const int&.
 
 [Here](ex2_35.cpp) is the code.
 Run with VS2012:
+```
 j is int
 k is int
 p is int const *
 j2 is int
 k2 is int
 请按任意键继续. . .
-
+```
 Run with g++4.8.4
+```
 j is i
 k is i
 p is PKi
 j2 is i
 k2 is i
+```
 
 ##Exercise 2.36
 >In the following code, determine the type of each variable
