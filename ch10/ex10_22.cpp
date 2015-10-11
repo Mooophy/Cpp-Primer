@@ -18,7 +18,7 @@ using namespace std::placeholders;
 
 bool isBiggerThan6(const string &s, string::size_type sz)
 {
-    return s.size() > sz;
+    return s.size() <= sz;
 }
 
 int main()
