@@ -57,12 +57,13 @@ std::string::iterator iter = s.begin();
 while (iter != s.end()) { /* . . . */ }
 ```
 
-(b) Variable `status` is undeclared.
+(b) Variable `status` is only declared inside scope of while condition.
 ```cpp
 //corrrected as:
-bool status;
-while ((status = find(word))) { /* ... */ }
-if (!status) { /* ... */ }
+while (bool status = find(word)) { 
+    /* ... */ 
+    if (!status) { /* ... */ }
+}
 ```  
 
 ##[Exercise 5.5](ex5_5.cpp)
@@ -83,19 +84,18 @@ if (!status) { /* ... */ }
 ```
 
 ```cpp
-(a) if (ival1 != ival2) ival1 = ival2; // lost semicolon.
+(a) if (ival1 != ival2) ival1 = ival2;  // Need to add semicolon.
     else ival1 = ival2 = 0;
-(b) if (ival < minval)
+(b) if (ival < minval)                  // Braces needed to include both satetments in scope.
     {
         minval = ival;
         occurs = 1;
     }
-(c) int val;
-    if (ival = get_value())
+(c) if (int ival = get_value())         //Second if statement should be else-if.
         cout << "ival = " << ival << endl;
-    if (!ival)
+    else if (!ival)
         cout << "ival = 0\n";
-(d) if (ival == 0)
+(d) if (ival == 0)                      //Expression changed from assignment to "equal to";
     ival = get_value();
 ```
 
