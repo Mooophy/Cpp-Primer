@@ -14,6 +14,6 @@ int main()
              << " is less than the other. " << "\n\n"
              << "More? Enter yes or no: ";
         cin >> rsp;
-    } while (!rsp.empty() && rsp[0] == 'y');
+    } while (rsp == "y" || rsp == "yes");
     return 0;
 }

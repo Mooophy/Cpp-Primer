@@ -10,7 +10,6 @@
 //
 
 #include <iostream>
-#include <string>
 #include <vector>
 #include <algorithm>
 #include <functional>
@@ -21,23 +20,28 @@ using std::string;
 using std::vector;
 using std::find_if;
 using std::bind;
+using std::size_t;
 
-inline auto check_size(string const& s, string::size_type sz) -> bool
+auto check_size(string const& str, size_t sz)
 {
-    return s.size() < sz;
+    return str.size() < sz;
 }
 
-inline auto find_first_greater(vector<int> const& v, string const& s) -> vector<int>::const_iterator
+auto find_first_greater(vector<int> const& v, string const& str)
 {
-    auto lambda = [&](int i){ return i >= 0 && bind(check_size, s, i)(); };
-    return find_if(v.cbegin(), v.cend(), lambda);
+    auto predicate = [&](int i){ return bind(check_size, str, i)(); };
+    return find_if(v.cbegin(), v.cend(), predicate);
 }
 
 int main()
 {
-    vector<int> v{ -1, -2, 3, 4, 5, 6, 7 };
-    string s("test");
-    cout << *find_first_greater(v, s) << endl;
+    vector<int> vec{ 0, 1, 2, 3, 4, 5, 6, 7 };
+    string str("123456");
+    auto result = find_first_greater(vec, str);
+    if (result != vec.cend())
+        cout << *result << endl;
+    else
+        cout << "Not found" << endl;
 
     return 0;
 }

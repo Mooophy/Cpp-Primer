@@ -22,6 +22,7 @@ int main()
                 total = trans;
             }
         }
+        print(std::cout, total) << std::endl;
     }
     else
     {
