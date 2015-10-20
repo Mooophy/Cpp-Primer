@@ -2,15 +2,7 @@
 
 > Review the documentation for your compiler and determine what file naming convention it uses. Compile and run the main program from page 2.
 
-### Windows
-
-![windows](https://db.tt/XGeGsg7O)
-
-### Linux
-
-![Linux](https://db.tt/2xKWuztU)
-
-You can check the section "Options Controlling the Kind of Output" by ` man gcc` in Linux further.
+ * [GCC and File Extensions](http://labor-liber.org/en/gnu-linux/development/extensions) 
 
 ##Exercise 1.2
 
