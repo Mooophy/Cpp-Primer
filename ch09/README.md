@@ -55,7 +55,7 @@ auto find(vector<int>::const_iterator first, vector<int>::const_iterator last, i
 ```cpp
 list<int> lst1;
 list<int>::iterator iter1 = lst1.begin(), iter2 = lst1.end();
-while (iter1 < iter2) /*ERROR: operator< can't be applied to iterator for list*/
+while (iter1 < iter2)
 ```
 
 Fixed:
@@ -63,7 +63,7 @@ Fixed:
 while(iter1 != iter2)
 ```
 #### note:
-operator `<` can be used in `list`, but can't be applied to iterator for `list`.
+operator `<` is not implemented in `std::list`, because `std::list` is essetially a doubly linked list. Addresses of nodes of linked list are not necessarily continuous.  
 ## Exercise 9.7:
 >What type should be used as the index into a vector of ints?
 
