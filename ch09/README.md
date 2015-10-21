@@ -41,11 +41,11 @@ auto contains(vector<int>::const_iterator first, vector<int>::const_iterator las
 >Rewrite the previous program to return an iterator to the requested element. Note that the program must handle the case where the element is not found.
 
 ```cpp
-vector<int>::iterator find(vector<int>::iterator beg, vector<int>::iterator end, int value)
+auto find(vector<int>::const_iterator first, vector<int>::const_iterator last, int value)
 {
-    for (auto iter = beg; iter != end; ++iter)
-        if (*iter == value) return iter;
-    return end;
+    for(; first != last; ++first)
+        if(*first == value) return first;
+    return last;
 }
 ```
 
