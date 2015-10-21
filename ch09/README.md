@@ -15,7 +15,7 @@
 >Define a list that holds elements that are deques that hold ints.
 
 ```cpp
-std::list<std::deque<int>> ldi;
+std::list<std::deque<int>> a_list_of_deque_of_ints;
 ```
 
 ## Exercise 9.3:
