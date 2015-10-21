@@ -285,7 +285,7 @@ cannot.
 ## Exercise 9.37:
 >Why don’t list or array have a capacity member?
 
-`list` elements does not store contiguously. `array` has the fixed size, thus cannot added elements to it.
+`list` does not hold elements contiguously. `array` has the fixed size statically.
 
 ## [Exercise 9.38](ex9_38.cpp)
 
