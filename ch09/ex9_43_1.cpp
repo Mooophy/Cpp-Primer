@@ -11,7 +11,6 @@
 //          such as “tho” by “though” and “thru” by “through”.
 //
 //  @note   This code doesn't compile on GCC. Please use Visual Studio 2015+ or Clang 3.6+ 
-//
 //  
 //  Refactored by Yue Wang Oct, 2015 
 //
