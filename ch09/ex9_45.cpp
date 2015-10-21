@@ -20,7 +20,7 @@ using std::endl;
 // Exercise 9.45
 auto add_pre_and_suffix(string name, string const& pre, string const& su)
 {
-    name.insert(name.begin(), pre.begin(), pre.end());
+    name.insert(name.begin(), pre.cbegin(), pre.cend());
     return name.append(su);
 }
 
