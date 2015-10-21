@@ -29,10 +29,10 @@ two iterators, `begin` and `end`:
 >Write a function that takes a pair of iterators to a vector<int> and an int value. Look for that value in the range and return a bool indicating whether it was found.
 
 ```cpp
-bool find(vector<int>::iterator beg, vector<int>::iterator end, int value)
+auto contains(vector<int>::const_iterator first, vector<int>::const_iterator last, int value)
 {
-    for (auto iter = beg; iter != end; ++iter)
-        if (*iter == value) return true;
+    for(; first != last; ++first)
+        if(*first == value) return true;
     return false;
 }
 ```
