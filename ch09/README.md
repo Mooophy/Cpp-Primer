@@ -72,8 +72,8 @@ operator `<` is not implemented in `std::list`, because `std::list` is essetiall
 ## Exercise 9.8:
 >What type should be used to read elements in a list of strings? To write them?
 
-    list<string>::iterator || list<string>::const_iterator // read
-    list<string>::iterator // write
+    list<string>::const_iterator // to read
+    list<string>::iterator // to write
 
 ## Exercise 9.9:
 >What is the difference between the `begin` and `cbegin` functions?
