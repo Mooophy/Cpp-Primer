@@ -8,11 +8,11 @@
 ## Exercise 11.2:
 >Give an example of when each of list, vector, deque, map, and set might be most useful.
 
-- list : a to-do list. always need insert or delete the elements anywhere.
-- vector : save some important associated data, always need query elements by index.
-- deque : message handle. FIFO.
+- list : anytime when a doubly-linked list is required.
+- vector : anytime when a dynamic array is required.
+- deque : [An answer from SO](http://stackoverflow.com/questions/3880254/why-do-we-need-deque-data-structures-in-the-real-world).
 - map : dictionary.
-- set : bad_checks.
+- set : when to keep elements sorted and unique.
 
 ## [Exercise 11.3 and 11.4](ex11_3_4.cpp)
 
