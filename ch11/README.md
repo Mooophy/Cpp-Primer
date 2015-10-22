@@ -3,9 +3,7 @@
 ## Exercise 11.1:
 >Describe the differences between a map and a vector.
 
-A `map` is a collection of key-value pairs. we can get a value **lookup by key** efficiently.
-
-A `vector` is a collection of objects, and every object has an **associated index**, which gives access to that object.
+`map` is an associative container whereas `vector` is a sequence container
 
 ## Exercise 11.2:
 >Give an example of when each of list, vector, deque, map, and set might be most useful.
