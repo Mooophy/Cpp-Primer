@@ -21,7 +21,6 @@ using std::cout;
 using std::remove_if;
 using Map = std::map<std::string, std::size_t>;
 
-
 //for ex11.3
 auto count()
 {
