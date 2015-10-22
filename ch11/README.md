@@ -19,15 +19,12 @@
 ## Exercise 11.5:
 >Explain the difference between a map and a set. When might you use one or the other?
 
-- `set` : the element type is the **key type**.
-- `map` : we should use a key-value pair, such as `{ key, value }` to indicate that the items together from one element in the map.
-
-I use `set` when i just need to store the `key`, In other hand, I　would like use `map` when i need to store a key-value pair.
+[A nice answer on SO](http://stackoverflow.com/questions/16286714/advantages-of-stdset-vs-vectors-or-maps)
 
 ## Exercise 11.6:
 >Explain the difference between a set and a list. When might you use one or the other?
 
-`set` is unique and order, but `list` is neither. using which one depend on whether the elements are unique and order to store.
+[list vs set](http://stackoverflow.com/questions/2302681/c-stl-list-vs-set)
 
 ## [Exercise 11.7](ex11_7.cpp)
 ## [Exercise 11.8](ex11_8.cpp)
