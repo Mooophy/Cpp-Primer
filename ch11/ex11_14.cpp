@@ -1,4 +1,6 @@
+//
 // @Yue Wang
+//
 // Exercise 11.14:
 // Extend the map of children to their family name that you wrote for the
 // exercises in § 11.2.1 (p. 424) by having the vector store a pair that
@@ -15,8 +17,15 @@
 #include <string>
 #include <vector>
 
-using std::ostream; using std::cout; using std::cin; using std::endl; using std::string;
-using std::make_pair; using std::pair; using std::vector; using std::map; 
+using std::ostream;
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::make_pair;
+using std::pair;
+using std::vector;
+using std::map;
 
 class Families
 {
@@ -25,24 +34,21 @@ public:
     using Children  = vector<Child>;
     using Data      = map<string, Children>;
 
-    auto add(string const& last_name, string const& first_name, string birthday) -> void
+    auto add(string const& last_name, string const& first_name, string birthday)
     {
-        _data[last_name].push_back(make_pair(first_name, birthday));
+        auto child = make_pair(first_name, birthday);
+        _data[last_name].push_back(child);
     }
 
-    auto print(std::ostream& os) const -> ostream&
+    auto print() const
     {
-        if (_data.empty())
-            return os << "No data right now." << endl;
-
         for (auto const& pair : _data)
         {
-            os << pair.first << ":\n" ;
+            cout << pair.first << ":\n" ;
             for (auto const& child : pair.second)
-                os << child.first << " " << child.second << endl;
-            os << endl;
+                cout << child.first << " " << child.second << endl;
+            cout << endl;
         }
-        return os;
     }
 
 private:
@@ -51,10 +57,10 @@ private:
 
 int main()
 {
-    Families families; 
-    string message = "Please enter last name, first name and birthday";
-    for (string l, f, b; cout << message << endl, cin >> l >> f >> b; families.add(l, f, b));
-    families.print(cout << "Current data:" << endl);
+    Families families;
+    auto msg = "Please enter last name, first name and birthday:\n";
+    for (string l, f, b; cout << msg, cin >> l >> f >> b; families.add(l, f, b));
+    families.print();
 
     return 0;
 }
