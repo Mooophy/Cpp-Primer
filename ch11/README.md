@@ -86,8 +86,9 @@ while reading into word
         word_count[word] = 0
         word_count[word] += 1
 ```
+
 ## Exercise 11.22:
->Given a map<string, vector<int>>, write the types used as an argument and as the return value for the version of insert that inserts one element.
+>Given a `map<string, vector<int>>`, write the types used as an argument and as the return value for the version of insert that inserts one element.
 
 ```cpp
 std::pair<std::string, std::vector<int>>    // argument
