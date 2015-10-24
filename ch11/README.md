@@ -78,7 +78,7 @@ while (cin >> word)
     ++word_count.insert({ word, 0 }).first->second;
 ```
 This code can be explained like this pseudocode:
-```java
+```python
 while reading into word
     if word_count has key word:
         word_count[word] += 1
@@ -105,13 +105,22 @@ std::pair<std::map<std::string, std::vector<int>>::iterator, bool> // return
 ## Exercise 11.34:
 >What would happen if we used the subscript operator instead of find in the transform function?
 
-In gcc 4.8.3, will report error:
+Say the code has been changed like below:
 ```cpp
-error: passing ‘const std::map<std::basic_string<char>, std::basic_string<char> >’ as ‘this’ argument of ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = std::basic_string<char>; _Tp = std::basic_string<char>; _Compare = std::less<std::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::basic_string<char>, std::basic_string<char> > >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = std::basic_string<char>; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::basic_string<char>]’ discards qualifiers [-fpermissive]
-     auto key = m[s];
-                   ^
+const string& transform(const string &s, const map<string, string> &m)
+{
+    return m[s];
+}
 ```
-Because std::map's operator is not declared as **const**, but m is declared as a  reference to  std::map with **const**.If insert new pair, it will cause error.
+Such code could be explained as following pseudocode:
+```python
+    if m contains key s:
+        return m[s]
+    else:
+        insert pair {s, ""} into m
+        return m[s]     // That is an empty string
+```
+
 ## Exercise 11.35:
 >In buildMap, what effect, if any, would there be from rewriting `trans_map[key] = value.substr(1);` as `trans_map.insert({ key, value.substr(1) })`?
 
