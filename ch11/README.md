@@ -77,8 +77,14 @@ std::multiset<Sales_data, compareType>::iterator c_it = bookstore.begin();
 while (cin >> word)
     ++word_count.insert({ word, 0 }).first->second;
 ```
-
-```cpp
+This code can be explained like this pseudocode:
+```java
+while reading into word
+    if word_count has key word:
+        word_count[word] += 1
+    else:
+        word_count[word] = 0
+        word_count[word] += 1
 ++ (word_count.insert({ word, 0 }).first->second)
 ```
 ## Exercise 11.22:
