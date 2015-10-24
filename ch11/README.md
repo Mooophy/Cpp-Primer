@@ -73,6 +73,7 @@ std::multiset<Sales_data, compareType>::iterator c_it = bookstore.begin();
 ## [Exercise 11.20](ex11_20.cpp)
 ## Exercise 11.21:
 >Assuming word_count is a map from string to size_t and word is a string, explain the following loop:
+
 ```cpp
 while (cin >> word)
     ++word_count.insert({ word, 0 }).first->second;
