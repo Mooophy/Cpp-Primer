@@ -2,7 +2,8 @@
 *  @file       The code is for the exercises in C++ Primmer 5th Edition
 *  @author     Yue Wang
 *  @date       22  DEC 2013
-*              Jun 2015             
+*              Jun 2015
+*              Oct 2015
 *  @remark
 ***************************************************************************/
 //
@@ -19,12 +20,12 @@
 
 using Ptr = std::vector<int>*;
 
-auto make_dynamically() -> Ptr
+auto make_dynamically()
 {
     return new std::vector < int > { };
 }
 
-auto populate(Ptr vec) -> Ptr
+auto populate(Ptr vec)
 {
     for (int i; std::cout << "Pls Enter:\n", std::cin >> i; vec->push_back(i));
     return vec;
