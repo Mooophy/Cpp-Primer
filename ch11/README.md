@@ -132,18 +132,11 @@ Such code could be explained as following pseudocode:
 >Our program does no checking on the validity of either input file. In particular, it assumes that the rules in the transformation file are all sensible.
 What would happen if a line in that file has a key, one space, and then the end of the line? Predict the behavior and then check it against your version of the program.
 
-we added a file that name "word_transformation_bad.txt" to folder `data`. the file only has a key, one space.
-
-the program of 11.33 don't influenced by that.
+If so, a key-value pair is going to be added into the map: `{key, ""}`. As a result, any key would be replaced with empty string.
 
 ## Exercise 11.37:
 >What are the advantages of an unordered container as compared to the ordered version of that container? What are the advantages of the ordered version?
 
-- the advantages of an unordered container:
-    - useful when we have a key type for which there is no obvious ordering relationship among the elements
-    - useful for applications in which the cost of maintaining the elements in order is prohibitive
-- the advantages of the ordered version:
-    - Iterators for the ordered containers access elements in order by key
-    - we can directly define an ordered container that uses a our own class types for its key type.
+[A summary](http://www.cs.fsu.edu/~lacher/courses/COP4531/fall13/lectures/containers2/slide04.html)
 
 ## [Exercise 11.38](ex11_38.cpp)
