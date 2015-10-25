@@ -12,8 +12,8 @@ StrBlob b1;
 ```
 
 At the end of this code,
- * `b1` has 4 elements stored on heap;
- * `b2`, as stored on stack, has been destroyed automatically. So it's meaningless to say how many elements in `b2`.
+ * `b1` holds 4 elements;
+ * `b2` has been destroyed automatically. So it's meaningless to say how many elements in `b2`.
 
 ## Exercise 12.2
 
