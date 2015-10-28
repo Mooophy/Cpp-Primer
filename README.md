@@ -13,9 +13,9 @@
 g++ -std=c++14 some_ex.cpp -o some_ex
 ```
  
- * Mac: clang++ 3.6+
+ * Mac: clang++ 3.7+
 ```python
-clang++ -std=c++14 some_ex.cpp -o some_ex
+clang++ -std=c++1y some_ex.cpp -o some_ex
 ```
 
 ### Contents
