@@ -25,4 +25,5 @@ int main()
     char *concatenate_string2 = new char[str1.length() + str2.length() + 1]();
     strcpy(concatenate_string2, (str1+str2).c_str());
     std::cout << concatenate_string2 << std::endl;
+    delete [] concatenate_string2;
 }
