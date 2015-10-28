@@ -14,7 +14,7 @@
 int main()
 {
     // dynamically allocated array of char
-    char *concatenate_string = new char[strlen("hello " "world")]();
+    char *concatenate_string = new char[strlen("hello " "world") + 1]();
     strcat(concatenate_string, "hello ");
     strcat(concatenate_string, "world");
     std::cout << concatenate_string << std::endl;
@@ -22,7 +22,7 @@ int main()
     
     // std::string
     std::string str1{ "hello " }, str2{ "world" };
-    char *concatenate_string2 = new char[str1.length() + str2.length()]();
+    char *concatenate_string2 = new char[str1.length() + str2.length() + 1]();
     strcpy(concatenate_string2, (str1+str2).c_str());
     std::cout << concatenate_string2 << std::endl;
 }
