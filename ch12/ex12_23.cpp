@@ -20,7 +20,7 @@ int main()
     std::cout << concatenate_string << std::endl;
     delete [] concatenate_string;
     
-// std::string
+    // std::string
     std::string str1{ "hello " }, str2{ "world" };
     std::cout << str1 + str2 << std::endl;
 }
