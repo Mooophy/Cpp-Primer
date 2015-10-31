@@ -111,7 +111,7 @@ std::string& deref() const
 ```
 Which version do you think is better and why?
 
-The original one is better, Because it's more readable.
+The original one is better, because it's more readable.
 
 ## Exercise 12.22 [Header](ex12_22.h)|[Implementation](ex12_22.cpp)
 ## [Exercise 12.23](ex12_23.cpp)
