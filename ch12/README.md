@@ -144,14 +144,15 @@ do {
 } while ( true );
 ```
 
-I prefer the `do while`, cause the process according with our logic.
+I prefer `do while`, because it looks clearer.
 
 ## Exercise 12.30 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Test](ex12_27_30_TEST.cpp)
 
 ## Exercise 12.31:
 >What difference(s) would it make if we used a vector instead of a set to hold the line numbers? Which approach is better? Why?
 
-The `vector` can not ensure no duplicates. Hence, in terms of this program,  `set` is a better option.
+`vector` doesn't guarantee that elements being held are unique, so `set` is a better choice for this case.
+can not ensure no duplicates. Hence, in terms of this program,  `set` is a better option.
 
 ## Exercise 12.32 [Header](ex12_32.h)|[Implementation](ex12_32.cpp)|[Test](ex12_32_TEST.cpp)
 ## Exercise 12.33 [Header](ex12_33.h)|[Implementation](ex12_33.cpp)|[Test](ex12_33_TEST.cpp)
