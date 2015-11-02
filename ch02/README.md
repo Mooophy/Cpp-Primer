@@ -326,10 +326,6 @@ a single pointer can point to **several different objects** over its lifetime.
 4. a reference must be initialized.
 a pointer need **not be** initialized at the time it is defined.
 
-####Usage advise:
-
-Look at [here](http://www.parashift.com/c%2B%2B-faq-lite/refs-vs-ptrs.html)
-
 ##Exercise 2.20
 >What does the following program do?
 ```cpp
