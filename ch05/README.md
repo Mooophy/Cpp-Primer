@@ -16,7 +16,7 @@ while (cin >> s && s != sought)
 ##Exercise 5.2
 >What is a block? When might you might use a block?
 
-A block is a (possiby empty) sequence of statements and declarations surrounded by a pair of curly braces.It's used when multiple statements are needed.For example:
+A block is a (possibly empty) sequence of statements and declarations surrounded by a pair of curly braces.It's used when multiple statements are needed.For example:
 ```cpp
 while (val <= 10)
 {
