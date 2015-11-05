@@ -212,7 +212,6 @@ how now now now brown cow cow
 the output should indicate that the word now occurred three times.
 
 - [concise solution](ex5_14.cpp)
-- [easy to understand](ex5_14_1.cpp)
 
 
 ##Exercise 5.15
