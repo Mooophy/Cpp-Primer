@@ -1,4 +1,4 @@
-// @Alan @pezy
+// @Yue Wang @pezy
 //
 // Exercise 11.20:
 // Rewrite the word-counting program from § 11.1 (p. 421) to use insert instead
@@ -11,19 +11,19 @@
 #include <string>
 
 using std::string;
+using std::map;
+using std::cin;
+using std::cout;
 
 int main()
 {
-    std::map<string, size_t> word_count;
-    string word;
-    while(std::cin >> word)
+    map<string, size_t> counts;
+    for(string word; cin >> word;)
     {
-        auto ret = word_count.insert({ word, 1 });
-        if(!ret.second) ++ret.first->second;
+        auto result = counts.insert({ word, 1 });
+        if(!result.second)
+            ++result.first->second;
     }
-
-    // print the content of the map.
-    for(const auto &w : word_count)
-        std::cout << w.first << " " << w.second
-                << ((w.second > 1) ? " times" : " time") << std::endl;
+    for(auto const& count : counts)
+        cout << count.first << " " << count.second << ((count.second > 1) ? " times\n" : " time\n");
 }
