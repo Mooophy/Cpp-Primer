@@ -82,7 +82,7 @@ the interface should be defined as public, the data shouldn't expose to outside 
 
 ## [Exercise 7.21](ex7_21.h)
 ## [Exercise 7.22](ex7_22.h)
-## Exercise 7.23 [Header](ex7_23.h)|[CPP](ex7_23.cpp)
+## [Exercise 7.23](ex7_23.h)
 ## [Exercise 7.24](ex7_24.h)
 
 ## Exercise 7.25
