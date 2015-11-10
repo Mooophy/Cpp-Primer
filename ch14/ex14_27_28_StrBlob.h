@@ -204,8 +204,7 @@ inline StrBlobPtr& StrBlobPtr::operator++()
 
 inline StrBlobPtr& StrBlobPtr::operator--()
 {
-    --curr;
-    check(-1, "decrement past begin of StrBlobPtr");
+    check(--curr, "decrement past begin of StrBlobPtr");
     return *this;
 }
 

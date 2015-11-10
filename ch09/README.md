@@ -7,7 +7,7 @@
 >- (b) Read an unknown number of words. Always insert new words at the back. Remove the next value from the front.
 >- (c) Read an unknown number of integers from a file. Sort the numbers and then print them to standard output.
 
-- (a) `std::set` is the best. now, we can select `vector` or `deque`, better than `list`, cause we don't need insert or delete elements in the middle.
+- (a) Within the three options, `std::list` is the best one. To keep sorted alphabetically, each inserting into vector takes theta(n) time complexity, whereas that of list (essentially doubly linked list) takes only O(n). Hence theoretically list has better performance.  
 - (b) `deque`. If the program needs to insert or delete elements at the front and the back, but not in the middle, use a deque
 - (c) `vector`, no need that insert or delete at the front or back. and If your program has lots of small elements and space overhead matters, don’t use list or forward_list.
 
@@ -15,7 +15,7 @@
 >Define a list that holds elements that are deques that hold ints.
 
 ```cpp
-std::list<std::deque<int>> ldi;
+std::list<std::deque<int>> a_list_of_deque_of_ints;
 ```
 
 ## Exercise 9.3:
@@ -29,10 +29,10 @@ two iterators, `begin` and `end`:
 >Write a function that takes a pair of iterators to a vector<int> and an int value. Look for that value in the range and return a bool indicating whether it was found.
 
 ```cpp
-bool find(vector<int>::iterator beg, vector<int>::iterator end, int value)
+auto contains(vector<int>::const_iterator first, vector<int>::const_iterator last, int value)
 {
-    for (auto iter = beg; iter != end; ++iter)
-        if (*iter == value) return true;
+    for(; first != last; ++first)
+        if(*first == value) return true;
     return false;
 }
 ```
@@ -41,11 +41,11 @@ bool find(vector<int>::iterator beg, vector<int>::iterator end, int value)
 >Rewrite the previous program to return an iterator to the requested element. Note that the program must handle the case where the element is not found.
 
 ```cpp
-vector<int>::iterator find(vector<int>::iterator beg, vector<int>::iterator end, int value)
+auto find(vector<int>::const_iterator first, vector<int>::const_iterator last, int value)
 {
-    for (auto iter = beg; iter != end; ++iter)
-        if (*iter == value) return iter;
-    return end;
+    for(; first != last; ++first)
+        if(*first == value) return first;
+    return last;
 }
 ```
 
@@ -55,7 +55,7 @@ vector<int>::iterator find(vector<int>::iterator beg, vector<int>::iterator end,
 ```cpp
 list<int> lst1;
 list<int>::iterator iter1 = lst1.begin(), iter2 = lst1.end();
-while (iter1 < iter2) /*ERROR: operator< can't be applied to iterator for list*/
+while (iter1 < iter2)
 ```
 
 Fixed:
@@ -63,7 +63,7 @@ Fixed:
 while(iter1 != iter2)
 ```
 #### note:
-operator `<` can be used in `list`, but can't be applied to iterator for `list`.
+operator `<` is not implemented in `std::list`, because `std::list` is essetially a doubly linked list. Addresses of nodes of linked list are not necessarily continuous.  
 ## Exercise 9.7:
 >What type should be used as the index into a vector of ints?
 
@@ -72,8 +72,8 @@ operator `<` can be used in `list`, but can't be applied to iterator for `list`.
 ## Exercise 9.8:
 >What type should be used to read elements in a list of strings? To write them?
 
-    list<string>::iterator || list<string>::const_iterator // read
-    list<string>::iterator // write
+    list<string>::const_iterator // to read
+    list<string>::iterator // to write
 
 ## Exercise 9.9:
 >What is the difference between the `begin` and `cbegin` functions?
@@ -285,7 +285,7 @@ cannot.
 ## Exercise 9.37:
 >Why don’t list or array have a capacity member?
 
-`list` elements does not store contiguously. `array` has the fixed size, thus cannot added elements to it.
+`list` does not hold elements contiguously. `array` has the fixed size statically.
 
 ## [Exercise 9.38](ex9_38.cpp)
 
@@ -321,9 +321,7 @@ read | size | capacity
 
 Use member `reserve(120)` to allocate enough space for this string. (@Mooophy)
 
-## Exercise 9.43
-
-[Visual Studio + Clang](ex9_43_1.cpp) | [cross_platform](ex9_43_2.cpp)
+## [Exercise 9.43](ex9_43.cpp)
 
 ## [Exercise 9.44](ex9_44.cpp)
 ## [Exercise 9.45](ex9_45.cpp)

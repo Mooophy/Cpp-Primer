@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 
-int sum_for_int(std::vector<std::string> const& v)
+auto sum_for_int(std::vector<std::string> const& v)
 {
     int sum = 0;
     for (auto const& s : v)
@@ -18,7 +18,7 @@ int sum_for_int(std::vector<std::string> const& v)
     return sum;
 }
 
-float sum_for_float(std::vector<std::string> const& v)
+auto sum_for_float(std::vector<std::string> const& v)
 {
     float sum = 0.0;
     for (auto const& s : v)

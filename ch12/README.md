@@ -12,8 +12,8 @@ StrBlob b1;
 ```
 
 At the end of this code,
- * `b1` has 4 elements stored on heap;
- * `b2`, as stored on stack, has been destroyed automatically. So it's meaningless to say how many elements in `b2`.
+ * `b1` holds 4 elements;
+ * `b2` has been destroyed automatically. So it's meaningless to say how many elements in `b2`.
 
 ## Exercise 12.2
 
@@ -111,7 +111,7 @@ std::string& deref() const
 ```
 Which version do you think is better and why?
 
-the origin version is better. cause it's more **readability** and **easier to debug**.
+The original one is better, because it's more readable.
 
 ## Exercise 12.22 [Header](ex12_22.h)|[Implementation](ex12_22.cpp)
 ## [Exercise 12.23](ex12_23.cpp)
@@ -144,14 +144,14 @@ do {
 } while ( true );
 ```
 
-I prefer the `do while`, cause the process according with our logic.
+I prefer `do while`, because it looks clearer.
 
 ## Exercise 12.30 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Test](ex12_27_30_TEST.cpp)
 
 ## Exercise 12.31:
 >What difference(s) would it make if we used a vector instead of a set to hold the line numbers? Which approach is better? Why?
 
-The `vector` can not ensure no duplicates. Hence, in terms of this program,  `set` is a better option.
+`vector` doesn't guarantee that elements being held are unique, so `set` is a better choice for this case.
 
 ## Exercise 12.32 [Header](ex12_32.h)|[Implementation](ex12_32.cpp)|[Test](ex12_32_TEST.cpp)
 ## Exercise 12.33 [Header](ex12_33.h)|[Implementation](ex12_33.cpp)|[Test](ex12_33_TEST.cpp)

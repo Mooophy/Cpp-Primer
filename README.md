@@ -1,4 +1,4 @@
-##C++ Primer 5 Answers
+##C++ Primer 5 Answers(C++11/14)
 
 [![GitHub issues](https://img.shields.io/github/issues/Mooophy/Cpp-Primer.svg)](https://github.com/Mooophy/Cpp-Primer/issues)
 [![GitHub license](https://img.shields.io/badge/license-CC0-blue.svg)](https://raw.githubusercontent.com/Mooophy/Cpp-Primer/master/LICENSE)
@@ -7,8 +7,16 @@
 
 ### Compilers recommended
  * Windows: Visual Studio 2015+ 
- * Linux: g++ 5.0+
- * Mac: clang++ 3.6+
+ 
+ * Linux: g++ 5.0+     
+```python
+g++ -std=c++14 some_ex.cpp -o some_ex
+```
+ 
+ * Mac: clang++ 3.7+
+```python
+clang++ -std=c++1y some_ex.cpp -o some_ex
+```
 
 ### Contents
 
