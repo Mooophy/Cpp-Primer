@@ -321,9 +321,7 @@ read | size | capacity
 
 Use member `reserve(120)` to allocate enough space for this string. (@Mooophy)
 
-## Exercise 9.43
-
-[Visual Studio + Clang](ex9_43_1.cpp) | [cross_platform](ex9_43_2.cpp)
+## [Exercise 9.43](ex9_43.cpp)
 
 ## [Exercise 9.44](ex9_44.cpp)
 ## [Exercise 9.45](ex9_45.cpp)
