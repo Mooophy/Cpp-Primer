@@ -123,7 +123,7 @@ have?
 
 (b): 31.4 "long double"
 
-(c): 1024 "float"
+(c): ERROR: The suffix f is valid only with floating point literals
 
 (d): 3.14 "long double"
 
