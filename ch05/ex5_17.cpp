@@ -1,23 +1,34 @@
 #include <iostream>
 #include <vector>
 
-using std::cout; using std::vector;
+using std::vector; using std::cout;
 
-bool is_prefix(vector<int> const& lhs, vector<int> const& rhs)
+bool is_prefix(vector<int> v1, vector<int> v2)
 {
-    if(lhs.size() > rhs.size())
-        is_prefix(rhs, lhs);
-    for(unsigned i = 0; i != lhs.size(); ++i)
-        if(lhs[i] != rhs[i]) return false;
-    return true;
+    //If vector size of v1 is larger than v2, swap their values.
+	if (v1.size() > v2.size())
+	{
+		vector<int> tmp = v1; // Initializing temporary vector to hold v1 vector
+		v1 = v2;
+		v2 = tmp;
+	}
+	// Using vector iterators to compare elements of smallest to largest vector
+	for (auto b1 = v1.cbegin(), b2 = v2.cbegin(); b1 < v1.cend(); ++b1, ++b2)
+	{
+	    // If vector elements doesn't match return false
+		if (*b1 != *b2) return false;
+	}
+	// If vector elements match return true
+	return true;
 }
 
 int main()
 {
-    vector<int> l{ 0, 1, 1, 2 };
-    vector<int> r{ 0, 1, 1, 2, 3, 5, 8 };
-    cout << (is_prefix(r, l) ? "yes\n" : "no\n");
-
-    return 0;
+    vector<int> iVector1{ 0, 1, 1, 2 };  
+    vecctor<int> iVector2{ 0, 1, 1, 2, 3, 5, 8 };  
+	
+	// Using ternary operator because it's shorter than if-else conditionals
+	cout << (is_prefix(iVector1, iVector2) ? "Yes\n" : "No\n");
+	
+	return 0;
 }
-
