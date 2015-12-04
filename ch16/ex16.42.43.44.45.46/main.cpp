@@ -36,7 +36,7 @@
 //                                    ^^^^^^^^
 //      g(i)        --  T is deduced as int  , val : const int&
 //      g(ci)       --  T is deduced as int  , val : const int&
-//      g(i * ci)   --  T is deduced as int&&, val : const int&& & collapse to const int&
+//      g(i * ci)   --  T is deduced as int  , val : const int&(see example on page 687)
 //
 // Exercise 16.45:
 // Given the following template, explain what happens if we call g on a literal value
