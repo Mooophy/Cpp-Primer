@@ -9,26 +9,32 @@
 
 int main()
 {
-    Sales_data total(std::cin);
-    if (!total.isbn().empty())
-    {
-        std::istream &is = std::cin;
-        while (is) {
-            Sales_data trans(is);
-            if (total.isbn() == trans.isbn())
-                total.combine(trans);
-            else {
-                print(std::cout, total) << std::endl;
-                total = trans;
-            }
-        }
-        print(std::cout, total) << std::endl;
-    }
-    else
-    {
-        std::cerr << "No data?!" << std::endl;
-        return -1;
-    }
-    
-    return 0;
+	Sales_data total(cin);
+
+	if (cin)
+	{
+		while (cin)
+		{
+			Sales_data trans(cin);
+			if (cin)
+			{
+				if (total.isbn() == trans.isbn())
+				{
+					total.combine(trans);
+				}
+				else
+				{
+					print(cout, total) << endl;
+					total = trans;
+				}
+			}
+		}		
+		print(cout, total) << endl;
+	}
+	else
+	{
+		std::cerr << "No data!" << endl;
+		return -1;
+	}
+	return 0;
 }
