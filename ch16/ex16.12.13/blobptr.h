@@ -92,18 +92,18 @@ BlobPtr<T> BlobPtr<T>::operator --(int)
     return ret;
 }
 
-template<typename T> bool operator==(const StrPtr<T> &lhs, const StrPtr<T> &rhs) {
-    if (_l.ptr.lock() != _r.ptr.lock()) {
+template<typename T> bool operator==(const BlobPtr<T> &lhs, const BlobPtr<T> &rhs) {
+    if (lhs.wptr.lock() != rhs.wptr.lock()) {
 		throw runtime_error("ptrs to different Blobs!");
 	}
-	return _l.i == _r.i;
+	return lhs.i == rhs.i;
 }
 
 template<typename T> bool operator< (const BlobPtr<T> &lhs, const BlobPtr<T> &rhs) {
-	if (_l.ptr.lock() != _r.ptr.lock()) {
+	if (lhs.wptr.lock() != rhs.wptr.lock()) {
 		throw runtime_error("ptrs to different Blobs!");
 	}
-	return _l.i < _r.i;
+	return lhs.i < rhs.i;
 }
 
 #endif // BLOBPTR_H
