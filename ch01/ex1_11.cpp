@@ -7,11 +7,11 @@ using std::cin;
 
 void print_range(int lo, int hi)
 {
-	if (lo > hi){
-		print_range(hi, lo);
-		return ;
-	}
-	for (int i = lo; i != hi; ++i)
+    if (lo > hi){
+        print_range(hi, lo);
+        return ;
+    }
+    for (int i = lo; i != hi; ++i)
         cout << i << " ";
 }
 
