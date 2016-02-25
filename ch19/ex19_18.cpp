@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 		v.push_back(a);	
 	}
 	auto m = std::count_if(v.begin(),v.end(),std::mem_fn(&std::string::empty));
-	std::cout << "Using mem_fun,the number of empty lines:" << m << std::endl;
+	std::cout << "Using mem_fn,the number of empty lines:" << m << std::endl;
 	auto n = std::count_if(v.begin(),v.end(),std::bind(&std::string::empty,std::placeholders::_1));
 	std::cout << "Using bind,the number of empty lines:" << n << std::endl;
 	auto q = std::count_if(v.begin(),v.end(),[](std::string &tem){
