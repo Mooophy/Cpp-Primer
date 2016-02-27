@@ -1,4 +1,4 @@
-﻿# Chapter 9. Sequential Containers
+# Chapter 9. Sequential Containers
 
 ## Exercise 9.1:
 >Which is the most appropriate—a vector, a deque, or a list—for the following program tasks?Explain the rationale for your choice.If there is no reason to prefer one or another container, explain why not.
@@ -234,18 +234,24 @@ if both elem1 and elem2 are the off-the-end iterator, nothing happened too.
 >Write a function that takes a forward_list<string> and two additional string arguments. The function should find the first string and insert the second immediately following the first. If the first string is not found, then insert the second string at the end of the list.
 
 ```cpp
-void find_and_insert(forward_list<string> &list, string const& to_find, string const& to_add)
+void find_and_insert(std :: forward_list<std :: string> &list, std :: string const& to_find, std :: string const& to_add)
 {
     auto prev = list.before_begin();
-    for (auto curr = list.begin(); curr != list.end(); prev = curr++)
-    {
-        if (*curr == to_find)
-        {
-            list.insert_after(curr, to_add);
-            return;
+    auto curr = list.begin();
+    bool find = false;
+    while(curr != list.end()){
+        if(*curr == to_find){
+            curr = list.insert_after(curr, to_add);
+            find = true;  
+        }else{
+            prev = curr;
+            ++curr;
         }
     }
-    list.insert_after(prev, to_add);
+    
+    if(!find){
+        list.insert_after(prev,to_add);
+    }    
 }
 ```
 
