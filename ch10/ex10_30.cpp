@@ -17,8 +17,7 @@ int main()
 {
     std::istream_iterator<int> in_iter(std::cin), eof;
     std::vector<int> vec;
-    while (in_iter != eof)
-        vec.push_back(*in_iter++);
+    std :: copy(in_iter, eof, back_inserter(vec));
     std::sort(vec.begin(), vec.end());
     std::copy(vec.cbegin(), vec.cend(), std::ostream_iterator<int>(std::cout, " "));
 }
