@@ -64,7 +64,7 @@ Point foo_bar(Point arg) // 1
 ## Exercise 13.6:
 >What is a copy-assignment operator? When is this operator used? What does the synthesized copy-assignment operator do? When is it synthesized?
 
-The copy-assignment operator is function named `operator=`.
+The copy-assignment operator is function named `operator=` and takes an argument of the same type as the class.
 
 This operator is used when assignment occurred.
 
