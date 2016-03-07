@@ -64,6 +64,8 @@ bool status;
 while ((status = find(word))) { /* ... */ }
 if (!status) { /* ... */ }
 ```  
+Edit 1:
+I posted a question about this at StackOverflow(http://stackoverflow.com/questions/35846080/what-does-variable-definition-do-in-control-structure-in-c).And it seems that the original version in the exersice works fine.
 
 ##[Exercise 5.5](ex5_5.cpp)
 ##[Exercise 5.6](ex5_6.cpp)
