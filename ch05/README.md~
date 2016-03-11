@@ -92,7 +92,7 @@ I posted a question about this at StackOverflow(http://stackoverflow.com/questio
         minval = ival;
         occurs = 1;
     }
-(c) int ival;
+(c) int val;
     if (ival = get_value())
         cout << "ival = " << ival << endl;
     if (!ival)
