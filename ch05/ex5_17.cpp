@@ -1,18 +1,23 @@
 #include <iostream>
 #include <vector>
 
-using std::cout; using std::endl; using std::vector;
+using std::cout; using std::vector;
+
+bool is_prefix(vector<int> const& lhs, vector<int> const& rhs)
+{
+    if(lhs.size() > rhs.size())
+        return is_prefix(rhs, lhs);
+    for(unsigned i = 0; i != lhs.size(); ++i)
+        if(lhs[i] != rhs[i]) return false;
+    return true;
+}
 
 int main()
 {
-    vector<int> vec1{ 0, 1, 1, 2 };
-    vector<int> vec2{ 0, 1, 1, 2, 3, 5, 8 };
-    
-    auto size = vec1.size() < vec2.size() ? vec1.size() : vec2.size();
-    for (decltype(vec1.size()) i = 0; i != size; ++i) {
-        if (vec1[i] != vec2[i]) { cout << "false" << endl; break; }
-        if (i == size - 1) cout << "true" << endl;
-    }
-    
+    vector<int> l{ 0, 1, 1, 2 };
+    vector<int> r{ 0, 1, 1, 2, 3, 5, 8 };
+    cout << (is_prefix(r, l) ? "yes\n" : "no\n");
+
     return 0;
 }
+
