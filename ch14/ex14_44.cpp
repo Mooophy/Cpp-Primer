@@ -39,6 +39,5 @@ int main()
 		std::cout << binops[op](lhs, rhs) << std::endl;
 		std::cout << "Pls enter as: num operator num :\n" ;
 	}
-	system("pause");
     return 0;
 }
