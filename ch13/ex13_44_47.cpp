@@ -52,3 +52,7 @@ String& String::operator = (const String &rhs)
     std::cout << "copy-assignment" << std::endl;
     return *this;
 }
+int main ( int argc, char *argv[] )
+{
+	return 0;
+}				/* ----------  end of function main  ---------- */

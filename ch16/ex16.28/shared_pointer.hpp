@@ -118,14 +118,14 @@ namespace cp5
         //
         bool unique() const noexcept 
         { 
-            return 1 == *refCount; 
+            return 1 == *ref_count; 
         }
         //
         //  Swap
         //
         void swap(SharedPointer& rhs) 
         { 
-            ::swap(*this, rhs); 
+            cp5::swap(*this, rhs); 
         }
         //
         // Free the object pointed to, if unique
@@ -141,7 +141,7 @@ namespace cp5
         {
             if (ptr != pointer)
             {
-                decrement_n_destroy();
+                decrement_and_destroy();
                 ptr = pointer;
                 ref_count = new std::size_t(1);
             }
