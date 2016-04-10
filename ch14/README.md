@@ -119,7 +119,8 @@ see [Exercise 14.5](#exercise-145)
 ## Exercise 14.13:
 >Which other arithmetic operators (Table 4.1 (p. 139)), if any, do you think Sales_data ought to support? Define any you think the class should include.
 
-no others.
+Substraction, in order to be able to revert a previously addition.
+[hpp](ex14_13.h) | [cpp](ex14_13.cpp) | [Test](ex14_13_TEST.cpp)
 
 ## Exercise 14.14:
 >Why do you think it is more efficient to define `operator+` to call `operator+=` rather than the other way around?
