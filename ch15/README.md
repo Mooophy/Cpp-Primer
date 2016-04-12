@@ -54,6 +54,7 @@ The dynamic type is the type of the object in memory that the variable or expres
 > When is it possible for an expression’s static type to differ from its dynamic type? Give three examples in which the static and dynamic type differ.
 
 The static type of a pointer or reference to a base class may differ from its dynamic type. Anything like this can be an example.
+[Exercise 15.9](ex15.9/main.cpp)
 
 ## Exercise 15.10:
 > Recalling the discussion from §8.1 (p. 311), explain how the program on page 317 that passed an `ifstream` to the `Sales_data` read function works.
