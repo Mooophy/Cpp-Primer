@@ -16,7 +16,7 @@ void input_reverse_output_string(int n)
     auto const p = alloc.allocate(n);
     std::string s;
     auto q = p;
-    while (std::cin >> s && q != p + n)
+    while (q != p + n && std::cin >> s)
         alloc.construct(q++, s);
     
     while (q != p)
