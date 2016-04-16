@@ -36,11 +36,11 @@ The space "p" points will not be free. There will be a memory leak.
 ##Exercise 18.21
 
 >Explain the following declarations. Identify any that are in error and explain why they are incorrect:
->**(a)**
+
+**(a)**
 ```cpp
 class CAD{};
 class Vehicle{};
-
 class CADVehicle : public CAD, Vehicle{};
 ```
 
