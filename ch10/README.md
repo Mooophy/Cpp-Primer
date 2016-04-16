@@ -2,7 +2,12 @@
 
 ##[Exercise 10.1 and 10.2](ex10_01_02.cpp)
 ##[Exercise 10.3 and 10.4](ex10_03_04.cpp)
-##[Exercise 10.5](ex10_05.cpp)
+## Exercise 10.5:
+>In the call to equal on rosters, what would happen if both rosters held C-style strings, rather than library strings?
+
+For such case, std::equal is going to compare the address value rather than the string value. 
+So the result is not the same as std::string. Try to avoid coding this way.
+
 ##[Exercise 10.6](ex10_06.cpp)
 ##[Exercise 10.7](ex10_07.cpp)
 
