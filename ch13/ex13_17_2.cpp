@@ -26,7 +26,7 @@ public:
     static int unique;
 };
 
-static int unique = 10;
+int numbered::unique = 10;
 
 void f(numbered s) {
     std::cout << s.mysn << std::endl;
