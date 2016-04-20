@@ -222,3 +222,75 @@ int main()
 
 There is no matching version of print in MI that matches an integer argument.  If we just remove the print function in MI there is an ambiguity between the Derived and Base2 versions
 of print; therefore, we should overload the MI version of print() to take an int argument.
+
+##Exercise 18.27
+
+>Given the hierarchy in the box on page 810, why is the following call to print an error?
+>Revise MI to allow this call to print to compile and execute correctly.
+
+```cpp
+#include <iostream>
+#include <vector>
+struct Base1{
+    void print(int) const{
+        std::cout<<"Base1 Print Used"<<std::endl;
+        };
+protected:
+    int ival;
+    double dval;
+    char cval;
+private:
+    int *id;
+};
+
+struct Base2 {
+    void print(double) const;
+protected:
+    double fval;
+private:
+    double dval;
+};
+
+struct Derived : public Base1 {
+    void print(std::string) const;
+protected:
+    std::string sval=std::string(1,Base1::cval);//(e)
+    double dval;
+};
+
+struct MI : public Derived, public Base2{
+
+void print(std::vector<double>){};
+void print(int x){
+    Base1::print(x);
+}
+
+int ival;
+double dval;
+
+void foo(double cval)
+    {
+        int dval;
+        dval = Base1::dval+Derived::dval;//(c)
+        Base2::fval=dvec.back()-1;//(d)
+        Derived::sval[0]= Base1::cval;//(e)
+        std::cout<<dval;
+    }
+protected:
+    std::vector<double> dvec={9,8,7};
+};
+
+int main()
+{
+    MI mi;
+    return 0;
+}
+```
+
+(a) Everything that is a property of the classes that MI derives from is visible except those that are private.
+(b) Yes any names in the base classes that repeat and are not private can be accessed in foo by adding a scope operator.
+(c) see above
+(d) see above
+(e) see above
+
+
