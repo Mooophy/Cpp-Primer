@@ -15,11 +15,13 @@ int main()
         std::istream &is = std::cin;
         while (is) {
             Sales_data trans(is);
-            if (total.isbn() == trans.isbn())
-                total.combine(trans);
-            else {
-                print(std::cout, total) << std::endl;
-                total = trans;
+            if (!trans.isbn().empty()){
+                if (total.isbn() == trans.isbn())
+                    total.combine(trans);
+                else {
+                    print(std::cout, total) << std::endl;
+                    total = trans;
+                }
             }
         }
         print(std::cout, total) << std::endl;
