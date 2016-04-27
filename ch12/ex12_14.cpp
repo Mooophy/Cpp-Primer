@@ -23,9 +23,8 @@ struct destination {
 
 connection connect(destination* pDest)
 {
-    std::shared_ptr<connection> pConn(new connection(pDest->ip, pDest->port));
-    std::cout << "creating connection(" << pConn.use_count() << ")" << std::endl;
-    return *pConn;
+    connection c(pDest->ip, pDest->port);
+	return c;
 }
 
 void disconnect(connection pConn)
