@@ -22,7 +22,7 @@ bool isLessThanOrEqualTo(const string &s, string::size_type sz)
     return s.size() <= sz;
 }
 
-auto isLessThanOrEqualTo6 = bind(isLessThanOrEqualTo,_1,6);
+auto isLessThanOrEqualTo6 = bind(isLessThanOrEqualTo, _1, v6);
 
 int main()
 {
