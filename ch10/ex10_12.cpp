@@ -8,7 +8,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <numeric>
 #include "../ch07/ex7_26.h"     // Sales_data class.
 
 inline bool compareIsbn(const Sales_data &sd1, const Sales_data &sd2)

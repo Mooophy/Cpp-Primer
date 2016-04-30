@@ -113,14 +113,7 @@ const string& transform(const string &s, const map<string, string> &m)
     return m[s];
 }
 ```
-Such code could be explained as following pseudocode:
-```python
-    if m contains key s:
-        return m[s]
-    else:
-        insert pair {s, ""} into m
-        return m[s]     // That is an empty string
-```
+The above code won't compile because the subscript operator might insert an element (when the element with the key s is not found), and we may use subscript only on a map that is not const.
 
 ## Exercise 11.35:
 >In buildMap, what effect, if any, would there be from rewriting `trans_map[key] = value.substr(1);` as `trans_map.insert({ key, value.substr(1) })`?
