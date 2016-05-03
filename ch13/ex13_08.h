@@ -20,7 +20,7 @@ public:
     HasPtr(const HasPtr &hp) : ps(new std::string(*hp.ps)), i(hp.i) { }
     HasPtr& operator=(const HasPtr &rhs_hp) {
         if(this != &rhs_hp){
-            std :: string *temp_ps = new std :: string(*rhs_hp);
+            std::string *temp_ps = new std::string(*rhs_hp.ps);
             delete ps;
             ps = temp_ps;
             i = rhs_hp.i;
