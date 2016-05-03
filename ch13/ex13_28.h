@@ -19,16 +19,9 @@ public:
     TreeNode& operator=(const TreeNode &rhs);
     ~TreeNode() {
         if (--*count == 0) {
-            if (left) {
-                delete left;
-                left = nullptr;
-            }
-            if (right) {
-                delete right;
-                right = nullptr;
-            }
+            delete left;
+            delete right;
             delete count;
-            count = nullptr;
         }
     }
 
