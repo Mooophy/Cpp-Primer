@@ -19,17 +19,12 @@ public:
     HasPtr(const std::string &s = std::string()) : ps(new std::string(s)), i(0) { }
     HasPtr(const HasPtr &hp) : ps(new std::string(*hp.ps)), i(hp.i) { }
     HasPtr& operator=(const HasPtr &rhs_hp) {
-        if(this != &rhs_hp){  // there is no need to assign for
-                              // the same instance.
-
-            HasPtr temp_HasPtr(rhs_hp);
-            std :: string *temp_ps = temp_HasPtr.ps;
-            temp_HasPtr.ps = ps;
+        if(this != &rhs_hp){
+            std :: string *temp_ps = new std :: string(*rhs_hp);
+            delete ps;
             ps = temp_ps;
-
-            i = temp_HasPtr.i;
-        }  // temp_HasPtr's destructor will be called,
-           // the memory allocated by original instance will be freed.
+            i = rhs_hp.i;
+        }
         return *this;
     }
 private:
