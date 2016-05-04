@@ -12,13 +12,8 @@ TreeNode& TreeNode::operator=(const TreeNode &rhs)
 {
     ++*rhs.count;
     if (--*count == 0) {
-        if (left) {
-            delete left;
-        }
-        if (right) {
-            delete right;
-        }
-
+        delete left;
+        delete right;
         delete count;
     }
     value = rhs.value;
