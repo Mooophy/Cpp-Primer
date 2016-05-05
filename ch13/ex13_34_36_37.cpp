@@ -108,7 +108,7 @@ void Folder::remove_from_Message()
 
 Folder::~Folder() 
 { 
-    remove_to_Message(); 
+    remove_from_Folders(); 
 }
 
 Folder &Folder::operator=(const Folder &rhs) 
