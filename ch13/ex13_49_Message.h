@@ -55,8 +55,8 @@ public:
     explicit Folder(const std::string &str = "") :name(str) { }
     Folder(const Folder &);
     Folder& operator=(const Folder &);
-    Folder(Folder &&f); // need to update the Folders
-    Folder& operator=(Folder &&); // need to update the Folders
+    Folder(Folder &&f); // need to update the Messages
+    Folder& operator=(Folder &&); // need to update the Messages
     ~Folder();
 
     const std::string& fldr() const { return name; }
