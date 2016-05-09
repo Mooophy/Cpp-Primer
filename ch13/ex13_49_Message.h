@@ -21,8 +21,8 @@ public:
     explicit Message(const std::string &str = "") : contents(str) { }
     Message(const Message&);
     Message& operator=(const Message&);
-    Message(Message &&m) NOEXCEPT : contents(std::move(m.contents)), folders(std::move(m.folders)) { }
-    Message& operator=(Message&&)NOEXCEPT;
+    Message(Message &&m); // need to update the Folders
+    Message& operator=(Message&&); // need to update the Folders
     ~Message();
 
     void save(Folder&);
@@ -37,6 +37,8 @@ private:
 
     void addFldr(Folder *f) { folders.insert(f); }
     void remFldr(Folder *f) { folders.erase(f); }
+    
+    void move_Folders(Message*); // define function to do the common work
 
 private:
     std::string contents;
@@ -53,8 +55,8 @@ public:
     explicit Folder(const std::string &str = "") :name(str) { }
     Folder(const Folder &);
     Folder& operator=(const Folder &);
-    Folder(Folder &&f) NOEXCEPT : name(std::move(f.name)), msgs(std::move(f.msgs)) { }
-    Folder& operator=(Folder &&)NOEXCEPT;
+    Folder(Folder &&f); // need to update the Messages
+    Folder& operator=(Folder &&); // need to update the Messages
     ~Folder();
 
     const std::string& fldr() const { return name; }
@@ -69,6 +71,8 @@ private:
 
     void addMsg(Message *m) { msgs.insert(m); }
     void remMsg(Message *m) { msgs.erase(m); }
+    
+    void move_Messages(Folder*); // define function to do the common work
 };
 
 void swap(Folder &, Folder &);
