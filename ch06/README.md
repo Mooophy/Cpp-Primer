@@ -231,7 +231,7 @@ The type of `elem` in the `for` loop is `const std::string&`.
 
 ## Exercise 6.29
 
-We should use `const reference` as the loop control variable. because the elements in an `initializer_list` are always const values, so we cannot change the value of an element in an `initializer_list`.
+Depends on the type of elements of `initializer_list`. When the type is [PODType](http://en.cppreference.com/w/cpp/concept/PODType), reference is unnecessary. Because `POD` is **cheap to copy**(such as `int`). Otherwise, Using reference(`const`) is the better choice.
 
 ## Exercise 6.30
 
