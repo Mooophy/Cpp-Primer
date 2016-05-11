@@ -15,6 +15,7 @@
 #include <string>
 #include <algorithm>
 #include <list>
+#include <vector>
 
 int main()
 {
