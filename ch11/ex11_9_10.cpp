@@ -21,7 +21,7 @@ int main()
 {
     // ex 11.9
     std::map<std::string, std::list<std::size_t>> m;
-    
+
     // ex 11.10
     // can be declared.
     std::map<std::vector<int>::iterator, int> mv;
