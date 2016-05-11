@@ -12,26 +12,40 @@
 //  
 //  @Refactor  @Yue Wang Jun 2015
 //
-
-#include <string>
+//  @Refactor  @Jarvis.shen 2016
+//
+include <iostream>
 #include <fstream>
-#include <iostream>
-
-using std::string; using std::cout; using std::endl; using std::ifstream;
+#include <string>
 
 int main()
 {
-    ifstream ifs("../data/letter.txt");
-    if (!ifs) return -1;
+        std::ifstream in("in", std::ifstream::in);
+        std::ofstream out("out", std::ofstream::out);
 
-    string longest;
-    auto update_with = [&longest](string const& curr)
-    {
-        if (string::npos == curr.find_first_not_of("aceimnorsuvwxz"))
-            longest = longest.size() < curr.size() ? curr : longest;
-    };
-    for (string curr; ifs >> curr; update_with(curr));
-    cout << longest << endl;
+        if(in)
+        {
+                std::string as_de_cender("bdfgphjkly");
+                std::string word;
+                in >> word;
 
-    return 0;
+                std::string::size_type start = 0, end = 0;
+                unsigned longest = 0;
+
+                while((start = word.find_first_not_of(as_de_cender, end)) != std::string::npos)
+                {
+                        if((end = word.find_first_of(as_de_cender, start)) != std::string::npos)
+                        {
+                                longest = (end - start) > longest ? end - start : longest;
+                        }
+                        else
+                        {
+                                longest = (word.size() - start) > longest ? word.size() - start : longest;
+                        }
+                }
+
+                out << longest;
+                return 0;
+        }
 }
+
