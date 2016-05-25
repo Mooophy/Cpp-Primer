@@ -33,8 +33,13 @@ int main()
     for (std::string word; std::cout << "Enter plz:\n", std::cin >> word; )
     {
         auto is_excluded = std::binary_search(exclude.cbegin(), exclude.cend(), word);
-        auto reply = is_excluded ? "excluded" : "not excluded";
-        std::cout << reply << std::endl;
+        if(!is_excluded)
+        {    
+            exclude.push_back(word);
+            std::cout << "not excluded" << std::endl;
+        }
+        else
+            std::cout << excluded << std::endl;
     }
 
     return 0;
