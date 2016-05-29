@@ -112,7 +112,7 @@ bool fcn(const Sales_data *trans, Sales_data accum)
 ## [Exercise 13.13](ex13_13.cpp)
 
 ## Exercise 13.14:
->Assume that `numbered` is a class with a default constructor that generates a unique serial number for each object, which is stored in a data member named `mysn`. Assuming numbered uses the synthesized copy- control members and given the following function:
+>Assume that `numbered` is a class with a default constructor that generates a unique serial number for each object, which is stored in a data member named `mysn`. Assuming numbered uses the synthesized copy-control members and given the following function:
 ```cpp
 void f (numbered s) { cout << s.mysn << endl; }
 ```
