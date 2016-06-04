@@ -60,7 +60,12 @@ copy(v.begin(), v.end(), back_inserter(c)); // illegal, no `push_back` in `set`.
 copy(c.begin(), c.end(), inserter(v, v.end())); // legal.
 copy(c.begin(), c.end(), back_inserter(v)); // legal.
 ```
-## [Exercise 11.18](ex11_18.cpp)
+## Exercise 11.18:
+>Write the type of map_it from the loop on page 430 without using auto or decltype.
+
+```cpp
+std::map<std::string, size_t>::const_iterator;
+```
 ## Exercise 11.19:
 >Define a variable that you initialize by calling begin() on the multiset named bookstore from 11.2.2 (p. 425).
 Write the variable’s type without using auto or decltype.

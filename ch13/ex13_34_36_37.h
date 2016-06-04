@@ -21,7 +21,6 @@ class Folder;
 
 class Message {
     friend void swap(Message &, Message &);
-    friend void swap(Folder &, Folder &);
     friend class Folder;
 public:
     explicit Message(const std::string &str = ""):contents(str) { }
@@ -47,7 +46,6 @@ private:
 void swap(Message&, Message&);
 
 class Folder {
-    friend void swap(Message&, Message&);
     friend void swap(Folder &, Folder &);
     friend class Message;
 public:
@@ -62,7 +60,7 @@ private:
     std::set<Message*> msgs;
 
     void add_to_Message(const Folder&);
-    void remove_to_Message();
+    void remove_from_Message();
 
     void addMsg(Message *m) { msgs.insert(m); }
     void remMsg(Message *m) { msgs.erase(m); }

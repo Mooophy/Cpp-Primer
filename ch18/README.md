@@ -293,4 +293,30 @@ int main()
 (d) see above
 (e) see above
 
+##Exercise 18.28
 
+>Given the following class hierarchy, which inherited members can be accessed without qualification, from within the vmi class?
+>which require qualification? Explain your reasoning.
+
+```cpp
+struct Base{
+    void bar(int); //Accessed without qualification, not defined with int arg anywhere
+protected:
+    int ival;//Need qualification, VMI will use Derived2::ival by default
+};
+
+struct Derived1 : virtual public Base{
+    void bar(char);//Accessed with no qualification, VMI derives from Derived1 which derives from Base.
+    void foo(char);//Need qualification, can convert arg between two foos.
+protected:
+    char cval;//need to qualify ambiguous with other cval.
+};
+
+struct Derived2 : virtual public Base{
+void foo(int);//Need qualification, can convert arg between two foos.
+protected:
+    int ival;//Accessed with no qualification.
+    char cval;//need to qualify ambiguous with other cval.
+};
+class VMI : public Derived1, public Derived2 { };
+```
