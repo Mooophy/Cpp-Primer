@@ -3,7 +3,9 @@
 ## Exercise 15.1:
 > What is a virtual member?
 
-A virtual member in a base class expects its derived class define its own version. In particular base classes ordinarily should define a virtual destructor, even if it does no work.
+- A virtual member in a base class expects its derived class define its own version. In particular base classes ordinarily should define a virtual destructor, even if it does no work.
+-  A virtual function is a member function that is declared within a base class and redefined by a derived class. To create virtual function, precede the function’s declaration in the base class with the keyword virtual. When a class containing virtual function is inherited, the derived class redefines the virtual function to suit its own needs.
+More details in [What is virtual function? Explain with an example - C++](http://www.careerride.com/C++-what-is-virtual-function.aspx)
 
 ## Exercise 15.2:
 > How does the protected access specifier differ from private?
