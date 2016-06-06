@@ -8,7 +8,7 @@
 //  If so, why? If not, why not?
 //  Implement whatever copy-control members you think Employee needs.
 //
-//  Answer: No, cause there really is no sensible meaning. employee can't copy in real world.
+//  Answer: Yes, it needs, cause if function use Employee as a parameter or return a Employee object, the s_increment should not be added.
 
 #ifndef CP5_ex13_19_h
 #define CP5_ex13_19_h
@@ -20,8 +20,8 @@ class Employee {
 public:
     Employee();
     Employee(const string &name);
-    Employee(const Employee&) = delete;
-    Employee& operator=(const Employee&) = delete;
+    Employee(const Employee& t) : name(t.name), id_(t.id_) { }
+    Employee& operator=(const Employee& t) : name(t.name), id_(t.id_) { }
 
     const int id() const { return id_; }
 
