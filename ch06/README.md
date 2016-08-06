@@ -231,7 +231,7 @@ The type of `elem` in the `for` loop is `const std::string&`.
 
 ## Exercise 6.29
 
-We should use `const reference` as the loop control variable. because the elements in an `initializer_list` are always const values, so we cannot change the value of an element in an `initializer_list`.
+Depends on the type of elements of `initializer_list`. When the type is [PODType](http://en.cppreference.com/w/cpp/concept/PODType), reference is unnecessary. Because `POD` is **cheap to copy**(such as `int`). Otherwise, Using reference(`const`) is the better choice.
 
 ## Exercise 6.30
 
@@ -324,11 +324,12 @@ For example, the function `arrPtr` in [Exercise 6.38](#exercise-638) and `make_p
 
 No.
 
-> A constexpr function is defined like any other function but must meet certain restrictions: The **return type** and **the type of each parameter** in a must be a literal type
+Because `std::string::size()` is not a `constexpr` function and `s1.size() == s2.size()` is not a constant expression.
 
-But `std::string`(parameter of `isShorter`) is not a literal type.
-
-more discusses: [#22](https://github.com/ReadingLab/Discussion-for-Cpp/issues/22)
+> **For a** non-template, non-defaulted **constexpr function** or a non-template, non-defaulted, non-inheriting
+constexpr constructor, **if no argument values exist such that an invocation of the function or constructor
+could be an evaluated subexpression of a core constant expression (5.19), the program is ill-formed;** no
+diagnostic required. (N3690 §7.1.5 [dcl.constexpr]/5)
 
 ## [Exercise 6.47](ex6_47.cpp)
 ## Exercise 6.48

@@ -3,15 +3,15 @@
 #include <iostream>
 
 StrBlobPtr&
-StrBlobPtr_pointer::operator *()
+StrBlobPtr_pointer::operator *() const
 {
-    return *(this->pointer);
+    return *pointer;
 }
 
 StrBlobPtr*
-StrBlobPtr_pointer::operator ->()
+StrBlobPtr_pointer::operator ->() const
 {
-    return & this->operator *();
+    return pointer;
 }
 
 int main()

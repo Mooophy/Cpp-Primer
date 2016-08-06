@@ -60,7 +60,12 @@ copy(v.begin(), v.end(), back_inserter(c)); // illegal, no `push_back` in `set`.
 copy(c.begin(), c.end(), inserter(v, v.end())); // legal.
 copy(c.begin(), c.end(), back_inserter(v)); // legal.
 ```
-## [Exercise 11.18](ex11_18.cpp)
+## Exercise 11.18:
+>Write the type of map_it from the loop on page 430 without using auto or decltype.
+
+```cpp
+std::map<std::string, size_t>::const_iterator;
+```
 ## Exercise 11.19:
 >Define a variable that you initialize by calling begin() on the multiset named bookstore from 11.2.2 (p. 425).
 Write the variable’s type without using auto or decltype.
@@ -113,14 +118,7 @@ const string& transform(const string &s, const map<string, string> &m)
     return m[s];
 }
 ```
-Such code could be explained as following pseudocode:
-```python
-    if m contains key s:
-        return m[s]
-    else:
-        insert pair {s, ""} into m
-        return m[s]     // That is an empty string
-```
+The above code won't compile because the subscript operator might insert an element (when the element with the key s is not found), and we may use subscript only on a map that is not const.
 
 ## Exercise 11.35:
 >In buildMap, what effect, if any, would there be from rewriting `trans_map[key] = value.substr(1);` as `trans_map.insert({ key, value.substr(1) })`?

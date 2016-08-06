@@ -164,12 +164,11 @@ Colloquial term used to refer to the problem of how to process nested if stateme
         case 'e': eCnt++; break;
         default : iouCnt++; break;
     }
-(b) // Error: ix is not in scope.
+(b) // Error: control bypass an explicitly initialized variable ix.
     unsigned index = some_value();
-    int ix;
     switch (index) {
         case 1:
-            ix = get_value();
+            int ix;
             ivec[ ix ] = index;
             break;
         default:

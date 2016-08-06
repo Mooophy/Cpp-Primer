@@ -31,9 +31,9 @@ TextQuery::TextQuery(std::ifstream &ifs) : input(new vector<string>)
 QueryResult TextQuery::query(const string& str) const
 {
     // use static just allocate once.
-    static shared_ptr<std::set<LineNo>> nodate(new std::set<LineNo>);
+    static shared_ptr<std::set<LineNo>> nodata(new std::set<LineNo>);
     auto found = result.find(str);
-    if (found == result.end()) return QueryResult(str, nodate, input);
+    if (found == result.end()) return QueryResult(str, nodata, input);
     else return QueryResult(str, found->second, input);
 }
 

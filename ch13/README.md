@@ -64,7 +64,7 @@ Point foo_bar(Point arg) // 1
 ## Exercise 13.6:
 >What is a copy-assignment operator? When is this operator used? What does the synthesized copy-assignment operator do? When is it synthesized?
 
-The copy-assignment operator is function named `operator=`.
+The copy-assignment operator is function named `operator=` and takes an argument of the same type as the class.
 
 This operator is used when assignment occurred.
 
@@ -112,7 +112,7 @@ bool fcn(const Sales_data *trans, Sales_data accum)
 ## [Exercise 13.13](ex13_13.cpp)
 
 ## Exercise 13.14:
->Assume that `numbered` is a class with a default constructor that generates a unique serial number for each object, which is stored in a data member named `mysn`. Assuming numbered uses the synthesized copy- control members and given the following function:
+>Assume that `numbered` is a class with a default constructor that generates a unique serial number for each object, which is stored in a data member named `mysn`. Assuming numbered uses the synthesized copy-control members and given the following function:
 ```cpp
 void f (numbered s) { cout << s.mysn << endl; }
 ```
@@ -163,7 +163,7 @@ Check 13.22.
 ## Exercise 13.24:
 >What would happen if the version of `HasPtr` in this section didn’t define a destructor? What if `HasPtr` didn’t define the copy constructor?
 
-If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when assignment happened, just points copied, the string which `ps` points haven't been copied.
+If `HasPtr` didn't define a destructor, a memory leak would occur, compiler synthesized destructor does not manage dynamic memory. If `HasPtr` didn't define the copy constructor, we would get pointer-like copy behaviour. The ps pointer would be copied to the left hand side, but ps in the lhs and the rhs would still point to the same string on the heap. 
 
 ## Exercise 13.25:
 >Assume we want to define a version of `StrBlob` that acts like a value. Also assume that we want to continue to use a shared_ptr so that our `StrBlobPtr` class can still use a weak_ptr to the vector. Your revised class will need a copy constructor and copy-assignment operator but will not need a destructor. Explain what the copy constructor and copy-assignment operators must do. Explain why the class does not need a destructor.

@@ -4,31 +4,27 @@
 void swap(Message &lhs, Message &rhs) 
 {
     using std::swap;
-    for (auto f : lhs.folders)
-        f->remMsg(&lhs);
-    for (auto f : rhs.folders)
-        f->remMsg(&rhs);
-
+    lhs.remove_from_Folders(); // Use existing member function to avoid duplicate code.
+    rhs.remove_from_Folders(); // Use existing member function to avoid duplicate code.
+    
     swap(lhs.folders, rhs.folders);
     swap(lhs.contents, rhs.contents);
-
-    for (auto f : lhs.folders)
-        f->addMsg(&lhs);
-    for (auto f : rhs.folders)
-        f->addMsg(&rhs);
+    
+    lhs.add_to_Folders(lhs); // Use existing member function to avoid duplicate code.
+    rhs.add_to_Folders(rhs); // Use existing member function to avoid duplicate code.
 }
 
 // Message Implementation
 
 void Message::save(Folder &f) 
 {
-    folders.insert(&f);
+    addFldr(&f); // Use existing member function to avoid duplicate code.
     f.addMsg(this);
 }
 
 void Message::remove(Folder &f) 
 {
-    folders.erase(&f);
+    remFldr(&f); // Use existing member function to avoid duplicate code.
     f.remMsg(this);
 }
 
@@ -48,7 +44,15 @@ void Message::remove_from_Folders()
 {
     for (auto f : folders)
         f->remMsg(this);
-    folders.clear();
+    // The book added one line here: folders.clear(); but I think it is redundant and more importantly, it will cause a bug:
+    // - In Message::operator=, in the case of self-assignment, it first calls remove_from_Folders() and its folders.clear() 
+    //   clears the data member of lhs(rhs), and there is no way we can assign it back to lhs.
+    //   Refer to: http://stackoverflow.com/questions/29308115/protection-again-self-assignment
+    // - Why is it redundant? As its analogous function Message::add_to_Folders(), Message::remove_from_Folders() should ONLY
+    //   take care of the bookkeeping in Folders but not touch the Message's own data members - makes it much clearer and easier
+    //   to use. As you can see in the 2 places where we call Message::remove_from_Folders(): in Message::operator=, folders.clear()
+    //   introduces a bug as illustrated above; in the destructor ~Message(), the member "folders" will be destroyed anyways, why do
+    //   we need to clear it first?
 }
 
 Message::~Message() 
@@ -75,19 +79,13 @@ void Message::print_debug()
 void swap(Folder &lhs, Folder &rhs) 
 {
     using std::swap;
-    for (auto m : lhs.msgs)
-        m->remFldr(&lhs);
-
-    for (auto m : rhs.msgs)
-        m->remFldr(&rhs);
+    lhs.remove_from_Message();
+    rhs.remove_from_Message();
 
     swap(lhs.msgs, rhs.msgs);
-
-    for (auto m : lhs.msgs)
-        m->addFldr(&lhs);
-
-    for (auto m : rhs.msgs)
-        m->addFldr(&rhs);
+    
+    lhs.add_to_Message(lhs);
+    rhs.add_to_Message(rhs);
 }
 
 void Folder::add_to_Message(const Folder &f) 
@@ -102,21 +100,20 @@ Folder::Folder(const Folder &f)
     add_to_Message(f); 
 }
 
-void Folder::remove_to_Message() 
+void Folder::remove_from_Message() 
 {
     for (auto m : msgs)
         m->remFldr(this);
-    msgs.clear();
 }
 
 Folder::~Folder() 
 { 
-    remove_to_Message(); 
+    remove_from_Message(); 
 }
 
 Folder &Folder::operator=(const Folder &rhs) 
 {
-    remove_to_Message();
+    remove_from_Message();
     msgs = rhs.msgs;
     add_to_Message(rhs);
     return *this;

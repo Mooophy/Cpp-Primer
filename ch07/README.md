@@ -364,7 +364,7 @@ struct Sales_data {
 
 ## Exercise 7.54
 
-shouldn't, cause a `constexpr` function must contain exactly one **return** statement.
+in C++11, constexpr member functions are implicitly const, so the "set_xx" functions, which will modify data members, cannot be declared as constexpr. In C++14, this property no longer holds, so constexpr is suitable.
 
 ## Exercise 7.55
 
