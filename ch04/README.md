@@ -239,7 +239,7 @@ unsigned long ul1 = 3, ul2 = 7;
 ul1 & ul2 // == 3
 ul1 | ul2 // == 7
 ul1 && ul2 // == true
-ul1 || ul2 // == ture
+ul1 || ul2 // == true
 ```
 
 ##[Exercise 4.28](ex4_28.cpp)
