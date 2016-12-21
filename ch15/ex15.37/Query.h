@@ -21,7 +21,7 @@ friend Query    operator|  ( const Query &, const Query &);
 friend class NotQuery;
 friend class AndQuery;
 friend class OrQuery;
-friend class Binary;
+friend class BinaryQuery;
 
 public:
     Query( const string &s) : QB_ptr( new WordQuery(s)){} // Not well if using makde_shared<WordQuery>(s)
@@ -37,13 +37,8 @@ public:
     {
         return QB_ptr->rep();
     }
-//private:
-    /*
-     * this constructor transforms pointer to derived class
-     * ( NotQuery, AndQuery, OrQuery) to base class.
-    */
+private:
     Query(shared_ptr<QueryBase> query) : QB_ptr(query){}
-
     shared_ptr<QueryBase>   QB_ptr;
 };
 

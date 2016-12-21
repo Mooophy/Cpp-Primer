@@ -7,10 +7,7 @@
 class Query;
 
 class QueryBase {
-/*
- * To call private member functions of QueryBase,
- * so it's needed to be friend class of QueryBase.
-*/
+
 friend class Query;
 friend class WordQuery;
 friend class NotQuery;
