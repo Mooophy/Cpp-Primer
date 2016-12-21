@@ -12,10 +12,6 @@ class QueryBase {
  * so it's needed to be friend class of QueryBase.
 */
 friend class Query;
-/*
- * members of derived class of QueryBase can access constructor
- * QueryBase::QueryBase() and destructor QueryBase::~QueryBase(). 
-*/
 protected:
     QueryBase() = default;
     virtual ~QueryBase() = default;
