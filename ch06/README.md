@@ -6,16 +6,15 @@ they are initialized by the **arguments** provided in the each function call.
 **Arguments**: Values supplied in a function call that are used to initialize the function's **parameters**.
 
 ##Exercise 6.2
-
 ```cpp
-(a) string f() {
+(a) string f() {  // return should be string, not int
           string s;
           // ...
           return s;
     }
-(b) void f2(int i) { /* ... */ }
-(c) int calc(int v1, int v2) { /* ... */ }
-(d) double square (double x) { return x * x; }
+(b) void f2(int i) { /* ... */ }  // function needs return type
+(c) int calc(int v1, int v2) { /* ... */ }  // parameter list cannot use same name twice
+(d) double square (double x) { return x * x; }  // function body needs braces
 ```
 
 ##Exercise 6.3
