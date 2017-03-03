@@ -16,8 +16,8 @@
 #include <vector>
 #include <string>
 
-template<typename T>
-auto sum(T lhs, T rhs) -> decltype( lhs + rhs)
+template<typename T, typename U>
+auto sum(T lhs, U rhs) -> decltype( lhs + rhs)
 {
     return lhs + rhs;
 }
