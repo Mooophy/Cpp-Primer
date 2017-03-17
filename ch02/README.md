@@ -288,7 +288,7 @@ i = 5; ri = 10;
 std::cout << i << " " << ri << std::endl;
 ```
 
-`10, 10`
+`10 10`
 
 ##Exercise 2.18
 >Write code to change the value of a pointer. Write code to
