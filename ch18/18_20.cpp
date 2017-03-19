@@ -14,7 +14,7 @@
 
 namespace primerLib {
     void compute();  //Error, does not work. Too many argument in the call to match.
-	void compute(const void *) {}; //Works! Converts argument to a constant void pointer.
+	void compute(const void *) { }; //Works! Converts argument to a constant void pointer.
 }
 
 void compute(int) { std::cout << "compute(int)" << std::endl; };//Works! Most closely matches the argument parameters so it is selected first.
