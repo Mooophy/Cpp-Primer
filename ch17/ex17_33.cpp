@@ -47,7 +47,7 @@ int main() {
 	// sort words in vector
 	sort(dict.begin(), dict.end(), [](const ps &_ps1, const ps &_ps2){ return _ps1.first < _ps2.first; });
 	i.open("i.txt");
-	default_random_engine e(time(0));
+	default_random_engine e(unsigned int(time(0)));
 	// read words from text
 	while (i >> str1) {
 	  // find word in dictionary

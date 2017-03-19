@@ -21,6 +21,7 @@
 
 #include <iostream>
 #include <random>
+#include<string>
 
 // default version
 unsigned random_gen();

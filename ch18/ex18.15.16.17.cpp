@@ -164,6 +164,7 @@ namespace Test2
 
 // using directive for namespace Exercise is located at the
 // location labeled position 2.
+
 namespace Test3
 {
 	namespace Exercise
@@ -220,3 +221,4 @@ int main()
 
 	return 0;
 }
+
