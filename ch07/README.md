@@ -309,7 +309,7 @@ Drawbacks:
 
 ## Exercise 7.48
 
-Both are noting happened.
+Both are nothing happened.
 
 ## Exercise 7.49
 

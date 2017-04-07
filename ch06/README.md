@@ -6,16 +6,15 @@ they are initialized by the **arguments** provided in the each function call.
 **Arguments**: Values supplied in a function call that are used to initialize the function's **parameters**.
 
 ##Exercise 6.2
-
 ```cpp
-(a) string f() {
+(a) string f() {  // return should be string, not int
           string s;
           // ...
           return s;
     }
-(b) void f2(int i) { /* ... */ }
-(c) int calc(int v1, int v2) { /* ... */ }
-(d) double square (double x) { return x * x; }
+(b) void f2(int i) { /* ... */ }  // function needs return type
+(c) int calc(int v1, int v2) { /* ... */ }  // parameter list cannot use same name twice
+(d) double square (double x) { return x * x; }  // function body needs braces
 ```
 
 ##Exercise 6.3
@@ -159,7 +158,7 @@ cause the `s` should not be changed by this function. but `occurs`'s result must
 
 >Why are these parameters references, but the char parameter `c` is not?
 
-casue `c` maybe a temp varable. such as `find_char(s, 'a', occurs)`
+cause `c` may be a temp varable, such as `find_char(s, 'a', occurs)`
 
 >What would happen if we made `s` a plain reference? What if we made `occurs` a reference to const?
 
@@ -317,7 +316,7 @@ Both two should put in a header. (a) is an inline function. (b) is the declarati
 ## [Exercise 6.44](ex6_44.cpp)
 ## Exercise 6.45
 
-For example, the function `arrPtr` in [Exercise 6.38](#exercise-638) and `make_plural` in [Exercise 6.42](#exercise-642) should be defined as `inline`. But the function `func` in [Exercise 6.4](#exercise-64) shouldn't. Cause it just being call once and too many codes in the function.
+For example, the function `arrPtr` in [Exercise 6.38](#exercise-638) and `make_plural` in [Exercise 6.42](#exercise-642) should be defined as `inline`. But the function `func` in [Exercise 6.4](#exercise-64) shouldn't. It is not that small and it's only being called once. Hence, it will probably not expand as inline.
 
 ## Exercise 6.46
 > Would it be possible to define `isShorter` as a `constexpr`? If so, do so. If not, explain why not.

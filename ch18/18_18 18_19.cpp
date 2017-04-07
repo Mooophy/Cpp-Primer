@@ -16,7 +16,7 @@ void swap(T v1,Tv2)
 //By stating we are using std::swap all the following uses of swap in the scope of the function will
 //look for the matching template for its argument types in the standard library.
 //If mem1 is a string the program will use the standard library function that has string arguments.
-//If mem1 is int, it will use the standard library template version wit int arguments.
+//If mem1 is int, it will use the standard library template version with int arguments.
 
 
 //18.19
