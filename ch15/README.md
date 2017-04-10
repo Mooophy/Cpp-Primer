@@ -295,7 +295,7 @@ for `rhs` which is a `WordQuery` : `WordQuery::rep()` where `query_word("wind")`
 
 
 1. `q.eval()`
-2. `q->rep()`: where q is a pointer to `OrQuary`.
+2. `q->rep()`: where q is a pointer to `OrQuaryq->eval()`.
 3. `QueryResult eval(const TextQuery& )const override`: is called but this one has not been defined yet.
 
 ## Exercise 15.35:
