@@ -169,9 +169,10 @@ namespace cp5
 
         auto decrement_and_destroy()
         {
-            if (ptr && 0 == --*ref_count)
+            if (ptr && 0 == --*ref_count){
                 delete ref_count, 
                 deleter(ptr);
+            }
             else if (!ptr)
                 delete ref_count;
             ref_count = nullptr;
