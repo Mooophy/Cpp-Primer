@@ -358,10 +358,10 @@ i *= static_cast<int>(d);
 >Rewrite each of the following old-style casts to use a named cast:
 ```cpp
 int i; double d; const string *ps; char *pc; void *pv;
-pv = (void*)ps; // pv = const_cast<string*>(ps); or pv = static_cast<void*>(const_cast<string*>(ps));
+pv = (void*)ps; // pc = reinterpret_cast<void*>(ps);
 i = int(*pc);   // i = static_cast<int>(*pc);
 pv = &d;        // pv = static_cast<void*>(&d);
-pc = (char*)pv; // pc = reinterpret_cast<char*>(pv);
+pc = (char*)pv; // pc = static_cast<char*>(pv);
 ```
 
 ##Exercise 4.38
