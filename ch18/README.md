@@ -1,4 +1,4 @@
-##Exercise 18.1
+## Exercise 18.1
 
 > What is the type of the exception object in the following throws?
 > 
@@ -14,7 +14,7 @@
 	If the "throw" in (b) were written as "throw p", there will be a runtime error.
 
 
-##Exercise 18.2
+## Exercise 18.2
 
 > Explain what happens if an exception occurs at the indicated point:
 
@@ -31,9 +31,9 @@ void exercise(int *b, int *e)
 
 The space "p" points will not be free. There will be a memory leak.
 
-##Exercise 18.3
+## Exercise 18.3
 
-##Exercise 18.21
+## Exercise 18.21
 
 >Explain the following declarations. Identify any that are in error and explain why they are incorrect:
 
@@ -76,7 +76,7 @@ class iostream : public istream, public ostream{/*do something*/};
 Ok. 
 
 
-##Exercise 18.22
+## Exercise 18.22
 
 >Given the following class hierarchy, in which each class defines a default constructor.
 >What is the order of constructor execution for the following definition.
@@ -112,7 +112,7 @@ return 0;
 The order in which base classes are constructed depends on the order in which they appear in the class derivation list.
 construction order is as follows: A, B, C, X, Y, Z, MI.  
 
-##Exercise 18.23
+## Exercise 18.23
 
 >Using the hierarchy in exercise 18.22 along with class D defined below, and assuming each class defines a default constructor, which,if any,
 of the following conversion are not permitted?
@@ -125,7 +125,7 @@ D *pd = new D;
 All of the conversions are permitted.
 
 
-##Exercise 18.24
+## Exercise 18.24
 
 >On page 807 we presented a series of calls made through a Bear pointer that pointed to a Panda object.
 >Explain each call assuming we used a ZooAnimal pointer pointing to a Panda Object instead.
@@ -139,7 +139,7 @@ pb->highlight();//Error, not part of interface
 delete pb;//Ok, part of interface
 ```
 
-##Exercise 18.25
+## Exercise 18.25
 
 >Assume we have two base classes, Base1 and Base 2, each of which
 >define a virtual member named print and a virtual destructor.  From these base
@@ -165,7 +165,7 @@ All of the pointer class types contain virtual versions of print so, they will l
 (e) The MI destructor, then the D1 destructor, then the base 1 destructor is called.
 (f) The MI destructor, then the D2 destructor, then the Base2 destructor is called.
 
-##Exercise 18.26
+## Exercise 18.26
 
 >Given the hierarchy in the box on page 810, why is the following call to print an error?
 >Revise MI to allow this call to print to compile and execute correctly.
@@ -223,7 +223,7 @@ int main()
 There is no matching version of print in MI that matches an integer argument.  If we just remove the print function in MI there is an ambiguity between the Derived and Base2 versions
 of print; therefore, we should overload the MI version of print() to take an int argument.
 
-##Exercise 18.27
+## Exercise 18.27
 
 >Given the hierarchy in the box on page 810, why is the following call to print an error?
 >Revise MI to allow this call to print to compile and execute correctly.
@@ -293,7 +293,7 @@ int main()
 (d) see above
 (e) see above
 
-##Exercise 18.28
+## Exercise 18.28
 
 >Given the following class hierarchy, which inherited members can be accessed without qualification, from within the vmi class?
 >which require qualification? Explain your reasoning.

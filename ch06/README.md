@@ -1,11 +1,11 @@
-##Exercise 6.1
+## Exercise 6.1
 
 **Parameters**: Local variable declared inside the function parameter list.
 they are initialized by the **arguments** provided in the each function call.
 
 **Arguments**: Values supplied in a function call that are used to initialize the function's **parameters**.
 
-##Exercise 6.2
+## Exercise 6.2
 ```cpp
 (a) string f() {  // return should be string, not int
           string s;
@@ -17,7 +17,7 @@ they are initialized by the **arguments** provided in the each function call.
 (d) double square (double x) { return x * x; }  // function body needs braces
 ```
 
-##Exercise 6.3
+## Exercise 6.3
 
 ```cpp
 #include <iostream>
@@ -39,7 +39,7 @@ int main()
 }
 ```
 
-##Exercise 6.4
+## Exercise 6.4
 
 ```cpp
 #include <iostream>
@@ -72,7 +72,7 @@ int main()
 }
 ```
 
-##Exercise 6.5
+## Exercise 6.5
 
 ```cpp
 #include <iostream>
@@ -89,7 +89,7 @@ int main()
 }
 ```
 
-##Exercise 6.6
+## Exercise 6.6
 
 
 **local variable**: Variables defined inside a **block**;
@@ -252,7 +252,7 @@ when you can find the preexited object that the reference refered.
 
 legal, it gave the values (0 ~ 9) to array `ia`.
 
-##[Exercise 6.33](ex6_33.cpp)([Generics Version](ex6_33_generics_version.cpp))
+## [Exercise 6.33](ex6_33.cpp)([Generics Version](ex6_33_generics_version.cpp))
 ## Exercise 6.34
 
 When the recursion termination condition becomes `var != 0`, two situations can happen :
@@ -321,7 +321,7 @@ Both two should put in a header. (a) is an inline function. (b) is the declarati
 ## [Exercise 6.44](ex6_44.cpp)
 ## Exercise 6.45
 
-For example, the function `arrPtr` in [Exercise 6.38](#exercise-638) and `make_plural` in [Exercise 6.42](#exercise-642) should be defined as `inline`. But the function `func` in [Exercise 6.4](#exercise-64) shouldn't. It is not that small and it's only being called once. Hence, it will probably not expand as inline.
+For example, the function `arrPtr` in [Exercise 6.38](# Exercise-638) and `make_plural` in [Exercise 6.42](# Exercise-642) should be defined as `inline`. But the function `func` in [Exercise 6.4](# Exercise-64) shouldn't. It is not that small and it's only being called once. Hence, it will probably not expand as inline.
 
 ## Exercise 6.46
 > Would it be possible to define `isShorter` as a `constexpr`? If so, do so. If not, explain why not.
