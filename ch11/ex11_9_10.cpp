@@ -20,7 +20,9 @@
 int main()
 {
     // ex 11.9
-    std::map<std::string, std::list<std::size_t>> m;
+    std::map<std::string, std::list<int>> m;
+    int i=0;
+    for (std::string w; std::cin >> w; m[w].push_back(i)) i++;
 
     // ex 11.10
     // can be declared.
