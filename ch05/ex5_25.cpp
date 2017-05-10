@@ -14,7 +14,11 @@ int main(void)
         }
         catch (runtime_error err) 
         {
-            cout << err.what() << "\n";
+            cout << err.what() << "\nTry again? Enter y or n" << endl;
+            char c;
+            cin >> c;
+            if (!cin || c == 'n')
+                break;
         }
     }
 
