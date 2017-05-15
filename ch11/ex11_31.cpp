@@ -28,16 +28,16 @@ int main()
     string author = "pezy";
     string work = "CP5";
     
-    auto found = authors.find(author);
-    auto count = authors.count(author);
-    while (count) {
-        if (found->second == work) {
-            authors.erase(found);
-            break;   
-        }
-        ++found;
-        --count;
+    // using function equal_range to get range itertors
+    auto a = authors.equal_range(author);
+    while(a.first != a.second)
+    {
+        if(a.first->second == work) // if it is required element,
+            a.first == authors.erase(a.first);  // delete element and move iterator to the next element.
+        else // in another case,
+            ++a.first; // or just move iterator to the next element.
     }
+    
     
     for (const auto &author : authors)
         std::cout << author.first << " " << author.second << std::endl;
