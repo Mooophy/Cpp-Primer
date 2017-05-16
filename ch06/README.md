@@ -188,11 +188,11 @@ should be changed.
 ## Exercise 6.18
 (a)
 ```cpp
-bool compare(matrix &m1, matrix &m2){ /.../ }
+bool compare(matrix &m1, matrix &m2);
 ```
 (b)
 ```cpp
-vector<int>::iterator change_val(int, vector<int>::iterator) { /.../ }
+vector<int>::iterator change_val(int, vector<int>::iterator);
 ```
 
 ## Exercise 6.19
