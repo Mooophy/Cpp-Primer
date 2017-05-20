@@ -175,23 +175,14 @@ Type Exercise::setVal(Type parm) {  // first is `string`, second is `double`
 
 **fixed**
 
-changed
+>in a class, if a member uses a name from an outer scope and that name is a type, then the class may not subsequently redefine that name
+Although it is an error to redefine a type name, compilers are not required to diagnose this error. Some compilers will quietly accept such code, even though the program is in error.
 
-```cpp
-Type Exercise::setVal(Type parm) {
-    val = parm + initVal();
-    return val;
-}
-```
-to
-```cpp
-Exercise::Type Exercise::setVal(Type parm) {
-    val = parm + initVal();
-    return val;
-}
-```
+change `typedef double Type` to `typedef double anotherType`
 
 and `Exercise::initVal()` should be defined.
+
+
 
 ## Exercise 7.36
 
