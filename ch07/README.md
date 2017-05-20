@@ -152,6 +152,12 @@ There is an error in
     dummy_fcn(pos height)
                ^
     Unknown type name 'pos'
+    
+    pos cursor = 0;
+     ^
+    pos height = 0, width = 0;
+     ^
+    Unknown type name 'pos'
 
 ## Exercise 7.35
 
