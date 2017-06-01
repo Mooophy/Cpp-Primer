@@ -14,8 +14,7 @@
 //					iter = vi.insert(iter, *iter);    
 //				++iter; 
 //
-//  @Answer "infinite loop". Becasue the `++iter` is outside of the scope of the `while` loop.
-//          Fixed as following.
+//  @Answer "infinite loop" when it first runs into an odd, will insert that odd infinitely.
 //
 //  Refactored by Yue Wang Oct, 2015
 //
