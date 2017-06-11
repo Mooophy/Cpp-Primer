@@ -130,7 +130,7 @@ The above code won't compile because the subscript operator might insert an elem
 >Our program does no checking on the validity of either input file. In particular, it assumes that the rules in the transformation file are all sensible.
 What would happen if a line in that file has a key, one space, and then the end of the line? Predict the behavior and then check it against your version of the program.
 
-If so, a key-value pair is going to be added into the map: `{key, ""}`. As a result, any key would be replaced with empty string.
+If so, a key-value pair will be `{key, " "}`(" ".size() !> 1), which cannot be added into the map. As a result, the key would not be replaced with any string.
 
 ## Exercise 11.37:
 >What are the advantages of an unordered container as compared to the ordered version of that container? What are the advantages of the ordered version?
