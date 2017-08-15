@@ -153,7 +153,7 @@ Are there values of p1 or p2 that make this code illegal?
 ```cpp
 p1 += p2 - p1;
 ```
- * It moves `p1` with the offest `p2 - p1`. After this statement, `p1` and `p2` points to the same address. 
+ * It moves `p1` with the offset `p2 - p1`. After this statement, `p1` and `p2` points to the same address. 
  * Any legal value p1, p2 make this code legal.
 
 ## [Exercise 3.35](ex3_35.cpp)
