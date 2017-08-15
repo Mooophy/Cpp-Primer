@@ -35,7 +35,7 @@
 //          compare("hi", "world");
 //  It didn't complie, as two types are different, the first type being char[3] , second char[6]
 //          compare("bye", "dad");
-//   the type should be pointer to char i.e. char*
+//   the type should be char[4];
 //
 // Exercise 16.35:
 // Which, if any, of the following calls are errors? If the call is legal, what
