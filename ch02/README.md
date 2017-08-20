@@ -533,7 +533,7 @@ decltype((b)) d = a;
 ```
 
 `c` is an int, `d` is a reference of `a`.
-all their value are `4`.
+values: a=4, b=4, c=5, d=4
 
 ## Exercise 2.37
 >Assignment is an example of an expression that yields a reference type. The type is a reference to the type of the left-hand operand. That is, if i is an int, then the type of the expression i = x is int&. Using that knowledge, determine the type and value of each variable in this code:
