@@ -1,3 +1,4 @@
+#include <iostream>
 #include <string>
 using std::string;
 class Sales_data{
@@ -106,5 +107,7 @@ int main(int argc, char const *argv[]) {
     Token s;
     Sales_data sal(5);
     s =  sal;
+    int i = 5;
+    std::cout << i << std::endl;
     return 0;
 }
