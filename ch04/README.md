@@ -18,7 +18,7 @@ This strategy presents a trade-off between efficient code generation
 and potential pitfalls in the use of the language by the programmer.
 Do you consider that an acceptable trade-off? Why or why not?
 
-No. IMHO, such desgin cann't improve performance siginificantly, but make bugs every tricky to handle.
+No. IMHO, such design cannot improve performance siginificantly, but it can make bugs very tricky to handle.
 
 ## Exercise 4.4
 >Parenthesize the following expression to show how it is evaluated.
