@@ -229,7 +229,7 @@ The final value in decimal is `-7296`.
 ## Exercise 4.26
 >In our grading example in this section, what would happen if we used unsigned int as the type for quiz1?
 
-The C++ standard does not specify the size of integral types in bytes, but it specifies minimum ranges they must be able to hold. Minimum mange of `unsigned int` is 0 to 65535. Thus if `unsigned int` adopted, the result is undefined.
+The C++ standard does not specify the size of integral types in bytes, but it specifies minimum ranges they must be able to hold. The minimum range of `unsigned int` is 0 to 65535. Since some implementations use only the minimum 16 bits for `unsigned int`, this could cause undefined behavior.
 
 
 ## Exercise 4.27
