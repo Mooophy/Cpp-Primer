@@ -159,11 +159,11 @@ void print(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 
 >why is `s` a reference to const but `occurs` is a plain reference?
 
-cause the `s` should not be changed by this function. but `occurs`'s result must be calculated by the function.
+Because `s` should not be changed by this function, but `occurs` result must be calculated by the function.
 
 >Why are these parameters references, but the char parameter `c` is not?
 
-cause `c` may be a temp varable, such as `find_char(s, 'a', occurs)`
+Because `c` may be a temp varable, such as `find_char(s, 'a', occurs)`
 
 >What would happen if we made `s` a plain reference? What if we made `occurs` a reference to const?
 
