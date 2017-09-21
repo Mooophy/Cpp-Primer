@@ -167,7 +167,7 @@ cause `c` may be a temp varable, such as `find_char(s, 'a', occurs)`
 
 >What would happen if we made `s` a plain reference? What if we made `occurs` a reference to const?
 
-`s` could be changed in the function, and `occurs` whould not be changed. so `occurs = 0;` is an error.
+`s` could be changed in the function, and `occurs` would not be changed. so `occurs = 0;` is an error.
 
 ## Exercise 6.16
 ```cpp
