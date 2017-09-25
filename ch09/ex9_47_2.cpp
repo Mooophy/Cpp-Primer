@@ -17,7 +17,7 @@ using std::string; using std::cout; using std::endl;
 
 int main()
 {
-    string numbers{ "123456789" };
+    string numbers{ "0123456789" };
     string alphabet{ "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" };
     string str{ "ab2c3d7R4E6" };
 
