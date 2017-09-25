@@ -145,25 +145,7 @@ delete pb;//Ok, part of interface
 >define a virtual member named print and a virtual destructor.  From these base
 >classes we derive the following classes, each of which redefines the print function.
 
-```cpp
-class D1 : public Base1 {/* ... */};
-class D2 : public Base2 {/* ... */};
-class MI : public D1, public D2 {/* ... */};
-
-//Using the following pointers, determine which funciton is used in each call:
-
-Base1 *pb1 = new MI;
-Base2 *pb2 = new MI;
-D1 *pd1 =new MI;
-D2 *pd2 = new MI;
-```
-
-(a), (b), and (c) will all call the MI version of print.
-All of the pointer class types contain virtual versions of print so, they will look for derived definitions of print.
-
-(d) The MI destructor is called then the base1 destructor is called.
-(e) The MI destructor, then the D1 destructor, then the base 1 destructor is called.
-(f) The MI destructor, then the D2 destructor, then the Base2 destructor is called.
+[cpp](./ex18.25.cpp "Exercise 18.25")
 
 ## Exercise 18.26
 
