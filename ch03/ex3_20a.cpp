@@ -16,7 +16,7 @@ int main()
 
     if (ivec.size() == 1)
     {
-        cout << "only one integer " << ivec[0] << ",it doesn't have any adjacent elements." << endl;
+        cout << "only one integer " << ivec[0] << ", it doesn't have any adjacent elements." << endl;
         return -1;
     }
 
