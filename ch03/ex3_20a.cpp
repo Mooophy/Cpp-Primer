@@ -20,7 +20,7 @@ int main()
         return -1;
     }
 
-    for (int i = 0; i != ivec.size() - 1; ++i)
+    for (int i = 0; i < ivec.size() - 1; ++i)
         cout << ivec[i] + ivec[i + 1] << " ";
     cout << endl;
     
