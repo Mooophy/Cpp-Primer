@@ -180,10 +180,10 @@ Colloquial term used to refer to the problem of how to process nested if stateme
     int digit = get_num() % 10;
     switch (digit) {
         case 1: case 3: case 5: case 7: case 9:
-            oddcnt++;
+            oddcnt++; // oddcnt != oddCnt
             break;
         case 2: case 4: case 6: case 8: case 0:
-            evencnt++;
+            evencnt++; // evencnt != evenCnt
             break;
     }
 (d) // Error: case label must be a constant expression
