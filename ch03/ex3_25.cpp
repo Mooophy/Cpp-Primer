@@ -10,7 +10,7 @@ int main()
         if (grade <= 100)
             ++*(scores.begin() + grade / 10);
 
-    for (auto s : scores) 
+    for (auto &s : scores) 
         cout << s << " ";
     cout << endl;
 
