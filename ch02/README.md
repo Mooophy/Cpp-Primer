@@ -349,7 +349,7 @@ int *p1 = &i;
 (a): illegal, cannot initialize a variable of type 'double *' with an
       rvalue of type 'int *'
 (b): illegal, cannot initialize a variable of type 'int *' with an lvalue
-      of type 'int'
+      of type 'int'. Note that assign literal 0 to a pointer is valid. You just can't assign a vairable, even if its value happens to be equal to 0.
 (c): legal.
 ```
 
