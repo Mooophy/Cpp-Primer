@@ -330,7 +330,8 @@ a pointer need **not be** initialized at the time it is defined.
 >What does the following program do?
 ```cpp
 int i = 42;
-int *p1 = &i; *p1 = *p1 * *p1;
+int *p1 = &i;
+*p1 = *p1 * *p1;
 ```
 
 `p1` pointer to `i`, `i`'s value changed to 1764(42*42)
