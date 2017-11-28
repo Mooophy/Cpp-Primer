@@ -3,24 +3,37 @@
 
 int main()
 {
-    Sales_item currItem, valItem;
-    if (std::cin >> currItem)
+    Sales_item temp;
+    Sales_item books[20];   //it can recognize 20 different ISBN
+    int counts[20]={0};     //transcaction counts for each book, initialize all to zeros
+    int num=0;              //how many books (different ISBN) have entered?
+    int i;                  //index
+
+    std::cout<<"Enter the transactions, 20 books max: (EOF to quit)"<<std::endl;
+    if(std::cin>>books[0])
     {
-        int cnt = 1;
-        while (std::cin >> valItem)
+        counts[0]=1;
+        num=1;
+        while(std::cin>>temp)
         {
-            if (valItem.isbn() == currItem.isbn())
+            for(i=0;i<num;i++)
+                if(temp.isbn()==books[i].isbn())
+                {
+                    counts[i]++;
+                    break;
+                }
+            if(i==num)
             {
-                ++cnt;
-            }
-            else
-            {
-                std::cout << currItem << " occurs " << cnt << " times " << std::endl;
-                currItem = valItem;
-                cnt = 1;
+                books[num]=temp;
+                counts[num]=1;
+                num++;
             }
         }
-        std::cout << currItem << " occurs "<< cnt << " times " << std::endl;
+        for(i=0;i<num;i++)
+            std::cout<<books[i].isbn()<<" has "<<counts[i]
+                     <<" transcations."<<std::endl;
     }
+    else
+        std::cerr<<"No Input!"<<std::endl;
     return 0;
 }
