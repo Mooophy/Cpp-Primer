@@ -9,7 +9,7 @@
 #include <iostream>
 using std::cout;
 
-int larger_one(const int i, const int *p)
+int larger_one(const int i, const int *const p)
 {
     return (i > *p) ? i : *p;
 }
