@@ -2,10 +2,14 @@
 
 #include <iostream>
 
+using std::cout;
+using std::endl;
+
 int main()
 {
     int i = 10;
     while (i >= 0)
-        std::cout << i-- << " ";
+        cout << i-- << " ";
+    cout << endl;
     return 0;
 }
