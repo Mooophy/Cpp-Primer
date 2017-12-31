@@ -277,7 +277,7 @@ I prefer `for` to `while` in such cases, because it's terse. More importantly, o
     do {
         // . . .
     } while (ival = get_response()); // should not declared in this scope.
-(c) int ival = get_response();
+(c) int ival;
     do {
         ival = get_response();
     } while (ival); // ival is not declared in this scope.
