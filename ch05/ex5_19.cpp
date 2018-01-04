@@ -5,15 +5,13 @@ using std::cout; using std::cin; using std::endl; using std::string;
 
 int main()
 {
-    string rsp;
-    do {
-        cout << "Input two strings: ";
-        string str1, str2;
-        cin >> str1 >> str2;
-        cout << (str1 <= str2 ? str1 : str2) 
-             << " is less than the other. " << "\n\n"
-             << "More? Enter yes or no: ";
-        cin >> rsp;
-    } while (!rsp.empty() && tolower(rsp[0]) == 'y');
+    string str1,str2;
+    do{
+        if(!str1.empty() && !str2.empty()){
+            cout<<"This string is less than the other: "<<((str1<str2)?str1:str2)<<endl;
+            cout<<"Please, write the strings that you want to compare"<<endl;
+        }
+    }while(getline(cin,str1) && getline(cin,str2));
+
     return 0;
 }
