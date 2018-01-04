@@ -3,11 +3,16 @@ using std::cout; using std::cin; using std::endl;
 
 int main()
 {
+    //conditional operator
+    for(unsigned int grade=0;cin>>grade;){
+        string res=(grade<60)?
+                  "fail":grade>=60 && grade<=75?
+                              "low pass":(grade>90)?"high pass":"pass";
+        cout<<res<<endl;;
+    }
+    
     for (unsigned g; cin >> g; )
     {
-        // conditional operators
-        auto result = g > 90 ? "high pass" : g < 60 ? "fail" : g < 75 ? "low pass" : "pass";
-        cout << result << endl;
 
         // if statements
         if (g > 90)         cout << "high pass";
