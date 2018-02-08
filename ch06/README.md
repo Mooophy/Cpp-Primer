@@ -293,14 +293,11 @@ decltype(arrStr)& arrPtr(int i)
 
 ## Exercise 6.39
 
-(a) int calc(int, int);
-    int calc(const int, const int); //illegal: redeclares the function
+(a) illegal, redeclares the function
 
-(b) int get();
-    double get(); //illegal: only the return type is different
+(b) illegal, only the return type is different
 
-(c) int *reset(int *);
-    double *reset(double *);//legal 
+(c) legal, the parameter type is different and return type is changed.
 
 ## Exercise 6.40
 
