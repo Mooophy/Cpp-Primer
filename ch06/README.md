@@ -293,11 +293,11 @@ decltype(arrStr)& arrPtr(int i)
 
 ## Exercise 6.39
 
-(a) illegal
+(a) illegal, redeclares the function
 
-(b) illegal
+(b) illegal, only the return type is different
 
-(c) legal
+(c) legal, the parameter type is different and return type is changed
 
 ## Exercise 6.40
 
