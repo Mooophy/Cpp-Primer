@@ -293,7 +293,7 @@ decltype(arrStr)& arrPtr(int i)
 
 ## Exercise 6.39
 
-(a) illegal
+(a) legal
 
 (b) illegal
 
