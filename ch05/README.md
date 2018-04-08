@@ -60,10 +60,9 @@ while (iter != s.end()) { /* . . . */ }
 (b) Variable `status` is only declared inside scope of while condition.
 ```cpp
 //corrrected as:
-while (bool status = find(word)) { 
-    /* ... */ 
-    if (!status) { /* ... */ }
-}
+bool status;
+while (status = find(word)) { /* ... */ }
+if (!status) { /* ... */ }
 ```  
 
 ## [Exercise 5.5](ex5_5.cpp)
