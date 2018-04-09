@@ -69,7 +69,7 @@ Such as `Book`
 ## Exercise 14.6:
 >Define an output operator for your `Sales_data` class.
 
-see [Exercise 14.2](# Exercise-142).
+see [Exercise 14.2](#Exercise 14.2).
 
 ## Exercise 14.7:
 >Define an output operator for you `String` class you wrote for the exercises in 13.5 (p. 531).
