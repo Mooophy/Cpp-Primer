@@ -46,21 +46,21 @@ public:
         data->pop_back();
     }
 
-    std::string& front() {
+    string& front() {
         check(0, "front on empty StrBlob");
         return data->front();
     }
 
-    std::string& back() {
+    string& back() {
         check(0, "back on empty StrBlob");
         return data->back();
     }
 
-    const std::string& front() const {
+    const string& front() const {
         check(0, "front on empty StrBlob");
         return data->front();
     }
-    const std::string& back() const {
+    const string& back() const {
         check(0, "back on empty StrBlob");
         return data->back();
     }
