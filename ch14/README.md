@@ -13,7 +13,7 @@
 
 - An overloaded operator has the same precedence and associativity as the corresponding built-in operator.
 
-## Exercise 14.2:
+## <a name="Exercise-142"></a>Exercise 14.2:
 >Write declarations for the overloaded input, output, addition, and compound-assignment operators for `Sales_data`.
 
 [hpp](ex14_02.h) | [cpp](ex14_02.cpp)
@@ -69,7 +69,7 @@ Such as `Book`
 ## Exercise 14.6:
 >Define an output operator for your `Sales_data` class.
 
-see [Exercise 14.2](#Exercise 14.2).
+see [Exercise 14.2](# Exercise-142).
 
 ## Exercise 14.7:
 >Define an output operator for you `String` class you wrote for the exercises in 13.5 (p. 531).
