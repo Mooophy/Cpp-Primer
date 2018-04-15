@@ -479,6 +479,7 @@ make it legal?
 
 illegal.
 ```cpp
+int null = 0, *p = &null;
 int null = 0, *p = nullptr;
 ```
 
