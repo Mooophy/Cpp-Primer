@@ -88,7 +88,8 @@ vector<string> v7{ 10, "hi" };  // size:10, value:"hi"
 >In the binary search program on page 112,
 why did we write `mid=beg+(end-beg)/2;` instead of `mid=(beg+end) /2;`?
 
-`(beg + end)` is meaningless. 
+1. There's no operator `+` for these two iterators. 
+2. `(beg + end)` is meaningless and may lead to overflow. 
 
 ## Exercise 3.27
 >Assuming txt_size is a function that takes no arguments
