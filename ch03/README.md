@@ -89,7 +89,7 @@ vector<string> v7{ 10, "hi" };  // size:10, value:"hi"
 why did we write `mid=beg+(end-beg)/2;` instead of `mid=(beg+end) /2;`?
 
 1. There's no operator `+` for these two iterators. 
-2. `(beg + end)` is meaningless and may lead to overflow. 
+2. `(beg + end)` is meaningless and may lead to overflow for arithmetic types. 
 
 ## Exercise 3.27
 >Assuming txt_size is a function that takes no arguments
