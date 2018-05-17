@@ -31,7 +31,7 @@ usually is unnecessary and often entails considerable run-time cost.
 
 Reference:
 
-- [What are the criteria for choosing between short / int / long data types?](http://www.parashift.com/c++-faq/choosing-int-size.html)
+- [What are the criteria for choosing between short / int / long data types?](https://isocpp.org/wiki/faq/newbie#choosing-int-size)
 - [Difference between float and double](http://stackoverflow.com/questions/2386772/difference-between-float-and-double)
 - Advice: Deciding which Type to Use(This book.)
 
