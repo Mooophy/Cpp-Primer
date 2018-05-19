@@ -380,7 +380,7 @@ int calc(const int&, const int&); // calls lookup(const int&)
 (b)
 ```cpp
 int calc(char*, char*); // calls lookup(char*)
-int calc(const char*, const char*); calls lookup(const char *)
+int calc(const char*, const char*); // calls lookup(const char *)
 ```
 (c)
 
