@@ -6,7 +6,7 @@
 //
 #include <iostream>
 #include <string>
-using std::cin; using std::cout; using std::endl; using std::string;
+using namespace std;
 
 struct Sales_data
 {
@@ -38,7 +38,7 @@ int main()
     }
     else
     {
-        std::cerr << "No data?!" << std::endl;
+        cout<< "No data?!" << endl;
         return -1;
     }
     return 0;
