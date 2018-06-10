@@ -48,7 +48,7 @@ The payment most like that: $1, 142.36
 Reference:
 
 - [mortgage-calculator](http://www.bankrate.com/calculators/mortgages/mortgage-calculator.aspx)
-- [What's in a Mortgage Payment?](http://www.homeloanlearningcenter.com/mortgagebasics/whatsinamortgagepayment.htm)
+- [What's in a Mortgage Payment?](https://thelawdictionary.org/mortgage-payment/)
 
 ## Exercise 2.3
 > What output will the following code produce?
