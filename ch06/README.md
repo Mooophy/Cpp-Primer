@@ -252,7 +252,7 @@ when you can find the preexisting object that the reference refered.
 
 legal, it gave the values (0 ~ 9) to array `ia`.
 
-## [Exercise 6.33](ex6_33.cpp)([Generics Version](ex6_33_generics_version.cpp))
+## [Exercise 6.33](ex6_33.cpp)
 ## Exercise 6.34
 
 When the recursion termination condition becomes `var != 0`, two situations can happen :
