@@ -165,9 +165,10 @@ Colloquial term used to refer to the problem of how to process nested if stateme
     }
 (b) // Error: control bypass an explicitly initialized variable ix.
     unsigned index = some_value();
+    int ix;
     switch (index) {
         case 1:
-            int ix;
+            ix = get_value();
             ivec[ ix ] = index;
             break;
         default:
