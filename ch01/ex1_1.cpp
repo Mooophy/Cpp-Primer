@@ -1,4 +1,4 @@
-int main()
+d int main()
 {
     return 0;
 }
