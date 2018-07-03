@@ -28,8 +28,15 @@ void ReadFileToVec(const string& fileName, vector<string>& vec)
 int main()
 {
     vector<string> vec;
+    vector<string>::iterator the_iterator;
+    string str;
     ReadFileToVec("../data/book.txt", vec);
-    for (const auto &str : vec)
-        cout << str << endl;
+    the_iterator = vec.begin();
+    while(the_iterator != vec.end())
+    {
+        str = *the_iterator;
+        cout<<str<<endl;
+        the_iterator++;
+    }
     return 0;
 }
