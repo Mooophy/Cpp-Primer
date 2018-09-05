@@ -252,7 +252,7 @@ when you can find the preexisting object that the reference refered.
 
 legal, it gave the values (0 ~ 9) to array `ia`.
 
-## [Exercise 6.33](ex6_33.cpp)([Generics Version](ex6_33_generics_version.cpp))
+## [Exercise 6.33](ex6_33.cpp)
 ## Exercise 6.34
 
 When the recursion termination condition becomes `var != 0`, two situations can happen :
@@ -293,11 +293,11 @@ decltype(arrStr)& arrPtr(int i)
 
 ## Exercise 6.39
 
-(a) illegal
+(a) legal, repeated declarations(without definition) are legal in C++
 
-(b) illegal
+(b) illegal, only the return type is different
 
-(c) legal
+(c) legal, the parameter type is different and return type is changed
 
 ## Exercise 6.40
 
@@ -380,7 +380,7 @@ int calc(const int&, const int&); // calls lookup(const int&)
 (b)
 ```cpp
 int calc(char*, char*); // calls lookup(char*)
-int calc(const char*, const char*); calls lookup(const char *)
+int calc(const char*, const char*); // calls lookup(const char *)
 ```
 (c)
 

@@ -60,10 +60,9 @@ while (iter != s.end()) { /* . . . */ }
 (b) Variable `status` is only declared inside scope of while condition.
 ```cpp
 //corrrected as:
-while (bool status = find(word)) { 
-    /* ... */ 
-    if (!status) { /* ... */ }
-}
+bool status;
+while (status = find(word)) { /* ... */ }
+if (!status) { /* ... */ }
 ```  
 
 ## [Exercise 5.5](ex5_5.cpp)
@@ -166,9 +165,10 @@ Colloquial term used to refer to the problem of how to process nested if stateme
     }
 (b) // Error: control bypass an explicitly initialized variable ix.
     unsigned index = some_value();
+    int ix;
     switch (index) {
         case 1:
-            int ix;
+            ix = get_value();
             ivec[ ix ] = index;
             break;
         default:

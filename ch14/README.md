@@ -69,7 +69,7 @@ Such as `Book`
 ## Exercise 14.6:
 >Define an output operator for your `Sales_data` class.
 
-see [Exercise 14.2](# Exercise-142).
+see [Exercise 14.2](#exercise-142).
 
 ## Exercise 14.7:
 >Define an output operator for you `String` class you wrote for the exercises in 13.5 (p. 531).
@@ -79,12 +79,12 @@ see [Exercise 14.2](# Exercise-142).
 ## Exercise 14.8:
 >Define an output operator for the class you chose in exercise 7.40 from 7.5.1 (p. 291).
 
-see [Exercise 14.5](# Exercise-145)
+see [Exercise 14.5](#exercise-145)
 
 ## Exercise 14.9:
 >Define an input operator for your Sales_data class.
 
-see [Exercise 14.2](# Exercise-142).
+see [Exercise 14.2](#exercise-142).
 
 ## Exercise 14.10:
 >Describe the behaviour of the Sales_data input operator if given the following input:
@@ -114,7 +114,7 @@ no input check. nothing happend.
 ## Exercise 14.12:
 >Define an input operator for the class you used in exercise 7.40 from 7.5.1 (p. 291). Be sure the operator handles input errors.
 
-see [Exercise 14.5](# Exercise-145)
+see [Exercise 14.5](#exercise-145)
 
 ## Exercise 14.13:
 >Which other arithmetic operators (Table 4.1 (p. 139)), if any, do you think Sales_data ought to support? Define any you think the class should include.
@@ -142,7 +142,7 @@ Discussing on [SO](http://stackoverflow.com/questions/21071167/why-is-it-more-ef
 ## Exercise 14.17:
 >Should the class you chose for exercise 7.40 from 7.5.1(p. 291) define the equality operators? If so, implement them. If not, explain why not.
 
-yes.see [Exercise 14.15](# Exercise-1415)
+yes.see [Exercise 14.15](#exercise-1415)
 
 ## Exercise 14.18:
 >Define relational operators for your `StrBlob`, `StrBlobPtr`, `StrVec`, and `String` classes.
@@ -154,12 +154,12 @@ yes.see [Exercise 14.15](# Exercise-1415)
 ## Exercise 14.19:
 >Should the class you chose for exercise 7.40 from 7.5.1 (p. 291) define the relational operators? If so, implement them. If not, explain why not.
 
-yes.see [Exercise 14.15](# Exercise-1415)
+yes.see [Exercise 14.15](#exercise-1415)
 
 ## Exercise 14.20:
 >Define the addition and compound-assignment operators for your `Sales_data` class.
 
-see [Exercise 14.2](# Exercise-142).
+see [Exercise 14.2](#exercise-142).
 
 ## Exercise 14.21:
 >Write the `Sales_data` operators so that `+` does the actual addition and `+=` calls `+`. Discuss the disadvantages of this approach compared to the way these operators were defined in 14.3 (p. 560) and 14.4 (p.564).
@@ -201,7 +201,7 @@ Sales_data operator+(const Sales_data &lhs, const Sales_data &rhs)
 ## Exercise 14.25:
 >Implement any other assignment operators your class should define. Explain which types should be used as operands and why.
 
-see [Exercise 14.24](# Exercise-1424)
+see [Exercise 14.24](#exercise-1424)
 
 ## Exercise 14.26:
 >Define subscript operators for your `StrVec`, `String`, `StrBlob`, and `StrBlobPtr` classes.
@@ -218,7 +218,7 @@ see [Exercise 14.24](# Exercise-1424)
 ## Exercise 14.28:
 > Define addition and subtraction for `StrBlobPtr` so that these operators implement pointer arithmetic (3.5.3, p. 119).
 
-see [Exercise 14.27](# Exercise-1427)
+see [Exercise 14.27](#exercise-1427)
 
 ## Exercise 14.29:
 > We did not define a `const` version of the increment and decrement operators. Why not?
@@ -281,7 +281,7 @@ struct Test {
 ## Exercise 14.39:
 > Revise the previous program to report the count of words that are sizes 1 through 9 and 10 or more.
 
-see [Exercise 14.38](# Exercise-1438)
+see [Exercise 14.38](#exercise-1438)
 
 ## Exercise 14.40:
 > Rewrite the `biggies` function from 10.3.2 (p. 391) to use function-object classes in place of lambdas.
