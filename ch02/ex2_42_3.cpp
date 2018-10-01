@@ -1,16 +1,16 @@
 #include <iostream>
 #include "ex2_42.h"
-
+using namespace std;
 int main()
 {
     Sales_data total;
     double totalPrice;
-    if (std::cin >> total.bookNo >> total.units_sold >> totalPrice)
+    if (cin >> total.bookNo >> total.units_sold >> totalPrice)
     {
         total.CalcRevenue(totalPrice);
         Sales_data trans;
         double transPrice;
-        while (std::cin >> trans.bookNo >> trans.units_sold >> transPrice)
+        while (cin >> trans.bookNo >> trans.units_sold >> transPrice)
         {
             trans.CalcRevenue(transPrice);
             if (total.bookNo == trans.bookNo)
@@ -28,7 +28,7 @@ int main()
     }
     else
     {
-        std::cerr << "No data?!" << std::endl;
+        cerr << "No data?!" << endl;
         return -1;  // indicate failure
     }
 }
