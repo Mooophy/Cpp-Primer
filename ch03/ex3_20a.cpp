@@ -16,11 +16,11 @@ int main()
 
     if (ivec.size() == 1)
     {
-        cout << "only one integer " << ivec[0] << ",it doesn't have any adjacent elements." << endl;
+        cout << "only one integer " << ivec[0] << ", it doesn't have any adjacent elements." << endl;
         return -1;
     }
 
-    for (int i = 0; i != ivec.size() - 1; ++i)
+    for (int i = 0; i < ivec.size() - 1; ++i)
         cout << ivec[i] + ivec[i + 1] << " ";
     cout << endl;
     

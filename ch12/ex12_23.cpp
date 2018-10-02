@@ -14,7 +14,7 @@
 int main()
 {
     // dynamically allocated array of char
-    char *concatenate_string = new char[255]();
+    char *concatenate_string = new char[strlen("hello " "world") + 1]();
     strcat(concatenate_string, "hello ");
     strcat(concatenate_string, "world");
     std::cout << concatenate_string << std::endl;

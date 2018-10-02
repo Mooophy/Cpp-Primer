@@ -2,16 +2,25 @@
 
 #include <iostream>
 
+using std::cout;
+using std::cin;
+
+void print_range(int lo, int hi)
+{
+    if (lo > hi)
+    {
+        print_range(hi, lo);
+        return;
+    }
+    for (int i = lo; i != hi; ++i)
+        cout << i << " ";
+}
+
 int main()
 {
-    int small = 0, big = 0;
-    std::cout << "please input two integers:\n";
-    std::cin >> small >> big;
-    if (small > big) 
-        std::swap(small, big);
-
-    for (int curr = small; curr != big; ++curr) 
-        std::cout << curr;
-
+    int low = 0, high = 0;
+    cout << "please input two integers:\n";
+    cin >> low >> high;
+    print_range(low, high);
     return 0;
 }

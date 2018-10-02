@@ -19,8 +19,8 @@ public:
     StrBlobPtr_pointer() = default;
     StrBlobPtr_pointer(StrBlobPtr* p) : pointer(p) { }
 
-    StrBlobPtr& operator *();
-    StrBlobPtr* operator->();
+    StrBlobPtr& operator *() const;
+    StrBlobPtr* operator->() const;
 
 private:
     StrBlobPtr* pointer = nullptr;

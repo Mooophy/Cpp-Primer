@@ -6,55 +6,55 @@
 *  @note
 ***************************************************************************/
 //
-// Exercise 17.21
-// Rewrite your phone number program from 8.3.2 (p. 323) to use the 
-// valid function defined in this section.
+// Exercise 17.23
+
 
 #include <iostream>
-using std::cerr;
 using std::cout;
 using std::cin;
 using std::endl;
-using std::istream;
-using std::ostream;
 
-#include <fstream>
-using std::ifstream;
-using std::ofstream;
-
-#include <sstream>
-using std::istringstream;
-using std::ostringstream;
-
-#include <string>
+#include<string>
 using std::string;
-
-#include <vector>
-using std::vector;
 
 #include <regex>
 using std::regex;
 using std::sregex_iterator;
-using std::regex_error;
+using std::smatch;
 
-int main() {
-	try {
-		regex reg("(\\d{ 4 })?([-])?(\\d{ 5 })");
-		string str;
-		while (getline(cin, str)) {
-			for (sregex_iterator b(str.cbegin(), str.cend(), reg), e; b != e; ++b) {
-				if (!(*b)[1].matched) // if if there is only the last 5 digits of index
-					cout << b->str(3);  // show them
-				else
-					cout << b->str();   // show index entirely
-				cout << '\t';
-			}
+bool valid(const smatch& m);
+
+int main()
+{
+	string zipcode =
+		"(\\d{5})([-])?(\\d{4})?\\b";
+	regex r(zipcode);
+	smatch m;
+	string s;
+	
+	while (getline(cin, s))
+	{
+
+		//! for each matching zipcode number
+		for (sregex_iterator it(s.begin(), s.end(), r), end_it;
+			it != end_it; ++it)
+		{
+			//! check whether the number's formatting is valid
+			if (valid(*it))
+				cout << "valid zipcode number: " << it->str() << endl;
+			else
+				cout << "invalid zipcode number: " << s << endl;
 		}
-	}
 
-	catch (regex_error re) {
-		cout << re.what() << endl << re.code() << endl;
 	}
-
 	return 0;
+}
+
+bool valid(const smatch& m)
+{
+	
+	if ((m[2].matched)&&(!m[3].matched))
+		return false;
+	else
+		return true;
 }

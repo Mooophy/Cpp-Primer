@@ -78,7 +78,7 @@ public:
     }
 
     void print(){
-        cout << "day£º" << day << " " << "month: " << month << " " << "year: " << year;
+        cout << "day:" << day << " " << "month: " << month << " " << "year: " << year;
     }
 };
 int main()

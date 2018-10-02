@@ -3,33 +3,28 @@
 ## Exercise 11.1:
 >Describe the differences between a map and a vector.
 
-A `map` is a collection of key-value pairs. we can get a value **lookup by key** efficiently.
-
-A `vector` is a collection of objects, and every object has an **associated index**, which gives access to that object.
+`map` is an associative container whereas `vector` is a sequence container
 
 ## Exercise 11.2:
 >Give an example of when each of list, vector, deque, map, and set might be most useful.
 
-- list : a to-do list. always need insert or delete the elements anywhere.
-- vector : save some important associated data, always need query elements by index.
-- deque : message handle. FIFO.
+- list : anytime when a doubly-linked list is required.
+- vector : anytime when a dynamic array is required.
+- deque : [An answer from SO](http://stackoverflow.com/questions/3880254/why-do-we-need-deque-data-structures-in-the-real-world).
 - map : dictionary.
-- set : bad_checks.
+- set : when to keep elements sorted and unique.
 
 ## [Exercise 11.3 and 11.4](ex11_3_4.cpp)
 
 ## Exercise 11.5:
 >Explain the difference between a map and a set. When might you use one or the other?
 
-- `set` : the element type is the **key type**.
-- `map` : we should use a key-value pair, such as `{ key, value }` to indicate that the items together from one element in the map.
-
-I use `set` when i just need to store the `key`, In other hand, I　would like use `map` when i need to store a key-value pair.
+[A nice answer on SO](http://stackoverflow.com/questions/16286714/advantages-of-stdset-vs-vectors-or-maps)
 
 ## Exercise 11.6:
 >Explain the difference between a set and a list. When might you use one or the other?
 
-`set` is unique and order, but `list` is neither. using which one depend on whether the elements are unique and order to store.
+[list vs set](http://stackoverflow.com/questions/2302681/c-stl-list-vs-set)
 
 ## [Exercise 11.7](ex11_7.cpp)
 ## [Exercise 11.8](ex11_8.cpp)
@@ -65,7 +60,12 @@ copy(v.begin(), v.end(), back_inserter(c)); // illegal, no `push_back` in `set`.
 copy(c.begin(), c.end(), inserter(v, v.end())); // legal.
 copy(c.begin(), c.end(), back_inserter(v)); // legal.
 ```
-## [Exercise 11.18](ex11_18.cpp)
+## Exercise 11.18:
+>Write the type of map_it from the loop on page 430 without using auto or decltype.
+
+```cpp
+std::map<std::string, size_t>::const_iterator;
+```
 ## Exercise 11.19:
 >Define a variable that you initialize by calling begin() on the multiset named bookstore from 11.2.2 (p. 425).
 Write the variable’s type without using auto or decltype.
@@ -78,16 +78,23 @@ std::multiset<Sales_data, compareType>::iterator c_it = bookstore.begin();
 ## [Exercise 11.20](ex11_20.cpp)
 ## Exercise 11.21:
 >Assuming word_count is a map from string to size_t and word is a string, explain the following loop:
+
 ```cpp
 while (cin >> word)
     ++word_count.insert({ word, 0 }).first->second;
 ```
-
-```cpp
-++ (word_count.insert({ word, 0 }).first->second)
+This code can be explained like this pseudocode:
+```python
+while reading into word
+    if word_count has key word:
+        word_count[word] += 1
+    else:
+        word_count[word] = 0
+        word_count[word] += 1
 ```
+
 ## Exercise 11.22:
->Given a map<string, vector<int>>, write the types used as an argument and as the return value for the version of insert that inserts one element.
+>Given a `map<string, vector<int>>`, write the types used as an argument and as the return value for the version of insert that inserts one element.
 
 ```cpp
 std::pair<std::string, std::vector<int>>    // argument
@@ -104,13 +111,15 @@ std::pair<std::map<std::string, std::vector<int>>::iterator, bool> // return
 ## Exercise 11.34:
 >What would happen if we used the subscript operator instead of find in the transform function?
 
-In gcc 4.8.3, will report error:
+Say the code has been changed like below:
 ```cpp
-error: passing ‘const std::map<std::basic_string<char>, std::basic_string<char> >’ as ‘this’ argument of ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = std::basic_string<char>; _Tp = std::basic_string<char>; _Compare = std::less<std::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::basic_string<char>, std::basic_string<char> > >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = std::basic_string<char>; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::basic_string<char>]’ discards qualifiers [-fpermissive]
-     auto key = m[s];
-                   ^
+const string& transform(const string &s, const map<string, string> &m)
+{
+    return m[s];
+}
 ```
-Because std::map's operator is not declared as **const**, but m is declared as a  reference to  std::map with **const**.If insert new pair, it will cause error.
+The above code won't compile because the subscript operator might insert an element (when the element with the key s is not found), and we may use subscript only on a map that is not const.
+
 ## Exercise 11.35:
 >In buildMap, what effect, if any, would there be from rewriting `trans_map[key] = value.substr(1);` as `trans_map.insert({ key, value.substr(1) })`?
 
@@ -121,18 +130,11 @@ Because std::map's operator is not declared as **const**, but m is declared as a
 >Our program does no checking on the validity of either input file. In particular, it assumes that the rules in the transformation file are all sensible.
 What would happen if a line in that file has a key, one space, and then the end of the line? Predict the behavior and then check it against your version of the program.
 
-we added a file that name "word_transformation_bad.txt" to folder `data`. the file only has a key, one space.
-
-the program of 11.33 don't influenced by that.
+If so, a key-value pair will be `{key, " "}`(" ".size() !> 1), which cannot be added into the map. As a result, the key would not be replaced with any string.
 
 ## Exercise 11.37:
 >What are the advantages of an unordered container as compared to the ordered version of that container? What are the advantages of the ordered version?
 
-- the advantages of an unordered container:
-    - useful when we have a key type for which there is no obvious ordering relationship among the elements
-    - useful for applications in which the cost of maintaining the elements in order is prohibitive
-- the advantages of the ordered version:
-    - Iterators for the ordered containers access elements in order by key
-    - we can directly define an ordered container that uses a our own class types for its key type.
+[A summary](http://www.cs.fsu.edu/~lacher/courses/COP4531/fall13/lectures/containers2/slide04.html)
 
 ## [Exercise 11.38](ex11_38.cpp)

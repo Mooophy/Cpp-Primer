@@ -1,19 +1,25 @@
 # Chapter 10. Generic Algorithms
 
-##[Exercise 10.1 and 10.2](ex10_01_02.cpp)
-##[Exercise 10.3 and 10.4](ex10_03_04.cpp)
-##[Exercise 10.5](ex10_05.cpp)
-##[Exercise 10.6](ex10_06.cpp)
-##[Exercise 10.7](ex10_07.cpp)
+## [Exercise 10.1 and 10.2](ex10_01_02.cpp)
+
+## [Exercise 10.3 and 10.4](ex10_03_04.cpp)
+
+## Exercise 10.5:
+>In the call to equal on rosters, what would happen if both rosters held C-style strings, rather than library strings?
+
+For such case, std::equal is going to compare the address value rather than the string value. 
+So the result is not the same as std::string. Try to avoid coding this way. Check [#227](https://github.com/Mooophy/Cpp-Primer/issues/227) for more detail.
+
+## [Exercise 10.6](ex10_06.cpp)
+
+## [Exercise 10.7](ex10_07.cpp)
 
 ## Exercise 10.8:
 >We said that algorithms do not change the size of the containers over which they operate. Why doesn’t the use of back_inserter invalidate this claim?
 
-Cause the `back_inserter` is a **insert iterator**, what iterator adaptor that generates an iterator that **uses a container operation** to add elements to a given container.
+Inserters like `back_inserter` is part of `<iterator>` rather than `<algorithm>`. 
 
-the algorithms don't change the size, but the iterator can change it by using the container operation.
-
-##[Exercise 10.9](ex10_09.cpp)
+## [Exercise 10.9](ex10_09.cpp)
 
 ## Exercise 10.10:
 >Why do you think the algorithms don’t change the size of containers?
@@ -24,9 +30,9 @@ The aim of this design is to separate the algorithms and the operation provided 
 @pezy:
 Cause the library algorithms operate on **iterators**, **not containers**. Thus, an algorithm **cannot (directly)** add or remove elements.
 
-##[Exercise 10.11](ex10_11.cpp)
-##[Exercise 10.12](ex10_12.cpp)
-##[Exercise 10.13](ex10_13.cpp)
+## [Exercise 10.11](ex10_11.cpp)
+## [Exercise 10.12](ex10_12.cpp)
+## [Exercise 10.13](ex10_13.cpp)
 
 ## Exercise 10.14:
 >Write a lambda that takes two ints and returns their sum.
@@ -44,11 +50,11 @@ int i = 42;
 auto add = [i](int num){ return i + num; };
 ```
 
-##[Exercise 10.16](ex10_16.cpp)
-##[Exercise 10.17](ex10_17.cpp)
-##[Exercise 10.18 and 10.19](ex10_18_19.cpp)
-##[Exercise 10.20 and 10.21](ex10_20_21.cpp)
-##[Exercise 10.22](ex10_22.cpp)
+## [Exercise 10.16](ex10_16.cpp)
+## [Exercise 10.17](ex10_17.cpp)
+## [Exercise 10.18 and 10.19](ex10_18_19.cpp)
+## [Exercise 10.20 and 10.21](ex10_20_21.cpp)
+## [Exercise 10.22](ex10_22.cpp)
 
 ## Exercise 10.23:
 >How many arguments does bind take?
@@ -56,8 +62,8 @@ auto add = [i](int num){ return i + num; };
 Assuming the function to be bound have `n` parameters, bind take `n + 1` parameters.
 The additional one is for the function to be bound itself.
 
-##[Exercise 10.24](ex10_24.cpp)
-##[Exercise 10.25](ex10_25.cpp)
+## [Exercise 10.24](ex10_24.cpp)
+## [Exercise 10.25](ex10_25.cpp)
 
 ## Exercise 10.26:
 >Explain the differences among the three kinds of insert iterators.

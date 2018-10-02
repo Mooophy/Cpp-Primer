@@ -92,7 +92,7 @@ see [Exercise 14.2](#exercise-142).
 - (b) 10 24.95 0-210-99999-9
 
 - (a) correct format.
-- (b) ilegal input. But `0-210-99999-9` will be converted to a float stored in this object. As a result, the data inside will be a wrong one.
+- (b) ilegal input. But `.95` will be converted to a float stored in this object. As a result, the data inside will be a wrong one.
 Output: `10 24 22.8 0.95`
 
 check [Test](ex14_02_TEST.cpp)
@@ -119,7 +119,8 @@ see [Exercise 14.5](#exercise-145)
 ## Exercise 14.13:
 >Which other arithmetic operators (Table 4.1 (p. 139)), if any, do you think Sales_data ought to support? Define any you think the class should include.
 
-no others.
+Substraction, in order to be able to revert a previously addition.
+[hpp](ex14_13.h) | [cpp](ex14_13.cpp) | [Test](ex14_13_TEST.cpp)
 
 ## Exercise 14.14:
 >Why do you think it is more efficient to define `operator+` to call `operator+=` rather than the other way around?

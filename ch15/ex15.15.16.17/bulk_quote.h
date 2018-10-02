@@ -11,8 +11,6 @@ public:
 
     double net_price(std::size_t n) const override;
     void  debug() const override;
-
-
 };
 
 #endif // BULK_QUOTE_H

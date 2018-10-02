@@ -9,12 +9,12 @@ int main()
     string str("a simple string");
     
     // while
-    int i = 0;
+    decltype(str.size()) i = 0;
     while (i < str.size()) str[i++] = 'X';
     cout << str << endl;
 
     // for
-    for (i = 0; i<str.size(); ++i) str[i] = 'Y';
+    for (i = 0; i < str.size(); str[i++] = 'Y');
     cout << str << endl;
 
     // I like range for.

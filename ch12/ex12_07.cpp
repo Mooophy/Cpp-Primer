@@ -2,6 +2,7 @@
 *  @file       The code is for the exercises in C++ Primmer 5th Edition
 *  @author     Yue Wang
 *  @date       22  DEC 2013
+*                  Oct 2015
 *  @remark
 ***************************************************************************/
 //
@@ -22,12 +23,12 @@
 
 using Sptr = std::shared_ptr < std::vector<int> > ;
 
-auto make_with_shared_ptr() -> Sptr
+auto make_with_shared_ptr()
 {
     return std::make_shared<std::vector<int>>();
 }
 
-auto populate(Sptr vec) -> Sptr
+auto populate(Sptr vec)
 {
     for (int i; std::cout << "Pls Enter:\n", std::cin >> i; vec->push_back(i));
     return vec;

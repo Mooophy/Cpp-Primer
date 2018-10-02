@@ -80,13 +80,32 @@ void Message::print_debug()
     std::cout << std::endl;
 }
 
-Message& Message::operator = (Message &&rhs) NOEXCEPT
+void Message::move_Folders(Message *m)
 {
-    remove_from_Folders();
-    contents = std::move(rhs.contents);
-    folders = std::move(rhs.folders);
-    std::cout << "Message members moved" << std::endl; // debug
-    return *this;
+	folders = std::move(m->folders);
+	for (auto f : folders)
+	{
+		f->remMsg(m);
+		f->addMsg(this);
+	}
+	m->folders.clear();
+}
+
+Message::Message(Message &&m) : contents(std::move(m.contents))
+{
+    move_Folders(&m);
+}
+
+Message& Message::operator= (Message &&rhs)
+{
+    if (this != &rhs)
+	{
+		remove_from_Folders();
+		contents = std::move(rhs.contents);
+		move_Folders(&rhs);
+	}
+	std::cout << "Message members moved" << std::endl; // debug
+	return *this;
 }
 
 // Folder Implementation
@@ -157,11 +176,30 @@ void Folder::print_debug()
     std::cout << std::endl;
 }
 
-Folder& Folder::operator=(Folder &&rhs) NOEXCEPT
+void Folder::move_Messages(Folder *f)
 {
-    remove_from_Message();
-    name = std::move(rhs.name);
-    msgs = std::move(rhs.msgs);
-    std::cout << "Folder members moved" << std::endl; // debug
-    return *this;
+	msgs = std::move(f->msgs);
+	for (auto m : msgs)
+	{
+		m->remFldr(f);
+		m->addFldr(this);
+	}
+	f->msgs.clear();
+}
+
+Folder::Folder(Folder&& f) : name(std::move(f.name))
+{
+	move_Messages(&f);
+}
+
+Folder& Folder::operator=(Folder &&rhs)
+{
+    if (this != &rhs)
+	{
+		remove_from_Message();
+		name = std::move(rhs.name);
+		move_Messages(&rhs);
+	}
+	std::cout << "Message members moved" << std::endl; // debug
+	return *this;
 }

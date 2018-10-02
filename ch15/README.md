@@ -27,7 +27,7 @@ A virtual member in a base class expects its derived class define its own versio
 
 > (c) class Derived : public Base;
 
- * (a): **incorrect**, deirve from itself.
+ * (a): **incorrect**, derive from itself.
  * (b): **incorrect**, this is a definition not a declaration.
  * (c): **incorrect**, A derived class is declared like any other class. The declaration contains the class name but does not include its derivation list.
 
@@ -54,6 +54,7 @@ The dynamic type is the type of the object in memory that the variable or expres
 > When is it possible for an expression’s static type to differ from its dynamic type? Give three examples in which the static and dynamic type differ.
 
 The static type of a pointer or reference to a base class may differ from its dynamic type. Anything like this can be an example.
+[Exercise 15.9](ex15.9/main.cpp)
 
 ## Exercise 15.10:
 > Recalling the discussion from §8.1 (p. 311), explain how the program on page 317 that passed an `ifstream` to the `Sales_data` read function works.
@@ -359,7 +360,7 @@ Press <RETURN> to close this window...
 ## Exercise 15.39:
 > Implement the `Query` and `Query_base` classes. Test your application by evaluating and printing a query such as the one in Figure 15.3 (p. 638).
 
-[Query](ex.15.39.40/query.h) | [Query_base](ex.15.39.40/query_base.h) | [main](ex.15.39.40/main.cpp)
+[Query](ex15.39.40/query.h) | [Query_base](ex15.39.40/query_base.h) | [main](ex15.39.40/main.cpp)
 
 ## Exercise 15.40:
 > In the `OrQuery` eval function what would happen if its `rhs` member returned an empty set? What if its `lhs` member did so? What if both `rhs` and `lhs` returned empty sets?

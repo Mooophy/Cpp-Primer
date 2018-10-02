@@ -1,4 +1,5 @@
-// @Alan
+//
+// @Yue Wang
 //
 // Exercise 11.27:
 // What kinds of problems would you use count to solve?
@@ -39,14 +40,10 @@
 
 int main()
 {
-    std::map<std::string, std::vector<int>> m = { { "Alan",{ 1,2,3,4,5, } },{ "John",{ 1,5,6,7,8 } } };
-
+    std::map<std::string, std::vector<int>> m{ { "Alan",{ 1,2,3,4,5, } },{ "John",{ 1,5,6,7,8 } } };
     // ex11.28
-    std::map<std::string, std::vector<int>>::iterator it;
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// type used to define this iterator.
-
-    it = m.find("Alan");
+    std::map<std::string, std::vector<int>>::iterator it = m.find("Alan");
+    // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     return 0;
 }
