@@ -1,4 +1,7 @@
 #include <iostream>
+
+/* instead of "using namespace std;"
+   we can use these in short program like this */
 using std::cin;
 using std::cout;
 using std::endl;
