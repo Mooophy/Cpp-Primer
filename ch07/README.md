@@ -1,4 +1,4 @@
-## [Exercise 7.1](ex7_01.cpp)
+﻿## [Exercise 7.1](ex7_01.cpp)
 ## [Exercise 7.2](ex7_02.h)
 ## [Exercise 7.3](ex7_03.cpp)
 ## [Exercise 7.4](ex7_04.h)
@@ -24,7 +24,7 @@ std::istream &firstStep = read(cin, data1);
 sdt::istream &secondStep = read(firstStep, data2);
 if (secondStep)
 ```
-the condition of the `if` statement would read two Sales_data object at one time.
+the condition of the `if` statement would read two Sales_data object one at a time.
 
 ## Exercise 7.11 [Header](ex7_11.h)|[CPP](ex7_11.cpp)
 ## [Exercise 7.12](ex7_12.h)
