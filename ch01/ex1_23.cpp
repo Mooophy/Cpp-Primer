@@ -4,10 +4,10 @@
 int main()
 {
     Sales_item currItem, valItem;
-    if (std::cin >> currItem)
+    if (cin >> currItem)
     {
         int cnt = 1;
-        while (std::cin >> valItem)
+        while (cin >> valItem)
         {
             if (valItem.isbn() == currItem.isbn())
             {
@@ -15,12 +15,12 @@ int main()
             }
             else
             {
-                std::cout << currItem << " occurs " << cnt << " times " << std::endl;
+                cout << currItem << " occurs " << cnt << " times " << std::endl;
                 currItem = valItem;
                 cnt = 1;
             }
         }
-        std::cout << currItem << " occurs "<< cnt << " times " << std::endl;
+        cout << currItem << " occurs "<< cnt << " times " << std::endl;
     }
     return 0;
 }
