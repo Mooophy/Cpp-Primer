@@ -27,10 +27,10 @@ using std::string;
 auto replace_with(string &s, string const& oldVal, string const& newVal)
 {
     for (auto cur = s.begin(); cur <= s.end() - oldVal.size(); )
-        if (oldVal == string{ cur, cur + oldVal.size() })
+        if (oldVal == string{ cur, cur + oldVal.size() }){
             cur = s.erase(cur, cur + oldVal.size()),
             cur = s.insert(cur, newVal.begin(), newVal.end()),
-            cur += newVal.size();
+            cur += newVal.size();}
         else  
             ++cur;
 }
