@@ -225,7 +225,7 @@ int main(){
 ```c++
 int main(){
     char s = "Hello World!"; // Here char should be std::string
-    std::cout << s << endl;
+    std::cout << s << std::endl;
     return 0;
 }
 ```
