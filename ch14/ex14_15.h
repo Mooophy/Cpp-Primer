@@ -21,7 +21,7 @@ public:
     Book& operator+=(const Book&);
 
 private:
-    unsigned no_;
+    unsigned int no_;
     std::string name_;
     std::string author_;
     std::string pubdate_;
