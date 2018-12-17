@@ -504,8 +504,8 @@ void compare_and_print(const char *cs1, const char *cs2){
 ```
 * PART 3: Ordinary `for` using pointers.
 ```c++
-    for (int (*row)[4] = ia; row != end(ia); ++row){
-        for (int *col = *row; col != end(*row); ++col) cout << *col << " ";
+    for (const int (*row)[4] = ia; row != end(ia); ++row){
+        for (const int *col = *row; col != end(*row); ++col) cout << *col << " ";
         cout << endl;
     }
 ```
@@ -533,8 +533,8 @@ void compare_and_print(const char *cs1, const char *cs2){
 ```
 * PART 3: Ordinary `for` using pointers and using type alias.
 ```c++
-    for (int_4d *row = ia; row != end(ia); ++row){
-        for (int *col = *row; col != end(*row); ++col) cout << *col << " ";
+    for (const int_4d *row = ia; row != end(ia); ++row){
+        for (const int *col = *row; col != end(*row); ++col) cout << *col << " ";
         cout << endl;
     }
 ```
@@ -544,7 +544,7 @@ void compare_and_print(const char *cs1, const char *cs2){
 * PART 1: Range `for` using `auto`.
 ```c++
     for (const auto &row : ia){
-        for (const int &col : row) cout << col << " ";
+        for (const auto &col : row) cout << col << " ";
         cout << endl;
     }
 
@@ -559,8 +559,8 @@ void compare_and_print(const char *cs1, const char *cs2){
 ```
 * PART 3: Ordinary `for` using pointers and using `auto`.
 ```c++
-    for (auto *row = ia; row != end(ia); ++row){
-        for (auto *col = *row; col != end(*row); ++col) cout << *col << " ";
+    for (const auto *row = ia; row != end(ia); ++row){
+        for (const auto *col = *row; col != end(*row); ++col) cout << *col << " ";
         cout << endl;
     }
 ```
