@@ -541,7 +541,7 @@ void compare_and_print(const char *cs1, const char *cs2){
 
 ## Exercise 3.45
 > Rewrite the programs again, this time using `auto`.
-* PART 1: Range `for` using type alias.
+* PART 1: Range `for` using `auto`.
 ```c++
     for (const auto &row : ia){
         for (const int &col : row) cout << col << " ";
@@ -551,16 +551,16 @@ void compare_and_print(const char *cs1, const char *cs2){
 ```
 * PART 2: Ordinary `for` using subscripts.
 ```c++
-    for (size_t i = 0; i != 3; ++i){
-        for (size_t j = 0; j != 4; ++j) cout << ia[i][j] << " ";
+    for (auto i = 0; i != 3; ++i){
+        for (auto j = 0; j != 4; ++j) cout << ia[i][j] << " ";
         cout << endl;
     }
         
 ```
-* PART 3: Ordinary `for` using pointers and using type alias.
+* PART 3: Ordinary `for` using pointers and using `auto`.
 ```c++
     for (auto *row = ia; row != end(ia); ++row){
-        for (int *col = *row; col != end(*row); ++col) cout << *col << " ";
+        for (auto *col = *row; col != end(*row); ++col) cout << *col << " ";
         cout << endl;
     }
 ```
