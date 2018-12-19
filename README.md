@@ -1,24 +1,7 @@
-## C++ Primer 5 Answers(C++11/14)
+C++ Primer 5th Edition Answers (C++11/14)
+=========================================
 
-[![GitHub issues](https://img.shields.io/github/issues/Mooophy/Cpp-Primer.svg)](https://github.com/Mooophy/Cpp-Primer/issues)
-[![GitHub license](https://img.shields.io/badge/license-CC0-blue.svg)](https://raw.githubusercontent.com/Mooophy/Cpp-Primer/master/LICENSE)
-[![](https://img.shields.io/badge/%E4%B8%AD%E6%96%87-%E8%AE%A8%E8%AE%BA%E5%8C%BA-yellowgreen.svg)](https://github.com/ReadingLab/Discussion-for-Cpp)
-[![](https://img.shields.io/badge/douban-%E5%B0%8F%E7%BB%84-green.svg)](http://www.douban.com/group/532124/)
-
-### Compilers recommended
- * Windows: Visual Studio 2015+ 
- 
- * Linux: g++ 5.0+     
-```
-g++ -std=c++14 some_ex.cpp -o some_ex
-```
- 
- * Mac: clang++ 3.7+
-```
-clang++ -std=c++1y some_ex.cpp -o some_ex
-```
-
-### Contents
+## Contents
 
 - [Chapter 1. Getting Started](ch01/README.md)
 - Part I: The Basics
