@@ -10,7 +10,7 @@
 
 #include "ex14_13.h"
 
-Sales_data::Sales_data(std::istream &is) : Sales_data()
+Sales_data::Sales_data(std::istream &is)
 {
     is >> *this;
 }
