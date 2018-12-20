@@ -144,16 +144,21 @@ Colloquial term used to refer to the problem of how to process nested `if` state
     while (cin >> ch)
         switch (ch)
         {
-            case 'a':
-            case 'A': ++aCnt; break;
-            case 'e':
-            case 'E': ++eCnt; break;
-            case 'i':
-            case 'I': ++iCnt; break;
-            case 'o':
-            case 'O': ++oCnt; break;
-            case 'u':
-            case 'U': ++uCnt; break;
+            case 'a': case 'A': 
+                ++aCnt; 
+                break;
+            case 'e': case 'E':
+                ++eCnt; 
+                break;
+            case 'i': case 'I': 
+                ++iCnt; 
+                break;
+            case 'o': case 'O': 
+                ++oCnt; 
+                break;
+            case 'u': case 'U': 
+                ++uCnt; 
+                break;
         }
 ```
 
@@ -165,19 +170,30 @@ Colloquial term used to refer to the problem of how to process nested `if` state
     while (cin >> std::noskipws >> ch)
         switch (ch)
         {
-            case 'a':
-            case 'A':  ++aCnt;       break;
-            case 'e':
-            case 'E':  ++eCnt;       break;
-            case 'i':
-            case 'I':  ++iCnt;       break;
-            case 'o':
-            case 'O':  ++oCnt;       break;
-            case 'u':
-            case 'U':  ++uCnt;       break;
-            case ' ':  ++spaceCnt;   break;
-            case '\t': ++tabCnt;     break;
-            case '\n': ++newLineCnt; break;
+            case 'a': case 'A':  
+                ++aCnt;       
+                break;
+            case 'e': case 'E':  
+                ++eCnt;       
+                break;
+            case 'i': case 'I':  
+                ++iCnt;       
+                break;
+            case 'o': case 'O':  
+                ++oCnt;       
+                break;
+            case 'u': case 'U':  
+                ++uCnt;       
+                break;
+            case ' ':  
+                ++spaceCnt;   
+                break;
+            case '\t': 
+                ++tabCnt;     
+                break;
+            case '\n': 
+                ++newLineCnt; 
+                break;
         }
 ```
 
@@ -189,21 +205,38 @@ Colloquial term used to refer to the problem of how to process nested `if` state
     while (cin >> std::noskipws >> ch) {
         switch (ch)
         {
-            case 'a':
-            case 'A':  ++aCnt; break;
-            case 'e':
-            case 'E':  ++eCnt; break;
-            case 'i':  if (pre_ch == 'f') ++fiCnt;
-            case 'I':  ++iCnt; break;
-            case 'o':
-            case 'O':  ++oCnt; break;
-            case 'u':
-            case 'U':  ++uCnt;       break;
-            case ' ':  ++spaceCnt;   break;
-            case '\t': ++tabCnt;     break;
-            case '\n': ++newLineCnt; break;
-            case 'f': if (pre_ch == 'f') ++ffCnt; break;
-            case 'l': if (pre_ch == 'f') ++flCnt; break;
+            case 'a': case 'A':  
+                ++aCnt; 
+                break;
+            case 'e': case 'E':  
+                ++eCnt; 
+                break;
+            case 'i':  
+                if (pre_ch == 'f') ++fiCnt;
+            case 'I':  
+                ++iCnt; 
+                break;
+            case 'o': case 'O':  
+                ++oCnt; 
+                break;
+            case 'u': case 'U':  
+                ++uCnt;       
+                break;
+            case ' ':  
+                ++spaceCnt;   
+                break;
+            case '\t': 
+                ++tabCnt;     
+                break;
+            case '\n': 
+                ++newLineCnt; 
+                break;
+            case 'f': 
+                if (pre_ch == 'f') ++ffCnt; 
+                break;
+            case 'l': 
+                if (pre_ch == 'f') ++flCnt; 
+                break;
         }
         pre_ch = ch;
     }
@@ -239,9 +272,11 @@ Colloquial term used to refer to the problem of how to process nested `if` state
     int digit = get_num() % 10;
     switch (digit) {
         case 1, 3, 5, 7, 9:
+        // case 1: case 3: case 5: case 7: case 9:
             oddcnt++;       // oddCnt++;
             break;
         case 2, 4, 6, 8, 10:
+        // case 2: case 4: case 6: case 8: case 10:
             evencnt++;      // evenCnt++;
             break;
     }
