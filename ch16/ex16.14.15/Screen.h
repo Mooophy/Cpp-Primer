@@ -26,7 +26,7 @@ public:
         unsigned int i, j;
         for( i=0 ;i<c.height; i++ )
         {
-                os<<c.contents.substr(0, W)<<std::endl;
+                os<<c.contents.substr(i*W, W)<<std::endl;
         }
         return os;
     }
