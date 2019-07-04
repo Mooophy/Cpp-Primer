@@ -96,6 +96,7 @@ template<typename T> bool operator==(const BlobPtr<T> &lhs, const BlobPtr<T> &rh
     if (lhs.wptr.lock() != rhs.wptr.lock()) {
 		throw runtime_error("ptrs to different Blobs!");
 	}
+	//"i" not a member of BlobPtr<T>,Is that wrong?
 	return lhs.i == rhs.i;
 }
 
@@ -103,6 +104,7 @@ template<typename T> bool operator< (const BlobPtr<T> &lhs, const BlobPtr<T> &rh
 	if (lhs.wptr.lock() != rhs.wptr.lock()) {
 		throw runtime_error("ptrs to different Blobs!");
 	}
+	//"i" not a member of BlobPtr<T>,Is that wrong?
 	return lhs.i < rhs.i;
 }
 
