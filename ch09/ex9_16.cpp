@@ -25,4 +25,9 @@ int main()
     std::cout << (std::vector<int>(li.begin(), li.end()) == vec3 ? "true" : "false") << std::endl;
 
     return 0;
+    char ch;
+    cin>>ch;
+    cout<<"press E to exit"<<endl;
+    if(ch=="E")
+        exit();
 }
