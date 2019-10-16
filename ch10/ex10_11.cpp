@@ -37,7 +37,7 @@ void elimdups(std::vector<std::string> &vs)
     vs.erase(new_end, vs.end());
 }
 
-
+//Creating main function
 int main()
 {
     std::vector<std::string> v{
