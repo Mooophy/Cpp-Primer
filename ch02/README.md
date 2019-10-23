@@ -379,7 +379,7 @@ long *lp = &i;
 ```
 
 Inherited from C, `void*` is a special pointer that may point to any type, hence the second line is legal.
-For type safty, C++ forbids implicit conversions like `long *lp = &i;`, thus such code is illegal.
+For type safety, C++ forbids implicit conversions like `long *lp = &i;`, thus such code is illegal.
 
 ## Exercise 2.25
 >Determine the types and values of each of the following
