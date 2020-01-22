@@ -167,7 +167,7 @@ std::cin >> input_value;
     error: type 'double' cannot be narrowed to 'int' in initializer list
 ---conclusion: Obviously, list initialization becomes strict in c++11.
 ```cpp
-double i = { 3.14 };
+int i = { 3.14 };
 ```
 
 (c): --if you declared 'wage' before, it's right. Otherwise, you'll get a error:
