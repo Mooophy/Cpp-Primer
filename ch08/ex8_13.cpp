@@ -25,7 +25,11 @@ struct PersonInfo {
 
 bool valid(const string& str)
 {
-    return isdigit(str[0]);
+	//verify every number 
+  	string::size_type sum = 0;
+	for(string::size_type i = 0; i != str.size(); ++i)
+		sum += isdigit(str[i]);
+	return sum == str.size();
 }
 
 string format(const string& str)
