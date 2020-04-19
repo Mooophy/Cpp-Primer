@@ -593,7 +593,7 @@ struct Sale_data
     double revenue = 0.0;
     double price = 0.0;
     //...
-}
+};
 ```
 
 ## Exercise 2.41
