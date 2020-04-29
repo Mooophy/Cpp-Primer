@@ -106,9 +106,9 @@ auto it2 = v2.begin(), it3 = v1.cbegin(), it4 = v2.cbegin();
 
 -----
 
-`it1` is `vector<int>::iterator`
+`it1` and `it2` are `vector<int>::iterator`
 
-`it2`, `it3` and `it4` are `vector<int>::const_iterator`
+`it3` and `it4` are `vector<int>::const_iterator`
 
 ## Exercise 9.11:
 >Show an example of each of the six ways to create and initialize a vector. Explain what values each vector contains.
