@@ -219,7 +219,7 @@ int main() {
 ## Exercise 7.38
 
 ```cpp
-Sales_data(std::istream &is = std::cin) { read(is, *this); }
+Sales_data(std::istream &is = std::cin);
 ```
 
 ## Exercise 7.39
