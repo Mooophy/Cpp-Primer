@@ -11,7 +11,7 @@
 #define BLOB_H
 #include <memory>
 #include <vector>
-#include <shared_pointer.h>
+#include "shared_pointer.h"
 
 /**
  *  Blob
