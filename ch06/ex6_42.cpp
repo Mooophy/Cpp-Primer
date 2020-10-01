@@ -12,9 +12,7 @@
 #include <iostream>
 #include <string>
 
-using std::string;
-using std::cout;
-using std::endl;
+using namespace std;
 
 string make_plural(size_t ctr, const string& word, const string& ending = "s")
 {
