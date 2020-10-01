@@ -31,7 +31,14 @@ int main()
     return 0;
 }
 ```
-
+or 
+#include<iostream>
+using namespace std;
+    int main()
+{
+cout<<"Hello,World"<<endl;
+    return 0;
+}
 ## Exercise 1.4
 > Our program used the addition operator, +, to add two numbers. Write a program that uses the multiplication operator, *, to print the product instead.
 
@@ -42,8 +49,8 @@ int main()
 {
     std::cout << "Enter two numbers:" << std::endl;
     int v1 = 0, v2 = 0;
-    std::cin >> v1 >> v2;
-    std::cout << "The product is " << v1 * v2 << std::endl;
+    std::cin >> v1 >> v2;  //taking input v1&v2
+    std::cout << "The product is " << v1 * v2 << std::endl;   //print the product of v1&v2
 
     return 0;
 }
