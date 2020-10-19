@@ -1,10 +1,7 @@
 #include <iostream>
 #include "include/Sales_item.h"
 
-using std::cin;
-using std::cout;
-using std::endl;
-using std::cerr;
+using namespace std;
 
 int main()
 {
