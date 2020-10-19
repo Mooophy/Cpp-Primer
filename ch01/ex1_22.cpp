@@ -1,27 +1,29 @@
 #include <iostream>
 #include "include/Sales_item.h"
 
+using namespace std;
+
 int main()
 {
     Sales_item total;
-    if (std::cin >> total)
+    if (cin >> total)
     {
         Sales_item trans;
-        while (std::cin >> trans)
+        while (cin >> trans)
         {
             if (total.isbn() == trans.isbn())
                 total += trans;
             else
             {
-                std::cout << total << std::endl;
+                cout << total << std::endl;
                 total = trans;
             }
         }
-        std::cout << total << std::endl;
+        cout << total << endl;
     }
     else
     {
-        std::cerr << "No data?!" << std::endl;
+        cerr << "No data?!" << endl;
         return -1;
     }
 
