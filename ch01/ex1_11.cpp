@@ -2,8 +2,7 @@
 
 #include <iostream>
 
-using std::cout;
-using std::cin;
+using namespace std;
 
 void print_range(int lo, int hi)
 {
