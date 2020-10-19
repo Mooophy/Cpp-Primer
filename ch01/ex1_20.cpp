@@ -1,12 +1,9 @@
 #include <iostream>
 #include "include/Sales_item.h"
 
-using std::cin;
-using std::cout;
-using std::endl;
-
 int main()
 {
-    for (Sales_item item; cin >> item; cout << item << endl);
+    for (Sales_item item; std::cin >> item;)
+        std::cout << item << std::endl;
     return 0;
 }
