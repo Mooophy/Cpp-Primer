@@ -47,10 +47,11 @@ int main()
 
 int main()
 {
-    std::cout << "Enter two numbers:" << std::endl;
+    using namespace std;
+    cout << "Enter two numbers:" << endl;
     int v1 = 0, v2 = 0;
-    std::cin >> v1 >> v2;
-    std::cout << "The product is " << v1 * v2 << std::endl;
+    cin >> v1 >> v2;
+    cout << "The product is " << v1 * v2 << endl;
 
     return 0;
 }
@@ -64,17 +65,17 @@ int main()
 #include <iostream>
 
 int main()
-{
-    std::cout << "Enter two numbers:" << std::endl;
+{    using namespace std;
+    cout << "Enter two numbers:" << endl;
     int v1 = 0, v2 = 0;
-    std::cin >> v1 >> v2;
-    std::cout << "The product of ";
-    std::cout << v1;
-    std::cout << " and ";
-    std::cout << v2;
-    std::cout << " is ";
-    std::cout << v1 * v2;
-    std::cout << std::endl;
+    cin >> v1 >> v2;
+    cout << "The product of ";
+    cout << v1;
+    cout << " and ";
+    cout << v2;
+    cout << " is ";
+    cout << v1 * v2;
+    cout << endl;
     return 0;
 }
 ```
@@ -164,10 +165,10 @@ Ex1.9:
 #include <iostream>
 
 int main()
-{
-    int sum = 0;
-    for (int i = 50; i <= 100; ++i) sum += i;
-    std::cout << "the sum is: " << sum << std::endl;
+{    using namespace std;
+     int sum = 0;
+     for (int i = 50; i <= 100; ++i) sum += i;
+     cout << "the sum is: " << sum <<endl;
 
     return 0;
 }
@@ -178,9 +179,9 @@ Ex1.10:
 #include <iostream>
 
 int main()
-{
+{   using namespace std;
     for (int i = 10; i >= 0; --i)
-        std::cout << i << std::endl;
+      cout << i << endl;
     return 0;
 }
 ```
@@ -190,10 +191,11 @@ Ex1.11:
 #include <iostream>
 
 int main()
-{
-    std::cout << "please input two integers:\n";
+{    
+    using namespace std;
+    cout << "please input two integers:\n";
     int small = 0, big = 0;
-    std::cin >> small >> big;
+    cin >> small >> big;
 
     if (small > big)
     {
@@ -203,7 +205,7 @@ int main()
     }
 
     for (int i = small; i != big; ++i)
-        std::cout << i << std::endl;
+       cout << i << std::endl;
 
     return 0;
 }
@@ -228,9 +230,10 @@ Nothing to present here.
 #include <iostream>
 int main()
 {
+   using namespace std;
     int sum = 0;
     for (int val; std::cin >> val; sum += val);
-    std::cout << sum << std::endl;
+    cout << sum << std::endl;
 
     return 0;
 }
