@@ -1,4 +1,5 @@
 // prints the numbers from ten down to zero.(use while)
+//while is entry controlled loop
 
 #include <iostream>
 
