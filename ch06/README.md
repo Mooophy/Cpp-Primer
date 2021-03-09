@@ -261,7 +261,15 @@ When the recursion termination condition becomes `var != 0`, two situations can 
 
 ## Exercise 6.35
 
-the recursive function will always use `val` as the parameter. *a recursion loop* would happen.
+Using `val--` instead of `val-1` can lead to undefined results because operands can be evaluated in any order. 
+```cpp
+return factorial(val--) * val; 
+```
+The compiler might evaluate this expression as either:
+```cpp
+return factorial(val-1) * (val-1);  //execution if left-hand side is evaluated first
+return factorial(val-1) * val;      //execution if right-hand side is evaluated first
+```
 
 ## Exercise 6.36
 
