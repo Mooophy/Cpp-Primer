@@ -274,26 +274,26 @@ return factorial(val-1) * val;      //execution if right-hand side is evaluated 
 ## Exercise 6.36
 
 ```cpp
-string (&func(string (&arrStr)[10]))[10]
+string (&func())[10];
 ```
 
 ## Exercise 6.37
 
 ```cpp
 using ArrT = string[10];
-ArrT& func1(ArrT& arr);
+ArrT& func1();
 
-auto func2(ArrT& arr) -> string(&)[10];
+auto func2() -> string(&)[10];
 
 string arrS[10];
-decltype(arrS)& func3(ArrT& arr);
+decltype(arrS) &func3();
 ```
 
-I pefer the first one. because it is more simpler to me.
+I pefer the first method because the type alias can be used many times and I also prefer the second method because the return type is the clearest. 
 
 ## Exercise 6.38
 ```cpp
-decltype(arrStr)& arrPtr(int i)
+decltype(arrStr) &arrPtr(int i)
 {
           return (i % 2) ? odd : even;
 }
@@ -301,7 +301,7 @@ decltype(arrStr)& arrPtr(int i)
 
 ## Exercise 6.39
 
-(a) legal, repeated declarations(without definition) are legal in C++
+(a) illegal, top-level const are ignored; functions are indistinguishable 
 
 (b) illegal, only the return type is different
 
