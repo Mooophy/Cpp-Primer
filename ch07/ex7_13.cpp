@@ -15,6 +15,7 @@ int main()
         std::istream &is = std::cin;
         while (is) {
             Sales_data trans(is);
+            if (!is) break;
             if (total.isbn() == trans.isbn())
                 total.combine(trans);
             else {

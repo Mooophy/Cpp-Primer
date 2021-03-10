@@ -11,7 +11,7 @@
 #include <string>
 #include <iostream>
 
-struct Person {
+class Person {
     friend std::istream &read(std::istream &is, Person &person);
     friend std::ostream &print(std::ostream &os, const Person &person);
 

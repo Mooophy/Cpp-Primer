@@ -2,7 +2,7 @@
 
 > Review the documentation for your compiler and determine what file naming convention it uses. Compile and run the main program from page 2.
 
- * [GCC and File Extensions](http://labor-liber.org/en/gnu-linux/development/extensions) 
+ * [GCC and File Extensions](http://labor-liber.org/en/gnu-linux/development/index.php?diapo=extensions) 
  * [File Types Created for Visual C++ Projects](https://msdn.microsoft.com/en-us/library/3awe4781.aspx)
 
 ## Exercise 1.2
@@ -132,7 +132,7 @@ std::cout << /* "*/" /* "/*" */;
 
 Output:
 
-    /**/ */ /*
+    /**/ */ /* 
 
 ## [Exercise 1.9](ex1_9.cpp)
 ## [Exercise 1.10](ex1_10.cpp)
@@ -144,7 +144,7 @@ of sum?
 ```cpp
 int sum = 0;
 for (int i = -100; i <= 100; ++i)
-sum += i;
+    sum += i;
 ```
 
 the loop sums the numbers from -100 to 100. the final value of sum is zero.
@@ -213,7 +213,32 @@ using a while. Are there advantages or disadvantages to using either form?
 the box on page 16. Familiarize yourself with the messages the compiler
 generates.
 
-Nothing to present here.
+**Syntax Errors**:
+```c++
+int main(){
+    std::cout << "Hello World!" << std::endl // semicolon missed 
+    return 0;
+}
+```
+
+**Type errors**:
+```c++
+int main(){
+    char s = "Hello World!"; // Here char should be std::string
+    std::cout << s << endl;
+    return 0;
+}
+```
+
+**Declaration errors**:
+```c++
+int main(){
+    int k = 0;
+    std::cout << K << std::endl; // use of undeclared identifier 'K'
+    return 0;
+}
+```
+
 
 ## Exercise 1.16
 

@@ -142,7 +142,7 @@ namespace cp5
         {
             if (ptr != pointer)
             {
-                decrement_n_destroy();
+                decrement_and_destroy();
                 ptr = pointer;
                 ref_count = new std::size_t(1);
             }
