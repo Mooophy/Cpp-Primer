@@ -30,16 +30,6 @@ public:
         data->pop_back();
     }
 
-    std::string& front() {
-        check(0, "front on empty StrBlob");
-        return data->front();
-    }
-
-    std::string& back() {
-        check(0, "back on empty StrBlob");
-        return data->back();
-    }
-
     const std::string& front() const {
         check(0, "front on empty StrBlob");
         return data->front();
@@ -47,6 +37,19 @@ public:
     const std::string& back() const {
         check(0, "back on empty StrBlob");
         return data->back();
+    }
+    std::string& front() {
+        return const_cast<std::string&>(
+                static_cast<const StrBlob&>(*this)
+                    .front()
+                );
+    }
+
+    std::string& back() {
+        return const_cast<std::string&>(
+                static_cast<const StrBlob&>(*this)
+                    .back()
+                );
     }
 
 private:
