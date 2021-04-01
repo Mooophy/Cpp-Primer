@@ -70,7 +70,7 @@ public:
             if(tag == 1){
                 chr = ' ';
             }
-            day = stoi(s.substr(s.find_first_of("123456789"), s.find_first_of(chr) - s.find_first_of("123456789")));
+            day = stoi(s.substr(s.find_first_of("123456789"), s.find_last_of(chr) - s.find_first_of("123456789")));
 
             year = stoi(s.substr(s.find_last_of(' ') + 1, 4));
             break;
