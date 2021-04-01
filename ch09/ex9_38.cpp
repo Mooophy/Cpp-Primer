@@ -5,14 +5,17 @@
 //
 
 #include <iostream>
-#include <string>
 #include <vector>
 
 int main()
 {
-    std::vector<std::string> v;
-    for (std::string buffer; std::cin >> buffer; v.push_back(buffer))
-        std::cout << v.capacity() << std::endl;
-
+    std::vector<int> ivec;
+    auto prev = ivec.capacity();
+    for (int i = 0; i < 128; ++i)
+    {
+        ivec.push_back(i);
+        if(prev != ivec.capacity())
+            cout << prev << "-> " << (prev = ivec.capacity()) << endl;
+    }
     return 0;
 }
