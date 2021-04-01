@@ -37,8 +37,7 @@ int main()
     // (b)
     vector<int> v;
     v.reserve(10);
-    fill_n(v.begin(), 10, 0);
-    // ^ (b)No error, but not any sense. v.size() still equal zero.
+    fill_n(back_inserter(v), 10, 0)
     // Fixed: 1. use `v.resize(10);`
     //    or  2. use `fill_n(std::back_inserter(v), 10, 0)`
     
