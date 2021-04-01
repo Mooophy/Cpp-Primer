@@ -20,7 +20,7 @@ int main()
 {
     int low = 0, high = 0;
     cout << "please input two integers:\n";
-    cin >> low >> high;
+    cin >> low >>"\n">> high;
     print_range(low, high);
     return 0;
 }
