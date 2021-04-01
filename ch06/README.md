@@ -7,7 +7,7 @@ they are initialized by the **arguments** provided in the each function call.
 
 ## Exercise 6.2
 ```cpp
-(a) string f() {  // return should be string, not int
+(a) int f() {  // return should be int, not string
           string s;
           // ...
           return s;
