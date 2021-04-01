@@ -32,12 +32,12 @@ auto binops = std::map<std::string, std::function<int(int, int)>>
 
 int main()
 {
-    while ( std::cout << "Pls enter as: num operator num :\n", true )
-    {
-        int lhs, rhs; std::string op;
-        std::cin >> lhs >> op >> rhs;
-        std::cout << binops[op](lhs, rhs) << std::endl;
-    }
-
+	std::cout << "Pls enter as: num operator num :\n";
+	int lhs, rhs; std::string op;
+	while (cin >> lhs >> op >> rhs)
+	{
+		std::cout << binops[op](lhs, rhs) << std::endl;
+		std::cout << "Pls enter as: num operator num :\n" ;
+	}
     return 0;
 }
