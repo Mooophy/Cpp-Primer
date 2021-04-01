@@ -183,27 +183,26 @@ while (iter != mid)
 **FIXED**:
 
 ```cpp
-// cause the reallocation will lead the iterators and references
-// after the insertion point to invalid. Thus, we need to call reserver at first.
-
+// use index to access to vector instead of iterator
 #include <iostream>
 #include <vector>
-
-void double_and_insert(std::vector<int>& v, int some_val)
-{
-    auto mid = [&]{ return v.begin() + v.size() / 2; };
-    for (auto curr = v.begin(); curr != mid(); ++curr)
-        if (*curr == some_val)
-            ++(curr = v.insert(curr, 2 * some_val));
-}
+using std::vector;
 
 int main()
 {
-    std::vector<int> v{ 1, 9, 1, 9, 9, 9, 1, 1 };
-    double_and_insert(v, 1);
-
-    for (auto i : v) 
+    vector<int> iv = {0,1,2,3,1,4,1,1,5,6};
+    vector<int>::size_type iter = 0, mid = iv.size() / 2;
+    int some_value = 1;
+    while (iter != mid) {
+        if (iv[iter] == some_value) {
+            iv.insert(iv.begin(), 2 * some_value);
+            ++iter, ++mid; // update iter and mid for new vector
+        }
+        ++iter; // update iter for while loop
+    }
+    for (const auto &i : iv)
         std::cout << i << std::endl;
+    return 0;
 }
 ```
 
