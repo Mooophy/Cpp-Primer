@@ -192,7 +192,7 @@ bool compare(matrix &m1, matrix &m2);
 ```
 (b)
 ```cpp
-vector<int>::iterator change_val(int, vector<int>::iterator);
+vector<int>::iterator &change_val(int, vector<int>::iterator &);
 ```
 
 ## Exercise 6.19

@@ -1,18 +1,6 @@
 # Chapter 8. The IO Library
 
-## Exercise 8.1:
->Write a function that takes and returns an istream&. The function should read the stream until it hits end-of-file. The function should print what it reads to the standard output. Reset the stream so that it is valid before returning the stream.
-
-```cpp
-std::istream& func(std::istream &is)
-{
-    std::string buf;
-    while (is >> buf)
-        std::cout << buf << std::endl;
-    is.clear();
-    return is;
-}
-```
+## [Exercise 8.1](ex08_01.cpp)
 
 ## [Exercise 8.2](ex8_02.cpp)
 
