@@ -20,7 +20,7 @@ which, if any, of the following dynamic_casts fail?
 Solution:
 (a) Succeed. The type of ‘pa’ (class type 'C') is publicly derived from the target type 'B'.
 (b) Fail. The type of ‘pb’ (class type 'B') is a public base class of the target type 'C'. ‘pc’ will equal to nullptr.
-(c) Fail. ‘A’ is an ambiguous base of ‘D’. Converting a pointer of 'D' to a pointer of 'A' is not allowed.
+(c) Succeed. The type of 'pa' (class type 'D') is publicly derived from the target type 'B'
 
 Exercise 19.4: 
 
