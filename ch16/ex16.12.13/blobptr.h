@@ -97,6 +97,9 @@ template<typename T> bool operator==(const BlobPtr<T> &lhs, const BlobPtr<T> &rh
 		throw runtime_error("ptrs to different Blobs!");
 	}
 	return lhs.i == rhs.i;
+	//"i" not a member of BlobPtr<T>,Is that wrong?
+	//I think it should be changed to this:
+	//return *(lhs.wptr.lock()) == *(rhs.wptr.lock());
 }
 
 template<typename T> bool operator< (const BlobPtr<T> &lhs, const BlobPtr<T> &rhs) {
@@ -104,6 +107,9 @@ template<typename T> bool operator< (const BlobPtr<T> &lhs, const BlobPtr<T> &rh
 		throw runtime_error("ptrs to different Blobs!");
 	}
 	return lhs.i < rhs.i;
+	//"i" not a member of BlobPtr<T>,Is that wrong?
+	//I think it should be changed to this:
+	//return *(lhs.wptr.lock()) < *(rhs.wptr.lock());
 }
 
 #endif // BLOBPTR_H
