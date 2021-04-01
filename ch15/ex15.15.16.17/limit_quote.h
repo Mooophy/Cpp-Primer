@@ -11,7 +11,7 @@ public:
         Disc_quote(b, p, max, disc)  {   }
 
     double net_price(std::size_t n) const override
-    { return n * price * (n < quantity ? 1 - discount : 1 ); }
+    {	return n <= quantity ? n * (1-discount) * price : quantity * (1-discount) * price + (n-quantity) * price;}
 
     void debug() const override;
 };
