@@ -4,7 +4,7 @@
 
 #include<iostream>
 using std::cin;
-using std::cout;
+using std::cout; 
 using std::endl;
 
 float po(float r,int n)
