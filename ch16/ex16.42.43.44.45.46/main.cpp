@@ -15,7 +15,7 @@
 //     (b) g(ci);
 //  since ci is lvaue, T is deduced as const int&, val is const int& && collapsing to const int&
 //     (c) g(i * ci);
-//  since i * ci is rvalue, T is deduced as int, val is int&& && colapsing to int&&
+//  since i * ci is rvalue, T is deduced as int, val is int&&
 //
 // Exercise 16.43:
 // Using the function defined in the previous exercise, what would the template
