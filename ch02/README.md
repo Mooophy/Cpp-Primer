@@ -157,7 +157,7 @@ explain what’s wrong and how to correct it.
 
 (a): error: expected '(' for function-style cast or type construction.
 ```cpp
-int input_value = 0;
+int input_value;
 std::cin >> input_value;
 ```
 
@@ -173,8 +173,7 @@ double i = { 3.14 };
 (c): --if you declared 'wage' before, it's right. Otherwise, you'll get a error:
     error: use of undeclared identifier 'wage'
 ```cpp
-double wage;
-double salary = wage = 9999.99;
+double wage, salary = wage = 9999.99;
 ```
 
 (d): ok: but value will be truncated.
@@ -333,7 +332,7 @@ int i = 42;
 int *p1 = &i; *p1 = *p1 * *p1;
 ```
 
-`p1` pointer to `i`, `i`'s value changed to 1764(42*42)
+`p1` is a pointer to `i`; value in `i` is changed to 1764 (42*42)
 
 ## Exercise 2.21
 >Explain each of the following definitions. Indicate whether any are illegal and, if so, why.
@@ -431,7 +430,7 @@ const int *p;           // legal. a pointer to const int.
 ```
 
 ## Exercise 2.29
->Uing the variables in the previous exercise, which of the
+>Using the variables in the previous exercise, which of the
 following assignments are legal? Explain why.
 
 ```cpp
@@ -481,6 +480,7 @@ illegal.
 ```cpp
 int null = 0, *p = &null;
 int null = 0, *p = nullptr;
+int null = 0, *p = 0;
 ```
 
 ## Exercise 2.33
@@ -585,7 +585,7 @@ Error message: [Error] expected ';' after struct definition
 >Write your own version of the Sales_data class.
 
 ```cpp
-struct Sale_data
+struct Sales_data
 {
     std::string bookNo;
     std::string bookName;
@@ -593,7 +593,7 @@ struct Sale_data
     double revenue = 0.0;
     double price = 0.0;
     //...
-}
+};
 ```
 
 ## Exercise 2.41
@@ -607,7 +607,7 @@ your Sales_data class in the same file as your main function.
 #include <iostream>
 #include <string>
 
-struct Sale_data
+struct Sales_data
 {
     std::string bookNo;
     unsigned units_sold = 0;
@@ -616,7 +616,7 @@ struct Sale_data
 
 int main()
 {
-    Sale_data book;
+    Sales_data book;
     double price;
     std::cin >> book.bookNo >> book.units_sold >> price;
     book.revenue = book.units_sold * price;
@@ -632,7 +632,7 @@ int main()
 #include <iostream>
 #include <string>
 
-struct Sale_data
+struct Sales_data
 {
     std::string bookNo;
     unsigned units_sold = 0;
@@ -641,7 +641,7 @@ struct Sale_data
 
 int main()
 {
-    Sale_data book1, book2;
+    Sales_data book1, book2;
     double price1, price2;
     std::cin >> book1.bookNo >> book1.units_sold >> price1;
     std::cin >> book2.bookNo >> book2.units_sold >> price2;
@@ -673,7 +673,7 @@ int main()
 #include <iostream>
 #include <string>
 
-struct Sale_data
+struct Sales_data
 {
     std::string bookNo;
     unsigned units_sold = 0;
@@ -682,13 +682,13 @@ struct Sale_data
 
 int main()
 {
-    Sale_data total;
+    Sales_data total;
     double totalPrice;
     if (std::cin >> total.bookNo >> total.units_sold >> totalPrice)
     {
         total.revenue = total.units_sold * totalPrice;
 
-        Sale_data trans;
+        Sales_data trans;
         double transPrice;
         while (std::cin >> trans.bookNo >> trans.units_sold >> transPrice)
         {
