@@ -118,7 +118,7 @@ i = d = 3.5; // d = 3.5, i = 3
 ## Exercise 4.14
 >Explain what happens in each of the if tests:
 ```cpp
-if (42 = i)   // complie error: expression is not assignable
+if (42 = i)   // compile error: expression is not assignable
 if (i = 42)   // true.
 ```
 
