@@ -1,0 +1,19 @@
+echo "badgetc: " && ./badgetc.exe < data/skipws
+echo "bits: " && ./bits.exe < data/bits
+echo "ccpgms: " && ./ccpgms.exe <data/files
+echo "findbook: " && ./findbook.exe data/store*
+echo "game: " && ./game.exe < data/game
+echo "getc: " && ./getc.exe < data/skipws
+echo "getput: " && ./getput.exe < data/skipws
+echo "no-skipws: " && ./no-skipws.exe < data/no-skipws
+echo "phones:" && ./phones.exe < data/phones
+echo "phonesFinal:" && ./phonesFinal.exe < data/phonesFinal
+echo "skipws: " && ./skipws.exe < data/skipws
+echo "subexpr:" &&  ./subexpr.exe < data/files
+echo "validatePhones:" && ./validatePhones.exe  < data/validatePhones
+
+
+../noinput manips.exe manips11.exe normalInts.exe point.exe \
+		   prec.exe rand1.exe rand2.exe rand4.exe \
+		   rand6.exe  regex1.exe REerrs.exe sci_dec.exe \
+		   seed.exe seek.exe setw.exe tuple.exe zips.exe
