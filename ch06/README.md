@@ -293,7 +293,7 @@ decltype(arrStr)& arrPtr(int i)
 
 ## Exercise 6.39
 
-(a) legal, repeated declarations(without definition) are legal in C++
+(a) legal, redefinition of ‘int calc(int, int)’
 
 (b) illegal, only the return type is different
 
