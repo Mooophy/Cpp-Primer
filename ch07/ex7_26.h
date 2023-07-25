@@ -28,7 +28,7 @@ public:
     Sales_data& combine(const Sales_data&);
     
 private:
-    inline double avg_price() const;        
+    double avg_price() const;        
 
 private:
     std::string bookNo;
