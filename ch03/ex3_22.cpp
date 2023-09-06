@@ -14,15 +14,14 @@ using std::vector; using std::string; using std::cout; using std::cin; using std
 
 int main()
 {
-    vector<string> text;
-    for (string line; getline(cin, line); text.push_back(line));
+    string text;
+    getline(cin, text);
     
-    for (auto& word : text)
+    for (auto it = text.begin(); it != text.end(); ++it)
     {
-        for (auto& ch : word)
-            if (isalpha(ch)) ch = toupper(ch);
-        cout << word << " ";
+        if (isalpha(*it)) *it = toupper(*it); 
     }
 
+    cout << text << '\n';
     return 0;
 }
