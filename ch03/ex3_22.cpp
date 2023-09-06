@@ -6,11 +6,10 @@
 //
 
 #include <iostream>
-#include <vector>
 #include <string>
 #include <cctype>
 
-using std::vector; using std::string; using std::cout; using std::cin; using std::isalpha;
+using std::string; using std::cout; using std::cin; using std::isalpha;
 
 int main()
 {
