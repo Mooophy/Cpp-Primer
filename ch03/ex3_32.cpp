@@ -12,9 +12,9 @@ int main()
 
     // vector
     vector<int> v(10);
-    for (int i = 0; i != 10; ++i) v[i] = arr[i];
-    vector<int> v2(v);
-    for (auto i : v2) cout << i << " ";
+    for (int i = 0; i != 10; ++i) 
+    v[i] = i;
+    for (auto i : v) cout << i << " ";
     cout << endl;
 
     return 0;
