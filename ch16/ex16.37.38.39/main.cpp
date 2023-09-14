@@ -21,11 +21,9 @@
 // explicit template argument. Explain why that argument is needed and
 // how it is used.
 //
-//  without specified type given, make_shared has no possibility to
-//  to determine how big the size it should allocate, which is the reason.
-//
-//  Depending on the type specified, make_shared allocates proper size of memory
-//  space and returns a proper type of shared_ptr pointing to it.
+//  make_shared returns a shared_ptr<T>, which contains a template parameter.
+//  There is no argument whose type can be used to deduce the type of T,
+//  so the caller must provide an explicit template argument for this parameter.
 //
 // Exercise 16.39:
 // Use an explicit template argument to make it sensible to pass two string
