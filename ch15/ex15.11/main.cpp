@@ -26,35 +26,22 @@ int main()
     Bulk_quote bq("bbb", 111, 10, 0.3);
     Limit_quote lq("ccc", 222, 10, 0.3);
 
-    /** @note   Not dynamic binding!
-     *  The codes below are not dynamic binding. The compiler has known what the
-     *  r refering to at compile time. As a result, the virtual function debug of
-     *  the subobject is called.
+    /** @note   dynamic binding!
      */
-    Quote& r = q;
-    r.debug();
+    Quote* r = &q;
+    r->debug();
 	std::cout << "\n";
-    r = bq;
-    r.debug();
+    r = &bq;
+    r->debug();
 	std::cout << "\n";
-    r = lq;
-    r.debug();
+    r = &lq;
+    r->debug();
 	std::cout << "\n";
 
 
     std::cout << "====================\n";
 
     /** @note   dynamic binding!
-     *  The below will happen dynamic binding. The reason might be that while  print_debug
-     *  compiling the compiler compile it independly from the rest codes. The compiler has
-     *  no idea what the paramter q refering to. Thus compiler will leave the decision to
-     *  run time. That is, dynamic binding.
-     *
-     *  Once dynamic binding happens, the corresponding vertual function in derived class will
-     *  be called rather than that of the subobject inside the derived object.
-     *
-     *  Anyway, the reference is essentially an address being passed.
-     *
      */
     print_debug(q);
 	std::cout << "\n";
