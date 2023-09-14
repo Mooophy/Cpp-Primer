@@ -3,6 +3,6 @@
 int main()
 {
     Date date(12, 4, 2015);
-    if (static_cast<bool>(date))
+    if (date)
         std::cout << date << std::endl;
 }
