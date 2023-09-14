@@ -281,7 +281,7 @@ private:
 ## [Exercise 7.43](ex7_43.cpp)
 ## Exercise 7.44
 
-illegal, cause there are ten elements, each would be default initialized. But no default initializer for the temporary object.
+illegal, cause there are ten elements, each would be value initialized. But no default constructor for the objects of type `NoDefault`.
 
 ## Exercise 7.45
 
