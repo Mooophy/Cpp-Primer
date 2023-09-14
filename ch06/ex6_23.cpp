@@ -27,7 +27,7 @@ void print(const int ia[], size_t size)
     }
 }
 
-void print(int (&arr)[2])
+void print2(int (&arr)[2])
 {
     for (auto i : arr)
         cout << i << endl;
@@ -42,7 +42,7 @@ int main()
     print(begin(j), end(j));
     print(&i);
     print(j, end(j)-begin(j));
-    print(j);
+    print2(j);
     
     return 0;
 }
