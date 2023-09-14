@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using std::cout; using std::cin; using std::endl; using std::string;
 
