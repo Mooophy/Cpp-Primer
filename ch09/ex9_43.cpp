@@ -26,6 +26,8 @@ using std::string;
 
 auto replace_with(string &s, string const& oldVal, string const& newVal)
 {
+    if (s.size() < oldVal.size()) 
+        return;
     for (auto cur = s.begin(); cur <= s.end() - oldVal.size(); )
         if (oldVal == string{ cur, cur + oldVal.size() })
             cur = s.erase(cur, cur + oldVal.size()),
