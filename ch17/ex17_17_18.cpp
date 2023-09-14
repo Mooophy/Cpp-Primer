@@ -28,6 +28,7 @@ using std::string;
 #include <regex>
 using std::regex;
 using std::sregex_iterator;
+using std::regex_search;
 
 int main()
 {
@@ -41,6 +42,18 @@ int main()
 	regex r(pattern, regex::icase);
 	for (sregex_iterator it(s.begin(), s.end(), r), end_it; it != end_it; ++it)
 		cout << it->str() << endl;
+
+	cout << "\nEx17.18, ignore words that contain \"ei\" but are not misspellings.\n";
+	cout << "Please input a sequence of words:" << endl;
+	getline(cin, s);
+	cout << endl;
+	cout << "Word(s) that violiate the \"ei\" grammar rule:" << endl;
+	regex r_ignore("albeit|neighbor", regex::icase);		// ignore words
+	for (sregex_iterator it(s.begin(), s.end(), r), end_it; it != end_it; ++it)
+	{
+		if (regex_search(it->str(), r_ignore)) continue;
+		cout << it->str() << endl;
+	}
 
 	return 0;
 }
