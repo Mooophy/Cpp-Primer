@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main(void) {
+   vector<char> v(25);
+
+   cout << "Initial vector size = " << v.size() << endl;
+
+   v.resize(100);
+   cout << "Vector size after resize = " << v.size() << endl;
+
+   cout << "Vector contains following elements" << endl;
+   for (int i = 0; i < v.size(); ++i)
+      cout << v[i] << endl;
+      //it contains 100 times zero if the data type is int otherwise it is not zero intialized just value initialized
+ v.resize(10);
+   cout << "Vector contains following elements" << endl;
+   for (int i = 0; i < v.size(); ++i)
+      cout << v[i] << endl;
+      // contains 10 times zero
+   return 0;
+}
