@@ -30,7 +30,7 @@ auto check_size(string const& str, size_t sz)
 
 int main()
 {
-    vector<int> vec{ 0, 1, 2, 3, 4, 5, 6, 7 };
+    vector<size_t> vec{ 0, 1, 2, 3, 4, 5, 6, 7 };
     string str("123456");
     auto result = find_if(vec.begin(), vec.end(), bind(check_size, str, std::placeholders::_1));
     if (result != vec.end())
