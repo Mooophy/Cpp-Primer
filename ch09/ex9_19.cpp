@@ -4,13 +4,13 @@
 //
 //  Created by pezy on 12/3/14.
 //
-//  @Brief  Rewrite the program from the previous exercise to use a list.
+//  @Brief  Rewrite the program from the previous exercise to use the list.
 //          List the changes you needed to make.
 //  @See    ex9_18.cpp
 
-#include <iostream>
-#include <string>
-#include <list>
+#include <iostream.h>
+#include <string.h>
+#include <list.h>
 
 using std::string; using std::list; using std::cout; using std::cin; using std::endl;
 
