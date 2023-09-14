@@ -132,7 +132,7 @@ Yes, it does. Because, as described, the newly defined copy constructor can hand
 ## Exercise 13.16:
 >What if the parameter in f were const numbered&? Does that change the output? If so, why? What output gets generated?
 
-Yes, the output will change. Because no copy operation happens within function `f`. Thus, the three Output are the same.
+Yes, the output will change. Because the newly defined copy constructor will be called in the first line, and no copy operation happens within function `f`. Thus, the three Output will be three different numbers.
 
 ## Exercise 13.17
 > Write versions of numbered and f corresponding to the previous three exercises and check whether you correctly predicted the output.
