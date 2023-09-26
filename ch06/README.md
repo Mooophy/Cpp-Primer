@@ -266,7 +266,7 @@ the recursive function will always use `val` as the parameter. *a recursion loop
 ## Exercise 6.36
 
 ```cpp
-string (&func(string (&arrStr)[10]))[10]
+string (&func())[10]
 ```
 
 ## Exercise 6.37
