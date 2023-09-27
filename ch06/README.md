@@ -272,13 +272,16 @@ string (&func())[10]
 ## Exercise 6.37
 
 ```cpp
+// type alias
 using ArrT = string[10];
-ArrT& func1(ArrT& arr);
+ArrT& func1();
 
-auto func2(ArrT& arr) -> string(&)[10];
+// trailing return
+auto func2() -> string(&)[10];
 
+// decltype
 string arrS[10];
-decltype(arrS)& func3(ArrT& arr);
+decltype(arrS)& func3();
 ```
 
 I pefer the first one. because it is more simpler to me.
