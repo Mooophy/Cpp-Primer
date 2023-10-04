@@ -414,6 +414,11 @@ int add(int a, int b) { return a + b; }
 int subtract(int a, int b) { return a - b; }
 int multiply(int a, int b) { return a * b; }
 int divide(int a, int b) { return b != 0 ? a / b : 0; }
+
+vec1.push_back(add);
+vec1.push_back(subtract);
+vec1.push_back(multiply);
+vec1.push_back(divide);
 ```
 
 ## Exercise 6.56
