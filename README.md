@@ -7,7 +7,7 @@
 
 ### Compilers recommended
  * Windows: Visual Studio 2015+ 
- 
+ * Code Blocks
  * Linux: g++ 5.0+     
 ```
 g++ -std=c++14 some_ex.cpp -o some_ex
