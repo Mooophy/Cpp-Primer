@@ -12,7 +12,7 @@ void print_range(int lo, int hi)
         print_range(hi, lo);
         return;
     }
-    for (int i = lo; i != hi; ++i)
+    for (int i = lo+1; i != hi; ++i)
         cout << i << " ";
 }
 
