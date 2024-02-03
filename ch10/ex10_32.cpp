@@ -16,6 +16,10 @@
 #include <numeric>
 #include "../include/Sales_item.h"
 
+bool compareIsbn(const Sales_item &item1, const Sales_item &item2) {
+    return item1.isbn() < item2.isbn();
+}
+
 int main()
 {
     std::istream_iterator<Sales_item> in_iter(std::cin), in_eof;
