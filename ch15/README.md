@@ -27,7 +27,7 @@ A virtual member in a base class expects its derived class define its own versio
 
 > (c) class Derived : public Base;
 
- * (a): **incorrect**, deirve from itself.
+ * (a): **incorrect**, derive from itself.
  * (b): **incorrect**, this is a definition not a declaration.
  * (c): **incorrect**, A derived class is declared like any other class. The declaration contains the class name but does not include its derivation list.
 
@@ -301,7 +301,7 @@ for `rhs` which is a `WordQuery` : `WordQuery::rep()` where `query_word("wind")`
 ## Exercise 15.35:
 > Implement the `Query` and `Query_base classes`, including a definition of rep but omitting the definition of `eval`.
 
-[Query](ex15.34.35.36.39/query.h) | [Query_base](ex15.34.35.36.38/query_base.h)
+[Query](ex15.34.35.36.38/query.h) | [Query_base](ex15.34.35.36.38/query_base.h)
 
 ## Exercise 15.36:
 > Put print statements in the constructors and rep members and run your code to check your answers to (a) and (b) from the first exercise.
@@ -360,7 +360,7 @@ Press <RETURN> to close this window...
 ## Exercise 15.39:
 > Implement the `Query` and `Query_base` classes. Test your application by evaluating and printing a query such as the one in Figure 15.3 (p. 638).
 
-[Query](ex.15.39.40/query.h) | [Query_base](ex.15.39.40/query_base.h) | [main](ex.15.39.40/main.cpp)
+[Query](ex15.39.40/query.h) | [Query_base](ex15.34.35.36.38/query_base.h) | [main](ex15.39.40/main.cpp)
 
 ## Exercise 15.40:
 > In the `OrQuery` eval function what would happen if its `rhs` member returned an empty set? What if its `lhs` member did so? What if both `rhs` and `lhs` returned empty sets?

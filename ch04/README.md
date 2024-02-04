@@ -1,4 +1,4 @@
-﻿### Exercise 4.1
+## Exercise 4.1
 >What is the value returned by 5 + 10 * 20/2?
 
 105
@@ -118,7 +118,7 @@ i = d = 3.5; // d = 3.5, i = 3
 ## Exercise 4.14
 >Explain what happens in each of the if tests:
 ```cpp
-if (42 = i)   // complie error: expression is not assignable
+if (42 = i)   // compile error: expression is not assignable
 if (i = 42)   // true.
 ```
 
@@ -180,7 +180,7 @@ Explain the behavior of the legal expressions and
 why those that aren’t legal are in error.
 ```cpp
 *iter++;  // return *iter, then ++iter.
-(*iter)++;  // illegal, *iter is a string, cannot increment value.
+(*iter)++;  // illegal, *iter is a string, cannot increment the value.
 *iter.empty() // illegal, iter should use '->' to indicate whether empty.
 iter->empty();  // indicate the iter' value whether empty.
 ++*iter;        // illegal, string have not increment.
@@ -247,8 +247,8 @@ ul1 || ul2 // == true
 >Predict the output of the following code and explain your reasoning. Now run the program. Is the output what you expected? If not, figure out why.
 ```cpp
 int x[10];   int *p = x;
-cout << sizeof(x)/sizeof(*x) << endl;
 cout << sizeof(p)/sizeof(*p) << endl;
+cout << sizeof(x)/sizeof(*x) << endl;
 ```
 
  * The first is 10. It returns the number of elements in x. 

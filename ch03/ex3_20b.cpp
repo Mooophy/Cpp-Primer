@@ -17,9 +17,8 @@ int main()
         return -1;
     }
 
-    auto size = ivec.size();
-    if (size % 2 != 0) size = size / 2 + 1;
-    else size /= 2;
+    // If the vector has odd size, element in the middle will add to itself.
+    auto size = (ivec.size() + 1) / 2;
 
     for (int i = 0; i != size; ++i)
         cout << ivec[i] + ivec[ivec.size() - i - 1] << " ";

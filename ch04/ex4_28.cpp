@@ -12,7 +12,7 @@ int main()
     // boolean type
     cout << "bool:\t\t" << sizeof(bool) << " bytes" << endl << endl;
     
-    // charactor type
+    // character type
     cout << "char:\t\t" << sizeof(char) << " bytes" << endl;
     cout << "wchar_t:\t" << sizeof(wchar_t) << " bytes" << endl;
     cout << "char16_t:\t" << sizeof(char16_t) << " bytes" << endl;
