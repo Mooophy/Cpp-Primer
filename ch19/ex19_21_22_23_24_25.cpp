@@ -46,8 +46,8 @@ void Token::copyUnion(Token&& t){
     switch (t.tok) {
         case INT  : ival = t.ival; break;
         case CHAR : cval = t.cval; break;
-        case STR  : std::move(t.sval);break;
-        case SAL  : std::move(t.item); break;
+        case STR  : new(&sval) string(std::move(t.sval));break;
+        case SAL  : new(&item) Sales_data(std::move(t.item)); break;
     }
 }
 void Token::copyUnion(const Token &t){
