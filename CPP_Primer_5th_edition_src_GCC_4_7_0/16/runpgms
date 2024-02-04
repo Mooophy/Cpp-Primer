@@ -1,0 +1,12 @@
+echo "compareDef: " && ./compareDef.exe < data/book_sales
+echo "multiset: " && ./multiset.exe < data/book_trans
+echo "Vecmain: " && ./Vecmain.exe < data/Vecmain
+
+../noinput Array.exe array-parms4.exe \
+		   compare.exe compareSpec.exe \
+		   debug.exe flip.exe expansion.exe \
+		   overloaded.exe overSpec.exe qm.exe \
+		   SP.exe special.exe specialized.exe \
+		   trail-ret.exe typealias.exe \
+		   useBlob.exe useChcking.exe \
+		   variadic.exe variadic3.exe 

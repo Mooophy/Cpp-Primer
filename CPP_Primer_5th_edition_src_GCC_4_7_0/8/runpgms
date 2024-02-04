@@ -1,0 +1,6 @@
+echo "add_item:" && ./add_item < data/add_item
+echo "add_itemV2:" && ./add_itemV2 < data/add_item
+echo "fileIO:" && ./fileIO data/add_item data/sstream
+echo "sstream:" && ./sstream < data/sstream
+
+../noinput buf.exe clearIO.exe 

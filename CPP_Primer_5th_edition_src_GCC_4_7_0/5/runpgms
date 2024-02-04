@@ -1,0 +1,8 @@
+echo "add_item2:" && ./add_item2 < data/add_item_data
+echo "guess:" && ./guess < data/guesses
+echo "ifgrades:" && ./ifgrades < data/grades
+echo "othercnt:" && ./othercnt < data/readme
+echo "vowels:" && ./vowels < data/readme
+echo "doWhile:" && ./doWhile < data/doWhile
+
+../noinput rangefor.exe

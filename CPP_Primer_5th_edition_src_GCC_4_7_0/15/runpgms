@@ -1,0 +1,7 @@
+echo "andQueryTest: " && ./andQueryTest.exe data/storyDataFile < data/two
+echo "and_orQueryTest: " && ./and_orQueryTest.exe data/storyDataFile < data/three
+echo "wordQueryTest: " && ./wordQueryTest.exe data/storyDataFile < data/querymain
+
+../noinput Basket_main.exe sample.exe \
+		   scope.exe  useQuote.exe vecBasket.exe \
+		   virtualsNscope.exe

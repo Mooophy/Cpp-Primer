@@ -1,0 +1,36 @@
+bitfields.exe
+reading
+calc.exe
+6
+2
+8
+15
+5
+2
+50
+0
+Lshift: 10 5320
+dyn_cast.exe
+cast from C to B* ok
+cast from B to C* not ok
+cast C to B* ok
+cast D to B* ok
+called f with an object that is not a Derived
+enum.exe
+enum-match.exe
+ff(int)
+ff(Tokens)
+ff(Tokens)
+newf(int)
+newf(unsigned char)
+newf(int)
+memFN-bind.exe
+worked
+tok2.exe
+0 0
+boo
+good bye
+42
+typeid.exe
+i, A10_i, 10Sales_data, Ss, P4Base, 7Derived
+useScreen.exe

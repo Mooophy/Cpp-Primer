@@ -1,0 +1,7 @@
+echo "querymain:" && ./querymain.exe data/storyDataFile < data/Alice
+echo "allocPtr:" && ./allocPtr.exe < data/alloc
+echo "allocSP:" && ./allocSP.exe < data/alloc
+echo "usealloc:" && ./usealloc.exe < data/storyDataFile
+
+../noinput oknew.exe release.exe \
+		   unique.exe UP.exe usealloc2.exe useBlob.exe weak.exe

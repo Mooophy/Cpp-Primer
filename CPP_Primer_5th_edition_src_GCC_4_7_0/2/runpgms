@@ -1,0 +1,6 @@
+echo "Sales_data:" && ./Sales_data < data/add_item
+
+../noinput compounddecls.exe convs.exe dbl_ptr.exe \
+		   decl-ex.exe escape.exe inits.exe \
+		   literals.exe ref-ex.exe \
+		   scope_levels.exe unsigned.exe

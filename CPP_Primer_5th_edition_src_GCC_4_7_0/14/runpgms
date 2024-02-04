@@ -1,0 +1,9 @@
+echo "absInt:" && ./absInt.exe < data/absInt
+echo "add: " && ./add.exe < data/add_item
+echo "fcnobj: " && ./fcnobj.exe < data/count-size
+echo "directcall: " && ./directcall.exe < data/add_item
+echo "newcount-size: " && ./newcount-size.exe < data/count-size
+echo "readStr: " && ./readStr.exe < data/word_echo
+
+../noinput calc.exe 
+		   

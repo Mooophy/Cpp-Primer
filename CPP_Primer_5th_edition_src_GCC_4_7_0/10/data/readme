@@ -1,0 +1,24 @@
+Some programs read cin for their input.
+Sample data files are in the data directory:
+
+     File           Programs that use that input file
+     ----           --------
+   SI_data          arrow
+   absInt           absInt
+   count-size       bind
+   count-size       bind2
+   count-size       newcount-size
+   book_sales       avg_price
+   iostream_iter    accum4
+   iostream_iter    equiv-istream
+   iostream_iter    iostream_iter
+   iostream_iter    ostreamIter2
+   iostream_iter    use-istream-iter
+   parms            parms
+   readme           readStr
+   reverse-iter     reverse-iter
+   use_find         use_find
+
+Programs not listed above print output and do
+not read any input
+

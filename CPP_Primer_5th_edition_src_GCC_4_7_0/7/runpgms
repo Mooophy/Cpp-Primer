@@ -1,0 +1,4 @@
+echo "avg_price:" && ./avg_price < data/book_sales
+echo "add_item:" && ./add_item < data/add_item
+
+../noinput useAccount.exe useDebug.exe useScreen.exe 
