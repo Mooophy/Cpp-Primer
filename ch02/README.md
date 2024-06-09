@@ -330,7 +330,8 @@ a pointer need **not be** initialized at the time it is defined.
 >What does the following program do?
 ```cpp
 int i = 42;
-int *p1 = &i; *p1 = *p1 * *p1;
+int *p1 = &i;
+*p1 = *p1 * *p1;
 ```
 
 `p1` pointer to `i`, `i`'s value changed to 1764(42*42)
@@ -348,7 +349,7 @@ int *p1 = &i; *p1 = *p1 * *p1;
 (a): illegal, cannot initialize a variable of type 'double *' with an
       rvalue of type 'int *'
 (b): illegal, cannot initialize a variable of type 'int *' with an lvalue
-      of type 'int'
+      of type 'int'. Note that assign literal 0 to a pointer is valid. You just can't assign a vairable, even if its value happens to be equal to 0.
 (c): legal.
 ```
 
