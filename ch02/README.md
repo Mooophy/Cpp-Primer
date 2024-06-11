@@ -31,7 +31,7 @@ usually is unnecessary and often entails considerable run-time cost.
 
 Reference:
 
-- [What are the criteria for choosing between short / int / long data types?](http://www.parashift.com/c++-faq/choosing-int-size.html)
+- [What are the criteria for choosing between short / int / long data types?](https://isocpp.org/wiki/faq/newbie#choosing-int-size)
 - [Difference between float and double](http://stackoverflow.com/questions/2386772/difference-between-float-and-double)
 - Advice: Deciding which Type to Use(This book.)
 
@@ -48,7 +48,7 @@ The payment most like that: $1, 142.36
 Reference:
 
 - [mortgage-calculator](http://www.bankrate.com/calculators/mortgages/mortgage-calculator.aspx)
-- [What's in a Mortgage Payment?](http://www.homeloanlearningcenter.com/mortgagebasics/whatsinamortgagepayment.htm)
+- [What's in a Mortgage Payment?](https://thelawdictionary.org/mortgage-payment/)
 
 ## Exercise 2.3
 > What output will the following code produce?
@@ -379,7 +379,7 @@ long *lp = &i;
 ```
 
 Inherited from C, `void*` is a special pointer that may point to any type, hence the second line is legal.
-For type safty, C++ forbids implicit conversions like `long *lp = &i;`, thus such code is illegal.
+For type safety, C++ forbids implicit conversions like `long *lp = &i;`, thus such code is illegal.
 
 ## Exercise 2.25
 >Determine the types and values of each of the following
@@ -436,7 +436,7 @@ following assignments are legal? Explain why.
 
 ```cpp
 i = ic;     // legal.
-p1 = p3;    // illegal. p3 is a pointer to const int.
+p1 = p3;    // illegal. p3 is a const pointer to const int.
 p1 = &ic;   // illegal. ic is a const int.
 p3 = &ic;   // illegal. p3 is a const pointer.
 p2 = p1;    // illegal. p2 is a const pointer.
@@ -479,6 +479,7 @@ make it legal?
 
 illegal.
 ```cpp
+int null = 0, *p = &null;
 int null = 0, *p = nullptr;
 ```
 

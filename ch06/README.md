@@ -188,11 +188,11 @@ should be changed.
 ## Exercise 6.18
 (a)
 ```cpp
-bool compare(matrix &m1, matrix &m2);
+bool compare(const matrix &m1, cosnt matrix &m2);
 ```
 (b)
 ```cpp
-vector<int>::iterator change_val(int, vector<int>::iterator);
+vector<int>::iterator change_val(int num, vector<int>::iterator &it);
 ```
 
 ## Exercise 6.19
@@ -246,13 +246,13 @@ Error (Clang):
 
 ## Exercise 6.31
 
-when you can find the preexited object that the reference refered.
+when you can find the preexisting object that the reference refered.
 
 ## Exercise 6.32
 
 legal, it gave the values (0 ~ 9) to array `ia`.
 
-## [Exercise 6.33](ex6_33.cpp)([Generics Version](ex6_33_generics_version.cpp))
+## [Exercise 6.33](ex6_33.cpp)
 ## Exercise 6.34
 
 When the recursion termination condition becomes `var != 0`, two situations can happen :
@@ -266,19 +266,22 @@ the recursive function will always use `val` as the parameter. *a recursion loop
 ## Exercise 6.36
 
 ```cpp
-string (&func(string (&arrStr)[10]))[10]
+string (&func())[10]
 ```
 
 ## Exercise 6.37
 
 ```cpp
+// type alias
 using ArrT = string[10];
-ArrT& func1(ArrT& arr);
+ArrT& func1();
 
-auto func2(ArrT& arr) -> string(&)[10];
+// trailing return
+auto func2() -> string(&)[10];
 
+// decltype
 string arrS[10];
-decltype(arrS)& func3(ArrT& arr);
+decltype(arrS)& func3();
 ```
 
 I pefer the first one. because it is more simpler to me.
@@ -293,11 +296,11 @@ decltype(arrStr)& arrPtr(int i)
 
 ## Exercise 6.39
 
-(a) illegal
+(a) legal, repeated declarations(without definition) are legal in C++
 
-(b) illegal
+(b) illegal, only the return type is different
 
-(c) legal
+(c) legal, the parameter type is different and return type is changed
 
 ## Exercise 6.40
 
@@ -380,7 +383,7 @@ int calc(const int&, const int&); // calls lookup(const int&)
 (b)
 ```cpp
 int calc(char*, char*); // calls lookup(char*)
-int calc(const char*, const char*); calls lookup(const char *)
+int calc(const char*, const char*); // calls lookup(const char *)
 ```
 (c)
 
@@ -411,6 +414,11 @@ int add(int a, int b) { return a + b; }
 int subtract(int a, int b) { return a - b; }
 int multiply(int a, int b) { return a * b; }
 int divide(int a, int b) { return b != 0 ? a / b : 0; }
+
+vec1.push_back(add);
+vec1.push_back(subtract);
+vec1.push_back(multiply);
+vec1.push_back(divide);
 ```
 
 ## Exercise 6.56

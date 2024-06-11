@@ -18,7 +18,7 @@ Base *pb;    Class *pc;       MI *pmi;     D2 *pd2;
 
 Solution: 
 (a) Constructors run order: Class Base D1 D2 MI Class Final.
-	Destructors run order: Final Class MI D2 D1 Base Call.
+	Destructors run order: Final Class MI D2 D1 Base Class.
 	Class parts are constructed from left to right and base class to derived class.
 (b) 1 Base part and 2 Class parts.
 	Because ‘Base’ is a virtual base class of ‘D1’ and ‘D2’. There is only 1 Base part. 

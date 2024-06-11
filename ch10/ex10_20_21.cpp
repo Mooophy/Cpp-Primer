@@ -1,6 +1,6 @@
 //
-// @author @Yue Wang @shbling @pezy @zzzkl
-// @date   02.12.2014
+// @author @Yue Wang @shbling @pezy @zzzkl @agyild
+// @date   04.01.2018
 //
 // Exercise 10.20:
 // The library defines an algorithm named count_if. Like find_if, this function takes
@@ -45,7 +45,7 @@ int main()
 
     // ex10.21
     int i = 7;
-    auto check_and_decrement = [&i](){ return --i ? false : true; };
+    auto check_and_decrement = [&i]() { return i > 0 ? !--i : !i; };
     std::cout << "ex10.21: ";
     while(!check_and_decrement())
         std::cout << i << " ";

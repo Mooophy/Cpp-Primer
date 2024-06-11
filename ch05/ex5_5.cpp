@@ -18,8 +18,8 @@ int main()
             letter = scores[(g - 50) / 10];
             if (g != 100)
                 letter += g % 10 > 7 ? "+" : g % 10 < 3 ? "-" : "";
-            cout << letter << endl;
         }
+        cout << letter << endl;
     }
 
     return 0;

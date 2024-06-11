@@ -184,7 +184,7 @@ Copy constructor and copy-assignment operator should dynamically allocate memory
 `swap(lhs.ps, rhs.ps);` feed the version : `swap(std::string*, std::string*)` and `swap(lhs.i, rhs.i);` feed the version : `swap(int, int)`. Both them can't call `swap(HasPtr&, HasPtr&)`. Thus, the calls don't cause a recursion loop.
 
 ## [Exercise 13.30](ex13_30.h)
-## [Exercise 13.31](ex13_31.h)
+## Exercise 13.31 [hpp](ex13_31.h) | [cpp](ex13_31.cpp)
 
 ## Exercise 13.32:
 >Would the pointerlike version of `HasPtr` benefit from defining a swap function? If so, what is the benefit? If not, why not?
@@ -341,7 +341,7 @@ Thus, in `hp = hp2;`, `hp2` is an lvalue, copy constructor used to copy `hp2`. I
 
 nothing to say, just see the versus codes:
 
-[hpp](ex13_53.h) | [cpp](ex13_53.cpp) | [Test](ex13_53_TEST.cpp)
+[hpp](ex13_53.h) | [cpp](ex13_53.cpp) | [Test](ex13_53_test.cpp)
 
 see more information at [this question && answer](http://stackoverflow.com/questions/21010371/why-is-it-not-efficient-to-use-a-single-assignment-operator-handling-both-copy-a).
 
