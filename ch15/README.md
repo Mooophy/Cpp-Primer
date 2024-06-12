@@ -1,4 +1,4 @@
-# Chapter 15. Object-Oriented Programming
+﻿# Chapter 15. Object-Oriented Programming
 
 ## Exercise 15.1:
 > What is a virtual member?
@@ -8,7 +8,7 @@ A virtual member in a base class expects its derived class define its own versio
 ## Exercise 15.2:
 > How does the protected access specifier differ from private?
 
-* **private member**: base class itself and friend can access
+* **private member**: base class itself and friend can access it 
 * **protected members**: base class itself, friend and derived classes can access
 
 ## Exercise 15.3:
@@ -17,7 +17,7 @@ A virtual member in a base class expects its derived class define its own versio
 [Quote](ex15.1.2.3/quote.h) | [main.cpp](ex15.1.2.3/main.cpp)
 
 ## Exercise 15.4:
-> Which of the following declarations, if any, are incorrect? Explain why.
+> Which of the following declarations, if any, are incorrect? Explain why is it ?.
 
 > class Base { ... };
 
@@ -62,7 +62,7 @@ The static type of a pointer or reference to a base class may differ from its dy
 The function takes a `std::istream` from which `std::ifstream` is derived. Hence the `ifstream` object "is a" i`stream` , which is why it works.
 
 ## Exercise 15.11:
-> Add a virtual debug function to your `Quote` class hierarchy that displays the data members of the respective classes.
+> Add a virtual debug function to your `Quote` class hierarchy that displays the data members of the respective classes of it.
 
 ```cpp
 void Quote::debug() const
