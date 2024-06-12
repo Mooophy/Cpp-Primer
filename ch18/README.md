@@ -254,7 +254,7 @@ void foo(double cval)
     {
         int dval;
         dval = Base1::dval+Derived::dval;//(c)
-        Base2::fval=dvec.back()-1;//(d)
+        Base2::fval=dvec.back();//(d)
         Derived::sval[0]= Base1::cval;//(e)
         std::cout<<dval;
     }
