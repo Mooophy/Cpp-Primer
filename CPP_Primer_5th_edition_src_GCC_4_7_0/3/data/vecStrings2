@@ -1,0 +1,9 @@
+When we subscript a string, we get back a character.
+When we subscript a vector, we get an object of whatever type the vector contains.
+We can use the resulting (unnamed) object in exactly the same way we can use any other object of that type.
+In particular, if the type is a class type, such as a library string, we can call member functions or use operators defined by the element type.
+
+As an example, let's write a program to capitalize the first word of every sentence in the first paragraph of some text.
+We'll assume that our input contains a series of lines.
+Each line is either a complete sentence or it contains only a newline.
+Lines containing a only a newline separate paragraphs.

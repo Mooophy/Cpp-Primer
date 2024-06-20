@@ -1,0 +1,9 @@
+echo "wcEx:" && ./wcEx.exe < data/storyDataFile
+echo "erasemap:" && ./erasemap.exe < data/storyDataFile
+echo "restricted_count:" && ./restricted_count.exe < data/word_count
+echo "unorderedWordCount:" && ./unorderedWordCount.exe < data/word_count
+echo "word_count:" && ./word_count.exe < data/storyDataFile
+echo "pair:" && ./pair.exe < data/storyDataFile
+echo "word_transform:" && ./word_transform.exe data/rules data/text
+
+../noinput map1.exe multimap.exe setOps.exe 

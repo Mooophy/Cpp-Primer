@@ -1,0 +1,17 @@
+echo "add:" && ./add_using < data/add
+echo "arrayScores:" && ./arrayScores < data/grades
+echo "hexify:" && ./hexify < data/hexify
+echo "ptr_traversal2:" && ./ptr_traversal2 < data/ptr_traversal2
+echo "string_io:" && ./string_io < data/string_io
+echo "string_io2:" && ./string_io2 < data/string_io
+echo "vecStrings2:" && ./vecStrings2 < data/vecStrings2
+echo "vecScores:" && ./vecScores < data/grades
+echo "getline:" && ./getline < data/word_echo
+echo "string_size2:" && ./string_size2 < data/word_echo
+echo "string_size3:" && ./string_size3 < data/word_echo
+echo "word_echo:" && ./word_echo < data/word_echo
+
+../noinput cctype.exe char_repl.exe cstring_hdr.exe \
+		   multidim.exe square.exe strcompare.exe \
+		   string_add.exe string_size.exe vec_decls.exe \
+		   vecSubs.exe
