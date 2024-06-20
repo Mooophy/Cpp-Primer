@@ -1,0 +1,12 @@
+#ifndef QUERY
+#define QUERY
+
+#include "Query.h"
+#include "TextQuery.h"
+#include "QueryResult.h"
+#include "WordQuery.h"
+#include "NotQuery.h"
+#include "AndQuery.h"
+#include "OrQuery.h"
+
+#endif
