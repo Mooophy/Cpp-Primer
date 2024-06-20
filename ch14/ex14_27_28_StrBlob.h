@@ -224,8 +224,8 @@ inline StrBlobPtr StrBlobPtr::operator--(int)
 
 inline StrBlobPtr& StrBlobPtr::operator+=(size_t n)
 {
+    check(curr + n - 1, "increment past end of StrBlobPtr");
     curr += n;
-    check(curr, "increment past end of StrBlobPtr");
     return *this;
 }
 
@@ -350,8 +350,8 @@ inline ConstStrBlobPtr ConstStrBlobPtr::operator--(int)
 
 inline ConstStrBlobPtr& ConstStrBlobPtr::operator+=(size_t n)
 {
+    check(curr + n - 1, "increment past end of ConstStrBlobPtr");
     curr += n;
-    check(curr, "increment past end of ConstStrBlobPtr");
     return *this;
 }
 
