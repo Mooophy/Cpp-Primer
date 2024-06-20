@@ -1,10 +1,11 @@
-﻿/***************************************************************************
- *  @file       main.cpp
- *  @author     Alan.W
- *  @date       3  Mar 2014
- *  @remark     This code is for the exercises from C++ Primer 5th Edition
- *  @note
- ***************************************************************************/
+/**
+ * @brief ex17.03
+ * 
+ * @file main.cpp
+ * @author huipengly
+ * @date 2018-08-24
+ */
+
 //
 // Exercise 17.3:
 // Rewrite the TextQuery programs from § 12.3 (p. 484) to use a tuple instead
@@ -14,10 +15,46 @@
 //  refactor.So the second way is better for testing.
 //
 
+#include "text_query.h"
+#include <fstream>
+using std::ifstream;
 #include <iostream>
-#include "textquery.h"
+using std::cout; using std::endl; using std::cin; using std::cerr;
+#include <string>
+using std::string;
 
-int main()
+void runQueries(ifstream &infile)
 {
-	return 0;
+    TextQuery tq(infile);
+    while (true)
+    {
+        cout << "enter word to look for, or q to quit: ";
+        string s;
+        if (!(cin >> s) || s == "q")
+        {
+            break;
+        }
+        print(cout, tq.query(s)) << endl;
+    }
+}
+
+int main(int argc, char const *argv[])
+{
+    ifstream input;
+    if (argc >= 2)
+    {
+        input.open(argv[1]);
+    }
+    else
+    {
+        cerr << "please input filename after program." << endl;
+        return -1;
+    }
+    if (!input)
+    {
+        cerr << "open file failed!" << endl;
+        return -2;
+    }
+    runQueries(input);
+    return 0;
 }
