@@ -25,7 +25,9 @@ struct PersonInfo {
 
 bool valid(const string& str)
 {
-    return isdigit(str[0]);
+    for(const auto c : str)
+		if(!isdigit(c)) return false;
+	return true;
 }
 
 string format(const string& str)
